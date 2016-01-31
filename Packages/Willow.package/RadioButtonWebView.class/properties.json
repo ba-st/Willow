@@ -1,0 +1,18 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"interactionInterpreter",
+		"element",
+		"groupKey",
+		"description",
+		"commandsToComponent" ],
+	"name" : "RadioButtonWebView",
+	"pools" : [
+		 ],
+	"super" : "WebViewBehavior",
+	"type" : "normal" }

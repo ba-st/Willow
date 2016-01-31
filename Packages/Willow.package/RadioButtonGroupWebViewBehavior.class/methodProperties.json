@@ -1,0 +1,18 @@
+{
+	"class" : {
+		"grouping:" : "guest 1/5/2014 20:05",
+		"grouping:using:" : "guest 1/5/2014 20:05",
+		"grouping:using:applying:" : "guest 1/5/2014 20:05" },
+	"instance" : {
+		"allowDeselection" : "guest 1/5/2014 20:05",
+		"children" : "guest 1/5/2014 20:05",
+		"choose:" : "guest 1/5/2014 20:05",
+		"chooseElementsUsing:" : "guest 1/5/2014 20:05",
+		"contents" : "guest 1/5/2014 20:05",
+		"initializeGrouping:using:applying:" : "guest 1/5/2014 20:05",
+		"onTrigger" : "guest 1/5/2014 20:05",
+		"render:of:on:" : "guest 1/5/2014 20:05",
+		"renderContentOn:" : "guest 1/5/2014 20:05",
+		"renderRadioGroupOn:" : "guest 1/5/2014 20:05",
+		"renderedComponentOn:" : "guest 1/5/2014 20:05",
+		"selectedElement" : "guest 1/5/2014 20:05" } }

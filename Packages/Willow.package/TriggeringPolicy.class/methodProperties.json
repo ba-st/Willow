@@ -1,0 +1,11 @@
+{
+	"class" : {
+		"defaultSerializationCommand" : "guest 1/5/2014 20:05",
+		"new" : "guest 1/5/2014 20:05",
+		"serializingHiddenInputs" : "guest 1/5/2014 20:05",
+		"serializingWith:" : "guest 1/5/2014 20:05" },
+	"instance" : {
+		"apply:to:on:" : "guest 1/5/2014 20:05",
+		"ensureIdFor:on:" : "guest 1/5/2014 20:05",
+		"initializeSerializingWith:" : "guest 1/5/2014 20:05",
+		"serializationCommand" : "guest 1/5/2014 20:05" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"serializationCommand" ],
+	"name" : "TriggeringPolicy",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

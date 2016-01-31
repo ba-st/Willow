@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"answerView" ],
+	"name" : "PluggableMultipleSelectionWebView",
+	"pools" : [
+		 ],
+	"super" : "WAPresenter",
+	"type" : "normal" }

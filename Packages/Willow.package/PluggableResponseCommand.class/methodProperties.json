@@ -1,0 +1,12 @@
+{
+	"class" : {
+		"configuringResponseWith:" : "MaximilianoTabacman 8/28/2015 09:04" },
+	"instance" : {
+		"clientIndependentActions" : "MaximilianoTabacman 8/28/2015 09:01",
+		"initializeConfiguringResponseWith:" : "MaximilianoTabacman 8/28/2015 09:04",
+		"modelLoadingActions" : "MaximilianoTabacman 8/28/2015 09:01",
+		"onReturn" : "MaximilianoTabacman 8/28/2015 09:02",
+		"priorityActions" : "MaximilianoTabacman 8/28/2015 09:01",
+		"requiresSerialization" : "MaximilianoTabacman 8/28/2015 09:02",
+		"resetInterpreter" : "MaximilianoTabacman 8/28/2015 09:01",
+		"serverIndependentActions" : "MaximilianoTabacman 8/28/2015 09:01" } }

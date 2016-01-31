@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"contentsView",
+		"interactionInterpreter",
+		"title" ],
+	"name" : "WebDialog",
+	"pools" : [
+		 ],
+	"super" : "WAComponent",
+	"type" : "normal" }

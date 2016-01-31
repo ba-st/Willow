@@ -1,0 +1,4 @@
+configuring
+serializeContainerForm
+
+	interaction onTriggerExecute: SerializationCommand forParentForm

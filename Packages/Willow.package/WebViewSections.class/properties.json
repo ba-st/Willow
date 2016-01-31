@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-CascadingStyleSheets",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "WebViewSections",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

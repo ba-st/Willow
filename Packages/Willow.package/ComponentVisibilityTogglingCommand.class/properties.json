@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"cssStyle",
+		"effect" ],
+	"name" : "ComponentVisibilityTogglingCommand",
+	"pools" : [
+		 ],
+	"super" : "WebInteractionCommand",
+	"type" : "normal" }

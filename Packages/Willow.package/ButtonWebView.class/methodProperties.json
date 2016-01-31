@@ -1,0 +1,11 @@
+{
+	"class" : {
+		"describedBy:" : "MaximilianoTabacman 5/4/2014 18:17",
+		"describedBy:applying:" : "MaximilianoTabacman 5/4/2014 18:14",
+		"describedBy:representedBy:" : "MaximilianoTabacman 5/4/2014 18:16",
+		"iconButtonCommandFor:" : "MaximilianoTabacman 5/4/2014 18:16",
+		"textButtonCommandFor:" : "MaximilianoTabacman 5/4/2014 18:17" },
+	"instance" : {
+		"initializeDescribedBy:applying:" : "MaximilianoTabacman 5/4/2014 18:18",
+		"onTrigger" : "guest 1/5/2014 20:05",
+		"renderContentOn:" : "MaximilianoTabacman 5/4/2014 18:18" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"identifiedView" ],
+	"name" : "ComponentRemovingCommand",
+	"pools" : [
+		 ],
+	"super" : "WebInteractionCommand",
+	"type" : "normal" }

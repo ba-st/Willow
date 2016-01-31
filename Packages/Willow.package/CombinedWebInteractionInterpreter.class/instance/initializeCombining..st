@@ -1,0 +1,4 @@
+initialize-release
+initializeCombining: aWebInteractionInterpreterCollection
+
+	interpreters := aWebInteractionInterpreterCollection

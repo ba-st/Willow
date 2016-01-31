@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"answerView" ],
+	"name" : "PluggableQuestionWebView",
+	"pools" : [
+		 ],
+	"super" : "WebViewBehavior",
+	"type" : "normal" }

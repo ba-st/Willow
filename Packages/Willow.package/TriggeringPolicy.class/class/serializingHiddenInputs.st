@@ -1,0 +1,5 @@
+instance creation
+serializingHiddenInputs
+
+	^self
+		serializingWith: SerializationCommand forCurrentObjectWithHiddenInputs

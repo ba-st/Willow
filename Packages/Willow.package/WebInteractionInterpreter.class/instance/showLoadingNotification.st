@@ -1,0 +1,4 @@
+configuring
+showLoadingNotification
+
+	interaction onTriggerExecute: LoadingNotificationCommand onPageTop

@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"interactionInterpreter",
+		"selectedBlock",
+		"identifier" ],
+	"name" : "CheckBoxWebView",
+	"pools" : [
+		 ],
+	"super" : "WAComponent",
+	"type" : "normal" }

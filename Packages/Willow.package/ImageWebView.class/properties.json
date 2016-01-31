@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"imageProvider",
+		"interactionInterpreter",
+		"propertyCommands" ],
+	"name" : "ImageWebView",
+	"pools" : [
+		 ],
+	"super" : "WebViewBehavior",
+	"type" : "normal" }

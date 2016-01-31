@@ -1,0 +1,4 @@
+instance creation
+forClickOnComponent
+
+	^self workingWith: WebComponentInteraction triggeredOnClick

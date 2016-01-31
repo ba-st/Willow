@@ -1,0 +1,4 @@
+configuring
+clearSelection
+
+	self choose: #()

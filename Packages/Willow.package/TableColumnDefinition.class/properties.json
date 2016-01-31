@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"cellContentProvider",
+		"headingContent" ],
+	"name" : "TableColumnDefinition",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

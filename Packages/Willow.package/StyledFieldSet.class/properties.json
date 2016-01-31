@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"additionalStyles",
+		"title",
+		"contentView" ],
+	"name" : "StyledFieldSet",
+	"pools" : [
+		 ],
+	"super" : "WAComponent",
+	"type" : "normal" }

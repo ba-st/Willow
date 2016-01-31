@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"viewToLabel",
+		"label",
+		"title" ],
+	"name" : "LabeledWebView",
+	"pools" : [
+		 ],
+	"super" : "WebViewBehavior",
+	"type" : "normal" }

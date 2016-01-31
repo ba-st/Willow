@@ -1,0 +1,4 @@
+configuring
+respondUsing: aCallbackBlock
+
+	self subclassResponsibility

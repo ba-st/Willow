@@ -1,0 +1,4 @@
+testing
+isToggled
+
+	^isToggled

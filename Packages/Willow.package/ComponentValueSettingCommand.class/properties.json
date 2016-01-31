@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"identifiedView",
+		"valueProvider" ],
+	"name" : "ComponentValueSettingCommand",
+	"pools" : [
+		 ],
+	"super" : "WebInteractionCommand",
+	"type" : "normal" }

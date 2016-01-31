@@ -1,0 +1,13 @@
+{
+	"class" : {
+		"new" : "guest 1/5/2014 20:05" },
+	"instance" : {
+		"contents" : "guest 1/5/2014 20:05",
+		"identify:" : "MaximilianoTabacman 4/30/2014 08:58",
+		"identifyWith:" : "MaximilianoTabacman 4/30/2014 08:58",
+		"initialize" : "MaximilianoTabacman 4/30/2014 08:58",
+		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
+		"onTrigger" : "guest 1/5/2014 20:05",
+		"renderContentOn:" : "guest 1/5/2014 20:05",
+		"selected:" : "guest 1/5/2014 20:05",
+		"selectedAccordingTo:" : "guest 1/5/2014 20:05" } }

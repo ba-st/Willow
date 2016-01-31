@@ -1,0 +1,17 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"componentProvider",
+		"styleToToggle",
+		"transformationProvider",
+		"transformationMessage" ],
+	"name" : "ComponentStyleChangingCommand",
+	"pools" : [
+		 ],
+	"super" : "WebInteractionCommand",
+	"type" : "normal" }

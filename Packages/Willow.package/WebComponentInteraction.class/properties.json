@@ -1,0 +1,19 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"triggerPolicy",
+		"commands",
+		"modelLoadingActions",
+		"clientIndependentActions",
+		"priorityActions",
+		"serverIndependentActions" ],
+	"name" : "WebComponentInteraction",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

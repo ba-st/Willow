@@ -1,0 +1,4 @@
+jQueryUI
+uiWidget
+
+	^'ui-widget'

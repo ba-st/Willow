@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-CatalogModel",
+	"classinstvars" : [
+		"current" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"frameworkCatalog" ],
+	"name" : "WebViewCatalog",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,24 @@
+{
+	"class" : {
+		"triggeredAccordingTo:" : "guest 1/5/2014 20:05",
+		"triggeredOnChange" : "guest 1/5/2014 20:05",
+		"triggeredOnChangeSerializingHiddenInputs" : "guest 1/5/2014 20:05",
+		"triggeredOnClick" : "guest 1/5/2014 20:05",
+		"triggeredOnClickSerializingHiddenInputs" : "guest 1/5/2014 20:05",
+		"triggeredOnDialogAcceptBy:" : "MaximilianoTabacman 10/24/2014 08:24",
+		"triggeredOnDoubleClick" : "guest 1/5/2014 20:05",
+		"triggeredOnKeyUp" : "guest 1/5/2014 20:05" },
+	"instance" : {
+		"applyTo:on:" : "guest 1/5/2014 20:05",
+		"asynchronousCallToAffect:" : "MaximilianoTabacman 1/16/2014 00:36",
+		"commandToExecuteOn:" : "guest 1/5/2014 20:05",
+		"complete:withErrorHandlingOn:" : "MaximilianoTabacman 2/3/2014 23:34",
+		"complete:withResponseOn:" : "guest 1/5/2014 20:05",
+		"fill:on:withActionsHandling:" : "guest 1/5/2014 20:05",
+		"initializeActions" : "guest 1/5/2014 20:05",
+		"initializeTriggeredAccordingTo:" : "guest 1/5/2014 20:05",
+		"onTriggerExecute:" : "guest 1/5/2014 20:05",
+		"prepareActions" : "guest 1/5/2014 20:05",
+		"registerActionsOf:" : "guest 1/5/2014 20:05",
+		"shouldApplyActions" : "guest 1/5/2014 20:05",
+		"shouldApplyAsynchronousCall" : "guest 1/5/2014 20:05" } }

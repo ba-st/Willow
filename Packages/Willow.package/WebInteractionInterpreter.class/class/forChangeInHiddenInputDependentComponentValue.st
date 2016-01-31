@@ -1,0 +1,4 @@
+instance creation
+forChangeInHiddenInputDependentComponentValue
+
+	^self workingWith: WebComponentInteraction triggeredOnChangeSerializingHiddenInputs

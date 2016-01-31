@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"cssStyle",
+		"contentView" ],
+	"name" : "CollapsibleSectionWebView",
+	"pools" : [
+		 ],
+	"super" : "WAComponent",
+	"type" : "normal" }

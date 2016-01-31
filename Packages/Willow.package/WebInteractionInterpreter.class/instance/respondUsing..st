@@ -1,0 +1,4 @@
+configuring
+respondUsing: aCallbackBlock
+
+	interaction onTriggerExecute: (PluggableResponseCommand configuringResponseWith: aCallbackBlock)

@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"question" ],
+	"name" : "ConfirmationCommand",
+	"pools" : [
+		 ],
+	"super" : "WebInteractionCommand",
+	"type" : "normal" }

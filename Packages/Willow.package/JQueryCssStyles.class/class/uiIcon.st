@@ -1,0 +1,4 @@
+jQueryUI
+uiIcon
+
+	^'ui-icon'

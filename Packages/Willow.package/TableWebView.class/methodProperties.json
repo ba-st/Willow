@@ -1,0 +1,11 @@
+{
+	"class" : {
+		"showing:obtainingContentsFrom:applyingAll:" : "MaximilianoTabacman 12/24/2015 14:47" },
+	"instance" : {
+		"contents" : "MaximilianoTabacman 12/24/2015 14:45",
+		"initializeShowing:obtainingContentsFrom:applyingAll:" : "MaximilianoTabacman 12/24/2015 14:47",
+		"renderBodyOn:" : "MaximilianoTabacman 12/24/2015 16:04",
+		"renderContentOn:" : "MaximilianoTabacman 12/24/2015 15:14",
+		"renderHeadOn:" : "MaximilianoTabacman 12/24/2015 16:12",
+		"renderHeadingFor:on:" : "MaximilianoTabacman 12/24/2015 16:42",
+		"renderRowFor:on:" : "MaximilianoTabacman 12/24/2015 16:43" } }

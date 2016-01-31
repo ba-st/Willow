@@ -1,0 +1,4 @@
+instance creation
+combining: aWebInteractionInterpreterCollection
+
+	^self new initializeCombining: aWebInteractionInterpreterCollection

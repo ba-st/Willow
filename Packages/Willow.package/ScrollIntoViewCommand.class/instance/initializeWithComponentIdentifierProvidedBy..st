@@ -1,0 +1,4 @@
+initialize-release
+initializeWithComponentIdentifierProvidedBy: anIdentifierProvider
+
+	identifierProvider := anIdentifierProvider

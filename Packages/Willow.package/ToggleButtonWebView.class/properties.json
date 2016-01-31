@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"description",
+		"interactionInterpreter",
+		"isToggled" ],
+	"name" : "ToggleButtonWebView",
+	"pools" : [
+		 ],
+	"super" : "WAComponent",
+	"type" : "normal" }

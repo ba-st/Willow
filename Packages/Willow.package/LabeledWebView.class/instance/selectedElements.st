@@ -1,0 +1,4 @@
+accessing
+selectedElements
+
+	^viewToLabel selectedElements

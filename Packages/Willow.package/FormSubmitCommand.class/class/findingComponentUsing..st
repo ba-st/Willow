@@ -1,0 +1,4 @@
+instance creation
+findingComponentUsing: aComponentProvider
+
+	^self new initializeFindingComponentUsing: aComponentProvider

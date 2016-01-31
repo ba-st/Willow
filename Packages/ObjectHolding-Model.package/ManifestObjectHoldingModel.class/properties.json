@@ -1,0 +1,14 @@
+{
+	"category" : "ObjectHolding-Model",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "ManifestObjectHoldingModel",
+	"pools" : [
+		 ],
+	"super" : "PackageManifest",
+	"type" : "normal" }

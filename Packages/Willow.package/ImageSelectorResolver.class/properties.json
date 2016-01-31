@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "ImageSelectorResolver",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,4 @@
+configuring
+informSelection
+
+	interaction onTriggerExecute: AlertingCommand informingSelection

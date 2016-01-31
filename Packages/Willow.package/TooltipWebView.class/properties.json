@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"contentsView",
+		"title" ],
+	"name" : "TooltipWebView",
+	"pools" : [
+		 ],
+	"super" : "WAComponent",
+	"type" : "normal" }

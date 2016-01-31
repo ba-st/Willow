@@ -1,0 +1,14 @@
+{
+	"class" : {
+		"referringTo:as:" : "guest 1/5/2014 20:05",
+		"referringTo:as:obtainingContainerComponentFrom:" : "MaximilianoTabacman 4/30/2014 08:49",
+		"referringToLabeledFieldContaining:as:" : "MaximilianoTabacman 2/19/2014 23:22",
+		"referringToRowContaining:as:" : "guest 1/5/2014 20:05" },
+	"instance" : {
+		"id" : "MaximilianoTabacman 4/30/2014 08:51",
+		"initializeReferringTo:as:obtainingContainerComponentFrom:" : "MaximilianoTabacman 4/30/2014 08:59",
+		"renderContentOn:" : "MaximilianoTabacman 4/30/2014 08:59",
+		"styleAccordingTo:" : "guest 1/5/2014 20:05",
+		"styleAccordingToAll:" : "guest 1/5/2014 20:05",
+		"updatedIdentifierUsing:" : "MaximilianoTabacman 4/30/2014 08:59",
+		"view" : "guest 1/5/2014 20:05" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "ObjectHolding-Model",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SelectionIsInvalid",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }

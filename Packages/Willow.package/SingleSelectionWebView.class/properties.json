@@ -1,0 +1,18 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"contentsBlock",
+		"selectedElement",
+		"interactionInterpreter",
+		"cssStyleNames",
+		"identifier" ],
+	"name" : "SingleSelectionWebView",
+	"pools" : [
+		 ],
+	"super" : "WebViewBehavior",
+	"type" : "normal" }

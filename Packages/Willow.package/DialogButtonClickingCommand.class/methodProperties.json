@@ -1,0 +1,12 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"clientIndependentActions" : "MaximilianoTabacman 2/15/2014 12:31",
+		"dialogButtonsOn:" : "MaximilianoTabacman 2/15/2014 12:47",
+		"firstDialogButtonOn:" : "MaximilianoTabacman 2/15/2014 12:49",
+		"modelLoadingActions" : "MaximilianoTabacman 2/15/2014 12:31",
+		"parentDialogOn:" : "MaximilianoTabacman 2/15/2014 12:47",
+		"priorityActions" : "MaximilianoTabacman 2/15/2014 12:31",
+		"requiresSerialization" : "MaximilianoTabacman 2/15/2014 12:31",
+		"serverIndependentActions" : "MaximilianoTabacman 2/15/2014 12:48" } }

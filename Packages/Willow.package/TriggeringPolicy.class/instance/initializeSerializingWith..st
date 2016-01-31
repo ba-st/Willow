@@ -1,0 +1,4 @@
+initialize-release
+initializeSerializingWith: aSerializationCommand
+
+	serializationCommand := aSerializationCommand

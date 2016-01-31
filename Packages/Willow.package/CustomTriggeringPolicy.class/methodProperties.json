@@ -1,0 +1,9 @@
+{
+	"class" : {
+		"defaultSerializationCommand" : "guest 1/5/2014 20:05",
+		"new" : "guest 1/5/2014 20:05",
+		"triggerUsing:" : "guest 1/5/2014 20:05",
+		"triggerUsing:serializingWith:" : "guest 1/5/2014 20:05" },
+	"instance" : {
+		"apply:to:on:" : "guest 1/5/2014 20:05",
+		"initializeTriggerUsing:serializingWith:" : "guest 1/5/2014 20:05" } }

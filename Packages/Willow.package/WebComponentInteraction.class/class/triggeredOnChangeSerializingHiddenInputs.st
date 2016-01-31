@@ -1,0 +1,4 @@
+instance creation
+triggeredOnChangeSerializingHiddenInputs
+
+	^self triggeredAccordingTo: ValueChangingTrigger serializingHiddenInputs

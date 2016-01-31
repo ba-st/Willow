@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"description",
+		"interactionInterpreter",
+		"commandsToComponent" ],
+	"name" : "AnchorWebView",
+	"pools" : [
+		 ],
+	"super" : "WAComponent",
+	"type" : "normal" }

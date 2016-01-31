@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-SeasideExtensions",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "Swappable",
+	"pools" : [
+		 ],
+	"super" : "JQSortable",
+	"type" : "normal" }

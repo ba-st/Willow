@@ -1,0 +1,5 @@
+configuring
+onTrigger
+
+	^CombinedWebInteractionInterpreter
+		combiningInterpretersOf: radioButtonViews

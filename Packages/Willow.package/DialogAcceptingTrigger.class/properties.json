@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"acceptanceText" ],
+	"name" : "DialogAcceptingTrigger",
+	"pools" : [
+		 ],
+	"super" : "TriggeringPolicy",
+	"type" : "normal" }

@@ -1,0 +1,18 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"view",
+		"name",
+		"propertyCommands",
+		"containerComponentProvider",
+		"identifierHolder" ],
+	"name" : "IdentifiedWebView",
+	"pools" : [
+		 ],
+	"super" : "WAComponent",
+	"type" : "normal" }

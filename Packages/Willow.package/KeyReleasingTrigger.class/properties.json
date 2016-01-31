@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "KeyReleasingTrigger",
+	"pools" : [
+		 ],
+	"super" : "TriggeringPolicy",
+	"type" : "normal" }

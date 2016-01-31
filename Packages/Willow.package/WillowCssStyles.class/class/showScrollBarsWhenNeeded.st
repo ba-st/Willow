@@ -1,0 +1,4 @@
+accessing - general
+showScrollBarsWhenNeeded
+
+	^'showScrollBarsWhenNeeded'

@@ -1,0 +1,5 @@
+initialize-release
+initializeExecuting: aServerIndependentActionCollection then: aModelLoadingActionCollection
+
+	serverIndependentActions := aServerIndependentActionCollection.
+	modelLoadingActions := aModelLoadingActionCollection

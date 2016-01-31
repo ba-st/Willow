@@ -1,0 +1,1 @@
+Metacello Baseline definition for Willow

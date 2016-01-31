@@ -1,0 +1,4 @@
+configuring
+remove: aCssStyle fromComponentStyledAs: aComponentByStyleName
+
+	self subclassResponsibility

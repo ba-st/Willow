@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-JQueryUI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "JQueryUICatalog",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

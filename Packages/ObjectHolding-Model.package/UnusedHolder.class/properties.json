@@ -1,0 +1,14 @@
+{
+	"category" : "ObjectHolding-Model",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"explanations" ],
+	"name" : "UnusedHolder",
+	"pools" : [
+		 ],
+	"super" : "HolderBehavior",
+	"type" : "normal" }

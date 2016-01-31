@@ -1,0 +1,4 @@
+configuring
+styleAccordingToAll: aCssStyleNameCollection
+
+	cssStyleNames addAll: aCssStyleNameCollection

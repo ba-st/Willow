@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"propertyCommands",
+		"columnDefinitions",
+		"contentsProvider" ],
+	"name" : "TableWebView",
+	"pools" : [
+		 ],
+	"super" : "WAPresenter",
+	"type" : "normal" }

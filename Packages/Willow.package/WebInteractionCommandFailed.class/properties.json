@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "WebInteractionCommandFailed",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }

@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-SeasideExtensions",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"functionName",
+		"parameters" ],
+	"name" : "JavascriptFunctionCall",
+	"pools" : [
+		 ],
+	"super" : "JSObject",
+	"type" : "normal" }

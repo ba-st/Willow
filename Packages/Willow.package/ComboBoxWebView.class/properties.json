@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "ComboBoxWebView",
+	"pools" : [
+		 ],
+	"super" : "SingleSelectionWebView",
+	"type" : "normal" }

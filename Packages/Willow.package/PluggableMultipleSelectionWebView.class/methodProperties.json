@@ -1,0 +1,8 @@
+{
+	"class" : {
+		"choosingFrom:startingWith:" : "MaximilianoTabacman 7/10/2015 00:10" },
+	"instance" : {
+		"initializeChoosingFrom:startingWith:" : "MaximilianoTabacman 7/10/2015 00:10",
+		"questionAnswer" : "MaximilianoTabacman 7/10/2015 00:05",
+		"renderContentOn:" : "MaximilianoTabacman 7/10/2015 00:06",
+		"resetFieldContents" : "MaximilianoTabacman 7/10/2015 00:05" } }

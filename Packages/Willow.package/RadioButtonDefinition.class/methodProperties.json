@@ -1,0 +1,11 @@
+{
+	"class" : {
+		"doNothing" : "guest 1/5/2014 20:05",
+		"imageButtonCommandUsing:" : "guest 1/5/2014 20:05",
+		"namingWith:" : "guest 1/5/2014 20:05",
+		"namingWith:applying:" : "guest 1/5/2014 20:05",
+		"namingWith:representingWith:" : "guest 1/5/2014 20:05",
+		"new" : "guest 1/5/2014 20:05" },
+	"instance" : {
+		"initializeNamingWith:applying:" : "guest 1/5/2014 20:05",
+		"radioButtonFor:in:" : "guest 1/5/2014 20:05" } }

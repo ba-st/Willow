@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SingleLineTextWebView",
+	"pools" : [
+		 ],
+	"super" : "InputWebView",
+	"type" : "normal" }

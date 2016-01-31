@@ -1,0 +1,4 @@
+configuring
+closeAllDialogs
+
+	self subclassResponsibility

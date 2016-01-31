@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"identifiedView",
+		"serverIndependentActions",
+		"modelLoadingActions" ],
+	"name" : "LoadingNotificationCommand",
+	"pools" : [
+		 ],
+	"super" : "WebInteractionCommand",
+	"type" : "normal" }

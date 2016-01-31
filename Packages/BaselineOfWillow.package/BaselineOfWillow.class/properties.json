@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfWillow",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "MaximilianoTabacman 1/14/2016 08:58",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfWillow",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }

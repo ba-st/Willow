@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-CatalogModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"cssStyles" ],
+	"name" : "CssStyleCommand",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

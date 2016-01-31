@@ -1,0 +1,19 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"contentsBlock",
+		"interactionInterpreter",
+		"readOnly",
+		"afterContentObtainingCommand",
+		"propertyCommands",
+		"identifier" ],
+	"name" : "InputWebView",
+	"pools" : [
+		 ],
+	"super" : "WebViewBehavior",
+	"type" : "normal" }

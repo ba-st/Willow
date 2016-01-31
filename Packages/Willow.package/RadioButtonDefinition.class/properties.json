@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"namingCommand",
+		"stylingCommand" ],
+	"name" : "RadioButtonDefinition",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

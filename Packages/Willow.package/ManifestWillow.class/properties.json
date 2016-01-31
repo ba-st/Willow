@@ -1,0 +1,14 @@
+{
+	"category" : "Willow",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "ManifestWillow",
+	"pools" : [
+		 ],
+	"super" : "PackageManifest",
+	"type" : "normal" }

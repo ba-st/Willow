@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"model",
+		"description" ],
+	"name" : "ModelDescriptionWebView",
+	"pools" : [
+		 ],
+	"super" : "WAPresenter",
+	"type" : "normal" }

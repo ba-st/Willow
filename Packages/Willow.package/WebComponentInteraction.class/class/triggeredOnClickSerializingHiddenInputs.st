@@ -1,0 +1,4 @@
+instance creation
+triggeredOnClickSerializingHiddenInputs
+
+	^self triggeredAccordingTo: ClickingTrigger serializingHiddenInputs

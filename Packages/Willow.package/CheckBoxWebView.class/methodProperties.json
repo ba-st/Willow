@@ -3,9 +3,11 @@
 		"new" : "guest 1/5/2014 20:05" },
 	"instance" : {
 		"contents" : "guest 1/5/2014 20:05",
+		"identifier" : "MaximilianoTabacman 3/10/2016 08:57",
 		"identify:" : "MaximilianoTabacman 4/30/2014 08:58",
 		"identifyWith:" : "MaximilianoTabacman 4/30/2014 08:58",
 		"initialize" : "MaximilianoTabacman 4/30/2014 08:58",
+		"isChecked" : "MaximilianoTabacman 3/15/2016 00:04",
 		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
 		"onTrigger" : "guest 1/5/2014 20:05",
 		"renderContentOn:" : "guest 1/5/2014 20:05",

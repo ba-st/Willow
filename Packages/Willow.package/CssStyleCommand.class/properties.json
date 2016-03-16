@@ -4,11 +4,11 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "MaximilianoTabacman 3/14/2016 09:10",
 	"instvars" : [
 		"cssStyles" ],
 	"name" : "CssStyleCommand",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "ComponentCommandBehavior",
 	"type" : "normal" }

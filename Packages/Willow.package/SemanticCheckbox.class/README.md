@@ -1,0 +1,1 @@
+View for the checkbox input component in Semantic UI

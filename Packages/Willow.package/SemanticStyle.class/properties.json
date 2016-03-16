@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-SemanticUI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "MaximilianoTabacman 3/15/2016 20:00",
+	"instvars" : [
+		"cssClasses" ],
+	"name" : "SemanticStyle",
+	"pools" : [
+		 ],
+	"super" : "WAPresenter",
+	"type" : "normal" }

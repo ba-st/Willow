@@ -10,4 +10,4 @@ tableShowing: aColumnDefinitionCollection obtainingContentsFrom: aContentsProvid
 	^ TableWebView
 		showing: aColumnDefinitionCollection
 		obtainingContentsFrom: aContentsProvider
-		applyingAll: (Array with: styleCommand)
+		applying: styleCommand

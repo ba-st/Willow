@@ -1,0 +1,18 @@
+{
+	"category" : "Willow-SemanticUI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "MaximilianoTabacman 3/13/2016 11:22",
+	"instvars" : [
+		"name",
+		"options",
+		"interactionInterpreter",
+		"selectionHolder",
+		"componentCommand" ],
+	"name" : "SemanticDropdown",
+	"pools" : [
+		 ],
+	"super" : "WAPresenter",
+	"type" : "normal" }

@@ -4,11 +4,11 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "MaximilianoTabacman 3/14/2016 09:06",
 	"instvars" : [
-		"propertyCommands",
 		"columnDefinitions",
-		"contentsProvider" ],
+		"contentsProvider",
+		"componentCommand" ],
 	"name" : "TableWebView",
 	"pools" : [
 		 ],

@@ -1,0 +1,1 @@
+Abstract class for the views relating to the select html component

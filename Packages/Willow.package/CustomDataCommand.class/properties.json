@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-CatalogModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "MaximilianoTabacman 3/16/2016 08:04",
+	"instvars" : [
+		"name",
+		"content" ],
+	"name" : "CustomDataCommand",
+	"pools" : [
+		 ],
+	"super" : "ComponentCommandBehavior",
+	"type" : "normal" }

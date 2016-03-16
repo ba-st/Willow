@@ -1,11 +1,11 @@
 {
 	"class" : {
-		"showing:obtainingContentsFrom:applyingAll:" : "MaximilianoTabacman 12/24/2015 14:47" },
+		"showing:obtainingContentsFrom:applying:" : "MaximilianoTabacman 3/14/2016 09:07" },
 	"instance" : {
 		"contents" : "MaximilianoTabacman 12/24/2015 14:45",
-		"initializeShowing:obtainingContentsFrom:applyingAll:" : "MaximilianoTabacman 12/24/2015 14:47",
+		"initializeShowing:obtainingContentsFrom:applying:" : "MaximilianoTabacman 3/14/2016 09:07",
 		"renderBodyOn:" : "MaximilianoTabacman 12/24/2015 16:04",
-		"renderContentOn:" : "MaximilianoTabacman 12/24/2015 15:14",
+		"renderContentOn:" : "MaximilianoTabacman 3/14/2016 09:07",
 		"renderHeadOn:" : "MaximilianoTabacman 12/24/2015 16:12",
 		"renderHeadingFor:on:" : "MaximilianoTabacman 12/24/2015 16:42",
 		"renderRowFor:on:" : "MaximilianoTabacman 12/24/2015 16:43" } }

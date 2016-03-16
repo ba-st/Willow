@@ -1,0 +1,1 @@
+An interface to access the current catalog and obtain web views.

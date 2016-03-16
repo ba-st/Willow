@@ -1,0 +1,1 @@
+A view to represent an html table

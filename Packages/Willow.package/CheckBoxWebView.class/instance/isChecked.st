@@ -1,0 +1,4 @@
+testing
+isChecked
+
+	^ self contents

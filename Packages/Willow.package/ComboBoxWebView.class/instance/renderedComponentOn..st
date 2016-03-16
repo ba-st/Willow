@@ -1,4 +1,4 @@
 rendering - private
 renderedComponentOn: aCanvas
 
-	^aCanvas select
+	^ aCanvas select

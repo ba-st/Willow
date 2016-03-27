@@ -1,0 +1,1 @@
+A collection of css classes on the class side for JQueryUI

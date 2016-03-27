@@ -2,5 +2,5 @@ configuring
 remove: aCssStyle fromComponentStyledAs: aComponentByStyleName
 
 	interaction
-		onTriggerExecute: (ComponentStyleChangingCommand for: aComponentByStyleName
+		onTriggerExecute: (ComponentStyleCommandModelLoading for: aComponentByStyleName
 				removing: aCssStyle)

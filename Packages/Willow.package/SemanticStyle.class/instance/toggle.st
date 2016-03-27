@@ -1,4 +1,4 @@
-general
+input
 toggle
 
 	cssClasses add: 'toggle'

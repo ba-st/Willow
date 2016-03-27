@@ -1,7 +1,9 @@
 {
 	"class" : {
-		"withTitleDefinedBy:cellsDefinedBy:" : "MaximilianoTabacman 12/24/2015 16:41" },
+		"buildingHeadingWith:cellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:43",
+		"withTitleDefinedBy:cellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:44",
+		"withoutTitleAndCellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:43" },
 	"instance" : {
-		"cellContentFor:" : "MaximilianoTabacman 12/24/2015 16:43",
-		"headingContent" : "MaximilianoTabacman 12/24/2015 16:37",
-		"initializeWithTitleDefinedBy:cellsDefinedBy:" : "MaximilianoTabacman 12/24/2015 16:41" } }
+		"cellContentFor:" : "MaximilianoTabacman 3/23/2016 09:45",
+		"headingContent" : "MaximilianoTabacman 3/25/2016 15:45",
+		"initializeBuildingHeadingWith:cellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:43" } }

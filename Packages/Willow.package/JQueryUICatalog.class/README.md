@@ -1,0 +1,1 @@
+The catalog implementation when using JQuery UI

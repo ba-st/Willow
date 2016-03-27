@@ -6,8 +6,10 @@
 		 ],
 	"commentStamp" : "MaximilianoTabacman 3/16/2016 07:54",
 	"instvars" : [
-		"inputView",
-		"componentCommand" ],
+		"componentCommand",
+		"interactionInterpreter",
+		"content",
+		"inputInterpreter" ],
 	"name" : "SemanticInput",
 	"pools" : [
 		 ],

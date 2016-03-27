@@ -1,0 +1,1 @@
+A table using Semantic UI components where the header is always visible and the body scrolls.

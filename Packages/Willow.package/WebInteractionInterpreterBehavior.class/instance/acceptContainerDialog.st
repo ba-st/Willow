@@ -1,4 +1,0 @@
-configuring
-acceptContainerDialog
-
-	self subclassResponsibility

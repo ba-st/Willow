@@ -1,7 +1,13 @@
 {
 	"class" : {
-		"wrapping:applying:" : "MaximilianoTabacman 3/16/2016 07:50" },
+		"interpretedBy:interactingThrough:applying:" : "MaximilianoTabacman 3/20/2016 12:56" },
 	"instance" : {
-		"initializeWrapping:applying:" : "MaximilianoTabacman 3/16/2016 07:53",
-		"renderContentOn:" : "MaximilianoTabacman 3/16/2016 08:37",
+		"containerComponentOn:" : "MaximilianoTabacman 3/20/2016 11:50",
+		"content" : "MaximilianoTabacman 3/20/2016 12:57",
+		"initializeInterpretedBy:interactingThrough:applying:" : "MaximilianoTabacman 3/20/2016 12:59",
+		"onTrigger" : "MaximilianoTabacman 3/20/2016 11:54",
+		"renderContentOn:" : "MaximilianoTabacman 3/20/2016 11:50",
+		"renderInputOn:" : "MaximilianoTabacman 3/20/2016 12:59",
+		"setContentTo:" : "MaximilianoTabacman 3/20/2016 13:01",
+		"setUninterpretedContentTo:" : "MaximilianoTabacman 3/20/2016 12:59",
 		"uiInputStyleCommand" : "MaximilianoTabacman 3/16/2016 07:53" } }

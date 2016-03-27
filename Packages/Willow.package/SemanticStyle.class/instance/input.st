@@ -1,4 +1,4 @@
-general
+input
 input
 
 	cssClasses add: 'input'

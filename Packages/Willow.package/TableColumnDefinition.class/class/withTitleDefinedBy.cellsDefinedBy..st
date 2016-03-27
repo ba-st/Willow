@@ -1,4 +1,10 @@
 instance creation
-withTitleDefinedBy: aHeadingContent cellsDefinedBy: aCellContentProvider
+withTitleDefinedBy: aHeadingContentProvider cellsDefinedBy: aCellContentProvider
 
-	^ self new initializeWithTitleDefinedBy: aHeadingContent cellsDefinedBy: aCellContentProvider
+	^ self
+		buildingHeadingWith: [ :canvas | 
+			| heading |
+
+			heading := canvas tableHeading.
+			heading with: (aHeadingContentProvider value: heading) ]
+		cellsDefinedBy: aCellContentProvider

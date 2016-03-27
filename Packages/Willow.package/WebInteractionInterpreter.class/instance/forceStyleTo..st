@@ -1,4 +1,4 @@
 configuring
 forceStyleTo: aCssStyle
 
-	interaction onTriggerExecute: (CurrentComponentStyleChangingCommand adding: aCssStyle)
+	interaction onTriggerExecute: (ComponentStyleCommandServerIndependent adding: aCssStyle)

@@ -1,4 +1,0 @@
-configuring
-submitFormStyledAs: aCssStyle
-
-	self subclassResponsibility

@@ -1,4 +1,9 @@
 accessing
 cellContentFor: anElement
 
-	^ [ :canvas | canvas tableData: (cellContentProvider value: anElement) ]
+	^ [ :canvas | 
+	| cell content |
+
+	cell := canvas tableData.
+	content := cellContentProvider value: cell value: anElement.
+	cell with: content ]

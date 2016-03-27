@@ -1,0 +1,15 @@
+{
+	"category" : "Willow-CatalogModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "MaximilianoTabacman 3/20/2016 12:47",
+	"instvars" : [
+		"stringtoModelBlock",
+		"modelToStringBlock" ],
+	"name" : "InputInterpreter",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

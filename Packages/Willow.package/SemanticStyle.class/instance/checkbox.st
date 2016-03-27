@@ -1,4 +1,4 @@
-general
+input
 checkbox
 
 	cssClasses add: 'checkbox'

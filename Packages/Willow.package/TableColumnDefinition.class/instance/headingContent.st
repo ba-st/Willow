@@ -1,4 +1,4 @@
 accessing
 headingContent
 
-	^headingContent
+	^ headingContent

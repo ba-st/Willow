@@ -10,5 +10,5 @@
 	"name" : "WebInteractionInterpreter",
 	"pools" : [
 		 ],
-	"super" : "WebInteractionInterpreterBehavior",
+	"super" : "Object",
 	"type" : "normal" }

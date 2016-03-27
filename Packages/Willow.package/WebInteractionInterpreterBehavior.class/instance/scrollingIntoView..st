@@ -1,4 +1,0 @@
-configuring
-scrollingIntoView: anIdentifier
-
-	self subclassResponsibility

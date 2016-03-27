@@ -1,4 +1,4 @@
 configuring
 changeComponentsStyledAs: anExistingStyle to: aNewStyle
 
-	interaction onTriggerExecute: (ComponentStyleChangingCommand for: anExistingStyle changingTo: aNewStyle)
+	interaction onTriggerExecute: (ComponentStyleCommandModelLoading for: anExistingStyle changingTo: aNewStyle)

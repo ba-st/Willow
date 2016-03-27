@@ -1,0 +1,1 @@
+The definition of a single column, allowing configuration of heading and cell content.

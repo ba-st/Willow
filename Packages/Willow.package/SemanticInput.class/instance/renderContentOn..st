@@ -1,8 +1,8 @@
 rendering
 renderContentOn: aCanvas
 
-	| component |
+	| containerComponent |
 
-	component := aCanvas div.
-	componentCommand applyTo: component on: aCanvas.
-	component with: inputView
+	containerComponent := self containerComponentOn: aCanvas.
+	containerComponent with:
+		[ self renderInputOn: aCanvas ]

@@ -1,4 +1,4 @@
-*Willow-Model-SeasideExtensions
+*Willow-SeasideExtensions
 swappable
 
 	^ self create: Swappable

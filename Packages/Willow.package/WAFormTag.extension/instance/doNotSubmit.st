@@ -1,4 +1,4 @@
-*Willow-Model-SeasideExtensions
+*Willow-SeasideExtensions
 doNotSubmit
 
 	self onSubmit: 'return false;'

@@ -1,4 +1,4 @@
-*Willow-Model-SeasideExtensions
+*Willow-SeasideExtensions
 animate: aBooleanOrNumberOrStringOrObject
 	"Default: {} 
 	If and how to animate changing panels.

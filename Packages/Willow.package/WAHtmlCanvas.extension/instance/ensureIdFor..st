@@ -1,4 +1,4 @@
-*Willow-Model-SeasideExtensions
+*Willow-SeasideExtensions
 ensureIdFor: aComponent
 
 	aComponent id

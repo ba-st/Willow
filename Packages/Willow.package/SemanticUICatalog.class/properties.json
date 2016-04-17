@@ -6,7 +6,7 @@
 		 ],
 	"commentStamp" : "MaximilianoTabacman 3/22/2016 19:54",
 	"instvars" : [
-		 ],
+		"directoryName" ],
 	"name" : "SemanticUICatalog",
 	"pools" : [
 		 ],

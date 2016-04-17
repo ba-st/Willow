@@ -1,0 +1,1 @@
+Smalltalk extension of the JQuery UI Sortable plugin to implement to Swappable plugin.

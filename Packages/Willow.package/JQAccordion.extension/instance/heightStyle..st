@@ -1,4 +1,4 @@
-*Willow-Model-SeasideExtensions
+*Willow-SeasideExtensions
 heightStyle: aString
 	"Default: auto
 	Controls the height of the accordion and each panel. Possible values:

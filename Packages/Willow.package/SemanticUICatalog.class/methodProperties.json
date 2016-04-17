@@ -1,10 +1,12 @@
 {
 	"class" : {
-		 },
+		"deployedIn:" : "MaximilianoTabacman 4/17/2016 10:46" },
 	"instance" : {
 		"activeElementStyle" : "MaximilianoTabacman 3/23/2016 09:41",
 		"bottomMenuWith:" : "MaximilianoTabacman 3/23/2016 09:26",
 		"containerWith:" : "MaximilianoTabacman 3/22/2016 20:09",
+		"filesLocation" : "MaximilianoTabacman 4/17/2016 10:45",
+		"initializeDeployedIn:" : "MaximilianoTabacman 4/17/2016 10:46",
 		"interactiveButtonDescribedBy:" : "MaximilianoTabacman 3/23/2016 09:37",
 		"interactiveButtonDescribedBy:representedBy:" : "MaximilianoTabacman 3/22/2016 20:02",
 		"interactiveButtonRepresentedBy:hinting:" : "MaximilianoTabacman 3/22/2016 20:02",
@@ -17,4 +19,5 @@
 		"rightActiveMenuItemWith:" : "MaximilianoTabacman 3/23/2016 09:34",
 		"rightMenuItemWith:" : "MaximilianoTabacman 3/22/2016 20:18",
 		"tableShowing:obtainingContentsFrom:styledAs:" : "MaximilianoTabacman 3/22/2016 20:02",
-		"topMenuWith:" : "MaximilianoTabacman 3/23/2016 09:31" } }
+		"topMenuWith:" : "MaximilianoTabacman 3/23/2016 09:31",
+		"updateStylesAndScriptsOf:" : "MaximilianoTabacman 4/17/2016 10:45" } }

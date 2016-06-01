@@ -3,6 +3,7 @@ initializeInterpretedBy: anInputInterpreter interactingThrough: anInteractionInt
 
 	inputInterpreter := anInputInterpreter.
 	interactionInterpreter := anInteractionInterpreter.
+	currentInputIdentifier := ''.
 	componentCommand := CompositeComponentCommand
 		applyingAll: (Array with: self uiInputStyleCommand with: aComponentCommand).
 	self setUninterpretedContentTo: ''

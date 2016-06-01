@@ -1,4 +1,4 @@
-menu
+general
 item
 
 	cssClasses add: 'item'

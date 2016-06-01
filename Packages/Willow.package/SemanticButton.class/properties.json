@@ -1,0 +1,16 @@
+{
+	"category" : "Willow-SemanticUI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "MaximilianoTabacman 4/24/2016 13:01",
+	"instvars" : [
+		"interactionInterpreter",
+		"componentCommand",
+		"label" ],
+	"name" : "SemanticButton",
+	"pools" : [
+		 ],
+	"super" : "WAPresenter",
+	"type" : "normal" }

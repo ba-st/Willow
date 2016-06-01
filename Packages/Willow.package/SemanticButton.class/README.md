@@ -1,0 +1,1 @@
+View for the button component in Semantic UI

@@ -1,0 +1,4 @@
+accessing
+nullCommand
+
+	^ CompositeComponentCommand applyingAll: #()

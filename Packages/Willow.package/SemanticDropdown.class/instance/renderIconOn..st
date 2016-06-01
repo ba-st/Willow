@@ -1,4 +1,4 @@
 rendering - private
 renderIconOn: aCanvas
 
-	aCanvas icon class: 'dropdown icon'
+	aCanvas icon class: SemanticStyle for dropdown icon

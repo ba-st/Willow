@@ -9,7 +9,8 @@
 		"componentCommand",
 		"interactionInterpreter",
 		"content",
-		"inputInterpreter" ],
+		"inputInterpreter",
+		"currentInputIdentifier" ],
 	"name" : "SemanticInput",
 	"pools" : [
 		 ],

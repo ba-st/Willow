@@ -1,0 +1,14 @@
+{
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "NullWebInteractionInterpreter",
+	"pools" : [
+		 ],
+	"super" : "WebInteractionInterpreterBehavior",
+	"type" : "normal" }

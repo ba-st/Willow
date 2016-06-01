@@ -2,5 +2,5 @@ rendering - private
 renderNameOn: aCanvas
 
 	aCanvas div
-		class: 'default text';
+		class: SemanticStyle for default text;
 		with: name

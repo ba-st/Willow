@@ -1,4 +1,4 @@
-general
+positioning
 fixed
 
 	cssClasses add: 'fixed'

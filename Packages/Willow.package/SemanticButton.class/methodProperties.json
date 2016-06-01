@@ -1,0 +1,7 @@
+{
+	"class" : {
+		"labeled:interactingThrough:applying:" : "MaximilianoTabacman 4/24/2016 13:00" },
+	"instance" : {
+		"initializeLabeled:interactingThrough:applying:" : "MaximilianoTabacman 4/24/2016 13:00",
+		"onTrigger" : "MaximilianoTabacman 4/24/2016 13:05",
+		"renderContentOn:" : "MaximilianoTabacman 4/24/2016 13:06" } }

@@ -1,4 +1,4 @@
-general
+sizes
 wide
 
 	cssClasses add: 'wide'

@@ -1,7 +1,7 @@
 accessing
 interactiveButtonDescribedBy: aString
 
-	^ [ :canvas | 
-	canvas div
-		class: SemanticStyle ui button;
-		with: aString ]
+	^ SemanticButton
+		labeled: aString
+		interactingThrough: WebInteractionInterpreter forClickOnComponent
+		applying: ComponentCommandBehavior nullCommand

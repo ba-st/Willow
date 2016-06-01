@@ -2,7 +2,6 @@ rendering - private
 renderOptionsOn: aCanvas
 
 	aCanvas div
-		class: 'menu';
+		class: SemanticStyle for menu;
 		with: [ options
-				doWithIndex:
-					[ :option :index | self render: option asOptionAt: index on: aCanvas ] ]
+				doWithIndex: [ :option :index | self render: option asOptionAt: index on: aCanvas ] ]

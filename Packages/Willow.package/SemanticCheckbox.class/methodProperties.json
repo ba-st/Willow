@@ -1,15 +1,13 @@
 {
 	"class" : {
-		"labeled:" : "MaximilianoTabacman 3/14/2016 09:18",
-		"labeled:applying:" : "MaximilianoTabacman 3/14/2016 09:16",
-		"labeledWithContentOf:applying:" : "MaximilianoTabacman 3/14/2016 09:15",
+		"labeled:interactingThrough:" : "MaximilianoTabacman 4/24/2016 13:03",
+		"labeledWithContentOf:interactingThrough:applying:" : "MaximilianoTabacman 4/24/2016 12:53",
 		"noLabelHolder" : "MaximilianoTabacman 3/14/2016 23:57",
-		"unlabeled" : "MaximilianoTabacman 3/14/2016 23:57",
-		"unlabeledApplying:" : "MaximilianoTabacman 3/14/2016 23:58" },
+		"unlabeledInteractingThrough:applying:" : "MaximilianoTabacman 4/24/2016 12:52" },
 	"instance" : {
 		"configureNameOf:on:" : "MaximilianoTabacman 3/13/2016 20:06",
 		"containerComponentOn:" : "MaximilianoTabacman 3/14/2016 09:15",
-		"initializeLabeledWithContentOf:applying:" : "MaximilianoTabacman 3/14/2016 09:15",
+		"initializeLabeledWithContentOf:interactingThrough:applying:" : "MaximilianoTabacman 4/24/2016 12:53",
 		"inputRenderedOn:" : "MaximilianoTabacman 3/14/2016 09:24",
 		"isChecked" : "MaximilianoTabacman 3/13/2016 20:02",
 		"onTrigger" : "MaximilianoTabacman 3/13/2016 20:09",

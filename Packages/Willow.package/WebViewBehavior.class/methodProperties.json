@@ -1,10 +1,13 @@
 {
+	"instance" : {
+		"children" : "guest 1/5/2014 20:05"
+	},
 	"class" : {
 		"multipleStyleCommandUsing:" : "guest 1/5/2014 20:05",
-		"noCommands" : "guest 1/5/2014 20:05",
-		"styleCommandFor:" : "guest 1/5/2014 20:05",
-		"styleCommandForAll:" : "guest 1/5/2014 20:05",
 		"styleCommandUsing:" : "guest 1/5/2014 20:05",
-		"titleCommandUsing:" : "guest 1/5/2014 20:05" },
-	"instance" : {
-		"children" : "guest 1/5/2014 20:05" } }
+		"styleCommandFor:" : "guest 1/5/2014 20:05",
+		"titleCommandUsing:" : "guest 1/5/2014 20:05",
+		"noCommands" : "guest 1/5/2014 20:05",
+		"styleCommandForAll:" : "guest 1/5/2014 20:05"
+	}
+}

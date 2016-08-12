@@ -1,14 +1,11 @@
 {
-	"category" : "Willow-WebInteractionModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "DialogButtonClickingCommand",
-	"pools" : [
-		 ],
 	"super" : "WebInteractionCommand",
-	"type" : "normal" }
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DialogButtonClickingCommand",
+	"type" : "normal"
+}

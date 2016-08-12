@@ -1,5 +1,8 @@
 {
-	"class" : {
-		"new" : "guest 1/5/2014 20:05" },
 	"instance" : {
-		"renderedComponentOn:" : "MaximilianoTabacman 3/13/2016 11:22" } }
+		"renderedComponentOn:" : "MaximilianoTabacman 3/13/2016 11:22"
+	},
+	"class" : {
+		"new" : "guest 1/5/2014 20:05"
+	}
+}

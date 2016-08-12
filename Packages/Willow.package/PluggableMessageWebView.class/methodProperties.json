@@ -1,7 +1,10 @@
 {
-	"class" : {
-		"stating:" : "MaximilianoTabacman 12/28/2015 18:07" },
 	"instance" : {
 		"initializeStating:" : "MaximilianoTabacman 12/28/2015 18:07",
-		"renderContentOn:" : "MaximilianoTabacman 12/28/2015 18:09",
-		"resetFieldContents" : "MaximilianoTabacman 12/28/2015 18:08" } }
+		"resetFieldContents" : "MaximilianoTabacman 12/28/2015 18:08",
+		"renderContentOn:" : "MaximilianoTabacman 12/28/2015 18:09"
+	},
+	"class" : {
+		"stating:" : "MaximilianoTabacman 12/28/2015 18:07"
+	}
+}

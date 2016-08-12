@@ -1,14 +1,13 @@
 {
-	"category" : "Willow-WebInteractionModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		"identifierProvider" ],
-	"name" : "ScrollIntoViewCommand",
-	"pools" : [
-		 ],
 	"super" : "WebInteractionCommand",
-	"type" : "normal" }
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"identifierProvider"
+	],
+	"name" : "ScrollIntoViewCommand",
+	"type" : "normal"
+}

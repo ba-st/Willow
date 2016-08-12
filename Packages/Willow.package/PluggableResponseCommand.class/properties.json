@@ -1,15 +1,14 @@
 {
-	"category" : "Willow-WebInteractionModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
+	"super" : "WebInteractionCommand",
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"behaviorCallback",
-		"interpreter" ],
+		"interpreter"
+	],
 	"name" : "PluggableResponseCommand",
-	"pools" : [
-		 ],
-	"super" : "WebInteractionCommand",
-	"type" : "normal" }
+	"type" : "normal"
+}

@@ -1,14 +1,13 @@
 {
-	"category" : "Willow-WebInteractionModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		"triggerCommand" ],
-	"name" : "CustomTriggeringPolicy",
-	"pools" : [
-		 ],
 	"super" : "TriggeringPolicy",
-	"type" : "normal" }
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"triggerCommand"
+	],
+	"name" : "CustomTriggeringPolicy",
+	"type" : "normal"
+}

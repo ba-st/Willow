@@ -1,16 +1,19 @@
 {
-	"class" : {
-		"named:offering:interactingThrough:applying:" : "MaximilianoTabacman 4/24/2016 12:47" },
 	"instance" : {
-		"configureCallbackOf:" : "MaximilianoTabacman 3/13/2016 20:05",
-		"configureValueOf:" : "MaximilianoTabacman 3/13/2016 20:05",
-		"dropdownScriptOn:" : "MaximilianoTabacman 3/14/2016 08:30",
-		"initializeNamed:offering:interactingThrough:applying:" : "MaximilianoTabacman 4/24/2016 12:46",
-		"onTrigger" : "MaximilianoTabacman 3/13/2016 17:23",
-		"render:asOptionAt:on:" : "MaximilianoTabacman 4/24/2016 12:54",
-		"renderContentOn:" : "MaximilianoTabacman 4/24/2016 12:54",
-		"renderIconOn:" : "MaximilianoTabacman 4/24/2016 12:54",
 		"renderInputOn:" : "MaximilianoTabacman 3/14/2016 09:26",
-		"renderNameOn:" : "MaximilianoTabacman 4/24/2016 12:55",
+		"dropdownScriptOn:" : "MaximilianoTabacman 3/14/2016 08:30",
+		"configureValueOf:" : "MaximilianoTabacman 3/13/2016 20:05",
+		"configureCallbackOf:" : "MaximilianoTabacman 3/13/2016 20:05",
+		"renderContentOn:" : "MaximilianoTabacman 4/24/2016 12:54",
+		"render:asOptionAt:on:" : "MaximilianoTabacman 4/24/2016 12:54",
+		"onTrigger" : "MaximilianoTabacman 3/13/2016 17:23",
+		"renderIconOn:" : "MaximilianoTabacman 4/24/2016 12:54",
+		"selectedElement" : "MaximilianoTabacman 3/13/2016 17:37",
 		"renderOptionsOn:" : "MaximilianoTabacman 4/24/2016 12:55",
-		"selectedElement" : "MaximilianoTabacman 3/13/2016 17:37" } }
+		"renderNameOn:" : "MaximilianoTabacman 4/24/2016 12:55",
+		"initializeNamed:offering:interactingThrough:applying:" : "MaximilianoTabacman 4/24/2016 12:46"
+	},
+	"class" : {
+		"named:offering:interactingThrough:applying:" : "MaximilianoTabacman 4/24/2016 12:47"
+	}
+}

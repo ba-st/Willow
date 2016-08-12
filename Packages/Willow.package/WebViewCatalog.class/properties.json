@@ -1,14 +1,15 @@
 {
+	"commentStamp" : "MaximilianoTabacman 3/16/2016 08:06",
+	"super" : "Object",
 	"category" : "Willow-CatalogModel",
 	"classinstvars" : [
-		"current" ],
-	"classvars" : [
-		 ],
-	"commentStamp" : "MaximilianoTabacman 3/16/2016 08:06",
+		"current"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
-		"frameworkCatalog" ],
+		"frameworkCatalog"
+	],
 	"name" : "WebViewCatalog",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}

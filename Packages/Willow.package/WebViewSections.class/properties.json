@@ -1,14 +1,11 @@
 {
-	"category" : "Willow-CascadingStyleSheets",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "MaximilianoTabacman 3/10/2016 09:04",
-	"instvars" : [
-		 ],
-	"name" : "WebViewSections",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "Willow-CascadingStyleSheets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WebViewSections",
+	"type" : "normal"
+}

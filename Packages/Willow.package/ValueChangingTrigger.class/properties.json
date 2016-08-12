@@ -1,14 +1,11 @@
 {
-	"category" : "Willow-WebInteractionModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "ValueChangingTrigger",
-	"pools" : [
-		 ],
 	"super" : "TriggeringPolicy",
-	"type" : "normal" }
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ValueChangingTrigger",
+	"type" : "normal"
+}

@@ -1,16 +1,15 @@
 {
-	"category" : "Willow-WebInteractionModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
+	"super" : "WebInteractionCommand",
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"callbackToEvaluate",
 		"clientSideParameterHolder",
-		"serverSideParameterHolder" ],
+		"serverSideParameterHolder"
+	],
 	"name" : "EvaluatingCommand",
-	"pools" : [
-		 ],
-	"super" : "WebInteractionCommand",
-	"type" : "normal" }
+	"type" : "normal"
+}

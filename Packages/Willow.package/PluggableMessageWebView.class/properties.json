@@ -1,14 +1,13 @@
 {
-	"category" : "Willow-BasicWebViews",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		"messageView" ],
-	"name" : "PluggableMessageWebView",
-	"pools" : [
-		 ],
 	"super" : "WebViewBehavior",
-	"type" : "normal" }
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"messageView"
+	],
+	"name" : "PluggableMessageWebView",
+	"type" : "normal"
+}

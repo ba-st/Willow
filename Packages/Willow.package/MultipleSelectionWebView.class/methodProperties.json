@@ -1,16 +1,19 @@
 {
-	"class" : {
-		"displayingAtOnce:" : "guest 1/5/2014 20:05" },
 	"instance" : {
-		"choose:" : "guest 1/5/2014 20:05",
-		"clearSelection" : "guest 1/5/2014 20:05",
-		"contents" : "guest 1/5/2014 20:05",
-		"identify:" : "MaximilianoTabacman 4/30/2014 08:58",
-		"identifyWith:" : "MaximilianoTabacman 4/30/2014 08:58",
-		"initializeDisplayingAtOnce:" : "MaximilianoTabacman 4/30/2014 08:58",
+		"selectedElements" : "guest 1/5/2014 20:05",
 		"obtainContents" : "guest 1/5/2014 20:05",
-		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
-		"onTrigger" : "guest 1/5/2014 20:05",
 		"renderContentOn:" : "guest 1/5/2014 20:05",
-		"renderedComponentOn:" : "guest 1/5/2014 20:05",
-		"selectedElements" : "guest 1/5/2014 20:05" } }
+		"initializeDisplayingAtOnce:" : "MaximilianoTabacman 4/30/2014 08:58",
+		"clearSelection" : "guest 1/5/2014 20:05",
+		"identifyWith:" : "MaximilianoTabacman 4/30/2014 08:58",
+		"onTrigger" : "guest 1/5/2014 20:05",
+		"identify:" : "MaximilianoTabacman 4/30/2014 08:58",
+		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
+		"choose:" : "guest 1/5/2014 20:05",
+		"contents" : "guest 1/5/2014 20:05",
+		"renderedComponentOn:" : "guest 1/5/2014 20:05"
+	},
+	"class" : {
+		"displayingAtOnce:" : "guest 1/5/2014 20:05"
+	}
+}

@@ -1,9 +1,12 @@
 {
-	"class" : {
-		"describedBy:styledAccordingTo:obtainingFileUsing:" : "guest 1/5/2014 20:05" },
 	"instance" : {
-		"document" : "guest 1/5/2014 20:05",
 		"initializeDescribedBy:styledAccordingTo:obtainingFileUsing:" : "guest 1/5/2014 20:05",
 		"renderAnchorOn:" : "guest 1/5/2014 20:05",
 		"renderContentOn:" : "guest 1/5/2014 20:05",
-		"response" : "guest 1/5/2014 20:05" } }
+		"response" : "guest 1/5/2014 20:05",
+		"document" : "guest 1/5/2014 20:05"
+	},
+	"class" : {
+		"describedBy:styledAccordingTo:obtainingFileUsing:" : "guest 1/5/2014 20:05"
+	}
+}

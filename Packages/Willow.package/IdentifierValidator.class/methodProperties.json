@@ -1,5 +1,6 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"validate:" : "MaximilianoTabacman 4/30/2014 09:01" } }
+		"validate:" : "MaximilianoTabacman 4/30/2014 09:01"
+	},
+	"class" : { }
+}

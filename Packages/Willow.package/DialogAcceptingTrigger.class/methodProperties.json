@@ -1,8 +1,11 @@
 {
-	"class" : {
-		"defaultSerializationCommand" : "guest 1/5/2014 20:05",
-		"new" : "MaximilianoTabacman 10/24/2014 08:23",
-		"presenting:" : "MaximilianoTabacman 10/24/2014 08:23" },
 	"instance" : {
-		"apply:to:on:" : "MaximilianoTabacman 10/24/2014 08:24",
-		"initializePresenting:" : "MaximilianoTabacman 10/24/2014 08:24" } }
+		"initializePresenting:" : "MaximilianoTabacman 10/24/2014 08:24",
+		"apply:to:on:" : "MaximilianoTabacman 10/24/2014 08:24"
+	},
+	"class" : {
+		"new" : "MaximilianoTabacman 10/24/2014 08:23",
+		"presenting:" : "MaximilianoTabacman 10/24/2014 08:23",
+		"defaultSerializationCommand" : "guest 1/5/2014 20:05"
+	}
+}

@@ -1,10 +1,11 @@
 {
+	"instance" : { },
 	"class" : {
-		"fieldAndLabel" : "guest 1/5/2014 20:05",
-		"loading" : "guest 1/5/2014 20:05",
-		"radio" : "guest 1/5/2014 20:05",
-		"showScrollBarsWhenNeeded" : "guest 1/5/2014 20:05",
 		"tooltipContainer" : "guest 1/5/2014 20:05",
-		"topPageNotification" : "guest 1/5/2014 20:05" },
-	"instance" : {
-		 } }
+		"loading" : "guest 1/5/2014 20:05",
+		"showScrollBarsWhenNeeded" : "guest 1/5/2014 20:05",
+		"topPageNotification" : "guest 1/5/2014 20:05",
+		"radio" : "guest 1/5/2014 20:05",
+		"fieldAndLabel" : "guest 1/5/2014 20:05"
+	}
+}

@@ -1,16 +1,15 @@
 {
-	"category" : "Willow-BasicWebViews",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
+	"super" : "WAComponent",
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"documentProvider",
 		"style",
-		"description" ],
+		"description"
+	],
 	"name" : "FileDownloadWebView",
-	"pools" : [
-		 ],
-	"super" : "WAComponent",
-	"type" : "normal" }
+	"type" : "normal"
+}

@@ -1,9 +1,12 @@
 {
-	"class" : {
-		"buildingHeadingWith:cellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:43",
-		"withTitleDefinedBy:cellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:44",
-		"withoutTitleAndCellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:43" },
 	"instance" : {
+		"initializeBuildingHeadingWith:cellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:43",
 		"cellContentFor:" : "MaximilianoTabacman 3/23/2016 09:45",
-		"headingContent" : "MaximilianoTabacman 3/25/2016 15:45",
-		"initializeBuildingHeadingWith:cellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:43" } }
+		"headingContent" : "MaximilianoTabacman 3/25/2016 15:45"
+	},
+	"class" : {
+		"withoutTitleAndCellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:43",
+		"buildingHeadingWith:cellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:43",
+		"withTitleDefinedBy:cellsDefinedBy:" : "MaximilianoTabacman 3/25/2016 15:44"
+	}
+}

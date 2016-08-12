@@ -1,14 +1,11 @@
 {
-	"category" : "Willow-WebInteractionModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "CloseAllDialogsCommand",
-	"pools" : [
-		 ],
 	"super" : "WebInteractionCommand",
-	"type" : "normal" }
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CloseAllDialogsCommand",
+	"type" : "normal"
+}

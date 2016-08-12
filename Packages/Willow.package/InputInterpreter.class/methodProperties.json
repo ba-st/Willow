@@ -1,9 +1,12 @@
 {
-	"class" : {
-		"forNumbers" : "MaximilianoTabacman 3/20/2016 12:55",
-		"forText" : "MaximilianoTabacman 5/31/2016 08:58",
-		"translatingFrom:to:" : "MaximilianoTabacman 3/20/2016 12:49" },
 	"instance" : {
-		"initializeTranslatingFrom:to:" : "MaximilianoTabacman 3/20/2016 12:50",
 		"inputFor:" : "MaximilianoTabacman 3/20/2016 13:01",
-		"interpretFrom:" : "MaximilianoTabacman 3/20/2016 12:58" } }
+		"interpretFrom:" : "MaximilianoTabacman 3/20/2016 12:58",
+		"initializeTranslatingFrom:to:" : "MaximilianoTabacman 3/20/2016 12:50"
+	},
+	"class" : {
+		"translatingFrom:to:" : "MaximilianoTabacman 3/20/2016 12:49",
+		"forNumbers" : "MaximilianoTabacman 3/20/2016 12:55",
+		"forText" : "MaximilianoTabacman 5/31/2016 08:58"
+	}
+}

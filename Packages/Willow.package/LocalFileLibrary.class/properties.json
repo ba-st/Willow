@@ -1,14 +1,11 @@
 {
-	"category" : "Willow-SeasideExtensions",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "MaximilianoTabacman 4/17/2016 10:26",
-	"instvars" : [
-		 ],
-	"name" : "LocalFileLibrary",
-	"pools" : [
-		 ],
 	"super" : "WAFileLibrary",
-	"type" : "normal" }
+	"category" : "Willow-SeasideExtensions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LocalFileLibrary",
+	"type" : "normal"
+}

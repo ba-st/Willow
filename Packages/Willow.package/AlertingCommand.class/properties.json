@@ -1,14 +1,13 @@
 {
-	"category" : "Willow-WebInteractionModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		"messageProvider" ],
-	"name" : "AlertingCommand",
-	"pools" : [
-		 ],
 	"super" : "WebInteractionCommand",
-	"type" : "normal" }
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"messageProvider"
+	],
+	"name" : "AlertingCommand",
+	"type" : "normal"
+}

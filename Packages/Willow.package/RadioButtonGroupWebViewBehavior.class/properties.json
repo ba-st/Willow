@@ -1,17 +1,16 @@
 {
-	"category" : "Willow-BasicWebViews",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
+	"super" : "WebViewBehavior",
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"selectedElement",
 		"radioButtonViews",
 		"commandsToComponent",
-		"elementSelectionStrategy" ],
+		"elementSelectionStrategy"
+	],
 	"name" : "RadioButtonGroupWebViewBehavior",
-	"pools" : [
-		 ],
-	"super" : "WebViewBehavior",
-	"type" : "normal" }
+	"type" : "normal"
+}

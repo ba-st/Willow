@@ -1,15 +1,14 @@
 {
-	"category" : "Willow-BasicWebViews",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
+	"super" : "WebViewBehavior",
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"commandsToComponent",
-		"interactionInterpreter" ],
+		"interactionInterpreter"
+	],
 	"name" : "StyledButton",
-	"pools" : [
-		 ],
-	"super" : "WebViewBehavior",
-	"type" : "normal" }
+	"type" : "normal"
+}

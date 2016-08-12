@@ -1,8 +1,11 @@
 {
-	"class" : {
-		"describedBy:" : "guest 1/5/2014 20:05" },
 	"instance" : {
 		"initializeDescribedBy:" : "guest 1/5/2014 20:05",
-		"isToggled" : "guest 1/5/2014 20:05",
+		"renderContentOn:" : "guest 1/5/2014 20:05",
 		"onTrigger" : "guest 1/5/2014 20:05",
-		"renderContentOn:" : "guest 1/5/2014 20:05" } }
+		"isToggled" : "guest 1/5/2014 20:05"
+	},
+	"class" : {
+		"describedBy:" : "guest 1/5/2014 20:05"
+	}
+}

@@ -1,14 +1,13 @@
 {
-	"category" : "Willow-BasicWebViews",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "MaximilianoTabacman 3/13/2016 17:04",
-	"instvars" : [
-		"numberOfElementsToDisplay" ],
-	"name" : "MultiLineComboBoxWebView",
-	"pools" : [
-		 ],
 	"super" : "SingleSelectionWebView",
-	"type" : "normal" }
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"numberOfElementsToDisplay"
+	],
+	"name" : "MultiLineComboBoxWebView",
+	"type" : "normal"
+}

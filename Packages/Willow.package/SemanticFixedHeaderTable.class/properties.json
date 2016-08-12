@@ -1,17 +1,16 @@
 {
-	"category" : "Willow-SemanticUI",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "MaximilianoTabacman 3/23/2016 09:58",
+	"super" : "WAPresenter",
+	"category" : "Willow-SemanticUI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"identifiedTableBody",
 		"interactionInterpreter",
 		"columnDefinitions",
-		"elements" ],
+		"elements"
+	],
 	"name" : "SemanticFixedHeaderTable",
-	"pools" : [
-		 ],
-	"super" : "WAPresenter",
-	"type" : "normal" }
+	"type" : "normal"
+}

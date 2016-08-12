@@ -1,20 +1,23 @@
 {
+	"instance" : {
+		"contents" : "guest 1/5/2014 20:05",
+		"selectedElements" : "MaximilianoTabacman 1/7/2016 09:37",
+		"children" : "guest 1/5/2014 20:05",
+		"renderContentOn:" : "guest 1/5/2014 20:05",
+		"initializeDisplaying:with:titled:" : "guest 1/5/2014 20:05",
+		"onTrigger" : "guest 1/5/2014 20:05",
+		"chooseFirst" : "guest 1/5/2014 20:05",
+		"identifier" : "MaximilianoTabacman 4/30/2014 08:52",
+		"readOnly:" : "guest 1/5/2014 20:05",
+		"selectedElement" : "guest 1/5/2014 20:05",
+		"setAutoFocus" : "guest 1/5/2014 20:05",
+		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
+		"choose:" : "guest 1/5/2014 20:05",
+		"changeLabelTo:" : "guest 1/5/2014 20:05",
+		"identifyComponentOn:" : "MaximilianoTabacman 5/1/2014 12:54"
+	},
 	"class" : {
 		"displaying:with:" : "guest 1/5/2014 20:05",
-		"displaying:with:titled:" : "guest 1/5/2014 20:05" },
-	"instance" : {
-		"changeLabelTo:" : "guest 1/5/2014 20:05",
-		"children" : "guest 1/5/2014 20:05",
-		"choose:" : "guest 1/5/2014 20:05",
-		"chooseFirst" : "guest 1/5/2014 20:05",
-		"contents" : "guest 1/5/2014 20:05",
-		"identifier" : "MaximilianoTabacman 4/30/2014 08:52",
-		"identifyComponentOn:" : "MaximilianoTabacman 5/1/2014 12:54",
-		"initializeDisplaying:with:titled:" : "guest 1/5/2014 20:05",
-		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
-		"onTrigger" : "guest 1/5/2014 20:05",
-		"readOnly:" : "guest 1/5/2014 20:05",
-		"renderContentOn:" : "guest 1/5/2014 20:05",
-		"selectedElement" : "guest 1/5/2014 20:05",
-		"selectedElements" : "MaximilianoTabacman 1/7/2016 09:37",
-		"setAutoFocus" : "guest 1/5/2014 20:05" } }
+		"displaying:with:titled:" : "guest 1/5/2014 20:05"
+	}
+}

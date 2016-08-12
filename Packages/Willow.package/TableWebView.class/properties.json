@@ -1,16 +1,15 @@
 {
-	"category" : "Willow-BasicWebViews",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "MaximilianoTabacman 3/14/2016 09:06",
+	"super" : "WAPresenter",
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"columnDefinitions",
 		"contentsProvider",
-		"componentCommand" ],
+		"componentCommand"
+	],
 	"name" : "TableWebView",
-	"pools" : [
-		 ],
-	"super" : "WAPresenter",
-	"type" : "normal" }
+	"type" : "normal"
+}

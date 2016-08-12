@@ -1,14 +1,17 @@
 {
+	"instance" : {
+		"modelLoadingActions" : "MaximilianoTabacman 1/6/2014 23:39",
+		"clientIndependentActions" : "MaximilianoTabacman 1/6/2014 23:39",
+		"priorityActions" : "MaximilianoTabacman 1/6/2014 23:39",
+		"initializeAltering:sending:toComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 10:07",
+		"requiresSerialization" : "MaximilianoTabacman 1/6/2014 23:37",
+		"serverIndependentActions" : "MaximilianoTabacman 3/20/2016 09:40"
+	},
 	"class" : {
+		"toggling:onComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 11:22",
+		"altering:sending:toComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 10:07",
 		"adding:" : "MaximilianoTabacman 3/20/2016 10:06",
 		"adding:toComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 10:06",
-		"altering:sending:toComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 10:07",
-		"removing:fromComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 10:06",
-		"toggling:onComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 11:22" },
-	"instance" : {
-		"clientIndependentActions" : "MaximilianoTabacman 1/6/2014 23:39",
-		"initializeAltering:sending:toComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 10:07",
-		"modelLoadingActions" : "MaximilianoTabacman 1/6/2014 23:39",
-		"priorityActions" : "MaximilianoTabacman 1/6/2014 23:39",
-		"requiresSerialization" : "MaximilianoTabacman 1/6/2014 23:37",
-		"serverIndependentActions" : "MaximilianoTabacman 3/20/2016 09:40" } }
+		"removing:fromComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 10:06"
+	}
+}

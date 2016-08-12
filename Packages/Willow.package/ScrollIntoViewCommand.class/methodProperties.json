@@ -1,11 +1,14 @@
 {
-	"class" : {
-		"withComponentIdentifierProvidedBy:" : "MaximilianoTabacman 4/30/2014 08:56" },
 	"instance" : {
+		"serverIndependentActions" : "guest 1/5/2014 20:05",
+		"priorityActions" : "guest 1/5/2014 20:05",
+		"modelLoadingActions" : "MaximilianoTabacman 4/30/2014 08:54",
 		"clientIndependentActions" : "guest 1/5/2014 20:05",
 		"identifierToShow" : "MaximilianoTabacman 4/30/2014 08:54",
 		"initializeWithComponentIdentifierProvidedBy:" : "MaximilianoTabacman 4/30/2014 08:55",
-		"modelLoadingActions" : "MaximilianoTabacman 4/30/2014 08:54",
-		"priorityActions" : "guest 1/5/2014 20:05",
-		"requiresSerialization" : "guest 1/5/2014 20:05",
-		"serverIndependentActions" : "guest 1/5/2014 20:05" } }
+		"requiresSerialization" : "guest 1/5/2014 20:05"
+	},
+	"class" : {
+		"withComponentIdentifierProvidedBy:" : "MaximilianoTabacman 4/30/2014 08:56"
+	}
+}

@@ -1,6 +1,7 @@
 {
-	"class" : {
-		 },
 	"instance" : {
 		"ensureIdFor:" : "MaximilianoTabacman 4/30/2014 08:51",
-		"icon" : "MaximilianoTabacman 3/13/2016 12:19" } }
+		"icon" : "MaximilianoTabacman 3/13/2016 12:19"
+	},
+	"class" : { }
+}

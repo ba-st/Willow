@@ -1,7 +1,10 @@
 {
-	"class" : {
-		"toStyleWith:" : "MaximilianoTabacman 3/14/2016 09:02",
-		"toStyleWithAll:" : "MaximilianoTabacman 12/24/2015 15:01" },
 	"instance" : {
 		"applyTo:on:" : "MaximilianoTabacman 12/24/2015 14:55",
-		"initializeToStyleWithAll:" : "MaximilianoTabacman 12/24/2015 15:01" } }
+		"initializeToStyleWithAll:" : "MaximilianoTabacman 12/24/2015 15:01"
+	},
+	"class" : {
+		"toStyleWithAll:" : "MaximilianoTabacman 12/24/2015 15:01",
+		"toStyleWith:" : "MaximilianoTabacman 3/14/2016 09:02"
+	}
+}

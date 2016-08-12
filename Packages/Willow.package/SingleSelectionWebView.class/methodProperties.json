@@ -1,21 +1,22 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"choose:" : "guest 1/5/2014 20:05",
-		"chooseFirst" : "guest 1/5/2014 20:05",
-		"clearSelection" : "guest 1/5/2014 20:05",
-		"contents" : "guest 1/5/2014 20:05",
-		"identifier" : "MaximilianoTabacman 4/30/2014 08:52",
-		"identify:" : "MaximilianoTabacman 4/30/2014 08:52",
-		"identifyWith:" : "MaximilianoTabacman 4/30/2014 08:52",
-		"initialize" : "MaximilianoTabacman 4/30/2014 08:52",
+		"styleAccordingToAll:" : "guest 1/5/2014 20:05",
 		"obtainContents" : "guest 1/5/2014 20:05",
+		"renderContentOn:" : "MaximilianoTabacman 9/27/2014 11:35",
+		"clearSelection" : "guest 1/5/2014 20:05",
+		"chooseFirst" : "guest 1/5/2014 20:05",
+		"initialize" : "MaximilianoTabacman 4/30/2014 08:52",
+		"identifyWith:" : "MaximilianoTabacman 4/30/2014 08:52",
+		"identify:" : "MaximilianoTabacman 4/30/2014 08:52",
+		"identifier" : "MaximilianoTabacman 4/30/2014 08:52",
 		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
 		"onTrigger" : "guest 1/5/2014 20:05",
-		"renderContentOn:" : "MaximilianoTabacman 9/27/2014 11:35",
-		"renderedComponentOn:" : "guest 1/5/2014 20:05",
 		"selectedElement" : "guest 1/5/2014 20:05",
 		"styleAccordingTo:" : "guest 1/5/2014 20:05",
-		"styleAccordingToAll:" : "guest 1/5/2014 20:05",
-		"triggeredOnDoubleClick" : "guest 1/5/2014 20:05" } }
+		"triggeredOnDoubleClick" : "guest 1/5/2014 20:05",
+		"choose:" : "guest 1/5/2014 20:05",
+		"contents" : "guest 1/5/2014 20:05",
+		"renderedComponentOn:" : "guest 1/5/2014 20:05"
+	},
+	"class" : { }
+}

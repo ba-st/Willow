@@ -1,7 +1,8 @@
 {
-	"class" : {
-		 },
 	"instance" : {
 		"identifierFor:on:" : "MaximilianoTabacman 4/30/2014 08:51",
 		"identifierFor:using:" : "MaximilianoTabacman 4/30/2014 08:57",
-		"identifierPrefixedBy:using:" : "MaximilianoTabacman 4/30/2014 08:58" } }
+		"identifierPrefixedBy:using:" : "MaximilianoTabacman 4/30/2014 08:58"
+	},
+	"class" : { }
+}

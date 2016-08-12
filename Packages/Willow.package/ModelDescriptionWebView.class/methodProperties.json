@@ -1,7 +1,10 @@
 {
-	"class" : {
-		"describing:with:" : "MaximilianoTabacman 7/26/2015 16:54" },
 	"instance" : {
-		"initializeDescribing:with:" : "MaximilianoTabacman 7/26/2015 16:54",
 		"model" : "MaximilianoTabacman 7/26/2015 16:55",
-		"renderContentOn:" : "MaximilianoTabacman 7/26/2015 16:55" } }
+		"initializeDescribing:with:" : "MaximilianoTabacman 7/26/2015 16:54",
+		"renderContentOn:" : "MaximilianoTabacman 7/26/2015 16:55"
+	},
+	"class" : {
+		"describing:with:" : "MaximilianoTabacman 7/26/2015 16:54"
+	}
+}

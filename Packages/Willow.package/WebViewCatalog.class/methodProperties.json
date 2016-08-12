@@ -1,12 +1,15 @@
 {
+	"instance" : {
+		"interactiveButtonDescribedBy:" : "MrCleaner 12/12/2015 00:17",
+		"interactiveButtonRepresentedBy:hinting:" : "MaximilianoTabacman 12/19/2015 00:53",
+		"updateStylesAndScriptsOf:" : "MaximilianoTabacman 4/17/2016 10:33",
+		"interactiveButtonDescribedBy:representedBy:" : "MaximilianoTabacman 12/28/2015 17:53",
+		"initializeOfferingComponentsFrom:" : "MrCleaner 12/12/2015 00:20",
+		"tableShowing:obtainingContentsFrom:styledAs:" : "MaximilianoTabacman 12/24/2015 14:53"
+	},
 	"class" : {
 		"current" : "MrCleaner 12/12/2015 00:32",
 		"offerComponentsFrom:" : "MrCleaner 12/12/2015 00:19",
-		"offeringComponentsFrom:" : "MrCleaner 12/12/2015 00:20" },
-	"instance" : {
-		"initializeOfferingComponentsFrom:" : "MrCleaner 12/12/2015 00:20",
-		"interactiveButtonDescribedBy:" : "MrCleaner 12/12/2015 00:17",
-		"interactiveButtonDescribedBy:representedBy:" : "MaximilianoTabacman 12/28/2015 17:53",
-		"interactiveButtonRepresentedBy:hinting:" : "MaximilianoTabacman 12/19/2015 00:53",
-		"tableShowing:obtainingContentsFrom:styledAs:" : "MaximilianoTabacman 12/24/2015 14:53",
-		"updateStylesAndScriptsOf:" : "MaximilianoTabacman 4/17/2016 10:33" } }
+		"offeringComponentsFrom:" : "MrCleaner 12/12/2015 00:20"
+	}
+}

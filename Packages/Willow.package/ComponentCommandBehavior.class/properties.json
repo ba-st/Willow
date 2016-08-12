@@ -1,14 +1,11 @@
 {
-	"category" : "Willow-CatalogModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "MaximilianoTabacman 3/14/2016 09:10",
-	"instvars" : [
-		 ],
-	"name" : "ComponentCommandBehavior",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "Willow-CatalogModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ComponentCommandBehavior",
+	"type" : "normal"
+}

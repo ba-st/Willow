@@ -1,9 +1,12 @@
 {
-	"class" : {
-		"choosingFrom:" : "guest 1/5/2014 20:05" },
 	"instance" : {
-		"children" : "guest 1/5/2014 20:05",
+		"resetFieldContents" : "guest 1/5/2014 20:05",
 		"initializeChoosingFrom:" : "guest 1/5/2014 20:05",
-		"questionAnswer" : "guest 1/5/2014 20:05",
 		"renderContentOn:" : "guest 1/5/2014 20:05",
-		"resetFieldContents" : "guest 1/5/2014 20:05" } }
+		"questionAnswer" : "guest 1/5/2014 20:05",
+		"children" : "guest 1/5/2014 20:05"
+	},
+	"class" : {
+		"choosingFrom:" : "guest 1/5/2014 20:05"
+	}
+}

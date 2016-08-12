@@ -1,6 +1,9 @@
 {
-	"class" : {
-		"containing:styledAs:" : "MaximilianoTabacman 2/5/2014 00:02" },
 	"instance" : {
 		"initializeContaining:styledAs:" : "MaximilianoTabacman 2/5/2014 00:02",
-		"renderContentOn:" : "MaximilianoTabacman 2/5/2014 00:41" } }
+		"renderContentOn:" : "MaximilianoTabacman 2/5/2014 00:41"
+	},
+	"class" : {
+		"containing:styledAs:" : "MaximilianoTabacman 2/5/2014 00:02"
+	}
+}

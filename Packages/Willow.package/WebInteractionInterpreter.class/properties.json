@@ -1,14 +1,13 @@
 {
-	"category" : "Willow-WebInteractionModel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		"interaction" ],
-	"name" : "WebInteractionInterpreter",
-	"pools" : [
-		 ],
 	"super" : "WebInteractionInterpreterBehavior",
-	"type" : "normal" }
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"interaction"
+	],
+	"name" : "WebInteractionInterpreter",
+	"type" : "normal"
+}

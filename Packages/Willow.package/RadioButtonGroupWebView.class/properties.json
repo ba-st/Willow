@@ -1,14 +1,11 @@
 {
-	"category" : "Willow-BasicWebViews",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "RadioButtonGroupWebView",
-	"pools" : [
-		 ],
 	"super" : "RadioButtonGroupWebViewBehavior",
-	"type" : "normal" }
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "RadioButtonGroupWebView",
+	"type" : "normal"
+}

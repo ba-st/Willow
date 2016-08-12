@@ -1,12 +1,13 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"clientIndependentActions" : "MaximilianoTabacman 2/15/2014 12:31",
-		"dialogButtonsOn:" : "MaximilianoTabacman 2/15/2014 12:47",
 		"firstDialogButtonOn:" : "MaximilianoTabacman 2/15/2014 12:49",
+		"serverIndependentActions" : "MaximilianoTabacman 2/15/2014 12:48",
+		"dialogButtonsOn:" : "MaximilianoTabacman 2/15/2014 12:47",
 		"modelLoadingActions" : "MaximilianoTabacman 2/15/2014 12:31",
-		"parentDialogOn:" : "MaximilianoTabacman 2/15/2014 12:47",
+		"clientIndependentActions" : "MaximilianoTabacman 2/15/2014 12:31",
 		"priorityActions" : "MaximilianoTabacman 2/15/2014 12:31",
-		"requiresSerialization" : "MaximilianoTabacman 2/15/2014 12:31",
-		"serverIndependentActions" : "MaximilianoTabacman 2/15/2014 12:48" } }
+		"parentDialogOn:" : "MaximilianoTabacman 2/15/2014 12:47",
+		"requiresSerialization" : "MaximilianoTabacman 2/15/2014 12:31"
+	},
+	"class" : { }
+}

@@ -1,11 +1,14 @@
 {
-	"class" : {
-		"findingComponentUsing:" : "MaximilianoTabacman 2/6/2014 08:22",
-		"forFormStyledAs:" : "MaximilianoTabacman 2/6/2014 08:26" },
 	"instance" : {
-		"clientIndependentActions" : "MaximilianoTabacman 2/6/2014 08:26",
-		"initializeFindingComponentUsing:" : "MaximilianoTabacman 2/6/2014 08:25",
 		"modelLoadingActions" : "MaximilianoTabacman 2/6/2014 08:26",
+		"initializeFindingComponentUsing:" : "MaximilianoTabacman 2/6/2014 08:25",
+		"clientIndependentActions" : "MaximilianoTabacman 2/6/2014 08:26",
 		"priorityActions" : "MaximilianoTabacman 2/6/2014 08:27",
 		"requiresSerialization" : "MaximilianoTabacman 2/6/2014 08:27",
-		"serverIndependentActions" : "MaximilianoTabacman 2/6/2014 08:27" } }
+		"serverIndependentActions" : "MaximilianoTabacman 2/6/2014 08:27"
+	},
+	"class" : {
+		"forFormStyledAs:" : "MaximilianoTabacman 2/6/2014 08:26",
+		"findingComponentUsing:" : "MaximilianoTabacman 2/6/2014 08:22"
+	}
+}

@@ -1,15 +1,16 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"asFilename:" : "guest 1/6/2014 04:20",
-		"contentsFoundAt:" : "MaximilianoTabacman 1/6/2014 01:59",
-		"defaultDuration" : "guest 1/6/2014 04:20",
-		"fileNameSeparator" : "guest 1/6/2014 04:20",
-		"fileRequestedIn:" : "guest 1/6/2014 04:20",
 		"fileResourceOf:" : "MaximilianoTabacman 4/1/2014 09:10",
-		"filenameRelatedTo:" : "MaximilianoTabacman 1/8/2014 23:59",
-		"handle:" : "MaximilianoTabacman 4/2/2014 11:32",
 		"handle:whenLookingFor:relatedTo:declaredAs:" : "MaximilianoTabacman 4/2/2014 11:28",
 		"mimeTypeRelatedTo:" : "guest 1/6/2014 04:20",
-		"resourceFoundAt:relatedTo:declaredAs:" : "MaximilianoTabacman 1/6/2014 01:59" } }
+		"defaultDuration" : "guest 1/6/2014 04:20",
+		"contentsFoundAt:" : "MaximilianoTabacman 1/6/2014 01:59",
+		"filenameRelatedTo:" : "MaximilianoTabacman 1/8/2014 23:59",
+		"handle:" : "MaximilianoTabacman 4/2/2014 11:32",
+		"fileRequestedIn:" : "guest 1/6/2014 04:20",
+		"fileNameSeparator" : "guest 1/6/2014 04:20",
+		"asFilename:" : "guest 1/6/2014 04:20",
+		"resourceFoundAt:relatedTo:declaredAs:" : "MaximilianoTabacman 1/6/2014 01:59"
+	},
+	"class" : { }
+}

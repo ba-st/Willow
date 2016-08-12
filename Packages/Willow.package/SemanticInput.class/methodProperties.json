@@ -1,15 +1,18 @@
 {
-	"class" : {
-		"interpretedBy:interactingThrough:applying:" : "MaximilianoTabacman 3/20/2016 12:56" },
 	"instance" : {
-		"assignIdentifierTo:on:" : "MaximilianoTabacman 5/31/2016 09:07",
-		"containerComponentOn:" : "MaximilianoTabacman 3/20/2016 11:50",
-		"content" : "MaximilianoTabacman 3/20/2016 12:57",
-		"identifier" : "MaximilianoTabacman 5/31/2016 09:07",
-		"initializeInterpretedBy:interactingThrough:applying:" : "MaximilianoTabacman 5/31/2016 09:08",
-		"onTrigger" : "MaximilianoTabacman 3/20/2016 11:54",
-		"renderContentOn:" : "MaximilianoTabacman 3/20/2016 11:50",
 		"renderInputOn:" : "MaximilianoTabacman 5/31/2016 09:06",
+		"uiInputStyleCommand" : "MaximilianoTabacman 3/16/2016 07:53",
+		"renderContentOn:" : "MaximilianoTabacman 3/20/2016 11:50",
+		"onTrigger" : "MaximilianoTabacman 3/20/2016 11:54",
 		"setContentTo:" : "MaximilianoTabacman 3/20/2016 13:01",
+		"identifier" : "MaximilianoTabacman 5/31/2016 09:07",
+		"assignIdentifierTo:on:" : "MaximilianoTabacman 5/31/2016 09:07",
 		"setUninterpretedContentTo:" : "MaximilianoTabacman 3/20/2016 12:59",
-		"uiInputStyleCommand" : "MaximilianoTabacman 3/16/2016 07:53" } }
+		"containerComponentOn:" : "MaximilianoTabacman 3/20/2016 11:50",
+		"initializeInterpretedBy:interactingThrough:applying:" : "MaximilianoTabacman 5/31/2016 09:08",
+		"content" : "MaximilianoTabacman 3/20/2016 12:57"
+	},
+	"class" : {
+		"interpretedBy:interactingThrough:applying:" : "MaximilianoTabacman 3/20/2016 12:56"
+	}
+}

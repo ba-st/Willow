@@ -1,9 +1,12 @@
 {
-	"class" : {
-		"askingFor:" : "guest 1/5/2014 20:05" },
 	"instance" : {
-		"children" : "guest 1/5/2014 20:05",
 		"initializeAskingFor:" : "guest 1/5/2014 20:05",
-		"questionAnswer" : "guest 1/5/2014 20:05",
+		"resetFieldContents" : "guest 1/5/2014 20:05",
 		"renderContentOn:" : "MaximilianoTabacman 10/4/2015 09:08",
-		"resetFieldContents" : "guest 1/5/2014 20:05" } }
+		"questionAnswer" : "guest 1/5/2014 20:05",
+		"children" : "guest 1/5/2014 20:05"
+	},
+	"class" : {
+		"askingFor:" : "guest 1/5/2014 20:05"
+	}
+}

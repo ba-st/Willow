@@ -1,7 +1,10 @@
 {
-	"class" : {
-		"combining:" : "guest 1/5/2014 20:05",
-		"combiningInterpretersOf:" : "guest 1/5/2014 20:05" },
 	"instance" : {
 		"doesNotUnderstand:" : "MaximilianoTabacman 3/17/2016 22:34",
-		"initializeCombining:" : "guest 1/5/2014 20:05" } }
+		"initializeCombining:" : "guest 1/5/2014 20:05"
+	},
+	"class" : {
+		"combiningInterpretersOf:" : "guest 1/5/2014 20:05",
+		"combining:" : "guest 1/5/2014 20:05"
+	}
+}

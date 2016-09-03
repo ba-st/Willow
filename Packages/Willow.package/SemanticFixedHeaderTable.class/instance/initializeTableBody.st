@@ -2,6 +2,6 @@ initialize-release
 initializeTableBody
 
 	identifiedTableBody := IdentifiedWebView
-		referringTo: [ :canvas | self renderTableRowsOn: canvas ]
-		as: 'TableBody'
-		obtainingContainerComponentFrom: [ :canvas | canvas tableBody ]
+		forComponentBuiltUsing: [ :canvas | canvas tableBody ]
+		named: 'TableBody'
+		containing: [ :canvas | self renderTableRowsOn: canvas ]

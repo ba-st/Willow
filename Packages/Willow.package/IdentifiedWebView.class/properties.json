@@ -9,8 +9,8 @@
 		"view",
 		"name",
 		"propertyCommands",
-		"containerComponentProvider",
-		"identifierHolder"
+		"identifierHolder",
+		"componentBuilder"
 	],
 	"name" : "IdentifiedWebView",
 	"type" : "normal"

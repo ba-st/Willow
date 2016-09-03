@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "MaximilianoTabacman 8/22/2016 19:34",
+	"super" : "WAPresenter",
+	"category" : "Willow-BasicWebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"title",
+		"contentView",
+		"fieldSetCommand",
+		"legendCommand"
+	],
+	"name" : "FieldSetWebView",
+	"type" : "normal"
+}

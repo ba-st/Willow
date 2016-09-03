@@ -2,5 +2,5 @@ rendering - private
 renderFillerHeadingOn: aCanvas
 
 	aCanvas tableHeading
-		class: ERAAdventuringCssStyles fixHeaderTableFiller;
+		class: WillowCssStyles fixHeaderTableFiller;
 		with: ''

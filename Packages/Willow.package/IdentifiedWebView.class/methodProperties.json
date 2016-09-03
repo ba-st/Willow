@@ -1,17 +1,19 @@
 {
 	"instance" : {
 		"styleAccordingTo:" : "guest 1/5/2014 20:05",
-		"initializeReferringTo:as:obtainingContainerComponentFrom:" : "MaximilianoTabacman 4/30/2014 08:59",
+		"initializeForComponentBuiltUsing:named:containing:" : "MaximilianoTabacman 8/24/2016 22:40",
+		"renderContentOn:" : "MaximilianoTabacman 8/24/2016 22:41",
+		"componentRenderedOn:" : "MaximilianoTabacman 8/24/2016 22:41",
 		"styleAccordingToAll:" : "guest 1/5/2014 20:05",
-		"renderContentOn:" : "MaximilianoTabacman 4/30/2014 08:59",
-		"view" : "guest 1/5/2014 20:05",
 		"id" : "MaximilianoTabacman 4/30/2014 08:51",
+		"view" : "guest 1/5/2014 20:05",
 		"updatedIdentifierUsing:" : "MaximilianoTabacman 4/30/2014 08:59"
 	},
 	"class" : {
-		"referringTo:as:" : "guest 1/5/2014 20:05",
-		"referringToLabeledFieldContaining:as:" : "MaximilianoTabacman 2/19/2014 23:22",
-		"referringToRowContaining:as:" : "guest 1/5/2014 20:05",
-		"referringTo:as:obtainingContainerComponentFrom:" : "MaximilianoTabacman 4/30/2014 08:49"
+		"forDivNamed:containing:" : "MaximilianoTabacman 8/24/2016 22:39",
+		"forSpanNamed:containing:" : "MaximilianoTabacman 8/24/2016 22:41",
+		"forComponentBuiltUsing:named:containing:" : "MaximilianoTabacman 8/24/2016 22:40",
+		"forLabeledFieldNamed:containing:" : "MaximilianoTabacman 8/24/2016 22:39",
+		"forRowNamed:containing:" : "MaximilianoTabacman 8/24/2016 22:39"
 	}
 }

@@ -1,0 +1,4 @@
+accessing - general
+tooltip
+
+	^'tooltip'

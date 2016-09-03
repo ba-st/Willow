@@ -2,8 +2,8 @@ rendering
 renderContentOn: aCanvas
 
 	aCanvas div
-		class: ERAAdventuringCssStyles fixHeaderTableHeader;
+		class: WillowCssStyles fixHeaderTableHeader;
 		with: [ self renderTableHeaderOn: aCanvas ].
 	aCanvas div
-		class: ERAAdventuringCssStyles fixHeaderTableBody;
+		class: WillowCssStyles fixHeaderTableBody;
 		with: [ self renderTableBodyOn: aCanvas ]

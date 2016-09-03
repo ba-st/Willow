@@ -1,8 +1,8 @@
 initialize-release
-initializeReferringTo: aView as: aName obtainingContainerComponentFrom: aContainerComponentProvider
+initializeForComponentBuiltUsing: aComponentBuilder named: aName containing: aView
 
 	view := aView.
 	name := aName.
-	containerComponentProvider := aContainerComponentProvider.
+	componentBuilder := aComponentBuilder.
 	propertyCommands := OrderedCollection new.
 	identifierHolder := UnusedHolder explainedBy: 'Identifier never requested so far'

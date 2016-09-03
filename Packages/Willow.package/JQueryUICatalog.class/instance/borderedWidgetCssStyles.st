@@ -1,4 +1,4 @@
-accessing - private
+accessing
 borderedWidgetCssStyles
 
 	^ OrderedCollection new

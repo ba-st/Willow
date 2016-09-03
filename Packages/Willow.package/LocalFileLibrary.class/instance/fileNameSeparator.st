@@ -1,4 +1,4 @@
 accessing - private
 fileNameSeparator
 
-	^RMSystem fileNameSeparator
+	^ GRPlatform current pathSeparator

@@ -1,0 +1,4 @@
+accessing
+interactiveButtonDescribedBy: aDescription applying: aCommandToComponentCollection
+
+	^ ButtonWebView describedBy: aDescription applying: aCommandToComponentCollection

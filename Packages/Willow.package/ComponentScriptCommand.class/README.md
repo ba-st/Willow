@@ -1,0 +1,1 @@
+Command to execute a JS script on  a component (using script:).

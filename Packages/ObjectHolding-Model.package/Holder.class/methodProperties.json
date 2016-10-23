@@ -1,6 +1,9 @@
 {
-	"class" : {
-		"containing:" : "guest 1/2/2014 21:25" },
 	"instance" : {
 		"initializeContaining:" : "guest 1/2/2014 21:25",
-		"withContentDo:ifUnused:" : "guest 1/2/2014 21:25" } }
+		"withContentDo:ifUnused:" : "guest 1/2/2014 21:25"
+	},
+	"class" : {
+		"containing:" : "guest 1/2/2014 21:25"
+	}
+}

@@ -1,7 +1,10 @@
 {
-	"class" : {
-		"explainedBy:" : "guest 1/2/2014 21:25",
-		"explainedByAll:" : "guest 1/2/2014 21:25" },
 	"instance" : {
 		"initializeExplainedBy:" : "guest 1/2/2014 21:25",
-		"withContentDo:ifUnused:" : "guest 1/2/2014 21:25" } }
+		"withContentDo:ifUnused:" : "guest 1/2/2014 21:25"
+	},
+	"class" : {
+		"explainedByAll:" : "guest 1/2/2014 21:25",
+		"explainedBy:" : "guest 1/2/2014 21:25"
+	}
+}

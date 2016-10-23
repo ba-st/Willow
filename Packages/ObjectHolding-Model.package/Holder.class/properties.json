@@ -1,14 +1,13 @@
 {
-	"category" : "ObjectHolding-Model",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		"content" ],
-	"name" : "Holder",
-	"pools" : [
-		 ],
 	"super" : "HolderBehavior",
-	"type" : "normal" }
+	"category" : "ObjectHolding-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"content"
+	],
+	"name" : "Holder",
+	"type" : "normal"
+}

@@ -1,16 +1,15 @@
 {
-	"category" : "ObjectHolding-Model",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "ObjectHolding-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"holders",
 		"combinationBlock",
-		"combinedHolder" ],
+		"combinedHolder"
+	],
 	"name" : "HolderBuilder",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}

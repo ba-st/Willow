@@ -1,3 +1,0 @@
-code-critics
-ruleRBNoClassCommentRuleV1FalsePositive
-	^ #(#(#(#RGClassDefinition #(#HolderBuilder)) #'2016-01-15T08:06:28.257251-03:00') #(#(#RGClassDefinition #(#InvalidSelection)) #'2016-01-15T08:06:33.131251-03:00') #(#(#RGClassDefinition #(#SelectionIsInvalid)) #'2016-01-15T08:06:35.860251-03:00') #(#(#RGClassDefinition #(#HolderBehavior)) #'2016-01-15T08:06:38.956251-03:00') #(#(#RGClassDefinition #(#UnusedHolder)) #'2016-01-15T08:06:41.895251-03:00') #(#(#RGClassDefinition #(#Holder)) #'2016-01-15T08:06:43.979251-03:00') )

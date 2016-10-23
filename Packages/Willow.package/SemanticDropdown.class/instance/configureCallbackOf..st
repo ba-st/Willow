@@ -1,7 +1,4 @@
 configuring - private
 configureCallbackOf: anInput
 
-	anInput
-		callback: [ :string | 
-			selectionHolder := Holder
-				containing: (options at: string forcedAsNumber) ]
+	anInput callback: [ :indexString | self chooseOptionAt: indexString forcedAsNumber ]

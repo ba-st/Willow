@@ -1,13 +1,16 @@
 {
-	"class" : {
-		"combining:using:" : "guest 1/2/2014 21:25" },
 	"instance" : {
-		"builtHolder" : "guest 1/2/2014 21:25",
-		"initializeCombinedHolder" : "guest 1/2/2014 21:25",
-		"initializeCombining:using:" : "guest 1/2/2014 21:25",
-		"updateCombinedHolderConsidering:" : "guest 1/2/2014 21:25",
+		"updateCombinedHolderToHold:combinedWith:" : "guest 1/2/2014 21:25",
 		"updateCombinedHolderHolding:considering:" : "guest 1/2/2014 21:25",
 		"updateCombinedHolderToBeExplainedBy:and:" : "guest 1/2/2014 21:25",
+		"initializeCombining:using:" : "guest 1/2/2014 21:25",
 		"updateCombinedHolderToHold:" : "guest 1/2/2014 21:25",
-		"updateCombinedHolderToHold:combinedWith:" : "guest 1/2/2014 21:25",
-		"updateUnusedCombinedHolderExplainedBy:considering:" : "guest 1/2/2014 21:25" } }
+		"initializeCombinedHolder" : "guest 1/2/2014 21:25",
+		"updateCombinedHolderConsidering:" : "guest 1/2/2014 21:25",
+		"updateUnusedCombinedHolderExplainedBy:considering:" : "guest 1/2/2014 21:25",
+		"builtHolder" : "guest 1/2/2014 21:25"
+	},
+	"class" : {
+		"combining:using:" : "guest 1/2/2014 21:25"
+	}
+}

@@ -1,6 +1,7 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"withContentDo:" : "guest 1/2/2014 21:25",
-		"withContentDo:ifUnused:" : "guest 1/2/2014 21:25" } }
+		"withContentDo:ifUnused:" : "guest 1/2/2014 21:25",
+		"withContentDo:" : "guest 1/2/2014 21:25"
+	},
+	"class" : { }
+}

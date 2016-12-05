@@ -2,12 +2,12 @@ initialize-release
 prepareActions
 
 	| serializationRequired |
+
 	serializationRequired := false.
 	self initializeActions.
-	commands do: 
-			[:aCommand |
+	commands
+		do: [ :aCommand | 
 			self registerActionsOf: aCommand.
-			serializationRequired := serializationRequired
-						or: [aCommand requiresSerialization]].
+			serializationRequired := serializationRequired or: [ aCommand requiresSerialization ] ].
 	serializationRequired
-		ifTrue: [self registerActionsOf: triggerPolicy serializationCommand]
+		ifTrue: [ self registerActionsOf: serializationCommand ]

@@ -1,4 +1,6 @@
 instance creation
 triggeredOnChange
 
-	^self triggeredAccordingTo: ValueChangingTrigger new
+	^ self
+		triggeredAccordingTo: InteractionScriptTrigger triggeringOnChange
+		serializingWith: SerializationCommand forCurrentObject

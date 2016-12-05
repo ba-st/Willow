@@ -1,11 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "Object",
+	"super" : "TriggeringPolicy",
 	"category" : "Willow-WebInteractionModel",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "TriggeringPolicy",
+	"instvars" : [
+		"functionSelector",
+		"argumentNames"
+	],
+	"name" : "FunctionEvaluationTrigger",
 	"type" : "normal"
 }

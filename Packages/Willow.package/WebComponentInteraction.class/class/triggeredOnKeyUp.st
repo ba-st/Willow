@@ -1,4 +1,6 @@
 instance creation
 triggeredOnKeyUp
 
-	^self triggeredAccordingTo: KeyReleasingTrigger new
+	^ self
+		triggeredAccordingTo: InteractionScriptTrigger triggeringOnKeyUp
+		serializingWith: SerializationCommand forCurrentObject

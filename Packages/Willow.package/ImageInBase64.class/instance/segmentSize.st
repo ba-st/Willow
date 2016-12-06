@@ -1,12 +1,11 @@
 accessing - private
 segmentSize
 
-	"El tamaño del segmento está basado en pruebas usando Fuel para serializar razas y profesiones.
-Al probar serializar un base64 entero se cerraba la imagen (General Protection Fault?).
-Se decidió partirla en segmentos para luego recominarlos en memoria.
-Haciendo pruebas se observó que con segmentos de hasta 2048 caracteres funciona sin problemas.
-En cuanto se usan segmentos de 2049, sea para imágenes de todas las profesiones o razas, se rompe.
-Esto ocurre en cuanto al menos 2 profesiones/razas tienen una imagen base64 internamente.
-Se decide dejar en 512 para dar lugar a futuros cambios inesperados en Fuel."
+	"This is based on trying to use Fuel to serialize objects that contain base64 strings.
+When using the whole string the image would crash (General Protection Fault?).
+It was decided to create this class to partition the string and recombine it later as needed.
+Up to 2048 characters there seems to be no problem.
+Segments of size 2049 or more create the issue observed.
+In order to leave room for unexpected future changes in Fuel, it is decided to use chunks of 512 characters."
 
 	^ 512

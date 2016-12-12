@@ -5,10 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"numberOfColumns",
-		"numberOfRows"
-	],
+	"instvars" : [ ],
 	"name" : "MultiLineTextWebView",
 	"type" : "normal"
 }

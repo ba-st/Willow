@@ -1,0 +1,4 @@
+instance creation
+executingAll: aServerIndependentActionCollection
+
+	^self new initializeExecutingAll: aServerIndependentActionCollection

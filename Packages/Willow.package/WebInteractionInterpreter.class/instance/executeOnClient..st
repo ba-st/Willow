@@ -1,0 +1,5 @@
+configuring
+executeOnClient: aServerIndependentAction
+
+	interaction
+		onTriggerExecute: (PluggableExecutionOnClientCommand executingOnly: aServerIndependentAction)

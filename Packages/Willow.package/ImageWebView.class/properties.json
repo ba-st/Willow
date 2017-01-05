@@ -1,14 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "WebViewBehavior",
-	"category" : "Willow-BasicWebViews",
+	"super" : "WAPresenter",
+	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"imageProvider",
 		"interactionInterpreter",
-		"propertyCommands"
+		"commandToComponent",
+		"imageLocation"
 	],
 	"name" : "ImageWebView",
 	"type" : "normal"

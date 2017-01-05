@@ -1,4 +1,4 @@
 *Willow-SeasideExtensions
 / aString
 
-	^ self addToPath: aString
+	^ self with: aString

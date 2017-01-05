@@ -2,5 +2,5 @@ instance creation
 forNumbers
 
 	^ self
-		translatingFrom: [ :string | string forcedAsNumber ]
+		translatingFrom: [ :string | string asNumber ]
 		to: [ :number | number asString ]

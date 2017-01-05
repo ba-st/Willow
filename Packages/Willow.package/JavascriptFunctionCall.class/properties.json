@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "MaximilianoTabacman 4/17/2016 10:28",
 	"super" : "JSObject",
-	"category" : "Willow-SeasideExtensions",
+	"category" : "Willow-WebInteractionModel",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

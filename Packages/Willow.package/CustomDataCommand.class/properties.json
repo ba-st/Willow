@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/16/2016 08:04",
 	"super" : "ComponentCommandBehavior",
-	"category" : "Willow-CatalogModel",
+	"category" : "Willow-FrontendComponentSupplierModel",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

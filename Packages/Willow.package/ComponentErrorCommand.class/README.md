@@ -1,0 +1,1 @@
+Command to determine behavior when a component signals an error (using onError:).

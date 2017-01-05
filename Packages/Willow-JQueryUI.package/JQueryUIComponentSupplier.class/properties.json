@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "MaximilianoTabacman 3/22/2016 19:53",
+	"super" : "FrontendComponentSupplier",
+	"category" : "Willow-JQueryUI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"filesLocation"
+	],
+	"name" : "JQueryUIComponentSupplier",
+	"type" : "normal"
+}

@@ -1,0 +1,1 @@
+Abstract class for the front-end component suppliers, like Bootstrap, JqueryUI, etc.

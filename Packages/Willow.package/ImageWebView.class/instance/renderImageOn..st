@@ -1,9 +1,9 @@
-rendering - private
+rendering
 renderImageOn: aCanvas
 
 	| component |
 
 	component := aCanvas image.
-	component url: LocalFileLibrary / (ImageSelectorResolver new for: imageProvider value).
-	propertyCommands do: [ :command | command value: component value: aCanvas ].
+	component url: imageLocation.
+	commandToComponent applyTo: component on: aCanvas.
 	^ component

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "MaximilianoTabacman 12/7/2016 08:54",
+	"super" : "Error",
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SelectionIsInvalid",
+	"type" : "normal"
+}

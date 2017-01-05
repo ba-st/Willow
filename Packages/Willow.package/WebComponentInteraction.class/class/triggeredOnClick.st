@@ -1,4 +1,6 @@
 instance creation
 triggeredOnClick
 
-	^self triggeredAccordingTo: ClickingTrigger new
+	^ self
+		triggeredAccordingTo: InteractionScriptTrigger triggeringOnClick
+		serializingWith: NullCommand new

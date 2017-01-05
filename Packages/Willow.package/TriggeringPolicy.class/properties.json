@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"serializationCommand"
-	],
+	"instvars" : [ ],
 	"name" : "TriggeringPolicy",
 	"type" : "normal"
 }

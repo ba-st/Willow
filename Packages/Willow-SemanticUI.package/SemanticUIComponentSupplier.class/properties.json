@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "MaximilianoTabacman 3/22/2016 19:54",
+	"super" : "FrontendComponentSupplier",
+	"category" : "Willow-SemanticUI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"filesLocation"
+	],
+	"name" : "SemanticUIComponentSupplier",
+	"type" : "normal"
+}

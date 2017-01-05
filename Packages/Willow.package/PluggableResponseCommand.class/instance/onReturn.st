@@ -1,7 +1,6 @@
 configuring
 onReturn
 
-	"Este mensaje no es estrictamente necesario, se implementa para ayudar a la legibilidad 
-	cuando se usa el interpreter desde quienes lo configuran."
+	"This message is not strictly needed. It is implemented merely to help with legibility of the code when being configured."
 
 	^ interpreter

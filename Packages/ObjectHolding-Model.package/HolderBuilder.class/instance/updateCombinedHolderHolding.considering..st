@@ -1,4 +1,4 @@
-processing
+processing - private
 updateCombinedHolderHolding: combinedContent considering: holder
 
 	holder withContentDo: 

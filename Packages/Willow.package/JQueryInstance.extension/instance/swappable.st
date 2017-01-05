@@ -1,4 +1,4 @@
-*Willow-SeasideExtensions
+*Willow-JQueryUI
 swappable
 
 	^ self create: Swappable

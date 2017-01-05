@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "MaximilianoTabacman 1/2/2017 21:20",
+	"super" : "ComponentCommandBehavior",
+	"category" : "Willow-FrontendComponentSupplierModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"actionProvider"
+	],
+	"name" : "ComponentErrorCommand",
+	"type" : "normal"
+}

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WebInteractionCommand",
+	"category" : "Willow-WebInteractionModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"serverIndependentActions"
+	],
+	"name" : "PluggableExecutionOnClientCommand",
+	"type" : "normal"
+}

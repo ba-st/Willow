@@ -1,0 +1,1 @@
+Command to set the title attribute of a component (using title:).

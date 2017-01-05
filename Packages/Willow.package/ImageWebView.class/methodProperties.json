@@ -1,20 +1,11 @@
 {
 	"instance" : {
-		"renderContentOn:" : "guest 1/5/2014 20:05",
+		"initializeLocatedAt:applying:" : "MaximilianoTabacman 1/2/2017 22:12",
 		"onTrigger" : "guest 1/5/2014 20:05",
-		"renderImageOn:" : "MaximilianoTabacman 5/1/2014 12:39",
-		"initializeObtainingImageFrom:applying:" : "guest 1/5/2014 20:05"
+		"renderImageOn:" : "MaximilianoTabacman 1/2/2017 22:13",
+		"renderContentOn:" : "guest 1/5/2014 20:05"
 	},
 	"class" : {
-		"obtainingImageFrom:" : "guest 1/5/2014 20:05",
-		"titledUsing:displayingImageAt:styledAccordingToAll:" : "guest 1/5/2014 20:05",
-		"obtainingImageFrom:applying:" : "guest 1/5/2014 20:05",
-		"titledUsing:displayingImageAt:styledAccordingTo:" : "guest 1/5/2014 20:05",
-		"displayingImageAt:applying:" : "guest 1/5/2014 20:05",
-		"titled:displayingImageAt:styledAccordingTo:" : "guest 1/5/2014 20:05",
-		"displayingImageAt:" : "guest 1/5/2014 20:05",
-		"displayingImageAt:styledAccordingTo:" : "guest 1/5/2014 20:05",
-		"titledUsing:displayingImageAt:" : "guest 1/5/2014 20:05",
-		"titled:displayingImageAt:" : "guest 1/5/2014 20:05"
+		"locatedAt:applying:" : "MaximilianoTabacman 1/2/2017 22:11"
 	}
 }

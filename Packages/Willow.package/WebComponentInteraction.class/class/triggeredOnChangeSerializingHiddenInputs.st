@@ -1,4 +1,6 @@
 instance creation
 triggeredOnChangeSerializingHiddenInputs
 
-	^self triggeredAccordingTo: ValueChangingTrigger serializingHiddenInputs
+	^ self
+		triggeredAccordingTo: InteractionScriptTrigger triggeringOnChange
+		serializingWith: SerializationCommand forCurrentObjectWithHiddenInputs

@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
-	"super" : "WAComponent",
-	"category" : "Willow-BasicWebViews",
+	"super" : "WAPresenter",
+	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

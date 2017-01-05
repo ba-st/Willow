@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "MaximilianoTabacman 1/5/2017 09:56",
+	"super" : "RadioButtonGroupWebViewBehavior",
+	"category" : "Willow-JQueryUI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JQueryUIButtonSetWebView",
+	"type" : "normal"
+}

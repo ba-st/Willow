@@ -1,0 +1,1 @@
+An exception signalled when some InvalidSelection received a message.

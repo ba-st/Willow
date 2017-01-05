@@ -1,4 +1,4 @@
-processing
+processing - private
 updateCombinedHolderToHold: content combinedWith: combinedContent
 
 	combinedHolder := Holder

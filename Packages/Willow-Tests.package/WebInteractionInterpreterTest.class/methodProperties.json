@@ -1,0 +1,23 @@
+{
+	"instance" : {
+		"testInform" : "MaximilianoTabacman 12/6/2016 12:36",
+		"configureTextInputWith:" : "MaximilianoTabacman 12/6/2016 11:51",
+		"testForChangeInComponentValue" : "MaximilianoTabacman 12/6/2016 12:13",
+		"testForClickOnComponent" : "MaximilianoTabacman 12/6/2016 12:13",
+		"testForAcceptanceOfDialogWith" : "MaximilianoTabacman 12/6/2016 12:21",
+		"codec" : "MaximilianoTabacman 12/6/2016 12:20",
+		"testEvaluate" : "MaximilianoTabacman 12/6/2016 12:34",
+		"testForChangeInHiddenInputDependentComponentValue" : "MaximilianoTabacman 12/6/2016 12:13",
+		"configureDialogWith:" : "MaximilianoTabacman 12/6/2016 12:21",
+		"testEvaluateWith" : "MaximilianoTabacman 12/6/2016 12:35",
+		"testExecuteOnClient" : "MaximilianoTabacman 12/8/2016 13:12",
+		"testForDelayedModelLoading" : "MaximilianoTabacman 12/6/2016 12:33",
+		"testForDoubleClickOnComponent" : "MaximilianoTabacman 12/6/2016 12:14",
+		"testForEvaluationOfWithAll" : "MaximilianoTabacman 12/6/2016 12:15",
+		"testForReleaseOfKeyInComponent" : "MaximilianoTabacman 12/6/2016 12:15",
+		"configureScriptWith:" : "MaximilianoTabacman 12/6/2016 12:32",
+		"testForClickOnHiddenInputDependentComponent" : "MaximilianoTabacman 12/13/2016 00:11",
+		"testInformSelection" : "MaximilianoTabacman 12/6/2016 12:36"
+	},
+	"class" : { }
+}

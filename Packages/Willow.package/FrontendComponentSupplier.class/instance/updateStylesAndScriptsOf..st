@@ -1,0 +1,4 @@
+processing
+updateStylesAndScriptsOf: aRoot
+
+	self subclassResponsibility

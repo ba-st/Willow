@@ -1,1 +1,0 @@
-A file library that looks in a local directory.

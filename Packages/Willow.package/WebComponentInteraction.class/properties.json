@@ -11,7 +11,8 @@
 		"modelLoadingActions",
 		"clientIndependentActions",
 		"priorityActions",
-		"serverIndependentActions"
+		"serverIndependentActions",
+		"serializationCommand"
 	],
 	"name" : "WebComponentInteraction",
 	"type" : "normal"

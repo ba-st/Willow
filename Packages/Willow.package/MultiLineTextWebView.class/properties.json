@@ -1,14 +1,11 @@
 {
 	"commentStamp" : "",
 	"super" : "InputWebView",
-	"category" : "Willow-BasicWebViews",
+	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"numberOfColumns",
-		"numberOfRows"
-	],
+	"instvars" : [ ],
 	"name" : "MultiLineTextWebView",
 	"type" : "normal"
 }

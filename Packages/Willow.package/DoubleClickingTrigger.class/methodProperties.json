@@ -1,8 +1,0 @@
-{
-	"instance" : {
-		"apply:to:on:" : "guest 1/5/2014 20:05"
-	},
-	"class" : {
-		"defaultSerializationCommand" : "guest 1/5/2014 20:05"
-	}
-}

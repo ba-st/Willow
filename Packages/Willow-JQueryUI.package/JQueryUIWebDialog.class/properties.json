@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "MaximilianoTabacman 1/5/2017 09:54",
+	"super" : "WAComponent",
+	"category" : "Willow-JQueryUI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"contentsView",
+		"interactionInterpreter",
+		"title"
+	],
+	"name" : "JQueryUIWebDialog",
+	"type" : "normal"
+}

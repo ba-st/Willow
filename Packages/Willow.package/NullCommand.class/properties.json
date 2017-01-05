@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "WebInteractionCommand",
-	"category" : "Willow-WebInteractionModel",
+	"category" : "Willow-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

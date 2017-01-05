@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/14/2016 09:10",
 	"super" : "Object",
-	"category" : "Willow-FrontendComponentSupplierModel",
+	"category" : "Willow-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

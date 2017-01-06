@@ -1,4 +1,4 @@
 instance creation
 forDelayedModelLoading
 
-	^ self workingWith: PluggableModelLoader new
+	^ self workingWith: DelayedModelLoader new

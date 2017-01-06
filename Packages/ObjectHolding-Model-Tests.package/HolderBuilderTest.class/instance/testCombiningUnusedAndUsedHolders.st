@@ -11,5 +11,5 @@ testCombiningUnusedAndUsedHolders
 
 	self
 		assert:
-			(builder builtHolder withContentDo: [ :model | model ] ifUnused: [ :explanations | explanations ])
+			(builder builtHolder withContentDo: [ :model | model ] ifUnused: [ :explanations | self fail ])
 		equals: 34

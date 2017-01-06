@@ -1,4 +1,4 @@
-test support
+*Willow-JQueryUI-Tests
 configureDialogWith: interpreter
 
 	| builder html |

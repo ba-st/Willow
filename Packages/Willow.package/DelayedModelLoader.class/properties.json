@@ -1,13 +1,13 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "Willow-WebInteractionModel",
+	"category" : "Willow-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
 		"commands"
 	],
-	"name" : "PluggableModelLoader",
+	"name" : "DelayedModelLoader",
 	"type" : "normal"
 }

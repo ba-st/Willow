@@ -33,15 +33,14 @@
 		"remove:fromComponentFoundWith:" : "MaximilianoTabacman 3/20/2016 10:06"
 	},
 	"class" : {
-		"forDelayedModelLoading" : "MaximilianoTabacman 8/28/2015 09:08",
-		"forEvaluationOf:withAll:" : "MaximilianoTabacman 12/5/2016 09:51",
-		"forReleaseOfKeyInComponent" : "guest 1/5/2014 20:05",
-		"forAcceptanceOfDialogWith:" : "MaximilianoTabacman 12/5/2016 11:06",
 		"forClickOnHiddenInputDependentComponent" : "guest 1/5/2014 20:05",
-		"forChangeInHiddenInputDependentComponentValue" : "guest 1/5/2014 20:05",
+		"forClickOnComponent" : "guest 1/5/2014 20:05",
+		"forDelayedModelLoading" : "GabrielOmarCotelli 1/6/2017 09:56",
+		"forEvaluationOf:withAll:" : "MaximilianoTabacman 12/5/2016 09:51",
 		"forChangeInComponentValue" : "guest 1/5/2014 20:05",
-		"workingWith:" : "guest 1/5/2014 20:05",
+		"forChangeInHiddenInputDependentComponentValue" : "guest 1/5/2014 20:05",
 		"forDoubleClickOnComponent" : "guest 1/5/2014 20:05",
-		"forClickOnComponent" : "guest 1/5/2014 20:05"
+		"forReleaseOfKeyInComponent" : "guest 1/5/2014 20:05",
+		"workingWith:" : "guest 1/5/2014 20:05"
 	}
 }

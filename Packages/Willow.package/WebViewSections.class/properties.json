@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/10/2016 09:04",
 	"super" : "Object",
-	"category" : "Willow-WebInteractionModel",
+	"category" : "Willow-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

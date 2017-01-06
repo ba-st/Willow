@@ -1,4 +1,4 @@
-instance creation - private
+private
 triggeredAccordingTo: aTriggerPolicy serializingWith: aSerializationCommand
 
 	^ self new

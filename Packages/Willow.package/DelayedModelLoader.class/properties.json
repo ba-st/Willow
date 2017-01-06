@@ -8,6 +8,6 @@
 	"instvars" : [
 		"commands"
 	],
-	"name" : "PluggableModelLoader",
+	"name" : "DelayedModelLoader",
 	"type" : "normal"
 }

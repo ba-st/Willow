@@ -1,8 +1,10 @@
 test
 testIdentifierPrefixedByUsing
 
-	| assigner identifier |
+	| assigner |
 
 	assigner := IdentifierAssigner new.
-	identifier := assigner identifierPrefixedBy: 'givenTag' using: 'specificId'.
-	self assert: identifier equals: 'givenTag-specificId'
+
+	self
+		assert: (assigner identifierPrefixedBy: 'givenTag' using: 'specificId') equals: 'givenTag-specificId';
+		assert: (assigner identifierPrefixedBy: 'table' using: 123) equals: 'table-123'

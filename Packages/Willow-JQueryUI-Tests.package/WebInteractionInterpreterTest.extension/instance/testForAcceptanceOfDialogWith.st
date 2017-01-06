@@ -1,4 +1,4 @@
-test - instance creation
+*Willow-JQueryUI-Tests
 testForAcceptanceOfDialogWith
 
 	| interpreter html |

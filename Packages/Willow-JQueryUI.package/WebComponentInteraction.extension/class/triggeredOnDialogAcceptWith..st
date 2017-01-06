@@ -1,4 +1,4 @@
-instance creation
+*Willow-JQueryUI
 triggeredOnDialogAcceptWith: anAcceptButtonText
 
 	^ self

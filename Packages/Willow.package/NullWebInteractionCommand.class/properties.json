@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "GabrielOmarCotelli 1/6/2017 11:59",
 	"super" : "WebInteractionCommand",
 	"category" : "Willow-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "NullCommand",
+	"name" : "NullWebInteractionCommand",
 	"type" : "normal"
 }

@@ -3,4 +3,4 @@ triggeredOnClick
 
 	^ self
 		triggeredAccordingTo: InteractionScriptTrigger triggeringOnClick
-		serializingWith: NullCommand new
+		serializingWith: NullWebInteractionCommand new

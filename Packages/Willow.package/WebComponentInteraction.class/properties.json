@@ -4,7 +4,9 @@
 	"category" : "Willow-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [ ],
+	"classvars" : [
+		"ExceptionsToIgnore"
+	],
 	"instvars" : [
 		"triggerPolicy",
 		"commands",

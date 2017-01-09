@@ -7,16 +7,6 @@ onPageTopWithClasses: aCssClassCollection
 					aScript << (aCanvas jQuery id: WillowConstants notificationSectionName)
 						html: [ :aSubCanvas | 
 							aSubCanvas div
-								classes:
-									(Array
-										with: WillowCssStyles topPageNotification
-										with: JQueryCssStyles uiStateFocus
-										with: JQueryCssStyles uiWidget
-										with: JQueryCssStyles uiWidgetHeader
-										with: JQueryCssStyles uiCornerAll);
+								classes: aCssClassCollection;
 								with: 'Loading...' ] ])
-		then:
-			(Array
-				with: [ :aScript :aCanvas | 
-					aScript << (aCanvas jQuery id: WillowConstants notificationSectionName)
-						html: [ :aSubCanvas |  ] ])
+		then: (Array with: [ :aScript :aCanvas | aScript << (aCanvas jQuery id: WillowConstants notificationSectionName) html: [ :aSubCanvas |  ] ])

@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"initializeOn:altering:sending:using:" : "GabrielOmarCotelli 1/9/2017 13:29",
+		"styleToChange" : "GabrielOmarCotelli 1/9/2017 13:32",
+		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 13:38",
+		"componentProvider" : "GabrielOmarCotelli 1/9/2017 13:32",
+		"transformationMessage" : "GabrielOmarCotelli 1/9/2017 13:35",
+		"serverIndependentActions" : "guest 1/5/2014 20:05"
+	},
+	"class" : {
+		"on:altering:sending:using:" : "GabrielOmarCotelli 1/9/2017 15:12"
+	}
+}

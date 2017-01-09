@@ -1,6 +1,6 @@
-configuring
+Configuring - CSS
 remove: aCssStyle fromComponentStyledAs: aComponentByStyleName
-
-	interaction
-		onTriggerExecute: (ComponentStyleCommandModelLoading for: aComponentByStyleName
-				removing: aCssStyle)
+	self
+		deprecated: 'Please use #onAjaxSuccessRemoveCssClass:fromComponentsWithClass: instead.'
+		transformWith: '`@receiver remove: `@aCssStyle fromComponentStyledAs: `@aComponentProvider' -> '@receiver onAjaxSuccessRemoveCssClass: `@aCssStyle fromComponentsWithClass: `@aComponentProvider'.
+	self onAjaxSuccessRemoveCssClass: aCssStyle fromComponentsWithClass: aComponentByStyleName

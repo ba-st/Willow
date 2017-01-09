@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "ComponentStyleClassChangingCommand",
+	"category" : "Willow-WebInteraction",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"componentProvider",
+		"transformationProvider",
+		"transformationMessage",
+		"styleToChange"
+	],
+	"name" : "ModelLoadingComponentStyleClassChangingCommand",
+	"type" : "normal"
+}

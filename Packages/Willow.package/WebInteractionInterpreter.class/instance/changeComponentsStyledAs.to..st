@@ -1,4 +1,6 @@
-configuring
+Configuring - CSS
 changeComponentsStyledAs: anExistingStyle to: aNewStyle
-
-	interaction onTriggerExecute: (ComponentStyleCommandModelLoading for: anExistingStyle changingTo: aNewStyle)
+	self
+		deprecated: 'Please use #onAjaxSuccessChangeCssClass:to: instead.'
+		transformWith: '`@receiver changeComponentsStyledAs: `@anExistingStyle to: `@aNewStyle' -> '@receiver onAjaxSuccessChangeCssClass: `@anExistingStyle to: `@aNewStyle'.
+	self onAjaxSuccessChangeCssClass: anExistingStyle to: aNewStyle

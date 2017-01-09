@@ -1,0 +1,3 @@
+private
+transformationMessage
+	^ transformationMessage

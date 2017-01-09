@@ -1,0 +1,3 @@
+private
+componentProvider
+	self subclassResponsibility

@@ -1,0 +1,3 @@
+private
+styleToChange
+	self subclassResponsibility

@@ -1,0 +1,22 @@
+{
+	"instance" : {
+		"transformationMessage" : "GabrielOmarCotelli 1/9/2017 13:30",
+		"applyStyleChangeTo:" : "GabrielOmarCotelli 1/9/2017 13:39",
+		"styleToChange" : "GabrielOmarCotelli 1/9/2017 13:29",
+		"componentProvider" : "GabrielOmarCotelli 1/9/2017 13:30",
+		"clientIndependentActions" : "GabrielOmarCotelli 1/9/2017 13:43",
+		"componentOn:" : "GabrielOmarCotelli 1/9/2017 13:40",
+		"priorityActions" : "GabrielOmarCotelli 1/9/2017 13:43",
+		"applyStyleChangeToComponentOn:" : "GabrielOmarCotelli 1/9/2017 13:40",
+		"requiresSerialization" : "GabrielOmarCotelli 1/9/2017 13:33"
+	},
+	"class" : {
+		"onAjaxSuccessChange:to:" : "GabrielOmarCotelli 1/9/2017 16:02",
+		"toggling:onComponentsMatching:" : "GabrielOmarCotelli 1/9/2017 16:00",
+		"adding:" : "GabrielOmarCotelli 1/9/2017 15:57",
+		"onAjaxSuccessToggle:forComponentsWithClass:withEffect:" : "GabrielOmarCotelli 1/9/2017 16:03",
+		"removing:fromComponentsMatching:" : "GabrielOmarCotelli 1/9/2017 16:01",
+		"adding:toComponentsMatching:" : "GabrielOmarCotelli 1/9/2017 15:59",
+		"onAjaxSuccessRemove:forComponentsWithClass:" : "GabrielOmarCotelli 1/9/2017 16:03"
+	}
+}

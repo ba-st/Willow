@@ -1,0 +1,4 @@
+configuring
+determineBehaviorByEvaluating: aCallbackBlock
+
+	interaction onTriggerExecute: (DelayedCommand withBehaviorDeterminedBy: aCallbackBlock)

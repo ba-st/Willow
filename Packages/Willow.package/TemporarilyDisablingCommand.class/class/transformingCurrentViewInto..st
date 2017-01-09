@@ -1,0 +1,4 @@
+as yet unclassified
+transformingCurrentViewInto: aViewWhileDisabled
+
+	^self new initializeTransformingCurrentViewInto: aViewWhileDisabled

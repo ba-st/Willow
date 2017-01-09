@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "WebInteractionCommand",
+	"category" : "Willow-WebInteraction",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"behaviorCallback",
+		"interpreter",
+		"clientSideParameterHolder",
+		"serverSideParameterHolder"
+	],
+	"name" : "DelayedCommand",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+configuring
+setValueOfComponentWithId: identifier to: aValueProvider
+	interaction onTriggerExecute: (ComponentValueSettingCommand forComponentWithId: identifier obtainingValueFrom: aValueProvider)

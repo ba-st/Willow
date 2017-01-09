@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WebInteractionCommand",
+	"category" : "Willow-JQueryUI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JQueryUIDialogButtonClickingCommand",
+	"type" : "normal"
+}

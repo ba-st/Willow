@@ -1,0 +1,18 @@
+{
+	"instance" : {
+		"serverIndependentActions" : "MaximilianoTabacman 8/28/2015 09:01",
+		"initializeWithBehaviorDeterminedBy:requiring:" : "GabrielOmarCotelli 1/9/2017 16:38",
+		"obtain:from:" : "GabrielOmarCotelli 1/9/2017 16:45",
+		"onReturn" : "MaximilianoTabacman 12/6/2016 12:24",
+		"modelLoadingActions" : "MaximilianoTabacman 8/28/2015 09:01",
+		"clientIndependentActions" : "GabrielOmarCotelli 1/9/2017 16:47",
+		"priorityActions" : "GabrielOmarCotelli 1/9/2017 16:40",
+		"requiresSerialization" : "MaximilianoTabacman 8/28/2015 09:02",
+		"resetInterpreter" : "MaximilianoTabacman 8/28/2015 09:01"
+	},
+	"class" : {
+		"withBehaviorDeterminedBy:" : "GabrielOmarCotelli 1/9/2017 16:36",
+		"withBehaviorDeterminedBy:requiring:" : "GabrielOmarCotelli 1/9/2017 16:34",
+		"withBehaviorDeterminedBy:with:" : "GabrielOmarCotelli 1/9/2017 16:35"
+	}
+}

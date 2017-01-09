@@ -1,0 +1,4 @@
+configuring
+disable
+
+	interaction onTriggerExecute: ComponentEnableStatusChangingCommand disablingCurrentComponent

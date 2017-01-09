@@ -1,0 +1,4 @@
+Accessing
+disabledAttributeName
+
+	^'disabled'

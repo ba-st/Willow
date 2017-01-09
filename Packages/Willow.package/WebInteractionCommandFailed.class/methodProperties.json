@@ -2,5 +2,7 @@
 	"instance" : {
 		"commandsOnFailure" : "MaximilianoTabacman 1/6/2014 17:04"
 	},
-	"class" : { }
+	"class" : {
+		"signalToExecute:asHandlingOf:" : "GabrielOmarCotelli 1/9/2017 17:32"
+	}
 }

@@ -1,5 +1,5 @@
 initialize-release
-initializeFor: anIdentifiedView obtainingValueFrom: aValue
+initializeFor: anIdentifier obtainingValueFrom: aValue
 
-	identifiedView := anIdentifiedView.
+	identifier := anIdentifier.
 	valueProvider := aValue

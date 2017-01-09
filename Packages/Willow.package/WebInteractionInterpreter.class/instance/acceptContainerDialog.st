@@ -1,4 +1,0 @@
-configuring
-acceptContainerDialog
-
-	interaction onTriggerExecute: DialogButtonClickingCommand new

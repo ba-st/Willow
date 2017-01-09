@@ -1,4 +1,6 @@
 accessing
 notificationSectionName
-
-	^'NotificationSection'
+	self
+		deprecated: 'Please use WillowConstants notificationSectionName instead'
+		transformWith: 'WebViewSections notificationSectionName' -> 'WillowConstants notificationSectionName'.
+	^ WillowConstants notificationSectionName

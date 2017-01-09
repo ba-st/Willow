@@ -1,6 +1,3 @@
 configuring
 setValueOf: anIdentifiedView to: aValueProvider
-
-	interaction
-		onTriggerExecute: (ComponentValueSettingCommand for: anIdentifiedView
-				obtainingValueFrom: aValueProvider)
+	interaction onTriggerExecute: (ComponentValueSettingCommand forComponentWithId: anIdentifiedView identifier obtainingValueFrom: aValueProvider)

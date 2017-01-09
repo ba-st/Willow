@@ -6,8 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"identifiedView",
-		"valueProvider"
+		"valueProvider",
+		"identifier"
 	],
 	"name" : "ComponentValueSettingCommand",
 	"type" : "normal"

@@ -1,6 +1,9 @@
 {
 	"instance" : {
 		"closeAllDialogs" : "GabrielOmarCotelli 1/6/2017 17:41",
+		"acceptContainerDialog" : "GabrielOmarCotelli 1/9/2017 16:49",
+		"showLoadingNotification" : "GabrielOmarCotelli 1/9/2017 17:15",
+		"showJQueryUILoadingNotification" : "GabrielOmarCotelli 1/9/2017 17:14",
 		"closeAllJQueryUIDialogs" : "GabrielOmarCotelli 1/6/2017 17:37"
 	},
 	"class" : {

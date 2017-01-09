@@ -1,8 +1,8 @@
 {
 	"instance" : {
-		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 16:59",
-		"clientIndependentActions" : "GabrielOmarCotelli 1/9/2017 16:59",
-		"initializeEvaluating:asConditionToOpen:" : "GabrielOmarCotelli 1/9/2017 16:58",
+		"initializeFor:" : "GabrielOmarCotelli 1/9/2017 19:47",
+		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 19:47",
+		"clientIndependentActions" : "GabrielOmarCotelli 1/9/2017 19:47",
 		"priorityActions" : "guest 1/5/2014 20:05",
 		"requiresSerialization" : "guest 1/5/2014 20:05",
 		"serverIndependentActions" : "guest 1/5/2014 20:05"

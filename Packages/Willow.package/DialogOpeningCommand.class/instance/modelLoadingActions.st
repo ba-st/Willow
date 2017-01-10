@@ -1,7 +1,5 @@
 accessing
 modelLoadingActions
 
-	^Array with: 
-			[:aScript :aCanvas |
-			aScript << (aCanvas jQuery id: WebViewSections dialogSectionName)
-				append: [:aSubCanvas | aSubCanvas render: dialogView]]
+	^Array with: [:aScript :aCanvas |
+		shouldOpen ifTrue: [aScript << (DialogOpener new open: dialogView on: aCanvas)]]

@@ -1,0 +1,17 @@
+{
+	"instance" : {
+		"initializeOn:altering:sending:using:" : "GabrielOmarCotelli 1/10/2017 10:08",
+		"applyStyleChangeTo:" : "GabrielOmarCotelli 1/10/2017 10:10",
+		"serverIndependentActions" : "GabrielOmarCotelli 1/10/2017 10:09",
+		"modelLoadingActions" : "GabrielOmarCotelli 1/10/2017 10:09",
+		"clientIndependentActions" : "GabrielOmarCotelli 1/9/2017 13:43",
+		"componentOn:" : "GabrielOmarCotelli 1/10/2017 10:10",
+		"priorityActions" : "GabrielOmarCotelli 1/9/2017 13:43",
+		"applyStyleChangeToComponentOn:" : "GabrielOmarCotelli 1/9/2017 13:40",
+		"requiresSerialization" : "GabrielOmarCotelli 1/9/2017 13:33"
+	},
+	"class" : {
+		"on:altering:sending:using:" : "GabrielOmarCotelli 1/10/2017 10:08",
+		"on:altering:sending:" : "GabrielOmarCotelli 1/10/2017 10:12"
+	}
+}

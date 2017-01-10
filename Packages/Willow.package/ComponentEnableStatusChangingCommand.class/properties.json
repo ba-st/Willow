@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 1/6/2017 17:56",
+	"super" : "WebInteractionCommand",
+	"category" : "Willow-WebInteraction",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"componentProvider",
+		"desiredStatus"
+	],
+	"name" : "ComponentEnableStatusChangingCommand",
+	"type" : "normal"
+}

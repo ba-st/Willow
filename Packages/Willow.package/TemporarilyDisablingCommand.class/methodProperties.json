@@ -1,0 +1,14 @@
+{
+	"instance" : {
+		"serverIndependentActions" : "GabrielOmarCotelli 1/9/2017 17:30",
+		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 17:29",
+		"initializeTransformingCurrentViewInto:" : "GabrielOmarCotelli 1/9/2017 17:28",
+		"clientIndependentActions" : "GabrielOmarCotelli 1/9/2017 17:28",
+		"disabledComponentVariableName" : "GabrielOmarCotelli 1/9/2017 17:29",
+		"priorityActions" : "GabrielOmarCotelli 1/9/2017 17:30",
+		"disabledAttributeName" : "GabrielOmarCotelli 1/9/2017 17:29"
+	},
+	"class" : {
+		"transformingCurrentViewInto:" : "GabrielOmarCotelli 1/9/2017 17:27"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "JSObject",
+	"category" : "Willow-WebInteraction",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DialogOpener",
+	"type" : "normal"
+}

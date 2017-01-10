@@ -5,7 +5,5 @@ containerComponentOn: aCanvas
 
 	containerComponent := aCanvas div class: 'ui checkbox'.
 	componentCommand applyTo: containerComponent on: aCanvas.
-	labelHolder
-		withContentDo: [ :content |  ]
-		ifUnused: [ :explanations | containerComponent class: 'fitted' ].
+	labelHolder withContentDo: [ :content |  ] ifUnused: [ containerComponent class: 'fitted' ].
 	^ containerComponent

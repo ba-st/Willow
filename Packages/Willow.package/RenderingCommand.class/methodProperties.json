@@ -1,13 +1,18 @@
 {
 	"instance" : {
 		"initializeFor:" : "guest 1/5/2014 20:05",
-		"modelLoadingActions" : "guest 1/5/2014 20:05",
-		"clientIndependentActions" : "guest 1/5/2014 20:05",
 		"priorityActions" : "guest 1/5/2014 20:05",
+		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 17:20",
+		"clientIndependentActions" : "GabrielOmarCotelli 1/9/2017 17:19",
+		"initializeEvaluating:asConditionToRenderAll:" : "GabrielOmarCotelli 1/9/2017 17:19",
 		"requiresSerialization" : "guest 1/5/2014 20:05",
 		"serverIndependentActions" : "guest 1/5/2014 20:05"
 	},
 	"class" : {
-		"for:" : "MaximilianoTabacman 3/23/2015 23:35"
+		"forAll:" : "GabrielOmarCotelli 1/9/2017 17:21",
+		"evaluating:asConditionToRenderAll:" : "GabrielOmarCotelli 1/9/2017 17:21",
+		"for:" : "GabrielOmarCotelli 1/9/2017 17:21",
+		"evaluating:asConditionToRender:" : "GabrielOmarCotelli 1/9/2017 17:21",
+		"assertInitializationOfAll:" : "GabrielOmarCotelli 1/9/2017 17:22"
 	}
 }

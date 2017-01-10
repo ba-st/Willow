@@ -6,7 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"identifiedView"
+		"shouldRender",
+		"renderingCondition",
+		"identifiedViews"
 	],
 	"name" : "RenderingCommand",
 	"type" : "normal"

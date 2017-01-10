@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WebInteractionCommand",
+	"category" : "Willow-WebInteraction",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"viewWhileDisabled"
+	],
+	"name" : "TemporarilyDisablingCommand",
+	"type" : "normal"
+}

@@ -1,8 +1,6 @@
-configuring
+Configuring - CSS
 add: aCssStyle toComponentFoundWith: aComponentProvider
-
-	interaction
-		onTriggerExecute:
-			(ComponentStyleCommandServerIndependent
-				adding: aCssStyle
-				toComponentFoundWith: aComponentProvider)
+	self
+		deprecated: 'Please use #addCssClass:toComponentMatching: instead.'
+		transformWith: '`@receiver add: `@aCssStyle toComponentFoundWith: `@aComponentProvider' -> '@receiver addCssClass: `@aCssStyle toComponentMatching: `@aComponentProvider'.
+	self addCssClass: aCssStyle toComponentsMatching: aComponentProvider

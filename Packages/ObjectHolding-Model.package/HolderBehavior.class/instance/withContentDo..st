@@ -1,4 +1,4 @@
 accessing
 withContentDo: aOneArgumentBlock
 
-	^ self withContentDo: aOneArgumentBlock ifUnused: [ :explanations |  ]
+	^ self withContentDo: aOneArgumentBlock ifUnused: [  ]

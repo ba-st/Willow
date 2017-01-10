@@ -1,4 +1,0 @@
-configuring
-closeAllDialogs
-
-	interaction onTriggerExecute: CloseAllDialogsCommand new

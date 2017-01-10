@@ -1,5 +1,3 @@
 configuring
 scrollingIntoView: anIdentifier
-
-	interaction onTriggerExecute: (ScrollIntoViewCommand
-				withComponentIdentifierProvidedBy: [anIdentifier])
+	interaction onTriggerExecute: (ScrollIntoViewCommand withComponentIdentifierProvidedBy: [ anIdentifier ])

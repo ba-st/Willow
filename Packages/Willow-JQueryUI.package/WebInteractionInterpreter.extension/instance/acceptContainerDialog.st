@@ -1,0 +1,4 @@
+*Willow-JQueryUI
+acceptContainerDialog
+
+	interaction onTriggerExecute: JQueryUIDialogButtonClickingCommand new

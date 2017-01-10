@@ -1,4 +1,4 @@
 accessing
 withContentDo: aOneArgumentBlock ifUnused: anUnusedBlock
 
-	^anUnusedBlock value: explanations
+	^anUnusedBlock cull: explanations

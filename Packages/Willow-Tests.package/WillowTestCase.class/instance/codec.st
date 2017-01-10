@@ -1,4 +1,4 @@
-test support
+utility
 codec
 
 	^ GRPharoUtf8Codec new

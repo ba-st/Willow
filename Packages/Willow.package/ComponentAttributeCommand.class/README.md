@@ -1,0 +1,1 @@
+Command to set an attribute for a component

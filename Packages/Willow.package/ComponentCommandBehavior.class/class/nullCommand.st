@@ -1,4 +1,4 @@
 accessing
 nullCommand
 
-	^ CompositeComponentCommand applyingAll: #()
+	^ CompositeComponentCommand empty

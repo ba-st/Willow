@@ -1,0 +1,10 @@
+{
+	"instance" : {
+		"apply:toComponentDefinedBy:" : "GabrielOmarCotelli 1/10/2017 14:48",
+		"apply:toComponentDefinedBy:afterApplyingDo:" : "GabrielOmarCotelli 1/10/2017 14:50",
+		"codec" : "GabrielOmarCotelli 1/10/2017 14:48"
+	},
+	"class" : {
+		"isAbstract" : "GabrielOmarCotelli 1/10/2017 14:55"
+	}
+}

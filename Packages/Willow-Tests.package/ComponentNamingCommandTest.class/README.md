@@ -1,0 +1,1 @@
+A ComponentNamingCommandTest is a test class for testing the behavior of ComponentNamingCommand

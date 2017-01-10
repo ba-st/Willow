@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "ComponentCommandBehavior",
+	"category" : "Willow-Frontend",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"name"
+	],
+	"name" : "ComponentNamingCommand",
+	"type" : "normal"
+}

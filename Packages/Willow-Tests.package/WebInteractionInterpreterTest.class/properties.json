@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "TestCase",
+	"super" : "WillowTestCase",
 	"category" : "Willow-Tests-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],

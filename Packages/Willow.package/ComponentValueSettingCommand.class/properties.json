@@ -7,7 +7,7 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"valueProvider",
-		"identifier"
+		"identifierProvider"
 	],
 	"name" : "ComponentValueSettingCommand",
 	"type" : "normal"

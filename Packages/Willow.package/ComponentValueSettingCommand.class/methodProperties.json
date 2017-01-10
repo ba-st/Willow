@@ -1,13 +1,13 @@
 {
 	"instance" : {
-		"serverIndependentActions" : "guest 1/5/2014 20:05",
-		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 16:19",
+		"initializeObtainingIdentifierFrom:valueFrom:" : "MaximilianoTabacman 1/9/2017 20:42",
+		"modelLoadingActions" : "MaximilianoTabacman 1/9/2017 20:42",
 		"clientIndependentActions" : "guest 1/5/2014 20:05",
 		"priorityActions" : "guest 1/5/2014 20:05",
 		"requiresSerialization" : "MaximilianoTabacman 12/20/2015 16:40",
-		"initializeFor:obtainingValueFrom:" : "GabrielOmarCotelli 1/9/2017 16:19"
+		"serverIndependentActions" : "guest 1/5/2014 20:05"
 	},
 	"class" : {
-		"forComponentWithId:obtainingValueFrom:" : "GabrielOmarCotelli 1/9/2017 16:21"
+		"obtainingIdentifierFrom:valueFrom:" : "MaximilianoTabacman 1/9/2017 20:43"
 	}
 }

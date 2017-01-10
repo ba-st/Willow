@@ -3,9 +3,9 @@
 		"obtain:from:" : "GabrielOmarCotelli 1/6/2017 13:49",
 		"connectedTo:" : "GabrielOmarCotelli 1/6/2017 17:16",
 		"modelLoadingActions" : "guest 1/5/2014 20:05",
-		"clientIndependentActions" : "guest 1/5/2014 20:05",
+		"clientIndependentActions" : "MaximilianoTabacman 1/9/2017 20:08",
 		"initializeFor:requiring:" : "guest 1/5/2014 20:05",
-		"priorityActions" : "guest 1/5/2014 20:05",
+		"priorityActions" : "MaximilianoTabacman 1/9/2017 20:08",
 		"requiresSerialization" : "guest 1/5/2014 20:05",
 		"serverIndependentActions" : "guest 1/5/2014 20:05"
 	},

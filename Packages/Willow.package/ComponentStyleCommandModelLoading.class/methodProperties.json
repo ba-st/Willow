@@ -1,0 +1,16 @@
+{
+	"instance" : {
+		"initializeOn:altering:sending:using:" : "guest 1/5/2014 20:05",
+		"modelLoadingActions" : "guest 1/5/2014 20:05",
+		"clientIndependentActions" : "guest 1/5/2014 20:05",
+		"priorityActions" : "guest 1/5/2014 20:05",
+		"requiresSerialization" : "MaximilianoTabacman 1/6/2014 23:28",
+		"serverIndependentActions" : "guest 1/5/2014 20:05"
+	},
+	"class" : {
+		"on:altering:sending:using:" : "guest 1/5/2014 20:05",
+		"for:changingTo:" : "MaximilianoTabacman 4/29/2014 00:09",
+		"for:removing:" : "guest 1/5/2014 20:05",
+		"for:toggling:sending:" : "guest 1/5/2014 20:05"
+	}
+}

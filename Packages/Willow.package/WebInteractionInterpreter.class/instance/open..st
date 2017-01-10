@@ -1,4 +1,4 @@
 configuring
 open: aView
 
-	interaction onTriggerExecute: (DialogOpeningCommand for: aView)
+	interaction onTriggerExecute: (DialogOpeningCommand alwaysOpening: aView)

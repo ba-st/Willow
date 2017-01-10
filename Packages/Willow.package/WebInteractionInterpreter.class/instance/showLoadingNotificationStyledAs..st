@@ -1,3 +1,0 @@
-configuring
-showLoadingNotificationStyledAs: classes
-	interaction onTriggerExecute: (LoadingNotificationCommand onPageTopWithClasses: classes)

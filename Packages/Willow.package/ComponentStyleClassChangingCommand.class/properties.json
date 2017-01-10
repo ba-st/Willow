@@ -5,7 +5,12 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"componentProvider",
+		"styleToChange",
+		"transformationMessage",
+		"transformationProvider"
+	],
 	"name" : "ComponentStyleClassChangingCommand",
 	"type" : "normal"
 }

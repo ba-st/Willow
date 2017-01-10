@@ -1,3 +1,0 @@
-private
-componentProvider
-	^componentProvider  

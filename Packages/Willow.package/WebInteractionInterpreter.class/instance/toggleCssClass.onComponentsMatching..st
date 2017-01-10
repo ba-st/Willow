@@ -2,6 +2,7 @@ Configuring - CSS
 toggleCssClass: aCssStyle onComponentsMatching: aComponentProvider
 	interaction
 		onTriggerExecute:
-			(ServerIndependentComponentStyleClassChangingCommand
-				toggling: aCssStyle
-				onComponentsMatching: aComponentProvider)
+			(ComponentStyleClassChangingCommand
+				on: aComponentProvider
+				altering: aCssStyle
+				sending: #toggleClass:)

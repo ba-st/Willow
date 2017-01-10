@@ -1,3 +1,0 @@
-private
-transformationMessage
-	self subclassResponsibility

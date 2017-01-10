@@ -1,3 +1,3 @@
 private
 componentOn: aCanvas
-	^ self componentProvider value: aCanvas
+	^ componentProvider value: aCanvas

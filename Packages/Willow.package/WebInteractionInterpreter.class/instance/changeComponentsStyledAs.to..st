@@ -2,8 +2,8 @@ Configuring - CSS
 changeComponentsStyledAs: anExistingStyle to: aNewStyle
 
 	self
-		deprecated: 'Please use #onAjaxSuccessChangeCssClass:to: instead.'
+		deprecated: 'Please use #changeCssClass:to: instead.'
 		transformWith:
 			'`@receiver changeComponentsStyledAs: `@anExistingStyle to: `@aNewStyle'
-				-> '`@receiver onAjaxSuccessChangeCssClass: `@anExistingStyle to: `@aNewStyle'.
-	self onAjaxSuccessChangeCssClass: anExistingStyle to: aNewStyle
+				-> '`@receiver changeCssClass: `@anExistingStyle to: `@aNewStyle'.
+	self changeCssClass: anExistingStyle to: aNewStyle

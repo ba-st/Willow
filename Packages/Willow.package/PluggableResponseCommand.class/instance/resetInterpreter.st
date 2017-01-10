@@ -1,4 +1,0 @@
-initialize-release
-resetInterpreter
-
-	interpreter := WebInteractionInterpreter forDelayedModelLoading

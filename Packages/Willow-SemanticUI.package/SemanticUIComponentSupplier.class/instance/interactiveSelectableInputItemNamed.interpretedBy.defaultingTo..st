@@ -7,4 +7,4 @@ interactiveSelectableInputItemNamed: aName interpretedBy: anInputInterpreter def
 	^ SemanticSelectableInput
 		selecting: inputView
 		defaultingTo: aDefaultModel
-		applying: (CssStyleCommand toStyleWith: SemanticStyle for item)
+		applying: (ComponentClassificationCommand toStyleWith: SemanticStyle for item)

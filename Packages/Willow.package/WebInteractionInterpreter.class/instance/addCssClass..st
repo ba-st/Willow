@@ -1,8 +1,4 @@
 Configuring - CSS
 addCssClass: aCssStyle
-	interaction
-		onTriggerExecute:
-			(ComponentStyleClassChangingCommand
-				on: [ :canvas | canvas jQuery this ]
-				altering: aCssStyle
-				sending: #addClass:)
+
+	self addCssClass: aCssStyle toComponentsMatching: [ :canvas | canvas jQuery this ]

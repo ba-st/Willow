@@ -1,4 +1,4 @@
 accessing - private
 contentDataCommand
 
-	^ CustomDataCommand toDeclare: 'content' with: content
+	^ ComponentMetadataCommand toDeclare: 'content' with: content

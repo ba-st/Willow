@@ -4,4 +4,4 @@ interactiveButtonDescribedBy: aString
 	^ SemanticButton
 		labeled: aString
 		interactingThrough: WebInteractionInterpreter forClickOnComponent
-		applying: ComponentCommandBehavior nullCommand
+		applying: WebComponentCommand nullCommand

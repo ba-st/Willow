@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "MaximilianoTabacman 1/2/2017 21:20",
-	"super" : "ComponentCommandBehavior",
+	"super" : "WebComponentCommand",
 	"category" : "Willow-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],

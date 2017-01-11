@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/16/2016 08:04",
-	"super" : "ComponentCommandBehavior",
+	"super" : "WebComponentCommand",
 	"category" : "Willow-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -9,6 +9,6 @@
 		"name",
 		"content"
 	],
-	"name" : "CustomDataCommand",
+	"name" : "ComponentMetadataCommand",
 	"type" : "normal"
 }

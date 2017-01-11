@@ -1,4 +1,4 @@
 accessing - private
 uiInputStyleCommand
 
-	^ CssStyleCommand toStyleWith: SemanticStyle ui input
+	^ ComponentClassificationCommand toStyleWith: SemanticStyle ui input

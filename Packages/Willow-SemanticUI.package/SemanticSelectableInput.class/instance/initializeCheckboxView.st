@@ -6,5 +6,5 @@ initializeCheckboxView
 		applying: self checkboxCommand.
 	checkboxView setCheckTo: true.
 	checkboxView onTrigger
-		toggle: SemanticStyle for disabled
-		onComponentFoundWith: [ :canvas | canvas jQuery this parent next ]
+		toggleCssClass: SemanticStyle for disabled
+		onComponentsMatching: [ :canvas | canvas jQuery this parent next ]

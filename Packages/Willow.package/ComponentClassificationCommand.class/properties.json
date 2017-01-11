@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/14/2016 09:10",
-	"super" : "ComponentCommandBehavior",
+	"super" : "WebComponentCommand",
 	"category" : "Willow-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -8,6 +8,6 @@
 	"instvars" : [
 		"cssStyles"
 	],
-	"name" : "CssStyleCommand",
+	"name" : "ComponentClassificationCommand",
 	"type" : "normal"
 }

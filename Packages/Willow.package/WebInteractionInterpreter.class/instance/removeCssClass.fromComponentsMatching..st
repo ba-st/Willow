@@ -1,5 +1,6 @@
 Configuring - CSS
 removeCssClass: aCssStyle fromComponentsMatching: aComponentProvider
+
 	interaction
 		onTriggerExecute:
 			(ComponentStyleClassChangingCommand

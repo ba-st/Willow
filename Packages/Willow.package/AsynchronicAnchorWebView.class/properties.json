@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "WAComponent",
+	"super" : "WAPresenter",
 	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -10,6 +10,6 @@
 		"interactionInterpreter",
 		"commandsToComponent"
 	],
-	"name" : "AnchorWebView",
+	"name" : "AsynchronicAnchorWebView",
 	"type" : "normal"
 }

@@ -1,5 +1,6 @@
 Configuring - CSS
 addCssClass: aCssStyle toComponentsMatching: aComponentProvider
+
 	interaction
 		onTriggerExecute:
 			(ComponentStyleClassChangingCommand

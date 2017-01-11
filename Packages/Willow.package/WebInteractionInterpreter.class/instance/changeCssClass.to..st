@@ -1,5 +1,6 @@
 Configuring - CSS
 changeCssClass: anExistingStyle to: aNewStyle
+
 	interaction
 		onTriggerExecute:
 			(ComponentStyleClassChangingCommand

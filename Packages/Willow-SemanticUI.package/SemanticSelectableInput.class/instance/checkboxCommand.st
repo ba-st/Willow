@@ -1,4 +1,4 @@
 accessing - private
 checkboxCommand
 
-	^ CssStyleCommand toStyleWith: SemanticStyle for toggle
+	^ ComponentClassificationCommand toStyleWith: SemanticStyle for toggle

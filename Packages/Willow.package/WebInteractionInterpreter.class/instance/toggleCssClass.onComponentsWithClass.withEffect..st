@@ -1,5 +1,6 @@
 Configuring - CSS
 toggleCssClass: aCssStyle onComponentsWithClass: aComponentByStyleName withEffect: anEffectSelector
+
 	interaction
 		onTriggerExecute:
 			(ComponentStyleClassChangingCommand

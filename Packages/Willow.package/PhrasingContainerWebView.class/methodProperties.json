@@ -1,0 +1,12 @@
+{
+	"instance" : {
+		"initializeObtainingContentFrom:applying:" : "GabrielOmarCotelli 1/11/2017 13:33",
+		"onTrigger" : "GabrielOmarCotelli 1/11/2017 13:34",
+		"renderContentOn:" : "GabrielOmarCotelli 1/11/2017 13:34"
+	},
+	"class" : {
+		"obtainingContentFrom:" : "GabrielOmarCotelli 1/11/2017 13:46",
+		"obtainingContentFrom:applying:" : "GabrielOmarCotelli 1/11/2017 13:45",
+		"wrapping:applying:" : "GabrielOmarCotelli 1/11/2017 13:49"
+	}
+}

@@ -1,18 +1,21 @@
 {
 	"instance" : {
-		"styleAccordingTo:" : "guest 1/5/2014 20:05",
-		"initializeForComponentBuiltUsing:named:containing:" : "MaximilianoTabacman 8/24/2016 22:40",
-		"renderContentOn:" : "MaximilianoTabacman 8/24/2016 22:41",
-		"componentRenderedOn:" : "MaximilianoTabacman 8/24/2016 22:41",
-		"styleAccordingToAll:" : "guest 1/5/2014 20:05",
+		"styleAccordingToAll:" : "GabrielOmarCotelli 1/11/2017 14:24",
+		"identifyIn:" : "GabrielOmarCotelli 1/11/2017 14:19",
+		"renderContentOn:" : "GabrielOmarCotelli 1/11/2017 14:21",
 		"id" : "MaximilianoTabacman 4/30/2014 08:51",
+		"onTrigger" : "GabrielOmarCotelli 1/11/2017 14:19",
+		"styleAccordingTo:" : "GabrielOmarCotelli 1/11/2017 14:23",
 		"view" : "guest 1/5/2014 20:05",
-		"updatedIdentifierUsing:" : "MaximilianoTabacman 1/9/2017 20:10"
+		"componentRenderedOn:" : "MaximilianoTabacman 8/24/2016 22:41",
+		"initializeForComponentBuiltUsing:as:containing:applying:" : "GabrielOmarCotelli 1/11/2017 14:17",
+		"updatedIdentifierUsing:" : "GabrielOmarCotelli 1/11/2017 14:18"
 	},
 	"class" : {
 		"forDivNamed:containing:" : "MaximilianoTabacman 8/24/2016 22:39",
+		"forComponentBuiltUsing:named:containing:applying:" : "GabrielOmarCotelli 1/11/2017 14:38",
 		"forSpanNamed:containing:" : "MaximilianoTabacman 8/24/2016 22:41",
-		"forComponentBuiltUsing:named:containing:" : "MaximilianoTabacman 8/24/2016 22:40",
+		"forComponentBuiltUsing:named:containing:" : "GabrielOmarCotelli 1/11/2017 14:39",
 		"forLabeledFieldNamed:containing:" : "MaximilianoTabacman 8/24/2016 22:39",
 		"forRowNamed:containing:" : "MaximilianoTabacman 8/24/2016 22:39"
 	}

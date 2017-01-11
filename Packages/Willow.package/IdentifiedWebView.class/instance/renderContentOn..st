@@ -3,9 +3,9 @@ renderContentOn: aCanvas
 
 	| identifier containerComponent |
 
-	identifier := self updatedIdentifierUsing: aCanvas nextId.
+	identifier := self identifyIn: aCanvas.
 	containerComponent := self componentRenderedOn: aCanvas.
-	propertyCommands do: [ :command | command value: containerComponent ].
+	commandToComponent applyTo: containerComponent on: aCanvas.
 	containerComponent
 		id: identifier;
 		with: view

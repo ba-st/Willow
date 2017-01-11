@@ -1,4 +1,8 @@
 configuring
 styleAccordingToAll: aCssStyleNameCollection
 
-	propertyCommands add: [:aComponent | aComponent classes: aCssStyleNameCollection]
+	self deprecated: 'Please provide the corresponding command on instance creation'.
+		commandToComponent := CompositeComponentCommand
+		applyingAll:
+			{commandToComponent.
+			(ComponentClassificationCommand toStyleWithAll: aCssStyleNameCollection )}

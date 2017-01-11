@@ -1,15 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "WAPresenter",
+	"super" : "AsynchronicButtonBehavior",
 	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"description",
-		"interactionInterpreter",
-		"commandsToComponent"
-	],
+	"instvars" : [ ],
 	"name" : "AsynchronicAnchorWebView",
 	"type" : "normal"
 }

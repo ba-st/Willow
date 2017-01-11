@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "WAPresenter",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"label",
+		"interactionInterpreter",
+		"commandToComponent"
+	],
+	"name" : "AsynchronicButtonBehavior",
+	"type" : "normal"
+}

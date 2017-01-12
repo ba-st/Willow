@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/13/2016 17:04",
 	"super" : "SingleSelectionWebView",
-	"category" : "Willow-WebViews",
+	"category" : "Willow-WebViewsNeedingReview",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

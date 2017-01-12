@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "InputWebView",
-	"category" : "Willow-WebViews",
+	"category" : "Willow-WebViewsNeedingReview",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

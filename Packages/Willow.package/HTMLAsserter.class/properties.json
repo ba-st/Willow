@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "GabrielOmarCotelli 1/12/2017 10:15",
 	"super" : "Object",
-	"category" : "Willow-Obsolete",
+	"category" : "Willow-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "IdentifierValidator",
+	"name" : "HTMLAsserter",
 	"type" : "normal"
 }

@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "WebViewBehavior",
-	"category" : "Willow-WebViews",
+	"category" : "Willow-JQueryUI",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

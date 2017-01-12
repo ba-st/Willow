@@ -1,4 +1,4 @@
-*Willow-SeasideExtensions
+*Willow-JQueryUI
 animate: aBooleanOrNumberOrStringOrObject
 	"Default: {} 
 	If and how to animate changing panels.

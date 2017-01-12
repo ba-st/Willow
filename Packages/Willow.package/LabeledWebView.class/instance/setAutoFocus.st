@@ -1,4 +1,0 @@
-configuring
-setAutoFocus
-
-	viewToLabel setAutoFocus

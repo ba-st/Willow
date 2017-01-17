@@ -3,5 +3,7 @@ simpleInput
 
 	^ SemanticInput
 		interpretedBy: InputInterpreter forText
-		interactingThrough: NullWebInteractionInterpreter new
+		interactingThrough:
+			(WebInteractionInterpreter
+				workingWith: WebComponentInteraction neverTriggered)
 		applying: WebComponentCommand nullCommand

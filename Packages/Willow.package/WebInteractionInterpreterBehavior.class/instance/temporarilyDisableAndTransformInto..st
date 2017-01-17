@@ -1,0 +1,4 @@
+Configuring
+temporarilyDisableAndTransformInto: aView
+
+	self subclassResponsibility

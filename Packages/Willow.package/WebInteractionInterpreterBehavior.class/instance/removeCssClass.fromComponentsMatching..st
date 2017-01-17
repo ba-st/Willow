@@ -1,0 +1,4 @@
+Configuring
+removeCssClass: aCssStyle fromComponentsMatching: aComponentProvider
+
+	self subclassResponsibility

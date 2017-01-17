@@ -1,0 +1,4 @@
+Configuring
+focusUsing: aComponentProvider
+
+	self subclassResponsibility

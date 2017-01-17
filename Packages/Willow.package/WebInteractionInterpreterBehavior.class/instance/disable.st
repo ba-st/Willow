@@ -1,0 +1,4 @@
+Configuring
+disable
+
+	self subclassResponsibility

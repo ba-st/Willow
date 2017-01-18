@@ -1,0 +1,4 @@
+Configuring
+addCssClass: aCssStyle toComponentsMatching: aComponentProvider
+
+	self subclassResponsibility

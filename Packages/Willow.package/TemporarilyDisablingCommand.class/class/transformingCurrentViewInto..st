@@ -1,4 +1,4 @@
-as yet unclassified
+Instance Creation
 transformingCurrentViewInto: aViewWhileDisabled
 
 	^self new initializeTransformingCurrentViewInto: aViewWhileDisabled

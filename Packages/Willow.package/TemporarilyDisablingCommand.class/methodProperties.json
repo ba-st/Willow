@@ -1,5 +1,6 @@
 {
 	"instance" : {
+		"requiresSerialization" : "GabrielOmarCotelli 1/13/2017 16:01",
 		"serverIndependentActions" : "GabrielOmarCotelli 1/9/2017 17:30",
 		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 17:29",
 		"initializeTransformingCurrentViewInto:" : "GabrielOmarCotelli 1/9/2017 17:28",

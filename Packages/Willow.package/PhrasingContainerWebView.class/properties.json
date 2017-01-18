@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 1/11/2017 12:42",
+	"super" : "WAPresenter",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"phrasingContentProvider",
+		"interactionInterpreter",
+		"commandToComponent"
+	],
+	"name" : "PhrasingContainerWebView",
+	"type" : "normal"
+}

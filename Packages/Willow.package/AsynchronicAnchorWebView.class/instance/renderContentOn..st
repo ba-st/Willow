@@ -1,11 +1,10 @@
 rendering
 renderContentOn: aCanvas
 
-	"El orden es importante para que funcione!"
+	| anchor |
 
-	| component |
-
-	component := aCanvas anchor.
-	interactionInterpreter applyTo: component on: aCanvas.
-	commandsToComponent do: [ :command | command value: component value: aCanvas ].
-	component with: description
+	anchor := aCanvas anchor.
+	self setButtonRoleTo: anchor on: aCanvas.
+	interactionInterpreter applyTo: anchor on: aCanvas.
+	commandToComponent applyTo: anchor on: aCanvas.
+	anchor with: label

@@ -1,4 +1,0 @@
-accessing
-commandsOnFailure
-
-	^self tag

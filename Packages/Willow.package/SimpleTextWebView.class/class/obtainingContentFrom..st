@@ -1,4 +1,5 @@
 instance creation
 obtainingContentFrom: aContentProvider
 
-	^self obtainingContentFrom: aContentProvider applying: self noCommands
+	self deprecated: 'Use PhrasingContainerWebView' transformWith: 'SimpleTextWebView obtainingContentFrom: `@aContentProvider' -> 'PhrasingContainerWebView obtainingContentFrom: `@aContentProvider'.
+	^ PhrasingContainerWebView obtainingContentFrom: aContentProvider

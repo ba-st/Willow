@@ -1,0 +1,4 @@
+Configuring
+renderAll: anIdentifiedViewCollection
+
+	self subclassResponsibility

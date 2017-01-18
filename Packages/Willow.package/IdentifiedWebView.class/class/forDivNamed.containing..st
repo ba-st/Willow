@@ -1,4 +1,4 @@
 instance creation
 forDivNamed: aName containing: aView
 
-	^ self forComponentBuiltUsing: [ :canvas | canvas div ] named: aName containing: aView
+	^self forDivNamed: aName containing: aView applying: CompositeComponentCommand empty

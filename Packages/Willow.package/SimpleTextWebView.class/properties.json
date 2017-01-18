@@ -1,15 +1,11 @@
 {
 	"commentStamp" : "",
 	"super" : "WebViewBehavior",
-	"category" : "Willow-WebViews",
+	"category" : "Willow-Obsolete",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"contentProvider",
-		"propertyCommands",
-		"interactionInterpreter"
-	],
+	"instvars" : [ ],
 	"name" : "SimpleTextWebView",
 	"type" : "normal"
 }

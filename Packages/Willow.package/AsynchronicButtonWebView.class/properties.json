@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "AsynchronicButtonBehavior",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"buttonId"
+	],
+	"name" : "AsynchronicButtonWebView",
+	"type" : "normal"
+}

@@ -1,9 +1,22 @@
 instance creation
 emptyTitled: aTitle styledAccordingToAll: aCssStyleCollection
 
-	^ self
+	self
+		deprecated: 'Please use PhrasingContainerWebView'
+		transformWith:
+			'SimpleTextWebView emptyTitled: `@aTitle styledAccordingToAll: `@aCssStyle'
+				->
+					'PhrasingContainerWebView
 		obtainingContentFrom: [  ]
 		applying:
-			(OrderedCollection
-				with: (self titleCommandUsing: [ aTitle ])
-				with: (self styleCommandForAll: aCssStyleCollection))
+			(CompositeComponentCommand
+				applyingAll:
+					{(ComponentTitleCommand toSet: `@aTitle).
+					(ComponentClassificationCommand toStyleWithAll: `@aCssStyle)})'.
+	^ PhrasingContainerWebView
+		obtainingContentFrom: [  ]
+		applying:
+			(CompositeComponentCommand
+				applyingAll:
+					{(ComponentTitleCommand toSet: aTitle).
+					(ComponentClassificationCommand toStyleWithAll: aCssStyleCollection)})

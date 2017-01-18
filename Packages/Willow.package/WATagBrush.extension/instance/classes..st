@@ -1,10 +1,4 @@
 *Willow-SeasideExtensions
-classes: aCssStyleCollection
+classes: cssClasses
 
-	self
-		class:
-			(String
-				streamContents: [ :stream | 
-					aCssStyleCollection
-						do: [ :cssStyle | stream nextPutAll: cssStyle asString ]
-						separatedBy: [ stream space ] ])
+	cssClasses do: [ :cssClass | self class: cssClass ]

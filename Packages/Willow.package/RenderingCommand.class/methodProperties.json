@@ -1,10 +1,9 @@
 {
 	"instance" : {
-		"initializeFor:" : "guest 1/5/2014 20:05",
-		"priorityActions" : "guest 1/5/2014 20:05",
 		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 17:20",
 		"clientIndependentActions" : "GabrielOmarCotelli 1/9/2017 17:19",
 		"initializeEvaluating:asConditionToRenderAll:" : "GabrielOmarCotelli 1/9/2017 17:19",
+		"priorityActions" : "guest 1/5/2014 20:05",
 		"requiresSerialization" : "guest 1/5/2014 20:05",
 		"serverIndependentActions" : "guest 1/5/2014 20:05"
 	},

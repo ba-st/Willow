@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "WebViewBehavior",
+	"category" : "Willow-JQueryUI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"commandsToComponent",
+		"interactionInterpreter"
+	],
+	"name" : "StyledButton",
+	"type" : "normal"
+}

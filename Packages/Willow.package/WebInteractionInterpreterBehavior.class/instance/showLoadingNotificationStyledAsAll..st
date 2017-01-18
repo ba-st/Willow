@@ -1,0 +1,4 @@
+Configuring
+showLoadingNotificationStyledAsAll: classes
+
+	self subclassResponsibility

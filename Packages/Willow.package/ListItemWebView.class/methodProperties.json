@@ -1,9 +1,8 @@
 {
 	"instance" : {
 		"initializeItemizing:" : "guest 1/5/2014 20:05",
-		"renderContentOn:" : "guest 1/5/2014 20:05",
 		"styleAccordingTo:" : "guest 1/5/2014 20:05",
-		"children" : "guest 1/5/2014 20:05"
+		"renderContentOn:" : "guest 1/5/2014 20:05"
 	},
 	"class" : {
 		"itemizing:" : "guest 1/5/2014 20:05"

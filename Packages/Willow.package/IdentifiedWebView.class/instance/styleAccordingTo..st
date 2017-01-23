@@ -1,7 +1,12 @@
 configuring
 styleAccordingTo: aCssStyleName
 
-	self deprecated: 'Please provide the corresponding command on instance creation'.
+	self
+		deprecated: 'Use HTMLAsserter instead'
+		transformWith:
+			'(IdentifiedWebView forDivNamed: `@aName containing: `@aContent) styleAccordingTo: `@aStyle'
+				-> '(IdentifiedWebView forDivNamed: `@aName containing: `@aContent applying: (ComponentClassificationCommand toStyleWith: `@aStyle)) yourself'.
+
 	commandToComponent := CompositeComponentCommand
 		applyingAll:
 			{commandToComponent.

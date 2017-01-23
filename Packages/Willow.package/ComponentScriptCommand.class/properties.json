@@ -6,7 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"script"
+		"scriptProvider"
 	],
 	"name" : "ComponentScriptCommand",
 	"type" : "normal"

@@ -1,4 +1,4 @@
 configuring
 titleUsing: aTitleProvider
 
-	propertyCommands add: (self class titleCommandUsing: aTitleProvider)
+	propertyCommands add: (ComponentTitleCommand toSetUsing: aTitleProvider)

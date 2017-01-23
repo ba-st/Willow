@@ -9,5 +9,6 @@ renderContentOn: aCanvas
 		callback: submitCallback;
 		value: label.
 
+	interactionInterpreter applyTo: component on: aCanvas.
 	commandToComponent applyTo: component on: aCanvas.
 	component disabled: disabled

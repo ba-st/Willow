@@ -1,6 +1,7 @@
 configuring
 readOnly: aBoolean
 
-	self deprecated: 'This view should not understand every message the contained view can understand, so please fix the senders.'.
-
+	self
+		deprecated: 'Use viewToLabel'
+		transformWith: '`@receiver readOnly: `@aBoolean' -> '`@receiver viewToLabel readOnly: `@aBoolean'.
 	viewToLabel readOnly: aBoolean

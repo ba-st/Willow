@@ -1,9 +1,8 @@
 initialization
 initializeLabeled: aLabel applying: aCommandCollection evaluating: actionOnSubmit
 
-	super initialize.
-
 	label := aLabel.
 	commandToComponent := aCommandCollection.
+	interactionInterpreter := WebInteractionInterpreter forClickOnComponent.
 	submitCallback := actionOnSubmit.
 	disabled := false

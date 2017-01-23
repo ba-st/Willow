@@ -1,10 +1,9 @@
 {
 	"instance" : {
-		"initializeAskingFor:" : "MaximilianoTabacman 12/7/2016 08:58",
 		"resetFieldContents" : "guest 1/5/2014 20:05",
-		"renderContentOn:" : "MaximilianoTabacman 10/4/2015 09:08",
-		"questionAnswer" : "guest 1/5/2014 20:05",
-		"children" : "guest 1/5/2014 20:05"
+		"initializeAskingFor:" : "MaximilianoTabacman 12/7/2016 08:58",
+		"questionAnswer" : "AutoDeprecationRefactoring 1/20/2017 08:34",
+		"renderContentOn:" : "MaximilianoTabacman 10/4/2015 09:08"
 	},
 	"class" : {
 		"askingFor:" : "guest 1/5/2014 20:05"

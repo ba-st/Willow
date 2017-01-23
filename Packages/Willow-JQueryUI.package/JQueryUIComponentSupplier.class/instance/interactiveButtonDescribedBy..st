@@ -1,4 +1,8 @@
 accessing
 interactiveButtonDescribedBy: aString
 
-	^ ButtonWebView describedBy: aString
+	^ SynchronicSubmitButtonWebView
+		labeled: aString
+		applying:
+			(JQueryUIButtonCommand describedBy: aString)
+		evaluating: [  ]

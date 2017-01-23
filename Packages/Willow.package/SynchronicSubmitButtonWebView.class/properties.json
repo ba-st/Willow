@@ -10,7 +10,8 @@
 		"buttonId",
 		"commandToComponent",
 		"submitCallback",
-		"disabled"
+		"disabled",
+		"interactionInterpreter"
 	],
 	"name" : "SynchronicSubmitButtonWebView",
 	"type" : "normal"

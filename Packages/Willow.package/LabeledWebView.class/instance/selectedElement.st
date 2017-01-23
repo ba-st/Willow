@@ -1,5 +1,7 @@
 accessing
 selectedElement
 
-	self deprecated: 'This view should not understand every message the contained view can understand, so please fix the senders.'.
+	self
+		deprecated: 'Use viewToLabel'
+		transformWith: '`@receiver selectedElement' -> '`@receiver viewToLabel selectedElement'.
 	^ viewToLabel selectedElement

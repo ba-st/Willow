@@ -1,6 +1,11 @@
 accessing
 interactiveButtonRepresentedBy: anIcon hinting: aText
 
-	^ SimpleTextWebView
-		emptyTitled: aText
-		styledAccordingToAll: (Array with: anIcon with: ERABasicCssStyles buttonSmall)
+	^ PhrasingContainerWebView
+		obtainingContentFrom: [  ]
+		applying:
+			(CompositeComponentCommand
+				applyingAll:
+					{(ComponentTitleCommand toSet: aText).
+					(ComponentClassificationCommand
+						toStyleWithAll: (Array with: anIcon with: ERABasicCssStyles buttonSmall))})

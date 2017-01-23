@@ -1,4 +1,5 @@
 configuring
 styleUsing: aStyleProvider
 
-	propertyCommands add: (self class styleCommandUsing: aStyleProvider)
+	propertyCommands
+		add: (ComponentClassificationCommand toStyleWith: aStyleProvider value)

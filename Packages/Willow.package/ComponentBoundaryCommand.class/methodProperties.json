@@ -1,0 +1,11 @@
+{
+	"instance" : {
+		"applyTo:on:" : "MaximilianoTabacman 1/20/2017 20:42",
+		"initializeRestrictingMinimumWith:maximumTo:" : "MaximilianoTabacman 1/20/2017 20:44"
+	},
+	"class" : {
+		"nonNegative" : "MaximilianoTabacman 1/20/2017 20:48",
+		"between:and:" : "MaximilianoTabacman 1/20/2017 20:45",
+		"restrictingMinimumWith:maximumTo:" : "MaximilianoTabacman 1/20/2017 20:45"
+	}
+}

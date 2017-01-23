@@ -1,0 +1,11 @@
+{
+	"instance" : {
+		"applyTo:on:" : "MaximilianoTabacman 1/20/2017 00:20",
+		"initializeToExecute:" : "MaximilianoTabacman 1/20/2017 00:19"
+	},
+	"class" : {
+		"describedBy:" : "MaximilianoTabacman 1/20/2017 08:45",
+		"toExecute:" : "MaximilianoTabacman 1/20/2017 00:18",
+		"representedBy:" : "MaximilianoTabacman 1/20/2017 00:16"
+	}
+}

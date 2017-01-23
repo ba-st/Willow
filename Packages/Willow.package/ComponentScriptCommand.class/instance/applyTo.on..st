@@ -1,4 +1,4 @@
 applying
 applyTo: aComponent on: aCanvas
 
-	^ aComponent script: script
+	^ aComponent script: (scriptProvider value: aCanvas)

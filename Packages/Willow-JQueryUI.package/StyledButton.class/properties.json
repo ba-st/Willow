@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "WebViewBehavior",
+	"super" : "WAPresenter",
 	"category" : "Willow-JQueryUI",
 	"classinstvars" : [ ],
 	"pools" : [ ],

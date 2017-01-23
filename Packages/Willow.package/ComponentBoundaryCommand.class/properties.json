@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "MaximilianoTabacman 1/20/2017 20:43",
+	"super" : "WebComponentCommand",
+	"category" : "Willow-WebInteraction",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"minimumHolder",
+		"maximumHolder"
+	],
+	"name" : "ComponentBoundaryCommand",
+	"type" : "normal"
+}

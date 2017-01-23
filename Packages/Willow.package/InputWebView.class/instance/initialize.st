@@ -1,7 +1,6 @@
 initialize-release
 initialize
 
-	super initialize.
 	contentsBlock := [''].
 	afterContentObtainingCommand := [:contents | ].
 	propertyCommands := OrderedCollection new.

@@ -1,7 +1,9 @@
 {
 	"instance" : {
-		"testEmpty" : "GabrielOmarCotelli 1/10/2017 15:19",
-		"testApplyToOn" : "GabrielOmarCotelli 1/10/2017 15:22"
+		"testEmpty" : "GabrielOmarCotelli 1/24/2017 16:19",
+		"testApplyToOn" : "GabrielOmarCotelli 1/24/2017 16:18",
+		"testShortcutCreation" : "GabrielOmarCotelli 1/24/2017 16:19",
+		"testShortcutCreationWithEmptyCompositeCommand" : "GabrielOmarCotelli 1/24/2017 16:19"
 	},
 	"class" : { }
 }

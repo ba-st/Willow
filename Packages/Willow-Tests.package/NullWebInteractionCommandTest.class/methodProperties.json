@@ -1,0 +1,10 @@
+{
+	"instance" : {
+		"testRequiresSerialization" : "GabrielOmarCotelli 1/24/2017 16:33",
+		"testServerIndependentActions" : "GabrielOmarCotelli 1/24/2017 16:34",
+		"testPriorityActions" : "GabrielOmarCotelli 1/24/2017 16:33",
+		"testModelLoadingActions" : "GabrielOmarCotelli 1/24/2017 16:33",
+		"testClientIndependentActions" : "GabrielOmarCotelli 1/24/2017 16:33"
+	},
+	"class" : { }
+}

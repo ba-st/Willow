@@ -1,9 +1,10 @@
 {
 	"instance" : {
-		"apply:toComponentDefinedBy:" : "GabrielOmarCotelli 1/10/2017 14:48",
-		"apply:toComponentDefinedBy:afterApplyingDo:" : "MaximilianoTabacman 1/10/2017 22:59",
-		"codec" : "GabrielOmarCotelli 1/10/2017 14:48",
-		"render:" : "GabrielOmarCotelli 1/11/2017 11:48"
+		"render:" : "GabrielOmarCotelli 1/24/2017 16:17",
+		"apply:toComponentDefinedBy:" : "GabrielOmarCotelli 1/24/2017 16:18",
+		"apply:toComponentDefinedBy:afterApplyingDo:" : "GabrielOmarCotelli 1/24/2017 16:17",
+		"renderUsing:" : "GabrielOmarCotelli 1/24/2017 16:17",
+		"codec" : "GabrielOmarCotelli 1/10/2017 14:48"
 	},
 	"class" : {
 		"isAbstract" : "GabrielOmarCotelli 1/10/2017 14:55"

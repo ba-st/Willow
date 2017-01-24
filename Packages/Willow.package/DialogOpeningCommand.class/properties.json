@@ -6,9 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"dialogView",
-		"shouldOpen",
-		"openingCondition"
+		"dialogView"
 	],
 	"name" : "DialogOpeningCommand",
 	"type" : "normal"

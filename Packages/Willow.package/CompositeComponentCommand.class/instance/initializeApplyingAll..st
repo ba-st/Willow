@@ -1,4 +1,4 @@
 initialize-release
 initializeApplyingAll: aCommandCollection
 
-	commands := aCommandCollection
+	commands := OrderedCollection withAll: aCommandCollection

@@ -1,15 +1,18 @@
 {
 	"instance" : {
+		"priorityActions" : "GabrielOmarCotelli 1/27/2017 17:45",
 		"requiresSerialization" : "GabrielOmarCotelli 1/13/2017 16:01",
 		"serverIndependentActions" : "GabrielOmarCotelli 1/9/2017 17:30",
-		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 17:29",
-		"initializeTransformingCurrentViewInto:" : "GabrielOmarCotelli 1/9/2017 17:28",
+		"initializeTransformingComponengMatching:into:" : "GabrielOmarCotelli 1/27/2017 17:45",
 		"clientIndependentActions" : "GabrielOmarCotelli 1/9/2017 17:28",
+		"componentToDisableOn:" : "GabrielOmarCotelli 1/27/2017 17:45",
 		"disabledComponentVariableName" : "GabrielOmarCotelli 1/9/2017 17:29",
-		"priorityActions" : "GabrielOmarCotelli 1/9/2017 17:30",
+		"modelLoadingActions" : "GabrielOmarCotelli 1/9/2017 17:29",
 		"disabledAttributeName" : "GabrielOmarCotelli 1/9/2017 17:29"
 	},
 	"class" : {
-		"transformingCurrentViewInto:" : "GabrielOmarCotelli 1/9/2017 17:27"
+		"transformingCurrentViewInto:" : "GabrielOmarCotelli 1/27/2017 17:46",
+		"transforming:into:" : "GabrielOmarCotelli 1/27/2017 17:46",
+		"transformingComponengMatching:into:" : "GabrielOmarCotelli 1/27/2017 17:46"
 	}
 }

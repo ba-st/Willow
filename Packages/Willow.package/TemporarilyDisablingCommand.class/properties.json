@@ -6,6 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
+		"componentProvider",
 		"viewWhileDisabled"
 	],
 	"name" : "TemporarilyDisablingCommand",

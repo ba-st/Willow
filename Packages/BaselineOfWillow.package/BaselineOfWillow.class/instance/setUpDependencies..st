@@ -9,5 +9,8 @@ setUpDependencies: spec
 				loads: #('Seaside-Development' 'Seaside-Pharo-Environment' 'Zinc-Seaside' 'Javascript-Pharo20-Core' 'JQuery-JSON' 'JQuery-UI') ].
 
 	spec
-		baseline: 'RenoirSt' with: [ spec repository: 'github://ba-st/RenoirSt:master/source' ];
+		baseline: 'RenoirSt'
+			with: [ spec
+				repository: 'github://ba-st/RenoirSt:master/source';
+				loads: #('Deployment-Seaside-Extensions') ];
 		import: 'RenoirSt'

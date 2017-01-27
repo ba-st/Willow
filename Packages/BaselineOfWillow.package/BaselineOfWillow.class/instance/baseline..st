@@ -1,12 +1,15 @@
 baselines
 baseline: spec
+
 	<baseline>
 	spec
 		for: #common
-		do: [ spec
+		do: [ self setUpDependencies: spec.
+			spec
 				package: 'ObjectHolding-Model';
-				package: 'ObjectHolding-Model-Tests' with: [ spec requires: 'ObjectHolding-Model' ];
-				package: 'Willow' with: [ spec requires: 'ObjectHolding-Model' ];
+				package: 'ObjectHolding-Model-Tests' with: [ spec requires: 'ObjectHolding-Model' ].
+			spec
+				package: 'Willow' with: [ spec requires: #('ObjectHolding-Model' 'Seaside3' 'RenoirSt') ];
 				package: 'Willow-Tests' with: [ spec requires: 'Willow' ];
 				package: 'Willow-JQueryUI' with: [ spec requires: 'Willow' ];
 				package: 'Willow-JQueryUI-Tests' with: [ spec requires: 'Willow-JQueryUI' ];

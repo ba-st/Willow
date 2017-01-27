@@ -1,0 +1,19 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'Willow',
+      #directory : 'Packages',
+      #load : [ 'Development' ],
+      #platforms : [  #pharo ]
+    }
+  ],
+  #testing : {
+    #coverage : {
+       #packages : [ 'Object-Holding*' , 'Willow*' ]
+    },
+    #include : {  
+       #packages : [ 'Object-Holding*-Tests' ,'Willow-*-Tests' ]
+    }
+  }
+} 
+

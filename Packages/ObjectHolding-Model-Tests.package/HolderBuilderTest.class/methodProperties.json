@@ -1,9 +1,0 @@
-{
-	"instance" : {
-		"testCombiningUnusedAndUsedHolders" : "GabrielOmarCotelli 1/5/2017 15:41",
-		"testCombiningUsedAndUnusedHolders" : "GabrielOmarCotelli 1/5/2017 15:42",
-		"testCombiningOnlyUsedHolders" : "GabrielOmarCotelli 1/5/2017 15:41",
-		"testCombiningOnlyUnusedHolders" : "GabrielOmarCotelli 1/5/2017 15:40"
-	},
-	"class" : { }
-}

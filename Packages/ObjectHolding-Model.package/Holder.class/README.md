@@ -1,1 +1,0 @@
-This is the counterpart to UnusedHolder, to identify the existance of an object occupying a certain role.

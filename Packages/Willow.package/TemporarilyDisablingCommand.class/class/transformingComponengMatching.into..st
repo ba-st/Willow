@@ -1,0 +1,4 @@
+Instance Creation
+transformingComponengMatching: aComponentProvider into: aViewWhileDisabled
+
+	^self new initializeTransformingComponengMatching: aComponentProvider into: aViewWhileDisabled

@@ -1,4 +1,0 @@
-initialization
-initializeTransformingCurrentViewInto: aViewWhileDisabled
-
-	viewWhileDisabled := aViewWhileDisabled

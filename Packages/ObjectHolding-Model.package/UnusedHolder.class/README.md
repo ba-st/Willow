@@ -1,1 +1,0 @@
-This is a sort of generic null object, to identify something that is not there.

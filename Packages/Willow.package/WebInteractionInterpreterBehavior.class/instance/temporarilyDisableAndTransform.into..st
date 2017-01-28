@@ -1,0 +1,4 @@
+Configuring
+temporarilyDisableAndTransform: anIdentifiedView into: aView
+
+	self subclassResponsibility

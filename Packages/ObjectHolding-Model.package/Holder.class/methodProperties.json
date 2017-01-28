@@ -1,9 +1,0 @@
-{
-	"instance" : {
-		"initializeContaining:" : "MaximilianoTabacman 12/7/2016 08:55",
-		"withContentDo:ifUnused:" : "guest 1/2/2014 21:25"
-	},
-	"class" : {
-		"containing:" : "guest 1/2/2014 21:25"
-	}
-}

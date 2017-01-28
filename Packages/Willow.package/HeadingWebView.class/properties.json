@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "WAPresenter",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"text",
+		"level",
+		"commandToComponent"
+	],
+	"name" : "HeadingWebView",
+	"type" : "normal"
+}

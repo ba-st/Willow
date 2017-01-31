@@ -9,8 +9,8 @@
 		"contentsBlock",
 		"selectedElement",
 		"interactionInterpreter",
-		"cssStyleNames",
-		"identifier"
+		"identifier",
+		"commandToComponent"
 	],
 	"name" : "SingleSelectionWebView",
 	"type" : "normal"

@@ -1,10 +1,9 @@
 {
 	"instance" : {
-		"initializeItemizing:" : "guest 1/5/2014 20:05",
-		"styleAccordingTo:" : "guest 1/5/2014 20:05",
-		"renderContentOn:" : "guest 1/5/2014 20:05"
+		"initializeItemizing:applying:" : "MaximilianoTabacman 1/31/2017 00:33",
+		"renderContentOn:" : "MaximilianoTabacman 1/31/2017 00:32"
 	},
 	"class" : {
-		"itemizing:" : "guest 1/5/2014 20:05"
+		"itemizing:applying:" : "MaximilianoTabacman 1/31/2017 00:33"
 	}
 }

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WebComponentCommand",
+	"category" : "Willow-JQueryUI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"scriptProvider"
+	],
+	"name" : "JQueryUIAutocompleteCommand",
+	"type" : "normal"
+}

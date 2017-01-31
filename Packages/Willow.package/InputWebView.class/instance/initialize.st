@@ -1,10 +1,9 @@
 initialize-release
 initialize
 
-	contentsBlock := [''].
-	afterContentObtainingCommand := [:contents | ].
-	propertyCommands := OrderedCollection new.
+	contentsBlock := [ '' ].
+	afterContentObtainingCommand := [ :contents |  ].
+	commandToComponent := CompositeComponentCommand empty.
 	identifier := ''.
 	readOnly := false.
-	interactionInterpreter := WebInteractionInterpreter
-				forChangeInComponentValue
+	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue

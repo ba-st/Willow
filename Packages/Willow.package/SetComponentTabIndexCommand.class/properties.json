@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "MaximilianoTabacman 1/31/2017 08:41",
+	"super" : "WebComponentCommand",
+	"category" : "Willow-Frontend",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"index"
+	],
+	"name" : "SetComponentTabIndexCommand",
+	"type" : "normal"
+}

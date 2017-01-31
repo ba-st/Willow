@@ -7,7 +7,7 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"listItemViews",
-		"cssStyleName"
+		"commandToComponent"
 	],
 	"name" : "UnorderedListWebView",
 	"type" : "normal"

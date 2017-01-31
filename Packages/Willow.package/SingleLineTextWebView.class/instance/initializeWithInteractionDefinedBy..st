@@ -1,4 +1,0 @@
-initialize-release
-initializeWithInteractionDefinedBy: aUserInteractionPolicy
-
-	interactionInterpreter := aUserInteractionPolicy

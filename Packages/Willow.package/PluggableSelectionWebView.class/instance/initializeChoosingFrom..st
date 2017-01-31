@@ -1,6 +1,6 @@
 initialize-release
 initializeChoosingFrom: aCollection
 
-	answerView := (MultiLineComboBoxWebView displayingAtOnce: 5)
-				obtainContentsFrom: [aCollection];
-				yourself
+	answerView := (SingleSelectionWebView displayingAtOnce: 5)
+		obtainContentsFrom: [ aCollection ];
+		yourself

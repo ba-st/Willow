@@ -1,1 +1,0 @@
-A web view for the single selection combo box.

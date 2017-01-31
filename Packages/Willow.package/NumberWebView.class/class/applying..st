@@ -1,4 +1,4 @@
-instance creation - private
-applying: aCommandCollection
+instance creation
+applying: aComponentCommand
 
-	^super new initializeApplying: aCommandCollection
+	^super new initializeApplying: aComponentCommand

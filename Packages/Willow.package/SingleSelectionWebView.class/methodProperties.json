@@ -1,22 +1,25 @@
 {
 	"instance" : {
-		"styleAccordingToAll:" : "guest 1/5/2014 20:05",
 		"obtainContents" : "guest 1/5/2014 20:05",
-		"renderContentOn:" : "MaximilianoTabacman 9/27/2014 11:35",
+		"initializeWithInteractionDefinedBy:applying:" : "MaximilianoTabacman 1/30/2017 21:32",
+		"renderContentOn:" : "MaximilianoTabacman 1/30/2017 23:40",
 		"clearSelection" : "guest 1/5/2014 20:05",
 		"chooseFirst" : "guest 1/5/2014 20:05",
-		"initialize" : "MaximilianoTabacman 4/30/2014 08:52",
 		"identifyWith:" : "MaximilianoTabacman 4/30/2014 08:52",
-		"identify:" : "MaximilianoTabacman 4/30/2014 08:52",
 		"identifier" : "MaximilianoTabacman 4/30/2014 08:52",
-		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
+		"identify:" : "MaximilianoTabacman 4/30/2014 08:52",
 		"onTrigger" : "guest 1/5/2014 20:05",
+		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
 		"selectedElement" : "guest 1/5/2014 20:05",
-		"styleAccordingTo:" : "guest 1/5/2014 20:05",
-		"triggeredOnDoubleClick" : "guest 1/5/2014 20:05",
 		"choose:" : "guest 1/5/2014 20:05",
-		"contents" : "guest 1/5/2014 20:05",
-		"renderedComponentOn:" : "guest 1/5/2014 20:05"
+		"contents" : "guest 1/5/2014 20:05"
 	},
-	"class" : { }
+	"class" : {
+		"displayingAtOnce:" : "MaximilianoTabacman 1/31/2017 00:11",
+		"triggeredOnChangeApplying:" : "MaximilianoTabacman 1/30/2017 23:44",
+		"triggeredOnDoubleClickApplying:" : "MaximilianoTabacman 1/30/2017 21:34",
+		"displayingAtOnce:applying:" : "MaximilianoTabacman 1/30/2017 23:42",
+		"triggeredOnChange" : "MaximilianoTabacman 1/30/2017 23:45",
+		"withInteractionDefinedBy:applying:" : "MaximilianoTabacman 1/30/2017 21:33"
+	}
 }

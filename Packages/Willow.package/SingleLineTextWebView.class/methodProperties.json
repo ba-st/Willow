@@ -1,11 +1,11 @@
 {
 	"instance" : {
-		"initializeWithInteractionDefinedBy:" : "MaximilianoTabacman 12/7/2016 08:57",
+		"initializeWithInteractionDefinedBy:applying:" : "MaximilianoTabacman 1/29/2017 20:54",
 		"renderedComponentOn:" : "guest 1/5/2014 20:05"
 	},
 	"class" : {
-		"new" : "guest 1/5/2014 20:05",
-		"withInteractionDefinedBy:" : "guest 1/5/2014 20:05",
-		"triggeredOnKeyUp" : "guest 1/5/2014 20:05"
+		"triggeredOnChangeApplying:" : "MaximilianoTabacman 1/29/2017 20:49",
+		"triggeredOnKeyUpApplying:" : "MaximilianoTabacman 1/29/2017 20:49",
+		"withInteractionDefinedBy:applying:" : "MaximilianoTabacman 1/29/2017 20:50"
 	}
 }

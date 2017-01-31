@@ -1,0 +1,1 @@
+A command to set the name of a component.

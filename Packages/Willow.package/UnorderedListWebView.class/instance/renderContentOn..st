@@ -1,9 +1,10 @@
 rendering
 renderContentOn: aCanvas
-	"El orden es importante!"
 
-	| list |
-	list := aCanvas unorderedList.
-	list
-		class: cssStyleName;
-		with: listItemViews
+	"The order is relevant"
+
+	| component |
+
+	component := aCanvas unorderedList.
+	commandToComponent applyTo: component on: aCanvas.
+	component with: listItemViews

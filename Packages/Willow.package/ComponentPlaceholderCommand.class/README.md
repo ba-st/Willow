@@ -1,0 +1,1 @@
+A command to assign a hint for a component, using the placeholder attribute.

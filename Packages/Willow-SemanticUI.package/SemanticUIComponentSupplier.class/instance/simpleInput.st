@@ -6,4 +6,4 @@ simpleInput
 		interactingThrough:
 			(WebInteractionInterpreter
 				workingWith: WebComponentInteraction neverTriggered)
-		applying: WebComponentCommand nullCommand
+		applying: CompositeComponentCommand empty

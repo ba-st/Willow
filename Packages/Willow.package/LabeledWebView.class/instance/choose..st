@@ -1,7 +1,5 @@
 configuring
 choose: anElement
 
-	self
-		deprecated: 'Use viewToLabel'
-		transformWith: '`@receiver choose: `@anElement' -> '`@receiver viewToLabel choose: `@anElement'.
+	self deprecated: 'Please review!'.
 	viewToLabel choose: anElement

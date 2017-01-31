@@ -10,8 +10,8 @@
 		"interactionInterpreter",
 		"readOnly",
 		"afterContentObtainingCommand",
-		"propertyCommands",
-		"identifier"
+		"identifier",
+		"commandToComponent"
 	],
 	"name" : "InputWebView",
 	"type" : "normal"

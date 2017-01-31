@@ -1,7 +1,5 @@
 configuring
 readOnly: aBoolean
 
-	self
-		deprecated: 'Use viewToLabel'
-		transformWith: '`@receiver readOnly: `@aBoolean' -> '`@receiver viewToLabel readOnly: `@aBoolean'.
+	self deprecated: 'Please review!'.
 	viewToLabel readOnly: aBoolean

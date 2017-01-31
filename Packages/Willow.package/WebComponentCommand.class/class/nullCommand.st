@@ -1,4 +1,0 @@
-accessing
-nullCommand
-
-	^ CompositeComponentCommand empty

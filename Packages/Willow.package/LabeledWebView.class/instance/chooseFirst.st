@@ -1,7 +1,5 @@
 configuring
 chooseFirst
 
-	self
-		deprecated: 'Use viewToLabel'
-		transformWith: '`@receiver chooseFirst' -> '`@receiver viewToLabel chooseFirst'.
+	self deprecated: 'Please review!'.
 	viewToLabel chooseFirst

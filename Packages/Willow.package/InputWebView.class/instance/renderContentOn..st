@@ -14,5 +14,5 @@ renderContentOn: aCanvas
 					self obtainContentsFrom: [ aString ].
 					afterContentObtainingCommand value: aString ] ].
 	self identify: component.
-	propertyCommands do: [ :command | command applyTo: component on: aCanvas ].
+	commandToComponent applyTo: component on: aCanvas.
 	interactionInterpreter applyTo: component on: aCanvas

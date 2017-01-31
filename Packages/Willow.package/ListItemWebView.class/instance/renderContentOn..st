@@ -1,6 +1,8 @@
 rendering
 renderContentOn: aCanvas
 
-	(aCanvas listItem)
-		class: cssStyleName;
-		with: itemView
+	| component |
+
+	component := aCanvas listItem.
+	commandToComponent applyTo: component on: aCanvas.
+	component with: itemView

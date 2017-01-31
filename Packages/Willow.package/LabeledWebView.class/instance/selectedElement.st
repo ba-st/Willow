@@ -1,7 +1,5 @@
 accessing
 selectedElement
 
-	self
-		deprecated: 'Use viewToLabel'
-		transformWith: '`@receiver selectedElement' -> '`@receiver viewToLabel selectedElement'.
+	self deprecated: 'Please review!'.
 	^ viewToLabel selectedElement

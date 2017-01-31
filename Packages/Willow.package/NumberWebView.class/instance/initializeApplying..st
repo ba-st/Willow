@@ -1,4 +1,4 @@
 initialize-release
-initializeApplying: aPropertyCommandCollection
+initializeApplying: aComponentCommand
 
-	propertyCommands := aPropertyCommandCollection
+	commandToComponent := aComponentCommand

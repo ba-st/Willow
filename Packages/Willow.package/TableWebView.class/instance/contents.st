@@ -1,4 +1,4 @@
-accessing - private
+container-API
 contents
 
-	^ contentsProvider value
+	^items

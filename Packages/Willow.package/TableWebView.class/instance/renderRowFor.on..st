@@ -1,6 +1,8 @@
-rendering - private
-renderRowFor: anElement on: aCanvas
+private
+renderRowFor: anItem on: aCanvas
 
-	aCanvas
-		tableRow: [ columnDefinitions
-				do: [ :columnDefinition | aCanvas render: (columnDefinition cellContentFor: anElement) ] ]
+	| row |
+
+	row := aCanvas tableRow.
+	commandToRow applyTo: row for: anItem on: aCanvas.
+	row with: [columnRenderers do: [:renderer | renderer renderCellFor: anItem on: aCanvas]]

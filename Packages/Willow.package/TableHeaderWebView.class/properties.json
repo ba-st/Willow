@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 2/1/2017 18:02",
+	"super" : "WAPresenter",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"columnRenderers"
+	],
+	"name" : "TableHeaderWebView",
+	"type" : "normal"
+}

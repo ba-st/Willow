@@ -9,10 +9,10 @@ SmalltalkCISpec {
   ],
   #testing : {
     #coverage : {
-       #packages : [ 'Object-Holding*' , 'Willow*' ]
+       #packages : [  'Willow*' ]
     },
     #include : {  
-       #packages : [ 'Object-Holding*-Tests' ,'Willow-*-Tests' ]
+       #packages : [ 'Willow*-Tests' ]
     }
   }
 } 

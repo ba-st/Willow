@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "WebTableColumnRendererBehavior",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"title",
+		"renderingCommand",
+		"commandToHeading",
+		"commandToCell"
+	],
+	"name" : "WebTableColumnRenderer",
+	"type" : "normal"
+}

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 2/1/2017 18:25",
+	"super" : "TableRowCommand",
+	"category" : "Willow-Frontend",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"command"
+	],
+	"name" : "WebComponentCommandToTableRowCommandAdapter",
+	"type" : "normal"
+}

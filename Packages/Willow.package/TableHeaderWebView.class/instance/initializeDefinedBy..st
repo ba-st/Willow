@@ -1,0 +1,4 @@
+initialization
+initializeDefinedBy: aColumnRendererCollection
+
+	columnRenderers := aColumnRendererCollection

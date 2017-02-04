@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "MaximilianoTabacman 2/3/2017 08:46",
+	"super" : "WebComponentCommand",
+	"category" : "Willow-Frontend",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"colSpan"
+	],
+	"name" : "SetColumnSpanCommand",
+	"type" : "normal"
+}

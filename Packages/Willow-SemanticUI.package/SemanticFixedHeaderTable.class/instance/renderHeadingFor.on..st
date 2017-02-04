@@ -1,4 +1,4 @@
 rendering - private
 renderHeadingFor: columnDefinition on: aCanvas
 
-	aCanvas render: columnDefinition headingContent
+	columnDefinition renderHeadingOn: aCanvas

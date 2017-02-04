@@ -1,14 +1,17 @@
 {
 	"instance" : {
-		"renderHeadingFor:on:" : "MaximilianoTabacman 12/24/2015 16:42",
-		"renderHeadOn:" : "MaximilianoTabacman 12/24/2015 16:12",
-		"renderRowFor:on:" : "MaximilianoTabacman 3/23/2016 10:07",
-		"renderContentOn:" : "MaximilianoTabacman 3/14/2016 09:07",
-		"renderBodyOn:" : "MaximilianoTabacman 12/24/2015 16:04",
-		"initializeShowing:obtainingContentsFrom:applying:" : "MaximilianoTabacman 12/7/2016 08:57",
-		"contents" : "MaximilianoTabacman 12/24/2015 14:45"
+		"onTrigger" : "GabrielOmarCotelli 2/1/2017 18:12",
+		"notifyChangesTo:" : "GabrielOmarCotelli 2/1/2017 18:11",
+		"changeContentsTo:" : "GabrielOmarCotelli 2/1/2017 18:11",
+		"renderRowFor:on:" : "GabrielOmarCotelli 2/1/2017 18:14",
+		"renderContentOn:" : "GabrielOmarCotelli 2/1/2017 18:14",
+		"notifyInterested" : "GabrielOmarCotelli 2/1/2017 18:11",
+		"initializeDefinedBy:applying:headerRenderedBy:applyingToEachRow:" : "GabrielOmarCotelli 2/1/2017 18:10",
+		"contents" : "GabrielOmarCotelli 2/1/2017 18:11"
 	},
 	"class" : {
-		"showing:obtainingContentsFrom:applying:" : "MaximilianoTabacman 3/14/2016 09:07"
+		"headlessDefinedBy:applying:" : "GabrielOmarCotelli 2/1/2017 18:09",
+		"headedDefinedBy:applying:" : "GabrielOmarCotelli 2/1/2017 18:09",
+		"definedBy:applying:headerRenderedBy:applyingToEachRow:" : "GabrielOmarCotelli 2/1/2017 18:08"
 	}
 }

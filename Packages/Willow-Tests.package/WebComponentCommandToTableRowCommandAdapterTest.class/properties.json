@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "WillowTestCase",
+	"category" : "Willow-Tests-Frontend",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WebComponentCommandToTableRowCommandAdapterTest",
+	"type" : "normal"
+}

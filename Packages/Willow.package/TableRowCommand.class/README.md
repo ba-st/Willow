@@ -1,0 +1,1 @@
+I'm a command to be applied to a table row. I expect to be evaluated with the current row, the related object and a Canvas

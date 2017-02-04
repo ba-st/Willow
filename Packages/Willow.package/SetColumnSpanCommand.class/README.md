@@ -1,0 +1,1 @@
+A command to set the colSpan of a table column.

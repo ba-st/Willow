@@ -1,4 +1,4 @@
 instance creation
-toExecute: aScript
+toExecute: aScriptProvider
 
-	^ self new initializeToExecute: aScript
+	^ self new initializeToExecute: aScriptProvider

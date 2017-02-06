@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 2/6/2017 16:21",
+	"super" : "JSFunction",
+	"category" : "Willow-WebInteraction",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"name"
+	],
+	"name" : "NamedJavascriptFunction",
+	"type" : "normal"
+}

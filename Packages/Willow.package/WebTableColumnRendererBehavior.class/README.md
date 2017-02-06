@@ -1,0 +1,1 @@
+I'm an abstract class defining the required behavior for rendering columns in a table

@@ -7,10 +7,10 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"title",
-		"renderingCommand",
+		"renderingCommands",
 		"commandToHeading",
 		"commandToCell"
 	],
-	"name" : "WebTableColumnRenderer",
+	"name" : "WebTableMultiColumnRenderer",
 	"type" : "normal"
 }

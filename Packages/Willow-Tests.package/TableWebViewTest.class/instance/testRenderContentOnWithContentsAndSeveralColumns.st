@@ -1,4 +1,4 @@
-tests-container-API
+tests-rendering
 testRenderContentOnWithContentsAndSeveralColumns
 
 	| table html |

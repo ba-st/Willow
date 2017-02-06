@@ -1,0 +1,1 @@
+I'm responsible of rendering several columns in a table with an unique header.

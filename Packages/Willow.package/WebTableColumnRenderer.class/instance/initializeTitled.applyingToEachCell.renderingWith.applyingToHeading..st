@@ -1,5 +1,5 @@
 initialization
-initializeNamed: aTitle applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading
+initializeTitled: aTitle applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading
 
 	title := aTitle.
 	renderingCommand := aRenderingCommand.

@@ -5,7 +5,7 @@ titled: aName
 	applyingToHeading: aCommandToHeading
 
 	^self new
-		initializeNamed: aName
+		initializeTitled: aName
 		applyingToEachCell: aCommandToCell
 		renderingWith: aRenderingCommand
 		applyingToHeading: aCommandToHeading

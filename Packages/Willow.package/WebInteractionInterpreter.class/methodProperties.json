@@ -2,10 +2,11 @@
 	"instance" : {
 		"informSelection" : "guest 1/5/2014 20:05",
 		"toggle:using:" : "guest 1/5/2014 20:05",
-		"setValueOfComponentWithId:to:" : "MaximilianoTabacman 1/9/2017 20:43",
+		"setValueTo:thenTriggerChangeOf:" : "GabrielOmarCotelli 2/13/2017 09:18",
 		"serializeWithHiddenInputs" : "GabrielOmarCotelli 1/9/2017 17:47",
 		"evaluate:with:" : "guest 1/5/2014 20:05",
 		"toggleCssClass:" : "MaximilianoTabacman 1/10/2017 22:41",
+		"setValueTo:withoutTriggeringChangeOComponentWithId:" : "GabrielOmarCotelli 2/13/2017 08:51",
 		"inform:" : "MaximilianoTabacman 12/28/2015 17:39",
 		"focus:" : "guest 1/5/2014 20:05",
 		"disable" : "GabrielOmarCotelli 1/6/2017 17:54",
@@ -35,8 +36,7 @@
 		"toggleCssClass:onComponentsWithClass:withEffect:" : "MaximilianoTabacman 1/10/2017 22:41",
 		"determineBehaviorByEvaluating:" : "GabrielOmarCotelli 1/9/2017 17:36",
 		"open:" : "MaximilianoTabacman 1/9/2017 19:51",
-		"submitFormStyledAs:" : "MaximilianoTabacman 2/6/2014 08:24",
-		"setValueOf:to:" : "MaximilianoTabacman 1/9/2017 20:44"
+		"submitFormStyledAs:" : "MaximilianoTabacman 2/6/2014 08:24"
 	},
 	"class" : {
 		"forClickOnHiddenInputDependentComponent" : "guest 1/5/2014 20:05",

@@ -1,13 +1,15 @@
 {
 	"instance" : {
-		"initializeObtainingIdentifierFrom:valueFrom:" : "MaximilianoTabacman 1/9/2017 20:42",
-		"modelLoadingActions" : "MaximilianoTabacman 1/9/2017 20:42",
+		"modelLoadingActions" : "GabrielOmarCotelli 2/13/2017 09:15",
 		"clientIndependentActions" : "guest 1/5/2014 20:05",
 		"priorityActions" : "guest 1/5/2014 20:05",
+		"initializeObtainingIdentifierFrom:valueFrom:triggeringAction:" : "GabrielOmarCotelli 2/13/2017 09:14",
 		"requiresSerialization" : "MaximilianoTabacman 12/20/2015 16:40",
 		"serverIndependentActions" : "guest 1/5/2014 20:05"
 	},
 	"class" : {
-		"obtainingIdentifierFrom:valueFrom:" : "MaximilianoTabacman 1/9/2017 20:43"
+		"triggeringChangesObtainingIdentifierFrom:valueFrom:" : "GabrielOmarCotelli 2/13/2017 09:18",
+		"obtainingIdentifierFrom:valueFrom:triggeringAction:" : "GabrielOmarCotelli 2/13/2017 09:18",
+		"obtainingIdentifierFrom:valueFrom:" : "GabrielOmarCotelli 2/13/2017 09:19"
 	}
 }

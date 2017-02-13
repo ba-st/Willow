@@ -2,10 +2,11 @@
 	"instance" : {
 		"informSelection" : "GabrielOmarCotelli 1/17/2017 16:40",
 		"toggle:using:" : "GabrielOmarCotelli 1/17/2017 16:42",
-		"setValueOfComponentWithId:to:" : "GabrielOmarCotelli 1/17/2017 16:41",
+		"setValueTo:thenTriggerChangeOf:" : "GabrielOmarCotelli 2/13/2017 08:52",
 		"serializeWithHiddenInputs" : "GabrielOmarCotelli 1/17/2017 16:41",
 		"evaluate:with:" : "GabrielOmarCotelli 1/17/2017 16:36",
 		"toggleCssClass:" : "GabrielOmarCotelli 1/17/2017 16:42",
+		"setValueTo:withoutTriggeringChangeOComponentWithId:" : "GabrielOmarCotelli 2/13/2017 08:51",
 		"inform:" : "GabrielOmarCotelli 1/17/2017 16:40",
 		"focus:" : "GabrielOmarCotelli 1/17/2017 16:36",
 		"disable" : "GabrielOmarCotelli 1/17/2017 16:35",
@@ -35,8 +36,7 @@
 		"toggleCssClass:onComponentsWithClass:withEffect:" : "GabrielOmarCotelli 1/17/2017 16:42",
 		"determineBehaviorByEvaluating:" : "GabrielOmarCotelli 1/17/2017 16:35",
 		"open:" : "GabrielOmarCotelli 1/17/2017 16:40",
-		"submitFormStyledAs:" : "GabrielOmarCotelli 1/17/2017 16:42",
-		"setValueOf:to:" : "GabrielOmarCotelli 1/17/2017 16:41"
+		"submitFormStyledAs:" : "GabrielOmarCotelli 1/17/2017 16:42"
 	},
 	"class" : {
 		"combiningInterpretersOf:" : "guest 1/5/2014 20:05",

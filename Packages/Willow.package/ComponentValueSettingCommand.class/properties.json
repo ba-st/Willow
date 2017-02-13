@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "GabrielOmarCotelli 2/13/2017 09:12",
 	"super" : "WebInteractionCommand",
 	"category" : "Willow-WebInteraction",
 	"classinstvars" : [ ],
@@ -7,7 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"valueProvider",
-		"identifierProvider"
+		"identifierProvider",
+		"triggeringAction"
 	],
 	"name" : "ComponentValueSettingCommand",
 	"type" : "normal"

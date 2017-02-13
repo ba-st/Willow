@@ -11,6 +11,7 @@
 		"testForDoubleClickOnComponent" : "MaximilianoTabacman 1/9/2017 20:17",
 		"testEvaluateWith" : "MaximilianoTabacman 1/9/2017 20:14",
 		"testExecuteOnClient" : "MaximilianoTabacman 12/8/2016 13:12",
+		"testSetValueToWithoutTriggeringChangeOComponentWithId" : "GabrielOmarCotelli 2/13/2017 09:06",
 		"testForEvaluationOfWithAll" : "MaximilianoTabacman 12/6/2016 12:15",
 		"testForReleaseOfKeyInComponent" : "MaximilianoTabacman 1/9/2017 20:16",
 		"testForClickOnHiddenInputDependentComponent" : "MaximilianoTabacman 1/9/2017 20:16",

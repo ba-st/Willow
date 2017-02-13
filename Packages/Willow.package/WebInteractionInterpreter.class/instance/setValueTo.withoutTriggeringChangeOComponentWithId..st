@@ -1,5 +1,5 @@
 configuring
-setValueOfComponentWithId: identifier to: aValueProvider
+setValueTo: aValueProvider withoutTriggeringChangeOComponentWithId: identifier
 
 	interaction
 		onTriggerExecute:

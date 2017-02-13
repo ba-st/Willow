@@ -1,15 +1,16 @@
 {
 	"instance" : {
-		"toggleCssClass:" : "GabrielOmarCotelli 1/17/2017 16:50",
-		"setValueOf:to:" : "GabrielOmarCotelli 1/17/2017 16:49",
+		"setValueTo:withoutTriggeringChangeOComponentWithId:" : "GabrielOmarCotelli 2/13/2017 08:51",
+		"setValueOf:to:" : "GabrielOmarCotelli 2/13/2017 08:56",
 		"remove:" : "GabrielOmarCotelli 1/17/2017 16:48",
-		"toggleCssClass:onComponentsWithClass:withEffect:" : "GabrielOmarCotelli 1/17/2017 16:50",
+		"toggle:using:" : "GabrielOmarCotelli 1/17/2017 16:50",
 		"addCssClass:toComponentsMatching:" : "GabrielOmarCotelli 1/17/2017 16:47",
+		"toggleCssClass:" : "GabrielOmarCotelli 1/17/2017 16:50",
 		"confirmAsking:" : "GabrielOmarCotelli 1/17/2017 16:47",
 		"enable:" : "GabrielOmarCotelli 1/17/2017 16:48",
+		"toggleCssClass:onComponentsWithClass:withEffect:" : "GabrielOmarCotelli 1/17/2017 16:50",
 		"open:" : "GabrielOmarCotelli 1/17/2017 16:48",
 		"submitFormStyledAs:" : "GabrielOmarCotelli 1/17/2017 16:49",
-		"setValueOfComponentWithId:to:" : "GabrielOmarCotelli 1/17/2017 16:49",
 		"inform:" : "GabrielOmarCotelli 1/17/2017 16:48",
 		"temporarilyDisableAndTransformInto:" : "GabrielOmarCotelli 1/17/2017 16:50",
 		"removeCssClass:fromComponentsMatching:" : "GabrielOmarCotelli 1/17/2017 16:48",
@@ -34,7 +35,7 @@
 		"scrollingIntoView:" : "GabrielOmarCotelli 1/17/2017 16:49",
 		"informSelection" : "GabrielOmarCotelli 1/17/2017 16:48",
 		"serializeWithHiddenInputs" : "GabrielOmarCotelli 1/17/2017 16:49",
-		"toggle:using:" : "GabrielOmarCotelli 1/17/2017 16:50"
+		"setValueTo:thenTriggerChangeOf:" : "GabrielOmarCotelli 2/13/2017 08:52"
 	},
 	"class" : { }
 }

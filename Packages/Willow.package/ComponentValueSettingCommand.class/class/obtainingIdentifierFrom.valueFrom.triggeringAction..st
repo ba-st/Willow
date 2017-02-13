@@ -1,0 +1,4 @@
+private
+obtainingIdentifierFrom: aValueProvider valueFrom: anIdentifierProvider triggeringAction: aTriggeringAction
+
+	^ self new initializeObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider triggeringAction: aTriggeringAction

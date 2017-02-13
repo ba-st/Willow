@@ -10,5 +10,5 @@ assertIsValidIdentifier: candidate
 				enforce: [ candidate notEmpty ]
 					because: 'An id attribute can''t be empty'
 					onSuccess: [ :successAsserter | successAsserter enforce: [ candidate first isLetter ] because: 'An id attribute must begin with a letter' ];
-				enforce: [ candidate allSatisfy: [ :character | character isSafeForHTTP ] ] because: [ 'The id contains an unsafe character' ] ];
+				enforce: [ candidate allSatisfy: [ :character | character isSafeForHTTP ] ] because: 'The id contains an unsafe character' ];
 		buildAndCheck

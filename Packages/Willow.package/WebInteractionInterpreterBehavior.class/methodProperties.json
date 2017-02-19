@@ -1,14 +1,13 @@
 {
 	"instance" : {
 		"setValueTo:withoutTriggeringChangeOComponentWithId:" : "GabrielOmarCotelli 2/13/2017 08:51",
-		"setValueOf:to:" : "GabrielOmarCotelli 2/13/2017 08:56",
-		"remove:" : "GabrielOmarCotelli 1/17/2017 16:48",
 		"toggle:using:" : "GabrielOmarCotelli 1/17/2017 16:50",
-		"addCssClass:toComponentsMatching:" : "GabrielOmarCotelli 1/17/2017 16:47",
+		"remove:" : "GabrielOmarCotelli 1/17/2017 16:48",
 		"toggleCssClass:" : "GabrielOmarCotelli 1/17/2017 16:50",
+		"addCssClass:toComponentsMatching:" : "GabrielOmarCotelli 1/17/2017 16:47",
+		"toggleCssClass:onComponentsWithClass:withEffect:" : "GabrielOmarCotelli 1/17/2017 16:50",
 		"confirmAsking:" : "GabrielOmarCotelli 1/17/2017 16:47",
 		"enable:" : "GabrielOmarCotelli 1/17/2017 16:48",
-		"toggleCssClass:onComponentsWithClass:withEffect:" : "GabrielOmarCotelli 1/17/2017 16:50",
 		"open:" : "GabrielOmarCotelli 1/17/2017 16:48",
 		"submitFormStyledAs:" : "GabrielOmarCotelli 1/17/2017 16:49",
 		"inform:" : "GabrielOmarCotelli 1/17/2017 16:48",

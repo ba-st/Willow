@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "WillowTestCase",
+	"category" : "Willow-Tests-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"notificationWasReceived"
+	],
+	"name" : "TextFieldWebViewTest",
+	"type" : "normal"
+}

@@ -1,11 +1,7 @@
 {
-	"instance" : {
-		"initializeWithInteractionDefinedBy:applying:" : "MaximilianoTabacman 1/29/2017 20:54",
-		"renderedComponentOn:" : "guest 1/5/2014 20:05"
-	},
+	"instance" : { },
 	"class" : {
-		"triggeredOnChangeApplying:" : "MaximilianoTabacman 1/29/2017 20:49",
-		"triggeredOnKeyUpApplying:" : "MaximilianoTabacman 1/29/2017 20:49",
-		"withInteractionDefinedBy:applying:" : "MaximilianoTabacman 1/29/2017 20:50"
+		"triggeredOnChangeApplying:" : "GabrielOmarCotelli 3/3/2017 18:32",
+		"triggeredOnKeyUpApplying:" : "GabrielOmarCotelli 3/3/2017 18:33"
 	}
 }

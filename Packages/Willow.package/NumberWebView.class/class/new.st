@@ -1,4 +1,5 @@
 instance creation
 new
 
-	^ self applying: CompositeComponentCommand empty
+	self deprecated: 'Use TextFieldWebView' transformWith: 'NumberWebView new' -> 'TextFieldWebView singleLineTriggeringOnChangeApplying: NumberInputModeCommand new'.
+	^ TextFieldWebView singleLineTriggeringOnChangeApplying: NumberInputModeCommand new

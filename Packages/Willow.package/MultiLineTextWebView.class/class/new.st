@@ -1,4 +1,6 @@
 instance creation
 new
 
-	^super new initialize
+	self deprecated: 'Use TextFieldWebView' transformWith: 'MultiLineTextWebView new' -> 'TextFieldWebView multiLineTriggeringOnChangeApplying: CompositeComponentCommand empty '.
+
+	^ TextFieldWebView multiLineTriggeringOnChangeApplying: CompositeComponentCommand empty

@@ -1,4 +1,4 @@
 configuring
 identifyWith: anId
 
-	identifier := anId
+	self deprecated: 'Use TextFieldWebView>>#identifyIn:'

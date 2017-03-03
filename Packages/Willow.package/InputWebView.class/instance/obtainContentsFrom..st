@@ -1,4 +1,4 @@
 configuring
 obtainContentsFrom: aBlock
 
-	contentsBlock := aBlock
+	self deprecated: 'Use TextFieldWebView>>#changeContentsTo:'

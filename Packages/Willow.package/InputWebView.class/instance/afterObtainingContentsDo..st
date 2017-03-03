@@ -1,4 +1,4 @@
 configuring
 afterObtainingContentsDo: aContentsDependentBlock
 
-	afterContentObtainingCommand := aContentsDependentBlock
+	self deprecated: 'Use TextFieldWebView>>#notifyChangesTo: to register as a listener'

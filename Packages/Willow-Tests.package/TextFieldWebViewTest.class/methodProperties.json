@@ -1,0 +1,17 @@
+{
+	"instance" : {
+		"testIdentifyIn" : "GabrielOmarCotelli 3/3/2017 18:00",
+		"testOnTrigger" : "GabrielOmarCotelli 3/3/2017 18:04",
+		"testContents" : "GabrielOmarCotelli 3/3/2017 17:49",
+		"testRenderContentOn" : "GabrielOmarCotelli 3/3/2017 17:55",
+		"testTriggerOnKeyUpMultiLine" : "GabrielOmarCotelli 3/3/2017 18:15",
+		"testOnTriggerMultiLine" : "GabrielOmarCotelli 3/3/2017 18:10",
+		"testRenderMultiLineContentWithContents" : "GabrielOmarCotelli 3/3/2017 18:14",
+		"changeNotifiedBy:" : "GabrielOmarCotelli 3/3/2017 17:53",
+		"testRenderSingleLineContentWithContents" : "GabrielOmarCotelli 3/3/2017 17:57",
+		"testRenderContentOnApplyingCommands" : "GabrielOmarCotelli 3/3/2017 18:02",
+		"testTriggerOnKeyUp" : "GabrielOmarCotelli 3/3/2017 18:07",
+		"testNotifyChangesTo" : "GabrielOmarCotelli 3/3/2017 17:52"
+	},
+	"class" : { }
+}

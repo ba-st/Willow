@@ -1,6 +1,8 @@
 instance creation
 triggeredOnKeyUpApplying: aComponentCommand
 
-	^ self
-		withInteractionDefinedBy: WebInteractionInterpreter forReleaseOfKeyInComponent
-		applying: aComponentCommand
+	self
+		deprecated: 'Use TextFieldWebView'
+		transformWith: 'SingleLineTextWebView triggeredOnKeyUpApplying:  ̀@aComponentCommand' -> 'TextFieldWebView singleLineTriggeringOnKeyUpApplying: ̀@aComponentCommand'.
+
+	^ TextFieldWebView singleLineTriggeringOnKeyUpApplying: aComponentCommand

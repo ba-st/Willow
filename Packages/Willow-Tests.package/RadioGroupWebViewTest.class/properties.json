@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "DropDownListWebViewTest",
+	"name" : "RadioGroupWebViewTest",
 	"type" : "normal"
 }

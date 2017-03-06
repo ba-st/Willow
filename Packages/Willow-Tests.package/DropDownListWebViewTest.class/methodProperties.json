@@ -1,18 +1,12 @@
 {
 	"instance" : {
-		"testRenderContentOnWithCommands" : "GabrielOmarCotelli 3/6/2017 13:50",
-		"testIdentifyIn" : "GabrielOmarCotelli 3/6/2017 14:17",
 		"testOnTrigger" : "GabrielOmarCotelli 3/6/2017 13:54",
-		"testAllowsAnySatisfying" : "GabrielOmarCotelli 3/6/2017 14:20",
 		"testRenderContentOnWithElements" : "GabrielOmarCotelli 3/6/2017 13:44",
-		"testRenderContentOn" : "GabrielOmarCotelli 3/6/2017 13:43",
-		"testNotifyChangesWhenSelectionChanged" : "GabrielOmarCotelli 3/6/2017 14:09",
-		"changeNotifiedBy:" : "GabrielOmarCotelli 3/6/2017 14:03",
-		"testNotifyChangesWhenSelectionNotChanged" : "GabrielOmarCotelli 3/6/2017 14:11",
-		"testNotifyChangesWhenAvailableElementsChangeButNotContainsTheSelectedOne" : "GabrielOmarCotelli 3/6/2017 14:13",
+		"testIdentifyIn" : "GabrielOmarCotelli 3/6/2017 14:17",
+		"newSingleSelectionView" : "GabrielOmarCotelli 3/6/2017 15:34",
 		"testRenderContentOnWithElementsAndSomethingSelected" : "GabrielOmarCotelli 3/6/2017 13:46",
-		"testNotifyChangesWhenAvailableElementsChangeButContainsTheSelectedOne" : "GabrielOmarCotelli 3/6/2017 14:13",
-		"testNotifyChangesTo" : "GabrielOmarCotelli 3/6/2017 13:59"
+		"testRenderContentOn" : "GabrielOmarCotelli 3/6/2017 13:43",
+		"testRenderContentOnWithCommands" : "GabrielOmarCotelli 3/6/2017 13:50"
 	},
 	"class" : { }
 }

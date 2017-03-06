@@ -1,0 +1,1 @@
+I'm an abstract test case for views implementing the single selection API

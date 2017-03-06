@@ -1,0 +1,15 @@
+{
+	"instance" : {
+		"testAllowsAnySatisfying" : "GabrielOmarCotelli 3/6/2017 15:36",
+		"newSingleSelectionView" : "GabrielOmarCotelli 3/6/2017 15:37",
+		"testNotifyChangesTo" : "GabrielOmarCotelli 3/6/2017 15:36",
+		"changeNotifiedBy:" : "GabrielOmarCotelli 3/6/2017 15:37",
+		"testNotifyChangesWhenAvailableElementsChangeButNotContainsTheSelectedOne" : "GabrielOmarCotelli 3/6/2017 15:36",
+		"testNotifyChangesWhenSelectionChanged" : "GabrielOmarCotelli 3/6/2017 15:36",
+		"testNotifyChangesWhenSelectionNotChanged" : "GabrielOmarCotelli 3/6/2017 15:36",
+		"testNotifyChangesWhenAvailableElementsChangeButContainsTheSelectedOne" : "GabrielOmarCotelli 3/6/2017 15:36"
+	},
+	"class" : {
+		"isAbstract" : "GabrielOmarCotelli 3/6/2017 15:32"
+	}
+}

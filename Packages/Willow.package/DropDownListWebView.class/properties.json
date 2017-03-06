@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 3/6/2017 12:36",
+	"super" : "SingleSelectionWebViewBehavior",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"interactionInterpreter",
+		"commandToComponent",
+		"identifierHolder"
+	],
+	"name" : "DropDownListWebView",
+	"type" : "normal"
+}

@@ -1,4 +1,4 @@
-accessing
+accessing - private
 identifier
 
 	^identifier

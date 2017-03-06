@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 3/6/2017 19:42",
+	"super" : "WAPresenter",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"availableElements",
+		"chosenElements",
+		"interested",
+		"interactionInterpreter",
+		"commandToComponent",
+		"identifierHolder"
+	],
+	"name" : "ListBoxWebView",
+	"type" : "normal"
+}

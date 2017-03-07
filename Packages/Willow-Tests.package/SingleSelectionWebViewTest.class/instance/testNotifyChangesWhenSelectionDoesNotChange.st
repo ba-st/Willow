@@ -1,5 +1,5 @@
 tests-Single Selection-API
-testNotifyChangesWhenSelectionNotChanged
+testNotifyChangesWhenSelectionDoesNotChange
 
 	| singleSelectionView |
 

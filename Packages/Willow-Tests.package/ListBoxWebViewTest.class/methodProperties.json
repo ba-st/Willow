@@ -10,8 +10,8 @@
 		"newListBox" : "GabrielOmarCotelli 3/6/2017 20:13",
 		"testChooseAllInWhenNotAvailable" : "GabrielOmarCotelli 3/6/2017 20:18",
 		"changeNotifiedBy:" : "GabrielOmarCotelli 3/6/2017 20:12",
-		"testNotifyChangesWhenSelectionNotChanged" : "GabrielOmarCotelli 3/6/2017 20:21",
 		"testRenderContentOnWithElementsAndSomethingSelected" : "GabrielOmarCotelli 3/6/2017 20:10",
+		"testNotifyChangesWhenSelectionDoesNotChange" : "GabrielOmarCotelli 3/7/2017 15:02",
 		"testChooseAllIn" : "GabrielOmarCotelli 3/6/2017 20:17",
 		"testNotifyChangesTo" : "GabrielOmarCotelli 3/6/2017 20:13"
 	},

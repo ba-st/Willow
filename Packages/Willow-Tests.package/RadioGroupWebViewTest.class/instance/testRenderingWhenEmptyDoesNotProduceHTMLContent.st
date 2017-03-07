@@ -1,5 +1,5 @@
 tests-rendering
-testRenderContentOn
+testRenderingWhenEmptyDoesNotProduceHTMLContent
 
 	| radioGroup html |
 

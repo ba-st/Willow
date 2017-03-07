@@ -1,1 +1,1 @@
-I'm a list box, thath allows the user to select one or more items from a list contained within a static, multiple line text box. The user clicks inside the box on an item to select it.
+I'm a list box, that allows the user to select one or more items from a list contained within a static, multiple line text box. The user clicks inside the box on an item to select it.

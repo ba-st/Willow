@@ -1,5 +1,5 @@
 tests-Single Selection-API
-testNotifyChangesWhenAvailableElementsChangeButNotContainsTheSelectedOne
+testNotifyChangesWhenAvailableElementsChangeButDoesNotContainTheSelectedOne
 
 	| singleSelectionView |
 

@@ -1,5 +1,5 @@
 tests-Multiple Selection-API
-testNotifyChangesWhenSelectionNotChanged
+testNotifyChangesWhenSelectionDoesNotChange
 
 	| listBox |
 

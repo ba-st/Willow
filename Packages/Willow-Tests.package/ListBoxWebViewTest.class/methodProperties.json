@@ -1,12 +1,14 @@
 {
 	"instance" : {
-		"testRenderContentOnWithCommands" : "GabrielOmarCotelli 3/6/2017 20:09",
+		"testRenderContentOnWithCommands" : "GabrielOmarCotelli 3/7/2017 15:34",
 		"testIdentifyIn" : "GabrielOmarCotelli 3/6/2017 20:04",
-		"testOnTrigger" : "GabrielOmarCotelli 3/6/2017 20:11",
+		"testChooseAllMatching" : "GabrielOmarCotelli 3/7/2017 15:36",
 		"testAllowsAnySatisfying" : "GabrielOmarCotelli 3/6/2017 20:14",
-		"testRenderContentOnWithElements" : "GabrielOmarCotelli 3/6/2017 20:07",
+		"testChooseAll" : "GabrielOmarCotelli 3/7/2017 15:34",
+		"testOnTrigger" : "GabrielOmarCotelli 3/6/2017 20:11",
 		"testRenderContentOn" : "GabrielOmarCotelli 3/6/2017 20:06",
 		"testNotifyChangesWhenSelectionChanged" : "GabrielOmarCotelli 3/6/2017 20:19",
+		"testRenderContentOnWithElements" : "GabrielOmarCotelli 3/6/2017 20:07",
 		"newListBox" : "GabrielOmarCotelli 3/6/2017 20:13",
 		"testChooseAllInWhenNotAvailable" : "GabrielOmarCotelli 3/6/2017 20:18",
 		"changeNotifiedBy:" : "GabrielOmarCotelli 3/6/2017 20:12",

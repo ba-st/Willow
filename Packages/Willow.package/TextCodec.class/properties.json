@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "GabrielOmarCotelli 3/7/2017 14:04",
 	"super" : "Object",
-	"category" : "Willow-WebViewsNeedingReview",
+	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "NumberWebView",
+	"name" : "TextCodec",
 	"type" : "normal"
 }

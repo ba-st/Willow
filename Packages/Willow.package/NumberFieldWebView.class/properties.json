@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 3/7/2017 14:02",
+	"super" : "InputWebView",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"textField",
+		"textCodec"
+	],
+	"name" : "NumberFieldWebView",
+	"type" : "normal"
+}

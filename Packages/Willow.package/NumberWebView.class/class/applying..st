@@ -2,6 +2,6 @@ instance creation
 applying: aComponentCommand
 
 	self
-		deprecated: 'Use TextFieldWebView'
-		transformWith: 'NumberWebView applying: ̀@aComponentCommand' -> 'TextFieldWebView singleLineTriggeringOnChangeApplying: NumberInputModeCommand new + ̀@aComponentCommand '.
-	^ TextFieldWebView singleLineTriggeringOnChangeApplying: NumberInputModeCommand new + aComponentCommand
+		deprecated: 'Use NumberFieldWebView'
+		transformWith: 'NumberWebView applying: ̀@aComponentCommand' -> 'NumberFieldWebView forIntegersApplying: ̀@aComponentCommand'.
+	^ NumberFieldWebView forIntegersApplying: aComponentCommand

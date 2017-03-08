@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"testOnTrigger" : "GabrielOmarCotelli 3/7/2017 18:20",
+		"testRenderContentOnWithElements" : "GabrielOmarCotelli 3/7/2017 18:18",
+		"testIdentifyIn" : "GabrielOmarCotelli 3/7/2017 18:21",
+		"testDisplayingAtOnce" : "GabrielOmarCotelli 3/7/2017 18:23",
+		"newSingleSelectionView" : "GabrielOmarCotelli 3/7/2017 18:09",
+		"testRenderContentOn" : "GabrielOmarCotelli 3/7/2017 18:10",
+		"testRenderContentOnWithElementsAndSomethingSelected" : "GabrielOmarCotelli 3/7/2017 18:19",
+		"testRenderContentOnWithCommands" : "GabrielOmarCotelli 3/7/2017 18:16"
+	},
+	"class" : { }
+}

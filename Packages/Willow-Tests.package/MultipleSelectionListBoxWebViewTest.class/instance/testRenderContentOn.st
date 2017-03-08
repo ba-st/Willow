@@ -3,7 +3,7 @@ testRenderContentOn
 
 	| listBox html |
 
-	listBox := ListBoxWebView applying: CompositeComponentCommand empty.
+	listBox := self newListBox.
 
 	html := self render: listBox.
 

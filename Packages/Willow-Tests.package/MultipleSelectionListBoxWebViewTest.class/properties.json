@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 3/7/2017 18:12",
+	"super" : "WillowTestCase",
+	"category" : "Willow-Tests-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"notificationWasReceived"
+	],
+	"name" : "MultipleSelectionListBoxWebViewTest",
+	"type" : "normal"
+}

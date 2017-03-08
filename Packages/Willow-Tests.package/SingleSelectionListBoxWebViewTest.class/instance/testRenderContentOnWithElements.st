@@ -1,0 +1,10 @@
+tests-rendering
+testRenderContentOnWithElements
+
+	| listBox html |
+
+	listBox := self newSingleSelectionView.
+	listBox allowAnyOf: #('One' 'Two' 'Three').
+	html := self render: listBox.
+
+	self assert: html equals: '<select size="5" name="1"><option value="1">One</option><option value="2">Two</option><option value="3">Three</option></select>'

@@ -9,4 +9,5 @@ testRenderContentOnWithCommands
 
 	self
 		assert: html
-		equals: '<input name="1" class="willow-disabled-component" value="1" type="radio"/>a<input name="1" class="willow-disabled-component" value="2" type="radio"/>b'
+		equals:
+			 '<label for="radio-button-id2"><input name="1" id="radio-button-id2" class="willow-disabled-component" value="1" type="radio"/>a</label><label for="radio-button-id3"><input name="1" id="radio-button-id3" class="willow-disabled-component" value="2" type="radio"/>b</label>'

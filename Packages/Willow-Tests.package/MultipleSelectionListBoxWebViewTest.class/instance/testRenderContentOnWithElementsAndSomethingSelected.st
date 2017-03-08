@@ -3,7 +3,7 @@ testRenderContentOnWithElementsAndSomethingSelected
 
 	| listBox html |
 
-	listBox := ListBoxWebView applying: CompositeComponentCommand empty.
+	listBox := self newListBox.
 	listBox allowAnyOf: #('One' 'Two' 'Three').
 	listBox chooseAllIn: #('Two' 'Three').
 	html := self render: listBox.

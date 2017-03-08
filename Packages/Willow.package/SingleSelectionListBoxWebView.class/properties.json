@@ -1,18 +1,15 @@
 {
-	"commentStamp" : "GabrielOmarCotelli 3/7/2017 15:02",
-	"super" : "WAPresenter",
+	"commentStamp" : "GabrielOmarCotelli 3/7/2017 18:01",
+	"super" : "SingleSelectionWebViewBehavior",
 	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"availableElements",
-		"chosenElements",
-		"interested",
 		"interactionInterpreter",
 		"commandToComponent",
 		"identifierHolder"
 	],
-	"name" : "ListBoxWebView",
+	"name" : "SingleSelectionListBoxWebView",
 	"type" : "normal"
 }

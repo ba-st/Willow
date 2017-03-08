@@ -3,7 +3,7 @@ testIdentifyIn
 
 	| dropDownList html |
 
-	dropDownList := DropDownListWebView applying: CompositeComponentCommand empty.
+	dropDownList := self newSingleSelectionView.
 
 	html := self
 		renderUsing: [ :canvas | 

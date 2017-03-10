@@ -2,6 +2,7 @@
 	"instance" : {
 		"obtainContents" : "guest 1/5/2014 20:05",
 		"initializeWithInteractionDefinedBy:applying:" : "MaximilianoTabacman 1/30/2017 21:32",
+		"identifyIn:" : "MaximilianoTabacman 3/8/2017 00:23",
 		"renderContentOn:" : "MaximilianoTabacman 1/30/2017 23:40",
 		"clearSelection" : "guest 1/5/2014 20:05",
 		"chooseFirst" : "guest 1/5/2014 20:05",

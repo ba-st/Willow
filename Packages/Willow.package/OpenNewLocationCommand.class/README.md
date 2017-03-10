@@ -1,0 +1,1 @@
+Command to configure an anchor to open a destination into a blank page

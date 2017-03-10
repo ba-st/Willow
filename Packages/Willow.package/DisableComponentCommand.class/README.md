@@ -1,0 +1,1 @@
+Command to disable a component

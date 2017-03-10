@@ -1,14 +1,15 @@
 {
 	"instance" : {
 		"initializeForComponentBuiltUsing:withInteractionDefinedBy:applying:" : "GabrielOmarCotelli 3/3/2017 17:12",
-		"updatedIdentifierUsing:" : "GabrielOmarCotelli 3/3/2017 17:40",
-		"notifyChangesTo:" : "GabrielOmarCotelli 3/3/2017 17:15",
-		"changeContentsTo:" : "GabrielOmarCotelli 3/3/2017 17:14",
 		"identifyIn:" : "GabrielOmarCotelli 3/3/2017 17:42",
 		"renderContentOn:" : "GabrielOmarCotelli 3/3/2017 17:11",
 		"notifyInterested" : "GabrielOmarCotelli 3/3/2017 17:16",
 		"onTrigger" : "GabrielOmarCotelli 3/3/2017 17:16",
-		"contents" : "GabrielOmarCotelli 3/3/2017 17:14"
+		"notifyChangesTo:" : "GabrielOmarCotelli 3/3/2017 17:15",
+		"identifier" : "MaximilianoTabacman 3/8/2017 09:28",
+		"changeContentsTo:" : "GabrielOmarCotelli 3/3/2017 17:14",
+		"contents" : "GabrielOmarCotelli 3/3/2017 17:14",
+		"updatedIdentifierUsing:" : "GabrielOmarCotelli 3/3/2017 17:40"
 	},
 	"class" : {
 		"multiLineTriggeringOnKeyUpApplying:" : "GabrielOmarCotelli 3/3/2017 18:16",

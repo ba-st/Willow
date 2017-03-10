@@ -1,4 +1,0 @@
-configuring
-afterObtainingContentsDo: aContentsDependentBlock
-
-	afterContentObtainingCommand := aContentsDependentBlock

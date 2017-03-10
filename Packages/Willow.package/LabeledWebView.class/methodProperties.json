@@ -6,13 +6,12 @@
 		"initializeDisplaying:with:titled:" : "MaximilianoTabacman 12/7/2016 08:57",
 		"onTrigger" : "guest 1/5/2014 20:05",
 		"chooseFirst" : "MaximilianoTabacman 1/29/2017 11:28",
-		"readOnly:" : "MaximilianoTabacman 1/29/2017 11:28",
 		"identifier" : "MaximilianoTabacman 4/30/2014 08:52",
 		"selectedElement" : "MaximilianoTabacman 1/29/2017 11:28",
 		"obtainContentsFrom:" : "MaximilianoTabacman 1/29/2017 11:28",
 		"choose:" : "MaximilianoTabacman 1/29/2017 11:28",
 		"changeLabelTo:" : "guest 1/5/2014 20:05",
-		"identifyComponentOn:" : "MaximilianoTabacman 5/1/2014 12:54"
+		"identifyComponentOn:" : "MaximilianoTabacman 3/8/2017 00:00"
 	},
 	"class" : {
 		"displaying:with:" : "guest 1/5/2014 20:05",

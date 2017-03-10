@@ -1,12 +1,13 @@
 {
 	"instance" : {
 		"selectedElements" : "guest 1/5/2014 20:05",
+		"identifyIn:" : "MaximilianoTabacman 3/8/2017 23:14",
 		"obtainContents" : "guest 1/5/2014 20:05",
 		"renderContentOn:" : "guest 1/5/2014 20:05",
 		"initializeDisplayingAtOnce:" : "MaximilianoTabacman 12/5/2016 09:55",
+		"onTrigger" : "guest 1/5/2014 20:05",
 		"clearSelection" : "guest 1/5/2014 20:05",
 		"identifyWith:" : "MaximilianoTabacman 4/30/2014 08:58",
-		"onTrigger" : "guest 1/5/2014 20:05",
 		"identify:" : "MaximilianoTabacman 4/30/2014 08:58",
 		"obtainContentsFrom:" : "guest 1/5/2014 20:05",
 		"choose:" : "guest 1/5/2014 20:05",

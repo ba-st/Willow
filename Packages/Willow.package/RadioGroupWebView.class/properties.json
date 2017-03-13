@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 3/6/2017 15:20",
+	"super" : "SingleSelectionWebViewBehavior",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"interactionInterpreter",
+		"commandToElement",
+		"commandToRadioButton"
+	],
+	"name" : "RadioGroupWebView",
+	"type" : "normal"
+}

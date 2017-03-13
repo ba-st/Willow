@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 3/6/2017 13:32",
+	"super" : "WAPresenter",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"availableElements",
+		"chosenElementHolder",
+		"interested"
+	],
+	"name" : "SingleSelectionWebViewBehavior",
+	"type" : "normal"
+}

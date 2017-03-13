@@ -1,7 +1,7 @@
 initialize-release
 initializeChoosingFrom: aCollection startingWith: initialSelection
 
-	answerView := (MultipleSelectionWebView displayingAtOnce: 5)
-		obtainContentsFrom: [ aCollection ];
-		choose: initialSelection;
-		yourself
+	answerView := MultipleSelectionListBoxWebView applying: (SetComponentSizeCommand setting: 5).
+	answerView
+		allowAnyOf: aCollection;
+		chooseAllIn: initialSelection

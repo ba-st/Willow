@@ -1,0 +1,4 @@
+support
+newSingleSelectionView
+
+	^self subclassResponsibility 

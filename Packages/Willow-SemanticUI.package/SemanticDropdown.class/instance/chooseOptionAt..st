@@ -1,4 +1,4 @@
 configuring - private
 chooseOptionAt: anIndex
 
-	selectionHolder := Holder containing: (options at: anIndex)
+	chosenElementHolder := Holder containing: (options at: anIndex)

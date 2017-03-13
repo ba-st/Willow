@@ -1,11 +1,16 @@
 {
 	"commentStamp" : "MaximilianoTabacman 1/5/2017 09:56",
-	"super" : "RadioButtonGroupWebViewBehavior",
+	"super" : "SingleSelectionWebViewBehavior",
 	"category" : "Willow-JQueryUI",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"commandToComponent",
+		"interactionInterpreter",
+		"commandToRadioButton",
+		"radioButtonDefinition"
+	],
 	"name" : "JQueryUIButtonSetWebView",
 	"type" : "normal"
 }

@@ -1,8 +1,8 @@
-initialize-release
+initialization
 initializeNamed: aName offering: anOptionCollection interactingThrough: anInteractionInterpreter applying: aComponentCommand
 
 	name := aName.
 	options := anOptionCollection.
 	interactionInterpreter := anInteractionInterpreter.
-	selectionHolder := UnusedHolder explainedBy: 'Nothing selected'.
+	chosenElementHolder := UnusedHolder explainedBy: 'There''s no element selected'.
 	componentCommand := aComponentCommand

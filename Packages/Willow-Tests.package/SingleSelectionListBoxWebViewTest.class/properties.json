@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "SingleSelectionWebViewTest",
+	"category" : "Willow-Tests-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SingleSelectionListBoxWebViewTest",
+	"type" : "normal"
+}

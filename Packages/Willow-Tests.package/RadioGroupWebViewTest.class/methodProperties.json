@@ -1,0 +1,11 @@
+{
+	"instance" : {
+		"testOnTrigger" : "GabrielOmarCotelli 3/8/2017 16:20",
+		"testRenderContentOnWithElements" : "GabrielOmarCotelli 3/8/2017 16:23",
+		"testRenderContentOnWithElementsAndSomethingSelected" : "GabrielOmarCotelli 3/8/2017 16:24",
+		"newSingleSelectionView" : "GabrielOmarCotelli 3/6/2017 15:37",
+		"testRenderingWhenEmptyDoesNotProduceHTMLContent" : "GabrielOmarCotelli 3/7/2017 14:59",
+		"testRenderContentOnWithCommands" : "GabrielOmarCotelli 3/8/2017 16:22"
+	},
+	"class" : { }
+}

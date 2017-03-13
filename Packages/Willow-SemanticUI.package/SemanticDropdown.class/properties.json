@@ -9,8 +9,8 @@
 		"name",
 		"options",
 		"interactionInterpreter",
-		"selectionHolder",
-		"componentCommand"
+		"componentCommand",
+		"chosenElementHolder"
 	],
 	"name" : "SemanticDropdown",
 	"type" : "normal"

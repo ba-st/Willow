@@ -1,6 +1,6 @@
 configuring - private
 configureValueOf: anInput
 
-	selectionHolder
+	chosenElementHolder
 		withContentDo: [ :option | anInput value: (options indexOf: option) ]
 		ifUnused: [ :explanations |  ]

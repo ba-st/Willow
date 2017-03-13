@@ -1,4 +1,4 @@
-Instance Creation
+Instance creation
 applyingToEachRadioButton: aCommandToComponent
 
 	^ self new initializeApplyingToEachRadioButton: aCommandToComponent

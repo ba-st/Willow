@@ -1,12 +1,6 @@
 {
-	"instance" : {
-		"initializeDescribedBy:styledAccordingTo:obtainingFileUsing:" : "MaximilianoTabacman 12/7/2016 08:57",
-		"renderAnchorOn:" : "guest 1/5/2014 20:05",
-		"renderContentOn:" : "guest 1/5/2014 20:05",
-		"response" : "guest 1/5/2014 20:05",
-		"document" : "guest 1/5/2014 20:05"
-	},
+	"instance" : { },
 	"class" : {
-		"describedBy:styledAccordingTo:obtainingFileUsing:" : "guest 1/5/2014 20:05"
+		"describedBy:styledAccordingTo:obtainingFileUsing:" : "GabrielOmarCotelli 3/14/2017 17:17"
 	}
 }

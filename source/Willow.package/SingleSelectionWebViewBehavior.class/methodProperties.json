@@ -1,16 +1,20 @@
 {
 	"instance" : {
 		"currentSelectionIfNone:" : "GabrielOmarCotelli 3/6/2017 13:36",
+		"chooseAny" : "GabrielOmarCotelli 3/14/2017 16:18",
+		"currentSelection" : "MaximilianoTabacman 3/11/2017 12:06",
 		"notifyInterested" : "GabrielOmarCotelli 3/6/2017 14:02",
 		"allowsAnySatisfying:" : "GabrielOmarCotelli 3/6/2017 13:36",
 		"disallowAll" : "GabrielOmarCotelli 3/6/2017 13:36",
 		"notifyChangesTo:" : "GabrielOmarCotelli 3/6/2017 13:37",
 		"initialize" : "GabrielOmarCotelli 3/6/2017 13:38",
+		"chooseEqualTo:" : "GabrielOmarCotelli 3/14/2017 16:28",
 		"allowAnyOf:" : "GabrielOmarCotelli 3/6/2017 19:56",
 		"onTrigger" : "GabrielOmarCotelli 3/6/2017 13:35",
 		"invalidateSelection" : "GabrielOmarCotelli 3/6/2017 14:01",
 		"chooseAnySatisfying:ifNone:" : "GabrielOmarCotelli 3/6/2017 13:36",
-		"choose:" : "GabrielOmarCotelli 3/6/2017 14:02"
+		"choose:" : "GabrielOmarCotelli 3/6/2017 14:02",
+		"withCurrentSelectionDo:" : "GabrielOmarCotelli 3/14/2017 16:26"
 	},
 	"class" : {
 		"new" : "GabrielOmarCotelli 3/6/2017 13:35"

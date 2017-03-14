@@ -2,7 +2,7 @@ SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
       #baseline : 'Willow',
-      #directory : 'Packages',
+      #directory : 'source',
       #load : [ 'Development' ],
       #platforms : [  #pharo ]
     }
@@ -11,9 +11,8 @@ SmalltalkCISpec {
     #coverage : {
        #packages : [  'Willow*' ]
     },
-    #include : {  
+    #include : {
        #packages : [ 'Willow*-Tests' ]
     }
   }
-} 
-
+}

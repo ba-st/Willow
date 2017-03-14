@@ -2,7 +2,7 @@ accessing
 simpleInput
 
 	^ SemanticInput
-		interpretedBy: InputInterpreter forText
+		interpretedBy: NullCodec new
 		interactingThrough:
 			(WebInteractionInterpreter
 				workingWith: WebComponentInteraction neverTriggered)

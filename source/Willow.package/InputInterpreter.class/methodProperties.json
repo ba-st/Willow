@@ -1,12 +1,6 @@
 {
-	"instance" : {
-		"inputFor:" : "MaximilianoTabacman 3/20/2016 13:01",
-		"interpretFrom:" : "MaximilianoTabacman 3/20/2016 12:58",
-		"initializeTranslatingFrom:to:" : "MaximilianoTabacman 3/20/2016 12:50"
-	},
+	"instance" : { },
 	"class" : {
-		"translatingFrom:to:" : "MaximilianoTabacman 3/20/2016 12:49",
-		"forNumbers" : "GabrielOmarCotelli 1/12/2017 12:32",
-		"forText" : "MaximilianoTabacman 5/31/2016 08:58"
+		"translatingFrom:to:" : "GabrielOmarCotelli 3/14/2017 15:21"
 	}
 }

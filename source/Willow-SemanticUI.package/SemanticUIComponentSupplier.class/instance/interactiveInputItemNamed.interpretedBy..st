@@ -1,7 +1,7 @@
 accessing
-interactiveInputItemNamed: aName interpretedBy: anInputInterpreter
+interactiveInputItemNamed: aName interpretedBy: aTextCodec
 
 	^ SemanticInput
-		interpretedBy: anInputInterpreter
+		interpretedBy: aTextCodec
 		interactingThrough: WebInteractionInterpreter forChangeInComponentValue
 		applying: (SemanticPopup toDisplay: aName)

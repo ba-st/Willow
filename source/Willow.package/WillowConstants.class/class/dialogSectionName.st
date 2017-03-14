@@ -1,4 +1,4 @@
-Accessing
+Accessing Well Known Ids
 dialogSectionName
 
-	^'DialogSection'
+	^'willow-dialog-section'

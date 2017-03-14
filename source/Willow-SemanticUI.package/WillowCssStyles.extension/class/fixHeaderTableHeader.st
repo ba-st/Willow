@@ -1,4 +1,4 @@
-accessing - general
+*Willow-SemanticUI
 fixHeaderTableHeader
 
 	^ 'fixHeaderTableHeader'

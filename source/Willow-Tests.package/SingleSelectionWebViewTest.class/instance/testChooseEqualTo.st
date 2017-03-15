@@ -5,7 +5,7 @@ testChooseEqualTo
 
 	singleSelectionView := self newSingleSelectionView.
 
-	singleSelectionView chooseEqualTo: 3.
+	self should: [ singleSelectionView chooseEqualTo: 3 ] raise: SelectionIsInvalid.
 
 	self should: [ singleSelectionView currentSelection ] raise: SelectionIsInvalid.
 

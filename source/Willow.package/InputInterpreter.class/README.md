@@ -1,1 +1,0 @@
-A simple tranformation logic from/to string for use in input views.

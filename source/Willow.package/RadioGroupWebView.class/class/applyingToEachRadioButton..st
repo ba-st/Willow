@@ -1,4 +1,4 @@
 Instance creation
 applyingToEachRadioButton: aCommandToComponent
 
-	^ self new initializeApplyingToEachRadioButton: aCommandToComponent
+	^ self applyingToEachRadioButton: aCommandToComponent renderingLabelsWith: [ :element | element ]

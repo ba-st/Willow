@@ -12,4 +12,4 @@ renderRadioButtonFor: anElement asPartOf: aRadioGroup on: aCanvas
 			commandToRadioButton applyTo: radioButton on: aCanvas.
 			interactionInterpreter applyTo: radioButton on: aCanvas.
 			radioButton value: anElement.
-			aCanvas render: anElement ]
+			aCanvas render: (renderingBlock value: anElement) ]

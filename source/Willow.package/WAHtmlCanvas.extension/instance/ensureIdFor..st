@@ -1,7 +1,9 @@
 *Willow-SeasideExtensions
-ensureIdFor: aComponent
+ensureIdFor: aTagBrush
 
-	aComponent id
-		ifNil: [ | id |
-			id := IdentifierAssigner new identifierFor: aComponent on: self.
-			aComponent id: id ]
+	aTagBrush id
+		ifNil: [ aTagBrush
+				id:
+					((IdentifierAssigner prefixedBy: aTagBrush tag)
+						identifyIn: self;
+						assignedIdentifier) ]

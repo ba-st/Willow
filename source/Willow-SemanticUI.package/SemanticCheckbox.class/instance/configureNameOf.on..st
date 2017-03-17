@@ -3,7 +3,5 @@ configureNameOf: anInput on: aCanvas
 
 	| componentName |
 
-	componentName := IdentifierAssigner new
-		identifierPrefixedBy: 'checkbox'
-		using: aCanvas nextId.
+	componentName := (IdentifierAssigner prefixedBy: 'checkbox') identifyIn: aCanvas.
 	anInput name: componentName

@@ -8,5 +8,5 @@ renderContentOn: aCanvas
 	select list: availableElements.
 	select callback: [ :element | self choose: element ].
 	chosenElementHolder withContentDo: [ :chosenElement | select selected: chosenElement ].
-	identifierHolder withContentDo: [ :id | select id: id ].
+	identifierAssigner withAssignedIdentifierDo: [ :id | select id: id ].
 	interactionInterpreter applyTo: select on: aCanvas

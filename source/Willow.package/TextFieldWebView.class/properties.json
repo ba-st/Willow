@@ -9,9 +9,9 @@
 		"interactionInterpreter",
 		"commandToComponent",
 		"interested",
-		"identifierHolder",
 		"componentBuilder",
-		"contents"
+		"contents",
+		"identifierAssigner"
 	],
 	"name" : "TextFieldWebView",
 	"type" : "normal"

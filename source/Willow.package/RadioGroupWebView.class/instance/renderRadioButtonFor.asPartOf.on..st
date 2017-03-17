@@ -3,7 +3,7 @@ renderRadioButtonFor: anElement asPartOf: aRadioGroup on: aCanvas
 
 	| radioButtonId radioButton |
 
-	radioButtonId := IdentifierAssigner new identifierPrefixedBy: 'radio-button' using: aCanvas nextId.
+	radioButtonId := (IdentifierAssigner prefixedBy: 'radio-button') identifyIn: aCanvas.
 
 	aCanvas label
 		for: radioButtonId;

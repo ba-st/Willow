@@ -1,7 +1,6 @@
 initialization
 initializeApplying: aCommandToComponent
 
-	commandToComponent := aCommandToComponent. 
+	commandToComponent := aCommandToComponent.
 	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue.
-	identifierHolder := UnusedHolder explainedBy: 'Identifier never requested so far'.
-	
+	identifierAssigner := IdentifierAssigner prefixedBy: 'drop-down-list'

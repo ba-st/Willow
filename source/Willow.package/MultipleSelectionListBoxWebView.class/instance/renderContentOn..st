@@ -8,6 +8,6 @@ renderContentOn: aCanvas
 		list: availableElements;
 		callback: [ :elements | self chooseAllIn: elements ];
 		selected: chosenElements.
-	identifierHolder withContentDo: [ :id | select id: id ].
+	identifierAssigner withAssignedIdentifierDo: [ :id | select id: id ].
 	interactionInterpreter applyTo: select on: aCanvas.
 	commandToComponent applyTo: select on: aCanvas

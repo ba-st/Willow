@@ -1,4 +1,7 @@
 accessing
 id
 
-	^self updatedIdentifierUsing: 'forcedId0'
+	self
+		deprecated: 'Use identifier instead'
+		transformWith: '̀@receiver id' -> '̀@receiver identifier'.
+	^ self identifier

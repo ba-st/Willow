@@ -1,4 +1,4 @@
 test support
 nextId
 
-	^ 'theTestIdentifer'
+	^ '123'

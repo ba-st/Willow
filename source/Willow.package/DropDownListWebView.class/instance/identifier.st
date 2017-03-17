@@ -1,4 +1,4 @@
 accessing
 identifier
 
-	^ identifierHolder withContentDo: [ :anId | anId ] ifUnused: [ '' ]
+	^ identifierAssigner assignedIdentifier

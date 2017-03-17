@@ -3,6 +3,4 @@ obtain: clientSideParameter from: anAsynchronousCall
 
 	anAsynchronousCall
 		type: 'POST';
-		callback:
-				[ :serverSideParameter | serverSideParameterHolder := Holder containing: serverSideParameter ]
-			json: clientSideParameter
+		callback: [ :serverSideParameter | serverSideParameterBinding := Binding to: serverSideParameter ] json: clientSideParameter

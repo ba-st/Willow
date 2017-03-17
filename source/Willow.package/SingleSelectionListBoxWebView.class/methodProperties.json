@@ -1,7 +1,8 @@
 {
 	"instance" : {
+		"configure:unselectingAllOn:" : "GabrielOmarCotelli 3/17/2017 17:47",
 		"identifyIn:" : "GabrielOmarCotelli 3/17/2017 11:28",
-		"renderContentOn:" : "GabrielOmarCotelli 3/17/2017 11:30",
+		"renderContentOn:" : "GabrielOmarCotelli 3/17/2017 17:47",
 		"initializeApplying:" : "GabrielOmarCotelli 3/17/2017 11:28",
 		"onTrigger" : "GabrielOmarCotelli 3/7/2017 18:07",
 		"identifier" : "GabrielOmarCotelli 3/17/2017 11:27"

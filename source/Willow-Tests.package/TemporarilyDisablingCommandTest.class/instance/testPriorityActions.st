@@ -17,4 +17,4 @@ testPriorityActions
 	self
 		assert: html
 		equals:
-			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){$.ajax({"data":[disabledComponent=$(this).html(),$(this).addClass("willow-disabled-component").attr("disabled",true).html("<span class=\"loading\"></span>")].join("&"),"complete":function(){$(".willow-disabled-component").attr("disabled",false).removeClass("willow-disabled-component").html(disabledComponent)}})});</script>'
+			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){$.ajax({"data":[disabledComponent=$(this).html(),$(this).addClass("willow-disabled-component").attr("disabled",true).html("<span class=\"willow-loading\"></span>")].join("&"),"complete":function(){$(".willow-disabled-component").attr("disabled",false).removeClass("willow-disabled-component").html(disabledComponent)}})});</script>'

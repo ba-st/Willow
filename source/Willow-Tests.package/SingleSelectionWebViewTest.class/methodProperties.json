@@ -1,13 +1,16 @@
 {
 	"instance" : {
+		"testChooseAny" : "GabrielOmarCotelli 3/14/2017 16:20",
+		"testWithCurrentSelectionDo" : "GabrielOmarCotelli 3/14/2017 16:24",
 		"testAllowsAnySatisfying" : "GabrielOmarCotelli 3/6/2017 15:36",
-		"testNotifyChangesWhenSelectionDoesNotChange" : "GabrielOmarCotelli 3/7/2017 15:02",
-		"newSingleSelectionView" : "GabrielOmarCotelli 3/6/2017 15:37",
-		"testNotifyChangesTo" : "GabrielOmarCotelli 3/6/2017 15:36",
-		"changeNotifiedBy:" : "GabrielOmarCotelli 3/6/2017 15:37",
 		"testNotifyChangesWhenSelectionChanged" : "GabrielOmarCotelli 3/6/2017 15:36",
+		"changeNotifiedBy:" : "GabrielOmarCotelli 3/6/2017 15:37",
+		"testNotifyChangesWhenSelectionDoesNotChange" : "GabrielOmarCotelli 3/7/2017 15:02",
+		"testNotifyChangesWhenAvailableElementsChangeButContainsTheSelectedOne" : "GabrielOmarCotelli 3/6/2017 15:36",
+		"testChooseEqualTo" : "GabrielOmarCotelli 3/15/2017 14:58",
+		"newSingleSelectionView" : "GabrielOmarCotelli 3/6/2017 15:37",
 		"testNotifyChangesWhenAvailableElementsChangeButDoesNotContainTheSelectedOne" : "GabrielOmarCotelli 3/7/2017 15:01",
-		"testNotifyChangesWhenAvailableElementsChangeButContainsTheSelectedOne" : "GabrielOmarCotelli 3/6/2017 15:36"
+		"testNotifyChangesTo" : "GabrielOmarCotelli 3/6/2017 15:36"
 	},
 	"class" : {
 		"isAbstract" : "GabrielOmarCotelli 3/6/2017 15:32"

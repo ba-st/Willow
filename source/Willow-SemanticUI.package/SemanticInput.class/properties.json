@@ -9,8 +9,8 @@
 		"componentCommand",
 		"interactionInterpreter",
 		"content",
-		"inputInterpreter",
-		"currentInputIdentifier"
+		"currentInputIdentifier",
+		"textCodec"
 	],
 	"name" : "SemanticInput",
 	"type" : "normal"

@@ -1,0 +1,4 @@
+converting
+decode: aString
+
+	^aString

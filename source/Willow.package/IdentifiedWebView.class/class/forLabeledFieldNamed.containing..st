@@ -4,7 +4,7 @@ forLabeledFieldNamed: aName containing: aView
 	^ self
 		forComponentBuiltUsing: [ :canvas | 
 			canvas fieldSet
-				class: WillowCssStyles fieldAndLabel;
+				class: WillowCssStyles willow;
 				yourself ]
 		named: aName
 		containing: aView

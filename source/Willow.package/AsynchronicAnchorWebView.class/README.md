@@ -1,0 +1,1 @@
+I'm an anchor acting as a push button, capable of triggering actions by AJAX

@@ -1,7 +1,7 @@
 instance creation
-interpretedBy: anInputInterpreter interactingThrough: anInteractionInterpreter applying: aComponentCommand
+interpretedBy: aTextCodec interactingThrough: anInteractionInterpreter applying: aComponentCommand
 
 	^ self new
-		initializeInterpretedBy: anInputInterpreter
+		initializeInterpretedBy: aTextCodec
 		interactingThrough: anInteractionInterpreter
 		applying: aComponentCommand

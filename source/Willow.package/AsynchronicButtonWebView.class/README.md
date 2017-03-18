@@ -1,0 +1,1 @@
+I'm a push button used to trigger actions using AJAX

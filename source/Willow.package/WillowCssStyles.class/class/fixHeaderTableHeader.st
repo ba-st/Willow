@@ -1,4 +1,0 @@
-accessing - general
-fixHeaderTableHeader
-
-	^ 'fixHeaderTableHeader'

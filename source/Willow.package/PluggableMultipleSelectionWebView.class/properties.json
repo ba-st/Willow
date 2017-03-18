@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "WAPresenter",
-	"category" : "Willow-WebViewsNeedingReview",
+	"category" : "Willow-Obsolete",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

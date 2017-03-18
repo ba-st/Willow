@@ -1,4 +1,4 @@
 accessing
 content
 
-	^ inputInterpreter interpretFrom: content
+	^ textCodec decode: content

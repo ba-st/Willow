@@ -1,7 +1,7 @@
 initialize-release
-initializeInterpretedBy: anInputInterpreter interactingThrough: anInteractionInterpreter applying: aComponentCommand
+initializeInterpretedBy: aTextCodec interactingThrough: anInteractionInterpreter applying: aComponentCommand
 
-	inputInterpreter := anInputInterpreter.
+	textCodec := aTextCodec.
 	interactionInterpreter := anInteractionInterpreter.
 	currentInputIdentifier := ''.
 	componentCommand := CompositeComponentCommand

@@ -1,6 +1,4 @@
 instance creation
 nonNegative
 
-	^ self
-		restrictingMinimumWith: (Holder containing: 0)
-		maximumTo: (UnusedHolder explainedBy: 'Maximum not restricted')
+	^ self restrictingMinimumWith: (Optional containing: 0) maximumTo: (Optional unusedBecause: 'Maximum not restricted')

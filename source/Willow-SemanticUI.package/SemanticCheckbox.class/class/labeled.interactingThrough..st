@@ -2,6 +2,6 @@ instance creation
 labeled: aLabel interactingThrough: anInteractionInterpreter
 
 	^ self
-		labeledWithContentOf: (Holder containing: aLabel)
+		labeledWithContentOf: (Optional containing: aLabel)
 		interactingThrough: anInteractionInterpreter
 		applying: CompositeComponentCommand empty

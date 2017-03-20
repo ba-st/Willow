@@ -1,5 +1,5 @@
 private
 invalidateSelection
 
-	chosenElementHolder := UnusedHolder explainedBy: 'There''s no element selected'.
+	chosenElementOptional := Optional unusedBecause: 'There''s no element selected'.
 	self notifyInterested

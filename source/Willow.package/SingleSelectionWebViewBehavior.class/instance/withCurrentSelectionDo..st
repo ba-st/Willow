@@ -1,4 +1,4 @@
 Single Selection-API
 withCurrentSelectionDo: aBlock
 
-	^ chosenElementHolder withContentDo: aBlock ifUnused: [  ]
+	^ chosenElementOptional withContentDo: aBlock ifUnused: [  ]

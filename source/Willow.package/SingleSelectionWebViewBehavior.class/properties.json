@@ -7,8 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"availableElements",
-		"chosenElementHolder",
-		"interested"
+		"interested",
+		"chosenElementOptional"
 	],
 	"name" : "SingleSelectionWebViewBehavior",
 	"type" : "normal"

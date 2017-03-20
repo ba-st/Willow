@@ -1,4 +1,4 @@
 accessing
 clientIndependentActions
 
-	^ Array with: [ optionalClientSideParameter withContentDo: [ :x | callbackToEvaluate value: serverSideParameterBinding content ] ifUnused: callbackToEvaluate ]
+	^ Array with: [ optionalClientSideParameter withContentDo: [ callbackToEvaluate value: serverSideParameterBinding content ] ifUnused: callbackToEvaluate ]

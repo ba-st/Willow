@@ -1,0 +1,4 @@
+support
+newBinaryChoiceView
+
+	^self subclassResponsibility 

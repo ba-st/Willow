@@ -1,4 +1,4 @@
-configuring
+private
 choose: anElement
 
 	chosenElementOptional := Optional containing: anElement.

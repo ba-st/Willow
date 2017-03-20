@@ -1,4 +1,0 @@
-accessing
-contents
-
-	^selectedBlock value

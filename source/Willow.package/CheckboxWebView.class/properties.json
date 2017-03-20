@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 3/20/2017 17:04",
+	"super" : "BinaryChoiceWebViewBehavior",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"commandToComponent",
+		"interactionInterpreter",
+		"identifierAssigner",
+		"isChecked",
+		"labelOptional"
+	],
+	"name" : "CheckboxWebView",
+	"type" : "normal"
+}

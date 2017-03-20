@@ -1,0 +1,11 @@
+{
+	"instance" : {
+		"changeNotifiedBy:" : "GabrielOmarCotelli 3/20/2017 17:18",
+		"newBinaryChoiceView" : "GabrielOmarCotelli 3/20/2017 17:15",
+		"testCurrentSelection" : "GabrielOmarCotelli 3/20/2017 17:20",
+		"testNotifyChangesWhenSelectionChanged" : "GabrielOmarCotelli 3/20/2017 17:19"
+	},
+	"class" : {
+		"isAbstract" : "GabrielOmarCotelli 3/20/2017 17:15"
+	}
+}

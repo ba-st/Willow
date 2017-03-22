@@ -1,4 +1,7 @@
 {
 	"instance" : { },
-	"class" : { }
+	"class" : {
+		"signalAll:" : "MaximilianoTabacman 3/21/2017 00:17",
+		"signal:" : "MaximilianoTabacman 3/21/2017 00:17"
+	}
 }

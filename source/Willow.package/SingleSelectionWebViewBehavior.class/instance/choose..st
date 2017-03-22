@@ -1,5 +1,5 @@
-private
+configuring
 choose: anElement
 
-	chosenElementHolder := Holder containing: anElement.
+	chosenElementOptional := Optional containing: anElement.
 	self notifyInterested

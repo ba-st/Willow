@@ -7,10 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"view",
-		"identifierHolder",
 		"componentBuilder",
-		"identificationPrefix",
-		"commandToComponent"
+		"commandToComponent",
+		"identifierAssigner"
 	],
 	"name" : "IdentifiedWebView",
 	"type" : "normal"

@@ -4,5 +4,5 @@ initializeNamed: aName offering: anOptionCollection interactingThrough: anIntera
 	name := aName.
 	options := anOptionCollection.
 	interactionInterpreter := anInteractionInterpreter.
-	chosenElementHolder := UnusedHolder explainedBy: 'There''s no element selected'.
+	chosenElementHolder := Optional unusedBecause: 'There''s no element selected'.
 	componentCommand := aComponentCommand

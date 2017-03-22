@@ -1,9 +1,7 @@
 initialize-release
-initializeWithBehaviorDeterminedBy: aBlock requiring: aHolder
+initializeWithBehaviorDeterminedBy: aBlock requiring: anOptionalParameter
 
 	behaviorCallback := aBlock.
-	clientSideParameterHolder := aHolder.
-	serverSideParameterHolder := clientSideParameterHolder
-		withContentDo: [ :clientSideParameter | Holder containing: InvalidSelection new ]
-		ifUnused: [ clientSideParameterHolder ].
+	optionalClientSideParameter := anOptionalParameter.
+	serverSideParameterBinding := Binding undefinedExplainedBy: 'Missing Server Side Parameter'.
 	self resetInterpreter

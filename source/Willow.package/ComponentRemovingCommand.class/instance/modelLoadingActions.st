@@ -1,5 +1,4 @@
 accessing
 modelLoadingActions
 
-	^ Array
-		with: [ :aScript :aCanvas | aScript << ( aCanvas jQuery id: identifiedView id ) remove ]
+	^ Array with: [ :aScript :aCanvas | aScript << (aCanvas jQuery id: identifiedView identifier) remove ]

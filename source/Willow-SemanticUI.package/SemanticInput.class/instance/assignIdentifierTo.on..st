@@ -1,8 +1,6 @@
 rendering - private
 assignIdentifierTo: anInput on: aCanvas
 
-	currentInputIdentifier := IdentifierAssigner new
-		identifierPrefixedBy: 'input'
-		using: aCanvas nextId.
-		
+	currentInputIdentifier := (IdentifierAssigner prefixedBy: 'input') identifyIn: aCanvas.
+
 	anInput id: currentInputIdentifier

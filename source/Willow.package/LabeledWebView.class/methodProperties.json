@@ -1,12 +1,10 @@
 {
 	"instance" : {
-		"contents" : "MaximilianoTabacman 1/29/2017 11:28",
-		"obtainContentsFrom:" : "MaximilianoTabacman 1/29/2017 11:28",
+		"identifier" : "MaximilianoTabacman 4/30/2014 08:52",
 		"identifyComponentOn:" : "MaximilianoTabacman 3/8/2017 00:00",
-		"onTrigger" : "guest 1/5/2014 20:05",
 		"initializeDisplaying:with:titled:" : "MaximilianoTabacman 12/7/2016 08:57",
 		"renderContentOn:" : "guest 1/5/2014 20:05",
-		"identifier" : "MaximilianoTabacman 4/30/2014 08:52",
+		"onTrigger" : "guest 1/5/2014 20:05",
 		"changeLabelTo:" : "guest 1/5/2014 20:05"
 	},
 	"class" : {

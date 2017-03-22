@@ -1,5 +1,0 @@
-initialization
-initializeApplyingToEachRadioButton: aCommandToComponent
-
-	commandToRadioButton := aCommandToComponent.
-	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue

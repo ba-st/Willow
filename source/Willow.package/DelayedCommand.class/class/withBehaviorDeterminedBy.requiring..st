@@ -1,4 +1,4 @@
-instance creation
-withBehaviorDeterminedBy: aBlock requiring: anObjectHolder
+private
+withBehaviorDeterminedBy: aBlock requiring: anOptionalParameter
 
-	^self new initializeWithBehaviorDeterminedBy: aBlock requiring: anObjectHolder
+	^self new initializeWithBehaviorDeterminedBy: aBlock requiring: anOptionalParameter

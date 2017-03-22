@@ -1,8 +1,6 @@
 initialize-release
-initializeFor: aCallback requiring: aHolder
+initializeFor: aCallback requiring: anOptionalParameter
 
 	callbackToEvaluate := aCallback.
-	clientSideParameterHolder := aHolder.
-	serverSideParameterHolder := clientSideParameterHolder
-				withContentDo: [:clientSideParameter | Holder containing: InvalidSelection new]
-				ifUnused: [:explanations | UnusedHolder explainedByAll: explanations]
+	optionalClientSideParameter := anOptionalParameter.
+	serverSideParameterBinding := Binding undefinedExplainedBy: 'Missing Server Side Parameter'

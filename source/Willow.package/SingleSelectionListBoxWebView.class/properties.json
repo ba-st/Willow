@@ -8,7 +8,7 @@
 	"instvars" : [
 		"interactionInterpreter",
 		"commandToComponent",
-		"identifierHolder"
+		"identifierAssigner"
 	],
 	"name" : "SingleSelectionListBoxWebView",
 	"type" : "normal"

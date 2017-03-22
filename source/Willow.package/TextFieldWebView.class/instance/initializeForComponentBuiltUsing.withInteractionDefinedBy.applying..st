@@ -5,5 +5,5 @@ initializeForComponentBuiltUsing: aComponentBuilder withInteractionDefinedBy: an
 	interactionInterpreter := anInteractionInterpreter.
 	commandToComponent := aComponentCommand.
 	interested := Set new.
-	identifierHolder := UnusedHolder explainedBy: 'Identifier never requested so far'.
+	identifierAssigner := IdentifierAssigner prefixedBy: 'text'.
 	self changeContentsTo: ''

@@ -3,4 +3,6 @@ clientIndependentActions
 
 	^ Array
 		with: [ self resetInterpreter.
-			serverSideParameterHolder withContentDo: [ :serverSideParameter | behaviorCallback value: self value: serverSideParameter ] ifUnused: [ behaviorCallback value: self ] ]
+			optionalClientSideParameter
+				withContentDo: [ behaviorCallback value: self value: serverSideParameterBinding content ]
+				ifUnused: [ behaviorCallback value: self ] ]

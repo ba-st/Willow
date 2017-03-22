@@ -1,4 +1,4 @@
 accessing - private
 noLabelHolder
 
-	^ UnusedHolder explainedBy: 'No label given'
+	^ Optional unusedBecause: 'No label given'

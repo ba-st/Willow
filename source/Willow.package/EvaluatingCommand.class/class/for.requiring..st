@@ -1,4 +1,4 @@
-instance creation - private
-for: aCallback requiring: anObjectHolder
+private-instance creation
+for: aCallback requiring: anOptionalParameter
 
-	^self new initializeFor: aCallback requiring: anObjectHolder
+	^self new initializeFor: aCallback requiring: anOptionalParameter

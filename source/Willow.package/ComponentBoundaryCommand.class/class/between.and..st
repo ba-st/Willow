@@ -2,5 +2,5 @@ instance creation
 between: aMinimum and: aMaximum
 
 	^ self
-		restrictingMinimumWith: (Holder containing: aMinimum)
-		maximumTo: (Holder containing: aMaximum)
+		restrictingMinimumWith: (Optional containing: aMinimum)
+		maximumTo: (Optional containing: aMaximum)

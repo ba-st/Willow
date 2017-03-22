@@ -8,8 +8,8 @@
 	"instvars" : [
 		"behaviorCallback",
 		"interpreter",
-		"clientSideParameterHolder",
-		"serverSideParameterHolder"
+		"optionalClientSideParameter",
+		"serverSideParameterBinding"
 	],
 	"name" : "DelayedCommand",
 	"type" : "normal"

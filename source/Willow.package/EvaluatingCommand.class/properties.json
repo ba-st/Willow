@@ -7,8 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"callbackToEvaluate",
-		"clientSideParameterHolder",
-		"serverSideParameterHolder"
+		"optionalClientSideParameter",
+		"serverSideParameterBinding"
 	],
 	"name" : "EvaluatingCommand",
 	"type" : "normal"

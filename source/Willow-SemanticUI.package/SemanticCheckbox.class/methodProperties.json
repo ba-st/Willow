@@ -2,7 +2,7 @@
 	"instance" : {
 		"renderLabelFor:on:" : "MaximilianoTabacman 1/9/2017 20:10",
 		"inputRenderedOn:" : "MaximilianoTabacman 3/14/2016 09:24",
-		"configureNameOf:on:" : "MaximilianoTabacman 3/13/2016 20:06",
+		"configureNameOf:on:" : "GabrielOmarCotelli 3/17/2017 11:43",
 		"containerComponentOn:" : "MaximilianoTabacman 1/9/2017 20:10",
 		"isChecked" : "MaximilianoTabacman 3/13/2016 20:02",
 		"renderContentOn:" : "MaximilianoTabacman 3/14/2016 09:25",
@@ -11,9 +11,9 @@
 		"onTrigger" : "MaximilianoTabacman 3/13/2016 20:09"
 	},
 	"class" : {
-		"labeled:interactingThrough:" : "MaximilianoTabacman 1/29/2017 20:52",
+		"labeled:interactingThrough:" : "GabrielOmarCotelli 3/20/2017 10:32",
 		"labeledWithContentOf:interactingThrough:applying:" : "MaximilianoTabacman 4/24/2016 12:53",
 		"unlabeledInteractingThrough:applying:" : "MaximilianoTabacman 4/24/2016 12:52",
-		"noLabelHolder" : "MaximilianoTabacman 3/14/2016 23:57"
+		"noLabelHolder" : "GabrielOmarCotelli 3/20/2017 10:33"
 	}
 }

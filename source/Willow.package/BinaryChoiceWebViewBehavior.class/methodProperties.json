@@ -1,12 +1,15 @@
 {
 	"instance" : {
 		"toggleCurrentSelection" : "GabrielOmarCotelli 3/20/2017 17:01",
+		"allows:" : "GabrielOmarCotelli 3/22/2017 11:32",
+		"initializeOnModel:offModel:" : "GabrielOmarCotelli 3/20/2017 17:00",
 		"currentSelection" : "GabrielOmarCotelli 3/20/2017 17:01",
-		"notifyChangesTo:" : "GabrielOmarCotelli 3/20/2017 16:39",
 		"renderContentOn:" : "GabrielOmarCotelli 3/20/2017 17:04",
 		"notifyInterested" : "GabrielOmarCotelli 3/20/2017 16:39",
+		"notifyChangesTo:" : "GabrielOmarCotelli 3/20/2017 16:39",
+		"selectOnModel" : "GabrielOmarCotelli 3/22/2017 11:32",
 		"onTrigger" : "GabrielOmarCotelli 3/20/2017 16:36",
-		"initializeOnModel:offModel:" : "GabrielOmarCotelli 3/20/2017 17:00"
+		"selectOffModel" : "GabrielOmarCotelli 3/22/2017 11:33"
 	},
 	"class" : {
 		"onModel:offModel:" : "GabrielOmarCotelli 3/20/2017 16:33"

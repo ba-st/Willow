@@ -8,4 +8,4 @@ renderContentOn: aCanvas
 		with: [ | input |
 
 			input := self inputRenderedOn: aCanvas.
-			self renderLabelFor: input id on: aCanvas ]
+			self renderLabelFor: input identifier on: aCanvas ]

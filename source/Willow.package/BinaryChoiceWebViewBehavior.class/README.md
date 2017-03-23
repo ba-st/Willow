@@ -1,0 +1,1 @@
+I'm an abstract class representing binary choice web views

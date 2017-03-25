@@ -1,14 +1,12 @@
 {
 	"instance" : {
-		"identifier" : "MaximilianoTabacman 4/30/2014 08:52",
-		"identifyComponentOn:" : "MaximilianoTabacman 3/8/2017 00:00",
-		"initializeDisplaying:with:titled:" : "MaximilianoTabacman 12/7/2016 08:57",
-		"renderContentOn:" : "guest 1/5/2014 20:05",
-		"onTrigger" : "guest 1/5/2014 20:05",
-		"changeLabelTo:" : "guest 1/5/2014 20:05"
+		"initializeObtainingContentFrom:boundTo:applying:" : "GabrielOmarCotelli 3/21/2017 11:56",
+		"fieldWebView" : "GabrielOmarCotelli 3/21/2017 12:20",
+		"phrasingContent" : "GabrielOmarCotelli 3/21/2017 12:01",
+		"renderContentOn:" : "GabrielOmarCotelli 3/21/2017 12:20"
 	},
 	"class" : {
-		"displaying:with:" : "guest 1/5/2014 20:05",
-		"displaying:with:titled:" : "guest 1/5/2014 20:05"
+		"displaying:boundTo:applying:" : "GabrielOmarCotelli 3/21/2017 11:55",
+		"obtainingContentFrom:boundTo:applying:" : "GabrielOmarCotelli 3/21/2017 11:55"
 	}
 }

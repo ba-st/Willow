@@ -2,7 +2,8 @@ initialize-release
 initializeAskingFor: aConcept
 
 	answerView := LabeledWebView
-		displaying:
+		displaying: aConcept
+		boundTo:
 			(TextFieldWebView
 				singleLineTriggeringOnChangeApplying: (SetComponentSizeCommand setting: 15))
-		with: aConcept
+		applying: CompositeComponentCommand empty

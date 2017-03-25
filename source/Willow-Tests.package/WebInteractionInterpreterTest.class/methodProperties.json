@@ -15,6 +15,7 @@
 		"testForChangeInComponentValue" : "MaximilianoTabacman 1/9/2017 20:15",
 		"testEvaluate" : "MaximilianoTabacman 1/9/2017 20:14",
 		"testForClickOnHiddenInputDependentComponent" : "MaximilianoTabacman 1/9/2017 20:16",
+		"testToggleCssClass" : "GabrielOmarCotelli 3/25/2017 11:12",
 		"testTemporarilyDisableAndTransformInto" : "GabrielOmarCotelli 1/27/2017 17:54",
 		"testForChangeInHiddenInputDependentComponentValue" : "MaximilianoTabacman 1/9/2017 20:16",
 		"testEvaluateWith" : "MaximilianoTabacman 1/9/2017 20:14",

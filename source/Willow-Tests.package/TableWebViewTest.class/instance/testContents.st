@@ -7,6 +7,11 @@ testContents
 
 	self assert: table contents isEmpty.
 
-	table changeContentsTo: #(1 2 3).
+	notificationWasReceived := false.
+	table
+		notifyChangesTo: self;
+		changeContentsTo: #(1 2 3).
 
-	self assert: table contents equals: #(1 2 3)
+	self
+		assert: table contents equals: #(1 2 3);
+		assert: notificationWasReceived

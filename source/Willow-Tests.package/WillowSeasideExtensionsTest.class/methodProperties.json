@@ -1,7 +1,10 @@
 {
 	"instance" : {
+		"testFormDoNotSubmit" : "GabrielOmarCotelli 3/25/2017 12:36",
 		"testTagBrushClasses" : "GabrielOmarCotelli 1/11/2017 12:28",
-		"testTagBrushIdentifier" : "GabrielOmarCotelli 3/17/2017 15:07"
+		"testIcon" : "GabrielOmarCotelli 3/25/2017 12:43",
+		"testTagBrushIdentifier" : "GabrielOmarCotelli 3/17/2017 15:07",
+		"testWAUrlSlash" : "GabrielOmarCotelli 3/25/2017 12:45"
 	},
 	"class" : { }
 }

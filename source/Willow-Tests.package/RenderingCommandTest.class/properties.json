@@ -1,13 +1,14 @@
 {
 	"commentStamp" : "<historical>",
 	"super" : "WillowTestCase",
-	"category" : "Willow-Tests-WebViews",
+	"category" : "Willow-Tests-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"notificationWasReceived"
+		"identifiedView",
+		"command"
 	],
-	"name" : "TableWebViewTest",
+	"name" : "RenderingCommandTest",
 	"type" : "normal"
 }

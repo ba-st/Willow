@@ -8,12 +8,9 @@ testModelLoadingActions
 			| script div |
 
 			script := canvas javascript.
-			command modelLoadingActions do: [ :action | action value: script value: canvas ].
 			div := canvas div.
 			canvas ensureIdFor: div.
+			(ComponentFocusingCommand for: div) modelLoadingActions do: [ :action | action value: script value: canvas ].
 			div script: (canvas jQuery this onClick: script) ].
 
-	self
-		assert: html
-		equals:
-			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){$(this).focus()});</script>'
+	self assert: html equals: '<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){$("#div-id1").focus()});</script>'

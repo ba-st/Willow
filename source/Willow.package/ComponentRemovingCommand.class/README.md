@@ -1,0 +1,1 @@
+I'm a WebInteractionCommand allowing to remove a component

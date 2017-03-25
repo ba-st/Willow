@@ -10,4 +10,6 @@ testIdentifyIn
 			dropDownList identifyIn: canvas.
 			canvas render: dropDownList ].
 
-	self assert: html equals: '<select name="2" id="drop-down-list-id1"></select>'
+	self
+		assert: html equals: '<select name="2" id="drop-down-list-id1"></select>';
+		assert: dropDownList identifier equals: 'drop-down-list-id1'

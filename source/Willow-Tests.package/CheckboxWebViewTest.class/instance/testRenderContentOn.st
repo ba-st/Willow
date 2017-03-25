@@ -1,2 +1,0 @@
-tests-configuring
-testRenderContentOn

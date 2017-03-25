@@ -1,0 +1,1 @@
+I'm a triggering policy specifing that no triggering must happen. So if someone tries to use me I will fail.

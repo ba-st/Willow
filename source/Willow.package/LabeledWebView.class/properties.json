@@ -1,14 +1,14 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"super" : "WAPresenter",
-	"category" : "Willow-WebViewsNeedingReview",
+	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"viewToLabel",
-		"label",
-		"title"
+		"phrasingContentProvider",
+		"fieldWebView",
+		"commandToComponent"
 	],
 	"name" : "LabeledWebView",
 	"type" : "normal"

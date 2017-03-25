@@ -1,10 +1,12 @@
 rendering
 renderContentOn: aCanvas
 
-	(aCanvas label)
-		title: title;
-		with: 
-				[self identifyComponentOn: aCanvas.
-				aCanvas
-					render: label;
-					render: viewToLabel]
+	| label fieldIdentifier |
+
+	fieldIdentifier := fieldWebView identifyIn: aCanvas.
+	label := aCanvas label for: fieldIdentifier.
+	commandToComponent applyTo: label on: aCanvas.
+	label
+		with: [ aCanvas
+				render: self phrasingContent;
+				render: self fieldWebView ]

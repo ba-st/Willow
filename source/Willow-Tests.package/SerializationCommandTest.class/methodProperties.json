@@ -1,0 +1,14 @@
+{
+	"instance" : {
+		"testRequiresSerialization" : "GabrielOmarCotelli 3/25/2017 11:17",
+		"testServerIndependentActions" : "GabrielOmarCotelli 3/25/2017 11:17",
+		"testForParentForm" : "GabrielOmarCotelli 3/25/2017 11:26",
+		"setUp" : "GabrielOmarCotelli 3/25/2017 11:15",
+		"testForCurrentObjectWithHiddenInputs" : "GabrielOmarCotelli 3/25/2017 11:25",
+		"testForChildForm" : "GabrielOmarCotelli 3/25/2017 11:24",
+		"testModelLoadingActions" : "GabrielOmarCotelli 3/25/2017 11:16",
+		"testPriorityActions" : "GabrielOmarCotelli 3/25/2017 11:22",
+		"testClientIndependentActions" : "GabrielOmarCotelli 3/25/2017 11:15"
+	},
+	"class" : { }
+}

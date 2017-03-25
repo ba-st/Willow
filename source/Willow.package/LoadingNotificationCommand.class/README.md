@@ -1,0 +1,1 @@
+I'm a WebInteractionCommand that displays a Loading... notification while an AJAX call is beign executed.

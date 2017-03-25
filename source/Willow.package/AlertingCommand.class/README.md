@@ -1,0 +1,1 @@
+I'm a WebInteractionCommand used to show an alert, useful for low level debugging purposes.

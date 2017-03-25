@@ -1,12 +1,11 @@
 {
 	"instance" : {
+		"testRenderingWithCommands" : "GabrielOmarCotelli 3/22/2017 11:36",
 		"newBinaryChoiceView" : "GabrielOmarCotelli 3/20/2017 17:18",
 		"testOnTrigger" : "GabrielOmarCotelli 3/20/2017 17:26",
-		"testRenderingWithLabel" : "GabrielOmarCotelli 3/20/2017 17:50",
-		"testIdentifyIn" : "GabrielOmarCotelli 3/20/2017 17:28",
+		"testIdentifyIn" : "GabrielOmarCotelli 3/24/2017 12:00",
 		"testWithNonBooleanModels" : "GabrielOmarCotelli 3/20/2017 17:32",
-		"testRenderContentOn" : "GabrielOmarCotelli 3/20/2017 17:13",
-		"testRenderingWithCommands" : "GabrielOmarCotelli 3/22/2017 11:36"
+		"testRenderingWithLabel" : "GabrielOmarCotelli 3/20/2017 17:50"
 	},
 	"class" : { }
 }

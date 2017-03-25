@@ -1,5 +1,8 @@
 Instance Creation
-enabling: aComponent
+enabling: anIdentifiedComponent
 
-	aComponent ifNil: [ Error signal: 'View initialization order is incorrect, please review' ].
-	^ self obtainingComponentWith: [ :canvas | canvas jQuery id: aComponent identifier ] settingStatusTo: false
+	[ anIdentifiedComponent identifier ]
+		on: AssertionFailed
+		do: [ :error | InstanceCreationFailed signalAll: error failures ].
+
+	^ self obtainingComponentWith: [ :canvas | canvas jQuery id: anIdentifiedComponent identifier ] settingStatusTo: false

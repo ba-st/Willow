@@ -1,0 +1,1 @@
+I'm a WebInteractionCommand used to ask the user for confirmation before proceeding.

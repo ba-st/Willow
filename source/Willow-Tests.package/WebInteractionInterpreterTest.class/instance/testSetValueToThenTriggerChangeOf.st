@@ -1,19 +1,21 @@
-tests-configuring
-testSetValueToWithoutTriggeringChangeOComponentWithId
+tests-Configuring-DOM
+testSetValueToThenTriggerChangeOf
 
 	| interpreter html id |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
 	id := '15'.
 
-	interpreter setValueTo: [ 'Ok' ] withoutTriggeringChangeOComponentWithId: id.
 
 	html := self
-		apply: interpreter
-		toComponentDefinedBy: [ :canvas | 
-			canvas textInput
+		renderUsing: [ :canvas | 
+			| textInput |
+
+			textInput := canvas textInput
 				id: id;
-				yourself ].
+				yourself.
+			interpreter setValueTo: [ 'Ok' ] thenTriggerChangeOf: textInput.
+			interpreter applyTo: textInput on: canvas ].
 
 	self
 		assert: html

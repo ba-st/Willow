@@ -1,4 +1,4 @@
-tests-configuring
+tests-Configuring-DOM
 testTemporarilyDisableAndTransformInto
 
 	| interpreter html |

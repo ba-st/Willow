@@ -1,4 +1,4 @@
-configuring
+Configuring - CSS
 addCssClass: aCssStyle toComponentsMatching: aComponentProvider
 
 	self interpretersDo: [:interpreter |

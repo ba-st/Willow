@@ -1,0 +1,29 @@
+{
+	"instance" : {
+		"testConfirmAsking" : "GabrielOmarCotelli 3/27/2017 14:16",
+		"testToggleUsing" : "GabrielOmarCotelli 3/27/2017 14:43",
+		"testSetValueToWithoutTriggeringChangeOnComponentWithId" : "GabrielOmarCotelli 3/27/2017 12:49",
+		"testInform" : "GabrielOmarCotelli 3/27/2017 12:44",
+		"setUp" : "GabrielOmarCotelli 3/27/2017 12:33",
+		"testRemoveCssClassFromComponentsWithClass" : "GabrielOmarCotelli 3/27/2017 12:38",
+		"testRenderAll" : "GabrielOmarCotelli 3/27/2017 14:30",
+		"testAddCssClass" : "GabrielOmarCotelli 3/27/2017 12:35",
+		"testFocusUsing" : "GabrielOmarCotelli 3/27/2017 14:26",
+		"testExecuteOnClient" : "GabrielOmarCotelli 3/27/2017 12:43",
+		"testChangeCssClassTo" : "GabrielOmarCotelli 3/27/2017 12:37",
+		"testSerializeIt" : "GabrielOmarCotelli 3/27/2017 14:33",
+		"testSetValueToThenTriggerChangeOf" : "GabrielOmarCotelli 3/27/2017 14:40",
+		"testToggleCssClass" : "GabrielOmarCotelli 3/27/2017 12:39",
+		"testEvaluate" : "GabrielOmarCotelli 3/27/2017 12:41",
+		"testShowLoadingNotificationStyledAsAll" : "GabrielOmarCotelli 3/27/2017 14:46",
+		"testSerializeWithHiddenInputs" : "GabrielOmarCotelli 3/27/2017 14:35",
+		"testFocus" : "GabrielOmarCotelli 3/27/2017 14:24",
+		"testEvaluateWith" : "GabrielOmarCotelli 3/27/2017 12:42",
+		"testSerializeContainerForm" : "GabrielOmarCotelli 3/27/2017 14:35",
+		"testRender" : "GabrielOmarCotelli 3/27/2017 14:42",
+		"testInformSelection" : "GabrielOmarCotelli 3/27/2017 12:45",
+		"testRemove" : "GabrielOmarCotelli 3/27/2017 14:29",
+		"testEnable" : "GabrielOmarCotelli 3/27/2017 14:18"
+	},
+	"class" : { }
+}

@@ -1,4 +1,4 @@
-Configuring
+Configuring - DOM
 disable
 
 	self subclassResponsibility

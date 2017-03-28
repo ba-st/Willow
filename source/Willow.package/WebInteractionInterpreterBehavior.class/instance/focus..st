@@ -1,4 +1,4 @@
-Configuring
+Configuring - DOM
 focus: anIdentifiedWebView
 
 	self subclassResponsibility

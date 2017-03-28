@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "WillowTestCase",
+	"category" : "Willow-Tests-WebInteraction",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"okButton",
+		"cancelButton"
+	],
+	"name" : "CombinedWebInteractionInterpreterTest",
+	"type" : "normal"
+}

@@ -1,4 +1,4 @@
-Configuring
+Configuring - CSS
 addCssClass: aCssStyle
 
 	self subclassResponsibility

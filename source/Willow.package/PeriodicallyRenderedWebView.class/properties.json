@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 3/30/2017 15:56",
+	"super" : "WAPresenter",
+	"category" : "Willow-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"stopRenderingContent",
+		"refreshCommand",
+		"refreshIntervalInMilliseconds",
+		"identifiedViewToRefresh"
+	],
+	"name" : "PeriodicallyRenderedWebView",
+	"type" : "normal"
+}

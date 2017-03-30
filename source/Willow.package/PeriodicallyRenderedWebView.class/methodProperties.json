@@ -1,0 +1,12 @@
+{
+	"instance" : {
+		"scriptToRefreshAndRenderContentOn:" : "GabrielOmarCotelli 3/30/2017 15:54",
+		"initializeEvaluating:every:millisecondsThenRendering:" : "GabrielOmarCotelli 3/30/2017 15:54",
+		"renderContentOn:" : "GabrielOmarCotelli 3/30/2017 15:53",
+		"refreshAndRenderContentOn:" : "GabrielOmarCotelli 3/30/2017 15:54",
+		"refreshAndRenderOn:" : "GabrielOmarCotelli 3/30/2017 15:54"
+	},
+	"class" : {
+		"evaluating:every:millisecondsThenRendering:" : "GabrielOmarCotelli 3/30/2017 15:52"
+	}
+}

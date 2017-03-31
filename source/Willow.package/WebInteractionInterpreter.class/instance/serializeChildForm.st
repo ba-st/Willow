@@ -1,0 +1,4 @@
+configuring
+serializeChildForm
+
+	interaction onTriggerExecute: SerializationCommand forChildForm

@@ -1,4 +1,4 @@
-tests-configuring
+tests-rendering
 testIdentifyIn
 
 	| html checkbox |

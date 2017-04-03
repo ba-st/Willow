@@ -1,0 +1,1 @@
+I'm an abstract metadata library, allowing my subclasses to declare what name to use instead of the class name for url resolution.

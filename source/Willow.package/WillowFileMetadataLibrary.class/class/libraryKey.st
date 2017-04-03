@@ -1,0 +1,4 @@
+Accessing
+libraryKey
+
+	^ self subclassResponsibility

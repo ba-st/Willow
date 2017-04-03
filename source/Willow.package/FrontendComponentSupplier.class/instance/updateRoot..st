@@ -1,4 +1,4 @@
 processing
-updateStylesAndScriptsOf: aRoot
+updateRoot: aRoot
 
 	self subclassResponsibility

@@ -1,6 +1,5 @@
 processing
 updateStylesAndScriptsOf: aRoot
 
-	aRoot javascript url: filesLocation / 'jquery.js'.
-	aRoot javascript url: filesLocation / 'jquery-ui.js'.
-	aRoot stylesheet url: filesLocation / 'jquery-ui.css'
+	self deprecated: 'Use updateRoot: ' transformWith: '̀@receiver updateStylesAndScriptsOf: ̀@aRoot' -> '̀@receiver updateRoot: ̀@aRoot'.
+	self updateRoot: aRoot

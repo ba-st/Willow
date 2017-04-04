@@ -1,0 +1,11 @@
+{
+	"instance" : {
+		"createHttpXmlRequestContext" : "GabrielOmarCotelli 4/4/2017 18:21",
+		"handlerClass" : "GabrielOmarCotelli 4/4/2017 18:10",
+		"testHandleErrorInAjaxCall" : "GabrielOmarCotelli 4/4/2017 18:44",
+		"testXmlHttpRequest" : "GabrielOmarCotelli 4/4/2017 18:41",
+		"testXmlHttpRequestWithResumable" : "GabrielOmarCotelli 4/4/2017 18:43",
+		"testAssertionFailed" : "GabrielOmarCotelli 4/4/2017 18:23"
+	},
+	"class" : { }
+}

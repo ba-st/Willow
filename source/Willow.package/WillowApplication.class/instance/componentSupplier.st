@@ -1,0 +1,4 @@
+Accessing
+componentSupplier
+
+	^ self subclassResponsibility

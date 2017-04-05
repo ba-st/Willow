@@ -4,7 +4,7 @@ testRenderContentOn
 	| html application |
 
 	application := WillowTestingApplication new.
-	html := self renderWholeApplication: application.
+	html := self fullDocumentRendering: application.
 
 	self
 		assert: html

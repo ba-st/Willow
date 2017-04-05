@@ -1,7 +1,7 @@
 private - Rendering
 renderDialogAndNotificationSectionsOn: aCanvas
 
-	"Render dialog and notification sections. This are needed for the dialog and notification support."
+	"Render dialog and notification sections. These are needed for the dialog and notification support."
 
 	aCanvas div
 		id: WillowConstants dialogSectionName;

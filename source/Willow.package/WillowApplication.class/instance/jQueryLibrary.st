@@ -1,0 +1,4 @@
+Accessing
+jQueryLibrary
+
+	^ self subclassResponsibility

@@ -1,0 +1,4 @@
+Accessing
+handlerName
+
+	^self subclassResponsibility 

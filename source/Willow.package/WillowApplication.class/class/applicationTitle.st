@@ -1,0 +1,4 @@
+Accessing
+applicationTitle
+	
+	^self subclassResponsibility 

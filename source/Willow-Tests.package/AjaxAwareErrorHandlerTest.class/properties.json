@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "WAErrorHandlerTest",
+	"category" : "Willow-Tests-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "AjaxAwareErrorHandlerTest",
+	"type" : "normal"
+}

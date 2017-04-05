@@ -1,0 +1,4 @@
+Accessing
+contentView
+
+	^ self subclassResponsibility

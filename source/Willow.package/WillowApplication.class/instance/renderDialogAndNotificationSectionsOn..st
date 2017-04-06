@@ -6,4 +6,4 @@ renderDialogAndNotificationSectionsOn: aCanvas
 	aCanvas div
 		id: WillowConstants dialogSectionName;
 		class: WillowCssStyles dialogContainer.
-	aCanvas div class: WillowConstants notificationSectionName
+	aCanvas div id: WillowConstants notificationSectionName

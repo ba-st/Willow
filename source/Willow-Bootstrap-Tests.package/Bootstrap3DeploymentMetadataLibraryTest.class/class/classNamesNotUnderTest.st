@@ -1,0 +1,4 @@
+coverage
+classNamesNotUnderTest
+ 
+	^ #(Bootstrap3DeploymentMetadataLibrary Bootstrap3DevelopmentMetadataLibrary Bootstrap3MetadataLibrary)

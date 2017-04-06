@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 4/4/2017 11:55",
+	"super" : "WillowTestCase",
+	"category" : "Willow-Bootstrap-Tests-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BootstrapIconWebViewTest",
+	"type" : "normal"
+}

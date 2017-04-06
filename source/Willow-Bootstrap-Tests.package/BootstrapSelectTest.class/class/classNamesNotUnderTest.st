@@ -1,4 +1,0 @@
-coverage
-classNamesNotUnderTest
-
-	^#(BootstrapSelectDeploymentLibrary BootstrapSelectDevelopmentLibrary )

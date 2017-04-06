@@ -1,1 +1,0 @@
-A BootstrapSelectLiveSearchCommandTest is a test class for testing the behavior of BootstrapSelectLiveSearchCommand

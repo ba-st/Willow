@@ -7,4 +7,5 @@ initializeDefinedBy: aColumnRendererCollection applying: aTableCommand headerRen
 	commandToRow := aRowCommand.
 	header := aHeader.
 	interactionInterpreter := WebInteractionInterpreter forClickOnComponent.
+	identifierAssigner := IdentifierAssigner prefixedBy: 'table'.
 	self changeContentsTo: #()

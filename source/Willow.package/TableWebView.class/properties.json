@@ -12,7 +12,8 @@
 		"header",
 		"interactionInterpreter",
 		"commandToRow",
-		"commandToTable"
+		"commandToTable",
+		"identifierAssigner"
 	],
 	"name" : "TableWebView",
 	"type" : "normal"

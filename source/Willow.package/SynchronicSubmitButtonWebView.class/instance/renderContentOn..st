@@ -1,14 +1,15 @@
 rendering
 renderContentOn: aCanvas
 
-	| component |
+	| submitButton |
 
-	component := aCanvas button.
-	component
-		id: buttonId;
+	submitButton := aCanvas button.
+
+	identifierAssigner withAssignedIdentifierDo: [ :id | submitButton id: id ].
+	submitButton
 		callback: submitCallback;
 		value: label.
 
-	interactionInterpreter applyTo: component on: aCanvas.
-	commandToComponent applyTo: component on: aCanvas.
-	component disabled: disabled
+	interactionInterpreter applyTo: submitButton on: aCanvas.
+	commandToComponent applyTo: submitButton on: aCanvas.
+	submitButton disabled: disabled

@@ -11,5 +11,5 @@ testIdentifyIn
 			canvas render: listBox ].
 
 	self
-		assert: html equals: '<select size="5" name="2" id="list-box-id1"></select>';
+		assert: html equals: '<select name="2" id="list-box-id1" size="5"></select>';
 		assert: listBox identifier equals: 'list-box-id1'

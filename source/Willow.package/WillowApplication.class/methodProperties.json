@@ -10,10 +10,11 @@
 		"jQueryLibrary" : "GabrielOmarCotelli 4/4/2017 17:33"
 	},
 	"class" : {
+		"errorHandlerFactory" : "GabrielOmarCotelli 4/11/2017 17:44",
 		"sessionClass" : "GabrielOmarCotelli 4/4/2017 17:02",
 		"handlerName" : "GabrielOmarCotelli 4/4/2017 12:18",
 		"unregisterFromApplications" : "GabrielOmarCotelli 4/4/2017 12:19",
-		"registerAsApplication" : "GabrielOmarCotelli 4/4/2017 17:03",
+		"registerAsApplication" : "GabrielOmarCotelli 4/11/2017 17:43",
 		"applicationTitle" : "GabrielOmarCotelli 4/4/2017 12:17"
 	}
 }

@@ -1,4 +1,4 @@
 Accessing
 jQueryLibrary
 
-	^ JQ2DevelopmentLibrary default
+	^ JQuery2OnlineLibrary default

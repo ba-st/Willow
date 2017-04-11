@@ -7,4 +7,4 @@ testRenderContentOn
 
 	html := self render: listBox.
 
-	self assert: html equals: '<select size="5" name="1"></select>'
+	self assert: html equals: '<select name="1" size="5"></select>'

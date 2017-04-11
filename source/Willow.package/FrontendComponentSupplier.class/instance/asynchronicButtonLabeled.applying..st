@@ -1,0 +1,4 @@
+Accessing
+asynchronicButtonLabeled: aRenderable applying: aComponentCommand
+
+	self subclassResponsibility

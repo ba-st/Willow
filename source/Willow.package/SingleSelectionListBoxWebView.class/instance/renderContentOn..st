@@ -4,9 +4,9 @@ renderContentOn: aCanvas
 	| select |
 
 	select := aCanvas select.
-	commandToComponent applyTo: select on: aCanvas.
 	select list: availableElements.
 	select callback: [ :element | self choose: element ].
-	chosenElementOptional withContentDo: [ :chosenElement | select selected: chosenElement ] ifUnused: [ self configure: select unselectingAllOn: aCanvas ].
 	identifierAssigner withAssignedIdentifierDo: [ :id | select id: id ].
+	chosenElementOptional withContentDo: [ :chosenElement | select selected: chosenElement ] ifUnused: [ self configure: select unselectingAllOn: aCanvas ].
+	commandToComponent applyTo: select on: aCanvas.
 	interactionInterpreter applyTo: select on: aCanvas

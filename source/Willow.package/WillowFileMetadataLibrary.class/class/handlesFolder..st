@@ -1,4 +1,4 @@
 Testing
 handlesFolder: aSymbol
 
-	^ self ~~ WillowFileMetadataLibrary and: [ self libraryKey = aSymbol ]
+	^ self ~~ WillowFileMetadataLibrary and: [ self subclasses isEmpty and: [ self libraryKey = aSymbol ] ]

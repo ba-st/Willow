@@ -1,13 +1,10 @@
 {
 	"instance" : {
-		"onTrigger" : "MaximilianoTabacman 1/20/2017 00:31",
+		"identifier" : "GabrielOmarCotelli 4/7/2017 15:25",
 		"initializeLabeled:applying:evaluating:" : "GabrielOmarCotelli 4/7/2017 15:25",
-		"tag" : "GabrielOmarCotelli 1/11/2017 16:49",
-		"id:" : "GabrielOmarCotelli 1/11/2017 16:49",
 		"identifyIn:" : "GabrielOmarCotelli 4/7/2017 15:25",
 		"renderContentOn:" : "GabrielOmarCotelli 4/7/2017 15:26",
-		"id" : "GabrielOmarCotelli 1/11/2017 16:49",
-		"identifier" : "GabrielOmarCotelli 4/7/2017 15:25",
+		"onTrigger" : "MaximilianoTabacman 1/20/2017 00:31",
 		"disabled" : "GabrielOmarCotelli 1/11/2017 16:50"
 	},
 	"class" : {

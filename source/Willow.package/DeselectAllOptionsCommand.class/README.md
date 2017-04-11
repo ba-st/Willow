@@ -1,0 +1,1 @@
+A command to deselect all the options in a select

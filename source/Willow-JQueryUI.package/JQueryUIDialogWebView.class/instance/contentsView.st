@@ -1,4 +1,0 @@
-accessing
-contentsView
-
-	^contentsView

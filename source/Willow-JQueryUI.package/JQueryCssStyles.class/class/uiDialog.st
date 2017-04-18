@@ -1,4 +1,0 @@
-jQueryUI
-uiDialog
-
-	^'ui-dialog'

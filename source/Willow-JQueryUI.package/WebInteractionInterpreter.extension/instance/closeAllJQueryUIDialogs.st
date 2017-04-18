@@ -1,4 +1,0 @@
-*Willow-JQueryUI
-closeAllJQueryUIDialogs
-
-	interaction onTriggerExecute: CloseAllJQueryUIDialogsCommand new

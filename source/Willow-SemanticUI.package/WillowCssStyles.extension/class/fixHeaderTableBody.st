@@ -1,4 +1,0 @@
-*Willow-SemanticUI
-fixHeaderTableBody
-
-	^ 'fixHeaderTableBody'

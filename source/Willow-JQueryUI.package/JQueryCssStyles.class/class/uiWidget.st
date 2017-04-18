@@ -1,4 +1,0 @@
-jQueryUI
-uiWidget
-
-	^'ui-widget'

@@ -1,1 +1,0 @@
-A semantic combination of components, to allow toggling on/off the value of an input.

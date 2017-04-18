@@ -1,4 +1,0 @@
-jQueryUI
-uiButton
-
-	^'ui-button'

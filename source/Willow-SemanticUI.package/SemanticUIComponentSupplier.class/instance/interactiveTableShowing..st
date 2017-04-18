@@ -1,6 +1,0 @@
-accessing
-interactiveTableShowing: aColumnDefinitionCollection
-
-	^ SemanticFixedHeaderTable
-		showing: aColumnDefinitionCollection
-		interactingThrough: WebInteractionInterpreter forClickOnComponent

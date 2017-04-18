@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 4/18/2017 11:24",
+	"super" : "WillowTestingFileMetadataLibrary",
+	"category" : "Willow-Tests-Libraries",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WillowTestingFileMetadataDevelopmentLibrary",
+	"type" : "normal"
+}

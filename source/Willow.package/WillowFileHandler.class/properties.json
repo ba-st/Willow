@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 4/18/2017 11:12",
+	"super" : "WAFileHandler",
+	"category" : "Willow-Libraries",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"libraries"
+	],
+	"name" : "WillowFileHandler",
+	"type" : "normal"
+}

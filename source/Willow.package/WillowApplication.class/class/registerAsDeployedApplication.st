@@ -1,0 +1,4 @@
+Utility
+registerAsDeployedApplication
+
+	^ self registerAsApplicationUsing: WillowApplicationDeployed

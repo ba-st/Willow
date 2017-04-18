@@ -1,0 +1,1 @@
+I'm a File Handler that allows to configure the available file library classes.

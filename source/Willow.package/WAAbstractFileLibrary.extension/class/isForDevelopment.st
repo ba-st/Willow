@@ -1,0 +1,4 @@
+*Willow
+isForDevelopment
+
+	^true

@@ -1,0 +1,4 @@
+accessing
+libraryFor: aWillowFileMetadataLibraryClass
+
+	^ aWillowFileMetadataLibraryClass forDevelopment

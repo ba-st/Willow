@@ -4,7 +4,11 @@
 		"name" : "GabrielOmarCotelli 4/3/2017 12:28"
 	},
 	"class" : {
+		"forDeployment" : "GabrielOmarCotelli 4/17/2017 16:43",
+		"isForDeployment" : "GabrielOmarCotelli 4/17/2017 16:42",
 		"handlesFolder:" : "GabrielOmarCotelli 4/11/2017 17:59",
+		"isForDevelopment" : "GabrielOmarCotelli 4/17/2017 16:40",
+		"forDevelopment" : "GabrielOmarCotelli 4/17/2017 16:43",
 		"libraryKey" : "GabrielOmarCotelli 4/3/2017 12:28"
 	}
 }

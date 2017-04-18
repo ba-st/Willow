@@ -1,0 +1,11 @@
+{
+	"instance" : {
+		"initialize" : "GabrielOmarCotelli 4/17/2017 16:52",
+		"initializeProviding:" : "GabrielOmarCotelli 4/17/2017 16:52",
+		"libraries" : "GabrielOmarCotelli 4/17/2017 16:53"
+	},
+	"class" : {
+		"providing:" : "GabrielOmarCotelli 4/18/2017 10:54",
+		"installAsFileHandlerAccordingTo:" : "GabrielOmarCotelli 4/18/2017 11:38"
+	}
+}

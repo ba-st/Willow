@@ -1,0 +1,4 @@
+Accessing
+handleAjaxErrorCallFunction
+
+	^ self access: WillowConstants handleAjaxErrorCallFunctionName

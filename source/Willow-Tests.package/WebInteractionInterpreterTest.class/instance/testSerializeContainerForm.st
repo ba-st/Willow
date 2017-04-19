@@ -18,4 +18,4 @@ testSerializeContainerForm
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(){$.ajax({"url":"/","data":["1",$(this).closest("form").find(":input").serialize()].join("&"),"dataType":"script","error":handleAjaxErrorCall})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(){$.ajax({"url":"/","data":["1",$(this).closest("form").find(":input").serialize()].join("&"),"dataType":"script","error":Willow.handleAjaxErrorCall})});</script>'

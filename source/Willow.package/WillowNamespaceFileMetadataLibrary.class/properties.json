@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 4/19/2017 14:07",
+	"super" : "WillowFileMetadataLibrary",
+	"category" : "Willow-Libraries",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WillowNamespaceFileMetadataLibrary",
+	"type" : "normal"
+}

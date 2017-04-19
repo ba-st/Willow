@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"originalHandler"
-	],
+	"instvars" : [ ],
 	"name" : "WillowFileHandlerTest",
 	"type" : "normal"
 }

@@ -1,4 +1,4 @@
 printing
 javascriptContentOn: aStream
 
-	aStream nextPutAll: WillowConstants handleAjaxErrorCallFunctionName
+	aStream javascript: WillowJavascriptNamespace new handleAjaxErrorCallFunction

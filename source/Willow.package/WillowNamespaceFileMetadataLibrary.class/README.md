@@ -1,0 +1,1 @@
+I'm a library providing some basic object used to define and access some utility functions.

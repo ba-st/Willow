@@ -9,4 +9,4 @@ testEvaluateWith
 	self
 		assert: html
 		equals:
-			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(){$.ajax({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&"),"dataType":"script","error":handleAjaxErrorCall})});</script>'
+			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(){$.ajax({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&"),"dataType":"script","error":Willow.handleAjaxErrorCall})});</script>'

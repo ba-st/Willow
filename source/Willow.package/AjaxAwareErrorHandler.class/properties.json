@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "GabrielOmarCotelli 4/5/2017 11:34",
 	"super" : "WAHtmlErrorHandler",
-	"category" : "Willow-WebViews",
+	"category" : "Willow-Applications",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

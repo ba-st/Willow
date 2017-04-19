@@ -1,0 +1,4 @@
+*Willow
+isForDeployment
+
+	^true

@@ -1,0 +1,4 @@
+tests
+testForDeployment
+
+	self assert: WillowTestingFileMetadataLibrary forDeployment equals: WillowTestingFileMetadataDeploymentLibrary

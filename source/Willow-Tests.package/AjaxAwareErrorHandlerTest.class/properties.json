@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "<historical>",
 	"super" : "WAErrorHandlerTest",
-	"category" : "Willow-Tests-WebViews",
+	"category" : "Willow-Tests-Applications",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

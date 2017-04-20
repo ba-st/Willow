@@ -2,4 +2,4 @@ initialization
 setUp
 
 	super setUp.
-	command := LoadingNotificationCommand onPageTopWithClasses: {}
+	command := LoadingNotificationCommand onPageTopWithClasses: #()

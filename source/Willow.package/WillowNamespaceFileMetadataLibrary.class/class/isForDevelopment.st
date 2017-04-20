@@ -1,0 +1,4 @@
+testing
+isForDevelopment
+
+	^true

@@ -1,9 +1,8 @@
 {
 	"instance" : {
-		"tearDown" : "GabrielOmarCotelli 4/19/2017 10:19",
 		"testLibraries" : "GabrielOmarCotelli 4/18/2017 11:36",
-		"setUp" : "GabrielOmarCotelli 4/19/2017 10:19",
-		"testInstallAsFileHandlerAccordingTo" : "GabrielOmarCotelli 4/18/2017 11:38"
+		"changeRegisteredFileHandlerDuring:" : "GabrielOmarCotelli 4/19/2017 14:41",
+		"testInstallAsFileHandlerAccordingTo" : "GabrielOmarCotelli 4/19/2017 14:41"
 	},
 	"class" : { }
 }

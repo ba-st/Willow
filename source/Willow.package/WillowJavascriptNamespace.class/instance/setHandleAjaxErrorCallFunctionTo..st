@@ -1,4 +1,4 @@
 Configuring
-setHandleAjaxErrorCallFunction: aJSFunction
+setHandleAjaxErrorCallFunctionTo: aJSFunction
 
 	^ self handleAjaxErrorCallFunction assign: aJSFunction

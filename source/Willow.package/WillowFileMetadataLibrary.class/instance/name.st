@@ -1,4 +1,4 @@
 testing
 name
 
-	^self class libraryKey greaseString 
+	^ self class folderName

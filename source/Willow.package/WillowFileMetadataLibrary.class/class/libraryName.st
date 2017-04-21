@@ -1,4 +1,4 @@
 Accessing
-libraryKey
+libraryName
 
 	^ self subclassResponsibility

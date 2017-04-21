@@ -1,14 +1,16 @@
 {
 	"instance" : {
 		"urlOf:using:" : "GabrielOmarCotelli 4/3/2017 12:31",
-		"name" : "GabrielOmarCotelli 4/3/2017 12:28"
+		"name" : "GabrielOmarCotelli 4/21/2017 15:46"
 	},
 	"class" : {
 		"forDeployment" : "GabrielOmarCotelli 4/17/2017 16:43",
 		"isForDeployment" : "GabrielOmarCotelli 4/17/2017 16:42",
-		"handlesFolder:" : "GabrielOmarCotelli 4/11/2017 17:59",
+		"handlesFolder:" : "GabrielOmarCotelli 4/21/2017 15:46",
 		"isForDevelopment" : "GabrielOmarCotelli 4/17/2017 16:40",
+		"folderName" : "GabrielOmarCotelli 4/21/2017 15:48",
 		"forDevelopment" : "GabrielOmarCotelli 4/17/2017 16:43",
-		"libraryKey" : "GabrielOmarCotelli 4/3/2017 12:28"
+		"version" : "GabrielOmarCotelli 4/21/2017 15:43",
+		"libraryName" : "GabrielOmarCotelli 4/21/2017 15:48"
 	}
 }

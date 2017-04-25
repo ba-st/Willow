@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 4/25/2017 17:43",
+	"super" : "WebComponentCommand",
+	"category" : "Willow-Frontend",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"name",
+		"content"
+	],
+	"name" : "ComponentAccessibilityEnrichmentCommand",
+	"type" : "normal"
+}

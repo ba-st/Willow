@@ -1,0 +1,4 @@
+tests-processing
+testAffectsComponent
+
+	self assert: DeselectAllOptionsCommand new affectsComponent

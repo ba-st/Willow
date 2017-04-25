@@ -1,9 +1,11 @@
 {
 	"instance" : {
-		"dateFieldApplying:" : "GabrielOmarCotelli 4/20/2017 16:52",
+		"singleLineTextFieldApplying:" : "GabrielOmarCotelli 4/25/2017 11:00",
+		"dropdownListApplying:" : "GabrielOmarCotelli 4/3/2017 09:40",
 		"updateRoot:" : "GabrielOmarCotelli 4/3/2017 09:51",
 		"asynchronicButtonLabeled:applying:" : "GabrielOmarCotelli 4/11/2017 16:53",
-		"dropdownListApplying:" : "GabrielOmarCotelli 4/3/2017 09:40"
+		"synchronicButtonLabeled:applying:evaluating:" : "GabrielOmarCotelli 4/25/2017 10:33",
+		"dateFieldApplying:" : "GabrielOmarCotelli 4/20/2017 16:52"
 	},
 	"class" : {
 		"locatedAt:" : "MaximilianoTabacman 1/3/2017 08:28"

@@ -1,7 +1,11 @@
 {
 	"instance" : {
 		"testAsynchronicButtonLabeledApplying" : "GabrielOmarCotelli 4/11/2017 18:05",
-		"testDateFieldApplying" : "GabrielOmarCotelli 4/20/2017 16:55"
+		"testDropdownListApplying" : "GabrielOmarCotelli 4/25/2017 11:14",
+		"testSynchronicButtonLabeledApplyingEvaluating" : "GabrielOmarCotelli 4/25/2017 11:13",
+		"testUpdateRoot" : "GabrielOmarCotelli 4/25/2017 11:16",
+		"testDateFieldApplying" : "GabrielOmarCotelli 4/20/2017 16:55",
+		"testSingleLineTextFieldApplying" : "GabrielOmarCotelli 4/25/2017 11:10"
 	},
 	"class" : { }
 }

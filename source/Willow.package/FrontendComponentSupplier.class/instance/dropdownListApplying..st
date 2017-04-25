@@ -1,4 +1,4 @@
-Accessing
+Supplying
 dropdownListApplying: aComponentCommand
 
 	self subclassResponsibility 

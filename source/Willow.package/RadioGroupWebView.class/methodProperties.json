@@ -1,12 +1,15 @@
 {
 	"instance" : {
-		"initializeApplyingToEachRadioButton:renderingLabelsWith:" : "GabrielOmarCotelli 3/17/2017 18:35",
+		"renderRadioButtonFor:asPartOf:on:" : "GabrielOmarCotelli 4/25/2017 16:37",
+		"renderContentOn:" : "GabrielOmarCotelli 3/20/2017 10:05",
+		"renderLabelFor:on:with:" : "GabrielOmarCotelli 4/25/2017 16:35",
+		"initializeApplyingToEachRadioButton:andToEachLabel:renderingWith:" : "GabrielOmarCotelli 4/25/2017 15:55",
 		"onTrigger" : "GabrielOmarCotelli 3/6/2017 15:31",
-		"renderRadioButtonFor:asPartOf:on:" : "GabrielOmarCotelli 3/17/2017 18:36",
-		"renderContentOn:" : "GabrielOmarCotelli 3/20/2017 10:05"
+		"renderLabelContentFor:on:" : "GabrielOmarCotelli 4/25/2017 16:37"
 	},
 	"class" : {
-		"applyingToEachRadioButton:renderingLabelsWith:" : "GabrielOmarCotelli 3/17/2017 18:35",
-		"applyingToEachRadioButton:" : "GabrielOmarCotelli 3/17/2017 18:35"
+		"applyingToEachRadioButton:renderingLabelsWith:" : "GabrielOmarCotelli 4/25/2017 15:56",
+		"applyingToEachRadioButton:" : "GabrielOmarCotelli 3/17/2017 18:35",
+		"applyingToEachRadioButton:andToEachLabel:renderingWith:" : "GabrielOmarCotelli 4/25/2017 15:56"
 	}
 }

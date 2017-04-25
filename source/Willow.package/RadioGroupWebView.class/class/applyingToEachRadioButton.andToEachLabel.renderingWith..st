@@ -1,0 +1,4 @@
+Instance creation
+applyingToEachRadioButton: aCommandToComponent andToEachLabel: aCommandToLabel renderingWith: aRenderingBlock
+
+	^ self new initializeApplyingToEachRadioButton: aCommandToComponent andToEachLabel: aCommandToLabel renderingWith: aRenderingBlock

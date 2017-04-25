@@ -1,15 +1,16 @@
 private-rendering
 renderRadioButtonFor: anElement asPartOf: aRadioGroup on: aCanvas
 
-	| radioButtonId radioButton |
+	| radioButtonId |
 
 	radioButtonId := (IdentifierAssigner prefixedBy: 'radio-button') identifyIn: aCanvas.
-
-	aCanvas label
-		for: radioButtonId;
-		with: [ radioButton := aRadioGroup radioButton.
+	self
+		renderLabelFor: radioButtonId
+		on: aCanvas
+		with: [ | radioButton |
+			radioButton := aRadioGroup radioButton.
 			radioButton id: radioButtonId.
 			commandToRadioButton applyTo: radioButton on: aCanvas.
 			interactionInterpreter applyTo: radioButton on: aCanvas.
 			radioButton value: anElement.
-			aCanvas render: (renderingBlock value: anElement) ]
+			self renderLabelContentFor: anElement on: aCanvas ]

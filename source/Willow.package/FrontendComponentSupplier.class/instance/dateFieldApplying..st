@@ -1,4 +1,4 @@
-Accessing
+Supplying
 dateFieldApplying: aComponentCommand
 
 	self subclassResponsibility

@@ -1,0 +1,4 @@
+Supplying
+synchronicButtonLabeled: aRenderable applying: aComponentCommand evaluating: anActionBlock
+
+	self subclassResponsibility

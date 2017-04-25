@@ -1,4 +1,4 @@
-processing
+Processing
 updateRoot: aRoot
 
 	self subclassResponsibility

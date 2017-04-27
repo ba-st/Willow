@@ -1,10 +1,9 @@
 {
 	"instance" : {
-		"testShortcutCreation" : "GabrielOmarCotelli 1/24/2017 16:19",
-		"testAffectsComponent" : "GabrielOmarCotelli 4/25/2017 18:10",
-		"testShortcutCreationWithEmptyCompositeCommand" : "GabrielOmarCotelli 1/24/2017 16:19",
 		"testEmpty" : "GabrielOmarCotelli 1/24/2017 16:19",
-		"testApplyToOn" : "GabrielOmarCotelli 1/24/2017 16:18"
+		"testApplyToOn" : "GabrielOmarCotelli 1/24/2017 16:18",
+		"testShortcutCreation" : "GabrielOmarCotelli 1/24/2017 16:19",
+		"testShortcutCreationWithEmptyCompositeCommand" : "GabrielOmarCotelli 1/24/2017 16:19"
 	},
 	"class" : { }
 }

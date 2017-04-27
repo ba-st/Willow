@@ -1,0 +1,4 @@
+Supplying
+naturalNumberFieldApplying: aComponentCommand
+
+	self subclassResponsibility

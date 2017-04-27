@@ -2,7 +2,7 @@ Accessing
 jswillowJsContent
 
 	^ '/*!
-* willow.js v4.0.0 
+* willow.js v<1s> 
 * Copyright 2017 - Buenos Aires Smalltalk
 * Licensed under the MIT license
 */

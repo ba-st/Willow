@@ -6,8 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"itemView",
-		"commandToComponent"
+		"commandToComponent",
+		"list",
+		"item"
 	],
 	"name" : "ListItemWebView",
 	"type" : "normal"

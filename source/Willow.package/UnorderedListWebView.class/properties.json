@@ -6,8 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"listItemViews",
-		"commandToComponent"
+		"elements",
+		"commandToItem",
+		"commandToList"
 	],
 	"name" : "UnorderedListWebView",
 	"type" : "normal"

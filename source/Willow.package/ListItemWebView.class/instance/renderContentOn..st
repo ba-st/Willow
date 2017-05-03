@@ -5,4 +5,4 @@ renderContentOn: aCanvas
 
 	component := aCanvas listItem.
 	commandToComponent applyTo: component on: aCanvas.
-	component with: itemView
+	component with: (list labelForOption: item)

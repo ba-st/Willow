@@ -1,9 +1,13 @@
 tests-rendering
 testRenderContentOn
 
-	| container html |
+	| html |
 
-	container := ListItemWebView itemizing: 'Item' applying: CompositeComponentCommand empty.
-	html := self render: container.
+	html := self
+		renderUsing: [ :canvas | 
+			| list |
 
-	self assert: html equals: '<li>Item</li>'
+			list := canvas unorderedList.
+			list with: [ canvas render: (ListItemWebView itemizing: 'Item' containedIn: list applying: CompositeComponentCommand empty) ] ].
+
+	self assert: html equals: '<ul><li>Item</li></ul>'

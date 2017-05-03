@@ -1,9 +1,14 @@
 tests-rendering
 testRenderContentOnWithCommands
 
-	| container html |
+	| html |
 
-	container := ListItemWebView itemizing: 'Item' applying: (ComponentClassificationCommand toStyleWith: 'item').
-	html := self render: container.
+	html := self
+		renderUsing: [ :canvas | 
+			| list |
 
-	self assert: html equals: '<li class="item">Item</li>'
+			list := canvas unorderedList.
+			list
+				with: [ canvas render: (ListItemWebView itemizing: 'Item' containedIn: list applying: (ComponentClassificationCommand toStyleWith: 'item')) ] ].
+
+	self assert: html equals: '<ul><li class="item">Item</li></ul>'

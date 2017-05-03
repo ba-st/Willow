@@ -1,10 +1,9 @@
 rendering
 renderContentOn: aCanvas
 
+	| list |
+
+	list := aCanvas unorderedList.
 	"The order is relevant"
-
-	| component |
-
-	component := aCanvas unorderedList.
-	commandToComponent applyTo: component on: aCanvas.
-	component with: listItemViews
+	commandToList applyTo: list on: aCanvas.
+	list with: [ elements do: [ :anElement | aCanvas render: (ListItemWebView itemizing: anElement containedIn: list applying: commandToItem) ] ]

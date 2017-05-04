@@ -15,4 +15,4 @@ testForChildForm
 
 	self
 		assert: html
-		equals: '<div id="div-id2"></div><script type="text/javascript">$("#div-id2").click(function(){$.ajax({"url":"/","data":["1",$(this).children("form").serialize()].join("&")})});</script>'
+		equals: '<div id="div-id2"></div><script type="text/javascript">$("#div-id2").click(function(){$.ajax({"type":"POST","url":"/","data":["1",$(this).children("form").serialize()].join("&")})});</script>'

@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 5/9/2017 13:40",
+	"super" : "JSDecoration",
+	"category" : "Willow-Javascript",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"trueStatement",
+		"falseStatementOptional"
+	],
+	"name" : "JSNonInlinedIfThenElse",
+	"type" : "normal"
+}

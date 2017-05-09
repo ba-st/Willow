@@ -1,0 +1,1 @@
+Implements a Javascript if (not th inlined conditional operator).

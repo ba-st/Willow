@@ -1,9 +1,12 @@
 {
 	"instance" : {
-		"jswillowJs" : "GabrielOmarCotelli 4/19/2017 14:09",
+		"globalWillowNamespaceDeclaration" : "GabrielOmarCotelli 5/9/2017 14:52",
 		"selectorsToInclude" : "GabrielOmarCotelli 4/19/2017 14:17",
-		"jswillowJsContent" : "GabrielOmarCotelli 4/27/2017 15:16",
-		"version" : "GabrielOmarCotelli 4/27/2017 15:15"
+		"jswillowJs" : "GabrielOmarCotelli 4/19/2017 14:09",
+		"version" : "GabrielOmarCotelli 4/27/2017 15:15",
+		"setUpWillowGlobalNamespace" : "GabrielOmarCotelli 5/9/2017 14:53",
+		"willowNamespace" : "GabrielOmarCotelli 5/9/2017 14:52",
+		"jswillowJsContent" : "GabrielOmarCotelli 5/9/2017 14:50"
 	},
 	"class" : {
 		"forDeployment" : "GabrielOmarCotelli 4/19/2017 14:19",

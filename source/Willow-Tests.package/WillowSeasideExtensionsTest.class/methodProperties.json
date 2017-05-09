@@ -1,11 +1,17 @@
 {
 	"instance" : {
-		"testWAUrlSlash" : "GabrielOmarCotelli 3/25/2017 12:45",
-		"testTagBrushClasses" : "GabrielOmarCotelli 1/11/2017 12:28",
-		"testWAAbstractFileLibrary" : "GabrielOmarCotelli 4/18/2017 11:15",
-		"testIcon" : "GabrielOmarCotelli 3/25/2017 12:43",
 		"testTagBrushIdentifier" : "GabrielOmarCotelli 3/17/2017 15:07",
-		"testFormDoNotSubmit" : "GabrielOmarCotelli 3/25/2017 12:36"
+		"testFormDoNotSubmit" : "GabrielOmarCotelli 3/25/2017 12:36",
+		"testIcon" : "GabrielOmarCotelli 3/25/2017 12:43",
+		"testWAAbstractFileLibrary" : "GabrielOmarCotelli 4/18/2017 11:15",
+		"testWAUrlSlash" : "GabrielOmarCotelli 3/25/2017 12:45",
+		"testJSObjectEqualTo" : "GabrielOmarCotelli 5/9/2017 13:35",
+		"testJSDeclareGlobalNamespace" : "GabrielOmarCotelli 5/9/2017 14:13",
+		"testTagBrushClasses" : "GabrielOmarCotelli 1/11/2017 12:28",
+		"testJSObjectIf" : "GabrielOmarCotelli 5/9/2017 13:48",
+		"testJSObjectIfThenElse" : "GabrielOmarCotelli 5/9/2017 13:49",
+		"testJSObjectIdenticalTo" : "GabrielOmarCotelli 5/9/2017 13:37",
+		"testJSObjectAsImmediatelyInvokedFunctionExpression" : "GabrielOmarCotelli 5/9/2017 13:57"
 	},
 	"class" : { }
 }

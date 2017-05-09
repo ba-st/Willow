@@ -8,13 +8,10 @@ jswillowJsContent
 */
  
 "use strict";
-var Willow;
-
-if (Willow === undefined) {
-    Willow = {
-        version: "<1s>",
-        <2s>: function (xmlHttpRequest, textStatus, errorThrown) {
-        }
-    };
-};
-' expandMacrosWith: self version with: WillowConstants handleAjaxErrorCallFunctionName
+<2s>'
+		expandMacrosWith: self version
+		with:
+			(self
+				javascriptContentFrom: [ :script | 
+					script << self globalWillowNamespaceDeclaration.
+					script << self setUpWillowGlobalNamespace ])

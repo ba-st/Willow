@@ -11,13 +11,4 @@ testJavascriptCode
 */
  
 "use strict";
-var Willow;
-
-if (Willow === undefined) {
-    Willow = {
-        version: "4.0.0",
-        handleAjaxErrorCall: function (xmlHttpRequest, textStatus, errorThrown) {
-        }
-    };
-};
-'
+var Willow;if(Willow===undefined){Willow={"version":"4.0.0","handleAjaxErrorCall":function(xmlHttpRequest,textStatus,errorThrown){}}}'

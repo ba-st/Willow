@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "JSObject",
+	"super" : "Object",
 	"category" : "Willow-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],

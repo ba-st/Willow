@@ -1,4 +1,4 @@
-configuring
+Configuring
 confirmAsking: aQuestion
 
 	interaction

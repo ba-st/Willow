@@ -1,5 +1,8 @@
 instance creation
 forCurrentObject
 
-	^self executing: (Array
-				with: [:anAsynchronousCall :aCanvas | anAsynchronousCall serializeThis])
+	^ self
+		executing: [ :anAsynchronousCall :aCanvas | 
+			anAsynchronousCall
+				bePost;
+				serializeThis ]

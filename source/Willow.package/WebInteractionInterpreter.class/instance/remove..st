@@ -1,4 +1,4 @@
-configuring
+Configuring - DOM
 remove: anIdentifiedView
 
 	interaction

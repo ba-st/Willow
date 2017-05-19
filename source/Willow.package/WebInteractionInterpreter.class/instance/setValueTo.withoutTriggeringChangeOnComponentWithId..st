@@ -1,4 +1,4 @@
-configuring
+Configuring - DOM
 setValueTo: aValueProvider withoutTriggeringChangeOnComponentWithId: identifier
 
 	interaction

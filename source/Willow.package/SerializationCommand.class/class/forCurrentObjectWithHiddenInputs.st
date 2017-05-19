@@ -1,5 +1,8 @@
 instance creation
 forCurrentObjectWithHiddenInputs
 
-	^self executing: (Array
-				with: [:anAsynchronousCall :aCanvas | anAsynchronousCall serializeThisWithHidden])
+	^ self
+		executing: [ :anAsynchronousCall :aCanvas | 
+			anAsynchronousCall
+				bePost;
+				serializeThisWithHidden ]

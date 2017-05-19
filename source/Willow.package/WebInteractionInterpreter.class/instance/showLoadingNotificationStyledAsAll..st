@@ -1,4 +1,4 @@
-configuring
+Configuring
 showLoadingNotificationStyledAsAll: classes
 
 	interaction

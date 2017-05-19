@@ -1,4 +1,4 @@
-configuring
+Configuring - Serialization
 serializeIt
 
 	interaction onTriggerExecute: SerializationCommand forCurrentObject

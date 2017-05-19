@@ -1,5 +1,8 @@
 instance creation
 forParentForm
 
-	^self executing: (Array
-				with: [:anAsynchronousCall :aCanvas | anAsynchronousCall serializeForm])
+	^ self
+		executing: [ :anAsynchronousCall :aCanvas | 
+			anAsynchronousCall
+				bePost;
+				serializeForm ]

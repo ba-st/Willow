@@ -1,4 +1,4 @@
 Configuring
-reportingAction: aMonadycBlock
+reportingAction: aDyadicBlock
 
-	reportingAction := aMonadycBlock
+	reportingAction := aDyadicBlock

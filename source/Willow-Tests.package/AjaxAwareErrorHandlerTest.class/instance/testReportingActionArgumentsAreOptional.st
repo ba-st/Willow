@@ -1,5 +1,5 @@
 accessing
-testAssertionFailed
+testReportingActionArgumentsAreOptional
 
 	| context reportingActionWasEvaluated updateRootBlockWasEvaluated renderingBlockWasEvaluated |
 
@@ -10,19 +10,15 @@ testAssertionFailed
 	context := self createRequestContext.
 
 	[ self handlerClass
-		reportingAction: [ :handler :exception | reportingActionWasEvaluated := exception isA: AssertionFailed ];
-		updateRootWith: [ :root | updateRootBlockWasEvaluated := true ];
-		renderNonAjaxErrorsWith: [ :canvas :error | 
-			self assert: (AssertionFailed handles: error).
-			renderingBlockWasEvaluated := true ];
+		reportingAction: [ reportingActionWasEvaluated := true ];
+		updateRootWith: [ :root |  ];
+		renderNonAjaxErrorsWith: [ :canvas :error |  ];
 		handleExceptionsDuring: [ AssertionFailed signal ] context: context ]
 		on: WAResponseNotification
 		do: [ :n | 
 			self
 				assert: context response status equals: 500;
-				assert: reportingActionWasEvaluated;
-				assert: updateRootBlockWasEvaluated;
-				assert: renderingBlockWasEvaluated.
+				assert: reportingActionWasEvaluated.
 			^ self ].
 
 	self fail

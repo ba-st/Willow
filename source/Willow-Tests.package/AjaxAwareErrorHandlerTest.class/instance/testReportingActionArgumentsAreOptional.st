@@ -1,11 +1,9 @@
 accessing
 testReportingActionArgumentsAreOptional
 
-	| context reportingActionWasEvaluated updateRootBlockWasEvaluated renderingBlockWasEvaluated |
+	| context reportingActionWasEvaluated |
 
 	reportingActionWasEvaluated := false.
-	updateRootBlockWasEvaluated := false.
-	renderingBlockWasEvaluated := false.
 
 	context := self createRequestContext.
 

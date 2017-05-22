@@ -5,7 +5,7 @@ handleException: anException
 		ifTrue: [
 			^ajaxExceptionHandlers keys
 				detect: [:key | key handles: anException]
-				ifFound: [:key | (ajaxExceptionHandlers at: key) value: anException]
+				ifFound: [:key | (ajaxExceptionHandlers at: key) cull: anException cull: self]
 				ifNone: [super handleException: anException]].
 
 	^super handleException: anException

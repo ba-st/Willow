@@ -1,4 +1,4 @@
 Configuring
-on: anExceptionSelector do: aMonadycBlock
+on: anExceptionSelector do: aBlock
 
-	ajaxExceptionHandlers at: anExceptionSelector put: aMonadycBlock
+	ajaxExceptionHandlers at: anExceptionSelector put: aBlock

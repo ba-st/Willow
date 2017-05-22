@@ -1,4 +1,4 @@
-Configuring
+Configuring - Serialization
 serializeWithHiddenInputs
 
 	self subclassResponsibility

@@ -1,4 +1,4 @@
 initialize-release
-initializeExecuting: anActionCollection
+initializeExecuting: aPriorityAction
 
-	priorityActions := anActionCollection
+	priorityActions := Array with: aPriorityAction

@@ -1,4 +1,4 @@
-configuring
+Configuring
 evaluate: aCallbackBlock with: aParameter
 
 	interaction

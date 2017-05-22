@@ -1,4 +1,4 @@
 instance creation - private
-executing: anActionCollection
+executing: aPriorityAction
 
-	^self new initializeExecuting: anActionCollection
+	^self new initializeExecuting: aPriorityAction

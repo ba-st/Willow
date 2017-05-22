@@ -9,4 +9,4 @@ testForDelayedModelLoading
 	html := self configureScriptWith: interpreter.
 	self
 		assert: html
-		equals: '<div></div><script type="text/javascript">$(".the-specified-style").submit();</script>'
+		equals: '<div></div><script type="text/javascript">$("form.the-specified-style").submit();</script>'

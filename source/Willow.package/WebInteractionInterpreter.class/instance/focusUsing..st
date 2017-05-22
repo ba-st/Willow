@@ -1,4 +1,4 @@
-configuring
+Configuring - DOM
 focusUsing: aComponentProvider
 
 	interaction

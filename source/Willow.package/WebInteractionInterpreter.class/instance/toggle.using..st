@@ -1,4 +1,4 @@
-configuring
+Configuring - DOM
 toggle: aComponentByStyleName using: anEffect
 
 	interaction

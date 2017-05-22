@@ -16,4 +16,4 @@ testPriorityActions
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(){$.ajax({"url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(){$.ajax({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'

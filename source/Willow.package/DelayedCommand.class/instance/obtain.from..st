@@ -2,5 +2,5 @@ private
 obtain: clientSideParameter from: anAsynchronousCall
 
 	anAsynchronousCall
-		type: 'POST';
+		bePost;
 		callback: [ :serverSideParameter | serverSideParameterBinding := Binding to: serverSideParameter ] json: clientSideParameter

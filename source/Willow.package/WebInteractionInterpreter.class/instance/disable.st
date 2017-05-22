@@ -1,4 +1,4 @@
-configuring
+Configuring - DOM
 disable
 
 	interaction onTriggerExecute: ComponentEnableStatusChangingCommand disablingCurrentComponent

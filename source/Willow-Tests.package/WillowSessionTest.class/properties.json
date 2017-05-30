@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "TestCase",
+	"category" : "Willow-Tests-Applications",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"wasEvaluated",
+		"session"
+	],
+	"name" : "WillowSessionTest",
+	"type" : "normal"
+}

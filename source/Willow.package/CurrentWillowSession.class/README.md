@@ -1,0 +1,2 @@
+A Dynamic Variable to access the current session with faster performance than the standard Seaside implementation.
+Also, since this way of accessing the session does not make use of Notifications, it does not interfere with the standard exception handling.

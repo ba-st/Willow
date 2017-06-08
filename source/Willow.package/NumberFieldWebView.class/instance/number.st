@@ -1,4 +1,4 @@
 number-container-API
 number
 
-	^ textCodec decode: textField contents
+	^ self model

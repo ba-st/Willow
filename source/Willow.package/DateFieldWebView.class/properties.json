@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "GabrielOmarCotelli 4/20/2017 16:38",
-	"super" : "WAPresenter",
+	"super" : "FieldWebView",
 	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],

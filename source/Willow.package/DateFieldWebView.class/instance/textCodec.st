@@ -1,0 +1,4 @@
+private - Accessing
+textCodec
+
+	^ textCodec

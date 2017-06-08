@@ -1,12 +1,10 @@
 {
 	"instance" : {
-		"notifyChangesTo:" : "GabrielOmarCotelli 4/20/2017 16:38",
-		"changeDateTo:" : "GabrielOmarCotelli 4/20/2017 16:38",
-		"identifyIn:" : "GabrielOmarCotelli 4/20/2017 16:38",
+		"changeDateTo:" : "GabrielOmarCotelli 6/8/2017 10:49",
 		"initializeApplying:transformingWith:" : "GabrielOmarCotelli 4/20/2017 16:38",
-		"renderContentOn:" : "GabrielOmarCotelli 4/20/2017 16:38",
-		"date" : "GabrielOmarCotelli 4/20/2017 16:38",
-		"onTrigger" : "GabrielOmarCotelli 4/20/2017 16:38"
+		"date" : "GabrielOmarCotelli 6/8/2017 10:49",
+		"textField" : "GabrielOmarCotelli 6/8/2017 10:43",
+		"textCodec" : "GabrielOmarCotelli 6/8/2017 10:50"
 	},
 	"class" : {
 		"applying:" : "GabrielOmarCotelli 4/20/2017 16:43",

@@ -1,0 +1,1 @@
+A FloatCodecTest is a test class for testing the behavior of FloatCodec

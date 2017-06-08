@@ -1,13 +1,15 @@
 {
 	"instance" : {
-		"singleLineTextFieldApplying:" : "GabrielOmarCotelli 4/25/2017 11:00",
-		"dropdownListApplying:" : "GabrielOmarCotelli 4/3/2017 09:40",
-		"naturalNumberFieldApplying:" : "GabrielOmarCotelli 4/27/2017 15:23",
-		"unorderedListApplying:listing:applyingToEach:" : "GabrielOmarCotelli 5/2/2017 17:20",
 		"updateRoot:" : "GabrielOmarCotelli 4/3/2017 09:51",
-		"asynchronicButtonLabeled:applying:" : "GabrielOmarCotelli 4/11/2017 16:53",
 		"synchronicButtonLabeled:applying:evaluating:" : "GabrielOmarCotelli 4/25/2017 10:33",
-		"dateFieldApplying:" : "GabrielOmarCotelli 4/20/2017 16:52"
+		"tableBuilder" : "GabrielOmarCotelli 6/8/2017 17:53",
+		"naturalNumberFieldApplying:" : "GabrielOmarCotelli 4/27/2017 15:23",
+		"dateFieldApplying:" : "GabrielOmarCotelli 4/20/2017 16:52",
+		"dropdownListApplying:" : "GabrielOmarCotelli 4/3/2017 09:40",
+		"decimalNumberFieldApplying:" : "GabrielOmarCotelli 6/8/2017 18:26",
+		"singleLineTextFieldApplying:" : "GabrielOmarCotelli 4/25/2017 11:00",
+		"asynchronicButtonLabeled:applying:" : "GabrielOmarCotelli 4/11/2017 16:53",
+		"unorderedListApplying:listing:applyingToEach:" : "GabrielOmarCotelli 5/2/2017 17:20"
 	},
 	"class" : { }
 }

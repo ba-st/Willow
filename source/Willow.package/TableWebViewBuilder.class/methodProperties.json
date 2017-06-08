@@ -1,0 +1,15 @@
+{
+	"instance" : {
+		"styledWith:" : "GabrielOmarCotelli 6/8/2017 17:34",
+		"beHeadless" : "GabrielOmarCotelli 6/8/2017 17:32",
+		"addColumnTitled:renderingAll:" : "GabrielOmarCotelli 6/8/2017 17:52",
+		"addUntitledColumnRendering:" : "GabrielOmarCotelli 6/8/2017 18:08",
+		"initialize" : "GabrielOmarCotelli 6/8/2017 17:32",
+		"addColumnTitled:rendering:applyingToCells:applyingToHeading:" : "GabrielOmarCotelli 6/8/2017 17:51",
+		"applyToEachRow:" : "GabrielOmarCotelli 6/8/2017 17:38",
+		"addColumnTitled:rendering:" : "GabrielOmarCotelli 6/8/2017 18:07",
+		"buildApplying:" : "GabrielOmarCotelli 6/8/2017 17:32",
+		"addColumnTitled:renderingAll:applyingToCells:applyingToHeading:" : "GabrielOmarCotelli 6/8/2017 17:52"
+	},
+	"class" : { }
+}

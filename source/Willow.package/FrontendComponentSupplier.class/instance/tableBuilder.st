@@ -1,0 +1,4 @@
+Supplying
+tableBuilder
+
+	^ self subclassResponsibility

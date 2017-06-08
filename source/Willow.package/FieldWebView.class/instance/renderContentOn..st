@@ -1,4 +1,4 @@
 rendering
 renderContentOn: aCanvas
 
-	aCanvas render: textField
+	aCanvas render: self textField

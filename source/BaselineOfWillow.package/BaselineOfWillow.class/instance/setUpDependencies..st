@@ -4,7 +4,7 @@ setUpDependencies: spec
 	spec
 		baseline: 'Seaside3'
 			with: [ spec
-				repository: 'github://SeasideSt/SeasideSt:v3.2.2/repository';
+				repository: 'github://SeasideSt/Seaside:v3.2.2/repository';
 				loads: #('Development Tests' 'JQuery' 'Zinc') ];
 		import: 'Seaside3'.
 

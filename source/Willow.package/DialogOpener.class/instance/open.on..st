@@ -1,5 +1,5 @@
 actions
 open: aDialogView on: aCanvas
 
-	^ (aCanvas jQuery class: WillowCssStyles dialogContainer) first
+	^ (aCanvas jQuery id: WillowConstants dialogSectionName)
 		append: [ :aSubCanvas | aSubCanvas render: aDialogView ]

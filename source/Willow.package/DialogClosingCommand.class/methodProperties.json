@@ -1,0 +1,15 @@
+{
+	"instance" : {
+		"modelLoadingActions" : "GabrielOmarCotelli 6/27/2017 16:26",
+		"clientIndependentActions" : "GabrielOmarCotelli 6/27/2017 16:17",
+		"priorityActions" : "GabrielOmarCotelli 6/27/2017 16:17",
+		"initializeObtainingDialogsWith:" : "GabrielOmarCotelli 6/27/2017 16:17",
+		"requiresSerialization" : "GabrielOmarCotelli 6/27/2017 16:18",
+		"serverIndependentActions" : "GabrielOmarCotelli 6/27/2017 16:18"
+	},
+	"class" : {
+		"onlyForLastDialog" : "GabrielOmarCotelli 6/27/2017 16:16",
+		"forAllDialogs" : "GabrielOmarCotelli 6/27/2017 16:16",
+		"obtainingDialogsWith:" : "GabrielOmarCotelli 6/27/2017 16:16"
+	}
+}

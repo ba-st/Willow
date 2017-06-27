@@ -1,4 +1,4 @@
 Configuring - Dialogs
-open: aView
+closeLastDialog
 
 	self subclassResponsibility

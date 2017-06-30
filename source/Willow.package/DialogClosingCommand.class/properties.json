@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"componentProvider",
 		"dialogSupplier"
 	],
 	"name" : "DialogClosingCommand",

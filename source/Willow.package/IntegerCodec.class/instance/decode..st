@@ -1,4 +1,4 @@
 converting
 decode: aString
 
-	^ aString asInteger ifNil: [ 0 ]
+	^ aString greaseInteger ifNil: [ 0 ]

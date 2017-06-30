@@ -1,6 +1,7 @@
-initialize-release
+initialization
 initializeApplying: aComponentCommand listing: anElementCollection applyingToEach: anElementCommand
 
 	elements := anElementCollection.
 	commandToItem := anElementCommand.
-	commandToList := aComponentCommand
+	commandToList := aComponentCommand.
+	interactionInterpreter := WebInteractionInterpreter forClickOnComponent

@@ -1,7 +1,8 @@
 {
 	"instance" : {
-		"initializeApplying:listing:applyingToEach:" : "GabrielOmarCotelli 5/2/2017 17:43",
-		"renderContentOn:" : "GabrielOmarCotelli 5/2/2017 17:46"
+		"initializeApplying:listing:applyingToEach:" : "MaximilianoTabacman 6/28/2017 21:16",
+		"onTrigger" : "MaximilianoTabacman 6/28/2017 21:17",
+		"renderContentOn:" : "MaximilianoTabacman 6/28/2017 21:17"
 	},
 	"class" : {
 		"applying:listing:applyingToEach:" : "MaximilianoTabacman 1/31/2017 00:28"

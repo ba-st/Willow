@@ -1,0 +1,4 @@
+Accessing
+forDeployment
+
+	^ JQuery2DeploymentMetadataLibrary

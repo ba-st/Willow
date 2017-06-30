@@ -8,7 +8,8 @@
 	"instvars" : [
 		"elements",
 		"commandToItem",
-		"commandToList"
+		"commandToList",
+		"interactionInterpreter"
 	],
 	"name" : "UnorderedListWebView",
 	"type" : "normal"

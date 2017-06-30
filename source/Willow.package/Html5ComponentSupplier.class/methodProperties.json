@@ -1,12 +1,13 @@
 {
 	"instance" : {
-		"updateRoot:" : "GabrielOmarCotelli 4/4/2017 17:21",
 		"synchronicButtonLabeled:applying:evaluating:" : "GabrielOmarCotelli 4/25/2017 10:33",
+		"updateRoot:" : "GabrielOmarCotelli 4/4/2017 17:21",
 		"tableBuilder" : "GabrielOmarCotelli 6/8/2017 17:54",
 		"naturalNumberFieldApplying:" : "GabrielOmarCotelli 4/27/2017 15:23",
 		"dateFieldApplying:" : "GabrielOmarCotelli 4/20/2017 16:52",
 		"dropdownListApplying:" : "GabrielOmarCotelli 4/4/2017 17:20",
 		"decimalNumberFieldApplying:" : "GabrielOmarCotelli 6/8/2017 18:26",
+		"closeDialogsIn:suppliedBy:on:" : "GabrielOmarCotelli 6/27/2017 16:37",
 		"singleLineTextFieldApplying:" : "GabrielOmarCotelli 4/25/2017 11:00",
 		"asynchronicButtonLabeled:applying:" : "GabrielOmarCotelli 4/11/2017 16:52",
 		"unorderedListApplying:listing:applyingToEach:" : "GabrielOmarCotelli 5/2/2017 17:21"

@@ -1,4 +1,4 @@
 converting
 encode: aNaturalNumber
 
-	^aNaturalNumber asString
+	^aNaturalNumber greaseString

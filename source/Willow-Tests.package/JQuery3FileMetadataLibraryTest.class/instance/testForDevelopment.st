@@ -1,0 +1,4 @@
+tests
+testForDevelopment
+
+	self assert: JQuery3MetadataLibrary forDevelopment equals: JQuery3DevelopmentMetadataLibrary

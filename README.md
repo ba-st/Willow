@@ -2,6 +2,7 @@
 ======
 [![Build Status](https://travis-ci.org/ba-st/Willow.svg?branch=master)](https://travis-ci.org/ba-st/Willow)
 [![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow/badge.svg?branch=master)](https://coveralls.io/github/ba-st/Willow?branch=master)
+[![Javascript Dependency Status](https://david-dm.org/ba-st/Willow.svg)](https://david-dm.org/ba-st/Willow)
 
 Willow is a Web Interaction Library that eases the burden of creating AJAX-based web applications.
 

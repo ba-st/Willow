@@ -1,7 +1,6 @@
 uploaded
 jquery224JsContent
 
-	<ignoreForCoverage>
 	^ '/*!
  * jQuery JavaScript Library v2.2.4
  * http://jquery.com/

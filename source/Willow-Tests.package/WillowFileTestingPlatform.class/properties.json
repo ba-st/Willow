@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 7/3/2017 14:29",
+	"super" : "GRPlatform",
+	"category" : "Willow-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"platform",
+		"createdFolders",
+		"createdFiles"
+	],
+	"name" : "WillowFileTestingPlatform",
+	"type" : "normal"
+}

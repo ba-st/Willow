@@ -1,8 +1,9 @@
 {
 	"instance" : {
+		"testJavascriptCode" : "GabrielOmarCotelli 5/9/2017 14:43",
 		"testTesting" : "GabrielOmarCotelli 4/19/2017 15:30",
 		"testInstanceCreation" : "GabrielOmarCotelli 4/19/2017 15:29",
-		"testJavascriptCode" : "GabrielOmarCotelli 5/9/2017 14:43"
+		"testDeployFiles" : "GabrielOmarCotelli 7/3/2017 15:06"
 	},
 	"class" : { }
 }

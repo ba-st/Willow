@@ -1,0 +1,4 @@
+accessing
+createdFiles
+
+	^ createdFiles asArray

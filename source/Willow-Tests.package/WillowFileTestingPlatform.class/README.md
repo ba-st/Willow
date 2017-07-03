@@ -1,0 +1,1 @@
+I'm a platform wrapping the installed one but providing facilities to test stuff related to the file system

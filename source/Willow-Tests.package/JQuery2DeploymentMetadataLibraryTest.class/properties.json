@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "TestCase",
+	"super" : "WillowLibraryTestCase",
 	"category" : "Willow-Tests-Libraries",
 	"classinstvars" : [ ],
 	"pools" : [ ],

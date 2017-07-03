@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 7/3/2017 16:08",
+	"super" : "JQuery3MetadataLibrary",
+	"category" : "Willow-Libraries",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JQuery3DeploymentMetadataLibrary",
+	"type" : "normal"
+}

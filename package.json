@@ -4,7 +4,7 @@
   "author": "Buenos Aires Smalltalk contributors",
   "license": "MIT",
   "dependencies": {
-    "jquery": "2.2.4"
+    "jquery": "2.2.4 || 3.2.1"
   }
   ,
   "description": "Willow is a Web Interaction Library that eases the burden of creating AJAX-based web applications.",

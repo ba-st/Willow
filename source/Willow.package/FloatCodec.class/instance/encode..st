@@ -1,4 +1,4 @@
 converting
 encode: aNumber
 
-	^ aNumber asFloat asString
+	^ aNumber asFloat greaseString

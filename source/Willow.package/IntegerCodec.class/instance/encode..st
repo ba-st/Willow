@@ -1,4 +1,4 @@
 converting
 encode: anInteger
 
-	^ anInteger asString
+	^ anInteger greaseString

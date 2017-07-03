@@ -1,0 +1,4 @@
+Accessing
+forDevelopment
+
+	^ JQuery2DevelopmentMetadataLibrary

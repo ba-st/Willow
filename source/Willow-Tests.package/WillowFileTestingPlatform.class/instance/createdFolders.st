@@ -1,4 +1,4 @@
 accessing
 createdFolders
 
-	^ Array withAll: createdFolders 
+	^ (SortedCollection withAll: createdFolders) asArray

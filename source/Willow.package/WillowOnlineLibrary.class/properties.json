@@ -2,9 +2,7 @@
 	"commentStamp" : "GabrielOmarCotelli 4/17/2017 14:22",
 	"super" : "WAObject",
 	"category" : "Willow-Libraries",
-	"classinstvars" : [
-		"default"
-	],
+	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],

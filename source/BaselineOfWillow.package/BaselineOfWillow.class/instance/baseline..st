@@ -8,7 +8,7 @@ baseline: spec
 
 			spec
 				package: 'Willow' with: [ spec requires: #('Seaside3' 'RenoirSt') ];
-				package: 'Willow-Tests' with: [ spec requires: 'Willow' ].
+				package: 'Willow-Tests' with: [ spec requires: #('Seaside3-Tests' 'Willow') ].
 			spec
 				group: 'Deployment' with: #('Willow');
 				group: 'Development' with: #('Deployment' 'Willow-Tests');

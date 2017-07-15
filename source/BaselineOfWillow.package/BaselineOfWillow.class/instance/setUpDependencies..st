@@ -5,7 +5,8 @@ setUpDependencies: spec
 		baseline: 'Seaside3'
 			with: [ spec
 				repository: 'github://SeasideSt/Seaside:v3.2.2/repository';
-				loads: #('Development' 'JQuery' 'Zinc' 'Tests') ];
+				loads: #('Development' 'JQuery' 'Zinc') ];
+		project: 'Seaside3-Tests' copyFrom: 'Seaside3' with: [ spec loads: #('Tests') ];
 		import: 'Seaside3'.
 
 	spec

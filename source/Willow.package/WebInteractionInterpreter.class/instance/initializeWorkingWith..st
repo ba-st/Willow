@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeWorkingWith: aWebComponentInteraction
 
 	interaction := aWebComponentInteraction

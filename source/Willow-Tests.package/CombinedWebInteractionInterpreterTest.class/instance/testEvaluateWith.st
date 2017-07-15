@@ -17,4 +17,4 @@ testEvaluateWith
 				render: cancelButton ].
 	self
 		assert: html
-		equals: '<button id="button-id3" type="button">Ok</button><button id="button-id6" type="button">Cancel</button><script type="text/javascript">$("#button-id3").click(function(){$.ajax({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&"),"dataType":"script","error":Willow.handleAjaxErrorCall})});$("#button-id6").click(function(){$.ajax({"type":"POST","url":"/","data":["4","5="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&"),"dataType":"script","error":Willow.handleAjaxErrorCall})});</script>'
+		equals: '<button id="button-id3" type="button">Ok</button><button id="button-id6" type="button">Cancel</button><script type="text/javascript">$("#button-id3").click(function(){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});$("#button-id6").click(function(){Willow.callServer({"type":"POST","url":"/","data":["4","5="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'

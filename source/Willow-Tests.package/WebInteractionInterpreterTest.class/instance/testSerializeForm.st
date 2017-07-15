@@ -17,4 +17,7 @@ testSerializeForm
 			interpreter serializeForm: form.
 			interpreter applyTo: anchor on: canvas ].
 
-	self assert: html equals:  '<form accept-charset="UTF-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(){$.ajax({"type":"POST","url":"/","data":["1",$("#15").serialize()].join("&"),"dataType":"script","error":Willow.handleAjaxErrorCall})});</script>'
+	self
+		assert: html
+		equals:
+			'<form accept-charset="UTF-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(){Willow.callServer({"type":"POST","url":"/","data":["1",$("#15").serialize()].join("&")})});</script>'

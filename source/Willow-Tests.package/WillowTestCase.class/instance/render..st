@@ -1,4 +1,4 @@
 utility
 render: aWebView
 
-	^self renderUsing: [:canvas | canvas render: aWebView]
+	^ self renderUsing: [ :canvas | canvas render: aWebView ]

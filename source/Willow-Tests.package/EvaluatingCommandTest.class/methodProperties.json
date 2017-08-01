@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"bePost" : "MaximilianoTabacman 8/1/2017 10:27",
+		"testRequiresSerialization" : "MaximilianoTabacman 8/1/2017 08:25",
+		"testServerIndependentActions" : "MaximilianoTabacman 8/1/2017 08:37",
+		"testClientIndependentActionsDependOnPriorityActionsWhenUsingClientParameter" : "MaximilianoTabacman 8/1/2017 08:36",
+		"testPriorityActions" : "MaximilianoTabacman 8/1/2017 08:56",
+		"callback:json:" : "MaximilianoTabacman 8/1/2017 08:39",
+		"testModelLoadingActions" : "MaximilianoTabacman 8/1/2017 08:36",
+		"testClientIndependentActions" : "MaximilianoTabacman 8/1/2017 08:31"
+	},
+	"class" : { }
+}

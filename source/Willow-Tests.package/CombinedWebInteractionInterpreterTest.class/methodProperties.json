@@ -1,5 +1,6 @@
 {
 	"instance" : {
+		"testDetermineBehaviorByEvaluatingWith" : "MaximilianoTabacman 8/1/2017 08:59",
 		"testSetValueToThenTriggerChangeOf" : "MaximilianoTabacman 7/14/2017 23:24",
 		"testSubmitForm" : "MaximilianoTabacman 7/14/2017 23:23",
 		"testToggleCssClass" : "GabrielOmarCotelli 3/27/2017 12:39",
@@ -20,10 +21,11 @@
 		"testAddCssClassToComponentsMatching" : "GabrielOmarCotelli 3/27/2017 15:21",
 		"testChangeCssClassTo" : "GabrielOmarCotelli 3/27/2017 12:37",
 		"testShowLoadingNotificationStyledAsAll" : "MaximilianoTabacman 7/14/2017 23:25",
-		"testInformSelection" : "GabrielOmarCotelli 3/27/2017 12:45",
+		"testDetermineBehaviorByEvaluating" : "MaximilianoTabacman 8/1/2017 08:58",
 		"testSerializeForm" : "MaximilianoTabacman 7/14/2017 23:22",
 		"testFocus" : "MaximilianoTabacman 7/14/2017 23:23",
 		"testSerializeContainerForm" : "MaximilianoTabacman 7/14/2017 23:22",
+		"testInformSelection" : "GabrielOmarCotelli 3/27/2017 12:45",
 		"testToggleCssClassOnComponentsWithClassWithEffect" : "GabrielOmarCotelli 3/27/2017 15:03",
 		"testOpen" : "MaximilianoTabacman 7/14/2017 23:22",
 		"testSubmitFormStyledAs" : "MaximilianoTabacman 7/14/2017 23:25",

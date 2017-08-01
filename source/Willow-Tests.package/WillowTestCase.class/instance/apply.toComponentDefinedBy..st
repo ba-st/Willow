@@ -1,7 +1,7 @@
 utility
 apply: aWebInteractionObject toComponentDefinedBy: aComponentProvider
 
-	^self
+	^ self
 		apply: aWebInteractionObject
 		toComponentDefinedBy: aComponentProvider
-		afterApplyingDo: [:canvas :component | ]
+		afterApplyingDo: [ :canvas :component |  ]

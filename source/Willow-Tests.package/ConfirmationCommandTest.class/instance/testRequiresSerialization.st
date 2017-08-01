@@ -1,4 +1,4 @@
-tests-accessing
+tests-testing
 testRequiresSerialization
 
 	self deny: command requiresSerialization 

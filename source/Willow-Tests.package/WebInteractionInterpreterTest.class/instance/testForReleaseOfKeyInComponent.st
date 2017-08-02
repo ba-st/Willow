@@ -9,4 +9,4 @@ testForReleaseOfKeyInComponent
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").keyup(function(){$.ajax({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&"),"dataType":"script","error":Willow.handleAjaxErrorCall})});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").keyup(function(){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'

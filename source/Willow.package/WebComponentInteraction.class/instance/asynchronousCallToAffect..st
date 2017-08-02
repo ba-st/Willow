@@ -1,9 +1,9 @@
 accessing - private
 asynchronousCallToAffect: aCanvas
 
-	| asynchronousCall |
-	asynchronousCall := aCanvas jQuery ajax.
-	priorityActions do: [ :action | action value: asynchronousCall value: aCanvas ].
-	self complete: asynchronousCall withResponseOn: aCanvas.
-	self complete: aCanvas withErrorHandlingOn: asynchronousCall.
-	^ asynchronousCall
+	| serverCall |
+
+	serverCall := aCanvas jQuery willow serverCall.
+	priorityActions do: [ :action | action value: serverCall value: aCanvas ].
+	self complete: serverCall withResponseOn: aCanvas.
+	^ serverCall

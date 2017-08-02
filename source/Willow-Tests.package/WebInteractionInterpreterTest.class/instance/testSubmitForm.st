@@ -17,4 +17,7 @@ testSubmitForm
 			interpreter submitForm: form.
 			interpreter applyTo: anchor on: canvas ].
 
-	self assert: html equals:  '<form accept-charset="UTF-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(){$.ajax({"dataType":"script","url":"/","data":"1","error":Willow.handleAjaxErrorCall})});</script>'
+	self
+		assert: html
+		equals:
+			'<form accept-charset="UTF-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(){Willow.callServer({"url":"/","data":"1"})});</script>'

@@ -1,9 +1,10 @@
 {
 	"instance" : { },
 	"class" : {
-		"handleAjaxErrorCallFunctionName" : "GabrielOmarCotelli 1/13/2017 16:01",
 		"notificationSectionName" : "GabrielOmarCotelli 1/9/2017 17:53",
-		"disabledAttributeName" : "GabrielOmarCotelli 1/6/2017 17:53",
-		"dialogSectionName" : "GabrielOmarCotelli 3/14/2017 16:06"
+		"dialogSectionName" : "GabrielOmarCotelli 3/14/2017 16:06",
+		"handleAjaxErrorCallFunctionName" : "MaximilianoTabacman 7/10/2017 22:56",
+		"callServerFunctionName" : "MaximilianoTabacman 7/10/2017 22:57",
+		"disabledAttributeName" : "MaximilianoTabacman 7/10/2017 22:57"
 	}
 }

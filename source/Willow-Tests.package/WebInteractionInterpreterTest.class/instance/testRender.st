@@ -18,4 +18,4 @@ testRender
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(){$.ajax({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&"),"dataType":"script","error":Willow.handleAjaxErrorCall})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'

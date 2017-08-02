@@ -2,13 +2,12 @@
 	"instance" : {
 		"onTriggerExecute:" : "guest 1/5/2014 20:05",
 		"prepareActions" : "MaximilianoTabacman 12/5/2016 10:52",
-		"commandToExecuteOn:" : "GabrielOmarCotelli 1/6/2017 17:06",
+		"commandToExecuteOn:" : "MaximilianoTabacman 7/8/2017 11:12",
 		"registerActionsOf:" : "guest 1/5/2014 20:05",
 		"shouldApplyActions" : "guest 1/5/2014 20:05",
 		"initializeTriggeredAccordingTo:serializingWith:" : "MaximilianoTabacman 12/5/2016 10:51",
-		"asynchronousCallToAffect:" : "GabrielOmarCotelli 1/6/2017 17:05",
-		"complete:withErrorHandlingOn:" : "GabrielOmarCotelli 1/6/2017 15:08",
-		"complete:withResponseOn:" : "GabrielOmarCotelli 1/17/2017 16:00",
+		"asynchronousCallToAffect:" : "MaximilianoTabacman 8/1/2017 19:43",
+		"complete:withResponseOn:" : "MaximilianoTabacman 7/8/2017 11:12",
 		"initializeActions" : "guest 1/5/2014 20:05",
 		"shouldApplyAsynchronousCall" : "guest 1/5/2014 20:05",
 		"applyTo:on:" : "guest 1/5/2014 20:05"

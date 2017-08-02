@@ -1,4 +1,6 @@
 *Willow-SeasideExtensions
 willow
 
-	^ WillowJavascriptNamespace new
+	^ (WillowJavascriptNamespace context: self renderContext)
+		rendererClass: self rendererClass;
+		yourself

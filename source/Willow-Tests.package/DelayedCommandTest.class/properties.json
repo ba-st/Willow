@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WillowTestCase",
+	"category" : "Willow-Tests-WebInteraction",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DelayedCommandTest",
+	"type" : "normal"
+}

@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeTriggeredAccordingTo: aTriggerPolicy serializingWith: aSerializationCommand
 
 	triggerPolicy := aTriggerPolicy.

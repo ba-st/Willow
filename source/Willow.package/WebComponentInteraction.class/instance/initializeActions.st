@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeActions
 
 	priorityActions := OrderedCollection new.

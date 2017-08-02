@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeFor: aCallback requiring: anOptionalParameter
 
 	callbackToEvaluate := aCallback.

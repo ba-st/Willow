@@ -1,0 +1,1 @@
+I'm a WebInteractionCommand that scrolls the web page so that a specific component is visible.

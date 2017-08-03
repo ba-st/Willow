@@ -1,9 +1,7 @@
 Accessing
 nonFileSelectors
 
-	^OrderedCollection new
+	^ OrderedCollection new
 		addAll: super nonFileSelectors;
-		add: #globalWillowNamespaceDeclaration;
-		add: #setUpWillowGlobalNamespace;
-		add: #willowNamespace;
+		addAll: #(globalWillowNamespaceDeclaration setUpWillowGlobalNamespace willowNamespace defaultHandleAjaxErrorCallFunction sessionInformation willowDefaults callServerFunction);
 		yourself

@@ -1,0 +1,4 @@
+factory
+semaphoreClass
+
+	^ platform semaphoreClass

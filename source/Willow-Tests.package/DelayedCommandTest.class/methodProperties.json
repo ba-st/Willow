@@ -3,7 +3,7 @@
 		"bePost" : "MaximilianoTabacman 8/1/2017 10:27",
 		"testRequiresSerialization" : "MaximilianoTabacman 8/1/2017 09:33",
 		"testServerIndependentActions" : "MaximilianoTabacman 8/1/2017 09:44",
-		"testClientIndependentActionsDependOnPriorityActionsWhenUsingClientParameter" : "MaximilianoTabacman 8/1/2017 10:27",
+		"testClientIndependentActionsDependOnPriorityActionsWhenUsingClientParameter" : "GabrielOmarCotelli 8/3/2017 16:23",
 		"testPriorityActions" : "MaximilianoTabacman 8/1/2017 10:28",
 		"callback:json:" : "MaximilianoTabacman 8/1/2017 10:27",
 		"testModelLoadingActions" : "MaximilianoTabacman 8/1/2017 10:38",

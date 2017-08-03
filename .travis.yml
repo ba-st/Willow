@@ -7,10 +7,5 @@ os:
 
 # Select compatible Smalltalk image(s)
 smalltalk:
-  - Pharo-7.0
   - Pharo-6.0
   - Pharo-5.0
-
-allow_failures:
-  - smalltalk: Pharo-7.0
-  

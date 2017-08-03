@@ -9,9 +9,11 @@ os:
 smalltalk:
   - Pharo-7.0
   - Pharo-6.0
-  - Pharo-6.1
   - Pharo-5.0
+  - Pharo64-7.0
+  - Pharo64-6.0
 
 allow_failures:
   - smalltalk: Pharo-7.0
+  - smalltalk: Pharo64-7.0
   

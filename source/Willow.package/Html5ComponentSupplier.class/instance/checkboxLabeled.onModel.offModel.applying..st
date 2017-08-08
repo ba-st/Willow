@@ -1,8 +1,8 @@
 Supplying
-checkboxLabeled: aLabel onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent
+checkboxLabeled: aRenderable onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent
 
 	^ CheckboxWebView
-		labeled: aLabel
+		labeled: aRenderable
 		onModel: anObjectToUseWhenOn
 		offModel: anObjectToUseWhenOff
 		applying: aCommandToComponent

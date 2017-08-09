@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeContaining: aWebView applying: aFieldSetCommand withLegend: aTitle applying: aLegendCommand
 
 	title := aTitle.

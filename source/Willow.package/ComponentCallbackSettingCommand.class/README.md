@@ -1,0 +1,1 @@
+Command to set the callback of a component

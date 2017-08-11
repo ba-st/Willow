@@ -1,4 +1,4 @@
-tests-Configuring-DOM
+tests - Configuring - DOM
 testShowLoadingNotificationStyledAsAll
 
 	| interpreter html |

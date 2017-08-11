@@ -1,4 +1,4 @@
-configuring
+Configuring
 setValueTo: aValueProvider withoutTriggeringChangeOnComponentWithId: identifier
 
 	self

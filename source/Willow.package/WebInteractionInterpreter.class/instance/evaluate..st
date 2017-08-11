@@ -1,4 +1,4 @@
 Configuring
 evaluate: aCallbackBlock
 
-	interaction onTriggerExecute: (EvaluatingCommand for: aCallbackBlock)
+	self determineBehaviorByEvaluating: [ :response | aCallbackBlock value ]

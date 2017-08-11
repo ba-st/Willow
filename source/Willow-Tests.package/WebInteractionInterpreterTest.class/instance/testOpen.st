@@ -1,4 +1,4 @@
-tests-Configuring - Dialogs
+tests - Configuring - Dialogs
 testOpen
 
 	| interpreter html |

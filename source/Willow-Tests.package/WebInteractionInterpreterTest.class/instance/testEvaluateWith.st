@@ -1,4 +1,4 @@
-test - configuring
+tests - Configuring
 testEvaluateWith
 
 	| interpreter html |

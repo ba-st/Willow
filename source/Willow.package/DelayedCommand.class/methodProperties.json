@@ -1,18 +1,20 @@
 {
 	"instance" : {
 		"serverIndependentActions" : "MaximilianoTabacman 8/28/2015 09:01",
-		"initializeWithBehaviorDeterminedBy:requiring:" : "GabrielOmarCotelli 3/19/2017 18:15",
-		"obtain:from:" : "GabrielOmarCotelli 5/19/2017 16:35",
-		"onReturn" : "MaximilianoTabacman 12/6/2016 12:24",
-		"modelLoadingActions" : "MaximilianoTabacman 8/28/2015 09:01",
 		"clientIndependentActions" : "GabrielOmarCotelli 3/20/2017 09:34",
-		"priorityActions" : "GabrielOmarCotelli 3/17/2017 12:37",
+		"initializeWithBehaviorDeterminedBy:conditionedBy:requiring:" : "MaximilianoTabacman 8/10/2017 19:32",
+		"obtain:from:" : "MaximilianoTabacman 8/10/2017 19:34",
+		"onReturn" : "MaximilianoTabacman 12/6/2016 12:24",
 		"requiresSerialization" : "MaximilianoTabacman 8/28/2015 09:02",
+		"priorityActions" : "MaximilianoTabacman 8/10/2017 19:34",
+		"modelLoadingActions" : "MaximilianoTabacman 8/28/2015 09:01",
+		"considerAddingConditionTo:" : "MaximilianoTabacman 8/10/2017 10:15",
 		"resetInterpreter" : "MaximilianoTabacman 8/28/2015 09:01"
 	},
 	"class" : {
-		"withBehaviorDeterminedBy:" : "GabrielOmarCotelli 3/17/2017 12:33",
-		"withBehaviorDeterminedBy:requiring:" : "GabrielOmarCotelli 3/17/2017 12:33",
-		"withBehaviorDeterminedBy:with:" : "GabrielOmarCotelli 3/17/2017 12:33"
+		"withBehaviorDeterminedBy:" : "MaximilianoTabacman 8/10/2017 10:16",
+		"withBehaviorDeterminedBy:executedOnlyWhen:with:" : "MaximilianoTabacman 8/10/2017 10:16",
+		"withBehaviorDeterminedBy:with:" : "MaximilianoTabacman 8/10/2017 10:16",
+		"withBehaviorDeterminedBy:conditionedBy:requiring:" : "MaximilianoTabacman 8/10/2017 10:15"
 	}
 }

@@ -1,4 +1,4 @@
-test - instance creation
+tests - Instance Creation
 testForClickOnComponent
 
 	| interpreter html |

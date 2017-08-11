@@ -1,4 +1,7 @@
 instance creation
 withBehaviorDeterminedBy: aBlock
 
-	^ self withBehaviorDeterminedBy: aBlock requiring: Optional unused
+	^ self
+		withBehaviorDeterminedBy: aBlock
+		conditionedBy: Optional unused
+		requiring: Optional unused

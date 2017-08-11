@@ -1,4 +1,4 @@
-test - instance creation
+tests - Instance Creation
 testForClickOnHiddenInputDependentComponent
 
 	| interpreter html |

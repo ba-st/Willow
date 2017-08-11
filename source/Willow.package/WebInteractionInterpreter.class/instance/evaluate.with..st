@@ -1,5 +1,6 @@
 Configuring
 evaluate: aCallbackBlock with: aParameter
 
-	interaction
-		onTriggerExecute: (EvaluatingCommand for: aCallbackBlock with: aParameter)
+	self
+		determineBehaviorByEvaluating: [ :response :clientParameter | aCallbackBlock value: clientParameter ]
+		with: aParameter

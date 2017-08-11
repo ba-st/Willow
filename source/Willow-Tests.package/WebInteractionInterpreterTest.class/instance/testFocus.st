@@ -1,4 +1,4 @@
-tests-Configuring-DOM
+tests - Configuring - DOM
 testFocus
 
 	| interpreter html id |

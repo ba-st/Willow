@@ -1,4 +1,4 @@
-configuring
+Configuring
 determineBehaviorByEvaluating: aCallbackBlock with: aParameter
 
 	self interpretersDo: [:interpreter |

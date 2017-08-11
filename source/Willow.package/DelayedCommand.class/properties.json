@@ -9,7 +9,8 @@
 		"behaviorCallback",
 		"interpreter",
 		"optionalClientSideParameter",
-		"serverSideParameterBinding"
+		"serverSideParameterBinding",
+		"optionalClientCondition"
 	],
 	"name" : "DelayedCommand",
 	"type" : "normal"

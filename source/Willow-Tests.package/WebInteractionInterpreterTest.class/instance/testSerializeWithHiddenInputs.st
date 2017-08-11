@@ -1,4 +1,4 @@
-tests-Configuring - Serialization
+tests - Configuring - Serialization
 testSerializeWithHiddenInputs
 
 	| interpreter html id |

@@ -1,4 +1,4 @@
-test - instance creation
+tests - Instance Creation
 testForReleaseOfKeyInComponent
 
 	| interpreter html |

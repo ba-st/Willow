@@ -18,6 +18,7 @@
 		"testSetValueToWithoutTriggeringChangeOnComponentWithId" : "MaximilianoTabacman 7/14/2017 23:24",
 		"testAddCssClass" : "GabrielOmarCotelli 3/27/2017 12:35",
 		"testSerializeChildForm" : "MaximilianoTabacman 7/14/2017 23:22",
+		"testOnlyWhenDetermineBehaviorByEvaluating" : "MaximilianoTabacman 8/10/2017 22:59",
 		"testAddCssClassToComponentsMatching" : "GabrielOmarCotelli 3/27/2017 15:21",
 		"testChangeCssClassTo" : "GabrielOmarCotelli 3/27/2017 12:37",
 		"testShowLoadingNotificationStyledAsAll" : "MaximilianoTabacman 7/14/2017 23:25",

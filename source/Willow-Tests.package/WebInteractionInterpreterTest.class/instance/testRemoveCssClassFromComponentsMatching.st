@@ -1,4 +1,4 @@
-tests-Configuring - CSS
+tests - Configuring - CSS
 testRemoveCssClassFromComponentsMatching
 
 	| interpreter html |

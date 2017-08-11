@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
 	"super" : "WillowTestCase",
-	"category" : "Willow-Tests-WebInteraction",
+	"category" : "Willow-Tests-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "EvaluatingCommandTest",
+	"name" : "AddTimestampToSourceCommandTest",
 	"type" : "normal"
 }

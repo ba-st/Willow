@@ -1,4 +1,4 @@
-tests-Configuring - Serialization
+tests - Configuring - Serialization
 testSerializeForm
 
 	| interpreter html id |

@@ -1,1 +1,0 @@
-I'm a WebInteractionCommand allowing to execute a block of Smalltalk code on the server when the component interaction is triggered on the web page. Optionally a parameter can be provided, obtained from executing Javascript code on the client side before calling the server.

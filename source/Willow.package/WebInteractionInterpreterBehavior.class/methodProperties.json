@@ -1,7 +1,6 @@
 {
 	"instance" : {
 		"informSelection" : "GabrielOmarCotelli 1/17/2017 16:48",
-		"toggle:using:" : "GabrielOmarCotelli 1/17/2017 16:50",
 		"setValueTo:thenTriggerChangeOf:" : "GabrielOmarCotelli 2/13/2017 08:52",
 		"serializeWithHiddenInputs" : "GabrielOmarCotelli 1/17/2017 16:49",
 		"evaluate:with:" : "GabrielOmarCotelli 1/17/2017 16:48",
@@ -36,7 +35,6 @@
 		"showLoadingNotificationStyledAsAll:" : "GabrielOmarCotelli 1/17/2017 16:49",
 		"temporarilyDisableAndTransformInto:" : "GabrielOmarCotelli 1/17/2017 16:50",
 		"evaluate:" : "GabrielOmarCotelli 1/17/2017 16:48",
-		"toggleCssClass:onComponentsWithClass:withEffect:" : "GabrielOmarCotelli 1/17/2017 16:50",
 		"determineBehaviorByEvaluating:" : "GabrielOmarCotelli 1/17/2017 16:47",
 		"open:" : "GabrielOmarCotelli 1/17/2017 16:48",
 		"submitFormStyledAs:" : "GabrielOmarCotelli 1/17/2017 16:49",

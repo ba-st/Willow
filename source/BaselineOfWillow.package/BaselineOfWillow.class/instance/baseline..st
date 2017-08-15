@@ -5,7 +5,6 @@ baseline: spec
 	spec
 		for: #common
 		do: [ self setUpDependencies: spec.
-
 			spec
 				package: 'Willow' with: [ spec requires: #('Seaside3' 'RenoirSt') ];
 				package: 'Willow-Tests' with: [ spec requires: #('Seaside3-Tests' 'Willow') ].

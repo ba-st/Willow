@@ -1,20 +1,14 @@
 baselines
 setUpDependencies: spec
 
-	| repoLocation |
-
-	repoLocation := 'github://SeasideSt/Seaside:v3.2.4/repository'.
 	spec
-		baseline: 'Seaside3'
-		with: [ spec
-				repository: repoLocation;
-				loads: #('Seaside-Environment' 'JQuery' 'Zinc') ].
-	spec
-		project: 'Seaside3-Tests';
 		baseline: 'Seaside3'
 			with: [ spec
-				repository: repoLocation;
-				loads: #('Seaside-Tests-Core') ].
+				repository: 'github://SeasideSt/Seaside:v3.2.4/repository';
+				loads: #('Seaside-Environment' 'JQuery' 'Zinc') ];
+		project: 'Seaside3-Tests'
+			copyFrom: 'Seaside3'
+			with: [ spec loads: #('Seaside-Tests-Core') ].
 
 	spec
 		baseline: 'RenoirSt'

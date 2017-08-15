@@ -1,1 +1,0 @@
-I'm a WebInteractionCommand used to toggle the visibility of a component

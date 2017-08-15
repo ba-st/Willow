@@ -10,11 +10,12 @@ setUpDependencies: spec
 				repository: repoLocation;
 				loads: #('Seaside-Environment' 'JQuery' 'Zinc') ].
 	spec
-		baseline: 'Seaside3-Tests'
-		with: [ spec
+		project: 'Seaside3-Tests';
+		baseline: 'Seaside3'
+			with: [ spec
 				repository: repoLocation;
-				loads: #('Seaside-Tests-Core-RequestHandling') ].
-			
+				loads: #('Seaside-Tests-Core') ].
+
 	spec
 		baseline: 'RenoirSt'
 		with: [ spec

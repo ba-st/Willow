@@ -1,0 +1,4 @@
+Supplying
+singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand
+
+	^ SingleSelectionListBoxWebView displayingAtOnce: aNumberOfElements applying: aComponentCommand

@@ -1,6 +1,8 @@
 {
 	"instance" : {
 		"asynchronicAnchorLabeled:applying:" : "MaximilianoTabacman 8/8/2017 09:02",
+		"multipleSelectionListBoxDisplayingAtOnce:applying:" : "GabrielOmarCotelli 8/16/2017 10:25",
+		"unorderedListApplying:listing:applyingToEach:" : "GabrielOmarCotelli 5/2/2017 17:21",
 		"synchronicButtonLabeled:applying:evaluating:" : "GabrielOmarCotelli 4/25/2017 10:33",
 		"checkboxUnlabeledOnModel:offModel:applying:" : "MaximilianoTabacman 8/8/2017 09:42",
 		"checkboxLabeled:onModel:offModel:applying:" : "MaximilianoTabacman 8/8/2017 19:42",
@@ -13,7 +15,7 @@
 		"decimalNumberFieldApplying:" : "GabrielOmarCotelli 6/8/2017 18:26",
 		"singleLineTextFieldApplying:" : "GabrielOmarCotelli 4/25/2017 11:00",
 		"asynchronicButtonLabeled:applying:" : "GabrielOmarCotelli 4/11/2017 16:52",
-		"unorderedListApplying:listing:applyingToEach:" : "GabrielOmarCotelli 5/2/2017 17:21",
+		"singleSelectionListBoxDisplayingAtOnce:applying:" : "GabrielOmarCotelli 8/16/2017 10:22",
 		"addStatementsTo:toCloseDialogsIn:matching:on:" : "GabrielOmarCotelli 6/30/2017 11:44"
 	},
 	"class" : { }

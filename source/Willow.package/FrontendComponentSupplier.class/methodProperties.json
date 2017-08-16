@@ -1,23 +1,24 @@
 {
 	"instance" : {
-		"asynchronicAnchorLabeled:applying:" : "MaximilianoTabacman 8/8/2017 09:03",
 		"delayedViewShowing:whileEvaluating:thenRendering:" : "GabrielOmarCotelli 8/8/2017 17:45",
-		"multipleSelectionListBoxDisplayingAtOnce:applying:" : "GabrielOmarCotelli 8/16/2017 10:26",
-		"synchronicButtonLabeled:applying:evaluating:" : "GabrielOmarCotelli 4/25/2017 10:33",
-		"checkboxUnlabeledOnModel:offModel:applying:" : "MaximilianoTabacman 8/8/2017 09:42",
-		"checkboxLabeled:onModel:offModel:applying:" : "MaximilianoTabacman 8/8/2017 19:42",
-		"unorderedListApplying:listing:applyingToEach:" : "GabrielOmarCotelli 5/2/2017 17:20",
-		"updateRoot:" : "GabrielOmarCotelli 4/3/2017 09:51",
+		"multiLineTextFieldApplying:" : "GabrielOmarCotelli 8/16/2017 11:18",
 		"tableBuilder" : "GabrielOmarCotelli 6/8/2017 17:53",
-		"naturalNumberFieldApplying:" : "GabrielOmarCotelli 4/27/2017 15:23",
-		"dateFieldApplying:" : "GabrielOmarCotelli 4/20/2017 16:52",
-		"dropdownListApplying:" : "GabrielOmarCotelli 4/3/2017 09:40",
+		"unorderedListApplying:listing:applyingToEach:" : "GabrielOmarCotelli 5/2/2017 17:20",
+		"synchronicButtonLabeled:applying:evaluating:" : "GabrielOmarCotelli 4/25/2017 10:33",
 		"fieldSetContaining:applying:withLegend:applying:" : "MaximilianoTabacman 8/8/2017 20:30",
+		"asynchronicButtonLabeled:applying:" : "GabrielOmarCotelli 4/11/2017 16:53",
+		"dropdownListApplying:" : "GabrielOmarCotelli 4/3/2017 09:40",
+		"naturalNumberFieldApplying:" : "GabrielOmarCotelli 4/27/2017 15:23",
 		"decimalNumberFieldApplying:" : "GabrielOmarCotelli 6/8/2017 18:26",
 		"singleLineTextFieldApplying:" : "GabrielOmarCotelli 4/25/2017 11:00",
-		"asynchronicButtonLabeled:applying:" : "GabrielOmarCotelli 4/11/2017 16:53",
+		"checkboxUnlabeledOnModel:offModel:applying:" : "MaximilianoTabacman 8/8/2017 09:42",
 		"singleSelectionListBoxDisplayingAtOnce:applying:" : "GabrielOmarCotelli 8/16/2017 10:23",
-		"addStatementsTo:toCloseDialogsIn:matching:on:" : "GabrielOmarCotelli 6/30/2017 11:42"
+		"multipleSelectionListBoxDisplayingAtOnce:applying:" : "GabrielOmarCotelli 8/16/2017 10:26",
+		"checkboxLabeled:onModel:offModel:applying:" : "MaximilianoTabacman 8/8/2017 19:42",
+		"dateFieldApplying:" : "GabrielOmarCotelli 4/20/2017 16:52",
+		"addStatementsTo:toCloseDialogsIn:matching:on:" : "GabrielOmarCotelli 6/30/2017 11:42",
+		"updateRoot:" : "GabrielOmarCotelli 4/3/2017 09:51",
+		"asynchronicAnchorLabeled:applying:" : "MaximilianoTabacman 8/8/2017 09:03"
 	},
 	"class" : { }
 }

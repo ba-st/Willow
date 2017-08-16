@@ -19,6 +19,7 @@
 		"testMultipleSelectionListBoxDisplayingAtOnceApplying" : "GabrielOmarCotelli 8/16/2017 10:32",
 		"testNaturalNumberFieldApplying" : "GabrielOmarCotelli 4/27/2017 15:25",
 		"testCheckboxUnlabeledOnModelOffModelApplying" : "MaximilianoTabacman 8/10/2017 09:10",
+		"testMultiLineTextFieldApplying" : "GabrielOmarCotelli 8/16/2017 11:19",
 		"testSynchronicButtonLabeledApplyingEvaluating" : "GabrielOmarCotelli 4/25/2017 11:13"
 	},
 	"class" : { }

@@ -1,0 +1,4 @@
+Supplying
+multiLineTextFieldApplying: aComponentCommand
+
+	^ TextFieldWebView multiLineTriggeringOnChangeApplying: aComponentCommand

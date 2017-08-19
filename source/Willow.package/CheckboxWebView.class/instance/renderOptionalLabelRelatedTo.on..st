@@ -1,4 +1,4 @@
-rendering
+rendering - private
 renderOptionalLabelRelatedTo: checkbox on: aCanvas
 
 	labelOptional

@@ -1,4 +1,4 @@
 Utility
-registerAsApplication
+registerAsDevelopmentApplication
 
 	^ self registerAsApplicationUsing: WillowApplicationInDevelopment

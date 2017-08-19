@@ -1,4 +1,6 @@
 Accessing
 language
 
-	^ WALocale fromString: 'en'
+	^ [ super language ]
+		on: WARequestContextNotFound
+		do: [ :ex | ex return: (WALocale fromString: 'en') ]

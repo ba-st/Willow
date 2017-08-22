@@ -1,6 +1,13 @@
 {
 	"instance" : {
-		"testRenderContentOn" : "GabrielOmarCotelli 7/3/2017 16:52"
+		"session" : "MaximilianoTabacman 8/19/2017 11:04",
+		"preferenceAt:ifAbsent:" : "MaximilianoTabacman 8/19/2017 11:05",
+		"startUpApplicationContextFor:" : "MaximilianoTabacman 8/19/2017 11:33",
+		"testRenderContentOn" : "GabrielOmarCotelli 7/3/2017 16:52",
+		"testDeploymentMode" : "MaximilianoTabacman 8/19/2017 11:43",
+		"testRegisterAsDeployedApplication" : "MaximilianoTabacman 8/19/2017 11:50",
+		"testIinitialRequest" : "MaximilianoTabacman 8/19/2017 11:43",
+		"testRegisterAsDevelopmentApplication" : "MaximilianoTabacman 8/19/2017 11:50"
 	},
 	"class" : { }
 }

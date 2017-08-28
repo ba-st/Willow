@@ -1,4 +1,4 @@
 support
 newSingleSelectionView
 
-	^RadioGroupWebView applyingToEachRadioButton: CompositeComponentCommand empty
+	^ RadioGroupWebView new

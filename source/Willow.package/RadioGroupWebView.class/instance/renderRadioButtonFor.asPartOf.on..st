@@ -10,7 +10,7 @@ renderRadioButtonFor: anElement asPartOf: aRadioGroup on: aCanvas
 		with: [ | radioButton |
 			radioButton := aRadioGroup radioButton.
 			radioButton id: radioButtonId.
-			commandToRadioButton applyTo: radioButton on: aCanvas.
+			commandToComponent applyTo: radioButton on: aCanvas.
 			interactionInterpreter applyTo: radioButton on: aCanvas.
 			radioButton value: anElement.
 			self renderLabelContentFor: anElement on: aCanvas ]

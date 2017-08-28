@@ -3,7 +3,7 @@ testOnTrigger
 
 	| radioGroup html |
 
-	radioGroup := RadioGroupWebView applyingToEachRadioButton: CompositeComponentCommand empty.
+	radioGroup := self newSingleSelectionView.
 	radioGroup allowAnyOf: #('Buenos Aires' 'CABA').
 	radioGroup onTrigger disable.
 	html := self render: radioGroup.

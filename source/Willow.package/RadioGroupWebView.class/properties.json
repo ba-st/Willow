@@ -7,9 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"interactionInterpreter",
-		"commandToRadioButton",
 		"renderingBlock",
-		"commandToLabel"
+		"commandToComponent"
 	],
 	"name" : "RadioGroupWebView",
 	"type" : "normal"

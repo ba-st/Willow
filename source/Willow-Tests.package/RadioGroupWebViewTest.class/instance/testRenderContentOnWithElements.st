@@ -3,7 +3,7 @@ testRenderContentOnWithElements
 
 	| radioGroup html |
 
-	radioGroup := RadioGroupWebView applyingToEachRadioButton: CompositeComponentCommand empty.
+	radioGroup := self newSingleSelectionView.
 	radioGroup allowAnyOf: #('Buenos Aires' 'CABA').
 	html := self render: radioGroup.
 

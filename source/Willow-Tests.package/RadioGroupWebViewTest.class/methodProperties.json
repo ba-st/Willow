@@ -1,11 +1,11 @@
 {
 	"instance" : {
-		"testOnTrigger" : "GabrielOmarCotelli 3/8/2017 16:20",
-		"testRenderContentOnWithElements" : "GabrielOmarCotelli 3/8/2017 16:23",
-		"testRenderContentOnWithElementsAndSomethingSelected" : "GabrielOmarCotelli 3/8/2017 16:24",
-		"newSingleSelectionView" : "GabrielOmarCotelli 3/6/2017 15:37",
-		"testRenderingWhenEmptyDoesNotProduceHTMLContent" : "GabrielOmarCotelli 3/7/2017 14:59",
-		"testRenderContentOnWithCommands" : "GabrielOmarCotelli 3/8/2017 16:22"
+		"testOnTrigger" : "MaximilianoTabacman 8/28/2017 08:40",
+		"testRenderContentOnWithElementsAndSomethingSelected" : "MaximilianoTabacman 8/28/2017 08:41",
+		"testRenderContentOnWithElements" : "MaximilianoTabacman 8/28/2017 08:41",
+		"testRenderingWhenEmptyDoesNotProduceHTMLContent" : "MaximilianoTabacman 8/28/2017 08:41",
+		"newSingleSelectionView" : "MaximilianoTabacman 8/28/2017 08:39",
+		"testRenderingWithApplying" : "MaximilianoTabacman 8/28/2017 09:07"
 	},
 	"class" : { }
 }

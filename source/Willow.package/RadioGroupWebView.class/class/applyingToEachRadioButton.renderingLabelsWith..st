@@ -1,4 +1,0 @@
-Instance creation
-applyingToEachRadioButton: aCommandToComponent renderingLabelsWith: aRenderingBlock
-
-	^ self applyingToEachRadioButton: aCommandToComponent andToEachLabel: CompositeComponentCommand empty renderingWith: aRenderingBlock

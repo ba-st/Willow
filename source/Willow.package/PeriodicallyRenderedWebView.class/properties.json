@@ -9,7 +9,8 @@
 		"stopRenderingContent",
 		"refreshCommand",
 		"refreshIntervalInMilliseconds",
-		"identifiedViewToRefresh"
+		"identifiedViewToRefresh",
+		"conditionBlock"
 	],
 	"name" : "PeriodicallyRenderedWebView",
 	"type" : "normal"

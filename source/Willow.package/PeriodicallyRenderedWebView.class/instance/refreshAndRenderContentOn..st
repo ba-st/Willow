@@ -5,4 +5,4 @@ refreshAndRenderContentOn: aCanvas
 	aCanvas render: identifiedViewToRefresh view.
 
 	stopRenderingContent := true.
-	aCanvas document addLoadScript: (aCanvas jQuery ajax callback: [stopRenderingContent := false])
+	aCanvas document addLoadScript: (aCanvas jQuery ajax callback: [ stopRenderingContent := conditionBlock value ])

@@ -1,12 +1,13 @@
 {
 	"instance" : {
 		"scriptToRefreshAndRenderContentOn:" : "GabrielOmarCotelli 3/30/2017 15:54",
-		"initializeEvaluating:every:millisecondsThenRendering:" : "GabrielOmarCotelli 3/30/2017 15:54",
+		"initializeEvaluating:every:millisecondsThenRendering:until:" : "GabrielOmarCotelli 9/8/2017 15:53",
 		"renderContentOn:" : "GabrielOmarCotelli 3/30/2017 15:53",
-		"refreshAndRenderContentOn:" : "GabrielOmarCotelli 3/30/2017 15:54",
+		"refreshAndRenderContentOn:" : "GabrielOmarCotelli 9/8/2017 15:54",
 		"refreshAndRenderOn:" : "GabrielOmarCotelli 3/30/2017 15:54"
 	},
 	"class" : {
-		"evaluating:every:millisecondsThenRendering:" : "GabrielOmarCotelli 3/30/2017 15:52"
+		"evaluating:every:millisecondsThenRendering:" : "GabrielOmarCotelli 9/8/2017 16:02",
+		"evaluating:every:millisecondsThenRendering:until:" : "GabrielOmarCotelli 9/8/2017 15:53"
 	}
 }

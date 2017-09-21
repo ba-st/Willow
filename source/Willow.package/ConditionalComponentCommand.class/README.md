@@ -1,0 +1,1 @@
+A command applying another command only if the condition is satisfied.

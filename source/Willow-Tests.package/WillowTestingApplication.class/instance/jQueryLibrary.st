@@ -1,4 +1,4 @@
 Accessing
 jQueryLibrary
 
-	^ JQuery2OnlineLibrary default
+	^ JQuery3OnlineLibrary default

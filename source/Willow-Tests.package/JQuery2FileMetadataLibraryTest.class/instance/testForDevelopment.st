@@ -1,4 +1,0 @@
-tests
-testForDevelopment
-
-	self assert: JQuery2MetadataLibrary forDevelopment equals: JQuery2DevelopmentMetadataLibrary

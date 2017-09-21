@@ -1,0 +1,8 @@
+{
+	"instance" : {
+		"testApplyToOnWhenConditionsIsMet" : "GabrielOmarCotelli 9/21/2017 12:11",
+		"testApplyToOnWhenConditionsIsNotMet" : "GabrielOmarCotelli 9/21/2017 12:11",
+		"testApplyToOnWhenConditionsDependsOnComponent" : "GabrielOmarCotelli 9/21/2017 12:20"
+	},
+	"class" : { }
+}

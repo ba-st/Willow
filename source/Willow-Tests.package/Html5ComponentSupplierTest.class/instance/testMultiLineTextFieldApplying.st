@@ -5,8 +5,8 @@ testMultiLineTextFieldApplying
 
 	supplier := Html5ComponentSupplier new.
 
-	textField := supplier multiLineTextFieldApplying: (ComponentClassificationCommand toStyleWith: 'big').
+	textField := supplier multiLineTextFieldApplying: [ :command | command css willow ].
 
 	html := self render: textField.
 
-	self assert: html equals: '<textarea rows="auto" cols="auto" name="1" class="big"></textarea>'
+	self assert: html equals: '<textarea rows="auto" cols="auto" name="1" class="willow"></textarea>'

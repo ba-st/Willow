@@ -3,4 +3,4 @@ labeledAccordingTo: aLabelOptional onModel: anObjectToUseWhenOn offModel: anObje
 
 	^ (super onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff)
 		initializeLabeledAccordingTo: aLabelOptional
-		applying: aCommandToComponent
+		applying: aCommandToComponent asWebComponentCommand

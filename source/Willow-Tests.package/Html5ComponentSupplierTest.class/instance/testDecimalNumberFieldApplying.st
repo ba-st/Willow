@@ -5,8 +5,8 @@ testDecimalNumberFieldApplying
 
 	supplier := Html5ComponentSupplier new.
 
-	field := supplier decimalNumberFieldApplying: (ComponentClassificationCommand toStyleWith: 'big').
+	field := supplier decimalNumberFieldApplying: [ :command | command css willow ].
 
 	html := self render: field.
 
-	self assert: html equals: '<input value="" name="1" class="big" type="number"/>'
+	self assert: html equals: '<input value="" name="1" class="willow" type="number"/>'

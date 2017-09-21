@@ -1,0 +1,4 @@
+Building
+passwordInputMode
+
+	^ PasswordInputModeCommand new

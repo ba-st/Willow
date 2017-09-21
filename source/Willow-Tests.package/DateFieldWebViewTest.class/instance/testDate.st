@@ -3,7 +3,7 @@ testDate
 
 	| field html currentDate |
 
-	field := DateFieldWebView applying: CompositeComponentCommand empty.
+	field := DateFieldWebView applying: [  ].
 
 	self should: [ field date ] raise: InstanceCreationFailed.
 

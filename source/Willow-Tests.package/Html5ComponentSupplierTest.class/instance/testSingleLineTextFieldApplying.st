@@ -5,8 +5,8 @@ testSingleLineTextFieldApplying
 
 	supplier := Html5ComponentSupplier new.
 
-	textField := supplier singleLineTextFieldApplying: (ComponentClassificationCommand toStyleWith: 'big').
+	textField := supplier singleLineTextFieldApplying: [ :command | command css willow ].
 
 	html := self render: textField.
 
-	self assert: html equals: '<input value="" name="1" class="big" type="text"/>'
+	self assert: html equals: '<input value="" name="1" class="willow" type="text"/>'

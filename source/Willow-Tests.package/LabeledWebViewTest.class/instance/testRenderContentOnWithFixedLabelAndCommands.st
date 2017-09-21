@@ -3,10 +3,7 @@ testRenderContentOnWithFixedLabelAndCommands
 
 	| labeledView html |
 
-	labeledView := LabeledWebView
-		displaying: 'Field'
-		boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty)
-		applying: (ComponentTitleCommand toSet: 'Some field').
+	labeledView := LabeledWebView displaying: 'Field' boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: [  ]) applying: [ :command | command title: 'Some field' ].
 
 	html := self render: labeledView.
 

@@ -5,7 +5,7 @@ testRenderContentOnWithContentsAndSeveralColumns
 
 	table := TableWebView
 		headlessDefinedBy: (Array with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number even ]) with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number odd ]))
-		applying: CompositeComponentCommand empty.
+		applying: [  ].
 
 	table changeContentsTo: #(1 2 3).
 

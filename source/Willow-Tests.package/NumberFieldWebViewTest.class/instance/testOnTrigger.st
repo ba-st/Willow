@@ -3,7 +3,7 @@ testOnTrigger
 
 	| field html |
 
-	field := NumberFieldWebView applying: CompositeComponentCommand empty transformingWith: IntegerCodec new.
+	field := NumberFieldWebView applying: [  ] transformingWith: IntegerCodec new.
 
 	field onTrigger disable.
 	html := self render: field.

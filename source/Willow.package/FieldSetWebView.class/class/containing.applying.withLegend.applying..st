@@ -3,6 +3,6 @@ containing: aWebView applying: fieldSetCommand withLegend: aTitle applying: lege
 
 	^ self new
 		initializeContaining: aWebView
-		applying: fieldSetCommand
+		applying: fieldSetCommand asWebComponentCommand
 		withLegend: aTitle
-		applying: legendCommand
+		applying: legendCommand asWebComponentCommand

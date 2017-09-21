@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 9/21/2017 16:04",
+	"super" : "GRObject",
+	"category" : "Willow-Frontend",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WebComponentCommandBuilder",
+	"type" : "normal"
+}

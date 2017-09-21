@@ -3,10 +3,7 @@ testRenderContentOnWithFixedLabel
 
 	| labeledView html |
 
-	labeledView := LabeledWebView
-		displaying: 'Field'
-		boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty)
-		applying: CompositeComponentCommand empty.
+	labeledView := LabeledWebView displaying: 'Field' boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: [  ]) applying: [  ].
 
 	html := self render: labeledView.
 

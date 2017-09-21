@@ -1,0 +1,4 @@
+Configuring
+css
+
+	^ ComponentClassificationCommandBuilder new

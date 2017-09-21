@@ -3,7 +3,7 @@ testRenderContentOn
 
 	| field html |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty.
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
 
 	html := self render: field.
 

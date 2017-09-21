@@ -3,7 +3,7 @@ testDisabled
 
 	| button html |
 
-	button := SynchronicSubmitButtonWebView labeled: 'Submit' applying: CompositeComponentCommand empty evaluating: [  ].
+	button := SynchronicSubmitButtonWebView labeled: 'Submit' applying: [  ] evaluating: [  ].
 	button disabled.
 	html := self render: button.
 

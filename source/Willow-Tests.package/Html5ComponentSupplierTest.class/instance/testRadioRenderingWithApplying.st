@@ -4,9 +4,7 @@ testRadioRenderingWithApplying
 	| supplier radio html |
 
 	supplier := Html5ComponentSupplier new.
-	radio := supplier
-		radioRenderingWith: #asUppercase
-		applying: (ComponentClassificationCommand toStyleWith: WillowCssStyles willow).
+	radio := supplier radioRenderingWith: #asUppercase applying: [ :command | command css willow ].
 
 	html := self render: radio.
 	self assert: html isEmpty.

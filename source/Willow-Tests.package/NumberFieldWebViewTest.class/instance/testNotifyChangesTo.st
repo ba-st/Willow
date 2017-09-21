@@ -3,7 +3,7 @@ testNotifyChangesTo
 
 	| field |
 
-	field := NumberFieldWebView applying: CompositeComponentCommand empty transformingWith: IntegerCodec new.
+	field := NumberFieldWebView applying: [  ] transformingWith: IntegerCodec new.
 
 	field notifyChangesTo: self.
 	notificationWasReceived := false.

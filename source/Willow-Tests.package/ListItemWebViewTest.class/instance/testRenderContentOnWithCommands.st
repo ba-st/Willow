@@ -8,7 +8,6 @@ testRenderContentOnWithCommands
 			| list |
 
 			list := canvas unorderedList.
-			list
-				with: [ canvas render: (ListItemWebView itemizing: 'Item' containedIn: list applying: (ComponentClassificationCommand toStyleWith: 'item')) ] ].
+			list with: [ canvas render: (ListItemWebView itemizing: 'Item' containedIn: list applying: [ :command | command css willow ]) ] ].
 
-	self assert: html equals: '<ul><li class="item">Item</li></ul>'
+	self assert: html equals: '<ul><li class="willow">Item</li></ul>'

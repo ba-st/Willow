@@ -5,10 +5,10 @@ testRenderContentOn
 
 	container := FieldSetWebView
 		containing: [ :canvas | canvas div ]
-		applying: (ComponentClassificationCommand toStyleWith: 'strong')
+		applying: [ :command | command css willow ]
 		withLegend: 'Fields'
-		applying: (ComponentClassificationCommand toStyleWith: 'cursive').
+		applying: [ :command | command css loading ].
 
 	html := self render: container.
 
-	self assert: html equals: '<fieldset class="strong"><legend class="cursive">Fields</legend><div></div></fieldset>'
+	self assert: html equals: '<fieldset class="willow"><legend class="willow-loading">Fields</legend><div></div></fieldset>'

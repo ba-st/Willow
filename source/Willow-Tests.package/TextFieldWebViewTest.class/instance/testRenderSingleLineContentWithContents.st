@@ -3,7 +3,7 @@ testRenderSingleLineContentWithContents
 
 	| field html |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty.
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
 	field changeContentsTo: 'S & P'.
 	html := self render: field.
 

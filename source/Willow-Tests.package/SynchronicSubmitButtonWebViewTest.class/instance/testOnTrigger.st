@@ -3,7 +3,7 @@ testOnTrigger
 
 	| button html |
 
-	button := SynchronicSubmitButtonWebView labeled: 'Submit' applying: CompositeComponentCommand empty evaluating: [  ].
+	button := SynchronicSubmitButtonWebView labeled: 'Submit' applying: [  ] evaluating: [  ].
 	button onTrigger disable.
 	html := self render: button.
 

@@ -3,7 +3,7 @@ testIdentifyIn
 
 	| button html |
 
-	button := SynchronicSubmitButtonWebView labeled: 'Click me!' applying: CompositeComponentCommand empty evaluating: [  ].
+	button := SynchronicSubmitButtonWebView labeled: 'Click me!' applying: [  ] evaluating: [  ].
 
 	html := self
 		renderUsing: [ :canvas | 

@@ -3,7 +3,7 @@ testContents
 
 	| field |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty.
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
 
 	self assert: field contents isEmpty.
 

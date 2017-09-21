@@ -3,7 +3,7 @@ testNumber
 
 	| field html |
 
-	field := NumberFieldWebView applying: CompositeComponentCommand empty transformingWith: IntegerCodec new.
+	field := NumberFieldWebView applying: [  ] transformingWith: IntegerCodec new.
 
 	self assert: field number equals: 0.
 

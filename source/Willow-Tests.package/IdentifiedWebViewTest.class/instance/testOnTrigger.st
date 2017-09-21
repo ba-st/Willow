@@ -5,7 +5,7 @@ testOnTrigger
 
 	identifiedView := IdentifiedWebView
 		forDivNamed: 'main'
-		containing: (PhrasingContainerWebView wrapping: 'Text' applying: CompositeComponentCommand empty).
+		containing: (PhrasingContainerWebView wrapping: 'Text' applying: []).
 	identifiedView onTrigger disable.
 	html := self render: identifiedView.
 

@@ -5,11 +5,8 @@ testSynchronicButtonLabeledApplyingEvaluating
 
 	supplier := Html5ComponentSupplier new.
 
-	button := supplier
-		synchronicButtonLabeled: 'Search'
-		applying: (ComponentClassificationCommand toStyleWith: 'big')
-		evaluating: [ self fail ].
+	button := supplier synchronicButtonLabeled: 'Search' applying: [ :command | command css willow ] evaluating: [ self fail ].
 
 	html := self render: button.
 
-	self assert: html equals: '<button name="1" class="big" type="submit">Search</button>'
+	self assert: html equals: '<button name="1" class="willow" type="submit">Search</button>'

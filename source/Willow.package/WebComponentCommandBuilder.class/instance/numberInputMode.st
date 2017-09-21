@@ -1,0 +1,4 @@
+Building
+numberInputMode
+
+	^ NumberInputModeCommand new

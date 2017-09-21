@@ -3,7 +3,7 @@ testRenderContentOnWithCommands
 
 	| listBox html |
 
-	listBox := MultipleSelectionListBoxWebView applying: (ComponentClassificationCommand toStyleWith: 'rounded').
+	listBox := MultipleSelectionListBoxWebView applying: [ :command | command css willow ].
 	html := self render: listBox.
 
-	self assert: html equals: '<select name="1" class="rounded" multiple="multiple"></select><input name="2" type="hidden"/>'
+	self assert: html equals: '<select name="1" class="willow" multiple="multiple"></select><input name="2" type="hidden"/>'

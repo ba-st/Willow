@@ -6,6 +6,6 @@ definedBy: aColumnRendererCollection
 
 	^self new
 		initializeDefinedBy: aColumnRendererCollection
-		applying: aTableCommand
+		applying: aTableCommand asWebComponentCommand 
 		headerRenderedBy: aHeader
 		applyingToEachRow: aRowCommand asTableRowCommand

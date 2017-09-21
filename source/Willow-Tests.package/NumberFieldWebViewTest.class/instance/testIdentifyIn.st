@@ -3,7 +3,7 @@ testIdentifyIn
 
 	| field html |
 
-	field := NumberFieldWebView applying: CompositeComponentCommand empty transformingWith: IntegerCodec new.
+	field := NumberFieldWebView applying: [  ] transformingWith: IntegerCodec new.
 
 	html := self
 		renderUsing: [ :canvas | 

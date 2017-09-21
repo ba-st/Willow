@@ -3,7 +3,7 @@ testRenderContentOnApplyingCommands
 
 	| field html |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: (ComponentNamingCommand assigning: 'Neo') + PasswordInputModeCommand new.
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :command | (command name: 'Neo') + command passwordInputMode ].
 
 	html := self render: field.
 

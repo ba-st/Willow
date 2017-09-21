@@ -3,7 +3,7 @@ testRenderContentOn
 
 	| table html |
 
-	table := TableWebView headlessDefinedBy: (Array with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number even ])) applying: CompositeComponentCommand empty.
+	table := TableWebView headlessDefinedBy: (Array with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number even ])) applying: [  ].
 
 	html := self render: table.
 

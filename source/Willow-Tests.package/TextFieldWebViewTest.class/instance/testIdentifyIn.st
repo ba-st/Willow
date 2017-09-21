@@ -3,7 +3,7 @@ testIdentifyIn
 
 	| field html |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty.
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
 	html := self
 		renderUsing: [ :canvas | 
 			field identifyIn: canvas.

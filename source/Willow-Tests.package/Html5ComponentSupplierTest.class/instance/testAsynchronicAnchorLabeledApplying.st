@@ -5,8 +5,8 @@ testAsynchronicAnchorLabeledApplying
 
 	supplier := Html5ComponentSupplier new.
 
-	anchor := supplier asynchronicAnchorLabeled: 'Buy' applying: (ComponentClassificationCommand toStyleWith: 'big').
+	anchor := supplier asynchronicAnchorLabeled: 'Buy' applying: [ :command | command css willow ].
 
 	html := self render: anchor.
 
-	self assert: html equals: '<a role="button" class="big">Buy</a>'
+	self assert: html equals: '<a role="button" class="willow">Buy</a>'

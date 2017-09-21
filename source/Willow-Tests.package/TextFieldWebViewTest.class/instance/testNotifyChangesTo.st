@@ -3,7 +3,7 @@ testNotifyChangesTo
 
 	| field |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty.
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
 
 	field notifyChangesTo: self.
 	notificationWasReceived := false.

@@ -5,8 +5,8 @@ testSingleSelectionListBoxDisplayingAtOnceApplying
 
 	supplier := Html5ComponentSupplier new.
 
-	listBox := supplier singleSelectionListBoxDisplayingAtOnce: 15 applying: (ComponentClassificationCommand toStyleWith: 'big').
+	listBox := supplier singleSelectionListBoxDisplayingAtOnce: 15 applying: [ :command | command css willow ].
 
 	html := self render: listBox.
 
-	self assert: html equals: '<select name="1" size="15" class="big"></select>'
+	self assert: html equals: '<select name="1" size="15" class="willow"></select>'

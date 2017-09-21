@@ -1,0 +1,4 @@
+Building
+autofocus
+
+	^ AutoFocusComponentCommand new

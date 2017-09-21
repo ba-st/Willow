@@ -5,8 +5,8 @@ testMultipleSelectionListBoxDisplayingAtOnceApplying
 
 	supplier := Html5ComponentSupplier new.
 
-	listBox := supplier multipleSelectionListBoxDisplayingAtOnce: 15 applying: (ComponentClassificationCommand toStyleWith: 'big').
+	listBox := supplier multipleSelectionListBoxDisplayingAtOnce: 15 applying: [ :command | command css willow ].
 
 	html := self render: listBox.
 
-	self assert: html equals: '<select name="1" size="15" class="big" multiple="multiple"></select><input name="2" type="hidden"/>'
+	self assert: html equals: '<select name="1" size="15" class="willow" multiple="multiple"></select><input name="2" type="hidden"/>'

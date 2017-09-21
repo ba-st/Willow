@@ -3,7 +3,7 @@ testIdentifyIn
 
 	| field html |
 
-	field := DateFieldWebView applying: CompositeComponentCommand empty.
+	field := DateFieldWebView applying: [  ].
 
 	html := self
 		renderUsing: [ :canvas | 

@@ -5,8 +5,8 @@ testNaturalNumberFieldApplying
 
 	supplier := Html5ComponentSupplier new.
 
-	field := supplier naturalNumberFieldApplying: (ComponentClassificationCommand toStyleWith: 'big').
+	field := supplier naturalNumberFieldApplying: [ :command | command css willow ].
 
 	html := self render: field.
 
-	self assert: html equals: '<input value="" name="1" class="big" min="0" type="number"/>'
+	self assert: html equals: '<input value="" name="1" class="willow" min="0" type="number"/>'

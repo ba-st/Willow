@@ -1,0 +1,30 @@
+{
+	"instance" : {
+		"aria:" : "GabrielOmarCotelli 9/21/2017 16:31",
+		"title:" : "GabrielOmarCotelli 9/21/2017 16:58",
+		"setStyle:" : "GabrielOmarCotelli 9/21/2017 16:27",
+		"beReadOnly" : "GabrielOmarCotelli 9/21/2017 16:55",
+		"autofocus" : "GabrielOmarCotelli 9/21/2017 16:42",
+		"beRequired" : "GabrielOmarCotelli 9/21/2017 16:56",
+		"metadata:" : "GabrielOmarCotelli 9/21/2017 16:37",
+		"deselectAllOptions" : "GabrielOmarCotelli 9/21/2017 17:06",
+		"script" : "GabrielOmarCotelli 9/21/2017 17:26",
+		"when:apply:" : "GabrielOmarCotelli 9/21/2017 17:00",
+		"name:" : "GabrielOmarCotelli 9/21/2017 16:53",
+		"boundaryNonNegative" : "GabrielOmarCotelli 9/21/2017 16:45",
+		"placeholder:" : "GabrielOmarCotelli 9/21/2017 16:39",
+		"disableTabCycle" : "GabrielOmarCotelli 9/21/2017 17:08",
+		"css" : "GabrielOmarCotelli 9/21/2017 16:09",
+		"passwordInputMode" : "GabrielOmarCotelli 9/21/2017 17:17",
+		"boundaryBetween:and:" : "GabrielOmarCotelli 9/21/2017 16:46",
+		"tabIndex:" : "GabrielOmarCotelli 9/21/2017 17:19",
+		"numberInputMode" : "GabrielOmarCotelli 9/21/2017 17:04",
+		"disable" : "GabrielOmarCotelli 9/21/2017 17:07",
+		"listLabeling:" : "GabrielOmarCotelli 9/21/2017 17:15",
+		"attribute:" : "GabrielOmarCotelli 9/21/2017 16:35",
+		"dateInputMode" : "GabrielOmarCotelli 9/21/2017 17:02",
+		"maxLength:" : "GabrielOmarCotelli 9/21/2017 17:10",
+		"setCallback:" : "GabrielOmarCotelli 9/21/2017 16:48"
+	},
+	"class" : { }
+}

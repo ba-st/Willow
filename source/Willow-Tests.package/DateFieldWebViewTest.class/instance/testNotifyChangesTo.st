@@ -3,7 +3,7 @@ testNotifyChangesTo
 
 	| field |
 
-	field := DateFieldWebView applying: CompositeComponentCommand empty.
+	field := DateFieldWebView applying: [  ].
 
 	field notifyChangesTo: self.
 	notificationWasReceived := false.

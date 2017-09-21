@@ -3,10 +3,7 @@ testRenderContentOn
 
 	| list html |
 
-	list := UnorderedListWebView
-		applying: CompositeComponentCommand empty
-		listing: #('spoon' 'fork')
-		applyingToEach: CompositeComponentCommand empty.
+	list := UnorderedListWebView applying: [  ] listing: #('spoon' 'fork') applyingToEach: [  ].
 
 	html := self render: list.
 

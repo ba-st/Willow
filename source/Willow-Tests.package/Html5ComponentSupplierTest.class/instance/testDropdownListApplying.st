@@ -5,8 +5,8 @@ testDropdownListApplying
 
 	supplier := Html5ComponentSupplier new.
 
-	dropdownList := supplier dropdownListApplying: (ComponentClassificationCommand toStyleWith: 'big').
+	dropdownList := supplier dropdownListApplying: [ :command | command css willow ].
 
 	html := self render: dropdownList.
 
-	self assert: html equals: '<select name="1" class="big"></select>'
+	self assert: html equals: '<select name="1" class="willow"></select>'

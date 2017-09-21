@@ -1,4 +1,4 @@
 Accessing
 contentView
 
-	^ PhrasingContainerWebView obtainingContentFrom: [ self componentSupplier dropdownListApplying: CompositeComponentCommand empty ]
+	^ PhrasingContainerWebView obtainingContentFrom: [ self componentSupplier dropdownListApplying: [  ] ]

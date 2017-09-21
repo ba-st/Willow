@@ -1,4 +1,4 @@
 support
 newSingleSelectionView
 
-	^ DropDownListWebView applying: CompositeComponentCommand empty
+	^ DropDownListWebView applying: [  ]

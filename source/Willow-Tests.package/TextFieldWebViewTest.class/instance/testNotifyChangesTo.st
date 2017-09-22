@@ -3,7 +3,7 @@ testNotifyChangesTo
 
 	| field |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :command |  ].
 
 	field notifyChangesTo: self.
 	notificationWasReceived := false.

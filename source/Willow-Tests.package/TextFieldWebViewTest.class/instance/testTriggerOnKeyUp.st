@@ -3,7 +3,7 @@ testTriggerOnKeyUp
 
 	| field html |
 
-	field := TextFieldWebView singleLineTriggeringOnKeyUpApplying: [  ].
+	field := TextFieldWebView singleLineTriggeringOnKeyUpApplying: [ :command |  ].
 	field onTrigger disable.
 	html := self render: field.
 

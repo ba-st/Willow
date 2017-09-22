@@ -3,7 +3,7 @@ testIdentifyIn
 
 	| field html |
 
-	field := DateFieldWebView applying: [  ].
+	field := DateFieldWebView applying: [ :command |  ].
 
 	html := self
 		renderUsing: [ :canvas | 

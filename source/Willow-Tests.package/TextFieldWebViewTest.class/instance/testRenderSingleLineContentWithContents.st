@@ -3,7 +3,7 @@ testRenderSingleLineContentWithContents
 
 	| field html |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :command |  ].
 	field changeContentsTo: 'S & P'.
 	html := self render: field.
 

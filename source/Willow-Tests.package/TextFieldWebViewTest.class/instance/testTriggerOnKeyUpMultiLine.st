@@ -3,7 +3,7 @@ testTriggerOnKeyUpMultiLine
 
 	| field html |
 
-	field := TextFieldWebView multiLineTriggeringOnKeyUpApplying: [  ].
+	field := TextFieldWebView multiLineTriggeringOnKeyUpApplying: [ :command |  ].
 	field onTrigger disable.
 	html := self render: field.
 

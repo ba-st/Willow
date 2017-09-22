@@ -8,6 +8,6 @@ testRenderContentOn
 			| list |
 
 			list := canvas unorderedList.
-			list with: [ canvas render: (ListItemWebView itemizing: 'Item' containedIn: list applying: [  ]) ] ].
+			list with: [ canvas render: (ListItemWebView itemizing: 'Item' containedIn: list applying: [ :command |  ]) ] ].
 
 	self assert: html equals: '<ul><li>Item</li></ul>'

@@ -3,7 +3,7 @@ testRenderContentOn
 
 	| field html |
 
-	field := NumberFieldWebView applying: [  ] transformingWith: IntegerCodec new.
+	field := NumberFieldWebView applying: [ :command |  ] transformingWith: IntegerCodec new.
 
 	html := self render: field.
 

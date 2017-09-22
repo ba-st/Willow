@@ -3,7 +3,7 @@ testOnTrigger
 
 	| field html |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :command |  ].
 	field onTrigger disable.
 	html := self render: field.
 

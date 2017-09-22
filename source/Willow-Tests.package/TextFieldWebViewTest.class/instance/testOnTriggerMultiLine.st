@@ -3,7 +3,7 @@ testOnTriggerMultiLine
 
 	| field html |
 
-	field := TextFieldWebView multiLineTriggeringOnChangeApplying: [  ].
+	field := TextFieldWebView multiLineTriggeringOnChangeApplying: [ :command |  ].
 	field onTrigger disable.
 	html := self render: field.
 

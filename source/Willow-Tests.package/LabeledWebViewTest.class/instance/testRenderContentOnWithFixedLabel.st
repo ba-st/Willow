@@ -3,7 +3,7 @@ testRenderContentOnWithFixedLabel
 
 	| labeledView html |
 
-	labeledView := LabeledWebView displaying: 'Field' boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: [  ]) applying: [  ].
+	labeledView := LabeledWebView displaying: 'Field' boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: [ :command |  ]) applying: [ :command |  ].
 
 	html := self render: labeledView.
 

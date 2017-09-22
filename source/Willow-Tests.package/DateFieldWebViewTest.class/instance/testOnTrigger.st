@@ -3,7 +3,7 @@ testOnTrigger
 
 	| field html |
 
-	field := DateFieldWebView applying: [  ].
+	field := DateFieldWebView applying: [ :command |  ].
 
 	field onTrigger disable.
 	html := self render: field.

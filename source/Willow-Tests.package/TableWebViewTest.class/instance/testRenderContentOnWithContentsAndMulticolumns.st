@@ -5,7 +5,7 @@ testRenderContentOnWithContentsAndMulticolumns
 
 	table := TableWebView
 		headedDefinedBy: (Array with: (WebTableMultiColumnRenderer titled: 'Common Header' renderingItemWithAll: (Array with: [ :number | number even ] with: [ :number | number odd ])))
-		applying: [  ].
+		applying: [ :command |  ].
 
 	table changeContentsTo: #(1 2 3).
 

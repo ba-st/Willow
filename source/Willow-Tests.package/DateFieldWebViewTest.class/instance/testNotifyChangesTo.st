@@ -3,7 +3,7 @@ testNotifyChangesTo
 
 	| field |
 
-	field := DateFieldWebView applying: [  ].
+	field := DateFieldWebView applying: [ :command |  ].
 
 	field notifyChangesTo: self.
 	notificationWasReceived := false.

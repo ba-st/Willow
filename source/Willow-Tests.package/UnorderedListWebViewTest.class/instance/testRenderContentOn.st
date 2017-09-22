@@ -3,7 +3,7 @@ testRenderContentOn
 
 	| list html |
 
-	list := UnorderedListWebView applying: [  ] listing: #('spoon' 'fork') applyingToEach: [  ].
+	list := UnorderedListWebView applying: [ :command |  ] listing: #('spoon' 'fork') applyingToEach: [ :command |  ].
 
 	html := self render: list.
 

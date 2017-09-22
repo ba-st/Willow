@@ -3,7 +3,7 @@ testIdentifyIn
 
 	| field html |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
+	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :command |  ].
 	html := self
 		renderUsing: [ :canvas | 
 			field identifyIn: canvas.

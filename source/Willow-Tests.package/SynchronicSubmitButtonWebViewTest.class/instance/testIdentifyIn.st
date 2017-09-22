@@ -3,7 +3,7 @@ testIdentifyIn
 
 	| button html |
 
-	button := SynchronicSubmitButtonWebView labeled: 'Click me!' applying: [  ] evaluating: [  ].
+	button := SynchronicSubmitButtonWebView labeled: 'Click me!' applying: [ :command |  ] evaluating: [  ].
 
 	html := self
 		renderUsing: [ :canvas | 

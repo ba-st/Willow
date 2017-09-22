@@ -3,7 +3,7 @@ testRenderContentOn
 
 	| field html |
 
-	field := DateFieldWebView applying: [  ].
+	field := DateFieldWebView applying: [ :command |  ].
 
 	html := self render: field.
 

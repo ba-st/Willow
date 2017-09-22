@@ -3,7 +3,7 @@ testHeadedDefinedByApplying
 
 	| table html |
 
-	table := TableWebView headedDefinedBy: (Array with: (WebTableColumnRenderer titled: 'Is Even?' renderingItemWith: [ :number | number even ])) applying: [  ].
+	table := TableWebView headedDefinedBy: (Array with: (WebTableColumnRenderer titled: 'Is Even?' renderingItemWith: [ :number | number even ])) applying: [ :command |  ].
 
 	html := self render: table.
 

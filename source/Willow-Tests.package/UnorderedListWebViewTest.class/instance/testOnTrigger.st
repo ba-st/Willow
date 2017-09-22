@@ -3,7 +3,7 @@ testOnTrigger
 
 	| list html |
 
-	list := UnorderedListWebView applying: [  ] listing: #('spoon' 'fork') applyingToEach: [  ].
+	list := UnorderedListWebView applying: [ :command |  ] listing: #('spoon' 'fork') applyingToEach: [ :command |  ].
 	list onTrigger disable.
 
 	html := self render: list.

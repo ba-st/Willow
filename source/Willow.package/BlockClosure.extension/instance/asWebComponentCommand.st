@@ -1,4 +1,4 @@
 *Willow
 asWebComponentCommand
 
-	^ (self cull: WebComponentCommandBuilder new) ifNil: [ CompositeComponentCommand empty ]
+	^ (self cull: WebComponentCommandBuilder new cull: WillowConstantsProvider new) ifNil: [ CompositeComponentCommand empty ]

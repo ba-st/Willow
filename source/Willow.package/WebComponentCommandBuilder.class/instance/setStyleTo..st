@@ -1,4 +1,4 @@
 Building
-setStyle: aBlockClosure
+setStyleTo: aBlockClosure
 
 	^ SetComponentStyleCommand setting: (aBlockClosure value: CssDeclarationBlock new)

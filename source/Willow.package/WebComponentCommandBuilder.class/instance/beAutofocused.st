@@ -1,4 +1,4 @@
 Building
-autofocus
+beAutofocused
 
 	^ AutoFocusComponentCommand new

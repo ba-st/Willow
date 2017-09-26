@@ -3,7 +3,7 @@ testRenderContentOnWithContents
 
 	| table html |
 
-	table := TableWebView headlessDefinedBy: (Array with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number even ])) applying: [ :command |  ].
+	table := TableWebView headlessDefinedBy: (Array with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number even ])) applying: [ :theTable |  ].
 
 	table changeContentsTo: #(1 2 3).
 

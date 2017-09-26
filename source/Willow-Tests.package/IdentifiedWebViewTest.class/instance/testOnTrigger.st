@@ -3,7 +3,7 @@ testOnTrigger
 
 	| identifiedView html |
 
-	identifiedView := IdentifiedWebView forDivNamed: 'main' containing: (PhrasingContainerWebView wrapping: 'Text' applying: [ :command |  ]).
+	identifiedView := IdentifiedWebView forDivNamed: 'main' containing: (PhrasingContainerWebView wrapping: 'Text' applying: [ :container |  ]).
 	identifiedView onTrigger disable.
 	html := self render: identifiedView.
 

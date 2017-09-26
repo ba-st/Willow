@@ -1,10 +1,10 @@
 tests-rendering
 testRenderContentOnWithCommands
 
-	| list html |
+	| unorderedList html |
 
-	list := UnorderedListWebView applying: [ :command | command css willow ] listing: #('spoon' 'fork') applyingToEach: [ :command | command css loading ].
+	unorderedList := UnorderedListWebView applying: [ :list | list addClass willow ] listing: #('spoon' 'fork') applyingToEach: [ :listItem | listItem addClass loading ].
 
-	html := self render: list.
+	html := self render: unorderedList.
 
 	self assert: html equals: '<ul class="willow"><li class="willow-loading">spoon</li><li class="willow-loading">fork</li></ul>'

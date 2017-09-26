@@ -1,11 +1,11 @@
 tests-configuring
 testTriggerOnKeyUpMultiLine
 
-	| field html |
+	| textField html |
 
-	field := TextFieldWebView multiLineTriggeringOnKeyUpApplying: [ :command |  ].
-	field onTrigger disable.
-	html := self render: field.
+	textField := TextFieldWebView multiLineTriggeringOnKeyUpApplying: [ :field |  ].
+	textField onTrigger disable.
+	html := self render: textField.
 
 	self
 		assert: html

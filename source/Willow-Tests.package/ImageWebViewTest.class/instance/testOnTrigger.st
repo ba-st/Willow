@@ -3,7 +3,7 @@ testOnTrigger
 
 	| image html |
 
-	image := ImageWebView locatedAt: 'ok.png' applying: [ :command |  ].
+	image := ImageWebView locatedAt: 'ok.png' applying: [ :theImage |  ].
 	image onTrigger disable.
 	html := self render: image.
 

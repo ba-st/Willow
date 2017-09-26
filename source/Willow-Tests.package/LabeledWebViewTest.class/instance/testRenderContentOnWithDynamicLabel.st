@@ -4,7 +4,7 @@ testRenderContentOnWithDynamicLabel
 	| labeledView html label |
 
 	label := 'Field'.
-	labeledView := LabeledWebView obtainingContentFrom: [ label ] boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: [ :command |  ]) applying: [ :command |  ].
+	labeledView := LabeledWebView obtainingContentFrom: [ label ] boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: [ :textField |  ]) applying: [ :container |  ].
 
 	label := 'Text Field'.
 	html := self render: labeledView.

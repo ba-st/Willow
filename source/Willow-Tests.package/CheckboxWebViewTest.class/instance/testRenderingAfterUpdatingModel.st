@@ -3,7 +3,7 @@ testRenderingAfterUpdatingModel
 
 	| html checkbox |
 
-	checkbox := CheckboxWebView onModel: 1 offModel: 2 applying: [ :command | command css willow ].
+	checkbox := CheckboxWebView onModel: 1 offModel: 2 applying: [ :theCheckbox | theCheckbox addClass willow ].
 
 	checkbox selectOffModel.
 	html := self render: checkbox.

@@ -1,4 +1,4 @@
 Configuring
-css
+addClass
 
 	^ ComponentClassificationCommandBuilder new

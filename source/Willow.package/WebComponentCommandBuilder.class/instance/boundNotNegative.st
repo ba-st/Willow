@@ -1,4 +1,4 @@
 Building
-boundaryNonNegative
+boundNotNegative
 
 	^ ComponentBoundaryCommand nonNegative

@@ -1,11 +1,11 @@
 tests-configuring
 testOnTriggerMultiLine
 
-	| field html |
+	| textField html |
 
-	field := TextFieldWebView multiLineTriggeringOnChangeApplying: [ :command |  ].
-	field onTrigger disable.
-	html := self render: field.
+	textField := TextFieldWebView multiLineTriggeringOnChangeApplying: [ :field |  ].
+	textField onTrigger disable.
+	html := self render: textField.
 
 	self
 		assert: html

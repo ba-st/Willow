@@ -1,11 +1,11 @@
 tests
 testOnTrigger
 
-	| field html |
+	| dateField html |
 
-	field := DateFieldWebView applying: [ :command |  ].
+	dateField := DateFieldWebView applying: [ :field |  ].
 
-	field onTrigger disable.
-	html := self render: field.
+	dateField onTrigger disable.
+	html := self render: dateField.
 
 	self assert: html equals: '<input value="" name="1" type="date" id="input-id2"/><script type="text/javascript">$("#input-id2").change(function(){$(this).prop("disabled",true)});</script>'

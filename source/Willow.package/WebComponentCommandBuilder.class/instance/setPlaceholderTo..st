@@ -1,4 +1,4 @@
 Building
-placeholder: aSuggestion
+setPlaceholderTo: aSuggestion
 
 	^ ComponentPlaceholderCommand suggestedBy: aSuggestion

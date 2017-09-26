@@ -1,13 +1,13 @@
 tests
 testIdentifyIn
 
-	| field html |
+	| dateField html |
 
-	field := DateFieldWebView applying: [ :command |  ].
+	dateField := DateFieldWebView applying: [ :field |  ].
 
 	html := self
 		renderUsing: [ :canvas | 
-			field identifyIn: canvas.
-			canvas render: field ].
+			dateField identifyIn: canvas.
+			canvas render: dateField ].
 
 	self assert: html equals: '<input value="" name="2" id="text-id1" type="date"/>'

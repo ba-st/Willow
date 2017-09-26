@@ -1,4 +1,4 @@
 Building
-listLabeling: aBlockClosure
+labelItemsWith: aBlockClosure
 
 	^ ListLabelingCommand with: aBlockClosure

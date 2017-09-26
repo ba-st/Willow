@@ -1,4 +1,4 @@
 support
 newListBox
 
-	^ MultipleSelectionListBoxWebView applying: [  ]
+	^ MultipleSelectionListBoxWebView applying: [ :listBox |  ]

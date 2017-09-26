@@ -3,7 +3,7 @@ testOnTrigger
 
 	| container html |
 
-	container := PhrasingContainerWebView obtainingContentFrom: [ 'Hi!' ] applying: [ :command | command css willow ].
+	container := PhrasingContainerWebView obtainingContentFrom: [ 'Hi!' ] applying: [ :span | span addClass willow ].
 	container onTrigger disable.
 	html := self render: container.
 

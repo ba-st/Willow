@@ -1,15 +1,11 @@
 tests-Supplying
 testFieldSetContainingApplyingWithLegendApplying
 
-	| supplier fieldSet html |
-
-	supplier := Html5ComponentSupplier new.
-
-	fieldSet := supplier
-		fieldSetContaining: 'The View'
-		applying: [ :command | command disable ]
-		withLegend: 'Its Title'
-		applying: [ :command | command autofocus ].
-	html := self render: fieldSet.
-
-	self assert: html equals: '<fieldset disabled="disabled"><legend autofocus="autofocus">Its Title</legend>The View</fieldset>'
+	self
+		assertRenderingOf: [ :supplier | 
+			supplier
+				fieldSetContaining: 'The View'
+				applying: [ :fieldSet | fieldSet beDisabled ]
+				withLegend: 'Its Title'
+				applying: [ :legend | legend beAutofocused ] ]
+		equals: '<fieldset disabled="disabled"><legend autofocus="autofocus">Its Title</legend>The View</fieldset>'

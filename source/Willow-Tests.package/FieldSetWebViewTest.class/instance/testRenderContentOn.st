@@ -5,9 +5,9 @@ testRenderContentOn
 
 	container := FieldSetWebView
 		containing: [ :canvas | canvas div ]
-		applying: [ :command | command css willow ]
+		applying: [ :fieldSet | fieldSet addClass willow ]
 		withLegend: 'Fields'
-		applying: [ :command | command css loading ].
+		applying: [ :legend | legend addClass loading ].
 
 	html := self render: container.
 

@@ -1,4 +1,4 @@
 Building
-passwordInputMode
+bePasswordInput
 
 	^ PasswordInputModeCommand new

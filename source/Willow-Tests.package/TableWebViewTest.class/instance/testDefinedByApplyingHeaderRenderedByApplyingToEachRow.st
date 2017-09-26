@@ -5,7 +5,7 @@ testDefinedByApplyingHeaderRenderedByApplyingToEachRow
 
 	table := TableWebView
 		definedBy: (Array with: (WebTableColumnRenderer titled: 'Is Even?' renderingItemWith: [ :number | number even ]))
-		applying: [ :command | command css willow ]
+		applying: [ :theTable | theTable addClass willow ]
 		headerRenderedBy: [ :canvas |  ]
 		applyingToEachRow: (PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ]).
 

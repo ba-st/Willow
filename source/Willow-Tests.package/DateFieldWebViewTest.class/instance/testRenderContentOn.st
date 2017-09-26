@@ -1,10 +1,10 @@
 tests
 testRenderContentOn
 
-	| field html |
+	| dateField html |
 
-	field := DateFieldWebView applying: [ :command |  ].
+	dateField := DateFieldWebView applying: [ :field |  ].
 
-	html := self render: field.
+	html := self render: dateField.
 
 	self assert: html equals: '<input value="" name="1" type="date"/>'

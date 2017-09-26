@@ -1,11 +1,11 @@
 tests-configuring
 testOnTrigger
 
-	| field html |
+	| numberField html |
 
-	field := NumberFieldWebView applying: [ :command |  ] transformingWith: IntegerCodec new.
+	numberField := NumberFieldWebView applying: [ :field |  ] transformingWith: IntegerCodec new.
 
-	field onTrigger disable.
-	html := self render: field.
+	numberField onTrigger disable.
+	html := self render: numberField.
 
 	self assert: html equals: '<input value="" name="1" type="number" id="input-id2"/><script type="text/javascript">$("#input-id2").change(function(){$(this).prop("disabled",true)});</script>'

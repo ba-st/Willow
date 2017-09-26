@@ -1,4 +1,4 @@
 Building
-disable
+beDisabled
 
 	^ DisableComponentCommand new

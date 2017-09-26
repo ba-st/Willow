@@ -1,4 +1,4 @@
 Building
-boundaryBetween: aLowerBound and: anUpperBound
+boundBetween: aLowerBound and: anUpperBound
 
 	^ ComponentBoundaryCommand between: aLowerBound and: anUpperBound

@@ -1,4 +1,4 @@
 Building
-dateInputMode
+beDateInput
 
 	^ DateInputModeCommand new

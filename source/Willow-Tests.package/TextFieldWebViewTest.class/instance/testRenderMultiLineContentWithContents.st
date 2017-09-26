@@ -1,12 +1,12 @@
 tests-rendering
 testRenderMultiLineContentWithContents
 
-	| field html |
+	| textField html |
 
-	field := TextFieldWebView multiLineTriggeringOnChangeApplying: [ :command |  ].
-	field changeContentsTo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' expandMacros.
+	textField := TextFieldWebView multiLineTriggeringOnChangeApplying: [ :field |  ].
+	textField changeContentsTo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' expandMacros.
 
-	html := self render: field.
+	html := self render: textField.
 
 	self
 		assert: html

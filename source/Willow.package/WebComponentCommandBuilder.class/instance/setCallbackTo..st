@@ -1,4 +1,4 @@
 Building
-setCallback: aBlockClosure
+setCallbackTo: aBlockClosure
 
 	^ ComponentCallbackSettingCommand setting: aBlockClosure

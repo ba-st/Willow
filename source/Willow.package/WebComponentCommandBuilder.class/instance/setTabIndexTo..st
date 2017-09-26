@@ -1,4 +1,4 @@
 Building
-tabIndex: anInteger
+setTabIndexTo: anInteger
 
 	^ SetComponentTabIndexCommand setting: anInteger

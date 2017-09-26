@@ -1,4 +1,4 @@
 Building
-title: aTitle
+setTitleTo: aTitle
 
 	^ ComponentTitleCommand toSet: aTitle 

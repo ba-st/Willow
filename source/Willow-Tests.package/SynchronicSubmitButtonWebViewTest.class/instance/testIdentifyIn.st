@@ -1,15 +1,15 @@
 tests
 testIdentifyIn
 
-	| button html |
+	| synchronicButton html |
 
-	button := SynchronicSubmitButtonWebView labeled: 'Click me!' applying: [ :command |  ] evaluating: [  ].
+	synchronicButton := SynchronicSubmitButtonWebView labeled: 'Click me!' applying: [ :button |  ] evaluating: [  ].
 
 	html := self
 		renderUsing: [ :canvas | 
-			button identifyIn: canvas.
-			canvas render: button ].
+			synchronicButton identifyIn: canvas.
+			canvas render: synchronicButton ].
 
 	self
 		assert: html equals: '<button id="submit-button-id1" name="2" type="submit">Click me!</button>';
-		assert: button identifier equals: 'submit-button-id1'
+		assert: synchronicButton identifier equals: 'submit-button-id1'

@@ -1,12 +1,12 @@
 tests-container-API
 testContents
 
-	| field |
+	| textField |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ].
+	textField := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :field |  ].
 
-	self assert: field contents isEmpty.
+	self assert: textField contents isEmpty.
 
-	field changeContentsTo: 'Hello World!'.
+	textField changeContentsTo: 'Hello World!'.
 
-	self assert: field contents equals: 'Hello World!'
+	self assert: textField contents equals: 'Hello World!'

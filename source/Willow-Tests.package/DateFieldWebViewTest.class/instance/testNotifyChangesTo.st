@@ -1,11 +1,11 @@
 tests
 testNotifyChangesTo
 
-	| field |
+	| dateField |
 
-	field := DateFieldWebView applying: [ :command |  ].
+	dateField := DateFieldWebView applying: [ :field |  ].
 
-	field notifyChangesTo: self.
+	dateField notifyChangesTo: self.
 	notificationWasReceived := false.
-	field changeDateTo: Date today.
+	dateField changeDateTo: Date today.
 	self assert: notificationWasReceived

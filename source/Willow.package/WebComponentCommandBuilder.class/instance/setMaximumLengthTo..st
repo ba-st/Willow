@@ -1,4 +1,4 @@
 Building
-maxLength: anInteger
+setMaximumLengthTo: anInteger
 
 	^ InputFieldMaxLengthCommand allowingUpTo: anInteger

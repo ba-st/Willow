@@ -4,7 +4,7 @@ testListLabelingCommand
 	| html |
 
 	html := self
-		apply: (self commandBuilder listLabeling: [ :string | string asUppercase ])
+		apply: (self commandBuilder labelItemsWith: [ :string | string asUppercase ])
 		toComponentDefinedBy: [ :canvas | canvas select list: #('one' 'two') ].
 
 	self assert: html equals: '<select><option>ONE</option><option>TWO</option></select>'

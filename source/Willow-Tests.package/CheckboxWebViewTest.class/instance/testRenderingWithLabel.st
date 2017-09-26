@@ -7,7 +7,7 @@ testRenderingWithLabel
 		labeled: 'Enable network'
 		onModel: 1
 		offModel: 2
-		applying: [ :command | command css willow ].
+		applying: [ :theCheckbox | theCheckbox addClass willow ].
 
 	html := self render: checkbox.
 

@@ -1,4 +1,4 @@
 Building
-name: aString
+setNameTo: aString
 
 	^ ComponentNamingCommand assigning: aString

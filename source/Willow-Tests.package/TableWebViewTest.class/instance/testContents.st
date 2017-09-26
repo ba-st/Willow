@@ -3,7 +3,7 @@ testContents
 
 	| table |
 
-	table := TableWebView headlessDefinedBy: #() applying: [  ].
+	table := TableWebView headlessDefinedBy: #() applying: [ :theTable |  ].
 
 	self assert: table contents isEmpty.
 

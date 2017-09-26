@@ -1,6 +1,4 @@
 Supplying
 naturalNumberFieldApplying: aComponentCommand
 
-	^ NumberFieldWebView
-		applying: aComponentCommand asWebComponentCommand + ComponentBoundaryCommand nonNegative
-		transformingWith: NaturalNumberCodec new
+	^ NumberFieldWebView applying: ComponentBoundaryCommand nonNegative + aComponentCommand transformingWith: NaturalNumberCodec new

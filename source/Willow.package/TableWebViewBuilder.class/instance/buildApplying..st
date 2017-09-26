@@ -3,6 +3,6 @@ buildApplying: aComponentCommand
 
 	^ TableWebView
 		definedBy: columnRenderers
-		applying: tableCommand + aComponentCommand asWebComponentCommand 
+		applying: tableCommand + aComponentCommand
 		headerRenderedBy: (headerProvider value: columnRenderers)
 		applyingToEachRow: rowCommand

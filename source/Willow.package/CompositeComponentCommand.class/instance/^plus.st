@@ -5,5 +5,5 @@ combining
 		applyingAll:
 			(OrderedCollection new
 				addAll: commands;
-				add: aComponentCommand;
+				add: aComponentCommand asWebComponentCommand;
 				yourself)

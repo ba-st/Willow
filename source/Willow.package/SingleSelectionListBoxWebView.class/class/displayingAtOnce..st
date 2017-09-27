@@ -1,4 +1,4 @@
 instance creation
 displayingAtOnce: aNumberOfElements
 
-	^ self displayingAtOnce: aNumberOfElements applying: CompositeComponentCommand empty
+	^ self displayingAtOnce: aNumberOfElements applying: [ :listBox |  ]

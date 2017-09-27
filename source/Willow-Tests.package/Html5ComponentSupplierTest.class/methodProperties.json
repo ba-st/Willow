@@ -1,8 +1,8 @@
 {
 	"instance" : {
-		"testDateFieldApplying" : "GabrielOmarCotelli 9/26/2017 12:01",
+		"testDateFieldApplying" : "GabrielOmarCotelli 9/27/2017 11:31",
 		"testTableBuilderWithRowCommand" : "GabrielOmarCotelli 6/8/2017 18:12",
-		"testDecimalNumberFieldApplying" : "GabrielOmarCotelli 9/26/2017 12:01",
+		"testDecimalNumberFieldApplying" : "GabrielOmarCotelli 9/27/2017 11:28",
 		"testTableBuilderWithSimpleColumns" : "GabrielOmarCotelli 6/8/2017 18:02",
 		"testAsynchronicButtonLabeledApplying" : "GabrielOmarCotelli 9/26/2017 12:00",
 		"testDelayedViewShowingWhileEvaluatingThenRendering" : "GabrielOmarCotelli 9/26/2017 12:02",
@@ -18,7 +18,7 @@
 		"testUnorderedListApplyingListingApplyingToEach" : "GabrielOmarCotelli 9/26/2017 14:58",
 		"testUpdateRoot" : "GabrielOmarCotelli 4/25/2017 11:16",
 		"testMultipleSelectionListBoxDisplayingAtOnceApplying" : "GabrielOmarCotelli 9/26/2017 12:04",
-		"testNaturalNumberFieldApplying" : "GabrielOmarCotelli 9/26/2017 15:19",
+		"testNaturalNumberFieldApplying" : "GabrielOmarCotelli 9/27/2017 11:29",
 		"testCheckboxUnlabeledOnModelOffModelApplying" : "GabrielOmarCotelli 9/26/2017 12:01",
 		"assertRenderingOf:equals:" : "GabrielOmarCotelli 9/26/2017 11:58",
 		"testMultiLineTextFieldApplying" : "GabrielOmarCotelli 9/26/2017 12:04",

@@ -5,4 +5,4 @@ headlessDefinedBy: aColumnRendererCollection applying: aTableCommand
 		definedBy: aColumnRendererCollection
 		applying: aTableCommand
 		headerRenderedBy: [ :canvas |  ]
-		applyingToEachRow: CompositeComponentCommand empty
+		applyingToEachRow: [ :row |  ]

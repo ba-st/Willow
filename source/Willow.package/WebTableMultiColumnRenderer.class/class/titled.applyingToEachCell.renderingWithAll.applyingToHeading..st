@@ -5,6 +5,6 @@ titled: aTitle applyingToEachCell: aCommandToCell renderingWithAll: aRenderingCo
 
 	^ self new
 		initializeTitled: aTitle
-		applyingToEachCell: aCommandToCell
+		applyingToEachCell: aCommandToCell asWebComponentCommand 
 		renderingWithAll: aRenderingCommandCollection
-		applyingToHeading: aCommandToHeading
+		applyingToHeading: aCommandToHeading asWebComponentCommand 

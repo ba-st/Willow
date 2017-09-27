@@ -5,7 +5,5 @@ testComponentSupplier
 		renderUsing: [ :canvas | 
 			| webView |
 
-			webView := PhrasingContainerWebView
-				wrapping: 'The Content'
-				applying: CompositeComponentCommand empty.
+			webView := PhrasingContainerWebView wrapping: 'The Content' applying: [ :container |  ].
 			self assert: webView componentSupplier equals: self ]

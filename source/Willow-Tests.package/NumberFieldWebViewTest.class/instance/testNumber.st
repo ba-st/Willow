@@ -1,15 +1,15 @@
 tests-number-container-API
 testNumber
 
-	| field html |
+	| numberField html |
 
-	field := NumberFieldWebView applying: CompositeComponentCommand empty transformingWith: IntegerCodec new.
+	numberField := NumberFieldWebView applying: [ :field |  ] transformingWith: IntegerCodec new.
 
-	self assert: field number equals: 0.
+	self assert: numberField number equals: 0.
 
-	field changeNumberTo: 15.
+	numberField changeNumberTo: 15.
 
-	self assert: field number equals: 15.
-	html := self render: field.
+	self assert: numberField number equals: 15.
+	html := self render: numberField.
 
 	self assert: html equals: '<input value="15" name="1" type="number"/>'

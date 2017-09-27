@@ -1,11 +1,11 @@
 tests-container-API
 testNotifyChangesTo
 
-	| field |
+	| textField |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty.
+	textField := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :field |  ].
 
-	field notifyChangesTo: self.
+	textField notifyChangesTo: self.
 	notificationWasReceived := false.
-	field changeContentsTo: ''.
+	textField changeContentsTo: ''.
 	self assert: notificationWasReceived

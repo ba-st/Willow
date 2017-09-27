@@ -1,12 +1,4 @@
 tests-Supplying
 testAsynchronicButtonLabeledApplying
 
-	| supplier button html |
-
-	supplier := Html5ComponentSupplier new.
-
-	button := supplier asynchronicButtonLabeled: 'Buy' applying: (ComponentClassificationCommand toStyleWith: 'big').
-
-	html := self render: button.
-
-	self assert: html equals: '<button class="big" type="button">Buy</button>'
+	self assertRenderingOf: [ :supplier | supplier asynchronicButtonLabeled: 'Buy' applying: [ :button | button addClass willow ] ] equals: '<button class="willow" type="button">Buy</button>'

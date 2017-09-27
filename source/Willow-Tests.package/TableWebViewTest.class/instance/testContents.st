@@ -3,7 +3,7 @@ testContents
 
 	| table |
 
-	table := TableWebView headlessDefinedBy: #() applying: CompositeComponentCommand empty.
+	table := TableWebView headlessDefinedBy: #() applying: [ :theTable |  ].
 
 	self assert: table contents isEmpty.
 

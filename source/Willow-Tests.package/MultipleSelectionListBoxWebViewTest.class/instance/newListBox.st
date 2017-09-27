@@ -1,4 +1,4 @@
 support
 newListBox
 
-	^ MultipleSelectionListBoxWebView applying: CompositeComponentCommand empty
+	^ MultipleSelectionListBoxWebView applying: [ :listBox |  ]

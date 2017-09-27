@@ -1,11 +1,8 @@
 instance creation
-definedBy: aColumnRendererCollection
-	applying: aTableCommand
-	headerRenderedBy: aHeader
-	applyingToEachRow: aRowCommand
+definedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand
 
-	^self new
+	^ self new
 		initializeDefinedBy: aColumnRendererCollection
-		applying: aTableCommand
+		applying: aTableCommand asWebComponentCommand
 		headerRenderedBy: aHeader
 		applyingToEachRow: aRowCommand asTableRowCommand

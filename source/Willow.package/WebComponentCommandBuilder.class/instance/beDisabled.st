@@ -1,0 +1,4 @@
+Building
+beDisabled
+
+	^ DisableComponentCommand new

@@ -5,4 +5,4 @@ forComponentBuiltUsing: aComponentBuilder named: aName containing: aView
 		forComponentBuiltUsing: aComponentBuilder
 		named: aName
 		containing: aView
-		applying: CompositeComponentCommand empty
+		applying: [  ]

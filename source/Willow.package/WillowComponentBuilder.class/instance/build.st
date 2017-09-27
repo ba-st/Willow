@@ -1,4 +1,4 @@
 building
 build
 
-	^self buildApplying: CompositeComponentCommand empty
+	^ self buildApplying: [ :component |  ]

@@ -1,0 +1,4 @@
+Building
+beRequired
+
+	^ ComponentRequiredCommand new

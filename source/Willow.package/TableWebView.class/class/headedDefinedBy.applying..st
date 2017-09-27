@@ -5,4 +5,4 @@ headedDefinedBy: aColumnRendererCollection applying: aTableCommand
 		definedBy: aColumnRendererCollection
 		applying: aTableCommand
 		headerRenderedBy: (TableHeaderWebView definedBy: aColumnRendererCollection)
-		applyingToEachRow: CompositeComponentCommand empty
+		applyingToEachRow: [ :row |  ]

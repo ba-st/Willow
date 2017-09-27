@@ -1,0 +1,4 @@
+Building
+beDateInput
+
+	^ DateInputModeCommand new

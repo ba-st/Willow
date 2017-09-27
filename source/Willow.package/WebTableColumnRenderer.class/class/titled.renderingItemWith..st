@@ -1,8 +1,8 @@
 Instance Creation
 titled: aName renderingItemWith: aRenderingCommand
 
-	^self
+	^ self
 		titled: aName
-		applyingToEachCell: CompositeComponentCommand empty
+		applyingToEachCell: [ :cell |  ]
 		renderingWith: aRenderingCommand
-		applyingToHeading: CompositeComponentCommand empty
+		applyingToHeading: [ :heading |  ]

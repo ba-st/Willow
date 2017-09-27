@@ -1,10 +1,10 @@
 tests-rendering
 testRenderContentOn
 
-	| field html |
+	| numberField html |
 
-	field := NumberFieldWebView applying: CompositeComponentCommand empty transformingWith: IntegerCodec new.
+	numberField := NumberFieldWebView applying: [ :field |  ] transformingWith: IntegerCodec new.
 
-	html := self render: field.
+	html := self render: numberField.
 
 	self assert: html equals: '<input value="" name="1" type="number"/>'

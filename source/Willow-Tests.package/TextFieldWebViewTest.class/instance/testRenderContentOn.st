@@ -1,10 +1,10 @@
 tests-rendering
 testRenderContentOn
 
-	| field html |
+	| textField html |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty.
+	textField := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :field |  ].
 
-	html := self render: field.
+	html := self render: textField.
 
 	self assert: html equals: '<input value="" name="1" type="text"/>'

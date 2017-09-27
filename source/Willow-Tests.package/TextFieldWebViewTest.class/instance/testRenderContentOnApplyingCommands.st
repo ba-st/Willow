@@ -1,10 +1,10 @@
 tests-rendering
 testRenderContentOnApplyingCommands
 
-	| field html |
+	| textField html |
 
-	field := TextFieldWebView singleLineTriggeringOnChangeApplying: (ComponentNamingCommand assigning: 'Neo') + PasswordInputModeCommand new.
+	textField := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :field | (field setNameTo: 'Neo') + field bePasswordInput ].
 
-	html := self render: field.
+	html := self render: textField.
 
 	self assert: html equals: '<input value="" name="Neo" type="password"/>'

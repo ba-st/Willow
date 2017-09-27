@@ -1,13 +1,10 @@
 tests-rendering
 testRenderContentOnWithCommands
 
-	| list html |
+	| unorderedList html |
 
-	list := UnorderedListWebView
-		applying: (ComponentClassificationCommand toStyleWith: 'shopping-list')
-		listing: #('spoon' 'fork')
-		applyingToEach: (ComponentClassificationCommand toStyleWith: 'shopping-item').
+	unorderedList := UnorderedListWebView applying: [ :list | list addClass willow ] listing: #('spoon' 'fork') applyingToEach: [ :listItem | listItem addClass loading ].
 
-	html := self render: list.
+	html := self render: unorderedList.
 
-	self assert: html equals: '<ul class="shopping-list"><li class="shopping-item">spoon</li><li class="shopping-item">fork</li></ul>'
+	self assert: html equals: '<ul class="willow"><li class="willow-loading">spoon</li><li class="willow-loading">fork</li></ul>'

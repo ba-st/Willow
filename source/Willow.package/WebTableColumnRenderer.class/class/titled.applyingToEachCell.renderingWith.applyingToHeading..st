@@ -1,11 +1,8 @@
 Instance Creation
-titled: aName
-	applyingToEachCell: aCommandToCell
-	renderingWith: aRenderingCommand
-	applyingToHeading: aCommandToHeading
+titled: aName applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading
 
-	^self new
+	^ self new
 		initializeTitled: aName
-		applyingToEachCell: aCommandToCell
+		applyingToEachCell: aCommandToCell asWebComponentCommand
 		renderingWith: aRenderingCommand
-		applyingToHeading: aCommandToHeading
+		applyingToHeading: aCommandToHeading asWebComponentCommand

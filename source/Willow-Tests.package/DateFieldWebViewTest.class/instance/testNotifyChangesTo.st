@@ -1,11 +1,11 @@
 tests
 testNotifyChangesTo
 
-	| field |
+	| dateField |
 
-	field := DateFieldWebView applying: CompositeComponentCommand empty.
+	dateField := DateFieldWebView applying: [ :field |  ].
 
-	field notifyChangesTo: self.
+	dateField notifyChangesTo: self.
 	notificationWasReceived := false.
-	field changeDateTo: Date today.
+	dateField changeDateTo: Date today.
 	self assert: notificationWasReceived

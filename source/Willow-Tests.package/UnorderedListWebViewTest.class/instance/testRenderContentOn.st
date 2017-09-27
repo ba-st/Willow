@@ -1,13 +1,10 @@
 tests-rendering
 testRenderContentOn
 
-	| list html |
+	| unorderedList html |
 
-	list := UnorderedListWebView
-		applying: CompositeComponentCommand empty
-		listing: #('spoon' 'fork')
-		applyingToEach: CompositeComponentCommand empty.
+	unorderedList := UnorderedListWebView applying: [ :list |  ] listing: #('spoon' 'fork') applyingToEach: [ :listItem |  ].
 
-	html := self render: list.
+	html := self render: unorderedList.
 
 	self assert: html equals: '<ul><li>spoon</li><li>fork</li></ul>'

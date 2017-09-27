@@ -5,11 +5,9 @@ testRenderContentOn
 
 	fileDownloadAnchor := FileDownloadAnchorWebView
 		labeled: 'Download me!'
-		applying: CompositeComponentCommand empty
-		obtainingFileUsing: [ WAMimeDocument
-				on: '<note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don''t forget me this weekend!</body></note>'
-				mimeType: (WAMimeType fromString: 'text/xml')
-				fileName: 'note.xml' ].
+		applying: [ :anchor |  ]
+		obtainingFileUsing:
+			[ WAMimeDocument on: '<note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don''t forget me this weekend!</body></note>' mimeType: (WAMimeType fromString: 'text/xml') fileName: 'note.xml' ].
 
 	html := self render: fileDownloadAnchor.
 

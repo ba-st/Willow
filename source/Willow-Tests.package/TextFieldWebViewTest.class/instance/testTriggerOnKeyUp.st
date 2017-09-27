@@ -1,13 +1,10 @@
 tests-configuring
 testTriggerOnKeyUp
 
-	| field html |
+	| textField html |
 
-	field := TextFieldWebView singleLineTriggeringOnKeyUpApplying: CompositeComponentCommand empty.
-	field onTrigger disable.
-	html := self render: field.
+	textField := TextFieldWebView singleLineTriggeringOnKeyUpApplying: [ :field |  ].
+	textField onTrigger disable.
+	html := self render: textField.
 
-	self
-		assert: html
-		equals:
-			'<input value="" name="1" id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").keyup(function(){$(this).prop("disabled",true)});</script>'
+	self assert: html equals: '<input value="" name="1" id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").keyup(function(){$(this).prop("disabled",true)});</script>'

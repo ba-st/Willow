@@ -5,4 +5,4 @@ forComponentBuiltUsing: aComponentBuilder named: aName containing: aView applyin
 		initializeForComponentBuiltUsing: aComponentBuilder
 		as: aName
 		containing: aView
-		applying: aComponentCommand 
+		applying: aComponentCommand asWebComponentCommand 

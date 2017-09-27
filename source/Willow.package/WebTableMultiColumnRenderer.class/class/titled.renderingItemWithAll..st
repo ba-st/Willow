@@ -3,6 +3,6 @@ titled: aName renderingItemWithAll: aRenderingCommandCollection
 
 	^ self
 		titled: aName
-		applyingToEachCell: CompositeComponentCommand empty
+		applyingToEachCell: [ :cell |  ]
 		renderingWithAll: aRenderingCommandCollection
-		applyingToHeading: CompositeComponentCommand empty
+		applyingToHeading: [ :heading |  ]

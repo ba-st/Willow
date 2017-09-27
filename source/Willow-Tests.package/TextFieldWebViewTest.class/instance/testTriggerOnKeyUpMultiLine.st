@@ -1,13 +1,12 @@
 tests-configuring
 testTriggerOnKeyUpMultiLine
 
-	| field html |
+	| textField html |
 
-	field := TextFieldWebView multiLineTriggeringOnKeyUpApplying: CompositeComponentCommand empty.
-	field onTrigger disable.
-	html := self render: field.
+	textField := TextFieldWebView multiLineTriggeringOnKeyUpApplying: [ :field |  ].
+	textField onTrigger disable.
+	html := self render: textField.
 
 	self
 		assert: html
-		equals:
-			'<textarea rows="auto" cols="auto" name="1" id="textarea-id2"></textarea><script type="text/javascript">$("#textarea-id2").keyup(function(){$(this).prop("disabled",true)});</script>'
+		equals: '<textarea rows="auto" cols="auto" name="1" id="textarea-id2"></textarea><script type="text/javascript">$("#textarea-id2").keyup(function(){$(this).prop("disabled",true)});</script>'

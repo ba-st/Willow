@@ -3,6 +3,6 @@ initialize
 
 	super initialize.
 	columnRenderers := OrderedCollection new.
-	tableCommand := CompositeComponentCommand empty.
-	rowCommand := CompositeComponentCommand empty.
+	tableCommand := [  ] asWebComponentCommand.
+	rowCommand := [  ] asWebComponentCommand.
 	headerProvider := [ :columns | TableHeaderWebView definedBy: columns ]

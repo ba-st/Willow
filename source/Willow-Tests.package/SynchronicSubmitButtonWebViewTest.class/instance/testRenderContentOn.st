@@ -1,9 +1,9 @@
 tests-rendering
 testRenderContentOn
 
-	| button html |
+	| synchronicButton html |
 
-	button := SynchronicSubmitButtonWebView labeled: 'Submit' applying: CompositeComponentCommand empty evaluating: [  ].
-	html := self render: button.
+	synchronicButton := SynchronicSubmitButtonWebView labeled: 'Submit' applying: [ :button |  ] evaluating: [  ].
+	html := self render: synchronicButton.
 
 	self assert: html equals: '<button name="1" type="submit">Submit</button>'

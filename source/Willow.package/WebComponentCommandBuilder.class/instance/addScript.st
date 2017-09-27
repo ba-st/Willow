@@ -1,0 +1,4 @@
+Configuring
+addScript
+
+	^ ComponentScriptCommandBuilder new

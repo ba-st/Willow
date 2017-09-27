@@ -1,11 +1,11 @@
 tests-number-container-API
 testNotifyChangesTo
 
-	| field |
+	| numberField |
 
-	field := NumberFieldWebView applying: CompositeComponentCommand empty transformingWith: IntegerCodec new.
+	numberField := NumberFieldWebView applying: [ :field |  ] transformingWith: IntegerCodec new.
 
-	field notifyChangesTo: self.
+	numberField notifyChangesTo: self.
 	notificationWasReceived := false.
-	field changeNumberTo: -5.
+	numberField changeNumberTo: -5.
 	self assert: notificationWasReceived

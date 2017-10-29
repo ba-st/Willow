@@ -1,1 +1,0 @@
-A NumberInputModeCommandTest is a test class for testing the behavior of NumberInputModeCommand

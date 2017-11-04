@@ -1,11 +1,13 @@
 {
-	"commentStamp" : "GabrielOmarCotelli 4/20/2017 16:41",
+	"commentStamp" : "fortizpenaloza 10/28/2017 22:43",
 	"super" : "WebComponentCommand",
 	"category" : "Willow-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "DateInputModeCommand",
+	"instvars" : [
+		"type"
+	],
+	"name" : "InputModeCommand",
 	"type" : "normal"
 }

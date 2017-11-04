@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "<historical>",
+	"commentStamp" : "",
 	"super" : "WillowTestCase",
 	"category" : "Willow-Tests-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "NumberInputModeCommandTest",
+	"name" : "InputModeCommandTest",
 	"type" : "normal"
 }

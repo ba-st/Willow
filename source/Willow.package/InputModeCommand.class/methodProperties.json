@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"applyTo:on:" : "fortizpenaloza 10/28/2017 22:53",
+		"initializeSettingTypeTo:" : "fortizpenaloza 10/28/2017 22:52"
+	},
+	"class" : {
+		"settingTypeTo:" : "fortizpenaloza 10/28/2017 22:52",
+		"asNumeric" : "fortizpenaloza 10/28/2017 23:49",
+		"asDate" : "fortizpenaloza 10/28/2017 23:52",
+		"asEmail" : "fortizpenaloza 10/28/2017 22:51",
+		"asPassword" : "fortizpenaloza 10/28/2017 23:55"
+	}
+}

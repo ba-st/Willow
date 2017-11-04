@@ -1,1 +1,0 @@
-I'm a command configuring an input field as a date

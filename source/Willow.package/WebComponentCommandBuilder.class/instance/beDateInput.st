@@ -1,4 +1,4 @@
 Building
 beDateInput
 
-	^ DateInputModeCommand new
+	^ InputModeCommand asDate

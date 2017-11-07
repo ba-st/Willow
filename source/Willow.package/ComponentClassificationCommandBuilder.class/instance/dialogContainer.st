@@ -1,4 +1,4 @@
 Building
 dialogContainer
 
-	^ self commmandStyledWith: styleProviderBinding content dialogContainer
+	^ self commandStyledWith: styleProviderBinding content dialogContainer

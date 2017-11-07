@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"applyTo:on:" : "GabrielOmarCotelli 11/7/2017 14:13",
+		"initializeSettingTypeTo:" : "GabrielOmarCotelli 11/7/2017 14:13"
+	},
+	"class" : {
+		"settingTypeTo:" : "GabrielOmarCotelli 11/7/2017 14:12",
+		"asNumber" : "GabrielOmarCotelli 11/7/2017 14:21",
+		"asDate" : "GabrielOmarCotelli 11/7/2017 14:16",
+		"asEmail" : "GabrielOmarCotelli 11/7/2017 14:12",
+		"asPassword" : "GabrielOmarCotelli 11/7/2017 14:20"
+	}
+}

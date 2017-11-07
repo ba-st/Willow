@@ -3,10 +3,7 @@ testSubmitFormStyledAs
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
 	interpreter submitFormStyledAs: WillowCssStyles willow.
 	html := self

@@ -3,10 +3,7 @@ testRemoveCssClassFromComponentsWithClass
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
 	interpreter removeCssClass: WillowCssStyles loading fromComponentsWithClass: WillowCssStyles willow.
 

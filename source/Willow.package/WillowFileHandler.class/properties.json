@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"libraries"
+		"libraries",
+		"baseUrlForLibraryOptional"
 	],
 	"name" : "WillowFileHandler",
 	"type" : "normal"

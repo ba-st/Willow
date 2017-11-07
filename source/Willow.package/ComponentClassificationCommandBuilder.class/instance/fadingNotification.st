@@ -1,4 +1,4 @@
 Building
 fadingNotification
 
-	^ self commmandStyledWith: styleProviderBinding content fadingNotification
+	^ self commandStyledWith: styleProviderBinding content fadingNotification

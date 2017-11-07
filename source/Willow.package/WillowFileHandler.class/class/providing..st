@@ -1,4 +1,4 @@
 Instance Creation
 providing: aWAFileLibraryCollection
 
-	^self new initializeProviding: aWAFileLibraryCollection
+	^ self providing: aWAFileLibraryCollection baseUrlForLibraryOptional: Optional unused

@@ -8,5 +8,5 @@ registerAsApplicationUsing: deploymentModeClass
 	application filter configuration at: #exceptionHandler put: self errorHandlerFactory.
 	application configuration addParent: WillowSystemConfiguration instance.
 	application preferenceAt: WillowSystemConfiguration deploymentModeClassKey put: deploymentModeClass.
-	WillowFileHandler installAsFileHandlerAccordingTo: deploymentModeClass new.
+	self installFileHandlerAccordingTo: deploymentModeClass new.
 	^ application

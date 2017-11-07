@@ -3,10 +3,7 @@ testOpen
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
 	interpreter open: [ :canvas | canvas dialog attributeAt: 'open' put: true ].
 

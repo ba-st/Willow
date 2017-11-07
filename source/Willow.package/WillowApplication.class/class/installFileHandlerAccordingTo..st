@@ -1,0 +1,4 @@
+private-Utility
+installFileHandlerAccordingTo: theDeploymentMode
+
+	WillowFileHandler installAsFileHandlerAccordingTo: theDeploymentMode

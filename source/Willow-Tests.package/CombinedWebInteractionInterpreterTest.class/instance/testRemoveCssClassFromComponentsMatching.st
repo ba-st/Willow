@@ -3,10 +3,7 @@ testRemoveCssClassFromComponentsMatching
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
 	interpreter removeCssClass: WillowCssStyles loading fromComponentsMatching: [ :canvas | canvas jQuery this ].
 

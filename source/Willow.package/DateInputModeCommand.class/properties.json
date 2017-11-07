@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "GabrielOmarCotelli 4/20/2017 16:41",
-	"super" : "WebComponentCommand",
-	"category" : "Willow-Frontend",
+	"super" : "Object",
+	"category" : "Willow-Deprecated",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

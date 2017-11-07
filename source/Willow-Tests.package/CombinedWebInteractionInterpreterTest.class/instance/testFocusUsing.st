@@ -3,10 +3,7 @@ testFocusUsing
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
 	interpreter focusUsing: [ :canvas | canvas jQuery this ].
 	html := self

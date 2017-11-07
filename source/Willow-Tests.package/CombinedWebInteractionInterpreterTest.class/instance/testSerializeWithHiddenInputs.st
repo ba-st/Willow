@@ -3,10 +3,7 @@ testSerializeWithHiddenInputs
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
 	interpreter serializeWithHiddenInputs.
 	html := self

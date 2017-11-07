@@ -3,10 +3,7 @@ testSerializeIt
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
 	interpreter serializeIt.
 	html := self

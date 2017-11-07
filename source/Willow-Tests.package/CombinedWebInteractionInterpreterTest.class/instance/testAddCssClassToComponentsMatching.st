@@ -3,10 +3,7 @@ testAddCssClassToComponentsMatching
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 	interpreter addCssClass: WillowCssStyles willow toComponentsMatching: [ :canvas | canvas jQuery this ].
 	html := self
 		renderUsing: [ :canvas | 

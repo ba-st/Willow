@@ -1,4 +1,4 @@
 Building
 disabledComponent
 
-	^ self commmandStyledWith: styleProviderBinding content disabledComponent
+	^ self commandStyledWith: styleProviderBinding content disabledComponent

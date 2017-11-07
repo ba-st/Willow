@@ -1,11 +1,15 @@
 {
 	"instance" : {
 		"initialize" : "GabrielOmarCotelli 4/17/2017 16:52",
-		"initializeProviding:" : "GabrielOmarCotelli 4/17/2017 16:52",
+		"baseUrlForLibrary" : "GabrielOmarCotelli 11/7/2017 14:33",
+		"initializeProviding:baseUrlForLibraryOptional:" : "GabrielOmarCotelli 11/7/2017 14:32",
 		"libraries" : "GabrielOmarCotelli 4/17/2017 16:53"
 	},
 	"class" : {
-		"providing:" : "GabrielOmarCotelli 4/18/2017 10:54",
-		"installAsFileHandlerAccordingTo:" : "GabrielOmarCotelli 4/18/2017 11:38"
+		"installAsFileHandlerAccordingTo:" : "GabrielOmarCotelli 11/7/2017 14:36",
+		"installAsFileHandlerAccordingTo:servedAt:" : "GabrielOmarCotelli 11/7/2017 14:35",
+		"install:" : "GabrielOmarCotelli 11/7/2017 14:35",
+		"providing:baseUrlForLibraryOptional:" : "GabrielOmarCotelli 11/7/2017 14:33",
+		"providing:" : "GabrielOmarCotelli 11/7/2017 14:34"
 	}
 }

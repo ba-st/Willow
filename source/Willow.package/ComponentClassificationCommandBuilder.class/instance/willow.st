@@ -1,4 +1,4 @@
 Building
 willow
 
-	^ self commmandStyledWith: styleProviderBinding content willow
+	^ self commandStyledWith: styleProviderBinding content willow

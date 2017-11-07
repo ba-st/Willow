@@ -1,4 +1,4 @@
 Building
 loading
 
-	^ self commmandStyledWith: styleProviderBinding content loading
+	^ self commandStyledWith: styleProviderBinding content loading

@@ -3,10 +3,7 @@ testRender
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 	id := '15'.
 
 	html := self

@@ -1,4 +1,4 @@
 Building
 beNumberInput
 
-	^ NumberInputModeCommand new
+	^ InputModeCommand asNumber

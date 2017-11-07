@@ -13,4 +13,8 @@ testInputModeCommands
 
 	html := self apply: self commandBuilder bePasswordInput toComponentDefinedBy: [ :canvas | canvas textInput ].
 
-	self assert: html equals: '<input type="password"/>'
+	self assert: html equals: '<input type="password"/>'.
+
+	html := self apply: self commandBuilder beEmailInput toComponentDefinedBy: [ :canvas | canvas textInput ].
+
+	self assert: html equals: '<input type="email"/>'

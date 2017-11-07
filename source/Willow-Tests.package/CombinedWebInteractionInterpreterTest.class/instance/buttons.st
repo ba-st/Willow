@@ -1,0 +1,5 @@
+initialization
+buttons
+
+	^ {okButton.
+	cancelButton}

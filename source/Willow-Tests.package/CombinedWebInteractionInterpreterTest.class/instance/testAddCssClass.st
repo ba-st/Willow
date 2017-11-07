@@ -3,10 +3,7 @@ testAddCssClass
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 	interpreter addCssClass: WillowCssStyles willow.
 	html := self
 		renderUsing: [ :canvas | 

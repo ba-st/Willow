@@ -3,10 +3,7 @@ testChangeCssClassTo
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
 	interpreter changeCssClass: WillowCssStyles loading to: WillowCssStyles willow.
 

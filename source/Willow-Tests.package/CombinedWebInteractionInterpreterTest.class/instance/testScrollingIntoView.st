@@ -3,10 +3,7 @@ testScrollingIntoView
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 	id := '15'.
 	interpreter scrollingIntoView: id.
 	html := self

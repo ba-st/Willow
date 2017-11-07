@@ -1,8 +1,9 @@
 {
 	"instance" : {
+		"testInstallAsFileHandlerAccordingToServedAt" : "GabrielOmarCotelli 11/7/2017 14:40",
 		"testLibraries" : "GabrielOmarCotelli 4/18/2017 11:36",
 		"changeRegisteredFileHandlerDuring:" : "GabrielOmarCotelli 4/19/2017 14:41",
-		"testInstallAsFileHandlerAccordingTo" : "GabrielOmarCotelli 4/19/2017 14:41"
+		"testInstallAsFileHandlerAccordingTo" : "GabrielOmarCotelli 11/7/2017 14:40"
 	},
 	"class" : { }
 }

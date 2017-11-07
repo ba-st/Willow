@@ -3,15 +3,9 @@ testOnlyWhenDetermineBehaviorByEvaluating
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{okButton.
-			cancelButton}.
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter
-		onlyWhen: '<1s> != null'
-		determineBehaviorByEvaluating: [  ]
-		with: 'theClientParameter'.
+	interpreter onlyWhen: '<1s> != null' determineBehaviorByEvaluating: [  ] with: 'theClientParameter'.
 
 	html := self
 		renderUsing: [ :canvas | 

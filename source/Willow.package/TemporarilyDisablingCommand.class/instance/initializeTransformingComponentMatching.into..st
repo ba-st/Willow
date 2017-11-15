@@ -1,5 +1,5 @@
 initialization
-initializeTransformingComponengMatching: aComponentProvider into: aViewWhileDisabled
+initializeTransformingComponentMatching: aComponentProvider into: aViewWhileDisabled
 
 	viewWhileDisabled := aViewWhileDisabled.
 	componentProvider := aComponentProvider

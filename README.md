@@ -44,9 +44,11 @@ To work with [JQuery UI](https://jqueryui.com/) you should also install  [Willow
 ### Tutorial
 To learn more about Willow, load [Willow-Playground](https://github.com/ba-st/Willow-Playground) and check the Presentation application. These will also install 2 sample applications: Test Runner and Live Documentation.
 
-### History:
-Willow was first presented in the [Smalltalks 2013 Conference](http://fast.org.ar). 
+### History
+- Willow was first presented in the [Smalltalks 2013 Conference](http://fast.org.ar). 
 A video of the presentation can be seen [here](https://youtu.be/JezITRHCBuc?list=PLCGAAdUizzH027lLWKXh_44cGuEsay7-R).
+
+- A follow up presentation was made in the Smalltalks 2017 Conference. The slides are available [here](https://www.slideshare.net/secret/vGs9hLoswFpII2).
 
 ### Contributing
 If you want to help check the ["How to contribute" doc](CONTRIBUTING.md).

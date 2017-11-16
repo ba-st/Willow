@@ -51,4 +51,4 @@ A video of the presentation can be seen [here](https://youtu.be/JezITRHCBuc?list
 - A follow up presentation was made in the Smalltalks 2017 Conference. The slides are available [here](https://www.slideshare.net/gcotelli/willow-101-82159948).
 
 ### Contributing
-If you want to help check the ["How to contribute" doc](CONTRIBUTING.md).
+If you want to help check the [Contribution Guidelines](CONTRIBUTING.md).

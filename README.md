@@ -48,7 +48,7 @@ To learn more about Willow, load [Willow-Playground](https://github.com/ba-st/Wi
 - Willow was first presented in the [Smalltalks 2013 Conference](http://fast.org.ar). 
 A video of the presentation can be seen [here](https://youtu.be/JezITRHCBuc?list=PLCGAAdUizzH027lLWKXh_44cGuEsay7-R).
 
-- A follow up presentation was made in the Smalltalks 2017 Conference. The slides are available [here](https://www.slideshare.net/secret/vGs9hLoswFpII2).
+- A follow up presentation was made in the Smalltalks 2017 Conference. The slides are available [here](https://www.slideshare.net/gcotelli/willow-101-82159948).
 
 ### Contributing
 If you want to help check the ["How to contribute" doc](CONTRIBUTING.md).

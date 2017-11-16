@@ -13,5 +13,5 @@ setUpDependencies: spec
 	spec
 		baseline: 'RenoirSt'
 		with: [ spec
-				repository: 'github://ba-st/RenoirSt:master/source';
+				repository: 'github://ba-st/RenoirSt:v3.3.0/source';
 				loads: #('Deployment-Seaside-Extensions') ]

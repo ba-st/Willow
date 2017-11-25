@@ -1,0 +1,19 @@
+{
+	"instance" : {
+		"identifyIn:" : " 11/25/2017 00:57:05",
+		"renderContentOn:" : " 11/25/2017 00:57:05",
+		"notifyInterested" : " 11/25/2017 00:57:05",
+		"onTrigger" : " 11/25/2017 00:57:05",
+		"notifyChangesTo:" : " 11/25/2017 00:57:05",
+		"identifier" : " 11/25/2017 00:57:05",
+		"initializeDefinedBy:applying:headerRenderedBy:applyingToEachRow:" : " 11/25/2017 00:57:05",
+		"changeContentsTo:" : " 11/25/2017 00:57:05",
+		"renderRowFor:on:" : " 11/25/2017 00:57:05",
+		"contents" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"headlessDefinedBy:applying:" : " 11/25/2017 00:57:05",
+		"headedDefinedBy:applying:" : " 11/25/2017 00:57:05",
+		"definedBy:applying:headerRenderedBy:applyingToEachRow:" : " 11/25/2017 00:57:05"
+	}
+}

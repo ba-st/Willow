@@ -1,0 +1,15 @@
+{
+	"instance" : {
+		"modelLoadingActions" : " 11/25/2017 00:57:05",
+		"clientIndependentActions" : " 11/25/2017 00:57:05",
+		"priorityActions" : " 11/25/2017 00:57:05",
+		"initializeObtainingIdentifierFrom:valueFrom:triggeringAction:" : " 11/25/2017 00:57:05",
+		"requiresSerialization" : " 11/25/2017 00:57:05",
+		"serverIndependentActions" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"triggeringChangesObtainingIdentifierFrom:valueFrom:" : " 11/25/2017 00:57:05",
+		"obtainingIdentifierFrom:valueFrom:triggeringAction:" : " 11/25/2017 00:57:05",
+		"obtainingIdentifierFrom:valueFrom:" : " 11/25/2017 00:57:05"
+	}
+}

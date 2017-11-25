@@ -1,0 +1,31 @@
+{
+	"instance" : {
+		"addClass" : " 11/25/2017 00:57:05",
+		"beDateInput" : " 11/25/2017 00:57:05",
+		"setARIAAttribute:to:" : " 11/25/2017 00:57:05",
+		"labelItemsWith:" : " 11/25/2017 00:57:05",
+		"boundNotNegative" : " 11/25/2017 00:57:05",
+		"beReadOnly" : " 11/25/2017 00:57:05",
+		"deselectAllOptions" : " 11/25/2017 00:57:05",
+		"beRequired" : " 11/25/2017 00:57:05",
+		"setStyleTo:" : " 11/25/2017 00:57:05",
+		"setTabIndexTo:" : " 11/25/2017 00:57:05",
+		"setPlaceholderTo:" : " 11/25/2017 00:57:05",
+		"setCallbackTo:" : " 11/25/2017 00:57:05",
+		"beEmailInput" : " 11/25/2017 00:57:05",
+		"setData:to:" : " 11/25/2017 00:57:05",
+		"beDisabled" : " 11/25/2017 00:57:05",
+		"setAttribute:to:" : " 11/25/2017 00:57:05",
+		"beNumberInput" : " 11/25/2017 00:57:05",
+		"addScript" : " 11/25/2017 00:57:05",
+		"setTitleTo:" : " 11/25/2017 00:57:05",
+		"when:apply:" : " 11/25/2017 00:57:05",
+		"disableTabCycle" : " 11/25/2017 00:57:05",
+		"beAutofocused" : " 11/25/2017 00:57:05",
+		"boundBetween:and:" : " 11/25/2017 00:57:05",
+		"bePasswordInput" : " 11/25/2017 00:57:05",
+		"setMaximumLengthTo:" : " 11/25/2017 00:57:05",
+		"setNameTo:" : " 11/25/2017 00:57:05"
+	},
+	"class" : { }
+}

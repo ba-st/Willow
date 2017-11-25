@@ -1,0 +1,11 @@
+{
+	"instance" : {
+		"renderContentOn:" : " 11/25/2017 00:57:05",
+		"setCurrentViewTo:" : " 11/25/2017 00:57:05",
+		"initializeInteractionToEvaluate:thenRender:" : " 11/25/2017 00:57:05",
+		"initializeShowing:whileEvaluating:thenRendering:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"showing:whileEvaluating:thenRendering:" : " 11/25/2017 00:57:05"
+	}
+}

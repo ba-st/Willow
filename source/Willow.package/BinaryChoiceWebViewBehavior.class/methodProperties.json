@@ -1,0 +1,17 @@
+{
+	"instance" : {
+		"toggleCurrentSelection" : " 11/25/2017 00:57:05",
+		"allows:" : " 11/25/2017 00:57:05",
+		"initializeOnModel:offModel:" : " 11/25/2017 00:57:05",
+		"currentSelection" : " 11/25/2017 00:57:05",
+		"renderContentOn:" : " 11/25/2017 00:57:05",
+		"notifyInterested" : " 11/25/2017 00:57:05",
+		"notifyChangesTo:" : " 11/25/2017 00:57:05",
+		"selectOnModel" : " 11/25/2017 00:57:05",
+		"onTrigger" : " 11/25/2017 00:57:05",
+		"selectOffModel" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"onModel:offModel:" : " 11/25/2017 00:57:05"
+	}
+}

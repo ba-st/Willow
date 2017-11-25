@@ -1,0 +1,20 @@
+{
+	"instance" : {
+		"initializeForComponentBuiltUsing:withInteractionDefinedBy:applying:" : " 11/25/2017 00:57:05",
+		"onTrigger" : " 11/25/2017 00:57:05",
+		"notifyChangesTo:" : " 11/25/2017 00:57:05",
+		"changeContentsTo:" : " 11/25/2017 00:57:05",
+		"identifyIn:" : " 11/25/2017 00:57:05",
+		"renderContentOn:" : " 11/25/2017 00:57:05",
+		"notifyInterested" : " 11/25/2017 00:57:05",
+		"identifier" : " 11/25/2017 00:57:05",
+		"contents" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"multiLineTriggeringOnKeyUpApplying:" : " 11/25/2017 00:57:05",
+		"singleLineTriggeringOnChangeApplying:" : " 11/25/2017 00:57:05",
+		"multiLineTriggeringOnChangeApplying:" : " 11/25/2017 00:57:05",
+		"singleLineTriggeringOnKeyUpApplying:" : " 11/25/2017 00:57:05",
+		"forComponentBuiltUsing:withInteractionDefinedBy:applying:" : " 11/25/2017 00:57:05"
+	}
+}

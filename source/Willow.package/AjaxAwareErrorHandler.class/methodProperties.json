@@ -1,0 +1,17 @@
+{
+	"instance" : {
+		"respondToXmlHttpRequestWith:" : " 11/25/2017 00:57:05",
+		"reportingAction:" : " 11/25/2017 00:57:05",
+		"updateRootWith:" : " 11/25/2017 00:57:05",
+		"renderNonAjaxErrorsWith:" : " 11/25/2017 00:57:05",
+		"renderContentForException:on:" : " 11/25/2017 00:57:05",
+		"initializeWithContext:" : " 11/25/2017 00:57:05",
+		"updateHtmlRoot:forException:" : " 11/25/2017 00:57:05",
+		"handleDefault:" : " 11/25/2017 00:57:05",
+		"initializeDefaults" : " 11/25/2017 00:57:05",
+		"valueReportingActionWhenHandling:" : " 11/25/2017 00:57:05",
+		"on:do:" : " 11/25/2017 00:57:05",
+		"handleException:" : " 11/25/2017 00:57:05"
+	},
+	"class" : { }
+}

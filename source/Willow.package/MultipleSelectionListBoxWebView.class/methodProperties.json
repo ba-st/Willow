@@ -1,0 +1,22 @@
+{
+	"instance" : {
+		"initializeApplying:" : " 11/25/2017 00:57:05",
+		"identifyIn:" : " 11/25/2017 00:57:05",
+		"renderContentOn:" : " 11/25/2017 00:57:05",
+		"notifyInterested" : " 11/25/2017 00:57:05",
+		"allowsAnySatisfying:" : " 11/25/2017 00:57:05",
+		"disallowAll" : " 11/25/2017 00:57:05",
+		"identifier" : " 11/25/2017 00:57:05",
+		"chooseAll" : " 11/25/2017 00:57:05",
+		"allowAnyOf:" : " 11/25/2017 00:57:05",
+		"notifyChangesTo:" : " 11/25/2017 00:57:05",
+		"onTrigger" : " 11/25/2017 00:57:05",
+		"chooseAllMatching:" : " 11/25/2017 00:57:05",
+		"chosenElements" : " 11/25/2017 00:57:05",
+		"chooseAllIn:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"applying:" : " 11/25/2017 00:57:05",
+		"displayingAtOnce:applying:" : " 11/25/2017 00:57:05"
+	}
+}

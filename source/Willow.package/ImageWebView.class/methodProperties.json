@@ -1,0 +1,12 @@
+{
+	"instance" : {
+		"initializeLocatedAt:applying:" : " 11/25/2017 00:57:05",
+		"onTrigger" : " 11/25/2017 00:57:05",
+		"renderImageOn:" : " 11/25/2017 00:57:05",
+		"renderContentOn:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"locatedAt:applying:" : " 11/25/2017 00:57:05",
+		"ofType:base64EncodedAs:applying:" : " 11/25/2017 00:57:05"
+	}
+}

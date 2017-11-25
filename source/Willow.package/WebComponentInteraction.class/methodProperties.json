@@ -1,0 +1,26 @@
+{
+	"instance" : {
+		"onTriggerExecute:" : " 11/25/2017 00:57:05",
+		"prepareActions" : " 11/25/2017 00:57:05",
+		"commandToExecuteOn:" : " 11/25/2017 00:57:05",
+		"registerActionsOf:" : " 11/25/2017 00:57:05",
+		"shouldApplyActions" : " 11/25/2017 00:57:05",
+		"initializeTriggeredAccordingTo:serializingWith:" : " 11/25/2017 00:57:05",
+		"asynchronousCallToAffect:" : " 11/25/2017 00:57:05",
+		"complete:withResponseOn:" : " 11/25/2017 00:57:05",
+		"initializeActions" : " 11/25/2017 00:57:05",
+		"shouldApplyAsynchronousCall" : " 11/25/2017 00:57:05",
+		"applyTo:on:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"neverTriggered" : " 11/25/2017 00:57:05",
+		"triggeredAccordingTo:serializingWith:" : " 11/25/2017 00:57:05",
+		"triggeredOnClickSerializingHiddenInputs" : " 11/25/2017 00:57:05",
+		"triggeredOnDoubleClick" : " 11/25/2017 00:57:05",
+		"triggeredOnEvaluationOf:withAll:" : " 11/25/2017 00:57:05",
+		"triggeredOnChangeSerializingHiddenInputs" : " 11/25/2017 00:57:05",
+		"triggeredOnClick" : " 11/25/2017 00:57:05",
+		"triggeredOnChange" : " 11/25/2017 00:57:05",
+		"triggeredOnKeyUp" : " 11/25/2017 00:57:05"
+	}
+}

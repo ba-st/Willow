@@ -1,0 +1,18 @@
+{
+	"instance" : {
+		"priorityActions" : " 11/25/2017 00:57:05",
+		"requiresSerialization" : " 11/25/2017 00:57:05",
+		"serverIndependentActions" : " 11/25/2017 00:57:05",
+		"componentToDisableOn:" : " 11/25/2017 00:57:05",
+		"clientIndependentActions" : " 11/25/2017 00:57:05",
+		"initializeTransformingComponentMatching:into:" : " 11/25/2017 00:57:05",
+		"disabledComponentVariableName" : " 11/25/2017 00:57:05",
+		"modelLoadingActions" : " 11/25/2017 00:57:05",
+		"disabledAttributeName" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"transformingCurrentViewInto:" : " 11/25/2017 00:57:05",
+		"transforming:into:" : " 11/25/2017 00:57:05",
+		"transformingComponentMatching:into:" : " 11/25/2017 00:57:05"
+	}
+}

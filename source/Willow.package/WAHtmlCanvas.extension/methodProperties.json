@@ -1,0 +1,10 @@
+{
+	"instance" : {
+		"icon" : " 11/25/2017 00:57:05",
+		"scriptToExecute:asAjaxScriptEvery:millsecondsUnless:" : " 11/25/2017 00:57:05",
+		"dialog" : " 11/25/2017 00:57:05",
+		"ensureIdFor:" : " 11/25/2017 00:57:05",
+		"every:millisecondsEvaluateAsAjaxScript:until:" : " 11/25/2017 00:57:05"
+	},
+	"class" : { }
+}

@@ -1,0 +1,11 @@
+{
+	"instance" : {
+		"renderHeadingOn:" : " 11/25/2017 00:57:05",
+		"initializeTitled:applyingToEachCell:renderingWithAll:applyingToHeading:" : " 11/25/2017 00:57:05",
+		"renderCellFor:on:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"titled:renderingItemWithAll:" : " 11/25/2017 00:57:05",
+		"titled:applyingToEachCell:renderingWithAll:applyingToHeading:" : " 11/25/2017 00:57:05"
+	}
+}

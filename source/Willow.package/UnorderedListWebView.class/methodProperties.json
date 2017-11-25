@@ -1,0 +1,12 @@
+{
+	"instance" : {
+		"identifyIn:" : "fortizpenaloza 11/25/2017 01:01",
+		"renderContentOn:" : "fortizpenaloza 11/25/2017 01:10",
+		"initializeApplying:listing:applyingToEach:" : "fortizpenaloza 11/25/2017 01:02",
+		"identifier" : "fortizpenaloza 11/25/2017 01:03",
+		"onTrigger" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"applying:listing:applyingToEach:" : " 11/25/2017 00:57:05"
+	}
+}

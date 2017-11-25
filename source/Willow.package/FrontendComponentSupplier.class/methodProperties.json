@@ -1,0 +1,25 @@
+{
+	"instance" : {
+		"delayedViewShowing:whileEvaluating:thenRendering:" : " 11/25/2017 00:57:05",
+		"multiLineTextFieldApplying:" : " 11/25/2017 00:57:05",
+		"tableBuilder" : " 11/25/2017 00:57:05",
+		"unorderedListApplying:listing:applyingToEach:" : " 11/25/2017 00:57:05",
+		"synchronicButtonLabeled:applying:evaluating:" : " 11/25/2017 00:57:05",
+		"fieldSetContaining:applying:withLegend:applying:" : " 11/25/2017 00:57:05",
+		"asynchronicButtonLabeled:applying:" : " 11/25/2017 00:57:05",
+		"dropdownListApplying:" : " 11/25/2017 00:57:05",
+		"naturalNumberFieldApplying:" : " 11/25/2017 00:57:05",
+		"decimalNumberFieldApplying:" : " 11/25/2017 00:57:05",
+		"singleLineTextFieldApplying:" : " 11/25/2017 00:57:05",
+		"radioRenderingWith:applying:" : " 11/25/2017 00:57:05",
+		"checkboxUnlabeledOnModel:offModel:applying:" : " 11/25/2017 00:57:05",
+		"singleSelectionListBoxDisplayingAtOnce:applying:" : " 11/25/2017 00:57:05",
+		"multipleSelectionListBoxDisplayingAtOnce:applying:" : " 11/25/2017 00:57:05",
+		"checkboxLabeled:onModel:offModel:applying:" : " 11/25/2017 00:57:05",
+		"dateFieldApplying:" : " 11/25/2017 00:57:05",
+		"addStatementsTo:toCloseDialogsIn:matching:on:" : " 11/25/2017 00:57:05",
+		"updateRoot:" : " 11/25/2017 00:57:05",
+		"asynchronicAnchorLabeled:applying:" : " 11/25/2017 00:57:05"
+	},
+	"class" : { }
+}

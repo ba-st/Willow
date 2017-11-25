@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"scriptToRefreshAndRenderContentOn:" : " 11/25/2017 00:57:05",
+		"initializeEvaluating:every:millisecondsThenRendering:until:" : " 11/25/2017 00:57:05",
+		"renderContentOn:" : " 11/25/2017 00:57:05",
+		"refreshAndRenderContentOn:" : " 11/25/2017 00:57:05",
+		"refreshAndRenderOn:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"evaluating:every:millisecondsThenRendering:" : " 11/25/2017 00:57:05",
+		"evaluating:every:millisecondsThenRendering:until:" : " 11/25/2017 00:57:05"
+	}
+}

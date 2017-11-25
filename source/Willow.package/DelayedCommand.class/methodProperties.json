@@ -1,0 +1,20 @@
+{
+	"instance" : {
+		"serverIndependentActions" : " 11/25/2017 00:57:05",
+		"clientIndependentActions" : " 11/25/2017 00:57:05",
+		"initializeWithBehaviorDeterminedBy:conditionedBy:requiring:" : " 11/25/2017 00:57:05",
+		"obtain:from:" : " 11/25/2017 00:57:05",
+		"onReturn" : " 11/25/2017 00:57:05",
+		"requiresSerialization" : " 11/25/2017 00:57:05",
+		"priorityActions" : " 11/25/2017 00:57:05",
+		"modelLoadingActions" : " 11/25/2017 00:57:05",
+		"considerAddingConditionTo:" : " 11/25/2017 00:57:05",
+		"resetInterpreter" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"withBehaviorDeterminedBy:" : " 11/25/2017 00:57:05",
+		"withBehaviorDeterminedBy:executedOnlyWhen:with:" : " 11/25/2017 00:57:05",
+		"withBehaviorDeterminedBy:with:" : " 11/25/2017 00:57:05",
+		"withBehaviorDeterminedBy:conditionedBy:requiring:" : " 11/25/2017 00:57:05"
+	}
+}

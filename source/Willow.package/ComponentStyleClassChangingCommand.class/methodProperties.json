@@ -1,0 +1,17 @@
+{
+	"instance" : {
+		"initializeOn:altering:sending:using:" : " 11/25/2017 00:57:05",
+		"applyStyleChangeTo:" : " 11/25/2017 00:57:05",
+		"serverIndependentActions" : " 11/25/2017 00:57:05",
+		"modelLoadingActions" : " 11/25/2017 00:57:05",
+		"clientIndependentActions" : " 11/25/2017 00:57:05",
+		"componentOn:" : " 11/25/2017 00:57:05",
+		"priorityActions" : " 11/25/2017 00:57:05",
+		"applyStyleChangeToComponentOn:" : " 11/25/2017 00:57:05",
+		"requiresSerialization" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"on:altering:sending:using:" : " 11/25/2017 00:57:05",
+		"on:altering:sending:" : " 11/25/2017 00:57:05"
+	}
+}

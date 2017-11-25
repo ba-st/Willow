@@ -9,7 +9,8 @@
 		"elements",
 		"commandToItem",
 		"commandToList",
-		"interactionInterpreter"
+		"interactionInterpreter",
+		"identifierAssigner"
 	],
 	"name" : "UnorderedListWebView",
 	"type" : "normal"

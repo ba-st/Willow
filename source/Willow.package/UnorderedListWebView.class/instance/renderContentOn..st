@@ -4,6 +4,8 @@ renderContentOn: aCanvas
 	| list |
 
 	list := aCanvas unorderedList.
+	identifierAssigner withAssignedIdentifierDo: [ :id | list id: id ].
+	
 	"The order of the collaborations is relevant."
 	commandToList applyTo: list on: aCanvas.
 	interactionInterpreter applyTo: list on: aCanvas.

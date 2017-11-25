@@ -1,0 +1,14 @@
+{
+	"instance" : {
+		"renderRadioButtonFor:asPartOf:on:" : " 11/25/2017 00:57:05",
+		"renderContentOn:" : " 11/25/2017 00:57:05",
+		"initializeRenderingWith:applying:" : " 11/25/2017 00:57:05",
+		"renderLabelFor:on:with:" : " 11/25/2017 00:57:05",
+		"onTrigger" : " 11/25/2017 00:57:05",
+		"renderLabelContentFor:on:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"new" : " 11/25/2017 00:57:05",
+		"renderingWith:applying:" : " 11/25/2017 00:57:05"
+	}
+}

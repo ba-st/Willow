@@ -1,0 +1,11 @@
+{
+	"instance" : {
+		"applyTo:on:" : " 11/25/2017 00:57:05",
+		"initializeRestrictingMinimumWith:maximumTo:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"nonNegative" : " 11/25/2017 00:57:05",
+		"between:and:" : " 11/25/2017 00:57:05",
+		"restrictingMinimumWith:maximumTo:" : " 11/25/2017 00:57:05"
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"instance" : {
+		"styledWith:" : " 11/25/2017 00:57:05",
+		"beHeadless" : " 11/25/2017 00:57:05",
+		"addColumnTitled:renderingAll:" : " 11/25/2017 00:57:05",
+		"addUntitledColumnRendering:" : " 11/25/2017 00:57:05",
+		"initialize" : " 11/25/2017 00:57:05",
+		"addColumnTitled:rendering:applyingToCells:applyingToHeading:" : " 11/25/2017 00:57:05",
+		"applyToEachRow:" : " 11/25/2017 00:57:05",
+		"addColumnTitled:rendering:" : " 11/25/2017 00:57:05",
+		"buildApplying:" : " 11/25/2017 00:57:05",
+		"addColumnTitled:renderingAll:applyingToCells:applyingToHeading:" : " 11/25/2017 00:57:05"
+	},
+	"class" : { }
+}

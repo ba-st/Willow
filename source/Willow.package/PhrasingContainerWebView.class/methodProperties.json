@@ -1,0 +1,12 @@
+{
+	"instance" : {
+		"initializeObtainingContentFrom:applying:" : " 11/25/2017 00:57:05",
+		"onTrigger" : " 11/25/2017 00:57:05",
+		"renderContentOn:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"obtainingContentFrom:" : " 11/25/2017 00:57:05",
+		"obtainingContentFrom:applying:" : " 11/25/2017 00:57:05",
+		"wrapping:applying:" : " 11/25/2017 00:57:05"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"instance" : {
+		"jswillowJs" : " 11/25/2017 00:57:05",
+		"defaultHandleAjaxErrorCallFunction" : " 11/25/2017 00:57:05",
+		"callServerFunction" : " 11/25/2017 00:57:05",
+		"sessionInformation" : " 11/25/2017 00:57:05",
+		"version" : " 11/25/2017 00:57:05",
+		"willowNamespace" : " 11/25/2017 00:57:05",
+		"willowDefaults" : " 11/25/2017 00:57:05",
+		"setUpWillowGlobalNamespace" : " 11/25/2017 00:57:05",
+		"selectorsToInclude" : " 11/25/2017 00:57:05",
+		"jswillowJsContent" : " 11/25/2017 00:57:05",
+		"nonFileSelectors" : " 11/25/2017 00:57:05",
+		"globalWillowNamespaceDeclaration" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"forDeployment" : " 11/25/2017 00:57:05",
+		"isForDeployment" : " 11/25/2017 00:57:05",
+		"version" : " 11/25/2017 00:57:05",
+		"isForDevelopment" : " 11/25/2017 00:57:05",
+		"forDevelopment" : " 11/25/2017 00:57:05",
+		"libraryName" : " 11/25/2017 00:57:05"
+	}
+}

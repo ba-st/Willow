@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"initializeInteractSending:" : " 11/25/2017 00:57:05",
+		"apply:to:on:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"triggeringOnChange" : " 11/25/2017 00:57:05",
+		"triggeringOnKeyUp" : " 11/25/2017 00:57:05",
+		"interactSending:" : " 11/25/2017 00:57:05",
+		"triggeringOnDoubleClick" : " 11/25/2017 00:57:05",
+		"triggeringOnClick" : " 11/25/2017 00:57:05"
+	}
+}

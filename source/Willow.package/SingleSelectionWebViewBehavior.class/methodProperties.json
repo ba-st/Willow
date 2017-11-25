@@ -1,0 +1,22 @@
+{
+	"instance" : {
+		"currentSelectionIfNone:" : " 11/25/2017 00:57:05",
+		"chooseAny" : " 11/25/2017 00:57:05",
+		"currentSelection" : " 11/25/2017 00:57:05",
+		"notifyInterested" : " 11/25/2017 00:57:05",
+		"allowsAnySatisfying:" : " 11/25/2017 00:57:05",
+		"disallowAll" : " 11/25/2017 00:57:05",
+		"notifyChangesTo:" : " 11/25/2017 00:57:05",
+		"initialize" : " 11/25/2017 00:57:05",
+		"chooseEqualTo:" : " 11/25/2017 00:57:05",
+		"allowAnyOf:" : " 11/25/2017 00:57:05",
+		"onTrigger" : " 11/25/2017 00:57:05",
+		"invalidateSelection" : " 11/25/2017 00:57:05",
+		"chooseAnySatisfying:ifNone:" : " 11/25/2017 00:57:05",
+		"choose:" : " 11/25/2017 00:57:05",
+		"withCurrentSelectionDo:" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"new" : " 11/25/2017 00:57:05"
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"instance" : {
+		"deploymentMode" : " 11/25/2017 00:57:05",
+		"language" : " 11/25/2017 00:57:05",
+		"updateRoot:" : " 11/25/2017 00:57:05",
+		"initialRequest:" : " 11/25/2017 00:57:05",
+		"renderContentOn:" : " 11/25/2017 00:57:05",
+		"componentSupplier" : " 11/25/2017 00:57:05",
+		"applicationTitle" : " 11/25/2017 00:57:05",
+		"renderDialogAndNotificationSectionsOn:" : " 11/25/2017 00:57:05",
+		"jQueryLibrary" : " 11/25/2017 00:57:05",
+		"contentView" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"errorHandlerFactory" : " 11/25/2017 00:57:05",
+		"registerAsApplicationUsing:" : " 11/25/2017 00:57:05",
+		"sessionClass" : " 11/25/2017 00:57:05",
+		"registerAsDevelopmentApplication" : " 11/25/2017 00:57:05",
+		"handlerName" : " 11/25/2017 00:57:05",
+		"unregisterFromApplications" : " 11/25/2017 00:57:05",
+		"installFileHandlerAccordingTo:" : " 11/25/2017 00:57:05",
+		"registerAsDeployedApplication" : " 11/25/2017 00:57:05",
+		"applicationTitle" : " 11/25/2017 00:57:05"
+	}
+}

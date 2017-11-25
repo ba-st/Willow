@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"initializeFor:" : " 11/25/2017 00:57:05",
+		"modelLoadingActions" : " 11/25/2017 00:57:05",
+		"clientIndependentActions" : " 11/25/2017 00:57:05",
+		"priorityActions" : " 11/25/2017 00:57:05",
+		"requiresSerialization" : " 11/25/2017 00:57:05",
+		"serverIndependentActions" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"for:" : " 11/25/2017 00:57:05"
+	}
+}

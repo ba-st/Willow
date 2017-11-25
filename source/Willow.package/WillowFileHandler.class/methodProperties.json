@@ -1,0 +1,15 @@
+{
+	"instance" : {
+		"initialize" : " 11/25/2017 00:57:05",
+		"baseUrlForLibrary" : " 11/25/2017 00:57:05",
+		"initializeProviding:baseUrlForLibraryOptional:" : " 11/25/2017 00:57:05",
+		"libraries" : " 11/25/2017 00:57:05"
+	},
+	"class" : {
+		"installAsFileHandlerAccordingTo:" : " 11/25/2017 00:57:05",
+		"installAsFileHandlerAccordingTo:servedAt:" : " 11/25/2017 00:57:05",
+		"install:" : " 11/25/2017 00:57:05",
+		"providing:baseUrlForLibraryOptional:" : " 11/25/2017 00:57:05",
+		"providing:" : " 11/25/2017 00:57:05"
+	}
+}

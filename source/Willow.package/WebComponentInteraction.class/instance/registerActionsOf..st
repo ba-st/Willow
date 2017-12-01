@@ -1,4 +1,4 @@
-processing - private
+private - processing
 registerActionsOf: aCommand
 
 	modelLoadingActions addAll: aCommand modelLoadingActions.

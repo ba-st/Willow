@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeInteractSending: anInteracionSelector
 
 	interacionSelector := anInteracionSelector

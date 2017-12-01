@@ -1,4 +1,4 @@
-accessing - private
+private - accessing
 asynchronousCallToAffect: aCanvas
 
 	| serverCall |

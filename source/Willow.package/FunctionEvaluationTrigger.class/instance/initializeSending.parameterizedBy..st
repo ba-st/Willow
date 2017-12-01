@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeSending: aFunctionSelector parameterizedBy: anArgumentNameCollection
 
 	functionSelector := aFunctionSelector.

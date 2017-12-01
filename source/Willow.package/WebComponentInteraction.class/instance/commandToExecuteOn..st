@@ -1,4 +1,4 @@
-accessing - private
+private - accessing
 commandToExecuteOn: aCanvas
 
 	^ serverIndependentActions isEmpty

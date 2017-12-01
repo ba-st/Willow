@@ -1,4 +1,4 @@
-testing - private
+private - testing
 shouldApplyAsynchronousCall
 
 	^clientIndependentActions notEmpty

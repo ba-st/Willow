@@ -1,4 +1,4 @@
-accessing - private
+private - accessing
 complete: anAsynchronousCall withResponseOn: aCanvas
 
 	anAsynchronousCall

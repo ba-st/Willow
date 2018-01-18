@@ -4,11 +4,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow/badge.svg?branch=master)](https://coveralls.io/github/ba-st/Willow?branch=master)
 [![Javascript Dependency Status](https://david-dm.org/ba-st/Willow.svg)](https://david-dm.org/ba-st/Willow)
 
-##### Ready-to-use components for interactive web applications + Framework-independent protocol
+##### Ready-to-use components for interactive web applications + framework agnostic integration
 
 ## Getting started
 ### Before installing
-[Willow](https://github.com/ba-st/Willow) is developed using [Smalltalk](http://stephane.ducasse.free.fr/FreeBooks.html), providing a simple protocol for your web application, no matter the front-end framework you choose.
+[Willow](https://github.com/ba-st/Willow) is developed using [Smalltalk](http://stephane.ducasse.free.fr/FreeBooks.html), providing a simple interface for your web application, no matter the front-end framework you choose.
 
 The tutorials below assume you are familiar with Smalltalk code, and are using [Pharo](http://pharo.org/) as your development environment. Willow is intended to work alongside the [RenoirSt](https://github.com/ba-st/RenoirSt) DSL to define the CSS of your application. Some basic knowledge of [Seaside](https://github.com/SeasideSt/Seaside) is also recommended.
 ### Installation
@@ -75,8 +75,6 @@ A video of the presentation can be seen [here](https://youtu.be/JezITRHCBuc?list
 - Work started by [Maximiliano Tabacman](https://github.com/mtabacman). Code improvement provided by [Gabriel Cotelli](https://github.com/gcotelli). Additional ideas and fixes by [Francisco Ortiz Peñaloza](https://github.com/fortizpenaloza) and [Julián Maestri](https://github.com/serpi90).
 
 - Real world scenarios and coding time granted by [Mercap Software](https://www.mercapsoftware.com/en/).
-
-
 
 ## Licensing
 The project source code is [MIT](LICENSE) licensed. Any contribution submitted to the code repository is considered to be under the same license.

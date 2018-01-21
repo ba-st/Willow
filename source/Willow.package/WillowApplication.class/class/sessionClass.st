@@ -1,4 +1,4 @@
-Accessing
+accessing
 sessionClass
 
 	^ WillowSession

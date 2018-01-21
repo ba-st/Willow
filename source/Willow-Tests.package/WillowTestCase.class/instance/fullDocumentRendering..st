@@ -1,7 +1,13 @@
 utility
 fullDocumentRendering: aWillowApplication
 
-	^ WAHtmlCanvas builder
+	| builder html |
+
+	builder := WAHtmlCanvas builder
 		fullDocument: true;
 		rootBlock: [ :root | aWillowApplication updateRoot: root ];
-		render: [ :canvas | canvas render: aWillowApplication ]
+		codec: self codec.
+	html := WACurrentRequestContext
+		use: self
+		during: [ builder render: aWillowApplication ].
+	^ html

@@ -1,4 +1,4 @@
-Accessing
+accessing
 newComponentSupplier
 
 	^ componentSupplier 

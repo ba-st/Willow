@@ -1,4 +1,4 @@
-Accessing
+accessing
 applicationTitle
 	
 	^self class applicationTitle  

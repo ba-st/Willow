@@ -5,4 +5,4 @@ testStartUpApplicationContextFor
 
 	session := WillowSession new.
 	session startUpApplicationContextFor: self.
-	self assert: session componentSupplier equals: self componentSupplier
+	self assert: session componentSupplier equals: componentSupplier

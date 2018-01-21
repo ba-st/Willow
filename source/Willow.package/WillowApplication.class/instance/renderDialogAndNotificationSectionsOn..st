@@ -1,4 +1,4 @@
-private - Rendering
+private - rendering
 renderDialogAndNotificationSectionsOn: aCanvas
 
 	"Render dialog and notification sections. These are needed for the dialog and notification support."

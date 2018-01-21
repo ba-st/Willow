@@ -1,4 +1,4 @@
-Accessing
+accessing
 jQueryLibrary
 
 	^ self subclassResponsibility

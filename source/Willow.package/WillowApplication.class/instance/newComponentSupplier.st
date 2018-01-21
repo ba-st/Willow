@@ -1,0 +1,4 @@
+accessing
+newComponentSupplier
+
+	self subclassResponsibility

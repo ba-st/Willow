@@ -6,8 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"destination"
+		"destination",
+		"targetOptional"
 	],
-	"name" : "OpenNewLocationCommand",
+	"name" : "OpenLocationCommand",
 	"type" : "normal"
 }

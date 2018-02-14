@@ -16,4 +16,4 @@ testToggleCssClassOn
 	self
 		assert: html
 		equals:
-			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(){$("#example-id1").toggleClass("willow")});$("#button-id3").click(function(){$("#example-id1").toggleClass("willow")});</script>'
+			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#example-id1").toggleClass("willow")});$("#button-id3").click(function(event){$("#example-id1").toggleClass("willow")});</script>'

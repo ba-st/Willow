@@ -8,5 +8,4 @@ testInform
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
-		equals:
-			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){alert("A message")});</script>'
+		equals: '<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert("A message")});</script>'

@@ -10,4 +10,4 @@ testOnTrigger
 	self
 		assert: html
 		equals:
-			'<a role="button" id="a-id1">Click me!</a><script type="text/javascript">$("#a-id1").click(function(){$(this).prop("disabled",true)});</script>'
+			'<a id="a-id1">Click me!</a><script type="text/javascript">$("#a-id1").click(function(event){arguments[0].preventDefault();$(this).prop("disabled",true)});</script>'

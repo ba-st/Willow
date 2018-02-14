@@ -9,4 +9,4 @@ testInformSelection
 	self
 		assert: html
 		equals:
-			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){alert($(this).children("option:selected").text())});</script>'
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert($(this).children("option:selected").text())});</script>'

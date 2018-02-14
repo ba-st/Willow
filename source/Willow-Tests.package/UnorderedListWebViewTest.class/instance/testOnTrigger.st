@@ -8,4 +8,4 @@ testOnTrigger
 
 	html := self render: unorderedList.
 
-	self assert: html equals: '<ul id="ul-id1"><li>spoon</li><li>fork</li></ul><script type="text/javascript">$("#ul-id1").click(function(){$(this).prop("disabled",true)});</script>'
+	self assert: html equals: '<ul id="ul-id1"><li>spoon</li><li>fork</li></ul><script type="text/javascript">$("#ul-id1").click(function(event){$(this).prop("disabled",true)});</script>'

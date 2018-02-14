@@ -11,4 +11,4 @@ testOnTrigger
 	self
 		assert: html
 		equals:
-			'<select name="1" id="select-id2" multiple="multiple"></select><input name="3" type="hidden"/><script type="text/javascript">$("#select-id2").change(function(){$(this).prop("disabled",true)});</script>'
+			'<select name="1" id="select-id2" multiple="multiple"></select><input name="3" type="hidden"/><script type="text/javascript">$("#select-id2").change(function(event){$(this).prop("disabled",true)});</script>'

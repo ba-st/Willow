@@ -19,4 +19,4 @@ testSubmitFormStyledAs
 	self
 		assert: html
 		equals:
-			'<form accept-charset="UTF-8" method="post" action="/" class="willow"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<form accept-charset="UTF-8" method="post" action="/" class="willow"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'

@@ -23,10 +23,13 @@ Metacello new
 
 ### Adding front-end framework support
 Willow uses an HTML5 component provider by default. To work with a particular framework, you should install:
-* [Willow-Bootstrap](https://github.com/ba-st/Willow-Bootstrap) for [Bootstrap 3](https://getbootstrap.com/docs/3.3/) ![Active](http://www.repostatus.org/badges/latest/active.svg)
-* [Willow-JQueryUI](https://github.com/ba-st/Willow-JQueryUI) for [JQuery UI](https://jqueryui.com/) ![Active](http://www.repostatus.org/badges/latest/active.svg)
-* [Willow-SemanticUI](https://github.com/ba-st/Willow-SemanticUI) for [Semantic UI](https://semantic-ui.com/) ![WIP](http://www.repostatus.org/badges/latest/wip.svg)
-* [Willow-Materialize](https://github.com/fortizpenaloza/Willow-Materialize) for [Materialize](http://materializecss.com/) ![WIP](http://www.repostatus.org/badges/latest/wip.svg)
+
+Framework | Project | Status
+--- | --- | --- 
+[Bootstrap 3](https://getbootstrap.com/docs/3.3/) | [Willow-Bootstrap](https://github.com/ba-st/Willow-Bootstrap) | ![Active](http://www.repostatus.org/badges/latest/active.svg)|
+[JQuery UI](https://jqueryui.com/) | [Willow-JQueryUI](https://github.com/ba-st/Willow-JQueryUI) | ![Active](http://www.repostatus.org/badges/latest/active.svg)
+[Semantic UI](https://semantic-ui.com/) | [Willow-SemanticUI](https://github.com/ba-st/Willow-SemanticUI) | ![WIP](http://www.repostatus.org/badges/latest/wip.svg)
+[Materialize](http://materializecss.com/) | [Willow-Materialize](https://github.com/fortizpenaloza/Willow-Materialize) | ![WIP](http://www.repostatus.org/badges/latest/wip.svg)
 
 ## Tutorial
 To learn more about Willow, load [Willow-Playground](https://github.com/ba-st/Willow-Playground) and check the Presentation application. These will also install 2 sample applications: Test Runner and Live Documentation.
@@ -72,7 +75,7 @@ A video of the presentation can be seen [here](https://youtu.be/JezITRHCBuc?list
 
 - A follow up presentation was made in the Smalltalks 2017 Conference. The slides are available [here](https://www.slideshare.net/gcotelli/willow-101-82159948) and a video of the presentation can be seen [here](https://youtu.be/-QmvIBLDASM).
 
-- Work started by [Maximiliano Tabacman](https://github.com/mtabacman). Code improvement provided by [Gabriel Cotelli](https://github.com/gcotelli). Additional ideas and fixes by [Francisco Ortiz PeÒaloza](https://github.com/fortizpenaloza) and [Juli·n Maestri](https://github.com/serpi90).
+- Work started by [Maximiliano Tabacman](https://github.com/mtabacman). Code improvement provided by [Gabriel Cotelli](https://github.com/gcotelli). Additional ideas and fixes by [Francisco Ortiz Pe√±aloza](https://github.com/fortizpenaloza) and [Juli√°n Maestri](https://github.com/serpi90).
 
 - Real world scenarios and coding time granted by [Mercap Software](https://www.mercapsoftware.com/en/).
 

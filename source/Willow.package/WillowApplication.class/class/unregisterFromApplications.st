@@ -1,4 +1,4 @@
-Utility
+utility
 unregisterFromApplications
 
 	WAEnvironment registerDefaultRequestHandlers.

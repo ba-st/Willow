@@ -1,4 +1,4 @@
-private-Utility
+private-utility
 registerAsApplicationUsing: deploymentModeClass
 
 	| application |

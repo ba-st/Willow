@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "OpenNewLocationCommandTest",
+	"name" : "OpenLocationCommandTest",
 	"type" : "normal"
 }

@@ -1,0 +1,4 @@
+accessing
+componentSupplierForApplication
+
+	^ componentSupplier

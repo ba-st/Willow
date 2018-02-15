@@ -1,4 +1,0 @@
-Supplying
-asynchronicAnchorLabeled: aRenderable applying: aComponentCommand
-
-	self subclassResponsibility

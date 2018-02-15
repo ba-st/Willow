@@ -3,7 +3,7 @@ testRenderContentOn
 
 	| html button |
 
-	button := AsynchronicAnchorWebView labeled: 'Click me!'.
+	button := AsynchronicLinkWebView labeled: 'Click me!'.
 	html := self render: button.
 
 	self

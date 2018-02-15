@@ -10,6 +10,6 @@
 		"interactionInterpreter",
 		"label"
 	],
-	"name" : "AsynchronicAnchorWebView",
+	"name" : "AsynchronicLinkWebView",
 	"type" : "normal"
 }

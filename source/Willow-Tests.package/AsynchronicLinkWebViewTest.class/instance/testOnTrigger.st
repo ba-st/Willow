@@ -3,7 +3,7 @@ testOnTrigger
 
 	| html button |
 
-	button := AsynchronicAnchorWebView labeled: 'Click me!'.
+	button := AsynchronicLinkWebView labeled: 'Click me!'.
 	button onTrigger disable.
 	html := self render: button.
 

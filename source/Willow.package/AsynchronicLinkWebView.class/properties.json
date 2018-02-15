@@ -1,11 +1,15 @@
 {
 	"commentStamp" : "GabrielOmarCotelli 3/14/2017 16:03",
-	"super" : "AsynchronicButtonBehavior",
+	"super" : "WAPainter",
 	"category" : "Willow-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "AsynchronicAnchorWebView",
+	"instvars" : [
+		"commandToComponent",
+		"interactionInterpreter",
+		"label"
+	],
+	"name" : "AsynchronicLinkWebView",
 	"type" : "normal"
 }

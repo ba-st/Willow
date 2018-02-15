@@ -17,4 +17,4 @@ testEnable
 
 	self
 		assert: html
-		equals: '<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(){$("#15").prop("disabled",false)});</script>'
+		equals: '<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){$("#15").prop("disabled",false)});</script>'

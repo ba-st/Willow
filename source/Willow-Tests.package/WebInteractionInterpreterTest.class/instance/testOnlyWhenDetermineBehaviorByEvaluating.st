@@ -12,4 +12,4 @@ testOnlyWhenDetermineBehaviorByEvaluating
 	self
 		assert: html
 		equals:
-			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(){if(theClientParameter != null){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(theClientParameter))].join("&")})}});</script>'
+			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){if(theClientParameter != null){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(theClientParameter))].join("&")})}});</script>'

@@ -8,4 +8,4 @@ testAddCssClass
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
-		equals: '<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$(this).addClass("willow")});</script>'
+		equals: '<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).addClass("willow")});</script>'

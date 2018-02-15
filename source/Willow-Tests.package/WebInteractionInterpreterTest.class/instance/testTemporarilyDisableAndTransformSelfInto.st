@@ -17,4 +17,4 @@ testTemporarilyDisableAndTransformSelfInto
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(){disabledComponent=$(this).html();$(this).addClass("willow-disabled-component").attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){$(".willow-disabled-component").attr("disabled",false).removeClass("willow-disabled-component").html(disabledComponent)},"url":"/","data":"1"})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){disabledComponent=$(this).html();$(this).addClass("willow-disabled-component").attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){$(".willow-disabled-component").attr("disabled",false).removeClass("willow-disabled-component").html(disabledComponent)},"url":"/","data":"1"})});</script>'

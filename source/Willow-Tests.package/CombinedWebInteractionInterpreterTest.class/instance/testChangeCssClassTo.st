@@ -15,4 +15,4 @@ testChangeCssClassTo
 	self
 		assert: html
 		equals:
-			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(){$(".willow-loading").removeClass("willow-loading").addClass("willow")});$("#button-id2").click(function(){$(".willow-loading").removeClass("willow-loading").addClass("willow")});</script>'
+			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(".willow-loading").removeClass("willow-loading").addClass("willow")});$("#button-id2").click(function(event){$(".willow-loading").removeClass("willow-loading").addClass("willow")});</script>'

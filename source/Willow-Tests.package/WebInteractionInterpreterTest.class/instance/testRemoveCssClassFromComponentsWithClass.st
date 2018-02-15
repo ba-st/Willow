@@ -14,4 +14,4 @@ testRemoveCssClassFromComponentsWithClass
 	self
 		assert: html
 		equals:
-			'<input class="willow-loading willow" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$(".willow").removeClass("willow-loading")});</script>'
+			'<input class="willow-loading willow" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".willow").removeClass("willow-loading")});</script>'

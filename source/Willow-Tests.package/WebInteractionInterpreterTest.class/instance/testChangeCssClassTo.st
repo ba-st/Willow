@@ -9,4 +9,4 @@ testChangeCssClassTo
 	self
 		assert: html
 		equals:
-			'<input class="willow-loading" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$(".willow-loading").removeClass("willow-loading").addClass("willow")});</script>'
+			'<input class="willow-loading" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".willow-loading").removeClass("willow-loading").addClass("willow")});</script>'

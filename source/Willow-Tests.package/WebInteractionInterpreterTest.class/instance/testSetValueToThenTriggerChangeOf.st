@@ -20,4 +20,4 @@ testSetValueToThenTriggerChangeOf
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").click(function(){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'

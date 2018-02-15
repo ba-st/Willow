@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "<historical>",
+	"commentStamp" : "GabrielOmarCotelli 2/15/2018 08:50",
 	"super" : "WillowTestCase",
 	"category" : "Willow-Tests-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "AsynchronicAnchorWebViewTest",
+	"name" : "AsynchronicLinkWebViewTest",
 	"type" : "normal"
 }

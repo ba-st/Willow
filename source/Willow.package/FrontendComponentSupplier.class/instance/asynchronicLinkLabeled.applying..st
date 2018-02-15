@@ -1,0 +1,4 @@
+Supplying
+asynchronicLinkLabeled: aRenderable applying: aComponentCommand
+
+	self subclassResponsibility

@@ -1,4 +1,4 @@
 Instance Creation
 labeled: aLabel
 
-	^ self labeled: aLabel applying: [ :button |  ]
+	^ self labeled: aLabel applying: [ :link |  ]

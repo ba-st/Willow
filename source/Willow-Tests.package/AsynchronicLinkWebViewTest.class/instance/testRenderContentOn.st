@@ -1,10 +1,10 @@
 tests-rendering
 testRenderContentOn
 
-	| html button |
+	| html link |
 
-	button := AsynchronicLinkWebView labeled: 'Click me!'.
-	html := self render: button.
+	link := AsynchronicLinkWebView labeled: 'Click me!'.
+	html := self render: link.
 
 	self
 		assert: html

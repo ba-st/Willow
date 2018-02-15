@@ -1,11 +1,11 @@
 tests-rendering
 testOnTrigger
 
-	| html button |
+	| html link |
 
-	button := AsynchronicLinkWebView labeled: 'Click me!'.
-	button onTrigger disable.
-	html := self render: button.
+	link := AsynchronicLinkWebView labeled: 'Click me!'.
+	link onTrigger disable.
+	html := self render: link.
 
 	self
 		assert: html

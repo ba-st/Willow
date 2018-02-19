@@ -3,7 +3,7 @@ testRenderContentOn
 
 	| html link |
 
-	link := LinkWebView labeled: 'Click me!'.
+	link := LinkWebView synchronicLabeled: 'Click me!' applying: [  ].
 	html := self render: link.
 
 	self assert: html equals: '<a>Click me!</a>'

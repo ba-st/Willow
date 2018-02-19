@@ -1,4 +1,4 @@
 configuring
 onTrigger
 
-	^interactionInterpreter
+	^ interactionInterpreter

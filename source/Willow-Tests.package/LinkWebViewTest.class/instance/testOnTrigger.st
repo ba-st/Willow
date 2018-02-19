@@ -3,7 +3,7 @@ testOnTrigger
 
 	| html link |
 
-	link := LinkWebView labeled: 'Click me!'.
+	link := LinkWebView synchronicLabeled: 'Click me!' applying: [  ].
 	link onTrigger disable.
 	html := self render: link.
 

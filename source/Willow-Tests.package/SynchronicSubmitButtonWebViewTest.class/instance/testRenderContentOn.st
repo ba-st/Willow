@@ -5,9 +5,8 @@ testRenderContentOn
 
 	synchronicButton := SynchronicSubmitButtonWebView
 		labeled: 'Submit'
-		applying: [ :button |  ].
+		applying: [ :button |  ]
+		evaluating: [  ].
 	html := self render: synchronicButton.
 
-	self
-		assert: html
-		equals: '<button type="submit">Submit</button>'
+	self assert: html equals: '<button name="1" type="submit">Submit</button>'

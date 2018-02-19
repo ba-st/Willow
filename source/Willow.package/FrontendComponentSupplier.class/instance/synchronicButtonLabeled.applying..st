@@ -1,4 +1,0 @@
-Supplying
-synchronicButtonLabeled: aRenderable applying: aComponentCommand
-
-	self subclassResponsibility

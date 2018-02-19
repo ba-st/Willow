@@ -9,7 +9,8 @@
 		"label",
 		"commandToComponent",
 		"interactionInterpreter",
-		"identifierAssigner"
+		"identifierAssigner",
+		"submitCallback"
 	],
 	"name" : "SynchronicSubmitButtonWebView",
 	"type" : "normal"

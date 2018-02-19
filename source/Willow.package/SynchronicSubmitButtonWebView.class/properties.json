@@ -8,8 +8,6 @@
 	"instvars" : [
 		"label",
 		"commandToComponent",
-		"submitCallback",
-		"disabled",
 		"interactionInterpreter",
 		"identifierAssigner"
 	],

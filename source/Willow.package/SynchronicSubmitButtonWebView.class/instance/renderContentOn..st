@@ -11,5 +11,4 @@ renderContentOn: aCanvas
 		value: label.
 
 	interactionInterpreter applyTo: submitButton on: aCanvas.
-	commandToComponent applyTo: submitButton on: aCanvas.
-	submitButton disabled: disabled
+	commandToComponent applyTo: submitButton on: aCanvas

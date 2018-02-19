@@ -8,10 +8,9 @@
 	"instvars" : [
 		"label",
 		"commandToComponent",
-		"submitCallback",
-		"disabled",
 		"interactionInterpreter",
-		"identifierAssigner"
+		"identifierAssigner",
+		"submitCallback"
 	],
 	"name" : "SynchronicSubmitButtonWebView",
 	"type" : "normal"

@@ -5,5 +5,4 @@ initializeLabeled: aLabel applying: aCommandCollection evaluating: actionOnSubmi
 	commandToComponent := aCommandCollection.
 	interactionInterpreter := WebInteractionInterpreter forClickOnComponent.
 	submitCallback := actionOnSubmit.
-	disabled := false.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'submit-button'

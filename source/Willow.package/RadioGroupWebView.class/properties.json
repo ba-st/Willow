@@ -8,7 +8,8 @@
 	"instvars" : [
 		"interactionInterpreter",
 		"renderingBlock",
-		"commandToComponent"
+		"labelCommand",
+		"inputCommand"
 	],
 	"name" : "RadioGroupWebView",
 	"type" : "normal"

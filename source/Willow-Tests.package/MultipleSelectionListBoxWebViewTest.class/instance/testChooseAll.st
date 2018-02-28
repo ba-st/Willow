@@ -11,7 +11,7 @@ testChooseAll
 
 	notificationWasReceived := false.
 
-	self assert: listBox chosenElements equals: #(1).
+	self assert: listBox currentSelection equals: #(1).
 
 	listBox allowAnyOf: #(2 4 3 1).
 
@@ -21,4 +21,4 @@ testChooseAll
 
 	self
 		assert: notificationWasReceived;
-		assert: listBox chosenElements equals: #(2 4 3 1)
+		assert: listBox currentSelection equals: #(2 4 3 1)

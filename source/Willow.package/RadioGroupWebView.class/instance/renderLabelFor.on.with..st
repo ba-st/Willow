@@ -5,5 +5,5 @@ renderLabelFor: radioButtonId on: aCanvas with: aRenderable
 
 	label := aCanvas label.
 	label for: radioButtonId.
-	commandToComponent applyTo: label on: aCanvas.
+	labelCommand applyTo: label on: aCanvas.
 	label with: aRenderable

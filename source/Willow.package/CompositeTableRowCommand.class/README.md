@@ -1,0 +1,1 @@
+A row command collecting several sub commands to a component.

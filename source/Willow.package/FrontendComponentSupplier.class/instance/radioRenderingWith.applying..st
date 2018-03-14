@@ -1,4 +1,0 @@
-Supplying
-radioRenderingWith: aRenderingBlock applying: aCommandToComponent
-
-	self subclassResponsibility

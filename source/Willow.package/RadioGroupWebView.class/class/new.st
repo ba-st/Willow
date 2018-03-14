@@ -1,4 +1,7 @@
 Instance creation
 new
 
-	^ self renderingWith: #yourself applying: [ :group |  ]
+	^self 
+		renderingWith: #'yourself'
+		applyingToLabel: [:group | ]
+		applyingToInput: []

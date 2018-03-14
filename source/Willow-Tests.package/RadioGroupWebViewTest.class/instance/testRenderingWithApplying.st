@@ -3,7 +3,10 @@ testRenderingWithApplying
 
 	| radioGroup html |
 
-	radioGroup := RadioGroupWebView renderingWith: [ :element | element asUppercase ] applying: [ :group | group addClass disabledComponent ].
+	radioGroup := RadioGroupWebView 
+		renderingWith:  [ :element | element asUppercase ] 
+		applyingToLabel: [ :group | group addClass disabledComponent ] 
+		applyingToInput: [ :group | group addClass disabledComponent ].
 
 	radioGroup allowAnyOf: #($a $b).
 	html := self render: radioGroup.

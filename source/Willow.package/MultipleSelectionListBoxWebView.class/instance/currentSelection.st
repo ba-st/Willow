@@ -1,4 +1,4 @@
 Multiple Selection-API
-chosenElements
+currentSelection
 
 	^chosenElements 

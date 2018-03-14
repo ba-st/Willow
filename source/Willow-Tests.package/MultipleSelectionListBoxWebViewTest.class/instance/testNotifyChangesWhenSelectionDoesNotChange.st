@@ -13,4 +13,4 @@ testNotifyChangesWhenSelectionDoesNotChange
 
 	self
 		assert: notificationWasReceived;
-		assert: listBox chosenElements isEmpty
+		assert: listBox currentSelection isEmpty

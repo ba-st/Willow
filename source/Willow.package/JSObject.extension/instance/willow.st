@@ -1,4 +1,4 @@
-*Willow-SeasideExtensions
+*Willow
 willow
 
 	^ (WillowJavascriptNamespace context: self renderContext)

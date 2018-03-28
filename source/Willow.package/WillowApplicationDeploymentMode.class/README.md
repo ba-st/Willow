@@ -1,1 +1,0 @@
-I represent a Willow Application Deployment mode. Currently I help in filtering file libraries to use according to the configured mode. 

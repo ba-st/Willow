@@ -1,4 +1,0 @@
-comet
-cometWait
-	
-	^platform cometWait 

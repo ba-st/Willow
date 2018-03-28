@@ -1,1 +1,0 @@
-I represent a named javascript function. I'm useful for defining function in libraries using the Seaside support.

@@ -1,0 +1,1 @@
+I represent an AJAX call in Willow

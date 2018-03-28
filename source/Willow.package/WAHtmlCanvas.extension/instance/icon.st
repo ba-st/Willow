@@ -1,4 +1,4 @@
-*Willow-SeasideExtensions
+*Willow
 icon
 
 	^ self tag: 'i'

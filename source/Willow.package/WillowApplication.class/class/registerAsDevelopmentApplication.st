@@ -1,4 +1,4 @@
 utility
 registerAsDevelopmentApplication
 
-	^ self registerAsApplicationUsing: WillowApplicationInDevelopment
+	^ self registerAsApplicationUsing: WAApplicationInDevelopment

@@ -8,7 +8,7 @@ testSubmitForm
 
 	html := self
 		renderUsing: [ :canvas | 
-			| form anchor |
+			| form |
 
 			form := canvas form.
 			form id: id.
@@ -20,4 +20,4 @@ testSubmitForm
 	self
 		assert: html
 		equals:
-			'<form accept-charset="UTF-8" method="post" action="/" id="15"></form><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
+			'<form accept-charset="utf-8" method="post" action="/" id="15"></form><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'

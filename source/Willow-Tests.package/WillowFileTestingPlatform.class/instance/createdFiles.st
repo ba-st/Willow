@@ -1,4 +1,0 @@
-accessing
-createdFiles
-
-	^ createdFiles asArray

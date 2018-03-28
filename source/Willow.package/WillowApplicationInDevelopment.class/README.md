@@ -1,1 +1,0 @@
-I represent a Willow Application in development.

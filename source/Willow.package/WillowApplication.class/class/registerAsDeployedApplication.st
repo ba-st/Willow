@@ -1,4 +1,4 @@
 utility
 registerAsDeployedApplication
 
-	^ self registerAsApplicationUsing: WillowApplicationDeployed
+	^ self registerAsApplicationUsing: WAApplicationDeployed

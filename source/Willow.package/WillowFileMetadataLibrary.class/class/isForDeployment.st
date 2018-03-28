@@ -1,4 +1,0 @@
-Testing
-isForDeployment
-
-	^ self subclassResponsibility

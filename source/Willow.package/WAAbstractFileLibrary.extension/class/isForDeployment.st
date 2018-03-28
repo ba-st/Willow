@@ -1,4 +1,0 @@
-*Willow
-isForDeployment
-
-	^true

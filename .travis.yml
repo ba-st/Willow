@@ -1,11 +1,28 @@
 language: smalltalk
 sudo: false
-
-# Select operating system(s)
 os:
-  - linux
-
-# Select compatible Smalltalk image(s)
+- linux
 smalltalk:
-  - Pharo-6.0
-  - Pharo-5.0
+- Pharo64-7.0
+- Pharo-7.0
+- Pharo-6.1
+- Pharo-6.0
+- Pharo-5.0
+matrix:
+  allow_failures:
+  - smalltalk: Pharo64-7.0
+  - smalltalk: Pharo-7.0
+  fast_finish: true
+before_deploy:
+  - cp "${SMALLTALK_CI_IMAGE}" "Willow.image"
+  - cp "${SMALLTALK_CI_CHANGES}" "Willow.changes"
+  - zip -q "${TRAVIS_BRANCH}-${TRAVIS_SMALLTALK_VERSION}.zip" "Willow.image" "Willow.changes"
+deploy:
+  provider: releases
+  api_key:
+    secure: ldWYCEX2cDQ4T/POYgKKww6NTRmgR1wCzXtyNS6rQ3/Kcp750ucYSdc+9/hWdMu3H68Ofbh5n/RJkAqMVdXSFZr/Oi+9DF9oqY3/nbo77czEx89reXVbcmOp90J0VqfGopcX/uRwqS9JdxnsigoEgIWbpFSlAZWH2F+0NXLXldTRCu1GZndfSorselbMuAcVigMIrfKsp1LkmQSlV9devP2bOzJ64Fxm64MMMEtiMo+W7dZ2v2SdtkltyhAs5nDpcMPqKA2BA9+BZPJeSp+0qvxSvxD9JW5U+QH7aEkOQ0nDoAuyG+alhGNYF6JwrcP9IjbmQuqS6a43DtXI9Teeffryzy7+z+2Y0WHgd4/pNNZGh2aiAUIF3zhY8v0oV4McJjFQ+3aRNe+8lLy674kKapo+z4dkUzhLlVsaxB2rwbcUuI2RFPfp1UEeWZUwxpio2vL7DqEBKd0NtUZBn8t6LCZwoyd71BWGxRD+5gZAVqTvlNW9Deuq+WiEv5udrxtrT6FbyM8XceNkMrMgQ1G77ESWrH2GdduQW7s+MaO1ZgreWWKr9JJC4NS+KzkvnDn2WJrrvGXiVyMd/RRC4Mnu8hcZQAvCO2uaTgQLMJc52078hu3kcnyXGv+177daJLIK8Qo2Kbwru0rp/QPpvUYflgIIF2u0+wmyT3WxcPbDK4U=
+  file: "${TRAVIS_BRANCH}-${TRAVIS_SMALLTALK_VERSION}.zip"
+  skip_cleanup: true
+  on:
+    repo: ba-st/Willow
+    tags: true

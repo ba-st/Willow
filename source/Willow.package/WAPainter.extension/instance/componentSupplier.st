@@ -1,4 +1,4 @@
-*Willow-SeasideExtensions
+*Willow
 componentSupplier
 
 	^ self session componentSupplier

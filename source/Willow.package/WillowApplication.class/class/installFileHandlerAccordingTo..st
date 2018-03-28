@@ -1,4 +1,4 @@
 private-utility
 installFileHandlerAccordingTo: theDeploymentMode
 
-	WillowFileHandler installAsFileHandlerAccordingTo: theDeploymentMode
+	WADeploymentAwareFileHandler installAsFileHandlerAccordingTo: theDeploymentMode

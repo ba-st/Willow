@@ -1,1 +1,0 @@
-A Javascript variable declaration

@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "GabrielOmarCotelli 3/20/2017 17:14",
-	"super" : "WillowTestCase",
+	"super" : "WARenderingTest",
 	"category" : "Willow-Tests-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],

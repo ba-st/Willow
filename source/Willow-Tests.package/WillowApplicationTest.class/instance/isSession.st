@@ -1,0 +1,4 @@
+accessing
+isSession
+
+	^ true

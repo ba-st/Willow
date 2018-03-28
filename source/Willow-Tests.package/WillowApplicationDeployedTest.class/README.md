@@ -1,1 +1,0 @@
-A WillowApplicationDeployedTest is a test class for testing the behavior of WillowApplicationDeployed

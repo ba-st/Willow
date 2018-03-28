@@ -1,1 +1,0 @@
-A HTMLAsserterTest is a test class for testing the behavior of HTMLAsserter

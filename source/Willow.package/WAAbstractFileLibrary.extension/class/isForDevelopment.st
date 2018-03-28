@@ -1,4 +1,0 @@
-*Willow
-isForDevelopment
-
-	^true

@@ -1,4 +1,4 @@
-*Willow-SeasideExtensions
+*Willow
 scriptToExecute: aScriptBlock asAjaxScriptEvery: aNumber millsecondsUnless: aStoppingCondition
 
 	| asynchronousCall |

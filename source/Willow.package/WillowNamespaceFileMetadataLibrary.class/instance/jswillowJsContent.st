@@ -12,6 +12,6 @@ jswillowJsContent
 		expandMacrosWith: self version
 		with:
 			(self
-				javascriptContentFrom: [ :script |
+				javascriptContentFrom: [ :script | 
 					script << self globalWillowNamespaceDeclaration.
-					script << self setUpWillowGlobalNamespace ])
+					script << (script javascript if: (self willowNamespace identicalTo: JSStream undefined) then: (self willowNamespace assign: self willowDefaults)) ])

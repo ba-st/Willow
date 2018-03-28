@@ -1,1 +1,0 @@
-Simple object to represent a call to a JS function.

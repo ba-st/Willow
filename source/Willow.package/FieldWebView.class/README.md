@@ -1,1 +1,0 @@
-I 'm an abstract class representing non textual HTML5 inputs.

@@ -1,1 +1,0 @@
-A command to set the size of a component, in combo boxes this implies the number of visible options.

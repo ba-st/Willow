@@ -1,4 +1,0 @@
-Configuring - Serialization
-serializeContainerForm
-
-	self subclassResponsibility

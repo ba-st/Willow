@@ -1,1 +1,0 @@
-I'm an entry point providing access to several constants

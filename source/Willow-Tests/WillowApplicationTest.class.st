@@ -1,0 +1,108 @@
+"
+A WillowApplicationTest is a test class for testing the behavior of WillowApplication
+"
+Class {
+	#name : #WillowApplicationTest,
+	#superclass : #WARenderingTest,
+	#instVars : [
+		'applicationStarted'
+	],
+	#category : 'Willow-Tests-Applications'
+}
+
+{ #category : #accessing }
+WillowApplicationTest >> componentSupplier [
+
+	^ Html5ComponentSupplier new
+]
+
+{ #category : #accessing }
+WillowApplicationTest >> createHandlers [
+
+	^ Array with: self
+]
+
+{ #category : #accessing }
+WillowApplicationTest >> isSession [
+
+	^ true
+]
+
+{ #category : #accessing }
+WillowApplicationTest >> preferenceAt: aSymbol ifAbsent: aBlock [
+
+	^ aBlock value
+]
+
+{ #category : #accessing }
+WillowApplicationTest >> session [
+
+	"I will simulate to be the session, because it's only used to ask it the componentSupplier"
+
+	^ self
+]
+
+{ #category : #accessing }
+WillowApplicationTest >> startUpApplicationContextFor: aWillowApplication [
+
+	applicationStarted := true
+]
+
+{ #category : #tests }
+WillowApplicationTest >> testDeploymentMode [
+
+	self
+		renderUsing:
+			[ :canvas | self assert: (WillowApplication new deploymentMode isA: WAApplicationInDevelopment) ]
+]
+
+{ #category : #tests }
+WillowApplicationTest >> testIinitialRequest [
+
+	applicationStarted := false.
+	self
+		renderUsing: [ :canvas | 
+			WillowApplication new initialRequest: 'Not relevant'.
+			self assert: applicationStarted ]
+]
+
+{ #category : #tests }
+WillowApplicationTest >> testRegisterAsDeployedApplication [
+
+	| handlers |
+
+	handlers := WAAdmin defaultDispatcher handlers.
+	self deny: (handlers includesKey: WillowTestingApplication handlerName).
+	WillowTestingApplication registerAsDeployedApplication.
+	self assert: (handlers includesKey: WillowTestingApplication handlerName).
+	WillowTestingApplication unregisterFromApplications.
+	self deny: (handlers includesKey: WillowTestingApplication handlerName)
+]
+
+{ #category : #tests }
+WillowApplicationTest >> testRegisterAsDevelopmentApplication [
+
+	| handlers |
+
+	handlers := WAAdmin defaultDispatcher handlers.
+	self deny: (handlers includesKey: WillowTestingApplication handlerName).
+	WillowTestingApplication registerAsDevelopmentApplication.
+	self assert: (handlers includesKey: WillowTestingApplication handlerName).
+	WillowTestingApplication unregisterFromApplications.
+	self deny: (handlers includesKey: WillowTestingApplication handlerName)
+]
+
+{ #category : #tests }
+WillowApplicationTest >> testRenderContentOn [
+
+	| html application |
+
+	application := WillowTestingApplication new.
+	html := self fullDocumentRendering: application.
+
+	self
+		assert: html
+		equals:
+			'<!DOCTYPE html><html lang="en"><head><title>The official testing app</title><script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script><script type="text/javascript" src="/files/willow-7.0.0/js/willow.js"></script></head><body onload="onLoad()"><span><select name="1"></select></span><div id="willow-dialog-section" class="willow-dialog-container"></div><div id="willow-notification-section"></div><script type="text/javascript">function onLoad(){};</script></body></html>'
+
+]

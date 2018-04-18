@@ -1,1 +1,0 @@
-Command to append the time to the src attribute. Useful when working with images.

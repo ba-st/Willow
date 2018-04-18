@@ -1,4 +1,0 @@
-accessing
-clientIndependentActions
-
-	self subclassResponsibility

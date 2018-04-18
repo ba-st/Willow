@@ -1,4 +1,0 @@
-initialization
-initializeCombining: aWebInteractionInterpreterCollection
-
-	interpreters := aWebInteractionInterpreterCollection

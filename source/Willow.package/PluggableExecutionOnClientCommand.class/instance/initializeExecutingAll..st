@@ -1,4 +1,0 @@
-initialize-release
-initializeExecutingAll: aServerIndependentActionCollection
-
-	serverIndependentActions := aServerIndependentActionCollection.

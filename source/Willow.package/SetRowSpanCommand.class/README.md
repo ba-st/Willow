@@ -1,1 +1,0 @@
-A command to set the rowSpan of a table cell.

@@ -1,1 +1,0 @@
-I'm a WebInteractionCommand that disable an specific component during an AJAX call execution.

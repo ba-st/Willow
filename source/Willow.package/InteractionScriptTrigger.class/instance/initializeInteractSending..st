@@ -1,4 +1,0 @@
-initialization
-initializeInteractSending: anInteracionSelector
-
-	interacionSelector := anInteracionSelector

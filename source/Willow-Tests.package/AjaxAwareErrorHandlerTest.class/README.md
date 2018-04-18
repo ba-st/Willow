@@ -1,1 +1,0 @@
-An AjaxAwareErrorHandlerTest is a test class for testing the behavior of AjaxAwareErrorHandler

@@ -1,4 +1,0 @@
-Supplying
-checkboxUnlabeledOnModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent
-
-	self subclassResponsibility

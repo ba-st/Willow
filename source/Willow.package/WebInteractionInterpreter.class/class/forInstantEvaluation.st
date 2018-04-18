@@ -1,4 +1,0 @@
-instance creation
-forInstantEvaluation
-
-	^self workingWith: WebComponentInteraction triggeredOnDocumentLoad

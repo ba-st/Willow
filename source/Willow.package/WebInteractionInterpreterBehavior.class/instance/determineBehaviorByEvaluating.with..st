@@ -1,4 +1,0 @@
-Configuring
-determineBehaviorByEvaluating: aCallbackBlock with: aParameter
-
-	self subclassResponsibility

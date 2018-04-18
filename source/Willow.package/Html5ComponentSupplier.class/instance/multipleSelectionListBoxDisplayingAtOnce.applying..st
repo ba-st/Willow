@@ -1,4 +1,0 @@
-Supplying
-multipleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand
-
-	^ MultipleSelectionListBoxWebView displayingAtOnce: aNumberOfElements applying: aComponentCommand

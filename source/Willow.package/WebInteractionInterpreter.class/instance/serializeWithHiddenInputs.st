@@ -1,4 +1,0 @@
-Configuring - Serialization
-serializeWithHiddenInputs
-
-	interaction onTriggerExecute: SerializationCommand forCurrentObjectWithHiddenInputs

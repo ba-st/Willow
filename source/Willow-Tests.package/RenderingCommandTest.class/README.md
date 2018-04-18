@@ -1,1 +1,0 @@
-A RenderingCommandTest is a test class for testing the behavior of RenderingCommand

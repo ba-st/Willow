@@ -1,4 +1,0 @@
-Supplying
-dateFieldApplying: aComponentCommand
-
-	self subclassResponsibility

@@ -1,4 +1,0 @@
-Supplying
-singleLineTextFieldApplying: aComponentCommand
-
-	^ TextFieldWebView singleLineTriggeringOnChangeApplying: aComponentCommand

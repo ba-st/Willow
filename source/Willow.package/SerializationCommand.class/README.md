@@ -1,1 +1,0 @@
-I'm a WebInteractionCommand that specifies how to serialize the component state.

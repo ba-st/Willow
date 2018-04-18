@@ -1,4 +1,0 @@
-Converting
-asTableRowCommand
-
-	^self

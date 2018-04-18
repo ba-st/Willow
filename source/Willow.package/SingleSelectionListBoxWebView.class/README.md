@@ -1,1 +1,0 @@
-I'm a list box, that allows the user to select one item from a list contained within a static, multiple line text box. The user clicks inside the box on an item to select it.

@@ -1,1 +1,0 @@
-Command to add boundaries to a component (using min: and/or max:).

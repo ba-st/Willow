@@ -1,1 +1,0 @@
-I represent a null web interaction command, so no javascript is generated when applied.

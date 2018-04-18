@@ -1,1 +1,0 @@
-I'm a WebInteractionCommand that allows for arbitrary code execution in the client

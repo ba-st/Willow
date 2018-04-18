@@ -1,4 +1,0 @@
-accessing
-identifier
-
-	^ identifierAssigner assignedIdentifier

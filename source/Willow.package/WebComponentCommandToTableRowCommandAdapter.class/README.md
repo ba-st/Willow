@@ -1,1 +1,0 @@
-I'm an adapter for web component commands allowing to use it as table row commnands

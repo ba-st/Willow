@@ -1,1 +1,0 @@
-A command to set a component as required, using the HTML5 attribute.

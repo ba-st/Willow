@@ -1,1 +1,0 @@
-A DialogOpeningCommandTest is a test class for testing the behavior of DialogOpeningCommand

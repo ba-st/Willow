@@ -1,4 +1,0 @@
-tests-accessing
-testClientIndependentActions
-
-	self assert: command clientIndependentActions isEmpty

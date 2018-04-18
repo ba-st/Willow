@@ -1,4 +1,0 @@
-utility
-registerAsDeployedApplication
-
-	^ self registerAsApplicationUsing: WAApplicationDeployed

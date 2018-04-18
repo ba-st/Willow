@@ -1,4 +1,0 @@
-Accessing
-handleAjaxErrorCallFunctionName
-
-	^ 'handleAjaxErrorCall'

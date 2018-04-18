@@ -1,1 +1,0 @@
-A LabeledWebViewTest is a test class for testing the behavior of LabeledWebView

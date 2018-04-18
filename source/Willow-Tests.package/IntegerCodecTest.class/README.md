@@ -1,1 +1,0 @@
-An IntegerCodecTest is a test class for testing the behavior of IntegerCodec

@@ -1,5 +1,0 @@
-instance creation
-withComponentIdentifierProvidedBy: anIdentifierProvider
-
-	^self new
-		initializeWithComponentIdentifierProvidedBy: anIdentifierProvider

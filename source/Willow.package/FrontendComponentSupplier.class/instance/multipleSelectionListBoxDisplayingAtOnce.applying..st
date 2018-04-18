@@ -1,4 +1,0 @@
-Supplying
-multipleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand
-
-	self subclassResponsibility

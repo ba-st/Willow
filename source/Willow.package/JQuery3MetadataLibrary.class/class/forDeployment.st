@@ -1,4 +1,0 @@
-Accessing
-forDeployment
-
-	^ JQuery3DeploymentMetadataLibrary

@@ -1,1 +1,0 @@
-Command to configure maximum length of an input field

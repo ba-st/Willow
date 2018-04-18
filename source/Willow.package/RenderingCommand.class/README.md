@@ -1,1 +1,0 @@
-I'm a Web Interaction Command used to render again the contents of an IdentifedWebView .

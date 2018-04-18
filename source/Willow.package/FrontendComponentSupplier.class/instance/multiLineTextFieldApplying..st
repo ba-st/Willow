@@ -1,4 +1,0 @@
-Supplying
-multiLineTextFieldApplying: aComponentCommand
-
-	self subclassResponsibility

@@ -1,4 +1,0 @@
-Supplying
-decimalNumberFieldApplying: aComponentCommand
-
-	self subclassResponsibility

@@ -1,4 +1,0 @@
-Configuring
-addClass
-
-	^ ComponentClassificationCommandBuilder new

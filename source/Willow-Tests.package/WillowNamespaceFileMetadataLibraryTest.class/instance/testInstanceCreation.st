@@ -1,6 +1,0 @@
-tests
-testInstanceCreation
-
-	self
-		assert: WillowNamespaceFileMetadataLibrary forDeployment equals: WillowNamespaceFileMetadataLibrary;
-		assert: WillowNamespaceFileMetadataLibrary forDevelopment equals: WillowNamespaceFileMetadataLibrary

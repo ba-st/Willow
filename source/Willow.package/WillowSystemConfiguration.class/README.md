@@ -1,1 +1,0 @@
-I provide configuration for a Willow Application. For the moment the deployment mode.

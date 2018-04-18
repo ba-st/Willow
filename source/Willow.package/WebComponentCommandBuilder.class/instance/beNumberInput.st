@@ -1,4 +1,0 @@
-Building
-beNumberInput
-
-	^ InputModeCommand asNumber

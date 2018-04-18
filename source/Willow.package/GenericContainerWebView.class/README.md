@@ -1,1 +1,0 @@
-I'm a generic container suitable for all the non-phrasing content

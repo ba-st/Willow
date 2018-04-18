@@ -1,4 +1,0 @@
-utility
-registerAsDevelopmentApplication
-
-	^ self registerAsApplicationUsing: WAApplicationInDevelopment

@@ -1,1 +1,0 @@
-I represent a list item including command support. 

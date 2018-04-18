@@ -11,12 +11,12 @@ setUpDependencies: spec
 	spec
 		baseline: 'RenoirSt'
 		with: [ spec
-				repository: 'github://ba-st/RenoirSt:v4.0.0/source';
+				repository: 'github://ba-st/RenoirSt:v5/source';
 				loads: #('Deployment-Seaside-Extensions') ].
 
 	spec
 		baseline: 'Boardwalk'
 			with: [ spec
-				repository: 'github://ba-st/Boardwalk:v1.0.0/source';
+				repository: 'github://ba-st/Boardwalk:v2/source';
 				loads: #('Deployment') ];
 		project: 'Boardwalk-Tests' copyFrom: 'Boardwalk' with: [ spec loads: #('Development') ]

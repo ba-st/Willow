@@ -2,5 +2,5 @@ tests
 testInstanceCreation
 
 	self
-		assert: WillowNamespaceFileMetadataLibrary default equals: WillowNamespaceFileMetadataLibrary forDeployment;
-		assert: WillowNamespaceFileMetadataLibrary default equals: WillowNamespaceFileMetadataLibrary forDevelopment
+		assert: WillowNamespaceFileMetadataLibrary forDeployment equals: WillowNamespaceFileMetadataLibrary;
+		assert: WillowNamespaceFileMetadataLibrary forDevelopment equals: WillowNamespaceFileMetadataLibrary

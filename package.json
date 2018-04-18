@@ -1,6 +1,6 @@
 {
   "name": "willow",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "author": "Buenos Aires Smalltalk contributors",
   "license": "MIT",
   "dependencies": {

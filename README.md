@@ -1,5 +1,6 @@
 ![Logo](resources/logos/128x128.png) Willow
 ======
+![GitHub release](https://img.shields.io/github/release/ba-st/Willow.svg)
 [![Build Status](https://travis-ci.org/ba-st/Willow.svg?branch=master)](https://travis-ci.org/ba-st/Willow)
 [![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow/badge.svg?branch=master)](https://coveralls.io/github/ba-st/Willow?branch=master)
 [![Javascript Dependency Status](https://david-dm.org/ba-st/Willow.svg)](https://david-dm.org/ba-st/Willow)

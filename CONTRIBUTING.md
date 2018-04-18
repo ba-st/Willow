@@ -12,7 +12,7 @@ The issue tracker is this GitHub repository. Please use the labels to categorize
 > Remember:
 - This project is MIT licensed, so any code contribution must be under the same license.
 - This project uses [semantic versioning](http://semver.org/), so keep it in mind when you make backwards-incompatible changes. If some backwards incompatible change is made the major version MUST be increased.
-- The source code is hosted in this GitHub repository using the filetree format in the `source` folder. The master branch contains the latest changes, feel free to send pull requests or fork the project.
+- The source code is hosted in this GitHub repository using the Tonel format in the `source` folder. The master branch contains the latest changes, feel free to send pull requests or fork the project.
 - Code contributions without test cases have a lower probability of being merged into the main branch.
 
 - Install/Get Pharo 6
@@ -21,7 +21,7 @@ The issue tracker is this GitHub repository. Please use the labels to categorize
 ```smalltalk
 Metacello new
   baseline: 'Willow';
-  repository: 'filetree://REPO_LOCATION/source';
+  repository: 'tonel://REPO_LOCATION/source';
   load: 'Development'.
 ```
 - Do the changes and save it from Pharo (don't forget to add some test cases)

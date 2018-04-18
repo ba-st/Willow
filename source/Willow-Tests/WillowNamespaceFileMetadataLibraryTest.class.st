@@ -13,8 +13,8 @@ WillowNamespaceFileMetadataLibraryTest >> testDeployFiles [
 	self
 		useFileTestingPlatformDuring: [ WillowNamespaceFileMetadataLibrary default deployFiles.
 			self
-				assert: GRPlatform current createdFolders equals: #('willow-7.0.0' 'willow-7.0.0/js');
-				assert: GRPlatform current createdFiles equals: #('willow-7.0.0/js/willow.js') ]
+				assert: GRPlatform current createdFolders equals: #('willow-8.0.0' 'willow-8.0.0/js');
+				assert: GRPlatform current createdFiles equals: #('willow-8.0.0/js/willow.js') ]
 
 ]
 
@@ -33,13 +33,13 @@ WillowNamespaceFileMetadataLibraryTest >> testJavascriptCode [
 		assert: WillowNamespaceFileMetadataLibrary default jswillowJsContent
 		equals:
 			'/*!
-* willow.js v7.0.0
+* willow.js v8.0.0
 * Copyright 2018 - Buenos Aires Smalltalk
 * Licensed under the MIT license
 */
 
 "use strict";
-var Willow;if(Willow===undefined){Willow={"version":"7.0.0","handleAjaxErrorCall":function(xmlHttpRequest,textStatus,errorThrown){},"callServer":function(sessionInformation){sessionInformation["dataType"]="script";sessionInformation["error"]=Willow.handleAjaxErrorCall;$.ajax(sessionInformation)}}}'
+var Willow;if(Willow===undefined){Willow={"version":"8.0.0","handleAjaxErrorCall":function(xmlHttpRequest,textStatus,errorThrown){},"callServer":function(sessionInformation){sessionInformation["dataType"]="script";sessionInformation["error"]=Willow.handleAjaxErrorCall;$.ajax(sessionInformation)}}}'
 
 ]
 

@@ -28,7 +28,7 @@ WillowNamespaceFileMetadataLibrary class >> libraryName [
 { #category : #Accessing }
 WillowNamespaceFileMetadataLibrary class >> version [
 
-	^ '7.0.0'
+	^ '8.0.0'
 
 ]
 

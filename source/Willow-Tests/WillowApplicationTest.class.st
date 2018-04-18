@@ -35,17 +35,20 @@ WillowApplicationTest >> preferenceAt: aSymbol ifAbsent: aBlock [
 ]
 
 { #category : #accessing }
-WillowApplicationTest >> session [
-
-	"I will simulate to be the session, because it's only used to ask it the componentSupplier"
-
-	^ self
-]
-
-{ #category : #accessing }
 WillowApplicationTest >> startUpApplicationContextFor: aWillowApplication [
 
 	applicationStarted := true
+]
+
+{ #category : #tests }
+WillowApplicationTest >> testComponentSupplierForApplication [
+
+	| supplier application |
+
+	supplier := Html5ComponentSupplier new.
+	application := (WillowTestingApplication using: supplier) componentSupplierForApplication.
+
+	self assert: application equals: supplier
 ]
 
 { #category : #tests }

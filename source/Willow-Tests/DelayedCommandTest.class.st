@@ -16,12 +16,6 @@ DelayedCommandTest >> callback: aBlock json: aString [
 	^ aBlock value: aString
 ]
 
-{ #category : #'test support' }
-DelayedCommandTest >> condition: aCondition [
-
-	
-]
-
 { #category : #'tests-accessing' }
 DelayedCommandTest >> testClientIndependentActions [
 

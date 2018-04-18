@@ -1,4 +1,0 @@
-private - Accessing
-textField
-
-	^ textField

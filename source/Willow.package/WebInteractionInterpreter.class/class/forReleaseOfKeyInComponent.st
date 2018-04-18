@@ -1,4 +1,0 @@
-instance creation
-forReleaseOfKeyInComponent
-
-	^self workingWith: WebComponentInteraction triggeredOnKeyUp

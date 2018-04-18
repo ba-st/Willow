@@ -1,1 +1,0 @@
-I'm a binary choice web view implemented as a checkbox

@@ -1,1 +1,0 @@
-A PluggableTableRowCommandTest is a test class for testing the behavior of PluggableTableRowCommand

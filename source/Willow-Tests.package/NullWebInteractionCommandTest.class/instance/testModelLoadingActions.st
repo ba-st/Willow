@@ -1,4 +1,0 @@
-tests-accessing
-testModelLoadingActions
-
-	self assert: NullWebInteractionCommand new modelLoadingActions isEmpty

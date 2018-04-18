@@ -1,4 +1,0 @@
-Supplying
-tableBuilder
-
-	^ TableWebViewBuilder new

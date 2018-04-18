@@ -1,4 +1,0 @@
-instance creation
-forDoubleClickOnComponent
-
-	^self workingWith: WebComponentInteraction triggeredOnDoubleClick

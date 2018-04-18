@@ -1,1 +1,0 @@
-I'm an abstract subclass for component builders

@@ -1,1 +1,0 @@
-A DisableComponentTabCycleCommandTest is a test class for testing the behavior of DisableComponentTabCycleCommand

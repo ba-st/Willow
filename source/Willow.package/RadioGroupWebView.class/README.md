@@ -1,1 +1,0 @@
-I'm a group of radio buttons allowing the user to select one of many options.

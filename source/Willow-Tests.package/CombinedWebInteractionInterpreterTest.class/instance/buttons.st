@@ -1,5 +1,0 @@
-initialization
-buttons
-
-	^ {okButton.
-	cancelButton}

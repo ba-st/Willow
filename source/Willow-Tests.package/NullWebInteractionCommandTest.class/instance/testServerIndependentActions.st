@@ -1,4 +1,0 @@
-tests-accessing
-testServerIndependentActions
-
-	self assert: NullWebInteractionCommand new serverIndependentActions isEmpty

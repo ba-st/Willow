@@ -1,1 +1,0 @@
-I'm a WebInteractionCommand allowing to change the css class of a component, which can be done using a specific transformation.

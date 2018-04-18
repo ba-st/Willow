@@ -1,1 +1,0 @@
-I'm an abstract class representing single selection web views

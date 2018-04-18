@@ -1,4 +1,0 @@
-support
-newSingleSelectionView
-
-	^ RadioGroupWebView new

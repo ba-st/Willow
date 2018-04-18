@@ -1,4 +1,0 @@
-Building
-beDateInput
-
-	^ InputModeCommand asDate

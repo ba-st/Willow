@@ -1,4 +1,0 @@
-private
-commandBuilder
-
-	^ WebComponentCommandBuilder new

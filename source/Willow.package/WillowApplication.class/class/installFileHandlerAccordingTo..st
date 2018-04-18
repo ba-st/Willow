@@ -1,4 +1,0 @@
-private-utility
-installFileHandlerAccordingTo: theDeploymentMode
-
-	WADeploymentAwareFileHandler installAsFileHandlerAccordingTo: theDeploymentMode

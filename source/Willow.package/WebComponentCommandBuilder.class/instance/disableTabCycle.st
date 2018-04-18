@@ -1,4 +1,0 @@
-Building
-disableTabCycle
-
-	^ DisableComponentTabCycleCommand new

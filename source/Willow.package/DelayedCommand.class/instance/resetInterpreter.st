@@ -1,4 +1,0 @@
-initialization
-resetInterpreter
-
-	interpreter := WebInteractionInterpreter forDelayedModelLoading

@@ -1,1 +1,0 @@
-I'm a WebInteractionCommand with a response that can be configured during the execution on the server.

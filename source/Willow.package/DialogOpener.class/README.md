@@ -1,1 +1,0 @@
-I help in opening dialogs. Useful outside of the DialogOpeningCommand.

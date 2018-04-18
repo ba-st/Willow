@@ -1,4 +1,0 @@
-Building
-deselectAllOptions
-
-	^ DeselectAllOptionsCommand new

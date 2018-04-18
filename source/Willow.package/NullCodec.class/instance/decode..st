@@ -1,4 +1,0 @@
-converting
-decode: aString
-
-	^aString

@@ -1,3 +1,0 @@
-private
-disabledAttributeName
-	^ WillowConstants disabledAttributeName

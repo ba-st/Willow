@@ -1,1 +1,0 @@
-I'm a WebInteractionCommand allowing to put the focus in a component

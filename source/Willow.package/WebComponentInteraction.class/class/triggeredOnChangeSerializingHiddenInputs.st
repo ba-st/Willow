@@ -1,6 +1,0 @@
-instance creation
-triggeredOnChangeSerializingHiddenInputs
-
-	^ self
-		triggeredAccordingTo: InteractionScriptTrigger triggeringOnChange
-		serializingWith: SerializationCommand forCurrentObjectWithHiddenInputs

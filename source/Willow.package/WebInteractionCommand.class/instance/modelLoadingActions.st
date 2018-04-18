@@ -1,4 +1,0 @@
-accessing
-modelLoadingActions
-
-	self subclassResponsibility

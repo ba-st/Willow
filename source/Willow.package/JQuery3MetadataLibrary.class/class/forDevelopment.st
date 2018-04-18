@@ -1,4 +1,0 @@
-Accessing
-forDevelopment
-
-	^ JQuery3DevelopmentMetadataLibrary

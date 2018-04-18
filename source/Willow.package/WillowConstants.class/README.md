@@ -1,1 +1,0 @@
-I provide useful constants

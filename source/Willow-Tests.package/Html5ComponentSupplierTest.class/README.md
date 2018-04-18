@@ -1,1 +1,0 @@
-A Html5ComponentSupplierTest is a test class for testing the behavior of Html5ComponentSupplier

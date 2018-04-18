@@ -1,4 +1,0 @@
-accessing
-contentView
-
-	^ self subclassResponsibility

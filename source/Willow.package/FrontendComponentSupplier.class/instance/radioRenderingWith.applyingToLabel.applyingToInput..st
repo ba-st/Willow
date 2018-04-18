@@ -1,4 +1,0 @@
-Supplying
-radioRenderingWith: aRenderingBlock applyingToLabel: aCommandToComponent applyingToInput: anObject
-
-	self subclassResponsibility

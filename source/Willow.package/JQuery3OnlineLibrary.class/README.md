@@ -1,1 +1,0 @@
-I'm a WALibary serving the files from the official CDN.

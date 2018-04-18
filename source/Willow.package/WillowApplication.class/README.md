@@ -1,1 +1,0 @@
-I'm a basic Willow application providing some guidance to the developers.

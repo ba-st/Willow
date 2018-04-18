@@ -1,4 +1,0 @@
-Accessing
-deploymentModeClassKey
-
-	 ^#deploymentModeClass

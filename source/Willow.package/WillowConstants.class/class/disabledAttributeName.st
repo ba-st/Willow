@@ -1,4 +1,0 @@
-Accessing
-disabledAttributeName
-
-	^ 'disabled'

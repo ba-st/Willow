@@ -1,1 +1,0 @@
-I'm a builder of AjaxAwareErrorHandlers, just because you cannot control the creation of them.

@@ -1,1 +1,0 @@
-An AsynchronicButtonWebViewTest is a test class for testing the behavior of AsynchronicButtonWebView

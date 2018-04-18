@@ -1,4 +1,0 @@
-Building
-beEmailInput
-
-	^ InputModeCommand asEmail

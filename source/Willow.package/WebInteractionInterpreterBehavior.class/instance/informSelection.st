@@ -1,4 +1,0 @@
-Configuring
-informSelection
-
-	self subclassResponsibility

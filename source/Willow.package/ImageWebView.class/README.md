@@ -1,1 +1,0 @@
-I represent an image that can optionally be interactive.

@@ -1,1 +1,0 @@
-I'm a periodically rendered web view, easing the burden of refreshing automatically some content.

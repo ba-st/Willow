@@ -1,1 +1,0 @@
-I'm an abstract class representing a text coder/encoder.

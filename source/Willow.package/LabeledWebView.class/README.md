@@ -1,1 +1,0 @@
-I represent a label bound to some field.

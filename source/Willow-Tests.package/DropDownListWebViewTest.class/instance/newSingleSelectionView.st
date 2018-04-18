@@ -1,4 +1,0 @@
-support
-newSingleSelectionView
-
-	^ DropDownListWebView applying: [  ]

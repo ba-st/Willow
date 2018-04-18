@@ -38,10 +38,8 @@ ScrollIntoViewCommand >> initializeWithComponentIdentifierProvidedBy: anIdentifi
 { #category : #accessing }
 ScrollIntoViewCommand >> modelLoadingActions [
 
-	^Array with: 
-			[:aScript :aCanvas |
-			aScript << ((aCanvas jQuery id: self identifierToShow) property: 0)
-				call: 'scrollIntoView']
+	^ Array
+		with: [ :aScript :aCanvas | aScript << (aCanvas jQuery id: self identifierToShow) each: (aCanvas jQuery this call: 'scrollIntoView') ]
 ]
 
 { #category : #accessing }

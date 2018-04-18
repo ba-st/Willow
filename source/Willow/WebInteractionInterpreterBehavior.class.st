@@ -1,7 +1,7 @@
 Class {
 	#name : #WebInteractionInterpreterBehavior,
-	#superclass : #Object,
-	#category : 'Willow-WebInteraction'
+	#superclass : #WAObject,
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'Configuring - CSS' }

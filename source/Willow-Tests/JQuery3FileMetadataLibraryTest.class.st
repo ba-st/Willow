@@ -25,7 +25,7 @@ JQuery3FileMetadataLibraryTest >> testLibraryName [
 { #category : #tests }
 JQuery3FileMetadataLibraryTest >> testVersion [
 
-	self assert: JQuery3MetadataLibrary version equals: '3.2.1'
+	self assert: JQuery3MetadataLibrary version equals: '3.3.1'
 ]
 
 { #category : #tests }

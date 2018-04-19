@@ -10,8 +10,8 @@ JQuery3DeploymentMetadataLibraryTest >> testDeployFiles [
 	self
 		useFileTestingPlatformDuring: [ JQuery3DeploymentMetadataLibrary default deployFiles.
 			self
-				assert: GRPlatform current createdFolders equals: #('jQuery-3.2.1');
-				assert: GRPlatform current createdFiles equals: #('jQuery-3.2.1/jquery-3.2.1.min.js' 'jQuery-3.2.1/jquery-3.2.1.min.map') ]
+				assert: GRPlatform current createdFolders equals: #('jQuery-3.3.1');
+				assert: GRPlatform current createdFiles equals: #('jQuery-3.3.1/jquery-3.3.1.min.js' 'jQuery-3.3.1/jquery-3.3.1.min.map') ]
 ]
 
 { #category : #tests }
@@ -43,5 +43,5 @@ JQuery3DeploymentMetadataLibraryTest >> testUpdateRoot [
 	self
 		assert: html
 		equals:
-			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.2.1/jquery-3.2.1.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.3.1/jquery-3.3.1.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]

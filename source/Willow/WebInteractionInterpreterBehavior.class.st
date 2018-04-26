@@ -196,6 +196,17 @@ WebInteractionInterpreterBehavior >> setValueTo: aValueProviders withoutTriggeri
 	self subclassResponsibility
 ]
 
+{ #category : #'Configuring - DOM' }
+WebInteractionInterpreterBehavior >> show: aRenderable whileCallingServerToRender: anIdentifiedWebView [
+
+	"This will replace anIdentifiedWebView contents with aRenderable in the DOM before doing the server call, 
+	and replace it again with the rendering obtained from the server call response."
+
+	self
+		transform: anIdentifiedWebView into: aRenderable;
+		render: anIdentifiedWebView
+]
+
 { #category : #Configuring }
 WebInteractionInterpreterBehavior >> showLoadingNotificationStyledAsAll: classes [
 
@@ -246,4 +257,15 @@ WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle on: anIdentifiedW
 WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle onComponentsMatching: aComponentProvider [
 
 	self subclassResponsibility
+]
+
+{ #category : #'Configuring - DOM' }
+WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRenderable [
+
+	"This will replace anIdentifiedWebView content with aRenderable on the browser side"
+
+	self
+		executeOnClient: [ :script :canvas | 
+			anIdentifiedWebView identifyIn: canvas.
+			script << (canvas jQuery id: anIdentifiedWebView identifier) html: aRenderable ]
 ]

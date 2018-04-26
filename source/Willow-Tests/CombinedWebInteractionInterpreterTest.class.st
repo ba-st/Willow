@@ -712,6 +712,28 @@ CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll 
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
+{ #category : #'tests-Configuring-DOM' }
+CombinedWebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
+
+	| html interpreter container |
+
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
+
+	html := self
+		renderUsing: [ :canvas | 
+			interpreter show: 'Loading...' whileCallingServerToRender: container.
+			canvas
+				render: okButton;
+				render: cancelButton;
+				render: container ].
+
+	self
+		assert: html
+		equals:
+			'<button id="button-id3" type="button">Ok</button><button id="button-id5" type="button">Cancel</button><div id="search-results-id1"></div><script type="text/javascript">$("#button-id3").click(function(event){$("#search-results-id1").html("Loading...");Willow.callServer({"url":"/","data":"2"})});$("#button-id5").click(function(event){$("#search-results-id1").html("Loading...");Willow.callServer({"url":"/","data":"4"})});</script>'
+]
+
 { #category : #'tests-Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSubmitForm [
 
@@ -858,4 +880,26 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching 
 		assert: html
 		equals:
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).toggleClass("willow-loading")});$("#button-id2").click(function(event){$(this).toggleClass("willow-loading")});</script>'
+]
+
+{ #category : #'tests-Configuring-DOM' }
+CombinedWebInteractionInterpreterTest >> testTransformInto [
+
+	| html interpreter container |
+
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
+
+	html := self
+		renderUsing: [ :canvas | 
+			interpreter transform: container into: 'Loading...'.
+			canvas
+				render: okButton;
+				render: cancelButton;
+				render: container ].
+
+	self
+		assert: html
+		equals:
+			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><div id="search-results-id1"></div><script type="text/javascript">$("#button-id2").click(function(event){$("#search-results-id1").html("Loading...")});$("#button-id3").click(function(event){$("#search-results-id1").html("Loading...")});</script>'
 ]

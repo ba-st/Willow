@@ -732,6 +732,27 @@ WebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
+{ #category : #'tests - Configuring - DOM' }
+WebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
+
+	| html link container |
+
+	link := LinkWebView synchronicLabeled: 'Search!' applying: [  ].
+	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
+	link onTrigger show: 'Searching...' whileCallingServerToRender: container.
+
+	html := self
+		renderUsing: [ :canvas | 
+			canvas
+				render: link;
+				render: container ].
+
+	self
+		assert: html
+		equals:
+			'<a id="a-id3">Search!</a><div id="search-results-id1"></div><script type="text/javascript">$("#a-id3").click(function(event){$("#search-results-id1").html("Searching...");Willow.callServer({"url":"/","data":"2"})});</script>'
+]
+
 { #category : #'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testSubmitForm [
 
@@ -865,4 +886,22 @@ WebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching [
 		assert: html
 		equals:
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".aComponentByStyleName").toggleClass("willow")});</script>'
+]
+
+{ #category : #'tests - Configuring - DOM' }
+WebInteractionInterpreterTest >> testTransformInto [
+
+	| html link container |
+
+	link := LinkWebView synchronicLabeled: 'Search!' applying: [  ].
+	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
+	link onTrigger transform: container into: 'Searching...'.
+
+	html := self
+		renderUsing: [ :canvas | 
+			canvas
+				render: link;
+				render: container ].
+
+	self assert: html equals:  '<a id="a-id2">Search!</a><div id="search-results-id1"></div><script type="text/javascript">$("#a-id2").click(function(event){$("#search-results-id1").html("Searching...")});</script>'
 ]

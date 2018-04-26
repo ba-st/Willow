@@ -15,13 +15,13 @@ The issue tracker is this GitHub repository. Please use the labels to categorize
 - The source code is hosted in this GitHub repository using the Tonel format in the `source` folder. The master branch contains the latest changes, feel free to send pull requests or fork the project.
 - Code contributions without test cases have a lower probability of being merged into the main branch.
 
-- Install/Get Pharo 6
+- Install/Get Pharo 6.1
 - Clone this repository or fork it
 - Load the development version with:
 ```smalltalk
 Metacello new
   baseline: 'Willow';
-  repository: 'tonel://REPO_LOCATION/source';
+  repository: 'gitlocal://REPO_LOCATION/source';
   load: 'Development'.
 ```
 - Do the changes and save it from Pharo (don't forget to add some test cases)
@@ -34,11 +34,13 @@ Remember the docs are licensed under a CC Attribution-ShareAlike license.
 The master branch should always contain a releasable version, so all the test cases must be passing. The released versions are managed as tags using the GitHub releases support.
 1. The following code changes should be made before the release:
  - Update version number in `package.json`
- - Update version number in `WillowNamespaceFileMetadataLibrary class>>version`
- - Fix the test cases related to version numbers
+ - If there was changes in WillowNamespaceFileMetadataLibrary file contents (there's a test checking that using the hash)
+   - Update version number in `WillowNamespaceFileMetadataLibrary class>>version`
+   - Fix the test cases related to version numbers
 2. Merge this changes to master
 3. Edit the release draft, add any missing info about the release and publish it
-4. Make the public announcement
+4. Move the major tag to point to the new released version commit
+5. Make the public announcement
 
 
 ### Useful References:

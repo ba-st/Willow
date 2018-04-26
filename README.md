@@ -49,7 +49,7 @@ setUpDependencies: spec
 	spec
 		baseline: 'Willow'
 			with: [ spec
-				repository: 'github://ba-st/Willow:v4.0.0/source';
+				repository: 'github://ba-st/Willow:v8/source';
 				loads: #('Willow') ]
 ```
 and

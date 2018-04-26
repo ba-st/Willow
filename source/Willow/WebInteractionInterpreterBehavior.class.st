@@ -7,7 +7,7 @@ Class {
 { #category : #'Configuring - CSS' }
 WebInteractionInterpreterBehavior >> addCssClass: aCssStyle [
 
-	self subclassResponsibility
+	self addCssClass: aCssStyle toComponentsMatching: [ :canvas | canvas jQuery this ]
 ]
 
 { #category : #'Configuring - CSS' }
@@ -67,13 +67,17 @@ WebInteractionInterpreterBehavior >> enable: aComponent [
 { #category : #Configuring }
 WebInteractionInterpreterBehavior >> evaluate: aCallbackBlock [
 
-	self subclassResponsibility
+	"Call the server evaluating the callback block server-side"
+
+	self determineBehaviorByEvaluating: [ :response | aCallbackBlock value ]
 ]
 
 { #category : #Configuring }
 WebInteractionInterpreterBehavior >> evaluate: aCallbackBlock with: aParameter [
 
-	self subclassResponsibility 
+	self
+		determineBehaviorByEvaluating: [ :response :clientParameter | aCallbackBlock value: clientParameter ]
+		with: aParameter
 ]
 
 { #category : #Configuring }
@@ -133,7 +137,9 @@ WebInteractionInterpreterBehavior >> removeCssClass: aCssStyle fromComponentsMat
 { #category : #'Configuring - CSS' }
 WebInteractionInterpreterBehavior >> removeCssClass: aCssStyle fromComponentsWithClass: aComponentByStyleName [
 
-	self subclassResponsibility
+	self
+		removeCssClass: aCssStyle
+		fromComponentsMatching: [ :canvas | canvas jQuery class: aComponentByStyleName ]
 ]
 
 { #category : #'Configuring - DOM' }
@@ -240,7 +246,7 @@ WebInteractionInterpreterBehavior >> temporarilyDisableAndTransformInto: aView [
 { #category : #'Configuring - CSS' }
 WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle [
 
-	self subclassResponsibility
+	self toggleCssClass: aCssStyle onComponentsMatching: [ :canvas | canvas jQuery this ]
 ]
 
 { #category : #'Configuring - CSS' }

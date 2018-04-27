@@ -69,12 +69,6 @@ WebInteractionInterpreter class >> workingWith: aWebComponentInteraction [
 ]
 
 { #category : #'Configuring - CSS' }
-WebInteractionInterpreter >> addCssClass: aCssStyle [
-
-	self addCssClass: aCssStyle toComponentsMatching: [ :canvas | canvas jQuery this ]
-]
-
-{ #category : #'Configuring - CSS' }
 WebInteractionInterpreter >> addCssClass: aCssStyle toComponentsMatching: aComponentProvider [
 
 	interaction
@@ -144,20 +138,6 @@ WebInteractionInterpreter >> disable [
 WebInteractionInterpreter >> enable: aComponent [
 
 	interaction onTriggerExecute: (ComponentEnableStatusChangingCommand enabling: aComponent)
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreter >> evaluate: aCallbackBlock [
-
-	self determineBehaviorByEvaluating: [ :response | aCallbackBlock value ]
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreter >> evaluate: aCallbackBlock with: aParameter [
-
-	self
-		determineBehaviorByEvaluating: [ :response :clientParameter | aCallbackBlock value: clientParameter ]
-		with: aParameter
 ]
 
 { #category : #Configuring }
@@ -231,14 +211,6 @@ WebInteractionInterpreter >> removeCssClass: aCssStyle fromComponentsMatching: a
 				on: aComponentProvider
 				altering: aCssStyle
 				sending: #removeClass:)
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreter >> removeCssClass: aCssStyle fromComponentsWithClass: aComponentByStyleName [
-
-	self
-		removeCssClass: aCssStyle
-		fromComponentsMatching: [ :canvas | canvas jQuery class: aComponentByStyleName ]
 ]
 
 { #category : #'Configuring - DOM' }
@@ -338,12 +310,6 @@ WebInteractionInterpreter >> temporarilyDisableAndTransform: anIdentifiedView in
 WebInteractionInterpreter >> temporarilyDisableAndTransformInto: aView [
 
 	interaction onTriggerExecute: (TemporarilyDisablingCommand transformingCurrentViewInto: aView)
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreter >> toggleCssClass: aCssStyle [
-
-	self toggleCssClass: aCssStyle onComponentsMatching: [ :canvas | canvas jQuery this ]
 ]
 
 { #category : #'Configuring - CSS' }

@@ -7,7 +7,7 @@ Class {
 { #category : #'Configuring - CSS' }
 WebInteractionInterpreterBehavior >> addCssClass: aCssStyle [
 
-	self subclassResponsibility
+	self addCssClass: aCssStyle toComponentsMatching: [ :canvas | canvas jQuery this ]
 ]
 
 { #category : #'Configuring - CSS' }
@@ -67,13 +67,17 @@ WebInteractionInterpreterBehavior >> enable: aComponent [
 { #category : #Configuring }
 WebInteractionInterpreterBehavior >> evaluate: aCallbackBlock [
 
-	self subclassResponsibility
+	"Call the server evaluating the callback block server-side"
+
+	self determineBehaviorByEvaluating: [ :response | aCallbackBlock value ]
 ]
 
 { #category : #Configuring }
 WebInteractionInterpreterBehavior >> evaluate: aCallbackBlock with: aParameter [
 
-	self subclassResponsibility 
+	self
+		determineBehaviorByEvaluating: [ :response :clientParameter | aCallbackBlock value: clientParameter ]
+		with: aParameter
 ]
 
 { #category : #Configuring }
@@ -133,7 +137,9 @@ WebInteractionInterpreterBehavior >> removeCssClass: aCssStyle fromComponentsMat
 { #category : #'Configuring - CSS' }
 WebInteractionInterpreterBehavior >> removeCssClass: aCssStyle fromComponentsWithClass: aComponentByStyleName [
 
-	self subclassResponsibility
+	self
+		removeCssClass: aCssStyle
+		fromComponentsMatching: [ :canvas | canvas jQuery class: aComponentByStyleName ]
 ]
 
 { #category : #'Configuring - DOM' }
@@ -196,6 +202,17 @@ WebInteractionInterpreterBehavior >> setValueTo: aValueProviders withoutTriggeri
 	self subclassResponsibility
 ]
 
+{ #category : #'Configuring - DOM' }
+WebInteractionInterpreterBehavior >> show: aRenderable whileCallingServerToRender: anIdentifiedWebView [
+
+	"This will replace anIdentifiedWebView contents with aRenderable in the DOM before doing the server call, 
+	and replace it again with the rendering obtained from the server call response."
+
+	self
+		transform: anIdentifiedWebView into: aRenderable;
+		render: anIdentifiedWebView
+]
+
 { #category : #Configuring }
 WebInteractionInterpreterBehavior >> showLoadingNotificationStyledAsAll: classes [
 
@@ -229,7 +246,7 @@ WebInteractionInterpreterBehavior >> temporarilyDisableAndTransformInto: aView [
 { #category : #'Configuring - CSS' }
 WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle [
 
-	self subclassResponsibility
+	self toggleCssClass: aCssStyle onComponentsMatching: [ :canvas | canvas jQuery this ]
 ]
 
 { #category : #'Configuring - CSS' }
@@ -246,4 +263,15 @@ WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle on: anIdentifiedW
 WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle onComponentsMatching: aComponentProvider [
 
 	self subclassResponsibility
+]
+
+{ #category : #'Configuring - DOM' }
+WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRenderable [
+
+	"This will replace anIdentifiedWebView content with aRenderable on the browser side"
+
+	self
+		executeOnClient: [ :script :canvas | 
+			anIdentifiedWebView identifyIn: canvas.
+			script << (canvas jQuery id: anIdentifiedWebView identifier) html: aRenderable ]
 ]

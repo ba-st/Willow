@@ -8,10 +8,9 @@ Class {
 JQuery3DevelopmentMetadataLibraryTest >> testDeployFiles [
 
 	self
-		useFileTestingPlatformDuring: [ JQuery3DevelopmentMetadataLibrary default deployFiles.
-			self
-				assert: GRPlatform current createdFolders equals: #('jQuery-3.3.1');
-				assert: GRPlatform current createdFiles equals: #('jQuery-3.3.1/jquery-3.3.1.js') ]
+		assertFileDeploymentOf: JQuery3DevelopmentMetadataLibrary default
+		createsAsFolders: #('jQuery-3.3.1')
+		andFileContentsMatching: {('jQuery-3.3.1/jquery-3.3.1.js' -> 'add2bdf3f066f8c3cbffa85f299648d37a501fdc')}
 ]
 
 { #category : #tests }

@@ -21,12 +21,6 @@ CombinedWebInteractionInterpreter class >> combiningInterpretersOf: aWebViewColl
 ]
 
 { #category : #'Configuring - CSS' }
-CombinedWebInteractionInterpreter >> addCssClass: aCssStyle [
-
-	self interpretersDo: [:interpreter | interpreter addCssClass: aCssStyle]
-]
-
-{ #category : #'Configuring - CSS' }
 CombinedWebInteractionInterpreter >> addCssClass: aCssStyle toComponentsMatching: aComponentProvider [
 
 	self interpretersDo: [:interpreter |
@@ -80,18 +74,6 @@ CombinedWebInteractionInterpreter >> disable [
 CombinedWebInteractionInterpreter >> enable: aComponent [
 
 	self interpretersDo: [:interpreter | interpreter enable: aComponent]
-]
-
-{ #category : #Configuring }
-CombinedWebInteractionInterpreter >> evaluate: aCallbackBlock [
-
-	self interpretersDo: [:interpreter | interpreter evaluate: aCallbackBlock]
-]
-
-{ #category : #Configuring }
-CombinedWebInteractionInterpreter >> evaluate: aCallbackBlock with: aParameter [
-
-	self interpretersDo: [:interpreter | interpreter evaluate: aCallbackBlock with: aParameter]
 ]
 
 { #category : #Configuring }
@@ -163,12 +145,6 @@ CombinedWebInteractionInterpreter >> remove: anIdentifiedView [
 CombinedWebInteractionInterpreter >> removeCssClass: aCssStyle fromComponentsMatching: aComponentProvider [
 
 	self interpretersDo: [ :interpreter | interpreter removeCssClass: aCssStyle fromComponentsMatching: aComponentProvider ]
-]
-
-{ #category : #'Configuring - CSS' }
-CombinedWebInteractionInterpreter >> removeCssClass: aCssStyle fromComponentsWithClass: aComponentByStyleName [
-
-	self interpretersDo: [ :interpreter | interpreter removeCssClass: aCssStyle fromComponentsWithClass: aComponentByStyleName ]
 ]
 
 { #category : #Configuring }
@@ -267,12 +243,6 @@ CombinedWebInteractionInterpreter >> temporarilyDisableAndTransform: anIdentifie
 CombinedWebInteractionInterpreter >> temporarilyDisableAndTransformInto: aView [
 
 	self interpretersDo: [:interpreter | interpreter temporarilyDisableAndTransformInto: aView]
-]
-
-{ #category : #'Configuring - CSS' }
-CombinedWebInteractionInterpreter >> toggleCssClass: aCssStyle [
-
-	self interpretersDo: [:interpreter | interpreter toggleCssClass: aCssStyle]
 ]
 
 { #category : #'Configuring - CSS' }

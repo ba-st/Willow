@@ -11,11 +11,9 @@ Class {
 WillowNamespaceFileMetadataLibraryTest >> testDeployFiles [
 
 	self
-		useFileTestingPlatformDuring: [ WillowNamespaceFileMetadataLibrary default deployFiles.
-			self
-				assert: GRPlatform current createdFolders equals: #('willow-8.0.1' 'willow-8.0.1/js');
-				assert: GRPlatform current createdFiles equals: #('willow-8.0.1/js/willow.js') ]
-
+		assertFileDeploymentOf: WillowNamespaceFileMetadataLibrary default deployFiles
+		createsAsFolders: #('willow-8.0.1' 'willow-8.0.1/js')
+		andFileContentsMatching: {('willow-8.0.1/js/willow.js' -> 'd01dced3b8eed675fe45b1f8a3cb3470c730150b')}
 ]
 
 { #category : #tests }

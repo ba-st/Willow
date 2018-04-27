@@ -10,7 +10,7 @@ Class {
 		'tableCommand',
 		'headerProvider'
 	],
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #Configuring }

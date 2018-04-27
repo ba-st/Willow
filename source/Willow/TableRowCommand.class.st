@@ -4,7 +4,7 @@ I'm a command to be applied to a table row. I expect to be evaluated with the cu
 Class {
 	#name : #TableRowCommand,
 	#superclass : #Object,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #Combining }

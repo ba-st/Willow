@@ -26,7 +26,7 @@ Metacello new
 Willow uses an HTML5 component provider by default. To work with a particular framework, you should install:
 
 Framework | Project | Status
---- | --- | --- 
+--- | --- | ---
 [Bootstrap 3](https://getbootstrap.com/docs/3.3/) | [Willow-Bootstrap](https://github.com/ba-st/Willow-Bootstrap) | ![Active](http://www.repostatus.org/badges/latest/active.svg)|
 [JQuery UI](https://jqueryui.com/) | [Willow-JQueryUI](https://github.com/ba-st/Willow-JQueryUI) | ![Active](http://www.repostatus.org/badges/latest/active.svg)
 [Semantic UI](https://semantic-ui.com/) | [Willow-SemanticUI](https://github.com/ba-st/Willow-SemanticUI) | ![WIP](http://www.repostatus.org/badges/latest/wip.svg)
@@ -34,6 +34,8 @@ Framework | Project | Status
 
 ## Tutorial
 To learn more about Willow, load [Willow-Playground](https://github.com/ba-st/Willow-Playground) and check the Presentation application. These will also install 2 sample applications: Test Runner and Live Documentation.
+
+Also you can check the [FAQs](docs/FAQ.md) available in the docs folder.
 
 ## Running the tests
 Willow provides a complete coverage of its features. Open a Test Runner and find the test packages (*Willow-Tests-**).

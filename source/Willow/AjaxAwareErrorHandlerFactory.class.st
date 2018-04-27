@@ -10,7 +10,7 @@ Class {
 		'nonAjaxRenderBlockOptional',
 		'ajaxErrorHandlers'
 	],
-	#category : 'Willow-Applications'
+	#category : #'Willow-Applications'
 }
 
 { #category : #'Error Handler - API' }

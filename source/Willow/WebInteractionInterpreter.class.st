@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'interaction'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }
@@ -291,7 +291,12 @@ WebInteractionInterpreter >> showLoadingNotificationStyledAsAll: classes [
 { #category : #'Configuring - Serialization' }
 WebInteractionInterpreter >> submitForm: anIdentifiedForm [
 
-	interaction onTriggerExecute: (FormSubmitCommand findingComponentUsing: [ :aCanvas | aCanvas jQuery id: anIdentifiedForm identifier ])
+	interaction
+		onTriggerExecute:
+			(FormSubmitCommand
+				findingComponentUsing: [ :aCanvas | 
+					anIdentifiedForm identifyIn: aCanvas.
+					aCanvas jQuery id: anIdentifiedForm identifier ])
 ]
 
 { #category : #'Configuring - Serialization' }

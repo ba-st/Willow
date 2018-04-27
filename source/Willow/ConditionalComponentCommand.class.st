@@ -8,7 +8,7 @@ Class {
 		'command',
 		'conditionBlock'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'Instance Creation' }

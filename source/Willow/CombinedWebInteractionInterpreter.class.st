@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'interpreters'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }

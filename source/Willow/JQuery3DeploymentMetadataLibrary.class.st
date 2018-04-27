@@ -4,7 +4,7 @@ I'm a WALibary serving the files in source form, suitable for deployment
 Class {
 	#name : #JQuery3DeploymentMetadataLibrary,
 	#superclass : #JQuery3MetadataLibrary,
-	#category : 'Willow-Libraries'
+	#category : #'Willow-Libraries'
 }
 
 { #category : #'uploaded metadata' }

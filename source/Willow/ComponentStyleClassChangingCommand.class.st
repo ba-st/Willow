@@ -10,7 +10,7 @@ Class {
 		'transformationMessage',
 		'transformationProvider'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }

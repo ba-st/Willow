@@ -4,7 +4,7 @@ I'm an encoder/decoder of integers
 Class {
 	#name : #IntegerCodec,
 	#superclass : #Codec,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #testing }

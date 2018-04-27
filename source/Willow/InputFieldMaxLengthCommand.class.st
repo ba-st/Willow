@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'maxLength'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'Instance Creation' }

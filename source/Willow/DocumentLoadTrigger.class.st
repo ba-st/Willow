@@ -1,7 +1,7 @@
 Class {
 	#name : #DocumentLoadTrigger,
 	#superclass : #TriggeringPolicy,
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #evaluating }

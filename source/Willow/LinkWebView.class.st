@@ -9,7 +9,7 @@ Class {
 		'interactionInterpreter',
 		'label'
 	],
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #'instance creation' }

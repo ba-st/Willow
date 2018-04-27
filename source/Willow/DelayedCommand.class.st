@@ -11,7 +11,7 @@ Class {
 		'serverSideParameterBinding',
 		'optionalClientCondition'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }

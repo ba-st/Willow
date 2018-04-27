@@ -4,7 +4,7 @@ I'm a WALibary serving the files from the official CDN.
 Class {
 	#name : #JQuery3OnlineLibrary,
 	#superclass : #WAOnlineLibrary,
-	#category : 'Willow-Libraries'
+	#category : #'Willow-Libraries'
 }
 
 { #category : #Updating }

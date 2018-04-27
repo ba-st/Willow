@@ -4,7 +4,7 @@ Command to remove a component for the tab cycle
 Class {
 	#name : #DisableComponentTabCycleCommand,
 	#superclass : #WebComponentCommand,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #processing }

@@ -4,7 +4,7 @@ I'm an abstract class representing a text coder/encoder.
 Class {
 	#name : #Codec,
 	#superclass : #Object,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #testing }

@@ -4,7 +4,7 @@ I 'm an abstract class representing non textual HTML5 inputs.
 Class {
 	#name : #FieldWebView,
 	#superclass : #WAPainter,
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #'Container-API' }

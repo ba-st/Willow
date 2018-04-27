@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'block'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'instance creation - private' }

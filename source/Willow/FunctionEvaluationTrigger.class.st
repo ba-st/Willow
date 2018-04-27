@@ -5,7 +5,7 @@ Class {
 		'functionSelector',
 		'argumentNames'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }

@@ -4,7 +4,7 @@ I provide plain HTML 5 components.
 Class {
 	#name : #Html5ComponentSupplier,
 	#superclass : #FrontendComponentSupplier,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #Interaction }

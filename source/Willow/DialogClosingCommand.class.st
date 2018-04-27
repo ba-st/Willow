@@ -8,7 +8,7 @@ Class {
 	#instVars : [
 		'dialogSupplier'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'Instance Creation' }

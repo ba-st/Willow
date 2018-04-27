@@ -11,7 +11,7 @@ Class {
 		'identifiedViewToRefresh',
 		'conditionBlock'
 	],
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #'Instance Creation' }

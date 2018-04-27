@@ -4,7 +4,7 @@ I provide configuration for a Willow Application. For the moment the deployment 
 Class {
 	#name : #WillowSystemConfiguration,
 	#superclass : #WASystemConfiguration,
-	#category : 'Willow-Applications'
+	#category : #'Willow-Applications'
 }
 
 { #category : #Accessing }

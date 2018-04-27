@@ -9,7 +9,7 @@ Class {
 		'componentProvider',
 		'desiredStatus'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'Instance Creation' }
@@ -21,8 +21,10 @@ ComponentEnableStatusChangingCommand class >> disablingCurrentComponent [
 { #category : #'Instance Creation' }
 ComponentEnableStatusChangingCommand class >> enabling: anIdentifiedComponent [
 
-	^self
-		obtainingComponentWith: [:canvas | canvas jQuery id: anIdentifiedComponent identifier]
+	^ self
+		obtainingComponentWith: [ :canvas | 
+			anIdentifiedComponent identifyIn: canvas.
+			canvas jQuery id: anIdentifiedComponent identifier ]
 		settingStatusTo: false
 ]
 

@@ -11,7 +11,7 @@ Class {
 		'identifierAssigner',
 		'submitCallback'
 	],
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #'Instance Creation' }

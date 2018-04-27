@@ -4,7 +4,7 @@ Abstract for the component commands, each subclass should do a single change to 
 Class {
 	#name : #WebComponentCommand,
 	#superclass : #GRObject,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #combining }

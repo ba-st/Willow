@@ -4,7 +4,7 @@ I'm a basic Willow application providing some guidance to the developers.
 Class {
 	#name : #WillowApplication,
 	#superclass : #WAComponent,
-	#category : 'Willow-Applications'
+	#category : #'Willow-Applications'
 }
 
 { #category : #accessing }

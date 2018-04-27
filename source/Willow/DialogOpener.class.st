@@ -4,7 +4,7 @@ I help in opening dialogs. Useful outside of the DialogOpeningCommand.
 Class {
 	#name : #DialogOpener,
 	#superclass : #GRObject,
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #actions }

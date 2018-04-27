@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'identifiedView'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }
@@ -31,7 +31,10 @@ ComponentRemovingCommand >> initializeFor: anIdentifiedView [
 { #category : #accessing }
 ComponentRemovingCommand >> modelLoadingActions [
 
-	^ Array with: [ :aScript :aCanvas | aScript << (aCanvas jQuery id: identifiedView identifier) remove ]
+	^ Array
+		with: [ :aScript :aCanvas | 
+			identifiedView identifyIn: aCanvas.
+			aScript << (aCanvas jQuery id: identifiedView identifier) remove ]
 ]
 
 { #category : #accessing }

@@ -4,7 +4,7 @@ I'm a null encoder/decoder
 Class {
 	#name : #NullCodec,
 	#superclass : #Codec,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #testing }

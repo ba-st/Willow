@@ -4,7 +4,7 @@ I'm a library providing some basic object used to define and access some utility
 Class {
 	#name : #WillowNamespaceFileMetadataLibrary,
 	#superclass : #WADeploymentAwareFileMetadataLibrary,
-	#category : 'Willow-Libraries'
+	#category : #'Willow-Libraries'
 }
 
 { #category : #Accessing }

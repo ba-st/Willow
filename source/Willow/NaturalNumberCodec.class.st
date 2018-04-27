@@ -4,7 +4,7 @@ I'm an encoder/decoder of natural numbers
 Class {
 	#name : #NaturalNumberCodec,
 	#superclass : #Codec,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #testing }

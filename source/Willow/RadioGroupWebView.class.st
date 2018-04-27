@@ -10,7 +10,7 @@ Class {
 		'labelCommand',
 		'inputCommand'
 	],
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #'Instance creation' }

@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'question'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }

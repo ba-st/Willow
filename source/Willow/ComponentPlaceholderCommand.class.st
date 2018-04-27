@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'suggestion'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'Instance Creation' }

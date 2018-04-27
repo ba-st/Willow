@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'cssStyles'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'instance creation' }

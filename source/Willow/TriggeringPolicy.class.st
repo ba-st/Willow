@@ -1,7 +1,7 @@
 Class {
 	#name : #TriggeringPolicy,
 	#superclass : #Object,
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #evaluating }

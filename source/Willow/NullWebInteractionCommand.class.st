@@ -4,7 +4,7 @@ I represent a null web interaction command, so no javascript is generated when a
 Class {
 	#name : #NullWebInteractionCommand,
 	#superclass : #WebInteractionCommand,
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #accessing }

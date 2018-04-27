@@ -4,7 +4,7 @@ Command to disable a component
 Class {
 	#name : #DisableComponentCommand,
 	#superclass : #WebComponentCommand,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #processing }

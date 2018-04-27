@@ -1,7 +1,7 @@
 Class {
 	#name : #WebInteractionCommand,
 	#superclass : #Object,
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #accessing }

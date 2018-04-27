@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'columnRenderers'
 	],
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #'Instance Creation' }

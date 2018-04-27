@@ -4,7 +4,7 @@ I represent the Willow JS module
 Class {
 	#name : #WillowJavascriptNamespace,
 	#superclass : #JSObject,
-	#category : 'Willow-Applications'
+	#category : #'Willow-Applications'
 }
 
 { #category : #Accessing }

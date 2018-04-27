@@ -8,14 +8,16 @@ Class {
 		'componentProvider',
 		'viewWhileDisabled'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'Instance Creation' }
 TemporarilyDisablingCommand class >> transforming: anIdentifieView into: aViewWhileDisabled [
 
-	^self
-		transformingComponentMatching: [:canvas | canvas jQuery id: anIdentifieView identifier]
+	^ self
+		transformingComponentMatching: [ :canvas | 
+			anIdentifieView identifyIn: canvas.
+			canvas jQuery id: anIdentifieView identifier ]
 		into: aViewWhileDisabled
 ]
 

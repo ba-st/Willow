@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'colSpan'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'instance creation' }

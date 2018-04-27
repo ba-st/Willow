@@ -9,7 +9,7 @@ Class {
 		'renderingCondition',
 		'identifiedViews'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #Preconditions }

@@ -4,7 +4,7 @@ An exception signalled when some InvalidSelection received a message.
 Class {
 	#name : #SelectionIsInvalid,
 	#superclass : #Error,
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #signaling }

@@ -4,7 +4,7 @@ All the Willow specific Css classes
 Class {
 	#name : #WillowCssStyles,
 	#superclass : #Object,
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #'accessing - general' }

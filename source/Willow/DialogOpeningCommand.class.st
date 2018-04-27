@@ -8,7 +8,7 @@ Class {
 	#instVars : [
 		'dialogView'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }

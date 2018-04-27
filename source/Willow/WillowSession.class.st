@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'componentSupplier'
 	],
-	#category : 'Willow-Applications'
+	#category : #'Willow-Applications'
 }
 
 { #category : #accessing }

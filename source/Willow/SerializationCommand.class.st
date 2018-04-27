@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'priorityActions'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation - private' }
@@ -51,6 +51,7 @@ SerializationCommand class >> forForm: anIdentifiedForm [
 
 	^ self
 		executing: [ :anAsynchronousCall :aCanvas | 
+			anIdentifiedForm identifyIn: aCanvas.
 			anAsynchronousCall
 				bePost;
 				serialize: (aCanvas jQuery id: anIdentifiedForm identifier) ]

@@ -4,7 +4,7 @@ I'm an asbtract WALibary serving the files in source form
 Class {
 	#name : #JQuery3MetadataLibrary,
 	#superclass : #WADeploymentAwareFileMetadataLibrary,
-	#category : 'Willow-Libraries'
+	#category : #'Willow-Libraries'
 }
 
 { #category : #Accessing }

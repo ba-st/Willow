@@ -4,7 +4,7 @@ I'm an encoder/decoder of Dates
 Class {
 	#name : #ISODateCodec,
 	#superclass : #Codec,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #testing }

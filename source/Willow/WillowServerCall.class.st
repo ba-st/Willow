@@ -4,7 +4,7 @@ I represent an AJAX call in Willow
 Class {
 	#name : #WillowServerCall,
 	#superclass : #JQAjax,
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #accessing }

@@ -10,7 +10,7 @@ Class {
 		'fieldSetCommand',
 		'legendCommand'
 	],
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #'instance creation' }

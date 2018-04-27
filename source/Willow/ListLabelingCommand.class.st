@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'renderingBlock'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'Instance Creation' }

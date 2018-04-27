@@ -8,7 +8,7 @@ Class {
 		'minimumHolder',
 		'maximumHolder'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'instance creation' }

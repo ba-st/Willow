@@ -4,7 +4,7 @@ Abstract class for the front-end component suppliers, like Bootstrap, JqueryUI, 
 Class {
 	#name : #FrontendComponentSupplier,
 	#superclass : #Object,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #Interaction }

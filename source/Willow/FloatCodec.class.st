@@ -4,7 +4,7 @@ I'm an encoder/decoder of floats
 Class {
 	#name : #FloatCodec,
 	#superclass : #Codec,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #testing }

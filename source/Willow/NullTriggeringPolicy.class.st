@@ -4,7 +4,7 @@ I'm a triggering policy specifing that no triggering must happen. So if someone 
 Class {
 	#name : #NullTriggeringPolicy,
 	#superclass : #TriggeringPolicy,
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #evaluating }

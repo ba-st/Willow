@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'actionProvider'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'instance creation' }

@@ -9,7 +9,7 @@ Class {
 		'name',
 		'content'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'instance creation' }

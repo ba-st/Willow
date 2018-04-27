@@ -4,7 +4,7 @@ I provide useful constants
 Class {
 	#name : #WillowConstants,
 	#superclass : #Object,
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #Accessing }

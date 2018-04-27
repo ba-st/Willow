@@ -4,7 +4,7 @@ I'm a builder to ease the creation of component commands
 Class {
 	#name : #WebComponentCommandBuilder,
 	#superclass : #GRObject,
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #Configuring }

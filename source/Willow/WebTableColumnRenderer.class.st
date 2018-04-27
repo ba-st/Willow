@@ -10,7 +10,7 @@ Class {
 		'commandToHeading',
 		'commandToCell'
 	],
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #'Instance Creation' }

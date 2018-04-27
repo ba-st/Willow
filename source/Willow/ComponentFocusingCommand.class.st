@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'componentProvider'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }
@@ -19,7 +19,10 @@ ComponentFocusingCommand class >> findingComponentUsing: aComponentProvider [
 { #category : #'instance creation' }
 ComponentFocusingCommand class >> for: anIdentifiedView [
 
- 	^self findingComponentUsing: [ :aCanvas | aCanvas jQuery id: anIdentifiedView identifier ]
+	^ self
+		findingComponentUsing: [ :aCanvas | 
+			anIdentifiedView identifyIn: aCanvas.
+			aCanvas jQuery id: anIdentifiedView identifier ]
 ]
 
 { #category : #accessing }

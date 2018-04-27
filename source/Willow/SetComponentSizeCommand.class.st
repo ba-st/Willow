@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'size'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'instance creation' }

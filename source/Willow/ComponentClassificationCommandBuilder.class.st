@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'styleProviderBinding'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #private }

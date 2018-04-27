@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'commands'
 	],
-	#category : 'Willow-Frontend'
+	#category : #'Willow-Frontend'
 }
 
 { #category : #'instance creation' }

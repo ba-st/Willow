@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'identifierProvider'
 	],
-	#category : 'Willow-WebInteraction'
+	#category : #'Willow-WebInteraction'
 }
 
 { #category : #'instance creation' }

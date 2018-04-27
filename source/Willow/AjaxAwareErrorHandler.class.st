@@ -10,7 +10,7 @@ Class {
 		'rootCommand',
 		'nonAjaxRenderBlock'
 	],
-	#category : 'Willow-Applications'
+	#category : #'Willow-Applications'
 }
 
 { #category : #actions }

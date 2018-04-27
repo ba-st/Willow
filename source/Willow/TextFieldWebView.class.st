@@ -12,7 +12,7 @@ Class {
 		'contents',
 		'identifierAssigner'
 	],
-	#category : 'Willow-WebViews'
+	#category : #'Willow-WebViews'
 }
 
 { #category : #private }

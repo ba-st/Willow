@@ -132,6 +132,14 @@ WillowApplication >> renderDialogAndNotificationSectionsOn: aCanvas [
 	aCanvas div id: WillowConstants notificationSectionName
 ]
 
+{ #category : #accessing }
+WillowApplication >> requiredLibraries [
+
+	"This hook provides an easy way to include additional libraries to the ones declared by the component supplier"
+
+	^ #()
+]
+
 { #category : #updating }
 WillowApplication >> updateRoot: aRoot [
 
@@ -140,5 +148,6 @@ WillowApplication >> updateRoot: aRoot [
 	aRoot htmlAttributes at: 'lang' put: self language greaseString.
 	self jQueryLibrary updateRoot: aRoot.
 	WillowNamespaceFileMetadataLibrary default updateRoot: aRoot.
-	self componentSupplier updateRoot: aRoot
+	self componentSupplier updateRoot: aRoot.
+	self requiredLibraries do: [ :library | library updateRoot: aRoot ]
 ]

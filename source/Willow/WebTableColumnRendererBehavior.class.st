@@ -8,7 +8,13 @@ Class {
 }
 
 { #category : #rendering }
-WebTableColumnRendererBehavior >> renderCellFor: anItem on: aCanvas [
+WebTableColumnRendererBehavior >> renderCellAt: anIndex for: anItem on: aCanvas [
+
+	self subclassResponsibility
+]
+
+{ #category : #rendering }
+WebTableColumnRendererBehavior >> renderFooterCellSummarizing: tableContents on: aCanvas [ 
 
 	self subclassResponsibility
 ]

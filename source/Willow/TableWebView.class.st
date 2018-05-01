@@ -12,7 +12,8 @@ Class {
 		'interactionInterpreter',
 		'commandToRow',
 		'commandToTable',
-		'identifierAssigner'
+		'identifierAssigner',
+		'footer'
 	],
 	#category : #'Willow-WebViews'
 }
@@ -20,11 +21,23 @@ Class {
 { #category : #'instance creation' }
 TableWebView class >> definedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand [
 
+	^ self
+		definedBy: aColumnRendererCollection
+		applying: aTableCommand asWebComponentCommand
+		headerRenderedBy: aHeader
+		applyingToEachRow: aRowCommand asTableRowCommand
+		footerRenderedBy: NullTableFooterWebView new
+]
+
+{ #category : #'instance creation' }
+TableWebView class >> definedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand footerRenderedBy: aFooter [
+
 	^ self new
 		initializeDefinedBy: aColumnRendererCollection
 		applying: aTableCommand asWebComponentCommand
 		headerRenderedBy: aHeader
 		applyingToEachRow: aRowCommand asTableRowCommand
+		footerRenderedBy: aFooter
 ]
 
 { #category : #'instance creation' }
@@ -73,13 +86,15 @@ TableWebView >> identifyIn: aCanvas [
 ]
 
 { #category : #'initialize-release' }
-TableWebView >> initializeDefinedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand [
+TableWebView >> initializeDefinedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand footerRenderedBy: aFooter [
 
 	interested := Set new.
 	columnRenderers := aColumnRendererCollection.
 	commandToTable := aTableCommand.
 	commandToRow := aRowCommand.
 	header := aHeader.
+	footer := aFooter.
+	self notifyChangesTo: footer.
 	interactionInterpreter := WebInteractionInterpreter forClickOnComponent.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'table'.
 	self changeContentsTo: #()
@@ -115,15 +130,16 @@ TableWebView >> renderContentOn: aCanvas [
 
 	table
 		with: [ aCanvas render: header.
-			aCanvas tableBody: [ items do: [ :item | self renderRowFor: item on: aCanvas ] ] ]
+			aCanvas tableBody: [ items doWithIndex: [ :item :index | self renderRowAt: index for: item on: aCanvas ] ].
+			aCanvas render: footer ]
 ]
 
 { #category : #private }
-TableWebView >> renderRowFor: anItem on: aCanvas [
+TableWebView >> renderRowAt: anIndex for: anItem on: aCanvas [
 
 	| row |
 
 	row := aCanvas tableRow.
 	commandToRow applyTo: row for: anItem on: aCanvas.
-	row with: [columnRenderers do: [:renderer | renderer renderCellFor: anItem on: aCanvas]]
+	row with: [ columnRenderers do: [ :renderer | renderer renderCellAt: anIndex for: anItem on: aCanvas ] ]
 ]

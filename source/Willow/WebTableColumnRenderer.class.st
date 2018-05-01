@@ -8,7 +8,9 @@ Class {
 		'title',
 		'renderingCommand',
 		'commandToHeading',
-		'commandToCell'
+		'commandToCell',
+		'footerRenderingCommand',
+		'commandToFooterCell'
 	],
 	#category : #'Willow-WebViews'
 }
@@ -16,11 +18,25 @@ Class {
 { #category : #'Instance Creation' }
 WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading [
 
+	^ self
+		titled: aName
+		applyingToEachCell: aCommandToCell asWebComponentCommand
+		renderingWith: aRenderingCommand
+		applyingToHeading: aCommandToHeading asWebComponentCommand
+		summarizedWith: [  ]
+		applyingToFooter: [ :cell |  ]
+]
+
+{ #category : #'Instance Creation' }
+WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading summarizedWith: aFooterRenderingCommand applyingToFooter: aCommantToFooterCell [
+
 	^ self new
 		initializeTitled: aName
 		applyingToEachCell: aCommandToCell asWebComponentCommand
 		renderingWith: aRenderingCommand
 		applyingToHeading: aCommandToHeading asWebComponentCommand
+		summarizedWith: aFooterRenderingCommand
+		applyingToFooter: aCommantToFooterCell asWebComponentCommand
 ]
 
 { #category : #'Instance Creation' }
@@ -34,28 +50,65 @@ WebTableColumnRenderer class >> titled: aName renderingItemWith: aRenderingComma
 ]
 
 { #category : #'Instance Creation' }
+WebTableColumnRenderer class >> titled: aTitle renderingItemWith: aRenderingCommand summarizedWith: aFooterRenderingCommand [
+
+	^ self
+		titled: aTitle
+		applyingToEachCell: [ :cell |  ]
+		renderingWith: aRenderingCommand
+		applyingToHeading: [ :heading |  ]
+		summarizedWith: aFooterRenderingCommand
+		applyingToFooter: [ :cell |  ]
+]
+
+{ #category : #'Instance Creation' }
 WebTableColumnRenderer class >> untitledRenderingItemWith: aRenderingCommand [
 
 	^self titled: '' renderingItemWith: aRenderingCommand
 ]
 
+{ #category : #'Instance Creation' }
+WebTableColumnRenderer class >> untitledRenderingItemWith: aRenderingCommand summarizedWith: aFooterRenderingCommand [
+
+	^ self
+		titled: ''
+		applyingToEachCell: [ :cell |  ]
+		renderingWith: aRenderingCommand
+		applyingToHeading: [ :heading |  ]
+		summarizedWith: aFooterRenderingCommand
+		applyingToFooter: [ :cell |  ]
+]
+
 { #category : #initialization }
-WebTableColumnRenderer >> initializeTitled: aTitle applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading [
+WebTableColumnRenderer >> initializeTitled: aTitle applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading summarizedWith: aFooterRenderingCommand applyingToFooter: aCommandToFooterCell [
 
 	title := aTitle.
 	renderingCommand := aRenderingCommand.
+	footerRenderingCommand := aFooterRenderingCommand.
 	commandToHeading := aCommandToHeading.
-	commandToCell := aCommandToCell
+	commandToCell := aCommandToCell.
+	commandToFooterCell := aCommandToFooterCell
 ]
 
 { #category : #rendering }
-WebTableColumnRenderer >> renderCellFor: anItem on: aCanvas [
+WebTableColumnRenderer >> renderCellAt: anIndex for: anItem on: aCanvas [
 
 	| tableData |
 
 	tableData := aCanvas tableData.
 	commandToCell applyTo: tableData on: aCanvas.
-	tableData with: (renderingCommand value: anItem)
+	tableData with: (renderingCommand cull: anItem cull: anIndex)
+]
+
+{ #category : #rendering }
+WebTableColumnRenderer >> renderFooterCellSummarizing: tableContents on: aCanvas [
+
+	| cell |
+
+	cell := aCanvas tableData.
+	commandToCell applyTo: cell on: aCanvas.
+	commandToFooterCell applyTo: cell on: aCanvas.
+	cell with: (footerRenderingCommand cull: tableContents)
 ]
 
 { #category : #rendering }

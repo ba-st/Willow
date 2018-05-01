@@ -45,14 +45,15 @@ WebTableMultiColumnRenderer >> initializeTitled: aTitle applyingToEachCell: aCom
 ]
 
 { #category : #rendering }
-WebTableMultiColumnRenderer >> renderCellFor: anItem on: aCanvas [
+WebTableMultiColumnRenderer >> renderCellAt: anIndex for: anItem on: aCanvas [
 
 	renderingCommands
 		do: [ :renderingCommand | 
 			| tableData |
+
 			tableData := aCanvas tableData.
 			commandToCell applyTo: tableData on: aCanvas.
-			tableData with: (renderingCommand value: anItem) ]
+			tableData with: (renderingCommand cull: anItem cull: anIndex) ]
 ]
 
 { #category : #rendering }

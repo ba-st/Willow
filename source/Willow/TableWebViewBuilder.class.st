@@ -8,7 +8,8 @@ Class {
 		'columnRenderers',
 		'rowCommand',
 		'tableCommand',
-		'headerProvider'
+		'headerProvider',
+		'footerProvider'
 	],
 	#category : #'Willow-WebViews'
 }
@@ -33,6 +34,21 @@ TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand appl
 				applyingToEachCell: aCellCommand
 				renderingWith: aRenderingCommand
 				applyingToHeading: aHeadingCommand)
+]
+
+{ #category : #Configuring }
+TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand applyingToCells: aCellCommand applyingToHeading: aHeadingCommand summarizedWith: aFooterRenderingCommand applyingToFooter: aFooterCommand [
+
+	columnRenderers
+		add:
+			(WebTableColumnRenderer
+				titled: aTitle
+				applyingToEachCell: aCellCommand
+				renderingWith: aRenderingCommand
+				applyingToHeading: aHeadingCommand
+				summarizedWith: aFooterRenderingCommand
+				applyingToFooter: aFooterCommand).
+	footerProvider := [ :columns | TableFooterWebView definedBy: columns ]
 ]
 
 { #category : #Configuring }
@@ -83,6 +99,7 @@ TableWebViewBuilder >> buildApplying: aComponentCommand [
 		applying: tableCommand + aComponentCommand
 		headerRenderedBy: (headerProvider value: columnRenderers)
 		applyingToEachRow: rowCommand
+		footerRenderedBy: (footerProvider value: columnRenderers)
 ]
 
 { #category : #initialization }
@@ -92,7 +109,8 @@ TableWebViewBuilder >> initialize [
 	columnRenderers := OrderedCollection new.
 	tableCommand := [  ] asWebComponentCommand.
 	rowCommand := [  ] asWebComponentCommand.
-	headerProvider := [ :columns | TableHeaderWebView definedBy: columns ]
+	headerProvider := [ :columns | TableHeaderWebView definedBy: columns ].
+	footerProvider := [ :columns | NullTableFooterWebView new ]
 ]
 
 { #category : #Configuring }

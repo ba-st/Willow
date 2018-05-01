@@ -177,6 +177,33 @@ Html5ComponentSupplierTest >> testTableBuilderForHeadlessTable [
 ]
 
 { #category : #'tests-Supplying' }
+Html5ComponentSupplierTest >> testTableBuilderWithFooter [
+
+	| supplier table html |
+
+	supplier := Html5ComponentSupplier new.
+
+	table := supplier tableBuilder
+		addColumnTitled: 'Number' rendering: [ :number | number ];
+		addColumnTitled: 'Even?'
+			rendering: [ :number | number even ]
+			applyingToCells: [ :cell |  ]
+			applyingToHeading: [  ]
+			summarizedWith: [ 'Fixed Footer' ]
+			applyingToFooter: [  ];
+		build.
+
+	table changeContentsTo: #(1 2 3).
+
+	html := self render: table.
+
+	self
+		assert: html
+		equals:
+			'<table id="table-id1"><thead><th>Number</th><th>Even?</th></thead><tbody><tr><td>1</td><td>false</td></tr><tr><td>2</td><td>true</td></tr><tr><td>3</td><td>false</td></tr></tbody><tfoot><td></td><td>Fixed Footer</td></tfoot></table>'
+]
+
+{ #category : #'tests-Supplying' }
 Html5ComponentSupplierTest >> testTableBuilderWithMultiColumns [
 
 	| supplier table html |

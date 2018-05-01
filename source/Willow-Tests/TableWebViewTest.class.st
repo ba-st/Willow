@@ -152,3 +152,32 @@ TableWebViewTest >> testRenderContentOnWithContentsAndSeveralColumns [
 
 	self assert: html equals: '<table id="table-id1"><tbody><tr><td>false</td><td>true</td></tr><tr><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td></tr></tbody></table>'
 ]
+
+{ #category : #'tests-rendering' }
+TableWebViewTest >> testTableWithFooterSupport [
+
+	| table html columnRenderers |
+
+	columnRenderers := Array
+		with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number :index | index ] summarizedWith: [ 'Even count' ])
+		with:
+			(WebTableColumnRenderer
+				titled: 'Is Even?'
+				renderingItemWith: [ :number | number even ]
+				summarizedWith: [ :numbers | (numbers select: #even) size ]).
+
+	table := TableWebView
+		definedBy: columnRenderers
+		applying: [ :theTable | theTable addClass willow ]
+		headerRenderedBy: (TableHeaderWebView definedBy: columnRenderers)
+		applyingToEachRow: (PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ])
+		footerRenderedBy: (TableFooterWebView definedBy: columnRenderers).
+
+	table changeContentsTo: #(1 2 3).
+	html := self render: table.
+
+	self
+		assert: html
+		equals:
+			'<table id="table-id1" class="willow"><thead><th></th><th>Is Even?</th></thead><tbody><tr id="id2"><td>1</td><td>false</td></tr><tr id="id3"><td>2</td><td>true</td></tr><tr id="id4"><td>3</td><td>false</td></tr></tbody><tfoot><td>Even count</td><td>1</td></tfoot></table>'
+]

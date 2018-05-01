@@ -103,12 +103,12 @@ WebTableColumnRenderer >> renderCellAt: anIndex for: anItem on: aCanvas [
 { #category : #rendering }
 WebTableColumnRenderer >> renderFooterCellSummarizing: tableContents on: aCanvas [
 
-	| heading |
+	| cell |
 
-	heading := aCanvas tableData.
-	commandToCell applyTo: heading on: aCanvas.
-	commandToFooterCell applyTo: heading on: aCanvas.
-	heading with: (footerRenderingCommand cull: tableContents)
+	cell := aCanvas tableData.
+	commandToCell applyTo: cell on: aCanvas.
+	commandToFooterCell applyTo: cell on: aCanvas.
+	cell with: (footerRenderingCommand cull: tableContents)
 ]
 
 { #category : #rendering }

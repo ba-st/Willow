@@ -15,40 +15,63 @@ Class {
 }
 
 { #category : #Configuring }
+TableWebViewBuilder >> addColumn: aMonadycBlock [
+
+	| builder |
+
+	builder := WebTableColumnRendererBuilder on: self.
+	aMonadycBlock value: builder.
+	columnRenderers add: builder build
+]
+
+{ #category : #deprecated }
 TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand [
 
 	self
-		addColumnTitled: aTitle
-		rendering: aRenderingCommand
-		applyingToCells: [ :cell |  ]
-		applyingToHeading: [ :heading |  ]
+		deprecated: 'Use addColumn:'
+		transformWith:
+			'̀@receiver addColumnTitled:  ̀@aTitle rendering: ̀@aRenderingCommand'
+				-> '̀@receiver 	addColumn: [ :column | column titled: ̀@aTitle; rendering: ̀@aRenderingCommand ]'.
+	self
+		addColumn: [ :column | 
+			column
+				titled: aTitle;
+				rendering: aRenderingCommand ]
 ]
 
-{ #category : #Configuring }
+{ #category : #deprecated }
 TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand applyingToCells: aCellCommand applyingToHeading: aHeadingCommand [
 
-	columnRenderers
-		add:
-			(WebTableColumnRenderer
-				titled: aTitle
-				applyingToEachCell: aCellCommand
-				renderingWith: aRenderingCommand
-				applyingToHeading: aHeadingCommand)
+	self
+		deprecated: 'Use addColumn:'
+		transformWith:
+			'̀@receiver addColumnTitled: ̀@aTitle rendering: ̀@aRenderingCommand applyingToCells: ̀@aCellCommand applyingToHeading: ̀@aHeadingCommand'
+				-> '̀@receiver addColumn: [ :column | column titled: ̀@aTitle applying: ̀@aHeadingCommand; rendering: ̀@aRenderingCommand; applyingToEachCell: ̀@aCellCommand ]'.
+	self
+		addColumn: [ :column | 
+			column
+				titled: aTitle applying: aHeadingCommand;
+				rendering: aRenderingCommand;
+				applyingToEachCell: aCellCommand ]
 ]
 
-{ #category : #Configuring }
+{ #category : #deprecated }
 TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand applyingToCells: aCellCommand applyingToHeading: aHeadingCommand summarizedWith: aFooterRenderingCommand applyingToFooter: aFooterCommand [
 
-	columnRenderers
-		add:
-			(WebTableColumnRenderer
-				titled: aTitle
-				applyingToEachCell: aCellCommand
-				renderingWith: aRenderingCommand
-				applyingToHeading: aHeadingCommand
-				summarizedWith: aFooterRenderingCommand
-				applyingToFooter: aFooterCommand).
-	footerProvider := [ :columns | TableFooterWebView definedBy: columns ]
+	self
+		deprecated: 'Use addColumn:'
+		transformWith:
+			'̀@receiver addColumnTitled: ̀@aTitle rendering: ̀@aRenderingCommand applyingToCells: ̀@aCellCommand applyingToHeading: ̀@aHeadingCommand summarizedWith: ̀@aFooterRenderingCommand applyingToFooter: ̀@aFooterCommand'
+				->
+					'̀@receiver addColumn: [ :column | column titled: ̀@aTitle applying: ̀@aHeadingCommand; rendering: ̀@aRenderingCommand; applyingToEachCell: ̀@aCellCommand; summarizedWith: ̀@aFooterRenderingCommand applying: ̀@aFooterCommand ]'.
+
+	self
+		addColumn: [ :column | 
+			column
+				titled: aTitle applying: aHeadingCommand;
+				rendering: aRenderingCommand;
+				applyingToEachCell: aCellCommand;
+				summarizedWith: aFooterRenderingCommand applying: aFooterCommand ]
 ]
 
 { #category : #Configuring }
@@ -70,13 +93,15 @@ TableWebViewBuilder >> addColumnTitled: aTitle renderingAll: renderingCommands a
 				titled: aTitle
 				applyingToEachCell: aCellCommand
 				renderingWithAll: renderingCommands
-				applyingToHeading: aHeadingCommand)
+				applyingToHeading: aHeadingCommand).
+	self renderHeader
 ]
 
-{ #category : #Configuring }
+{ #category : #deprecated }
 TableWebViewBuilder >> addUntitledColumnRendering: aRenderingCommand [
 
-	self addColumnTitled: '' rendering: aRenderingCommand
+	self deprecated: 'Use addColumn:' transformWith: '̀@receiver addUntitledColumnRendering: ̀@aRenderingCommand' -> '̀@receiver addColumn: [ :column | column rendering: ̀@aRenderingCommand ]'.
+	self addColumn: [ :column | column rendering: aRenderingCommand ]
 ]
 
 { #category : #Configuring }
@@ -85,10 +110,10 @@ TableWebViewBuilder >> applyToEachRow: aRowCommand [
 	rowCommand := aRowCommand
 ]
 
-{ #category : #Configuring }
+{ #category : #deprecated }
 TableWebViewBuilder >> beHeadless [
 
-	headerProvider := [ :columns | [ :canvas |  ] ]
+	self deprecated: 'Tables now autodetects if a header is needed or not'
 ]
 
 { #category : #Building }
@@ -102,6 +127,18 @@ TableWebViewBuilder >> buildApplying: aComponentCommand [
 		footerRenderedBy: (footerProvider value: columnRenderers)
 ]
 
+{ #category : #'private - configuring' }
+TableWebViewBuilder >> doNotRenderFooter [
+
+	footerProvider := [ :columns | NullTableFooterWebView new ]
+]
+
+{ #category : #'private - configuring' }
+TableWebViewBuilder >> doNotRenderHeader [
+
+	headerProvider := [ :columns | [ :canvas |  ] ]
+]
+
 { #category : #initialization }
 TableWebViewBuilder >> initialize [
 
@@ -109,8 +146,21 @@ TableWebViewBuilder >> initialize [
 	columnRenderers := OrderedCollection new.
 	tableCommand := [  ] asWebComponentCommand.
 	rowCommand := [  ] asWebComponentCommand.
-	headerProvider := [ :columns | TableHeaderWebView definedBy: columns ].
-	footerProvider := [ :columns | NullTableFooterWebView new ]
+	self
+		doNotRenderHeader;
+		doNotRenderFooter
+]
+
+{ #category : #'private - configuring' }
+TableWebViewBuilder >> renderFooter [
+
+	footerProvider := [ :columns | TableFooterWebView definedBy: columns ]
+]
+
+{ #category : #'private - configuring' }
+TableWebViewBuilder >> renderHeader [
+
+	headerProvider := [ :columns | TableHeaderWebView definedBy: columns ]
 ]
 
 { #category : #Configuring }

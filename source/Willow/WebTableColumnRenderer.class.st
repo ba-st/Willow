@@ -15,16 +15,10 @@ Class {
 	#category : #'Willow-WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : #deprecated }
 WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading [
 
-	^ self
-		titled: aName
-		applyingToEachCell: aCommandToCell asWebComponentCommand
-		renderingWith: aRenderingCommand
-		applyingToHeading: aCommandToHeading asWebComponentCommand
-		summarizedWith: [  ]
-		applyingToFooter: [ :cell |  ]
+	self deprecated: 'Use TableWebViewBuilder'
 ]
 
 { #category : #'Instance Creation' }
@@ -39,44 +33,29 @@ WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell
 		applyingToFooter: aCommantToFooterCell asWebComponentCommand
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : #deprecated }
 WebTableColumnRenderer class >> titled: aName renderingItemWith: aRenderingCommand [
 
-	^ self
-		titled: aName
-		applyingToEachCell: [ :cell |  ]
-		renderingWith: aRenderingCommand
-		applyingToHeading: [ :heading |  ]
+	self deprecated: 'Use TableWebViewBuilder'
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : #deprecated }
 WebTableColumnRenderer class >> titled: aTitle renderingItemWith: aRenderingCommand summarizedWith: aFooterRenderingCommand [
 
-	^ self
-		titled: aTitle
-		applyingToEachCell: [ :cell |  ]
-		renderingWith: aRenderingCommand
-		applyingToHeading: [ :heading |  ]
-		summarizedWith: aFooterRenderingCommand
-		applyingToFooter: [ :cell |  ]
+	self deprecated: 'Use TableWebViewBuilder'
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : #deprecated }
 WebTableColumnRenderer class >> untitledRenderingItemWith: aRenderingCommand [
 
-	^self titled: '' renderingItemWith: aRenderingCommand
+	self deprecated: 'Use TableWebViewBuilder'.
+
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : #deprecated }
 WebTableColumnRenderer class >> untitledRenderingItemWith: aRenderingCommand summarizedWith: aFooterRenderingCommand [
 
-	^ self
-		titled: ''
-		applyingToEachCell: [ :cell |  ]
-		renderingWith: aRenderingCommand
-		applyingToHeading: [ :heading |  ]
-		summarizedWith: aFooterRenderingCommand
-		applyingToFooter: [ :cell |  ]
+	self deprecated: 'Use TableWebViewBuilder'
 ]
 
 { #category : #initialization }

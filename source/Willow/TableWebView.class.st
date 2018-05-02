@@ -18,15 +18,10 @@ Class {
 	#category : #'Willow-WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : #deprecated }
 TableWebView class >> definedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand [
 
-	^ self
-		definedBy: aColumnRendererCollection
-		applying: aTableCommand asWebComponentCommand
-		headerRenderedBy: aHeader
-		applyingToEachRow: aRowCommand asTableRowCommand
-		footerRenderedBy: NullTableFooterWebView new
+	self deprecated: 'Use TableWebViewBuilder'
 ]
 
 { #category : #'instance creation' }
@@ -40,24 +35,16 @@ TableWebView class >> definedBy: aColumnRendererCollection applying: aTableComma
 		footerRenderedBy: aFooter
 ]
 
-{ #category : #'instance creation' }
+{ #category : #deprecated }
 TableWebView class >> headedDefinedBy: aColumnRendererCollection applying: aTableCommand [
 
-	^ self
-		definedBy: aColumnRendererCollection
-		applying: aTableCommand
-		headerRenderedBy: (TableHeaderWebView definedBy: aColumnRendererCollection)
-		applyingToEachRow: [ :row |  ]
+	self deprecated: 'Use TableWebViewBuilder'
 ]
 
-{ #category : #'instance creation' }
+{ #category : #deprecated }
 TableWebView class >> headlessDefinedBy: aColumnRendererCollection applying: aTableCommand [
 
-	^ self
-		definedBy: aColumnRendererCollection
-		applying: aTableCommand
-		headerRenderedBy: [ :canvas |  ]
-		applyingToEachRow: [ :row |  ]
+	self deprecated: 'Use TableWebViewBuilder'
 ]
 
 { #category : #'container-API' }

@@ -30,8 +30,8 @@ TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand [
 	self
 		deprecated: 'Use addColumn:'
 		transformWith:
-			'̀@receiver addColumnTitled:  ̀@aTitle rendering: ̀@aRenderingCommand'
-				-> '̀@receiver 	addColumn: [ :column | column titled: ̀@aTitle; rendering: ̀@aRenderingCommand ]'.
+			'̀ @receiver addColumnTitled:  ̀ @aTitle rendering: ̀ @aRenderingCommand'
+				-> '̀ @receiver 	addColumn: [ :column | column titled: ̀ @aTitle; rendering: ̀ @aRenderingCommand ]'.
 	self
 		addColumn: [ :column | 
 			column
@@ -45,8 +45,8 @@ TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand appl
 	self
 		deprecated: 'Use addColumn:'
 		transformWith:
-			'̀@receiver addColumnTitled: ̀@aTitle rendering: ̀@aRenderingCommand applyingToCells: ̀@aCellCommand applyingToHeading: ̀@aHeadingCommand'
-				-> '̀@receiver addColumn: [ :column | column titled: ̀@aTitle applying: ̀@aHeadingCommand; rendering: ̀@aRenderingCommand; applyingToEachCell: ̀@aCellCommand ]'.
+			'̀ @receiver addColumnTitled: ̀ @aTitle rendering: ̀ @aRenderingCommand applyingToCells: ̀ @aCellCommand applyingToHeading: ̀ @aHeadingCommand'
+				-> '̀ @receiver addColumn: [ :column | column titled: ̀ @aTitle applying: ̀ @aHeadingCommand; rendering: ̀ @aRenderingCommand; applyingToEachCell: ̀ @aCellCommand ]'.
 	self
 		addColumn: [ :column | 
 			column
@@ -61,9 +61,9 @@ TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand appl
 	self
 		deprecated: 'Use addColumn:'
 		transformWith:
-			'̀@receiver addColumnTitled: ̀@aTitle rendering: ̀@aRenderingCommand applyingToCells: ̀@aCellCommand applyingToHeading: ̀@aHeadingCommand summarizedWith: ̀@aFooterRenderingCommand applyingToFooter: ̀@aFooterCommand'
+			'̀ @receiver addColumnTitled: ̀ @aTitle rendering: ̀ @aRenderingCommand applyingToCells: ̀ @aCellCommand applyingToHeading: ̀ @aHeadingCommand summarizedWith: ̀ @aFooterRenderingCommand applyingToFooter: ̀ @aFooterCommand'
 				->
-					'̀@receiver addColumn: [ :column | column titled: ̀@aTitle applying: ̀@aHeadingCommand; rendering: ̀@aRenderingCommand; applyingToEachCell: ̀@aCellCommand; summarizedWith: ̀@aFooterRenderingCommand applying: ̀@aFooterCommand ]'.
+					'̀ @receiver addColumn: [ :column | column titled: ̀ @aTitle applying: ̀ @aHeadingCommand; rendering: ̀ @aRenderingCommand; applyingToEachCell: ̀ @aCellCommand; summarizedWith: ̀ @aFooterRenderingCommand applying: ̀ @aFooterCommand ]'.
 
 	self
 		addColumn: [ :column | 
@@ -100,7 +100,7 @@ TableWebViewBuilder >> addColumnTitled: aTitle renderingAll: renderingCommands a
 { #category : #deprecated }
 TableWebViewBuilder >> addUntitledColumnRendering: aRenderingCommand [
 
-	self deprecated: 'Use addColumn:' transformWith: '̀@receiver addUntitledColumnRendering: ̀@aRenderingCommand' -> '̀@receiver addColumn: [ :column | column rendering: ̀@aRenderingCommand ]'.
+	self deprecated: 'Use addColumn:' transformWith: '̀ @receiver addUntitledColumnRendering: ̀ @aRenderingCommand' -> '̀ @receiver addColumn: [ :column | column rendering: ̀ @aRenderingCommand ]'.
 	self addColumn: [ :column | column rendering: aRenderingCommand ]
 ]
 

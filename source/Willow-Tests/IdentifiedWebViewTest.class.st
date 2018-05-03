@@ -74,3 +74,19 @@ IdentifiedWebViewTest >> testRenderContentOn [
 
 	self assert: html equals: '<span>Hi</span>'
 ]
+
+{ #category : #'tests-rendering' }
+IdentifiedWebViewTest >> testRenderContentOnWithScriptingCommand [
+
+	| identifiedView html |
+
+	identifiedView := IdentifiedWebView
+		forDivNamed: 'main'
+		containing: ''
+		applying: [ :div | div addScript js: [ :canvas | canvas jQuery this ] ].
+	html := self render: identifiedView.
+	self
+		assert: html
+			equals: '<div id="main-id1"></div><script type="text/javascript">$("#main-id1");</script>';
+		assert: identifiedView identifier equals: 'main-id1'
+]

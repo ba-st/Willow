@@ -132,10 +132,10 @@ IdentifiedWebView >> renderContentOn: aCanvas [
 
 	identifier := self identifyIn: aCanvas.
 	containerComponent := self componentRenderedOn: aCanvas.
+	"We need to set the id before applying the commands, because some command may require it"
+	containerComponent id: identifier.
 	commandToComponent applyTo: containerComponent on: aCanvas.
-	containerComponent
-		id: identifier;
-		with: view
+	containerComponent with: view
 ]
 
 { #category : #accessing }

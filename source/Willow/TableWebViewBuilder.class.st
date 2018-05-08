@@ -25,29 +25,6 @@ TableWebViewBuilder >> addColumn: aMonadycBlock [
 ]
 
 { #category : #Configuring }
-TableWebViewBuilder >> addColumnTitled: aTitle renderingAll: renderingCommands [
-
-	self
-		addColumnTitled: aTitle
-		renderingAll: renderingCommands
-		applyingToCells: [ :cell |  ]
-		applyingToHeading: [ :heading |  ]
-]
-
-{ #category : #Configuring }
-TableWebViewBuilder >> addColumnTitled: aTitle renderingAll: renderingCommands applyingToCells: aCellCommand applyingToHeading: aHeadingCommand [
-
-	columnRenderers
-		add:
-			(WebTableMultiColumnRenderer
-				titled: aTitle
-				applyingToEachCell: aCellCommand
-				renderingWithAll: renderingCommands
-				applyingToHeading: aHeadingCommand).
-	self renderHeader
-]
-
-{ #category : #Configuring }
 TableWebViewBuilder >> applyToEachRow: aRowCommand [
 
 	rowCommand := aRowCommand

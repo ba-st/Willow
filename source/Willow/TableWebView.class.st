@@ -18,12 +18,6 @@ Class {
 	#category : #'Willow-WebViews'
 }
 
-{ #category : #deprecated }
-TableWebView class >> definedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand [
-
-	self deprecated: 'Use TableWebViewBuilder'
-]
-
 { #category : #'instance creation' }
 TableWebView class >> definedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand footerRenderedBy: aFooter [
 
@@ -33,18 +27,6 @@ TableWebView class >> definedBy: aColumnRendererCollection applying: aTableComma
 		headerRenderedBy: aHeader
 		applyingToEachRow: aRowCommand asTableRowCommand
 		footerRenderedBy: aFooter
-]
-
-{ #category : #deprecated }
-TableWebView class >> headedDefinedBy: aColumnRendererCollection applying: aTableCommand [
-
-	self deprecated: 'Use TableWebViewBuilder'
-]
-
-{ #category : #deprecated }
-TableWebView class >> headlessDefinedBy: aColumnRendererCollection applying: aTableCommand [
-
-	self deprecated: 'Use TableWebViewBuilder'
 ]
 
 { #category : #'container-API' }

@@ -15,12 +15,6 @@ Class {
 	#category : #'Willow-WebViews'
 }
 
-{ #category : #deprecated }
-WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading [
-
-	self deprecated: 'Use TableWebViewBuilder'
-]
-
 { #category : #'Instance Creation' }
 WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading summarizedWith: aFooterRenderingCommand applyingToFooter: aCommantToFooterCell [
 
@@ -31,31 +25,6 @@ WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell
 		applyingToHeading: aCommandToHeading asWebComponentCommand
 		summarizedWith: aFooterRenderingCommand
 		applyingToFooter: aCommantToFooterCell asWebComponentCommand
-]
-
-{ #category : #deprecated }
-WebTableColumnRenderer class >> titled: aName renderingItemWith: aRenderingCommand [
-
-	self deprecated: 'Use TableWebViewBuilder'
-]
-
-{ #category : #deprecated }
-WebTableColumnRenderer class >> titled: aTitle renderingItemWith: aRenderingCommand summarizedWith: aFooterRenderingCommand [
-
-	self deprecated: 'Use TableWebViewBuilder'
-]
-
-{ #category : #deprecated }
-WebTableColumnRenderer class >> untitledRenderingItemWith: aRenderingCommand [
-
-	self deprecated: 'Use TableWebViewBuilder'.
-
-]
-
-{ #category : #deprecated }
-WebTableColumnRenderer class >> untitledRenderingItemWith: aRenderingCommand summarizedWith: aFooterRenderingCommand [
-
-	self deprecated: 'Use TableWebViewBuilder'
 ]
 
 { #category : #initialization }

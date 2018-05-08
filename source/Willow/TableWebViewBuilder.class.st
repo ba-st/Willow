@@ -24,56 +24,6 @@ TableWebViewBuilder >> addColumn: aMonadycBlock [
 	columnRenderers add: builder build
 ]
 
-{ #category : #deprecated }
-TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand [
-
-	self
-		deprecated: 'Use addColumn:'
-		transformWith:
-			'̀ @receiver addColumnTitled:  ̀ @aTitle rendering: ̀ @aRenderingCommand'
-				-> '̀ @receiver 	addColumn: [ :column | column titled: ̀ @aTitle; rendering: ̀ @aRenderingCommand ]'.
-	self
-		addColumn: [ :column | 
-			column
-				titled: aTitle;
-				rendering: aRenderingCommand ]
-]
-
-{ #category : #deprecated }
-TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand applyingToCells: aCellCommand applyingToHeading: aHeadingCommand [
-
-	self
-		deprecated: 'Use addColumn:'
-		transformWith:
-			'̀ @receiver addColumnTitled: ̀ @aTitle rendering: ̀ @aRenderingCommand applyingToCells: ̀ @aCellCommand applyingToHeading: ̀ @aHeadingCommand'
-				-> '̀ @receiver addColumn: [ :column | column titled: ̀ @aTitle applying: ̀ @aHeadingCommand; rendering: ̀ @aRenderingCommand; applyingToEachCell: ̀ @aCellCommand ]'.
-	self
-		addColumn: [ :column | 
-			column
-				titled: aTitle applying: aHeadingCommand;
-				rendering: aRenderingCommand;
-				applyingToEachCell: aCellCommand ]
-]
-
-{ #category : #deprecated }
-TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand applyingToCells: aCellCommand applyingToHeading: aHeadingCommand summarizedWith: aFooterRenderingCommand applyingToFooter: aFooterCommand [
-
-	self
-		deprecated: 'Use addColumn:'
-		transformWith:
-			'̀ @receiver addColumnTitled: ̀ @aTitle rendering: ̀ @aRenderingCommand applyingToCells: ̀ @aCellCommand applyingToHeading: ̀ @aHeadingCommand summarizedWith: ̀ @aFooterRenderingCommand applyingToFooter: ̀ @aFooterCommand'
-				->
-					'̀ @receiver addColumn: [ :column | column titled: ̀ @aTitle applying: ̀ @aHeadingCommand; rendering: ̀ @aRenderingCommand; applyingToEachCell: ̀ @aCellCommand; summarizedWith: ̀ @aFooterRenderingCommand applying: ̀ @aFooterCommand ]'.
-
-	self
-		addColumn: [ :column | 
-			column
-				titled: aTitle applying: aHeadingCommand;
-				rendering: aRenderingCommand;
-				applyingToEachCell: aCellCommand;
-				summarizedWith: aFooterRenderingCommand applying: aFooterCommand ]
-]
-
 { #category : #Configuring }
 TableWebViewBuilder >> addColumnTitled: aTitle renderingAll: renderingCommands [
 
@@ -97,23 +47,10 @@ TableWebViewBuilder >> addColumnTitled: aTitle renderingAll: renderingCommands a
 	self renderHeader
 ]
 
-{ #category : #deprecated }
-TableWebViewBuilder >> addUntitledColumnRendering: aRenderingCommand [
-
-	self deprecated: 'Use addColumn:' transformWith: '̀ @receiver addUntitledColumnRendering: ̀ @aRenderingCommand' -> '̀ @receiver addColumn: [ :column | column rendering: ̀ @aRenderingCommand ]'.
-	self addColumn: [ :column | column rendering: aRenderingCommand ]
-]
-
 { #category : #Configuring }
 TableWebViewBuilder >> applyToEachRow: aRowCommand [
 
 	rowCommand := aRowCommand
-]
-
-{ #category : #deprecated }
-TableWebViewBuilder >> beHeadless [
-
-	self deprecated: 'Tables now autodetects if a header is needed or not'
 ]
 
 { #category : #Building }

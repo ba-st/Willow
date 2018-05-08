@@ -15,40 +15,13 @@ Class {
 }
 
 { #category : #Configuring }
-TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand [
+TableWebViewBuilder >> addColumn: aMonadycBlock [
 
-	self
-		addColumnTitled: aTitle
-		rendering: aRenderingCommand
-		applyingToCells: [ :cell |  ]
-		applyingToHeading: [ :heading |  ]
-]
+	| builder |
 
-{ #category : #Configuring }
-TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand applyingToCells: aCellCommand applyingToHeading: aHeadingCommand [
-
-	columnRenderers
-		add:
-			(WebTableColumnRenderer
-				titled: aTitle
-				applyingToEachCell: aCellCommand
-				renderingWith: aRenderingCommand
-				applyingToHeading: aHeadingCommand)
-]
-
-{ #category : #Configuring }
-TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand applyingToCells: aCellCommand applyingToHeading: aHeadingCommand summarizedWith: aFooterRenderingCommand applyingToFooter: aFooterCommand [
-
-	columnRenderers
-		add:
-			(WebTableColumnRenderer
-				titled: aTitle
-				applyingToEachCell: aCellCommand
-				renderingWith: aRenderingCommand
-				applyingToHeading: aHeadingCommand
-				summarizedWith: aFooterRenderingCommand
-				applyingToFooter: aFooterCommand).
-	footerProvider := [ :columns | TableFooterWebView definedBy: columns ]
+	builder := WebTableColumnRendererBuilder on: self.
+	aMonadycBlock value: builder.
+	columnRenderers add: builder build
 ]
 
 { #category : #Configuring }
@@ -70,25 +43,14 @@ TableWebViewBuilder >> addColumnTitled: aTitle renderingAll: renderingCommands a
 				titled: aTitle
 				applyingToEachCell: aCellCommand
 				renderingWithAll: renderingCommands
-				applyingToHeading: aHeadingCommand)
-]
-
-{ #category : #Configuring }
-TableWebViewBuilder >> addUntitledColumnRendering: aRenderingCommand [
-
-	self addColumnTitled: '' rendering: aRenderingCommand
+				applyingToHeading: aHeadingCommand).
+	self renderHeader
 ]
 
 { #category : #Configuring }
 TableWebViewBuilder >> applyToEachRow: aRowCommand [
 
 	rowCommand := aRowCommand
-]
-
-{ #category : #Configuring }
-TableWebViewBuilder >> beHeadless [
-
-	headerProvider := [ :columns | [ :canvas |  ] ]
 ]
 
 { #category : #Building }
@@ -102,6 +64,18 @@ TableWebViewBuilder >> buildApplying: aComponentCommand [
 		footerRenderedBy: (footerProvider value: columnRenderers)
 ]
 
+{ #category : #'private - configuring' }
+TableWebViewBuilder >> doNotRenderFooter [
+
+	footerProvider := [ :columns | NullTableFooterWebView new ]
+]
+
+{ #category : #'private - configuring' }
+TableWebViewBuilder >> doNotRenderHeader [
+
+	headerProvider := [ :columns | [ :canvas |  ] ]
+]
+
 { #category : #initialization }
 TableWebViewBuilder >> initialize [
 
@@ -109,8 +83,21 @@ TableWebViewBuilder >> initialize [
 	columnRenderers := OrderedCollection new.
 	tableCommand := [  ] asWebComponentCommand.
 	rowCommand := [  ] asWebComponentCommand.
-	headerProvider := [ :columns | TableHeaderWebView definedBy: columns ].
-	footerProvider := [ :columns | NullTableFooterWebView new ]
+	self
+		doNotRenderHeader;
+		doNotRenderFooter
+]
+
+{ #category : #'private - configuring' }
+TableWebViewBuilder >> renderFooter [
+
+	footerProvider := [ :columns | TableFooterWebView definedBy: columns ]
+]
+
+{ #category : #'private - configuring' }
+TableWebViewBuilder >> renderHeader [
+
+	headerProvider := [ :columns | TableHeaderWebView definedBy: columns ]
 ]
 
 { #category : #Configuring }

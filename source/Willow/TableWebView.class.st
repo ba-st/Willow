@@ -19,17 +19,6 @@ Class {
 }
 
 { #category : #'instance creation' }
-TableWebView class >> definedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand [
-
-	^ self
-		definedBy: aColumnRendererCollection
-		applying: aTableCommand asWebComponentCommand
-		headerRenderedBy: aHeader
-		applyingToEachRow: aRowCommand asTableRowCommand
-		footerRenderedBy: NullTableFooterWebView new
-]
-
-{ #category : #'instance creation' }
 TableWebView class >> definedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand footerRenderedBy: aFooter [
 
 	^ self new
@@ -38,26 +27,6 @@ TableWebView class >> definedBy: aColumnRendererCollection applying: aTableComma
 		headerRenderedBy: aHeader
 		applyingToEachRow: aRowCommand asTableRowCommand
 		footerRenderedBy: aFooter
-]
-
-{ #category : #'instance creation' }
-TableWebView class >> headedDefinedBy: aColumnRendererCollection applying: aTableCommand [
-
-	^ self
-		definedBy: aColumnRendererCollection
-		applying: aTableCommand
-		headerRenderedBy: (TableHeaderWebView definedBy: aColumnRendererCollection)
-		applyingToEachRow: [ :row |  ]
-]
-
-{ #category : #'instance creation' }
-TableWebView class >> headlessDefinedBy: aColumnRendererCollection applying: aTableCommand [
-
-	^ self
-		definedBy: aColumnRendererCollection
-		applying: aTableCommand
-		headerRenderedBy: [ :canvas |  ]
-		applyingToEachRow: [ :row |  ]
 ]
 
 { #category : #'container-API' }

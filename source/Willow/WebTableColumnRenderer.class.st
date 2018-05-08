@@ -16,18 +16,6 @@ Class {
 }
 
 { #category : #'Instance Creation' }
-WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading [
-
-	^ self
-		titled: aName
-		applyingToEachCell: aCommandToCell asWebComponentCommand
-		renderingWith: aRenderingCommand
-		applyingToHeading: aCommandToHeading asWebComponentCommand
-		summarizedWith: [  ]
-		applyingToFooter: [ :cell |  ]
-]
-
-{ #category : #'Instance Creation' }
 WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading summarizedWith: aFooterRenderingCommand applyingToFooter: aCommantToFooterCell [
 
 	^ self new
@@ -37,46 +25,6 @@ WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell
 		applyingToHeading: aCommandToHeading asWebComponentCommand
 		summarizedWith: aFooterRenderingCommand
 		applyingToFooter: aCommantToFooterCell asWebComponentCommand
-]
-
-{ #category : #'Instance Creation' }
-WebTableColumnRenderer class >> titled: aName renderingItemWith: aRenderingCommand [
-
-	^ self
-		titled: aName
-		applyingToEachCell: [ :cell |  ]
-		renderingWith: aRenderingCommand
-		applyingToHeading: [ :heading |  ]
-]
-
-{ #category : #'Instance Creation' }
-WebTableColumnRenderer class >> titled: aTitle renderingItemWith: aRenderingCommand summarizedWith: aFooterRenderingCommand [
-
-	^ self
-		titled: aTitle
-		applyingToEachCell: [ :cell |  ]
-		renderingWith: aRenderingCommand
-		applyingToHeading: [ :heading |  ]
-		summarizedWith: aFooterRenderingCommand
-		applyingToFooter: [ :cell |  ]
-]
-
-{ #category : #'Instance Creation' }
-WebTableColumnRenderer class >> untitledRenderingItemWith: aRenderingCommand [
-
-	^self titled: '' renderingItemWith: aRenderingCommand
-]
-
-{ #category : #'Instance Creation' }
-WebTableColumnRenderer class >> untitledRenderingItemWith: aRenderingCommand summarizedWith: aFooterRenderingCommand [
-
-	^ self
-		titled: ''
-		applyingToEachCell: [ :cell |  ]
-		renderingWith: aRenderingCommand
-		applyingToHeading: [ :heading |  ]
-		summarizedWith: aFooterRenderingCommand
-		applyingToFooter: [ :cell |  ]
 ]
 
 { #category : #initialization }

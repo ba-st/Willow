@@ -21,7 +21,7 @@ TableWebViewTest >> testContents [
 
 	| table |
 
-	table := TableWebView headlessDefinedBy: #() applying: [ :theTable |  ].
+	table := TableWebViewBuilder new build.
 
 	self assert: table contents isEmpty.
 
@@ -40,16 +40,18 @@ TableWebViewTest >> testDefinedByApplyingHeaderRenderedByApplyingToEachRow [
 
 	| table html |
 
-	table := TableWebView
-		definedBy: (Array with: (WebTableColumnRenderer titled: 'Is Even?' renderingItemWith: [ :number | number even ]))
-		applying: [ :theTable | theTable addClass willow ]
-		headerRenderedBy: [ :canvas |  ]
-		applyingToEachRow: (PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ]).
+	table := TableWebViewBuilder new
+		addColumn: [ :column | column rendering: [ :number | number even ] ];
+		applyToEachRow: (PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ]);
+		buildApplying: [ :theTable | theTable addClass willow ].
 
 	table changeContentsTo: #(1 2 3).
 	html := self render: table.
 
-	self assert: html equals: '<table id="table-id1" class="willow"><tbody><tr id="id2"><td>false</td></tr><tr id="id3"><td>true</td></tr><tr id="id4"><td>false</td></tr></tbody></table>'
+	self
+		assert: html
+		equals:
+			'<table id="table-id1" class="willow"><tbody><tr id="id2"><td>false</td></tr><tr id="id3"><td>true</td></tr><tr id="id4"><td>false</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-rendering' }
@@ -57,7 +59,12 @@ TableWebViewTest >> testHeadedDefinedByApplying [
 
 	| table html |
 
-	table := TableWebView headedDefinedBy: (Array with: (WebTableColumnRenderer titled: 'Is Even?' renderingItemWith: [ :number | number even ])) applying: [ :theTable |  ].
+	table := TableWebViewBuilder new
+		addColumn: [ :column | 
+			column
+				titled: 'Is Even?';
+				rendering: [ :number | number even ] ];
+		build.
 
 	html := self render: table.
 
@@ -69,7 +76,12 @@ TableWebViewTest >> testHeadedDefinedByApplyingWithContents [
 
 	| table html |
 
-	table := TableWebView headedDefinedBy: (Array with: (WebTableColumnRenderer titled: 'Is Even?' renderingItemWith: [ :number | number even ])) applying: [ :theTable |  ].
+	table := TableWebViewBuilder new
+		addColumn: [ :column | 
+			column
+				titled: 'Is Even?';
+				rendering: [ :number | number even ] ];
+		build.
 
 	table changeContentsTo: #(1 2 3).
 	html := self render: table.
@@ -82,14 +94,18 @@ TableWebViewTest >> testOnTrigger [
 
 	| table html |
 
-	table := TableWebView headlessDefinedBy: (Array with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number even ])) applying: [ :theTable |  ].
+	table := TableWebViewBuilder new
+		addColumn: [ :column | column rendering: [ :number | number even ] ];
+		build.
 
 	table onTrigger disable.
 
 	html := self render: table.
 
 	self
-		assert: html equals: '<table id="table-id1"><tbody></tbody></table><script type="text/javascript">$("#table-id1").click(function(event){$(this).prop("disabled",true)});</script>';
+		assert: html
+			equals:
+			'<table id="table-id1"><tbody></tbody></table><script type="text/javascript">$("#table-id1").click(function(event){$(this).prop("disabled",true)});</script>';
 		assert: table identifier equals: 'table-id1'
 ]
 
@@ -98,7 +114,9 @@ TableWebViewTest >> testRenderContentOn [
 
 	| table html |
 
-	table := TableWebView headlessDefinedBy: (Array with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number even ])) applying: [ :theTable |  ].
+	table := TableWebViewBuilder new
+		addColumn: [ :column | column rendering: [ :number | number even ] ];
+		build.
 
 	html := self render: table.
 
@@ -110,23 +128,9 @@ TableWebViewTest >> testRenderContentOnWithContents [
 
 	| table html |
 
-	table := TableWebView headlessDefinedBy: (Array with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number even ])) applying: [ :theTable |  ].
-
-	table changeContentsTo: #(1 2 3).
-
-	html := self render: table.
-
-	self assert: html equals: '<table id="table-id1"><tbody><tr><td>false</td></tr><tr><td>true</td></tr><tr><td>false</td></tr></tbody></table>'
-]
-
-{ #category : #'tests-rendering' }
-TableWebViewTest >> testRenderContentOnWithContentsAndMulticolumns [
-
-	| table html |
-
-	table := TableWebView
-		headedDefinedBy: (Array with: (WebTableMultiColumnRenderer titled: 'Common Header' renderingItemWithAll: (Array with: [ :number | number even ] with: [ :number | number odd ])))
-		applying: [ :theTable |  ].
+	table := TableWebViewBuilder new
+		addColumn: [ :column | column rendering: [ :number | number even ] ];
+		build.
 
 	table changeContentsTo: #(1 2 3).
 
@@ -134,7 +138,26 @@ TableWebViewTest >> testRenderContentOnWithContentsAndMulticolumns [
 
 	self
 		assert: html
-		equals: '<table id="table-id1"><thead><th colspan="2">Common Header</th></thead><tbody><tr><td>false</td><td>true</td></tr><tr><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td></tr></tbody></table>'
+		equals: '<table id="table-id1"><tbody><tr><td>false</td></tr><tr><td>true</td></tr><tr><td>false</td></tr></tbody></table>'
+]
+
+{ #category : #'tests-rendering' }
+TableWebViewTest >> testRenderContentOnWithContentsAndMulticolumns [
+
+	| table html |
+
+	table := TableWebViewBuilder new
+		addColumnTitled: 'Common Header' renderingAll: (Array with: [ :number | number even ] with: [ :number | number odd ]);
+		build.
+
+	table changeContentsTo: #(1 2 3).
+
+	html := self render: table.
+
+	self
+		assert: html
+		equals:
+			'<table id="table-id1"><thead><th colspan="2">Common Header</th></thead><tbody><tr><td>false</td><td>true</td></tr><tr><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-rendering' }
@@ -142,36 +165,38 @@ TableWebViewTest >> testRenderContentOnWithContentsAndSeveralColumns [
 
 	| table html |
 
-	table := TableWebView
-		headlessDefinedBy: (Array with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number even ]) with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number | number odd ]))
-		applying: [ :theTable |  ].
+	table := TableWebViewBuilder new
+		addColumn: [ :column | column rendering: [ :number | number even ] ];
+		addColumn: [ :column | column rendering: [ :number | number odd ] ];
+		build.
 
 	table changeContentsTo: #(1 2 3).
 
 	html := self render: table.
 
-	self assert: html equals: '<table id="table-id1"><tbody><tr><td>false</td><td>true</td></tr><tr><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td></tr></tbody></table>'
+	self
+		assert: html
+		equals:
+			'<table id="table-id1"><tbody><tr><td>false</td><td>true</td></tr><tr><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-rendering' }
 TableWebViewTest >> testTableWithFooterSupport [
 
-	| table html columnRenderers |
+	| table html |
 
-	columnRenderers := Array
-		with: (WebTableColumnRenderer untitledRenderingItemWith: [ :number :index | index ] summarizedWith: [ 'Even count' ])
-		with:
-			(WebTableColumnRenderer
-				titled: 'Is Even?'
-				renderingItemWith: [ :number | number even ]
-				summarizedWith: [ :numbers | (numbers select: #even) size ]).
-
-	table := TableWebView
-		definedBy: columnRenderers
-		applying: [ :theTable | theTable addClass willow ]
-		headerRenderedBy: (TableHeaderWebView definedBy: columnRenderers)
-		applyingToEachRow: (PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ])
-		footerRenderedBy: (TableFooterWebView definedBy: columnRenderers).
+	table := TableWebViewBuilder new
+		addColumn: [ :column | 
+			column
+				rendering: [ :number :index | index ];
+				summarizedWith: [ 'Even count' ] ];
+		addColumn: [ :column | 
+			column
+				titled: 'Is Even?';
+				rendering: [ :number | number even ];
+				summarizedWith: [ :numbers | (numbers select: #even) size ] ];
+		applyToEachRow: (PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ]);
+		buildApplying: [ :theTable | theTable addClass willow ].
 
 	table changeContentsTo: #(1 2 3).
 	html := self render: table.

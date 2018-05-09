@@ -142,25 +142,6 @@ TableWebViewTest >> testRenderContentOnWithContents [
 ]
 
 { #category : #'tests-rendering' }
-TableWebViewTest >> testRenderContentOnWithContentsAndMulticolumns [
-
-	| table html |
-
-	table := TableWebViewBuilder new
-		addColumnTitled: 'Common Header' renderingAll: (Array with: [ :number | number even ] with: [ :number | number odd ]);
-		build.
-
-	table changeContentsTo: #(1 2 3).
-
-	html := self render: table.
-
-	self
-		assert: html
-		equals:
-			'<table id="table-id1"><thead><th colspan="2">Common Header</th></thead><tbody><tr><td>false</td><td>true</td></tr><tr><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td></tr></tbody></table>'
-]
-
-{ #category : #'tests-rendering' }
 TableWebViewTest >> testRenderContentOnWithContentsAndSeveralColumns [
 
 	| table html |

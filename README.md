@@ -35,7 +35,7 @@ Framework | Project | Status
 ## Tutorial
 To learn more about Willow, load [Willow-Playground](https://github.com/ba-st/Willow-Playground) and check the Presentation application. These will also install 2 sample applications: Test Runner and Live Documentation.
 
-Also you can check the [FAQs](docs/FAQ.md) available in the docs folder.
+Also you can check the [FAQs](docs/FAQ.md) and the rest of the documentation available in the docs folder.
 
 ## Running the tests
 Willow provides a complete coverage of its features. Open a Test Runner and find the test packages (*Willow-Tests-**).

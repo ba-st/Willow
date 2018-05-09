@@ -16,6 +16,34 @@ TableWebViewTest >> changeNotifiedBy: aTableWebView [
 	notificationWasReceived := true
 ]
 
+{ #category : #'tests-rendering' }
+TableWebViewTest >> testComplexTable [
+
+	| table html |
+
+	table := TableWebViewBuilder new
+		addColumn: [ :column | 
+			column
+				rendering: [ :number :index | index ];
+				applyingToEachCell: [ :cell | cell addClass willow ];
+				summarizedWith: [ 'Total' ] ];
+		addColumn: [ :column | 
+			column
+				titled: 'Squared';
+				rendering: [ :number | number squared ];
+				summarizedWith: [ :numbers | (numbers collect: #squared) sum ] ];
+		applyToEachRow: [ :row | row addClass willow ] asTableRowCommand;
+		build.
+
+	table changeContentsTo: #(1 2).
+	html := self render: table.
+
+	self
+		assert: html
+		equals:
+			'<table id="table-id1"><thead><th class="willow"></th><th>Squared</th></thead><tbody><tr class="willow"><td class="willow">1</td><td>1</td></tr><tr class="willow"><td class="willow">2</td><td>4</td></tr></tbody><tfoot><td class="willow">Total</td><td>5</td></tfoot></table>'
+]
+
 { #category : #'tests-container-API' }
 TableWebViewTest >> testContents [
 

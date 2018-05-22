@@ -4,6 +4,9 @@ I'm an entry point providing access to several constants
 Class {
 	#name : #WillowConstantsProvider,
 	#superclass : #GRObject,
+	#pools : [
+		'RenoirSt'
+	],
 	#category : #'Willow-Frontend'
 }
 
@@ -16,13 +19,8 @@ WillowConstantsProvider >> css [
 { #category : #Accessing }
 WillowConstantsProvider >> cssFonts [
 
-	^ CssFontConstants
-]
-
-{ #category : #Accessing }
-WillowConstantsProvider >> cssMediaQuery [
-
-	^ CssMediaQueryConstants
+	self deprecated: 'Use css'.
+	^ self css
 ]
 
 { #category : #Accessing }

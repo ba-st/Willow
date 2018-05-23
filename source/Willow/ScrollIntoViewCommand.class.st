@@ -38,10 +38,12 @@ ScrollIntoViewCommand >> initializeWithComponentIdentifierProvidedBy: anIdentifi
 { #category : #accessing }
 ScrollIntoViewCommand >> modelLoadingActions [
 
+	"We iterate the result before sending the scrolling message in case no match is found."
+
 	^ Array
 		with: [ :aScript :aCanvas | 
 			aScript << (aCanvas jQuery id: self identifierToShow)
-				each: ((aCanvas jQuery this property: 0) call: 'scrollIntoView') ]
+				each: ((aCanvas jQuery this get: 0) call: 'scrollIntoView') ]
 ]
 
 { #category : #accessing }

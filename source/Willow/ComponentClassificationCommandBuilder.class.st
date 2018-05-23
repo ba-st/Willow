@@ -25,13 +25,13 @@ ComponentClassificationCommandBuilder >> dialogContainer [
 { #category : #Building }
 ComponentClassificationCommandBuilder >> disabledComponent [
 
-	^ self commandStyledWith: classesProvider content disabledComponent
+	^ self commandStyledWith: #disabledComponent
 ]
 
 { #category : #Building }
 ComponentClassificationCommandBuilder >> fadingNotification [
 
-	^ self commandStyledWith: classesProvider content fadingNotification
+	^ self commandStyledWith: #fadingNotification
 ]
 
 { #category : #initialization }
@@ -44,11 +44,11 @@ ComponentClassificationCommandBuilder >> initialize [
 { #category : #Building }
 ComponentClassificationCommandBuilder >> loading [
 
-	^ self commandStyledWith: classesProvider content loading
+	^ self commandStyledWith: #loading
 ]
 
 { #category : #Building }
 ComponentClassificationCommandBuilder >> willow [
 
-	^ self commandStyledWith: classesProvider content willow
+	^ self commandStyledWith: #willow
 ]

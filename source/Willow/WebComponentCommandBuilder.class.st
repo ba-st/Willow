@@ -140,9 +140,13 @@ WebComponentCommandBuilder >> setPlaceholderTo: aSuggestion [
 ]
 
 { #category : #Building }
-WebComponentCommandBuilder >> setStyleTo: aBlockClosure [
+WebComponentCommandBuilder >> setStyleTo: aDeclarationAction [
 
-	^ SetComponentStyleCommand setting: (aBlockClosure value: CssDeclarationBlock new)
+	| declarationBlock |
+
+	declarationBlock := CssDeclarationBlock new.
+	aDeclarationAction cull: declarationBlock cull: RenoirSt constants.
+	^ SetComponentStyleCommand setting: declarationBlock
 ]
 
 { #category : #Building }

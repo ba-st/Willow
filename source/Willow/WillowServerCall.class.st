@@ -19,5 +19,5 @@ WillowServerCall >> arguments [
 { #category : #accessing }
 WillowServerCall >> method [
 
-	^ Willow constants >> #willow >> #callServerFunctionName
+	^ self constants >> #willow >> #callServerFunctionName
 ]

@@ -12,7 +12,7 @@ WebComponentCommandToTableRowCommandAdapterTest >> testApplyToForOn [
 
 	| html command |
 
-	command := (ComponentClassificationCommand toStyleWith: Willow classes >> #fadingNotification) asTableRowCommand.
+	command := [ :tableRow | tableRow addClass fadingNotification ] asTableRowCommand.
 	html := self
 		renderUsing: [ :canvas | 
 			| component |
@@ -20,13 +20,5 @@ WebComponentCommandToTableRowCommandAdapterTest >> testApplyToForOn [
 			component := canvas tableRow.
 			command applyTo: component for: 33 on: canvas ].
 
-	self
-		assert: html
-		equals:
-			(String
-				streamContents: [ :stream | 
-					stream
-						nextPutAll: '<tr class="';
-						nextPutAll: Willow classes >> #fadingNotification;
-						nextPutAll: '"></tr>' ])
+	self assert: html equals: '<tr class="willow-fading-notification"></tr>'
 ]

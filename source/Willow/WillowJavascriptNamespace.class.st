@@ -10,13 +10,13 @@ Class {
 { #category : #Accessing }
 WillowJavascriptNamespace >> callServerFunction [
 
-	^ self access: Willow constants >> #willow >> #callServerFunctionName
+	^ self access: self constants >> #willow >> #callServerFunctionName
 ]
 
 { #category : #Accessing }
 WillowJavascriptNamespace >> handleAjaxErrorCallFunction [
 
-	^ self access: Willow constants >> #willow >> #handleAjaxErrorCallFunctionName
+	^ self access: self constants >> #willow >> #handleAjaxErrorCallFunctionName
 ]
 
 { #category : #printing }

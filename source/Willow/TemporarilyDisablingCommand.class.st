@@ -76,9 +76,9 @@ TemporarilyDisablingCommand >> priorityActions [
 		with: [ :anAsynchronousCall :aCanvas | 
 			anAsynchronousCall
 				onComplete:
-					((aCanvas jQuery class: WillowCssStyles disabledComponent)
+					((aCanvas jQuery class: Willow classes >> #disabledComponent)
 						attributeAt: self disabledAttributeName put: false;
-						removeClass: WillowCssStyles disabledComponent;
+						removeClass: Willow classes >> #disabledComponent;
 						call: 'html' with: (aCanvas jQuery alias: self disabledComponentVariableName)) ]
 ]
 
@@ -98,7 +98,7 @@ TemporarilyDisablingCommand >> serverIndependentActions [
 			script
 				<<
 					((self componentToDisableOn: canvas)
-						addClass: WillowCssStyles disabledComponent;
+						addClass: Willow classes >> #disabledComponent;
 						attributeAt: self disabledAttributeName put: true;
 						html: viewWhileDisabled) ]
 ]

@@ -71,7 +71,7 @@ IdentifiedWebView class >> forLabeledFieldNamed: aName containing: aView [
 	^ self
 		forComponentBuiltUsing: [ :canvas | 
 			canvas fieldSet
-				class: WillowCssStyles willow;
+				class: Willow classes >> #willow;
 				yourself ]
 		named: aName
 		containing: aView

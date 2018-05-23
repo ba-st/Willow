@@ -32,7 +32,7 @@ CombinedWebInteractionInterpreterTest >> testAddCssClass [
 	| interpreter html |
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
-	interpreter addCssClass: WillowCssStyles willow.
+	interpreter addCssClass: Willow classes >> #willow.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
@@ -49,7 +49,7 @@ CombinedWebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 	| interpreter html |
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
-	interpreter addCssClass: WillowCssStyles willow toComponentsMatching: [ :canvas | canvas jQuery this ].
+	interpreter addCssClass: Willow classes >> #willow toComponentsMatching: [ :canvas | canvas jQuery this ].
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
@@ -68,7 +68,7 @@ CombinedWebInteractionInterpreterTest >> testChangeCssClassTo [
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter changeCssClass: WillowCssStyles loading to: WillowCssStyles willow.
+	interpreter changeCssClass: Willow classes >> #loading to: Willow classes >> #willow.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -438,7 +438,7 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatchin
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter removeCssClass: WillowCssStyles loading fromComponentsMatching: [ :canvas | canvas jQuery this ].
+	interpreter removeCssClass: Willow classes >> #loading fromComponentsMatching: [ :canvas | canvas jQuery this ].
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -458,7 +458,7 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithCla
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter removeCssClass: WillowCssStyles loading fromComponentsWithClass: WillowCssStyles willow.
+	interpreter removeCssClass: Willow classes >> #loading fromComponentsWithClass: Willow classes >> #willow.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -766,7 +766,7 @@ CombinedWebInteractionInterpreterTest >> testSubmitFormStyledAs [
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter submitFormStyledAs: WillowCssStyles willow.
+	interpreter submitFormStyledAs: Willow classes >> #willow.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
@@ -828,7 +828,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClass [
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter toggleCssClass: WillowCssStyles loading.
+	interpreter toggleCssClass: Willow classes >> #loading.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -848,7 +848,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOn [
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter toggleCssClass: WillowCssStyles willow on: (IdentifiedWebView forDivNamed: 'example' containing: [  ]).
+	interpreter toggleCssClass: Willow classes >> #willow on: (IdentifiedWebView forDivNamed: 'example' containing: [  ]).
 
 
 	html := self
@@ -869,7 +869,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching 
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter toggleCssClass: WillowCssStyles loading onComponentsMatching: [ :canvas | canvas jQuery this ].
+	interpreter toggleCssClass: Willow classes >> #loading onComponentsMatching: [ :canvas | canvas jQuery this ].
 
 	html := self
 		renderUsing: [ :canvas | 

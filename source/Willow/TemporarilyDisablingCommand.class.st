@@ -47,7 +47,7 @@ TemporarilyDisablingCommand >> componentToDisableOn: aCanvas [
 
 { #category : #private }
 TemporarilyDisablingCommand >> disabledAttributeName [
-	^ WillowConstants disabledAttributeName
+	^ Willow constants >> #willow >> #disabledAttributeName
 ]
 
 { #category : #private }

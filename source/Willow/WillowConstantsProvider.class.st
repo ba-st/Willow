@@ -15,16 +15,3 @@ WillowConstantsProvider >> css [
 
 	^ CssConstants
 ]
-
-{ #category : #Accessing }
-WillowConstantsProvider >> cssFonts [
-
-	self deprecated: 'Use css'.
-	^ self css
-]
-
-{ #category : #Accessing }
-WillowConstantsProvider >> willow [
-
-	^ WillowConstants
-]

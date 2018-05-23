@@ -127,9 +127,9 @@ WillowApplication >> renderDialogAndNotificationSectionsOn: aCanvas [
 	"Render dialog and notification sections. These are needed for the dialog and notification support."
 
 	aCanvas div
-		id: WillowConstants dialogSectionName;
+		id: Willow constants >> #willow >> #dialogSectionName;
 		class: Willow classes >> #dialogContainer.
-	aCanvas div id: WillowConstants notificationSectionName
+	aCanvas div id: Willow constants >> #willow >> #notificationSectionName
 ]
 
 { #category : #accessing }

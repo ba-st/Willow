@@ -8,6 +8,9 @@ Class {
 		'Classes',
 		'Constants'
 	],
+	#pools : [
+		'RenoirSt'
+	],
 	#category : #'Willow-Frontend'
 }
 
@@ -27,7 +30,14 @@ Willow class >> constants [
 Willow class >> initialize [
 
 	<ignoreForCoverage>
-	Constants := Namespace new.
+	self initializeConstants.
+	self initializeClasses
+]
+
+{ #category : #'private - initialization' }
+Willow class >> initializeClasses [
+
+	<ignoreForCoverage>
 	Classes := Namespace new.
 	Classes
 		bind: #fadingNotification to: 'willow-fading-notification';
@@ -35,4 +45,19 @@ Willow class >> initialize [
 		bind: #dialogContainer to: 'willow-dialog-container';
 		bind: #willow to: 'willow';
 		bind: #disabledComponent to: 'willow-disabled-component'
+]
+
+{ #category : #initialization }
+Willow class >> initializeConstants [
+
+	<ignoreForCoverage>
+	Constants := Namespace new.
+	Constants bind: #css to: CssConstants.
+	Constants bind: #willow to: Namespace new.
+	(Constants >> #willow)
+		bind: #callServerFunctionName to: 'callServer';
+		bind: #disabledAttributeName to: 'disabled';
+		bind: #handleAjaxErrorCallFunctionName to: 'handleAjaxErrorCall';
+		bind: #notificationSectionName to: 'willow-notification-section';
+		bind: #dialogSectionName to: 'willow-dialog-section'
 ]

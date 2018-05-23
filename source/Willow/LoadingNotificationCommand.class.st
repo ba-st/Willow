@@ -25,7 +25,7 @@ LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 		executing:
 			(Array
 				with: [ :aScript :aCanvas | 
-					aScript << (aCanvas jQuery id: WillowConstants notificationSectionName)
+					aScript << (aCanvas jQuery id: Willow constants >> #willow >> #notificationSectionName)
 						html: [ :aSubCanvas | 
 							aSubCanvas div
 								classes: aCssClassCollection;
@@ -33,7 +33,7 @@ LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 		then:
 			(Array
 				with: [ :aScript :aCanvas | 
-					aScript << (aCanvas jQuery id: WillowConstants notificationSectionName)
+					aScript << (aCanvas jQuery id: Willow constants >> #willow >> #notificationSectionName)
 						html: [ :aSubCanvas |  ] ])
 ]
 

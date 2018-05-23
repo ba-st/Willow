@@ -39,7 +39,7 @@ ScrollIntoViewCommandTest >> testModelLoadingActions [
 
 	self
 		assert: html
-		equals: '<a id="id1"></a><script type="text/javascript">$("#id1").click(function(){$("#id8").each(function(){$(this).scrollIntoView()})});</script>'
+		equals: '<a id="id1"></a><script type="text/javascript">$("#id1").click(function(){$("#id8").each(function(){$(this)[0].scrollIntoView()})});</script>'
 ]
 
 { #category : #'tests-accessing' }

@@ -23,13 +23,13 @@ ScrollIntoViewCommand >> clientIndependentActions [
 	^#()
 ]
 
-{ #category : #'accessing - private' }
+{ #category : #'private - accessing' }
 ScrollIntoViewCommand >> identifierToShow [
 
 	^identifierProvider value
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 ScrollIntoViewCommand >> initializeWithComponentIdentifierProvidedBy: anIdentifierProvider [
 
 	identifierProvider := anIdentifierProvider
@@ -39,7 +39,9 @@ ScrollIntoViewCommand >> initializeWithComponentIdentifierProvidedBy: anIdentifi
 ScrollIntoViewCommand >> modelLoadingActions [
 
 	^ Array
-		with: [ :aScript :aCanvas | aScript << (aCanvas jQuery id: self identifierToShow) each: (aCanvas jQuery this call: 'scrollIntoView') ]
+		with: [ :aScript :aCanvas | 
+			aScript << (aCanvas jQuery id: self identifierToShow)
+				each: ((aCanvas jQuery this property: 0) call: 'scrollIntoView') ]
 ]
 
 { #category : #accessing }

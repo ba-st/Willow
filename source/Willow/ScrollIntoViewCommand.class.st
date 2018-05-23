@@ -23,13 +23,13 @@ ScrollIntoViewCommand >> clientIndependentActions [
 	^#()
 ]
 
-{ #category : #'accessing - private' }
+{ #category : #'private - accessing' }
 ScrollIntoViewCommand >> identifierToShow [
 
 	^identifierProvider value
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 ScrollIntoViewCommand >> initializeWithComponentIdentifierProvidedBy: anIdentifierProvider [
 
 	identifierProvider := anIdentifierProvider
@@ -38,8 +38,12 @@ ScrollIntoViewCommand >> initializeWithComponentIdentifierProvidedBy: anIdentifi
 { #category : #accessing }
 ScrollIntoViewCommand >> modelLoadingActions [
 
+	"We iterate the result before sending the scrolling message in case no match is found."
+
 	^ Array
-		with: [ :aScript :aCanvas | aScript << (aCanvas jQuery id: self identifierToShow) each: (aCanvas jQuery this call: 'scrollIntoView') ]
+		with: [ :aScript :aCanvas | 
+			aScript << (aCanvas jQuery id: self identifierToShow)
+				each: ((aCanvas jQuery this get: 0) call: 'scrollIntoView') ]
 ]
 
 { #category : #accessing }

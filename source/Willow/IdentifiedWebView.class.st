@@ -68,13 +68,7 @@ IdentifiedWebView class >> forFormNamed: aName containing: aView applying: aComp
 { #category : #'instance creation' }
 IdentifiedWebView class >> forLabeledFieldNamed: aName containing: aView [
 
-	^ self
-		forComponentBuiltUsing: [ :canvas | 
-			canvas fieldSet
-				class: Willow classes >> #willow;
-				yourself ]
-		named: aName
-		containing: aView
+	^ self forComponentBuiltUsing: [ :canvas | canvas fieldSet apply: [ :fieldSet | fieldSet addClass willow ] ] named: aName containing: aView
 ]
 
 { #category : #'instance creation' }

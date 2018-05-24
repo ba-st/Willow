@@ -128,7 +128,7 @@ WillowApplication >> renderDialogAndNotificationSectionsOn: aCanvas [
 
 	aCanvas div
 		id: Willow constants >> #willow >> #dialogSectionName;
-		class: Willow classes >> #dialogContainer.
+		apply: [ :div | div addClass dialogContainer ].
 	aCanvas div id: Willow constants >> #willow >> #notificationSectionName
 ]
 

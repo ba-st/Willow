@@ -36,7 +36,7 @@ FormSubmitCommandTest >> testModelLoadingActions [
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
 
-			(FormSubmitCommand forFormStyledAs: Willow classes >> #willow) modelLoadingActions do: [ :action | action value: script value: canvas ].
+			(FormSubmitCommand forFormStyledAs: Willow classification >> #willow) modelLoadingActions do: [ :action | action value: script value: canvas ].
 			anchor script: (canvas jQuery this onClick: script) ].
 
 	self assert: html equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("form.willow").submit()});</script>'

@@ -24,8 +24,7 @@ TemporarilyDisablingCommandTest >> testPriorityActions [
 
 	| command html |
 
-	command := TemporarilyDisablingCommand
-		transformingCurrentViewInto: [ :canvas | canvas span class: Willow classes >> #loading ].
+	command := TemporarilyDisablingCommand transformingCurrentViewInto: [ :canvas | canvas span apply: [ :span | span addClass loading ] ].
 	html := self
 		renderUsing: [ :canvas | 
 			| asynchronousCall anchor |
@@ -53,8 +52,7 @@ TemporarilyDisablingCommandTest >> testServerIndependentActions [
 
 	| command html |
 
-	command := TemporarilyDisablingCommand
-		transformingCurrentViewInto: [ :canvas | canvas span class: Willow classes >> #loading ].
+	command := TemporarilyDisablingCommand transformingCurrentViewInto: [ :canvas | canvas span apply: [ :span | span addClass loading ] ].
 	html := self
 		renderUsing: [ :canvas | 
 			| script anchor |

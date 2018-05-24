@@ -90,17 +90,13 @@ TableWebView >> onTrigger [
 { #category : #rendering }
 TableWebView >> renderContentOn: aCanvas [
 
-	| table |
-
-	table := aCanvas table.
-	table id: (self identifyIn: aCanvas).
-	interactionInterpreter applyTo: table on: aCanvas.
-	commandToTable applyTo: table on: aCanvas.
-
-	table
+	aCanvas table
+		id: (self identifyIn: aCanvas);
+		apply: interactionInterpreter;
 		with: [ aCanvas render: header.
 			aCanvas tableBody: [ items doWithIndex: [ :item :index | self renderRowAt: index for: item on: aCanvas ] ].
 			aCanvas render: footer ]
+		applying: commandToTable
 ]
 
 { #category : #private }

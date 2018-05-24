@@ -35,15 +35,9 @@ FieldSetWebView >> initializeContaining: aWebView applying: aFieldSetCommand wit
 { #category : #rendering }
 FieldSetWebView >> renderContentOn: aCanvas [
 
-	| fieldSet |
-
-	fieldSet := aCanvas fieldSet.
-	fieldSetCommand applyTo: fieldSet on: aCanvas.
-	fieldSet
-		with: [ | legend |
-
-			legend := aCanvas legend.
-			legendCommand applyTo: legend on: aCanvas.
-			legend with: title.
+	aCanvas fieldSet
+		with: [ 
+			aCanvas legend with: title applying: legendCommand.
 			aCanvas render: contentView ]
+		applying: fieldSetCommand
 ]

@@ -67,12 +67,9 @@ RadioGroupWebView >> renderLabelContentFor: anElement on: aCanvas [
 { #category : #'private-rendering' }
 RadioGroupWebView >> renderLabelFor: radioButtonId on: aCanvas with: aRenderable [
 
-	| label |
-
-	label := aCanvas label.
-	label for: radioButtonId.
-	labelCommand applyTo: label on: aCanvas.
-	label with: aRenderable
+	aCanvas label
+		for: radioButtonId;
+		with: aRenderable applying: labelCommand
 ]
 
 { #category : #'private-rendering' }
@@ -84,11 +81,10 @@ RadioGroupWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGroup on: a
 	self
 		renderLabelFor: radioButtonId
 		on: aCanvas
-		with: [ | radioButton |
-			radioButton := aRadioGroup radioButton.
-			radioButton id: radioButtonId.
-			inputCommand applyTo: radioButton on: aCanvas.
-			interactionInterpreter applyTo: radioButton on: aCanvas.
-			radioButton value: anElement.
+		with: [ aRadioGroup radioButton
+				id: radioButtonId;
+				apply: inputCommand;
+				apply: interactionInterpreter;
+				value: anElement.
 			self renderLabelContentFor: anElement on: aCanvas ]
 ]

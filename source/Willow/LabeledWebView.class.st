@@ -47,12 +47,11 @@ LabeledWebView >> phrasingContent [
 { #category : #rendering }
 LabeledWebView >> renderContentOn: aCanvas [
 
-	| label fieldIdentifier |
+	| fieldIdentifier |
 
 	fieldIdentifier := fieldWebView identifyIn: aCanvas.
-	label := aCanvas label for: fieldIdentifier.
-	commandToComponent applyTo: label on: aCanvas.
-	label with: self phrasingContent.
-	aCanvas render: self fieldWebView.
-
+	aCanvas label
+		for: fieldIdentifier;
+		with: self phrasingContent applying: commandToComponent.
+	aCanvas render: self fieldWebView
 ]

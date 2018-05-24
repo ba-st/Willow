@@ -41,18 +41,8 @@ ImageWebView >> onTrigger [
 { #category : #rendering }
 ImageWebView >> renderContentOn: aCanvas [
 
-	| component |
-	component := self renderImageOn: aCanvas.
-	interactionInterpreter applyTo: component on: aCanvas
-]
-
-{ #category : #rendering }
-ImageWebView >> renderImageOn: aCanvas [
-
-	| component |
-
-	component := aCanvas image.
-	component url: imageLocation.
-	commandToComponent applyTo: component on: aCanvas.
-	^ component
+	aCanvas image
+		url: imageLocation;
+		apply: commandToComponent;
+		apply: interactionInterpreter
 ]

@@ -7,6 +7,9 @@ Class {
 	#instVars : [
 		'classesProvider'
 	],
+	#pools : [
+		'Willow'
+	],
 	#category : #'Willow-Frontend'
 }
 
@@ -38,7 +41,7 @@ ComponentClassificationCommandBuilder >> fadingNotification [
 ComponentClassificationCommandBuilder >> initialize [
 
 	super initialize.
-	classesProvider := Willow classes
+	classesProvider := Classification
 ]
 
 { #category : #Building }

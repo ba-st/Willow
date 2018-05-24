@@ -5,7 +5,7 @@ Class {
 	#name : #Willow,
 	#superclass : #SharedPool,
 	#classVars : [
-		'Classes',
+		'Classification',
 		'Constants'
 	],
 	#pools : [
@@ -17,7 +17,13 @@ Class {
 { #category : #accessing }
 Willow class >> classes [
 
-	^ Classes
+	^ Classification
+]
+
+{ #category : #accessing }
+Willow class >> classification [
+
+	^ Classification
 ]
 
 { #category : #accessing }
@@ -38,8 +44,8 @@ Willow class >> initialize [
 Willow class >> initializeClasses [
 
 	<ignoreForCoverage>
-	Classes := Namespace new.
-	Classes
+	Classification := Namespace new.
+	Classification
 		bind: #fadingNotification to: 'willow-fading-notification';
 		bind: #loading to: 'willow-loading';
 		bind: #dialogContainer to: 'willow-dialog-container';

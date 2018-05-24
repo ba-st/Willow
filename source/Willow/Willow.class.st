@@ -15,12 +15,6 @@ Class {
 }
 
 { #category : #accessing }
-Willow class >> classes [
-
-	^ Classification
-]
-
-{ #category : #accessing }
 Willow class >> classification [
 
 	^ Classification

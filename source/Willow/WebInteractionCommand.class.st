@@ -1,6 +1,9 @@
 Class {
 	#name : #WebInteractionCommand,
 	#superclass : #Object,
+	#pools : [
+		'Willow'
+	],
 	#category : #'Willow-WebInteraction'
 }
 

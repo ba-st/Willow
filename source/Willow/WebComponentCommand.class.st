@@ -4,6 +4,9 @@ Abstract for the component commands, each subclass should do a single change to 
 Class {
 	#name : #WebComponentCommand,
 	#superclass : #GRObject,
+	#pools : [
+		'Willow'
+	],
 	#category : #'Willow-Frontend'
 }
 

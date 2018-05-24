@@ -48,7 +48,7 @@ DialogClosingCommand >> modelLoadingActions [
 		with: [ :aScript :aCanvas | 
 			aCanvas session componentSupplier
 				addStatementsTo: aScript
-				toCloseDialogsIn: (aCanvas jQuery id: Willow constants >> #willow >> #dialogSectionName)
+				toCloseDialogsIn: (aCanvas jQuery id: Constants >> #willow >> #dialogSectionName)
 				matching: dialogSupplier
 				on: aCanvas ]
 ]

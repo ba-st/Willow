@@ -71,6 +71,6 @@ ComponentEnableStatusChangingCommand >> serverIndependentActions [
 	^ Array
 		with: [ :aScript :aCanvas | 
 			aScript << (componentProvider value: aCanvas)
-				propertyAt: Willow constants >> #willow >> #disabledAttributeName
+				propertyAt: Constants >> #willow >> #disabledAttributeName
 				put: desiredStatus ]
 ]

@@ -4,6 +4,9 @@ I'm a library providing some basic object used to define and access some utility
 Class {
 	#name : #WillowNamespaceFileMetadataLibrary,
 	#superclass : #WADeploymentAwareFileMetadataLibrary,
+	#pools : [
+		'Willow'
+	],
 	#category : #'Willow-Libraries'
 }
 
@@ -123,9 +126,9 @@ WillowNamespaceFileMetadataLibrary >> willowDefaults [
 
 	^ GRSmallDictionary new
 		at: 'version' put: self version;
-		at: Willow constants >> #willow >> #handleAjaxErrorCallFunctionName
+		at: Constants >> #willow >> #handleAjaxErrorCallFunctionName
 			put: self defaultHandleAjaxErrorCallFunction;
-		at: Willow constants >> #willow >> #callServerFunctionName put: self callServerFunction;
+		at: Constants >> #willow >> #callServerFunctionName put: self callServerFunction;
 		yourself
 ]
 

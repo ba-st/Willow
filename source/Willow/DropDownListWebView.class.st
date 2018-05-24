@@ -66,5 +66,5 @@ DropDownListWebView >> renderContentOn: aCanvas [
 	chosenElementOptional withContentDo: [ :chosenElement | select selected: chosenElement ] ifUnused: [ self configure: select unselectingAllOn: aCanvas ].
 	select
 		apply: commandToComponent;
-		apply: interactionInterpreter
+		interactUsing: interactionInterpreter
 ]

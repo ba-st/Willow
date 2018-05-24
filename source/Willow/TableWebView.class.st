@@ -92,7 +92,7 @@ TableWebView >> renderContentOn: aCanvas [
 
 	aCanvas table
 		id: (self identifyIn: aCanvas);
-		apply: interactionInterpreter;
+		interactUsing: interactionInterpreter;
 		with: [ aCanvas render: header.
 			aCanvas tableBody: [ items doWithIndex: [ :item :index | self renderRowAt: index for: item on: aCanvas ] ].
 			aCanvas render: footer ]

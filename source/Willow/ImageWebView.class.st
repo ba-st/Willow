@@ -44,5 +44,5 @@ ImageWebView >> renderContentOn: aCanvas [
 	aCanvas image
 		url: imageLocation;
 		apply: commandToComponent;
-		apply: interactionInterpreter
+		interactUsing: interactionInterpreter
 ]

@@ -50,6 +50,6 @@ PhrasingContainerWebView >> onTrigger [
 PhrasingContainerWebView >> renderContentOn: aCanvas [
 
 	aCanvas span
-		apply: interactionInterpreter;
+		interactUsing: interactionInterpreter;
 		with: phrasingContentProvider value applying: commandToComponent
 ]

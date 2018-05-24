@@ -48,6 +48,6 @@ GenericContainerWebView >> onTrigger [
 GenericContainerWebView >> renderContentOn: aCanvas [
 
 	aCanvas div
-		apply: interactionInterpreter;
+		interactUsing: interactionInterpreter;
 		with: contentProvider value applying: commandToComponent
 ]

@@ -84,7 +84,7 @@ RadioGroupWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGroup on: a
 		with: [ aRadioGroup radioButton
 				id: radioButtonId;
 				apply: inputCommand;
-				apply: interactionInterpreter;
+				interactUsing: interactionInterpreter;
 				value: anElement.
 			self renderLabelContentFor: anElement on: aCanvas ]
 ]

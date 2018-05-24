@@ -127,6 +127,6 @@ MultipleSelectionListBoxWebView >> renderContentOn: aCanvas [
 		selected: chosenElements.
 	identifierAssigner withAssignedIdentifierDo: [ :id | select id: id ].
 	select
-		apply: interactionInterpreter;
+		interactUsing: interactionInterpreter;
 		apply: commandToComponent
 ]

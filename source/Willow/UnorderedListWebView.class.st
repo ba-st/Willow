@@ -61,6 +61,6 @@ UnorderedListWebView >> renderContentOn: aCanvas [
 	identifierAssigner withAssignedIdentifierDo: [ :id | list id: id ].
 	list
 		apply: commandToList;
-		apply: interactionInterpreter;
+		interactUsing: interactionInterpreter;
 		with: [ elements do: [ :anElement | aCanvas render: (ListItemWebView itemizing: anElement containedIn: list applying: commandToItem) ] ]
 ]

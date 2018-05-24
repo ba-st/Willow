@@ -1,14 +1,15 @@
 Extension { #name : #WATagBrush }
 
 { #category : #'*Willow' }
-WATagBrush >> apply: aBlockOrComponentCommandOrInterpreter [
+WATagBrush >> apply: aBlockOrComponentCommand [
 
-	| commandOrInterpreter |
+	aBlockOrComponentCommand asWebComponentCommand applyTo: self on: canvas
+]
 
-	commandOrInterpreter := aBlockOrComponentCommandOrInterpreter isBlock
-		ifTrue: [ aBlockOrComponentCommandOrInterpreter asWebComponentCommand ]
-		ifFalse: [ aBlockOrComponentCommandOrInterpreter ].
-	commandOrInterpreter applyTo: self on: canvas
+{ #category : #'*Willow' }
+WATagBrush >> interactUsing: anInteractionInterpreter [
+
+	anInteractionInterpreter applyTo: self on: canvas
 ]
 
 { #category : #'*Willow' }

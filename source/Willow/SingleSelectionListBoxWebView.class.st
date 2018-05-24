@@ -69,6 +69,6 @@ SingleSelectionListBoxWebView >> renderContentOn: aCanvas [
 	identifierAssigner withAssignedIdentifierDo: [ :id | select id: id ].
 	chosenElementOptional withContentDo: [ :chosenElement | select selected: chosenElement ] ifUnused: [ self configure: select unselectingAllOn: aCanvas ].
 	select
-		apply: interactionInterpreter;
+		interactUsing: interactionInterpreter;
 		apply: commandToComponent
 ]

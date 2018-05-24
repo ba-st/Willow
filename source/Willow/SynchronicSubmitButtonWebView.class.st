@@ -62,6 +62,6 @@ SynchronicSubmitButtonWebView >> renderContentOn: aCanvas [
 	submitButton
 		callback: submitCallback;
 		value: label;
-		apply: interactionInterpreter;
+		interactUsing: interactionInterpreter;
 		apply: commandToComponent
 ]

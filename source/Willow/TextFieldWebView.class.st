@@ -118,5 +118,5 @@ TextFieldWebView >> renderContentOn: aCanvas [
 	identifierAssigner withAssignedIdentifierDo: [ :id | component id: id ].
 	component
 		apply: commandToComponent;
-		apply: interactionInterpreter
+		interactUsing: interactionInterpreter
 ]

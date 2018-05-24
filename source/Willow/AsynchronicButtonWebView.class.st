@@ -64,6 +64,6 @@ AsynchronicButtonWebView >> renderContentOn: aCanvas [
 	pushButton
 		value: label;
 		bePush;
-		apply: interactionInterpreter;
+		interactUsing: interactionInterpreter;
 		apply: commandToComponent
 ]

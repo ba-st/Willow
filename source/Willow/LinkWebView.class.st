@@ -54,6 +54,6 @@ LinkWebView >> onTrigger [
 LinkWebView >> renderContentOn: aCanvas [
 
 	aCanvas anchor
-		apply: interactionInterpreter;
+		interactUsing: interactionInterpreter;
 		with: label applying: commandToComponent
 ]

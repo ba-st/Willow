@@ -29,9 +29,5 @@ ListItemWebView >> initializeItemizing: anObject containedIn: aList applying: aC
 { #category : #rendering }
 ListItemWebView >> renderContentOn: aCanvas [
 
-	| component |
-
-	component := aCanvas listItem.
-	commandToComponent applyTo: component on: aCanvas.
-	component with: (list labelForOption: item)
+	aCanvas listItem with: (list labelForOption: item) applying: commandToComponent
 ]

@@ -25,6 +25,12 @@ TableWebViewBuilder >> addColumn: aMonadycBlock [
 ]
 
 { #category : #Configuring }
+TableWebViewBuilder >> apply: aTableCommand [
+
+	tableCommand := tableCommand + aTableCommand
+]
+
+{ #category : #Configuring }
 TableWebViewBuilder >> applyToEachRow: aRowCommand [
 
 	rowCommand := aRowCommand
@@ -80,5 +86,5 @@ TableWebViewBuilder >> renderHeader [
 { #category : #Configuring }
 TableWebViewBuilder >> styledWith: aCssClass [
 
-	tableCommand := tableCommand + (ComponentClassificationCommand toStyleWith: aCssClass)
+	self apply: (ComponentClassificationCommand toStyleWith: aCssClass)
 ]

@@ -5,50 +5,53 @@ Class {
 	#name : #ComponentClassificationCommandBuilder,
 	#superclass : #GRObject,
 	#instVars : [
-		'styleProviderBinding'
+		'classificationNamespace'
+	],
+	#pools : [
+		'Willow'
 	],
 	#category : #'Willow-Frontend'
 }
 
 { #category : #private }
-ComponentClassificationCommandBuilder >> commandStyledWith: aCssStyle [
+ComponentClassificationCommandBuilder >> commandStyledWith: aSymbol [
 
-	^ ComponentClassificationCommand toStyleWith: aCssStyle
+	^ ComponentClassificationCommand toStyleWith: classificationNamespace >> aSymbol
 ]
 
 { #category : #Building }
 ComponentClassificationCommandBuilder >> dialogContainer [
 
-	^ self commandStyledWith: styleProviderBinding content dialogContainer
+	^ self commandStyledWith: #dialogContainer
 ]
 
 { #category : #Building }
 ComponentClassificationCommandBuilder >> disabledComponent [
 
-	^ self commandStyledWith: styleProviderBinding content disabledComponent
+	^ self commandStyledWith: #disabledComponent
 ]
 
 { #category : #Building }
 ComponentClassificationCommandBuilder >> fadingNotification [
 
-	^ self commandStyledWith: styleProviderBinding content fadingNotification
+	^ self commandStyledWith: #fadingNotification
 ]
 
 { #category : #initialization }
 ComponentClassificationCommandBuilder >> initialize [
 
 	super initialize.
-	styleProviderBinding := Binding to: WillowCssStyles
+	classificationNamespace := Classification
 ]
 
 { #category : #Building }
 ComponentClassificationCommandBuilder >> loading [
 
-	^ self commandStyledWith: styleProviderBinding content loading
+	^ self commandStyledWith: #loading
 ]
 
 { #category : #Building }
 ComponentClassificationCommandBuilder >> willow [
 
-	^ self commandStyledWith: styleProviderBinding content willow
+	^ self commandStyledWith: #willow
 ]

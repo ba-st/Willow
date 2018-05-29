@@ -63,8 +63,7 @@ AsynchronicButtonWebView >> renderContentOn: aCanvas [
 	identifierAssigner withAssignedIdentifierDo: [ :id | pushButton id: id ].
 	pushButton
 		value: label;
-		bePush.
-
-	interactionInterpreter applyTo: pushButton on: aCanvas.
-	commandToComponent applyTo: pushButton on: aCanvas
+		bePush;
+		interactUsing: interactionInterpreter;
+		apply: commandToComponent
 ]

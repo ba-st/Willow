@@ -35,11 +35,7 @@ HeadingWebView >> initializeDisplaying: aHeadingText withLevel: aLevel applying:
 { #category : #rendering }
 HeadingWebView >> renderContentOn: aCanvas [
 
-	| heading |
-
-	heading := aCanvas heading.
-	commandToComponent applyTo: heading on: aCanvas.
-	heading
+	aCanvas heading
 		level: level;
-		with: text
+		with: text applying: commandToComponent
 ]

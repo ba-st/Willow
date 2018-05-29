@@ -4,6 +4,9 @@ I'm an abstract subclass for component builders
 Class {
 	#name : #WillowComponentBuilder,
 	#superclass : #GRObject,
+	#pools : [
+		'Willow'
+	],
 	#category : #'Willow-WebViews'
 }
 

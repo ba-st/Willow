@@ -47,10 +47,7 @@ GenericContainerWebView >> onTrigger [
 { #category : #rendering }
 GenericContainerWebView >> renderContentOn: aCanvas [
 
-	| div |
-
-	div := aCanvas div.
-	interactionInterpreter applyTo: div on: aCanvas.
-	commandToComponent applyTo: div on: aCanvas. 
-	div with: contentProvider value
+	aCanvas div
+		interactUsing: interactionInterpreter;
+		with: contentProvider value applying: commandToComponent
 ]

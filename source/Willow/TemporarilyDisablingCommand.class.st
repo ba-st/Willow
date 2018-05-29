@@ -47,7 +47,8 @@ TemporarilyDisablingCommand >> componentToDisableOn: aCanvas [
 
 { #category : #private }
 TemporarilyDisablingCommand >> disabledAttributeName [
-	^ WillowConstants disabledAttributeName
+
+	^ Constants >> #willow >> #disabledAttributeName
 ]
 
 { #category : #private }
@@ -76,9 +77,9 @@ TemporarilyDisablingCommand >> priorityActions [
 		with: [ :anAsynchronousCall :aCanvas | 
 			anAsynchronousCall
 				onComplete:
-					((aCanvas jQuery class: WillowCssStyles disabledComponent)
+					((aCanvas jQuery class: Classification >> #disabledComponent)
 						attributeAt: self disabledAttributeName put: false;
-						removeClass: WillowCssStyles disabledComponent;
+						removeClass: Classification >> #disabledComponent;
 						call: 'html' with: (aCanvas jQuery alias: self disabledComponentVariableName)) ]
 ]
 
@@ -93,12 +94,11 @@ TemporarilyDisablingCommand >> serverIndependentActions [
 
 	^ Array
 		with: [ :script :canvas | 
-			script
-				<< ((self componentToDisableOn: canvas) html assignTo: self disabledComponentVariableName).
+			script << ((self componentToDisableOn: canvas) html assignTo: self disabledComponentVariableName).
 			script
 				<<
 					((self componentToDisableOn: canvas)
-						addClass: WillowCssStyles disabledComponent;
+						addClass: Classification >> #disabledComponent;
 						attributeAt: self disabledAttributeName put: true;
 						html: viewWhileDisabled) ]
 ]

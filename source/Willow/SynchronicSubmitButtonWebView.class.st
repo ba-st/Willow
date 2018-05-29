@@ -61,8 +61,7 @@ SynchronicSubmitButtonWebView >> renderContentOn: aCanvas [
 	identifierAssigner withAssignedIdentifierDo: [ :id | submitButton id: id ].
 	submitButton
 		callback: submitCallback;
-		value: label.
-
-	interactionInterpreter applyTo: submitButton on: aCanvas.
-	commandToComponent applyTo: submitButton on: aCanvas
+		value: label;
+		interactUsing: interactionInterpreter;
+		apply: commandToComponent
 ]

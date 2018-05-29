@@ -68,13 +68,7 @@ IdentifiedWebView class >> forFormNamed: aName containing: aView applying: aComp
 { #category : #'instance creation' }
 IdentifiedWebView class >> forLabeledFieldNamed: aName containing: aView [
 
-	^ self
-		forComponentBuiltUsing: [ :canvas | 
-			canvas fieldSet
-				class: WillowCssStyles willow;
-				yourself ]
-		named: aName
-		containing: aView
+	^ self forComponentBuiltUsing: [ :canvas | canvas fieldSet apply: [ :fieldSet | fieldSet addClass willow ] ] named: aName containing: aView
 ]
 
 { #category : #'instance creation' }
@@ -133,9 +127,9 @@ IdentifiedWebView >> renderContentOn: aCanvas [
 	identifier := self identifyIn: aCanvas.
 	containerComponent := self componentRenderedOn: aCanvas.
 	"We need to set the id before applying the commands, because some command may require it"
-	containerComponent id: identifier.
-	commandToComponent applyTo: containerComponent on: aCanvas.
-	containerComponent with: view
+	containerComponent
+		id: identifier;
+		with: view applying: commandToComponent
 ]
 
 { #category : #accessing }

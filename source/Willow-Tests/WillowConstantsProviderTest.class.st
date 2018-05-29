@@ -13,7 +13,7 @@ WillowConstantsProviderTest >> testBlockExtension [
 	| html |
 
 	html := self
-		apply: [ :anchor :constants | anchor addScript js: [ :canvas | canvas jQuery this onClick: (canvas jQuery id: constants willow dialogSectionName) clone ] ] asWebComponentCommand
+		apply: [ :anchor :constants | anchor addScript js: [ :canvas | canvas jQuery this onClick: (canvas jQuery id: constants >> #willow >> #dialogSectionName) clone ] ] asWebComponentCommand
 		toComponentDefinedBy: [ :canvas | canvas anchor ].
 
 	self assert: html equals: '<a id="id1"></a><script type="text/javascript">$("#id1").click(function(){$("#willow-dialog-section").clone()});</script>'
@@ -24,7 +24,6 @@ WillowConstantsProviderTest >> testCssConstants [
 
 	[ :command :constants | 
 	self
-		assert: constants css inherit equals: CssConstants inherit;
-		assert: constants cssFonts allPetiteCaps equals: CssFontConstants allPetiteCaps;
-		assert: constants cssMediaQuery landscape equals: CssMediaQueryConstants landscape ] asWebComponentCommand
+		assert: constants >> #css >> #inherit equals: 'inherit';
+		assert: constants >> #css >> #allPetiteCaps equals: 'all-petite-caps' ] asWebComponentCommand
 ]

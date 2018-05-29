@@ -49,10 +49,7 @@ PhrasingContainerWebView >> onTrigger [
 { #category : #rendering }
 PhrasingContainerWebView >> renderContentOn: aCanvas [
 
-	| span |
-
-	span := aCanvas span.
-	interactionInterpreter applyTo: span on: aCanvas.
-	commandToComponent applyTo: span on: aCanvas.
-	span with: phrasingContentProvider value
+	aCanvas span
+		interactUsing: interactionInterpreter;
+		with: phrasingContentProvider value applying: commandToComponent
 ]

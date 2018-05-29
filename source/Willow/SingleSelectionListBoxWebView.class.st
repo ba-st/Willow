@@ -29,7 +29,7 @@ SingleSelectionListBoxWebView class >> displayingAtOnce: aNumberOfElements apply
 { #category : #private }
 SingleSelectionListBoxWebView >> configure: select unselectingAllOn: aCanvas [
 
-	^ availableElements ifNotEmpty: [ DeselectAllOptionsCommand new applyTo: select on: aCanvas ]
+	^ availableElements ifNotEmpty: [ select apply: DeselectAllOptionsCommand new ]
 ]
 
 { #category : #accessing }
@@ -68,6 +68,7 @@ SingleSelectionListBoxWebView >> renderContentOn: aCanvas [
 	select callback: [ :element | self choose: element ].
 	identifierAssigner withAssignedIdentifierDo: [ :id | select id: id ].
 	chosenElementOptional withContentDo: [ :chosenElement | select selected: chosenElement ] ifUnused: [ self configure: select unselectingAllOn: aCanvas ].
-	interactionInterpreter applyTo: select on: aCanvas.
-	commandToComponent applyTo: select on: aCanvas
+	select
+		interactUsing: interactionInterpreter;
+		apply: commandToComponent
 ]

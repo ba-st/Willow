@@ -4,6 +4,9 @@ I'm a basic Willow application providing some guidance to the developers.
 Class {
 	#name : #WillowApplication,
 	#superclass : #WAComponent,
+	#pools : [
+		'Willow'
+	],
 	#category : #'Willow-Applications'
 }
 
@@ -127,9 +130,9 @@ WillowApplication >> renderDialogAndNotificationSectionsOn: aCanvas [
 	"Render dialog and notification sections. These are needed for the dialog and notification support."
 
 	aCanvas div
-		id: WillowConstants dialogSectionName;
-		class: WillowCssStyles dialogContainer.
-	aCanvas div id: WillowConstants notificationSectionName
+		id: Constants >> #willow >> #dialogSectionName;
+		apply: [ :div | div addClass dialogContainer ].
+	aCanvas div id: Constants >> #willow >> #notificationSectionName
 ]
 
 { #category : #accessing }

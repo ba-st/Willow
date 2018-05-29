@@ -36,7 +36,7 @@ BaselineOfWillow >> setUpDependencies: spec [
 	spec
 		baseline: 'RenoirSt'
 		with: [ spec
-				repository: 'github://ba-st/RenoirSt:v5/source';
+				repository: 'github://ba-st/RenoirSt:v6/source';
 				loads: #('Deployment-Seaside-Extensions') ].
 
 	spec

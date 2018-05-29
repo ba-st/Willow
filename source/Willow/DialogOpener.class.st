@@ -4,11 +4,15 @@ I help in opening dialogs. Useful outside of the DialogOpeningCommand.
 Class {
 	#name : #DialogOpener,
 	#superclass : #GRObject,
+	#pools : [
+		'Willow'
+	],
 	#category : #'Willow-WebInteraction'
 }
 
 { #category : #actions }
 DialogOpener >> open: aDialogView on: aCanvas [
 
-	^ (aCanvas jQuery id: WillowConstants dialogSectionName) append: [ :aSubCanvas | aSubCanvas render: aDialogView ]
+	^ (aCanvas jQuery id: Constants >> #willow >> #dialogSectionName)
+		append: [ :aSubCanvas | aSubCanvas render: aDialogView ]
 ]

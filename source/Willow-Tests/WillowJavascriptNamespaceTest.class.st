@@ -15,6 +15,18 @@ WillowJavascriptNamespaceTest >> testCallServerFunction [
 		equals: 'Willow.callServer'
 ]
 
+{ #category : #'tests-printing' }
+WillowJavascriptNamespaceTest >> testClassificationAccess [
+
+	self assert: Willow classification >> #loading equals: 'willow-loading'
+]
+
+{ #category : #'tests-printing' }
+WillowJavascriptNamespaceTest >> testConstantsAccess [
+
+	self assert: WillowJavascriptNamespace new constants >> #css >> #auto equals: 'auto'
+]
+
 { #category : #'tests-Accessing' }
 WillowJavascriptNamespaceTest >> testHandleAjaxErrorCallFunction [
 

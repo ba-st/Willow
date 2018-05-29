@@ -5,7 +5,7 @@ Class {
 	#name : #ComponentClassificationCommandBuilder,
 	#superclass : #GRObject,
 	#instVars : [
-		'classesProvider'
+		'classificationNamespace'
 	],
 	#pools : [
 		'Willow'
@@ -16,7 +16,7 @@ Class {
 { #category : #private }
 ComponentClassificationCommandBuilder >> commandStyledWith: aSymbol [
 
-	^ ComponentClassificationCommand toStyleWith: classesProvider >> aSymbol
+	^ ComponentClassificationCommand toStyleWith: classificationNamespace >> aSymbol
 ]
 
 { #category : #Building }
@@ -41,7 +41,7 @@ ComponentClassificationCommandBuilder >> fadingNotification [
 ComponentClassificationCommandBuilder >> initialize [
 
 	super initialize.
-	classesProvider := Classification
+	classificationNamespace := Classification
 ]
 
 { #category : #Building }

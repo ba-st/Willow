@@ -2,7 +2,8 @@ Extension { #name : #JSObject }
 
 { #category : #'*Willow' }
 JSObject >> constants [
-
+	
+	"This method is intended to be private."
 	^ Willow constants
 ]
 

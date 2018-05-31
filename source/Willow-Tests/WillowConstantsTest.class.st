@@ -1,5 +1,5 @@
 "
-A WillowConstantsProviderTest is a test class for testing the behavior of WillowConstantsProvider
+A WillowConstantsTest is a test class for testing the constants provided by the library
 "
 Class {
 	#name : #WillowConstantsTest,

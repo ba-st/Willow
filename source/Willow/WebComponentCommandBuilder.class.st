@@ -4,6 +4,9 @@ I'm a builder to ease the creation of component commands
 Class {
 	#name : #WebComponentCommandBuilder,
 	#superclass : #GRObject,
+	#pools : [
+		'Willow'
+	],
 	#category : #'Willow-Frontend'
 }
 
@@ -104,6 +107,12 @@ WebComponentCommandBuilder >> setARIAAttribute: aName to: aValue [
 ]
 
 { #category : #Building }
+WebComponentCommandBuilder >> setARIARoleTo: aRoleNameOrSymbol [
+
+	^ self setAttribute: 'role' to: Constants >> #aria >> aRoleNameOrSymbol
+]
+
+{ #category : #Building }
 WebComponentCommandBuilder >> setAttribute: aName to: aValue [
 
 	^ ComponentAttributeCommand named: aName with: aValue
@@ -145,7 +154,7 @@ WebComponentCommandBuilder >> setStyleTo: aDeclarationAction [
 	| declarationBlock |
 
 	declarationBlock := CssDeclarationBlock new.
-	aDeclarationAction cull: declarationBlock cull: RenoirSt constants.
+	aDeclarationAction cull: declarationBlock cull: Constants >> #css.
 	^ SetComponentStyleCommand setting: declarationBlock
 ]
 

@@ -14,6 +14,16 @@ WebComponentCommandBuilderTest >> commandBuilder [
 ]
 
 { #category : #tests }
+WebComponentCommandBuilderTest >> testARIARoleCommand [
+
+	| html |
+
+	html := self apply: (self commandBuilder setARIARoleTo: #presentation) toComponentDefinedBy: [ :canvas | canvas div ].
+
+	self assert: html equals: '<div role="presentation"></div>'
+]
+
+{ #category : #tests }
 WebComponentCommandBuilderTest >> testAccessibilityEnrichmentCommands [
 
 	| html |

@@ -40,6 +40,7 @@ Willow class >> initializeARIAConstants [
 	"Checkout https://www.w3.org/TR/wai-aria/#roles_categorization"
 
 	<ignoreForCoverage>
+	Constants bind: #aria to: Namespace new.
 	self
 		initializeWidgetRoles;
 		initializeDocumentStructureRoles;
@@ -74,7 +75,6 @@ Willow class >> initializeConstants [
 		bind: #handleAjaxErrorCallFunctionName to: 'handleAjaxErrorCall';
 		bind: #notificationSectionName to: 'willow-notification-section';
 		bind: #dialogSectionName to: 'willow-dialog-section'.
-	Constants bind: #aria to: Namespace new.
 	self initializeARIAConstants
 ]
 

@@ -25,6 +25,11 @@ IdentifiedWebView class >> forComponentBuiltUsing: aComponentBuilder named: aNam
 
 { #category : #'instance creation' }
 IdentifiedWebView class >> forComponentBuiltUsing: aComponentBuilder named: aName containing: aView applying: aComponentCommand [
+	"Arguments:
+		- aComponentBuilder - aValuable taking aCanvas as its argument
+		- aName - the id of the HTML tag; will be mangled automatically to avoid conflicts
+		- aView - my contents
+		- aComponentCommand - Convertible to WebComponentCommand. Browse implementors of #asWebComponentCommand"
 
 	^ self new
 		initializeForComponentBuiltUsing: aComponentBuilder

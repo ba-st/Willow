@@ -1,3 +1,6 @@
+"
+I am a range slider.
+"
 Class {
 	#name : #RangeWebView,
 	#superclass : #WAPainter,
@@ -94,8 +97,9 @@ RangeWebView >> renderContentOn: aCanvas [
 
 	| range |
 	
-	self renderOptionalLabelRelatedTo: range on: aCanvas.
+	self renderOptionalLabelOn: aCanvas.
 	range := aCanvas rangeInput.
+	identifierAssigner withAssignedIdentifierDo: [ :id | range id: id ].
 	commandToComponent applyTo: range on: aCanvas.
 	range
 		min: self min;
@@ -107,18 +111,13 @@ RangeWebView >> renderContentOn: aCanvas [
 ]
 
 { #category : #'rendering - private' }
-RangeWebView >> renderOptionalLabelRelatedTo: checkbox on: aCanvas [
-
-	labelOptional
-		withContentDo: [ :label | 
-			| id |
-
-			id := self identifyIn: aCanvas.
-			checkbox id: id.
-			aCanvas label
-				for: id;
-				with: label ]
-		ifUnused: [ identifierAssigner withAssignedIdentifierDo: [ :id | checkbox id: id ] ]
+RangeWebView >> renderOptionalLabelOn: aCanvas [
+	labelOptional withContentDo: [ :label | 
+		| id |
+		id := self identifyIn: aCanvas.
+		aCanvas label
+			for: id;
+			with: label ]
 ]
 
 { #category : #accessing }

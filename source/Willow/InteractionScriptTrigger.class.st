@@ -9,6 +9,7 @@ Class {
 
 { #category : #'instance creation - private' }
 InteractionScriptTrigger class >> interactSending: anInteracionSelector [
+	"Argument will be sent to JQueryInstance; browse for options"
 
 	^ self new initializeInteractSending: anInteracionSelector
 ]
@@ -29,6 +30,12 @@ InteractionScriptTrigger class >> triggeringOnClick [
 InteractionScriptTrigger class >> triggeringOnDoubleClick [
 
 	^ self interactSending: #onDoubleClick:
+]
+
+{ #category : #'instance creation' }
+InteractionScriptTrigger class >> triggeringOnInput [
+
+	^ self interactSending: #onInput:
 ]
 
 { #category : #'instance creation' }

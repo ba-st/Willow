@@ -86,6 +86,14 @@ WebComponentInteraction class >> triggeredOnEvaluationOf: aSelector withAll: aPa
 ]
 
 { #category : #'instance creation' }
+WebComponentInteraction class >> triggeredOnInput [
+
+	^ self
+		triggeredAccordingTo: InteractionScriptTrigger triggeringOnInput
+		serializingWith: NullWebInteractionCommand new
+]
+
+{ #category : #'instance creation' }
 WebComponentInteraction class >> triggeredOnKeyUp [
 
 	^ self

@@ -51,6 +51,12 @@ WebInteractionInterpreter class >> forEvaluationOf: aSelector withAll: aParamete
 ]
 
 { #category : #'instance creation' }
+WebInteractionInterpreter class >> forInputToComponent [
+
+	^self workingWith: WebComponentInteraction triggeredOnInput
+]
+
+{ #category : #'instance creation' }
 WebInteractionInterpreter class >> forInstantEvaluation [
 
 	^self workingWith: WebComponentInteraction triggeredOnDocumentLoad

@@ -344,6 +344,20 @@ WebInteractionInterpreterTest >> testForEvaluationOfWithAll [
 	self assert: html equals: '<input onblur="function(firstThis,thenThat){alert(&quot;The message is the medium&quot;)}" type="text"/>'
 ]
 
+{ #category : #tests }
+WebInteractionInterpreterTest >> testForInputToComponent [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forInputToComponent.
+	interpreter evaluate: [  ].
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").on("input",function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+]
+
 { #category : #'tests - Instance Creation' }
 WebInteractionInterpreterTest >> testForInstantEvaluation [
 

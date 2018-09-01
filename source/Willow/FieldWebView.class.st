@@ -3,54 +3,33 @@ I 'm an abstract class representing non textual HTML5 inputs.
 "
 Class {
 	#name : #FieldWebView,
-	#superclass : #WAPainter,
+	#superclass : #TextFieldWebView,
+	#instVars : [
+		'textCodec'
+	],
 	#category : #'Willow-WebViews'
 }
 
 { #category : #'Container-API' }
 FieldWebView >> changeModelTo: aModel [
 
-	^ self textField changeContentsTo: (self textCodec encode: aModel)
+	^ self changeContentsTo: (self textCodec encode: aModel)
 ]
 
-{ #category : #configuring }
-FieldWebView >> identifyIn: aCanvas [
+{ #category : #initialization }
+FieldWebView >> initializeTransformingWith: aTextCodec [
 
-	^ self textField identifyIn: aCanvas
+	textCodec := aTextCodec
 ]
 
 { #category : #'Container-API' }
 FieldWebView >> model [
 
-	^ self textCodec decode: self textField contents
-]
-
-{ #category : #'Container-API' }
-FieldWebView >> notifyChangesTo: aSupervisor [
-
-	^ self textField notifyChangesTo: aSupervisor
-]
-
-{ #category : #configuring }
-FieldWebView >> onTrigger [
-
-	^ self textField onTrigger
-]
-
-{ #category : #rendering }
-FieldWebView >> renderContentOn: aCanvas [
-
-	aCanvas render: self textField
+	^ self textCodec decode: self contents
 ]
 
 { #category : #'private - Accessing' }
 FieldWebView >> textCodec [
 
-	^ self subclassResponsibility
-]
-
-{ #category : #'private - Accessing' }
-FieldWebView >> textField [
-
-	^ self subclassResponsibility
+	^ textCodec
 ]

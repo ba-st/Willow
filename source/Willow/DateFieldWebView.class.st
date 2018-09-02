@@ -16,7 +16,7 @@ DateFieldWebView class >> applying: aComponentCommand [
 { #category : #'instance creation' }
 DateFieldWebView class >> applying: aComponentCommand transformingWith: aTextCodec [
 
-	^ (self singleLineTriggeringOnChangeApplying: [ :field | field beDateInput + aComponentCommand ] asWebComponentCommand) 
+	^ (self singleLineTriggeringOnChangeApplying: [ :field | aComponentCommand ] asWebComponentCommand) 
 			initializeTransformingWith: aTextCodec
 ]
 

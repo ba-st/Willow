@@ -47,7 +47,7 @@ Html5ComponentSupplier >> checkboxUnlabeledOnModel: anObjectToUseWhenOn offModel
 { #category : #Supplying }
 Html5ComponentSupplier >> dateFieldApplying: aComponentCommand [
 
-	^ DateFieldWebView applying: aComponentCommand
+	^ DateFieldWebView applying: [ :field | field beDateInput + aComponentCommand ]
 ]
 
 { #category : #Supplying }

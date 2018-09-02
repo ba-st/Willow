@@ -12,7 +12,8 @@ Class {
 		'value',
 		'min',
 		'max',
-		'step'
+		'step',
+		'interested'
 	],
 	#category : #'Willow-WebViews'
 }
@@ -57,7 +58,8 @@ RangeWebView >> initialize [
 	super initialize.
 	self commandToComponent: [].
 	labelOptional := Optional unused.
-	interactionInterpreter := WebInteractionInterpreter forClickOnHiddenInputDependentComponent.
+	interested := Set new.
+	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'range'.
 ]
 
@@ -84,6 +86,12 @@ RangeWebView >> min [
 { #category : #accessing }
 RangeWebView >> min: anObject [
 	min := anObject
+]
+
+{ #category : #'as yet unclassified' }
+RangeWebView >> notifyInterested [
+
+	interested do: [ :anInterested | anInterested changeNotifiedBy: self ]
 ]
 
 { #category : #configuring }

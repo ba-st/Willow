@@ -12,7 +12,7 @@ Class {
 PluggableExecutionOnClientCommandTest >> setUp [
 
 	super setUp.
-	commandAction := [ :parameter :somethingElse | self fail ].
+	commandAction := [ :canvas | JSStream this ].
 	command := PluggableExecutionOnClientCommand executingOnly: commandAction
 ]
 
@@ -43,7 +43,9 @@ PluggableExecutionOnClientCommandTest >> testRequiresSerialization [
 { #category : #'tests-accessing' }
 PluggableExecutionOnClientCommandTest >> testServerIndependentActions [
 
-	self
-		assertCollection: command serverIndependentActions
-		equals: (Array with: commandAction)
+	| actions |
+
+	actions := command serverIndependentActions.
+	self assert: actions size equals: 1.
+	actions do: [ :action | self render: [ :canvas | self assert: (action value: JSScript new value: canvas) greaseString equals: 'this' ] ]
 ]

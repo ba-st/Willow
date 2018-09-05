@@ -271,7 +271,7 @@ WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRende
 	"This will replace anIdentifiedWebView content with aRenderable on the browser side"
 
 	self
-		executeOnClient: [ :script :canvas | 
+		executeOnClient: [ :canvas | 
 			anIdentifiedWebView identifyIn: canvas.
-			script << (canvas jQuery id: anIdentifiedWebView identifier) html: aRenderable ]
+			(canvas jQuery id: anIdentifiedWebView identifier) html: aRenderable ]
 ]

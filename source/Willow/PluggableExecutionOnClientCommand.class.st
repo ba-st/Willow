@@ -31,7 +31,8 @@ PluggableExecutionOnClientCommand >> clientIndependentActions [
 { #category : #'initialize-release' }
 PluggableExecutionOnClientCommand >> initializeExecutingAll: aServerIndependentActionCollection [
 
-	serverIndependentActions := aServerIndependentActionCollection.
+	serverIndependentActions := aServerIndependentActionCollection
+		collect: [ :actionBlock | [ :script :canvas | script << (actionBlock cull: canvas) ] ]
 ]
 
 { #category : #accessing }

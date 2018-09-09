@@ -275,7 +275,7 @@ CombinedWebInteractionInterpreterTest >> testExecuteOnClient [
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter executeOnClient: [ :script :canvas | script << (JSStream on: 'window') call: 'print' ].
+	interpreter executeOnClient: [ (JSStream on: 'window') call: 'print' ].
 
 	html := self
 		renderUsing: [ :canvas | 

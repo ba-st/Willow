@@ -1,7 +1,7 @@
 Class {
 	#name : #JQuery3DeploymentMetadataLibraryTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-Libraries'
+	#category : #'Willow-Tests-Libraries'
 }
 
 { #category : #tests }

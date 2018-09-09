@@ -4,7 +4,7 @@ An NullCodecTest is a test class for testing the behavior of NullCodec
 Class {
 	#name : #NullCodecTest,
 	#superclass : #TestCase,
-	#category : 'Willow-Tests-Frontend'
+	#category : #'Willow-Tests-Frontend'
 }
 
 { #category : #tests }

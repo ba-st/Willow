@@ -4,7 +4,7 @@ A NaturalNumberCodecTest is a test class for testing the behavior of NaturalNumb
 Class {
 	#name : #NaturalNumberCodecTest,
 	#superclass : #TestCase,
-	#category : 'Willow-Tests-Frontend'
+	#category : #'Willow-Tests-Frontend'
 }
 
 { #category : #'tests-converting' }

@@ -5,7 +5,6 @@ Class {
 	#name : #NumberFieldWebView,
 	#superclass : #FieldWebView,
 	#instVars : [
-		'textField',
 		'textCodec'
 	],
 	#category : #'Willow-WebViews'
@@ -14,7 +13,10 @@ Class {
 { #category : #'instance creation' }
 NumberFieldWebView class >> applying: aComponentCommand transformingWith: aTextCodec [
 
-	^ self new initializeApplying: [ :field | field beNumberInput + aComponentCommand ] asWebComponentCommand transformingWith: aTextCodec
+	^ (self  
+		forComponentBuiltUsing: [ :canvas | canvas textInput ]
+		withInteractionDefinedBy: self changeInterpreter
+		applying: [ :field | field beNumberInput + aComponentCommand ] asWebComponentCommand) initializeTransformingWith: aTextCodec
 ]
 
 { #category : #'number-container-API' }
@@ -23,10 +25,15 @@ NumberFieldWebView >> changeNumberTo: aNumber [
 	self changeModelTo: aNumber
 ]
 
-{ #category : #initialization }
-NumberFieldWebView >> initializeApplying: aComponentCommand transformingWith: aTextCodec [
+{ #category : #'private - Accessing' }
+NumberFieldWebView >> identifierPrefix [
 
-	textField := TextFieldWebView singleLineTriggeringOnChangeApplying: aComponentCommand.
+	^ 'number-field'
+]
+
+{ #category : #initialization }
+NumberFieldWebView >> initializeTransformingWith: aTextCodec [
+
 	textCodec := aTextCodec
 ]
 
@@ -40,10 +47,4 @@ NumberFieldWebView >> number [
 NumberFieldWebView >> textCodec [
 
 	^ textCodec
-]
-
-{ #category : #'private - Accessing' }
-NumberFieldWebView >> textField [
-
-	^ textField
 ]

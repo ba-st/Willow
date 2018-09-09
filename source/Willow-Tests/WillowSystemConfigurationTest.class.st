@@ -4,7 +4,7 @@ A WillowSystemConfigurationTest is a test class for testing the behavior of Will
 Class {
 	#name : #WillowSystemConfigurationTest,
 	#superclass : #TestCase,
-	#category : 'Willow-Tests-Applications'
+	#category : #'Willow-Tests-Applications'
 }
 
 { #category : #'tests-description' }

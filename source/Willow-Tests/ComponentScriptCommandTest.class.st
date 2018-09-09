@@ -4,7 +4,7 @@ A ComponentScriptCommandTest is a test class for testing the behavior of Compone
 Class {
 	#name : #ComponentScriptCommandTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-Frontend'
+	#category : #'Willow-Tests-Frontend'
 }
 
 { #category : #'tests-applying' }

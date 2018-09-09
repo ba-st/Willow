@@ -4,7 +4,7 @@ A NullWebInteractionCommandTest is a test class for testing the behavior of Null
 Class {
 	#name : #NullWebInteractionCommandTest,
 	#superclass : #TestCase,
-	#category : 'Willow-Tests-WebInteraction'
+	#category : #'Willow-Tests-WebInteraction'
 }
 
 { #category : #'tests-accessing' }

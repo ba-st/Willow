@@ -4,7 +4,7 @@ A PhrasingContainerWebViewTest is a test class for testing the behavior of Phras
 Class {
 	#name : #PhrasingContainerWebViewTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #'tests-rendering' }

@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #'test support' }
@@ -44,6 +44,20 @@ TextFieldWebViewTest >> testIdentifyIn [
 	self
 		assert: html equals: '<input value="" name="2" id="text-id1" type="text"/>';
 		assert: textField identifier equals: 'text-id1'
+]
+
+{ #category : #'tests-container-API' }
+TextFieldWebViewTest >> testModel [
+
+	| textField |
+
+	textField := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :field |  ].
+
+	self assert: textField model equals: textField contents.
+
+	textField changeModelTo: 'Hello World!'.
+
+	self assert: textField model equals: 'Hello World!'
 ]
 
 { #category : #'tests-container-API' }

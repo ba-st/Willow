@@ -1,7 +1,7 @@
 Class {
 	#name : #JQuery3FileMetadataLibraryTest,
 	#superclass : #TestCase,
-	#category : 'Willow-Tests-Libraries'
+	#category : #'Willow-Tests-Libraries'
 }
 
 { #category : #tests }

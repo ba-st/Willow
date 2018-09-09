@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #support }

@@ -4,7 +4,7 @@ A DeselectAllOptionsCommandTest is a test class for testing the behavior of Dese
 Class {
 	#name : #DeselectAllOptionsCommandTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-Frontend'
+	#category : #'Willow-Tests-Frontend'
 }
 
 { #category : #'tests-processing' }

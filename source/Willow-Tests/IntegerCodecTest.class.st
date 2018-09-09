@@ -4,7 +4,7 @@ An IntegerCodecTest is a test class for testing the behavior of IntegerCodec
 Class {
 	#name : #IntegerCodecTest,
 	#superclass : #TestCase,
-	#category : 'Willow-Tests-Frontend'
+	#category : #'Willow-Tests-Frontend'
 }
 
 { #category : #tests }

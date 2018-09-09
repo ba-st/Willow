@@ -4,7 +4,7 @@ A SetComponentStyleCommandTest is a test class for testing the behavior of SetCo
 Class {
 	#name : #SetComponentStyleCommandTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-Frontend'
+	#category : #'Willow-Tests-Frontend'
 }
 
 { #category : #'tests-initialization' }

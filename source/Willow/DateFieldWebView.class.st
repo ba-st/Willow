@@ -20,7 +20,8 @@ DateFieldWebView class >> applying: aComponentCommand [
 { #category : #'instance creation' }
 DateFieldWebView class >> applying: aComponentCommand transformingWith: aTextCodec [
 
-	^ self new initializeApplying: [ :field | field beDateInput + aComponentCommand ] asWebComponentCommand transformingWith: aTextCodec
+	^ (self forComponentBuiltUsing: [ :canvas | canvas textInput ] withInteractionDefinedBy: self changeInterpreter applying: [ :field | field beDateInput + aComponentCommand ] asWebComponentCommand)
+		initializeTransformingWith: aTextCodec
 ]
 
 { #category : #'Date-Container-API' }
@@ -35,10 +36,15 @@ DateFieldWebView >> date [
 	^ self model
 ]
 
-{ #category : #initialization }
-DateFieldWebView >> initializeApplying: aComponentCommand transformingWith: aTextCodec [
+{ #category : #'private - Accessing' }
+DateFieldWebView >> identifierPrefix [
 
-	textField := TextFieldWebView singleLineTriggeringOnChangeApplying: aComponentCommand.
+	^ 'date-field'
+]
+
+{ #category : #initialization }
+DateFieldWebView >> initializeTransformingWith: aTextCodec [
+
 	textCodec := aTextCodec
 ]
 
@@ -46,10 +52,4 @@ DateFieldWebView >> initializeApplying: aComponentCommand transformingWith: aTex
 DateFieldWebView >> textCodec [
 
 	^ textCodec
-]
-
-{ #category : #'private - Accessing' }
-DateFieldWebView >> textField [
-
-	^ textField
 ]

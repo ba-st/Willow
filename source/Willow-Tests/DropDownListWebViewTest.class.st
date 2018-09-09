@@ -4,7 +4,7 @@ A DropDownListWebViewTest is a test class for testing the behavior of DropDownLi
 Class {
 	#name : #DropDownListWebViewTest,
 	#superclass : #SingleSelectionWebViewTest,
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #support }

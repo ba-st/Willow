@@ -4,7 +4,7 @@ A JQuery3OnlineLibraryTest is a test class for testing the behavior of JQuery3On
 Class {
 	#name : #JQuery3OnlineLibraryTest,
 	#superclass : #TestCase,
-	#category : 'Willow-Tests-Libraries'
+	#category : #'Willow-Tests-Libraries'
 }
 
 { #category : #'tests-updating' }

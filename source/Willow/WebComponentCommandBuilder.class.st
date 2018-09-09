@@ -71,6 +71,12 @@ WebComponentCommandBuilder >> beRequired [
 ]
 
 { #category : #Building }
+WebComponentCommandBuilder >> beTextInput [
+
+	^ InputModeCommand asText
+]
+
+{ #category : #Building }
 WebComponentCommandBuilder >> boundBetween: aLowerBound and: anUpperBound [
 
 	^ ComponentBoundaryCommand between: aLowerBound and: anUpperBound

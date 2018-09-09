@@ -8,7 +8,7 @@ Class {
 		'identifiedView',
 		'command'
 	],
-	#category : 'Willow-Tests-WebInteraction'
+	#category : #'Willow-Tests-WebInteraction'
 }
 
 { #category : #initialization }

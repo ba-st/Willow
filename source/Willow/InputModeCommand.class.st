@@ -34,6 +34,12 @@ InputModeCommand class >> asPassword [
 	^ self settingTypeTo: 'password'
 ]
 
+{ #category : #'Instance Creation' }
+InputModeCommand class >> asText [
+
+	^ self settingTypeTo: 'text'
+]
+
 { #category : #'private-Instance Creation' }
 InputModeCommand class >> settingTypeTo: aType [
 	

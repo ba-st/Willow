@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #support }
@@ -28,7 +28,7 @@ NumberFieldWebViewTest >> testIdentifyIn [
 			numberField identifyIn: canvas.
 			canvas render: numberField ].
 
-	self assert: html equals: '<input value="" name="2" id="text-id1" type="number"/>'
+	self assert: html equals: '<input value="" name="2" id="number-field-id1" type="number"/>'
 ]
 
 { #category : #'tests-number-container-API' }

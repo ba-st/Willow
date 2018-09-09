@@ -4,7 +4,7 @@ A GenericContainerWebViewTest is a test class for testing the behavior of Generi
 Class {
 	#name : #GenericContainerWebViewTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #tests }

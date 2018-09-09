@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #support }
@@ -46,7 +46,7 @@ DateFieldWebViewTest >> testIdentifyIn [
 			dateField identifyIn: canvas.
 			canvas render: dateField ].
 
-	self assert: html equals: '<input value="" name="2" id="text-id1" type="date"/>'
+	self assert: html equals: '<input value="" name="2" id="date-field-id1" type="date"/>'
 ]
 
 { #category : #tests }

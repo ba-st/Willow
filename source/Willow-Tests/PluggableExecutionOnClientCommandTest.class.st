@@ -5,7 +5,7 @@ Class {
 		'command',
 		'commandAction'
 	],
-	#category : 'Willow-Tests-WebInteraction'
+	#category : #'Willow-Tests-WebInteraction'
 }
 
 { #category : #initialization }

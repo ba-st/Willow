@@ -4,7 +4,7 @@ An UnorderedListWebViewTest is a test class for testing the behavior of Unordere
 Class {
 	#name : #UnorderedListWebViewTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #'tests-rendering' }

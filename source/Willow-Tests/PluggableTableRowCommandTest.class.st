@@ -4,7 +4,7 @@ A PluggableTableRowCommandTest is a test class for testing the behavior of Plugg
 Class {
 	#name : #PluggableTableRowCommandTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-Frontend'
+	#category : #'Willow-Tests-Frontend'
 }
 
 { #category : #'tests-Applying' }

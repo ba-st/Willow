@@ -4,7 +4,7 @@ A WebComponentCommandBuilderTest is a test class for testing the behavior of Web
 Class {
 	#name : #WebComponentCommandBuilderTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-Frontend'
+	#category : #'Willow-Tests-Frontend'
 }
 
 { #category : #private }
@@ -191,7 +191,11 @@ WebComponentCommandBuilderTest >> testInputModeCommands [
 
 	html := self apply: self commandBuilder beEmailInput toComponentDefinedBy: [ :canvas | canvas textInput ].
 
-	self assert: html equals: '<input type="email"/>'
+	self assert: html equals: '<input type="email"/>'.
+
+	html := self apply: self commandBuilder beTextInput toComponentDefinedBy: [ :canvas | canvas textInput type: 'date' ].
+
+	self assert: html equals: '<input type="text"/>'
 ]
 
 { #category : #tests }

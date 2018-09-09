@@ -1,7 +1,7 @@
 Class {
 	#name : #DelayedCommandTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-WebInteraction'
+	#category : #'Willow-Tests-WebInteraction'
 }
 
 { #category : #'test support' }

@@ -4,7 +4,7 @@ A FloatCodecTest is a test class for testing the behavior of FloatCodec
 Class {
 	#name : #FloatCodecTest,
 	#superclass : #TestCase,
-	#category : 'Willow-Tests-Frontend'
+	#category : #'Willow-Tests-Frontend'
 }
 
 { #category : #tests }

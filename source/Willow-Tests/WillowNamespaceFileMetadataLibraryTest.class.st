@@ -4,7 +4,7 @@ A WillowNamespaceFileMetadataLibraryTest is a test class for testing the behavio
 Class {
 	#name : #WillowNamespaceFileMetadataLibraryTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-Libraries'
+	#category : #'Willow-Tests-Libraries'
 }
 
 { #category : #tests }

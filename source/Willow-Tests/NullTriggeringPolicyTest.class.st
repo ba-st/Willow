@@ -4,7 +4,7 @@ A NullTriggeringPolicyTest is a test class for testing the behavior of NullTrigg
 Class {
 	#name : #NullTriggeringPolicyTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-WebInteraction'
+	#category : #'Willow-Tests-WebInteraction'
 }
 
 { #category : #'tests-evaluating' }

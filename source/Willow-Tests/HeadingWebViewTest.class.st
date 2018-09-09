@@ -1,7 +1,7 @@
 Class {
 	#name : #HeadingWebViewTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #tests }

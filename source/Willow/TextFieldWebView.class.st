@@ -3,26 +3,9 @@ I enable the user to input text information. I support single-line text box when
 "
 Class {
 	#name : #TextFieldWebView,
-	#superclass : #WAPainter,
-	#instVars : [
-		'interactionInterpreter',
-		'commandToComponent',
-		'interested',
-		'componentBuilder',
-		'contents',
-		'identifierAssigner'
-	],
+	#superclass : #FieldWebView,
 	#category : #'Willow-WebViews'
 }
-
-{ #category : #private }
-TextFieldWebView class >> forComponentBuiltUsing: aComponentBuilder withInteractionDefinedBy: anInteractionInterpreter applying: aComponentCommand [
-
-	^ self new
-		initializeForComponentBuiltUsing: aComponentBuilder
-		withInteractionDefinedBy: anInteractionInterpreter
-		applying: aComponentCommand asWebComponentCommand
-]
 
 { #category : #'Instance Creation' }
 TextFieldWebView class >> multiLineTriggeringOnChangeApplying: aComponentCommand [
@@ -42,7 +25,10 @@ TextFieldWebView class >> multiLineTriggeringOnKeyUpApplying: aComponentCommand 
 { #category : #'Instance Creation' }
 TextFieldWebView class >> singleLineTriggeringOnChangeApplying: aComponentCommand [
 
-	^ self forComponentBuiltUsing: [ :canvas | canvas textInput ] withInteractionDefinedBy: WebInteractionInterpreter forChangeInComponentValue applying: aComponentCommand
+	^ self
+		forComponentBuiltUsing: [ :canvas | canvas textInput ]
+		withInteractionDefinedBy: self changeInterpreter
+		applying: aComponentCommand
 ]
 
 { #category : #'Instance Creation' }
@@ -51,72 +37,14 @@ TextFieldWebView class >> singleLineTriggeringOnKeyUpApplying: aComponentCommand
 	^ self forComponentBuiltUsing: [ :canvas | canvas textInput ] withInteractionDefinedBy: WebInteractionInterpreter forReleaseOfKeyInComponent applying: aComponentCommand
 ]
 
-{ #category : #'container-API' }
-TextFieldWebView >> changeContentsTo: aText [
+{ #category : #'private - Accessing' }
+TextFieldWebView >> identifierPrefix [
 
-	contents := aText.
-	self notifyInterested
+	^ 'text'
 ]
 
-{ #category : #'container-API' }
-TextFieldWebView >> contents [
+{ #category : #'private - Accessing' }
+TextFieldWebView >> textCodec [
 
-	^contents 
-]
-
-{ #category : #accessing }
-TextFieldWebView >> identifier [
-
-	^identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-TextFieldWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas 
-]
-
-{ #category : #initialization }
-TextFieldWebView >> initializeForComponentBuiltUsing: aComponentBuilder withInteractionDefinedBy: anInteractionInterpreter applying: aComponentCommand [
-
-	componentBuilder := aComponentBuilder.
-	interactionInterpreter := anInteractionInterpreter.
-	commandToComponent := aComponentCommand.
-	interested := Set new.
-	identifierAssigner := IdentifierAssigner prefixedBy: 'text'.
-	self changeContentsTo: ''
-]
-
-{ #category : #'container-API' }
-TextFieldWebView >> notifyChangesTo: aSupervisor [
-
-	interested add: aSupervisor
-]
-
-{ #category : #private }
-TextFieldWebView >> notifyInterested [
-
-	interested do: [:anInterested | anInterested changeNotifiedBy: self]
-]
-
-{ #category : #configuring }
-TextFieldWebView >> onTrigger [
-
-	^ interactionInterpreter
-]
-
-{ #category : #rendering }
-TextFieldWebView >> renderContentOn: aCanvas [
-
-	| component |
-
-	component := componentBuilder value: aCanvas.
-	component
-		value: self contents;
-		callback: [ :aString | self changeContentsTo: aString ].
-
-	identifierAssigner withAssignedIdentifierDo: [ :id | component id: id ].
-	component
-		apply: commandToComponent;
-		interactUsing: interactionInterpreter
+	^ NullCodec new
 ]

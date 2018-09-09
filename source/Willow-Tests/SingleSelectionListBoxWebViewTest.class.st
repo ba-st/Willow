@@ -4,7 +4,7 @@ A SingleSelectionListBoxWebViewTest is a test class for testing the behavior of 
 Class {
 	#name : #SingleSelectionListBoxWebViewTest,
 	#superclass : #SingleSelectionWebViewTest,
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #'instance creation' }

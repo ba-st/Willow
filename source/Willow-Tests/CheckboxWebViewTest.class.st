@@ -4,7 +4,7 @@ A CheckboxWebViewTest is a test class for testing the behavior of CheckboxWebVie
 Class {
 	#name : #CheckboxWebViewTest,
 	#superclass : #BinaryChoiceWebViewTest,
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #'instance creation' }

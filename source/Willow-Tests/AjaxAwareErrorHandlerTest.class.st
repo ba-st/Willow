@@ -4,7 +4,7 @@ An AjaxAwareErrorHandlerTest is a test class for testing the behavior of AjaxAwa
 Class {
 	#name : #AjaxAwareErrorHandlerTest,
 	#superclass : #WAErrorHandlerTest,
-	#category : 'Willow-Tests-Applications'
+	#category : #'Willow-Tests-Applications'
 }
 
 { #category : #accessing }

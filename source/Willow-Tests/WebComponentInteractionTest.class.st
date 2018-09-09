@@ -1,7 +1,7 @@
 Class {
 	#name : #WebComponentInteractionTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-WebInteraction'
+	#category : #'Willow-Tests-WebInteraction'
 }
 
 { #category : #tests }

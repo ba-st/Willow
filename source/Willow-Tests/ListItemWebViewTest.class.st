@@ -4,7 +4,7 @@ A ListItemWebViewTest is a test class for testing the behavior of ListItemWebVie
 Class {
 	#name : #ListItemWebViewTest,
 	#superclass : #WARenderingTest,
-	#category : 'Willow-Tests-WebViews'
+	#category : #'Willow-Tests-WebViews'
 }
 
 { #category : #'tests-rendering' }

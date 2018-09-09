@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'command'
 	],
-	#category : 'Willow-Tests-WebInteraction'
+	#category : #'Willow-Tests-WebInteraction'
 }
 
 { #category : #initialization }

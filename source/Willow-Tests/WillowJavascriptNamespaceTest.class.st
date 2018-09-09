@@ -4,7 +4,7 @@ A WillowJavascriptNamespaceTest is a test class for testing the behavior of Will
 Class {
 	#name : #WillowJavascriptNamespaceTest,
 	#superclass : #TestCase,
-	#category : 'Willow-Tests-Applications'
+	#category : #'Willow-Tests-Applications'
 }
 
 { #category : #'tests-Accessing' }

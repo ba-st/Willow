@@ -30,15 +30,16 @@ Framework | Project | Status
 [Bootstrap 3](https://getbootstrap.com/docs/3.3/) | [Willow-Bootstrap](https://github.com/ba-st/Willow-Bootstrap) | ![Active](http://www.repostatus.org/badges/latest/active.svg)|
 [JQuery UI](https://jqueryui.com/) | [Willow-JQueryUI](https://github.com/ba-st/Willow-JQueryUI) | ![Active](http://www.repostatus.org/badges/latest/active.svg)
 [Semantic UI](https://semantic-ui.com/) | [Willow-SemanticUI](https://github.com/ba-st/Willow-SemanticUI) | ![WIP](http://www.repostatus.org/badges/latest/wip.svg)
-[Materialize](http://materializecss.com/) | [Willow-Materialize](https://github.com/fortizpenaloza/Willow-Materialize) | ![WIP](http://www.repostatus.org/badges/latest/wip.svg)
 
 ## Tutorial
 To learn more about Willow, load [Willow-Playground](https://github.com/ba-st/Willow-Playground) and check the Presentation application. These will also install 2 sample applications: Test Runner and Live Documentation.
 
 Also you can check the [FAQs](docs/FAQ.md) and the rest of the documentation available in the docs folder.
 
+There is also some introductory posts [here](https://medium.com/mercap-tech-blog/willow-introduction-d498e198dd4a)
+
 ## Running the tests
-Willow provides a complete coverage of its features. Open a Test Runner and find the test packages (*Willow-Tests-**).
+Willow provides a complete coverage of its features. Open a Test Runner and find the test packages (Willow-Tests-*).
 
 Currently the file deployment tests for the libraries are failing on Windows. This is due to the way Seaside is managing URLs, and [should be fixed soon](https://github.com/SeasideSt/Seaside/pull/944).
 

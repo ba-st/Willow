@@ -1,5 +1,22 @@
 # Migration Guide
 
+## Version 10 to 11
+
+`executeOnClient:` no longer receives the script and now the block result it's automatically attached to it. So you have to:
+
+- Replace the senders of `executeOnClient: [:script :canvas |  statements . script << expression ]` with: `executeOnClient: [:canvas |  statements. expression ] `
+- If you have several statements of the form `script << expression. script << anotherExpression.` you have two options:
+  - Change it to send several times `executeOnClient:`
+  - Use the `, ` to concatenate the expressions.
+
+
+## Version 9 to 10
+
+- If you we're directly referencing `WillowCssStyles` or `WillowConstants` now you need to include the `Willow` shared pool and use `Classification` and `Constants`, and change the message sending so, for example:
+`WillowCssStyles willow` turns into `Classification >> #willow`.
+- Change senders of constants in commands, so for example: `[:div :constants | constants willow dialogSectionName ... ]` turns into: `[:div :constants | constants >> #willow >> #dialogSectionName ... ]`
+- Senders of `cssFonts` must use `constants >> #css`
+
 ## Version 8 to 9
 
 The following methods has been deprecated and can be automatically converted using the proposed rewrite expressions:

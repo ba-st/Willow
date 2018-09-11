@@ -36,7 +36,7 @@ To learn more about Willow, load [Willow-Playground](https://github.com/ba-st/Wi
 
 Also you can check the [FAQs](docs/FAQ.md) and the rest of the documentation available in the docs folder.
 
-There is also some introductory posts [here](https://medium.com/mercap-tech-blog/willow-introduction-d498e198dd4a)
+There is also some introductory posts [here](https://medium.com/mercap-tech-blog/). And you can ask questions in the #willow channel at [ba-st.slack.com](https://ba-st.slack.com/).
 
 ## Running the tests
 Willow provides a complete coverage of its features. Open a Test Runner and find the test packages (Willow-Tests-*).

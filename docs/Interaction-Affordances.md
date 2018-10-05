@@ -1,6 +1,6 @@
 # Interaction Affordances
 
-Each interactive component in Willow supports the `#onTrigger` message, that provides access to the interaction affordances. It basically attachs and event handler function to the corresponding DOM element, whose code depends on what interaction affordances are used. So lets see a simple example not involving server aware code:
+Each interactive component in Willow supports the `#onTrigger` message, that provides access to the interaction affordances. It basically attachs an event handler function to the corresponding DOM element, whose code depends on what interaction affordances are used. So lets see a simple example not involving server aware code:
 
 ```smalltalk
 button onTrigger
@@ -152,3 +152,36 @@ function(event) {
 }
 ```
 and when the callback is evaluated in the server you will get in the block parameter (`theUserAgent`) an object (produced by using `WAJsonParser`) with the information sent in the call.
+
+There's also support for performing the AJAX call only when some condition is met. You can use `onlyWhen:determineBehaviorByEvaluating:with:` for that and passing an string representing the javascript condition you want to evaluate before the call is made (This will improve in the future).
+
+## Serialization
+
+The kind of applications you do with Willow will not perform a page submit. So when working with form elements the contents must be serialized in an AJAX call so the server components have the updated values. Depending on the interactivity level you want in your application you have several options.
+
+Lets see an example:
+```smalltalk
+button onTrigger serializeContainerForm
+```
+the handler function will look like:
+```javascript
+function(event) {
+  Willow.callServer({
+    "type": "POST",
+    "url": "/app",
+    "data": ["_s=I9CKSDJSLDAiicmC", "_k=KXMnjdjd112JJJ" , "57" ,
+              $(this).closest("form").find(".input").serialize()
+            ]
+  })
+}
+```
+In this case when a button is clicked all the input information inside the closest form to the button will be serialized and sent to the server. So if you combine in this call an `evaluate:` the server components will have the updated values before evaluating the callback.
+
+The main difference between the serialization affordances is what get serialized. So:
+- `serializeContainerForm` will find the form closest to the component receiving the onTrigger message
+- `serializeChildrenForm` will find a form in the children of the component receiving the onTrigger message
+- `serializeForm:` will find an specific form using its #id
+- `serializeIt` will serialize the component receiving the onTrigger message (usually you used this in tandem with some field component and triggering on the change event)
+- `serializeWithHiddenInputs` will serialize the component receiving the onTrigger message and the next hidden input (for some seaside brushes the resulting HTML includes a hidden input to match later the real objects)
+
+In case you need it there's also support to submit a form: `submitForm:` and `submitFormStyledAs:` will call the `submit()` function on the corresponding form (found by id or by matching it's "class").

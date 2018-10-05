@@ -54,7 +54,7 @@ The event that gets bound depends on the type of component used:
   - `serializeWithHiddenInputs`
   - `submitForm:`
   - `submitFormStyledAs:`
-- DOM Manipulation
+- DOM Interaction
   - `enable:`
   - `disable`
   - `focus:`
@@ -63,7 +63,7 @@ The event that gets bound depends on the type of component used:
   - `render:`
   - `renderAll:`
   - `setValueTo:thenTriggerChangeOf:`
-  - `setValutTo:withoutTriggeringChangeOnComponentWithId:`
+  - `setValueTo:withoutTriggeringChangeOnComponentWithId:`
   - `show:whileCallingServerToRender:`
   - `temporarilyDisableAndTransform:into:`
   - `temporarilyDisableAndTransformInto:`
@@ -185,3 +185,73 @@ The main difference between the serialization affordances is what get serialized
 - `serializeWithHiddenInputs` will serialize the component receiving the onTrigger message and the next hidden input (for some seaside brushes the resulting HTML includes a hidden input to match later the real objects)
 
 In case you need it there's also support to submit a form: `submitForm:` and `submitFormStyledAs:` will call the `submit()` function on the corresponding form (found by id or by matching it's "class").
+
+## DOM Interaction
+
+### Rendering
+
+The `render:` affordance is one of the most useful ones. You can replace portions of the DOM with new elements that will be rendered by the server and returned as part of the payload of the AJAX call response.
+
+Let's see an example:
+```smalltalk
+currentTimeView := IdentifiedWebView
+        forSpanNamed: 'current-time'
+        containing: [ :canvas | canvas strong: Time now ].
+button onTrigger render: currentTimeView
+```
+This will configure the handler function bound to the button click event to perform an AJAX call and when the call is complete it will replace the DOM contents of the component with some updated rendering.
+
+Inspecting the response payload of the AJAX call yo would see something like:
+```javascript
+$("#current-time-id12").html("<strong>16:58:33</strong>")
+```
+
+In case you want to render several views at once you can use `renderAll:`.
+
+You can also show some kind of spinner or throbber while the AJAX call to render a view is in progress. For that use `show:whileCallingServerToRender:`, so for example:
+
+```smalltalk
+button show: 'Searching...' whileCallingServerToRender: container
+```
+will yield something like
+
+```javascript
+function(event) {
+  $("#container-id").html("Searching...");
+  Willow.callServer({
+      "url": "/app",
+      "data": ["_s=I9CKSDJSLDAiicmC", "_k=KXMnjdjd112JJJ" , "21"]
+  })
+}
+```
+
+So it will show "Searching..." in the container place while the AJAX call is performed and when it returned will replace the contents again with the new rendering.
+
+### Enable/disable
+
+You can disable a component in the DOM by using `disable`, so for example:
+
+```smalltalk
+button onTrigger disable
+```
+will yield the following handler function:
+```javascript
+function(event) {
+  $(this).prop("disabled", true)
+}
+```
+That will disable the button when clicked.
+
+You can also enable a component by using `enable:`
+
+### Focus
+
+By using `focus:` and `focusUsing:` you can call `focus()` on a DOM element when returning from the AJAX call. You can also use `scrollIntoView:` and this will call `scrollIntoView()` instead of `focus()`.
+
+### Remove
+
+By using `remove:` you can remove an element from the DOM (calling `remove()`) when returning from the AJAX call.
+
+### Setting input values
+
+You can set an input value (without replacing the DOM element) by using `setValueTo:thenTriggerChangeOf:` and `setValueTo:withoutTriggeringChangeOnComponentWithId:`. This will perform an AJAX call to the server to get the new value and update it in the input. Depending on the affordance in use will trigger the change event or not.

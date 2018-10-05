@@ -116,6 +116,8 @@ function(event) {
 ```
 where `Willow.callServer` it's built on top of standard AJAX support, configuring some basic stuff including the error handling.
 
+![Combined Interaction](images/Server Evaluation.gif)
+
 This AJAX function has a counterpart callback on the server that will evaluate the user provided block.
 
 Sometimes you want to do some conditional stuff when the AJAX call returns to the browser. You can do that using `determineBehaviorByEvaluating:`. This affordance is similar to `evaluate:` but injects into the block a response object that you can use to configure additional behavior to happen in the browser when the AJAX call returned.
@@ -175,6 +177,8 @@ function(event) {
   })
 }
 ```
+![Combined Interaction](images/Form Serialization.gif)
+
 In this case when a button is clicked all the input information inside the closest form to the button will be serialized and sent to the server. So if you combine in this call an `evaluate:` the server components will have the updated values before evaluating the callback.
 
 The main difference between the serialization affordances is what get serialized. So:
@@ -200,6 +204,8 @@ currentTimeView := IdentifiedWebView
 button onTrigger render: currentTimeView
 ```
 This will configure the handler function bound to the button click event to perform an AJAX call and when the call is complete it will replace the DOM contents of the component with some updated rendering.
+
+![Combined Interaction](images/Rendering.gif)
 
 Inspecting the response payload of the AJAX call yo would see something like:
 ```javascript
@@ -268,3 +274,5 @@ runSelectedTestsButton onTrigger
 ```
 
 will show a spinner, perform an AJAX call, the server will process the callback running some tests and when the AJAX call is complete it will render again the updated test result.
+
+![Combined Interaction](images/Combined Interactions.gif)

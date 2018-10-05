@@ -255,3 +255,16 @@ By using `remove:` you can remove an element from the DOM (calling `remove()`) w
 ### Setting input values
 
 You can set an input value (without replacing the DOM element) by using `setValueTo:thenTriggerChangeOf:` and `setValueTo:withoutTriggeringChangeOnComponentWithId:`. This will perform an AJAX call to the server to get the new value and update it in the input. Depending on the affordance in use will trigger the change event or not.
+
+## Combining Interactions
+
+You can combine several affordances in the same `onTrigger` so they will end up in the same handler function. For example:
+
+```smalltalk
+runSelectedTestsButton onTrigger
+        transform: testResult into: SpinKitTripleBounce new;
+        evaluate: [ self session runTests ];
+        render: testResult.
+```
+
+will show a spinner, perform an AJAX call, the server will process the callback running some tests and when the AJAX call is complete it will render again the updated test result.

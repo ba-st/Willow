@@ -1,6 +1,6 @@
 # Interaction Affordances
 
-Each interactive component in Willow supports the `#onTrigger` message, that provides access to the interaction affordances. It basically attachs an event handler function to the corresponding DOM element, whose code depends on what interaction affordances are used. So lets see a simple example not involving server aware code:
+Each interactive component in Willow supports the `#onTrigger` message, that provides access to the interaction affordances. It basically attaches an event handler function to the corresponding DOM element, whose code depends on what interaction affordances are used. So lets see first a simple example, that does not involve "server aware" code:
 
 ```smalltalk
 button onTrigger

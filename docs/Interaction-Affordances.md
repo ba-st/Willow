@@ -203,7 +203,7 @@ currentTimeView := IdentifiedWebView
         containing: [ :canvas | canvas strong: Time now ].
 button onTrigger render: currentTimeView
 ```
-This will configure the handler function bound to the button click event to perform an AJAX call and when the call is complete it will replace the DOM contents of the component with some updated rendering.
+This will configure the handler function bound to the button click event to perform an AJAX call. When the call is complete it will replace the DOM contents of the component with some updated rendering.
 
 ![Combined Interaction](images/Rendering.gif)
 
@@ -214,7 +214,7 @@ $("#current-time-id12").html("<strong>16:58:33</strong>")
 
 In case you want to render several views at once you can use `renderAll:`.
 
-You can also show some kind of spinner or throbber while the AJAX call to render a view is in progress. For that use `show:whileCallingServerToRender:`, so for example:
+You can also show some kind of spinner or throbber while the AJAX call to render a view is in progress. This is done sending `show:whileCallingServerToRender:`. For example:
 
 ```smalltalk
 button show: 'Searching...' whileCallingServerToRender: container
@@ -231,7 +231,7 @@ function(event) {
 }
 ```
 
-So it will show "Searching..." in the container place while the AJAX call is performed and when it returned will replace the contents again with the new rendering.
+The browser will show "Searching..." in the container place while the AJAX call is performed. Once it returnes it will be replaced with  the contents again, now with the updated rendering.
 
 ### Enable/disable
 

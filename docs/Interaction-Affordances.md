@@ -8,7 +8,7 @@ button onTrigger
     canvas javascript alert: 'Hello World!'
   ]
 ```
-When the button gets rendered into the DOM it will attach an event handler to the `<button>` for the `click` event having as a handler function:
+When the button gets rendered into the DOM it will attach an event handler to the `<button>` for the `click` event with the handler function:
 
 ```javascript
 function(event) {
@@ -91,7 +91,7 @@ The event that gets bound depends on the type of component used:
 ## General Affordances
 ### Client Execution
 
-This affordance allows you to configure some javascript to be run in the browser without interaction with the server. We already saw an example.
+This affordance allows you to configure some javascript code to be run in the browser without notifying with the server. We already saw an example.
 
 It uses the Seaside javascript generation support and it's usually used as a basic building block to do more complex behavior on top.
 
@@ -105,7 +105,7 @@ button onTrigger
     'The button was clicked on the browser' inspect
   ]
 ```
-will yield the following handler function (or something like that):
+will yield a handler function that looks something like:
 ```javascript
 function(event) {
   Willow.callServer({
@@ -114,13 +114,13 @@ function(event) {
   })
 }
 ```
-where `Willow.callServer` it's built on top of standard AJAX support, configuring some basic stuff including the error handling.
+where `Willow.callServer` is built on top of standard AJAX support, configuring some basic stuff including the error handling.
 
 ![Combined Interaction](images/Server Evaluation.gif)
 
 This AJAX function has a counterpart callback on the server that will evaluate the user provided block.
 
-Sometimes you want to do some conditional stuff when the AJAX call returns to the browser. You can do that using `determineBehaviorByEvaluating:`. This affordance is similar to `evaluate:` but injects into the block a response object that you can use to configure additional behavior to happen in the browser when the AJAX call returned.
+Sometimes you want the return of the AJAX call to vary depending on what happens in the server. To do that you use `determineBehaviorByEvaluating:`. This affordance is similar to `evaluate:` but injects into the block a response object that you can configure to determine what happens when the AJAX call returned.
 For example:
 ```smalltalk
 button onTrigger determineBehaviorByEvaluating: [:response |
@@ -130,11 +130,11 @@ button onTrigger determineBehaviorByEvaluating: [:response |
 ```
 will yield a handler function similar to evaluate, but if the condition is true when the block is evaluated in the server, the AJAX call response will include code to display an `alert` showing "Condition is true".
 
-Doing `response onReturn` you can use any interaction affordance available to `onTrigger`.
+You can apply any interaction affordance to `response onReturn`, just like you would do to `onTrigger`.
 
 ### Server Evaluation with client parameters
 
-Sometimes you need to send additional information to the server (not necessarily user input), so there's a couple of affordances for that: `evaluate:with:` and `determineBehaviorByEvaluating:with:`.
+Sometimes you need to send additional information to the server (not necessarily user input). For that you have `evaluate:with:` and `determineBehaviorByEvaluating:with:`.
 
 Lets see an example:
 ```smalltalk
@@ -153,13 +153,13 @@ function(event) {
   })
 }
 ```
-and when the callback is evaluated in the server you will get in the block parameter (`theUserAgent`) an object (produced by using `WAJsonParser`) with the information sent in the call.
+When the callback is evaluated in the server, the value of `theUserAgent` will be an object (produced by using `WAJsonParser`) with the information sent in the call.
 
-There's also support for performing the AJAX call only when some condition is met. You can use `onlyWhen:determineBehaviorByEvaluating:with:` for that and passing an string representing the javascript condition you want to evaluate before the call is made (This will improve in the future).
+There's also support for performing the AJAX call only when some condition is met. You can use `onlyWhen:determineBehaviorByEvaluating:with:` and indicate a string representing the Javascript condition you want to evaluate before the call is made (Future releases will improve on this to allow for a reified object instead of a string).
 
 ## Serialization
 
-The kind of applications you do with Willow will not perform a page submit. So when working with form elements the contents must be serialized in an AJAX call so the server components have the updated values. Depending on the interactivity level you want in your application you have several options.
+When using Willow, your application will not normally require a full page submission. When working with form elements the contents must be serialized in an AJAX call so the server components have the updated values. Depending on the interactivity level you want in your application you have several options.
 
 Lets see an example:
 ```smalltalk
@@ -179,16 +179,16 @@ function(event) {
 ```
 ![Combined Interaction](images/Form Serialization.gif)
 
-In this case when a button is clicked all the input information inside the closest form to the button will be serialized and sent to the server. So if you combine in this call an `evaluate:` the server components will have the updated values before evaluating the callback.
+In this case when a button is clicked all the input information inside the closest form to the button will be serialized and sent to the server. Combining this with `evaluate:` in the same interaction guarantess the server components will have the updated values before evaluating the callback.
 
 The main difference between the serialization affordances is what get serialized. So:
 - `serializeContainerForm` will find the form closest to the component receiving the onTrigger message
 - `serializeChildrenForm` will find a form in the children of the component receiving the onTrigger message
-- `serializeForm:` will find an specific form using its #id
-- `serializeIt` will serialize the component receiving the onTrigger message (usually you used this in tandem with some field component and triggering on the change event)
-- `serializeWithHiddenInputs` will serialize the component receiving the onTrigger message and the next hidden input (for some seaside brushes the resulting HTML includes a hidden input to match later the real objects)
+- `serializeForm:` will find a specific form via its #id
+- `serializeIt` will serialize the component receiving the onTrigger message (this would normally be used in tandem with some field component then triggering the change event)
+- `serializeWithHiddenInputs` will serialize the component receiving the onTrigger message and the next hidden input (required for some Seaside brushes where the resulting HTML includes a hidden input)
 
-In case you need it there's also support to submit a form: `submitForm:` and `submitFormStyledAs:` will call the `submit()` function on the corresponding form (found by id or by matching it's "class").
+In case you need it, there's also support to submit a form: `submitForm:`. Also `submitFormStyledAs:` will call the `submit()` function on the corresponding form (found by id or by matching it's "class").
 
 ## DOM Interaction
 

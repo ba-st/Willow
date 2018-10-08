@@ -34,7 +34,7 @@ For the server-side configuration, you must re-implement `YourApp class>>#errorH
 
 For the client-side some Javascript is required, because if the server is not responding some feedback should be provided to the user. You can write it by hand or just creates a library and use the Seaside rendering/javascript capabilities to produce it. You can see a working example in the [Willow Playground](https://github.com/ba-st/Willow-Playground), just browse `Smalltalks2017FileMetadataLibrary >> willowplaygrounderrorhandlerJsContent`.
 
-If you want to do it by hand you could something something like:
+If you want to do it by hand you could do something something like:
 
 ```javascript
 (function() {
@@ -92,7 +92,7 @@ registerAsApplicationUsing: deploymentModeClass
 
 ### Setting up a CDN
 
-For libraries with an official CDN (bootstrap, jquery, etc), youy can indicate to the application that the online version of the libraries objects must be used:
+For libraries with an official CDN (bootstrap, jquery, etc), you can indicate to the application that the online version of the libraries objects must be used:
 
 ```smalltalk
 componentSupplierForApplication

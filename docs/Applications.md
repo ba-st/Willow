@@ -14,27 +14,27 @@ You can unregister your app from the dispatcher at any time by sending: `YourApp
 
 ## Deployment Modes
 
-Willow supports two deployment modes: Deployment and Development. The main differences are:
+Willow supports two different registration modes: Deployment and Development. The main differences are:
 
-- The deployment mode is use to resolve self hosted libraries, so in Development you will get the non minified files served and in Deployment you will get the minified versions. This is resolved in collaboration with the libraries.
-- The mode is also used to change the file handler behavior to ignore the libraries corresponding to non matching modes
-- It can be extended and used for your own purposes for code that needs to differ between Development and Deployment:
+- Determining the type of self hosted libraries. In Development you will get the non-minified files served and in Deployment you will get the minified versions. This is resolved in collaboration with the libraries.
+- The mode is also used to change the file handler behavior, so as to ignore the libraries corresponding to non-matching modes
+- It can be extended and used for your own purposes, when there's code that needs to differ between Development and Deployment:
   - To configure a CDN to use for the libraries just in deployment
   - To implement different transactional semantics
   - Just use your imagination :)
 
 ## Error Handling
 
-You should consider two types of error handling in your app. The first one server side, so when you receive a request and something fails processing it you need to specify how to handle the situation. The other client side, when some AJAX call you're making timeouts, or receives and erroneous response.
+You should consider two types of error handling in your app. The first is server-side, so when you receive a request and something fails during processing you need to specify how to handle the situation. The other is client-side, when some AJAX call you're making timeouts, or receives and erroneous response.
 
-The first one is setup by re-implementing `YourApp class>>#errorHandlerFactory` and configuring further the error handler:
-- You can configure a `reportingAction:` that will be evaluated for both AJAX and non AJAX requests when something unexpected passes. It's a good place to dump an stack trace and log some error.
-- `updateRootWith:` and `renderNonAjaxErrorsWith:` can be used to customized what gets rendered on 500 errors.
-- Sending `on:do:` you can setup error handlers specific for AJAX calls, if no one can handle the error the standard handling mechanics take control.
+For the server-side configuration, you must re-implement `YourApp class>>#errorHandlerFactory` and configure the error handler:
+- You can configure a `reportingAction:` that will be evaluated for both AJAX and non AJAX requests when something unexpected occurs. It's a good place to dump a stack trace and log errors.
+- `updateRootWith:` and `renderNonAjaxErrorsWith:` can be used to customize what happens when rendering errors with code 5xx.
+- Sending `on:do:` you can setup error handlers specific for AJAX calls. In case no handler applies the standard handling mechanics take control.
 
-For the second one you will need a bit of Javascript because when the server is not responding you need to at least show something to the user. You can write it by hand or just creates a library and use the Seaside rendering/javascript capabilities to produce it. We have and example in the [Willow Playground](https://github.com/ba-st/Willow-Playground), just browse `Smalltalks2017FileMetadataLibrary >> willowplaygrounderrorhandlerJsContent`.
+For the client-side some Javascript is required, because if the server is not responding some feedback should be provided to the user. You can write it by hand or just creates a library and use the Seaside rendering/javascript capabilities to produce it. You can see a working example in the [Willow Playground](https://github.com/ba-st/Willow-Playground), just browse `Smalltalks2017FileMetadataLibrary >> willowplaygrounderrorhandlerJsContent`.
 
-If you want to do it by hand you need something like:
+If you want to do it by hand you could something something like:
 
 ```javascript
 (function() {
@@ -48,38 +48,37 @@ If you want to do it by hand you need something like:
   }
 }())
 ```
-just be aware to load that after the Willow code is loaded.
+Be aware to load this after the Willow code is loaded.
 
 ## Libraries
 
-The supporting libraries in Willow tends to be in 3 flavors:
+Supporting libraries in Willow come in 3 flavors:
 - Online
 - Deployment
 - Development
 
-When you select a component supplier for your application it takes care of adding the relevant libraries. So if you return a `BootstrapComponentSupplier` when your app gets rendered it will include in the document `<head>` all the links to the js, css and any relevant files needed.
+When you select a component supplier for your application it will take care of adding the relevant libraries. If you return a `BootstrapComponentSupplier`, once your app gets rendered the document `<head>` will include all the links to the js, css and any relevant files needed.
 
-If you're using additional libraries, you can easily include it in the `<head>` by reimplementing `requiredLibraries` and returning a collection of the relevant ones. So for example if you're using the Spin Kit additions you can implement:
+If you're using additional libraries, they can be easily included in the `<head>` by reimplementing `requiredLibraries` and returning a collection of the relevant ones. So for example if you're using the Spin Kit additions, you can implement:
 
 ```smalltalk
 YourApp>>#requiredLibraries
 
 	^ {SpinKitMetadataLibrary default}
 ```
-and the relevant files will be in the document head.
+This will ensure the files required by Spin Kit are mentioned in the document head.
 
 ## Sessions
 
-For really tiny apps you can use the standard Willow session. But when your app starts growing if you want to keep the things in control is a good idea to have some kind of unique point of interaction with your backend services, API or even in image model. For that Willow applications provide a hook so you can have your own "Application Context" easily accesible from each component.
+For the most basic applications you can use the standard Willow session. Once your app starts growing in features, to keep things under control it might be a good idea to have a unique point of interaction with your backend services, API or in-image model. To achieve that Willow applications provide a hook so you can have your own "Application Context" easily accesible from each component.
 
-To use it you need to subclass WillowSession, and hook up in the method `startUpApplicationContextFor:` creating or getting your application context and saving it on the session. (Don't forget to do `super startUpApplicationContextFor: aWillowApp`). Later you can easily access your context by collaborating with the session: `self session`
-will get you access to it in any component.
+You must subclass WillowSession, and hook up in the method `startUpApplicationContextFor:` creating or getting your application context and saving it on the session. (Don't forget to do `super startUpApplicationContextFor: aWillowApp`). Later, you can easily access your context by collaborating with the session by sending `self session`, which will get you access to it in any component.
 
 ## Further Configuration
 
 ### Language Configuration
 
-Some libraries used in Willow include language and transalation support, but for it to work reliably you need to configure the application language. By default if no further configuration is provided it will use `WALocale fromString: 'en'`. To use another language you need to implement `registerAsApplicationUsing:` doing something like:
+Some libraries used in Willow include language and transalation support. For them to work reliably you must first configure the application language. The default is `WALocale fromString: 'en'`. To use another language you need to implement `registerAsApplicationUsing:` with code similar to:
 
 ```smalltalk
 registerAsApplicationUsing: deploymentModeClass
@@ -93,7 +92,7 @@ registerAsApplicationUsing: deploymentModeClass
 
 ### Setting up a CDN
 
-For the libraries having an official CDN (bootstrap, jquery, etc) you can use it just by changing the application to use the online version of the libraries:
+For libraries with an official CDN (bootstrap, jquery, etc), youy can indicate to the application that the online version of the libraries objects must be used:
 
 ```smalltalk
 componentSupplierForApplication
@@ -105,13 +104,15 @@ jQueryLibrary
     ^JQuery3OnlineLibrary default
 ```
 
-For the libraries with no offical CDN, you can deploy the static files to disk in your build and upload it to some CDN service, at a minimum you will need:
+For libraries with no offical CDN, you can deploy the static files to disk in your build, and then upload them to a CDN service.
+
+To achieve this, first execute:
 ```smalltalk
 | libraries |
 libraries := { WillowNamespaceFileMetadataLibrary default }.
 libraries do: [:library | library deployFiles ]
 ```
-and take all this files and upload them to a static file service, so then you can change:
+Then, take the generated files and upload them to a static file service. Finally, implement in your application:
 
 ```
 YourApp>>installFileHandlerAccordingTo: deploymentMode
@@ -124,7 +125,7 @@ YourApp>>installFileHandlerAccordingTo: deploymentMode
         else: [super installFileHandlerAccordingTo: deploymentMode
 ```
 
-So in the  `<header>` you will end up with something like:
+This will make the `<header>` contain something similar to:
 
 ```html
 <script type="text/javascript" src="https://your-own-subdomain.awesome-cdn.com/willow-6.0.0/js/willow.js"></script>

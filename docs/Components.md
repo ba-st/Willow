@@ -5,9 +5,9 @@ Willow supports the idea of renderable components providing access to interactio
 aCanvas render: component.
 ```
 
-The creation of new components it's abstracted away in a façade: the component supplier. When you declare a Willow Application, one of the essential subclass responsibilities you have to implement it's providing a component supplier to be used in the app. The base Willow support includes an HTML5 supplier, but if you load other projects on the ecosystem you can get access to Bootstrap, Semantic UI & JQuery UI suppliers.
+The creation of new components is abstracted away in a façade: the component supplier. When you declare a Willow Application, one of the essential subclass responsibilities you have to implement is providing a component supplier to be used in the app. The base Willow support includes an HTML5 supplier, but if you load other projects on the ecosystem you can get access to Bootstrap, Semantic UI & JQuery UI suppliers.
 
-The supplier provides access to the components in a well defined API to ease the transition between one frontend framework and another. The interactive components created by the supplier all supports `#onTrigger` to enable the user the access to interaction affordances. You can access the installed component supplier by sending the message `componentSupplier` to an instance of any component (Willow or Seaside).
+The supplier provides access to the components in a well defined API to ease the transition between one front-end framework and another. All the interactive components created by the supplier support `#onTrigger`, to access the interaction affordances. You can access the installed component supplier by sending the message `componentSupplier` to an instance of any component (Willow or Seaside, subclass of `WAPainter`).
 
 ## Fields
 
@@ -17,9 +17,9 @@ You can get a text field by doing:
   subjectField := self componentSupplier singleLineTextFieldApplying: [].
   messageField := self componentSupplier multiLineTextFieldApplying: [].
 ```
-depending if you want a single line text field or multiline text field.
+depending if you want a single line text field or multi line one.
 
-Usually you have your own components holding more basic ones. With Willow components it's usually a good idea to create the needed sub-components when you're initialization your own, and later just render them as part of the rendering of the whole:
+You will usually have your own components composing more basic ones. With Willow components it's usually a good idea to create the needed sub-components when you're initializing your own, and then just render them as part of the rendering of the larger component:
 
 ```smalltalk
 MyComponent>>initialize
@@ -37,45 +37,45 @@ MyComponent>>renderContentOn: html
   html render: messageField
 ```  
 
-You can also use some modification commands, for example:
+You can also use some modification commands. For example:
 
 ```smalltalk
 self componentSupplier
   singleLineTextFieldApplying: [:field | field setPlaceholderTo: 'johndoe@example.com'].
 ```
 
-will produce a component than when gets rendered will include "johndoe@example.com" as the ghosting text for the field.
+will produce a field than once rendered will offer as hint "johndoe@example.com".
 
-> `[:component | component command ]` can be used to evaluate some configuration commands that modifies the component behavior, but we will see it in the Commands section.
+> `[:component | component command ]` can be used to evaluate configuration commands that modify the component behavior. This will be covered in the Commands section.
 
 All the field components support a clear programmatic API:
 - `changeContentsTo: aText` will change the field contents to the provided text
 - `contents` will return the contained text
-- `notifyChangesTo:` can be used to subscribe for receiving a notification when the field content change
+- `notifyChangesTo:` can be used to subscribe for receiving a notification when the field content changes
 
-There's also a date field component (`self componentSupplier dateFieldApplying: []`), this component supports the messages `changeDateTo: aData` and `date` to set and retrieve the contained date.
+There's also a date field component (`self componentSupplier dateFieldApplying: []`), which supports the messages `changeDateTo: aData` and `date` to set and retrieve the contained date respectively.
 
-Also there's some number field options:
+Also there is protocol for numeric fields:
 - `decimalNumberFieldApplying:` accepting decimal numbers
 - `naturalNumberFieldApplying:` accepting natural numbers
 
-both supporting the `changeNumberTo:` and `number` API performing the necessary convertion.
+both support the `changeNumberTo:` and `number` API performing the necessary convertion.
 
 ## Selection
 
 ### Single Selection
 
 There's a variety of single selection components to choose. All of them support the same Selection API:
-- `currentSelection` returns the object selected, or raises `SelectionIsInvalid` in case there's no one
-- `currentSelectionIfNone:` returns the object selected, or evaluates the provided block in case there's no one
-- `withCurrentSelectionDo:` evaluates the provided block with the current selection if available
+- `currentSelection` returns the object selected, or raises `SelectionIsInvalid` in case there's none
+- `currentSelectionIfNone:` returns the object selected, or evaluates the provided block in case there's none
+- `withCurrentSelectionDo:` evaluates the provided block with the current selection, if available
 - `allowAnyOf:` allows to configure the available list of objects, tries to keep the current selection if possible
-- `disallowAll` clean up the available list, and invalidates the selection
-- `chooseEqualTo:` chooses the object from the list equal to the provided one, in case no one matches raises `SelectionIsInvalid`
+- `disallowAll` cleans up the available list, and invalidates the selection
+- `chooseEqualTo:` chooses the object from the list equal to the provided one, in case none matches it raises `SelectionIsInvalid`
 - `chooseAny`: If the available list is not empty select some object of it
 - `chooseAnySatisfying:ifNone:` choose any object satisfying the condition block, if none matches evaluate the alternative block
 - `allowsAnySatisfying:` returns true if some object matching the provided criteria is in the available list
-- `notifyChangesTo:` can be used to subscribe for receiving a notification when the selection change
+- `notifyChangesTo:` can be used to subscribe for receiving a notification when the selection changes
 
 The component supplier supports several single selection components:
 - `dropdownListApplying:` will provide a dropdown list
@@ -87,30 +87,30 @@ The component supplier supports several single selection components:
 The base support on Willow provides only one component for multiple selection, but this can be extended in the dependent projects:
 - `multipleSelectionListBoxDisplayingAtOnce:applying:` will provide a list box
 
-This components supports the following API:
+This component supports the following API:
 
 - `currentSelection` returns the collection of selected objects
-- `allowAnyOf:` allows to configure the available list of objects, tries to keep the current selection if possible
-- `disallowAll` clean up the available list, and set the current selection as empty
-- `chooseAll` set the current selection as the available object list
-- `chooseAllIn:` set the current selection as the objects provided
-- `chooseAllMatching:` set the current selection as the objects in the available list matching the criteria
+- `allowAnyOf:` allows configuring the available list of objects, tries to keep the current selection if possible
+- `disallowAll` cleans up the available list, and sets the current selection as empty
+- `chooseAll` sets the current selection to the available object list
+- `chooseAllIn:` sets the current selection to the objects provided
+- `chooseAllMatching:` sets the current selection to the objects in the available list matching the criteria
 - `allowsAnySatisfying:` returns true if some object matching the provided criteria is in the available list
-- `notifyChangesTo:` can be used to subscribe for receiving a notification when the selection change
+- `notifyChangesTo:` can be used to subscribe for receiving a notification when the selection changes
 
 ### Binary Choice
 
-Some components of single selection just allows to choose between 2 values:
+These components for single selection only allow choosing between 2 values:
 - `checkboxUnlabeledOnModel:offModel:applying:`
 - `checkboxLabeled:onModel:offModel:applying:`
 
-supporting the following API:
+They support the following API:
 - `currentSelection` returns the object selected. It cannot fail because conceptually there's no way to have an invalid selection
 - `toggleCurrentSelection` toggles the current selection between the two available options
-- `selectOnModel` set as current selection the object bound to the on state
-- `selectOffModel` set as current selection the object bound to the off state
+- `selectOnModel` sets the current selection to the object bound as the on state
+- `selectOffModel` sets the current selection to the object bound as the off state
 - `allows:` returns true if the provided object is one of the two options
-- `notifyChangesTo:` can be used to subscribe for receiving a notification when the selection change
+- `notifyChangesTo:` can be used to subscribe for receiving a notification when the selection changes
 
 ## Command input
 
@@ -121,50 +121,50 @@ These components are the ones supporting user actions. The base support includes
 
 ## Containers
 
-Some containers are provided within the component supplier and other are just portable across all fronted frameworks so it can be used directly. The base support includes:
+Specific containers can be provided in specific component suppliers. Others are portable across all fronted frameworks, so they can be used directly. The base support includes:
 - `unorderedListApplying:listing:applyingToEach:` will return an unordered list
 - `tableBuilder` will provide a builder to create tables (See [Tabular Data](TabularData.md) for details)
 - `GenericContainerWebView` will provide a `div` with interaction affordances
 - `PhrasingContainerWebView` will provide a `span` with interaction affordances
-- `IdentifiedWebView` will provide a `div`, `span`, `form` , `row` or `fieldset` with interaction affordances and giving guarantees that it will include an `id` so it can be used when the component needs to be identified.
+- `IdentifiedWebView` will provide a `div`, `span`, `form` , `row` or `fieldset` with interaction affordances. It also guarantees that it will include an `id`, to be used when the component needs to be identified (for example in a re-rendering).
 - `fieldSetContaining:applying:withLegend:applying:` will provide a `fieldset`
 - `HeadingWebView` will provide a `h1`, `h2`, etc
 
-Other projects in the ecosystem provides other kind of containers like grids, dialogs and panels/cards.
+Other projects in the ecosystem provide additional containers like grids, dialogs and panels/cards.
 
 ## Miscellaneous components
 
 - `ImageWebView` will provide an `img`  with interaction affordances
 - `LabeledWebView` will help displaying a `label` bound to a field
 
-Other projects in the ecosystem provides other kind of componentes likes Tabs, Pills or Navigation.
+Other projects in the ecosystem provide additional componentes likes Tabs, Pills and Navigation.
 
 ## Advanced Components
 
 ### Delayed Views
 
-You can get from the component supplier a delayed view with: `delayedViewShowing:whileEvaluating:thenRendering:`. This will provide a component that when gets rendered will show a spinner or throbber, while performing a server call and rendering back the result when complete.
+You can get a delayed view from the component supplier by sending  `delayedViewShowing:whileEvaluating:thenRendering:`. This will provide a component that will show a spinner or throbber while performing a server call and rendering back the result when complete.
 
 ### Periodical Rendering
 
-`PeriodicallyRenderedWebView` provides support to render automatically a view after a period of time consulting the server for updates. A typical usecase is a Dashboard widget.
+`PeriodicallyRenderedWebView` provides support to automatically render a view after a period of time, consulting the server for the updated content. A typical use case is in self refreshing Dashboard widgets.
 
 ## Commands
 
-Almost all Willow components provides a command interface to further configure them. Every time you see some kind of `applying:` keyword you can use the command interface. Some commands are general and can be applied to any component, and some are specific.
+Almost all Willow components provide a command interface to further configure them. Every time you see the `applying:` keyword as part of a component message, you can use the command interface. Some commands are general and can be applied to any component, while some are specific.
 
-For example you can convert a basic text field into a password one using the following command:
+For example, you can convert a basic text field into a password one using the following command:
 
 ```smalltalk
   self componentSupplier singleLineTextFieldApplying: [:field | field bePasswordInput]
 ```
-so when you render the component you will get
+so when you render the component you will get:
 
 ```html
 <input type="password">
 ```
 
-You can also use the command interface on plain Seaside code by sending: `apply:` or `with:applying:`. So for example
+You can also use the command interface on plain Seaside code by sending: `apply:` or `with:applying:`, for example:
 
 ```smalltalk
 html textInput apply: [:field | field setMaximumLenghtTo: 15]
@@ -182,7 +182,7 @@ will produce
 - `beEmailInput` will change the input type to "number"
 - `bePasswordInput` will change the input type to "password"
 - `beTextInput` will change the input type to "text"
-- `setMaximumLenghtTo:` will set the `maxlenght` attribute to the provided value
+- `setMaximumLengthTo:` will set the `maxlength` attribute to the provided value
 - `setNameTo:` will set the `name` attribute to the provided value
 - `setPlaceholderTo:` will set the `placeholder` attribute to the provided value
 
@@ -239,17 +239,17 @@ and get
 
 ### Scripting
 
-The `addScript` command allows to attach some script to a component. For example this is used in combination with some JQuery plugins:
+The `addScript` command allows attaching a script to a component. This is used in combination with some JQuery plugins:
 
 ```smalltalk
 self componentSupplier singleLineTextFieldApplying:
   [:field | field addScript js: [:canvas | canvas jQuery this bootstrapModel ] ]
 ```
-so you will get a script attached to the field.
+will get a script attached to the field.
 
 ### Advanced commands
 
-You can combine several commands for the same component using `+`:
+You can combine several commands on the same component by sending `+`:
 
 ```smalltalk
   self componentSupplier singleLineTextFieldApplying:
@@ -260,7 +260,7 @@ will produce
 <input type="text" readonly class="willow"/>
 ```
 
-The commands can also be applied only when some condition is met by using `when:apply:`:
+The commands can also be applied only when some condition is met by sending `when:apply:`
 
 ```smalltalk
 html div apply: [:pane | pane when: [ self isFirstTab ] apply: pane addClass bootstrap active ]

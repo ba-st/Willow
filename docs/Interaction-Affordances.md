@@ -116,7 +116,7 @@ function(event) {
 ```
 where `Willow.callServer` is built on top of standard AJAX support, configuring some basic stuff including the error handling.
 
-![Combined Interaction](images/Server Evaluation.gif)
+![Server Evaluation](images/ServerEvaluation.gif)
 
 This AJAX function has a counterpart callback on the server that will evaluate the user provided block.
 
@@ -177,7 +177,7 @@ function(event) {
   })
 }
 ```
-![Combined Interaction](images/Form Serialization.gif)
+![Form Serialization](images/FormSerialization.gif)
 
 In this case when a button is clicked all the input information inside the closest form to the button will be serialized and sent to the server. Combining this with `evaluate:` in the same interaction guarantess the server components will have the updated values before evaluating the callback.
 
@@ -205,7 +205,7 @@ button onTrigger render: currentTimeView
 ```
 This will configure the handler function bound to the button click event to perform an AJAX call. When the call is complete it will replace the DOM contents of the component with some updated rendering.
 
-![Combined Interaction](images/Rendering.gif)
+![Rendering](images/Rendering.gif)
 
 Inspecting the response payload of the AJAX call yo would see something like:
 ```javascript
@@ -275,4 +275,4 @@ runSelectedTestsButton onTrigger
 
 will show a spinner, perform an AJAX call, the server will process the callback running some tests and when the AJAX call is complete it will render again the updated test result.
 
-![Combined Interaction](images/Combined Interactions.gif)
+![Combined Interaction](images/CombinedInteractions.gif)

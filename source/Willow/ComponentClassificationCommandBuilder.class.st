@@ -16,7 +16,14 @@ Class {
 { #category : #private }
 ComponentClassificationCommandBuilder >> commandStyledWith: aSymbol [
 
-	^ ComponentClassificationCommand toStyleWith: classificationNamespace >> aSymbol
+	^ self commandStyledWithAll: (Array with: aSymbol)
+]
+
+{ #category : #'as yet unclassified' }
+ComponentClassificationCommandBuilder >> commandStyledWithAll: aSymbolCollection [
+
+	^ ComponentClassificationCommand toStyleWithAll: (
+		aSymbolCollection collect: [:symbol | classificationNamespace >> symbol ])
 ]
 
 { #category : #Building }

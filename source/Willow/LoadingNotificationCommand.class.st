@@ -11,6 +11,24 @@ Class {
 	#category : #'Willow-WebInteraction'
 }
 
+{ #category : #'instance creation' }
+LoadingNotificationCommand class >> displaying: aWebView applying: aComponentCommand [
+
+	^ self
+		executing:
+			(Array
+				with: [ :aScript :aCanvas | 
+					aScript << (aCanvas jQuery id: Constants >> #willow >> #notificationSectionName)
+						html: [ :aSubCanvas | 
+							aSubCanvas render:
+								(GenericContainerWebView wrapping: aWebView applying: aComponentCommand) ] ])
+		then:
+			(Array
+				with: [ :aScript :aCanvas | 
+					aScript << (aCanvas jQuery id: Constants >> #willow >> #notificationSectionName)
+						html: [ :aSubCanvas |  ] ])
+]
+
 { #category : #'instance creation - private' }
 LoadingNotificationCommand class >> executing: aServerIndependentActionCollection then: aModelLoadingActionCollection [
 
@@ -22,19 +40,8 @@ LoadingNotificationCommand class >> executing: aServerIndependentActionCollectio
 LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 
 	^ self
-		executing:
-			(Array
-				with: [ :aScript :aCanvas | 
-					aScript << (aCanvas jQuery id: Constants >> #willow >> #notificationSectionName)
-						html: [ :aSubCanvas | 
-							aSubCanvas div
-								classes: aCssClassCollection;
-								with: 'Loading...' ] ])
-		then:
-			(Array
-				with: [ :aScript :aCanvas | 
-					aScript << (aCanvas jQuery id: Constants >> #willow >> #notificationSectionName)
-						html: [ :aSubCanvas |  ] ])
+		displaying: 'Loading...'
+		applying: [:div | div addClass commandStyledWithAll: aCssClassCollection]
 ]
 
 { #category : #accessing }

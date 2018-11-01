@@ -282,6 +282,13 @@ WebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggeringChangeO
 ]
 
 { #category : #Configuring }
+WebInteractionInterpreter >> showLoadingNotificationDisplaying: aWebView applying: aComponentCommand [
+
+	interaction onTriggerExecute:
+		(LoadingNotificationCommand displaying: aWebView applying: aComponentCommand)
+]
+
+{ #category : #Configuring }
 WebInteractionInterpreter >> showLoadingNotificationStyledAsAll: classes [
 
 	interaction

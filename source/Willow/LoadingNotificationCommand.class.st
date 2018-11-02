@@ -41,7 +41,7 @@ LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 
 	^ self
 		displaying: 'Loading...'
-		applying: [:div | div addClass commandStyledWithAll: aCssClassCollection]
+		applying: (ComponentClassificationCommand toStyleWithAll: aCssClassCollection)
 ]
 
 { #category : #accessing }

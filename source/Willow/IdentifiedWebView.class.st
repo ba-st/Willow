@@ -88,7 +88,7 @@ IdentifiedWebView class >> forRowNamed: aName containing: aView [
 { #category : #'instance creation' }
 IdentifiedWebView class >> forSpanNamed: aName containing: aView [
 
-	^ self forSpanNamed: aName containing: aView applying: [:container | ]
+	^ self forSpanNamed: aName containing: aView applying: [ ]
 ]
 
 { #category : #'instance creation' }

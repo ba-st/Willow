@@ -88,7 +88,13 @@ IdentifiedWebView class >> forRowNamed: aName containing: aView [
 { #category : #'instance creation' }
 IdentifiedWebView class >> forSpanNamed: aName containing: aView [
 
-	^ self forComponentBuiltUsing: [ :canvas | canvas span ] named: aName containing: aView
+	^ self forSpanNamed: aName containing: aView applying: [ ]
+]
+
+{ #category : #'instance creation' }
+IdentifiedWebView class >> forSpanNamed: aName containing: aView applying: aComponentCommand [
+
+	^ self forComponentBuiltUsing: [ :canvas | canvas span ] named: aName containing: aView applying: aComponentCommand
 ]
 
 { #category : #private }

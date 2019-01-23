@@ -46,7 +46,7 @@ BaselineOfWillow >> setUpDependencies: spec [
 
 	spec
 		baseline: 'Seaside3' with: [ spec repository: 'github://SeasideSt/Seaside:v3.3.1/repository' ];
-		project: 'Seaside3-JQuery' copyFrom: 'Seaside3' with: [ spec loads: 'JQuery' ].
+		project: 'Seaside3-JQuery' copyFrom: 'Seaside3' with: [ spec loads: #('Javascript' 'JQuery') ].
 
 	spec
 		baseline: 'RenoirSt' with: [ spec repository: 'github://ba-st/RenoirSt:v6/source' ];

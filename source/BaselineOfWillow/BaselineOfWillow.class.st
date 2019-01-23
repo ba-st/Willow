@@ -31,7 +31,7 @@ BaselineOfWillow >> baselineWillow: spec [
 		package: 'Willow'
 			with: [ spec requires: #('Seaside3-JQuery' 'RenoirSt-Deployment' 'Boardwalk-Deployment') ];
 		group: 'Deployment' with: 'Willow';
-		package: 'Willow-Tests' with: [ spec requires: #('Boardwalk-SUnit' 'Deployment') ];
+		package: 'Willow-Tests' with: [ spec requires: #('Boardwalk-SUnit' 'Willow') ];
 		group: 'Tests' with: 'Willow-Tests'
 ]
 

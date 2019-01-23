@@ -1,6 +1,6 @@
 Extension { #name : #WARenderingTest }
 
-{ #category : #'*Willow-Tests' }
+{ #category : #'*Willow-SUnit' }
 WARenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponentProvider [
 
 	^ self
@@ -9,7 +9,7 @@ WARenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponent
 		afterApplyingDo: [ :canvas :component |  ]
 ]
 
-{ #category : #'*Willow-Tests' }
+{ #category : #'*Willow-SUnit' }
 WARenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponentProvider afterApplyingDo: aPostAction [
 
 	^ self
@@ -21,7 +21,7 @@ WARenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponent
 			aPostAction value: canvas value: component ]
 ]
 
-{ #category : #'*Willow-Tests' }
+{ #category : #'*Willow-SUnit' }
 WARenderingTest >> createHandlers [
 
 	^ Array with: WARequestHandler new

@@ -18,7 +18,6 @@ BaselineOfWillow >> baseline: spec [
 				baselineWillow: spec.
 			spec
 				group: 'CI' with: 'Tests';
-				group: 'Dependent-SUnit-Extensions' with: 'Boardwalk-SUnit';
 				group: 'Tools' with: 'Boardwalk-Tools';
 				group: 'Development' with: #('Tests' 'Tools')
 			]
@@ -31,7 +30,9 @@ BaselineOfWillow >> baselineWillow: spec [
 		package: 'Willow'
 			with: [ spec requires: #( 'Boardwalk-Deployment' 'Seaside3-JQuery' 'RenoirSt-Deployment') ];
 		group: 'Deployment' with: 'Willow';
-		package: 'Willow-Tests' with: [ spec requires: #('Boardwalk-SUnit' 'Willow') ];
+		package: 'Willow-SUnit' with: [ spec requires: #('Boardwalk-SUnit' 'Willow') ];
+		group: 'Dependent-SUnit-Extensions' with: 'Willow-SUnit';
+		package: 'Willow-Tests' with: [ spec requires: 'Willow-SUnit' ];
 		group: 'Tests' with: 'Willow-Tests'
 ]
 

@@ -3,42 +3,40 @@ A WillowJavascriptNamespaceTest is a test class for testing the behavior of Will
 "
 Class {
 	#name : #WillowJavascriptNamespaceTest,
-	#superclass : #TestCase,
+	#superclass : #JSObjectTest,
 	#category : #'Willow-Tests-Applications'
 }
 
 { #category : #'tests-Accessing' }
 WillowJavascriptNamespaceTest >> testCallServerFunction [
 
-	self
-		assert: WillowJavascriptNamespace new callServerFunction asJavascript
-		equals: 'Willow.callServer'
+	self assert: WillowJavascriptNamespace new callServerFunction equals: 'Willow.callServer'
 ]
 
 { #category : #'tests-printing' }
 WillowJavascriptNamespaceTest >> testClassificationAccess [
 
-	self assert: Willow classification >> #loading equals: 'willow-loading'
+	self assert: Willow classification >> #loading = 'willow-loading'
 ]
 
 { #category : #'tests-printing' }
 WillowJavascriptNamespaceTest >> testConstantsAccess [
 
-	self assert: WillowJavascriptNamespace new constants >> #css >> #auto equals: 'auto'
+	self assert: WillowJavascriptNamespace new constants >> #css >> #auto = 'auto'
 ]
 
 { #category : #'tests-Accessing' }
 WillowJavascriptNamespaceTest >> testHandleAjaxErrorCallFunction [
 
 	self
-		assert: WillowJavascriptNamespace new handleAjaxErrorCallFunction asJavascript
+		assert: WillowJavascriptNamespace new handleAjaxErrorCallFunction
 		equals: 'Willow.handleAjaxErrorCall'
 ]
 
 { #category : #'tests-printing' }
 WillowJavascriptNamespaceTest >> testJavascriptContentOn [
 
-	self assert: WillowJavascriptNamespace new asJavascript equals: 'Willow'
+	self assert: WillowJavascriptNamespace new equals: 'Willow'
 ]
 
 { #category : #'tests-Configuring' }
@@ -46,8 +44,8 @@ WillowJavascriptNamespaceTest >> testSetCallServerFunctionTo [
 
 	self
 		assert:
-			(WillowJavascriptNamespace new
-				setCallServerFunctionTo: (JSFunction new arguments: #('arguments'))) asJavascript
+			( WillowJavascriptNamespace new
+				setCallServerFunctionTo: ( JSFunction new arguments: #('arguments') ) )
 		equals: 'Willow.callServer=function(arguments){}'
 ]
 
@@ -56,8 +54,7 @@ WillowJavascriptNamespaceTest >> testSetHandleAjaxErrorCallFunctionTo [
 
 	self
 		assert:
-			(WillowJavascriptNamespace new
-				setHandleAjaxErrorCallFunctionTo: (JSFunction new arguments: #('xmlHttpRequest' 'textStatus' 'errorThrown')))
-				asJavascript
+			( WillowJavascriptNamespace new
+				setHandleAjaxErrorCallFunctionTo: ( JSFunction new arguments: #('xmlHttpRequest' 'textStatus' 'errorThrown') ) )
 		equals: 'Willow.handleAjaxErrorCall=function(xmlHttpRequest,textStatus,errorThrown){}'
 ]

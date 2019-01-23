@@ -128,10 +128,12 @@ MultipleSelectionListBoxWebViewTest >> testIdentifyIn [
 	html := self
 		renderUsing: [ :canvas | 
 			listBox identifyIn: canvas.
-			canvas render: listBox ].
+			canvas render: listBox
+			].
 
 	self
-		assert: html equals: '<select name="2" id="list-box-id1" multiple="multiple"></select><input name="3" type="hidden"/>';
+		assert: html
+			equals: '<select name="2" id="list-box-id1" multiple></select><input name="3" type="hidden"/>';
 		assert: listBox identifier equals: 'list-box-id1'
 ]
 
@@ -197,7 +199,7 @@ MultipleSelectionListBoxWebViewTest >> testOnTrigger [
 	self
 		assert: html
 		equals:
-			'<select name="1" id="select-id2" multiple="multiple"></select><input name="3" type="hidden"/><script type="text/javascript">$("#select-id2").change(function(event){$(this).prop("disabled",true)});</script>'
+			'<select name="1" id="select-id2" multiple></select><input name="3" type="hidden"/><script type="text/javascript">$("#select-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests-rendering' }
@@ -209,7 +211,7 @@ MultipleSelectionListBoxWebViewTest >> testRenderContentOn [
 
 	html := self render: listBox.
 
-	self assert: html equals: '<select name="1" multiple="multiple"></select><input name="2" type="hidden"/>'
+	self assert: html equals: '<select name="1" multiple></select><input name="2" type="hidden"/>'
 ]
 
 { #category : #'tests-rendering' }
@@ -220,7 +222,7 @@ MultipleSelectionListBoxWebViewTest >> testRenderContentOnWithCommands [
 	listBox := MultipleSelectionListBoxWebView applying: [ :command | command addClass willow ].
 	html := self render: listBox.
 
-	self assert: html equals: '<select name="1" class="willow" multiple="multiple"></select><input name="2" type="hidden"/>'
+	self assert: html equals: '<select name="1" class="willow" multiple></select><input name="2" type="hidden"/>'
 ]
 
 { #category : #'tests-rendering' }
@@ -232,7 +234,7 @@ MultipleSelectionListBoxWebViewTest >> testRenderContentOnWithElements [
 	listBox allowAnyOf: #('One' 'Two' 'Three').
 	html := self render: listBox.
 
-	self assert: html equals: '<select name="1" multiple="multiple"><option value="1">One</option><option value="2">Two</option><option value="3">Three</option></select><input name="2" type="hidden"/>'
+	self assert: html equals: '<select name="1" multiple><option value="1">One</option><option value="2">Two</option><option value="3">Three</option></select><input name="2" type="hidden"/>'
 ]
 
 { #category : #'tests-rendering' }
@@ -248,5 +250,5 @@ MultipleSelectionListBoxWebViewTest >> testRenderContentOnWithElementsAndSomethi
 	self
 		assert: html
 		equals:
-			'<select name="1" multiple="multiple"><option value="1">One</option><option value="2" selected="selected">Two</option><option value="3" selected="selected">Three</option></select><input name="2" type="hidden"/>'
+			'<select name="1" multiple><option value="1">One</option><option value="2" selected>Two</option><option value="3" selected>Three</option></select><input name="2" type="hidden"/>'
 ]

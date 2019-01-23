@@ -60,7 +60,7 @@ RadioGroupWebViewTest >> testRenderContentOnWithElementsAndSomethingSelected [
 	self
 		assert: html
 		equals:
-			'<label for="radio-button-id2"><input name="1" id="radio-button-id2" checked="checked" value="1" type="radio"/>Buenos Aires</label><label for="radio-button-id3"><input name="1" id="radio-button-id3" value="2" type="radio"/>CABA</label>'.
+			'<label for="radio-button-id2"><input name="1" id="radio-button-id2" checked value="1" type="radio"/>Buenos Aires</label><label for="radio-button-id3"><input name="1" id="radio-button-id3" value="2" type="radio"/>CABA</label>'.
 
 	radioGroup
 		chooseAnySatisfying: [ :place | place beginsWith: 'C' ]
@@ -71,7 +71,7 @@ RadioGroupWebViewTest >> testRenderContentOnWithElementsAndSomethingSelected [
 	self
 		assert: html
 		equals:
-			'<label for="radio-button-id2"><input name="1" id="radio-button-id2" value="1" type="radio"/>Buenos Aires</label><label for="radio-button-id3"><input name="1" id="radio-button-id3" checked="checked" value="2" type="radio"/>CABA</label>'
+			'<label for="radio-button-id2"><input name="1" id="radio-button-id2" value="1" type="radio"/>Buenos Aires</label><label for="radio-button-id3"><input name="1" id="radio-button-id3" checked value="2" type="radio"/>CABA</label>'
 ]
 
 { #category : #'tests-rendering' }

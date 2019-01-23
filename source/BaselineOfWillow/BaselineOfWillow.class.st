@@ -12,38 +12,53 @@ BaselineOfWillow >> baseline: spec [
 
 	<baseline>
 	spec
-		for: #common
-		do: [ self setUpDependencies: spec.
+		for: #pharo
+		do: [ self
+				setUpDependencies: spec;
+				baselineWillow: spec.
 			spec
-				package: 'Willow' with: [ spec requires: #('Seaside3' 'RenoirSt' 'Boardwalk') ];
-				package: 'Willow-Tests' with: [ spec requires: #('Seaside3-Tests' 'Boardwalk-Tests' 'Willow') ].
-			spec
-				group: 'Deployment' with: #('Willow');
-				group: 'Development' with: #('Deployment' 'Willow-Tests');
-				group: 'default' with: #('Deployment') ]
+				group: 'CI' with: 'Tests';
+				group: 'Dependent-SUnit-Extensions' with: 'Boardwalk-SUnit';
+				group: 'Tools' with: 'Boardwalk-Tools';
+				group: 'Development' with: #('Tests' 'Tools')
+			]
+]
+
+{ #category : #baselines }
+BaselineOfWillow >> baselineWillow: spec [
+
+	spec
+		package: 'Willow'
+			with: [ spec requires: #('Seaside3-JQuery' 'RenoirSt-Deployment' 'Boardwalk-Deployment') ];
+		group: 'Deployment' with: 'Willow';
+		package: 'Willow-Tests' with: [ spec requires: #('Boardwalk-SUnit' 'Deployment') ];
+		group: 'Tests' with: 'Willow-Tests'
+]
+
+{ #category : #accessing }
+BaselineOfWillow >> projectClass [
+
+	^ MetacelloCypressBaselineProject
 ]
 
 { #category : #baselines }
 BaselineOfWillow >> setUpDependencies: spec [
 
 	spec
-		baseline: 'Seaside3'
-			with: [ spec
-				repository: 'github://SeasideSt/Seaside:v3.2.4/repository';
-				loads: #('Seaside-Environment' 'JQuery' 'Zinc') ];
-		project: 'Seaside3-Tests' copyFrom: 'Seaside3' with: [ spec loads: #('Seaside-Tests-Core') ].
+		baseline: 'Seaside3' with: [ spec repository: 'github://SeasideSt/Seaside:v3.3.1/repository' ];
+		project: 'Seaside3-JQuery' copyFrom: 'Seaside3' with: [ spec loads: 'JQuery' ].
 
 	spec
-		baseline: 'RenoirSt'
-		with: [ spec
-				repository: 'github://ba-st/RenoirSt:v6/source';
-				loads: #('Deployment-Seaside-Extensions') ].
+		baseline: 'RenoirSt' with: [ spec repository: 'github://ba-st/RenoirSt:v6/source' ];
+		project: 'RenoirSt-Deployment'
+			copyFrom: 'RenoirSt'
+			with: [ spec loads: 'Deployment-Seaside-Extensions' ].
 
 	spec
-		baseline: 'Boardwalk'
-			with: [ spec
-				repository: 'github://ba-st/Boardwalk:v2/source';
-				loads: #('Deployment') ];
-		project: 'Boardwalk-Tests' copyFrom: 'Boardwalk' with: [ spec loads: #('Development') ]
-
+		baseline: 'Boardwalk' with: [ spec repository: 'github://ba-st/Boardwalk:v3/source' ];
+		project: 'Boardwalk-Deployment' copyFrom: 'Boardwalk' with: 'Deployment';
+		project: 'Boardwalk-SUnit'
+			copyFrom: 'Boardwalk'
+			with: [ spec loads: 'Dependent-SUnit-Extensions' ];
+		project: 'Boardwalk-Tools' copyFrom: 'Boardwalk' with: [ spec loads: 'Tools' ]
 ]

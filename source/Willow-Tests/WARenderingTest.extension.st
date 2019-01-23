@@ -20,3 +20,9 @@ WARenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponent
 			aWebInteractionObject applyTo: component on: canvas.
 			aPostAction value: canvas value: component ]
 ]
+
+{ #category : #'*Willow-Tests' }
+WARenderingTest >> createHandlers [
+
+	^ Array with: WARequestHandler new
+]

@@ -9,7 +9,11 @@ Class {
 
 { #category : #'tests-processing' }
 ComponentReadOnlyCommandTest >> testApplyToOn [
+
 	| html |
-	html := self apply: ComponentReadOnlyCommand new toComponentDefinedBy: [ :canvas | canvas textInput ].
-	self assert: html equals: '<input readonly="readonly" type="text"/>'
+
+	html := self
+		apply: ComponentReadOnlyCommand new
+		toComponentDefinedBy: [ :canvas | canvas textInput ].
+	self assert: html equals: '<input readonly type="text"/>'
 ]

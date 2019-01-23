@@ -25,7 +25,7 @@ CheckboxWebViewTest >> testIdentifyIn [
 			canvas render: checkbox ].
 
 	self
-		assert: html equals: '<input checked="checked" name="2" id="checkbox-id1" type="checkbox"/><input name="3" type="hidden"/>';
+		assert: html equals: '<input checked name="2" id="checkbox-id1" type="checkbox"/><input name="3" type="hidden"/>';
 		assert: checkbox identifier equals: 'checkbox-id1'
 ]
 
@@ -41,7 +41,7 @@ CheckboxWebViewTest >> testOnTrigger [
 	self
 		assert: html
 		equals:
-			'<input checked="checked" name="1" id="input-id2" type="checkbox"/><input name="3" type="hidden"/><script type="text/javascript">$("#input-id2").click(function(event){$(this).prop("disabled",true)});</script>'
+			'<input checked name="1" id="input-id2" type="checkbox"/><input name="3" type="hidden"/><script type="text/javascript">$("#input-id2").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests-rendering' }
@@ -57,7 +57,7 @@ CheckboxWebViewTest >> testRenderingAfterUpdatingModel [
 
 	checkbox selectOnModel.
 	html := self render: checkbox.
-	self assert: html equals: '<input class="willow" checked="checked" name="1" type="checkbox"/><input name="2" type="hidden"/>'
+	self assert: html equals: '<input class="willow" checked name="1" type="checkbox"/><input name="2" type="hidden"/>'
 ]
 
 { #category : #'tests-rendering' }
@@ -73,7 +73,7 @@ CheckboxWebViewTest >> testRenderingWithLabel [
 
 	html := self render: checkbox.
 
-	self assert: html equals: '<input class="willow" checked="checked" name="1" id="checkbox-id2" type="checkbox"/><input name="3" type="hidden"/><label for="checkbox-id2">Enable network</label>'
+	self assert: html equals: '<input class="willow" checked name="1" id="checkbox-id2" type="checkbox"/><input name="3" type="hidden"/><label for="checkbox-id2">Enable network</label>'
 ]
 
 { #category : #'tests-rendering' }
@@ -86,7 +86,7 @@ CheckboxWebViewTest >> testWithNonBooleanModels [
 	html := self render: checkbox.
 
 	self
-		assert: html equals: '<input checked="checked" name="1" type="checkbox"/><input name="2" type="hidden"/>';
+		assert: html equals: '<input checked name="1" type="checkbox"/><input name="2" type="hidden"/>';
 		assert: checkbox currentSelection equals: 1.
 
 	checkbox toggleCurrentSelection.

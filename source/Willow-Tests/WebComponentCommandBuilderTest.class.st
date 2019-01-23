@@ -48,9 +48,11 @@ WebComponentCommandBuilderTest >> testAutofocusCommand [
 
 	| html |
 
-	html := self apply: self commandBuilder beAutofocused toComponentDefinedBy: [ :canvas | canvas div ].
+	html := self
+		apply: self commandBuilder beAutofocused
+		toComponentDefinedBy: [ :canvas | canvas div ].
 
-	self assert: html equals: '<div autofocus="autofocus"></div>'
+	self assert: html equals: '<div autofocus></div>'
 ]
 
 { #category : #tests }
@@ -131,11 +133,15 @@ WebComponentCommandBuilderTest >> testConditionalCommand [
 
 	| html |
 
-	html := self apply: [ :field | field when: [ true ] apply: field beReadOnly ] asWebComponentCommand toComponentDefinedBy: [ :canvas | canvas textInput ].
+	html := self
+		apply: [ :field | field when: [ true ] apply: field beReadOnly ] asWebComponentCommand
+		toComponentDefinedBy: [ :canvas | canvas textInput ].
 
-	self assert: html equals: '<input readonly="readonly" type="text"/>'.
+	self assert: html equals: '<input readonly type="text"/>'.
 
-	html := self apply: [ :field | field when: [ false ] apply: field beReadOnly ] asWebComponentCommand toComponentDefinedBy: [ :canvas | canvas textInput ].
+	html := self
+		apply: [ :field | field when: [ false ] apply: field beReadOnly ] asWebComponentCommand
+		toComponentDefinedBy: [ :canvas | canvas textInput ].
 
 	self assert: html equals: '<input type="text"/>'
 ]
@@ -159,7 +165,7 @@ WebComponentCommandBuilderTest >> testDisableCommand [
 
 	html := self apply: self commandBuilder beDisabled toComponentDefinedBy: [ :canvas | canvas div ].
 
-	self assert: html equals: '<div disabled="disabled"></div>'
+	self assert: html equals: '<div disabled></div>'
 ]
 
 { #category : #tests }
@@ -257,7 +263,7 @@ WebComponentCommandBuilderTest >> testReadOnlyCommand [
 
 	html := self apply: self commandBuilder beReadOnly toComponentDefinedBy: [ :canvas | canvas textInput ].
 
-	self assert: html equals: '<input readonly="readonly" type="text"/>'
+	self assert: html equals: '<input readonly type="text"/>'
 ]
 
 { #category : #tests }
@@ -267,7 +273,7 @@ WebComponentCommandBuilderTest >> testRequiredCommand [
 
 	html := self apply: self commandBuilder beRequired toComponentDefinedBy: [ :canvas | canvas textInput ].
 
-	self assert: html equals: '<input required="required" type="text"/>'
+	self assert: html equals: '<input required type="text"/>'
 ]
 
 { #category : #tests }

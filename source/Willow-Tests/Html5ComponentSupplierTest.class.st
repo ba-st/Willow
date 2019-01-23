@@ -40,8 +40,10 @@ Html5ComponentSupplierTest >> testCheckboxLabeledOnModelOffModelApplying [
 				checkboxLabeled: 'Labelization'
 				onModel: 3
 				offModel: 'the off'
-				applying: [ :checkbox | checkbox addClass willow ] ]
-		equals: '<input class="willow" checked="checked" name="1" id="checkbox-id2" type="checkbox"/><input name="3" type="hidden"/><label for="checkbox-id2">Labelization</label>'
+				applying: [ :checkbox | checkbox addClass willow ]
+			]
+		equals:
+			'<input class="willow" checked name="1" id="checkbox-id2" type="checkbox"/><input name="3" type="hidden"/><label for="checkbox-id2">Labelization</label>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -49,7 +51,7 @@ Html5ComponentSupplierTest >> testCheckboxUnlabeledOnModelOffModelApplying [
 
 	self
 		assertRenderingOf: [ :supplier | supplier checkboxUnlabeledOnModel: 3 offModel: 'the off' applying: [ :checkbox | checkbox addClass willow ] ]
-		equals: '<input class="willow" checked="checked" name="1" type="checkbox"/><input name="2" type="hidden"/>'
+		equals: '<input class="willow" checked name="1" type="checkbox"/><input name="2" type="hidden"/>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -88,7 +90,7 @@ Html5ComponentSupplierTest >> testFieldSetContainingApplyingWithLegendApplying [
 				applying: [ :fieldSet | fieldSet beDisabled ]
 				withLegend: 'Its Title'
 				applying: [ :legend | legend beAutofocused ] ]
-		equals: '<fieldset disabled="disabled"><legend autofocus="autofocus">Its Title</legend>The View</fieldset>'
+		equals: '<fieldset disabled><legend autofocus>Its Title</legend>The View</fieldset>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -101,8 +103,12 @@ Html5ComponentSupplierTest >> testMultiLineTextFieldApplying [
 Html5ComponentSupplierTest >> testMultipleSelectionListBoxDisplayingAtOnceApplying [
 
 	self
-		assertRenderingOf: [ :supplier | supplier multipleSelectionListBoxDisplayingAtOnce: 15 applying: [ :listBox | listBox addClass willow ] ]
-		equals: '<select name="1" size="15" class="willow" multiple="multiple"></select><input name="2" type="hidden"/>'
+		assertRenderingOf: [ :supplier | 
+			supplier
+				multipleSelectionListBoxDisplayingAtOnce: 15
+				applying: [ :listBox | listBox addClass willow ]
+			]
+		equals: '<select name="1" size="15" class="willow" multiple></select><input name="2" type="hidden"/>'
 ]
 
 { #category : #'tests-Supplying' }

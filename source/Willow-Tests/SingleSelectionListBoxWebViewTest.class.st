@@ -106,5 +106,5 @@ SingleSelectionListBoxWebViewTest >> testRenderContentOnWithElementsAndSomething
 	self
 		assert: html
 		equals:
-			'<select name="1" size="5"><option value="1" selected="selected">One</option><option value="2">Two</option><option value="3">Three</option></select>'
+			'<select name="1" size="5"><option value="1" selected>One</option><option value="2">Two</option><option value="3">Three</option></select>'
 ]

@@ -74,12 +74,12 @@ WillowApplicationTest >> testRegisterAsDeployedApplication [
 
 	| handlers |
 
-	handlers := WAAdmin defaultDispatcher handlers.
-	self deny: (handlers includesKey: WillowTestingApplication handlerName).
+	handlers := WADispatcher default handlers.
+	self deny: ( handlers includesKey: WillowTestingApplication handlerName ).
 	WillowTestingApplication registerAsDeployedApplication.
-	self assert: (handlers includesKey: WillowTestingApplication handlerName).
+	self assert: ( handlers includesKey: WillowTestingApplication handlerName ).
 	WillowTestingApplication unregisterFromApplications.
-	self deny: (handlers includesKey: WillowTestingApplication handlerName)
+	self deny: ( handlers includesKey: WillowTestingApplication handlerName )
 ]
 
 { #category : #tests }
@@ -87,12 +87,12 @@ WillowApplicationTest >> testRegisterAsDevelopmentApplication [
 
 	| handlers |
 
-	handlers := WAAdmin defaultDispatcher handlers.
-	self deny: (handlers includesKey: WillowTestingApplication handlerName).
+	handlers := WADispatcher default handlers.
+	self deny: ( handlers includesKey: WillowTestingApplication handlerName ).
 	WillowTestingApplication registerAsDevelopmentApplication.
-	self assert: (handlers includesKey: WillowTestingApplication handlerName).
+	self assert: ( handlers includesKey: WillowTestingApplication handlerName ).
 	WillowTestingApplication unregisterFromApplications.
-	self deny: (handlers includesKey: WillowTestingApplication handlerName)
+	self deny: ( handlers includesKey: WillowTestingApplication handlerName )
 ]
 
 { #category : #tests }

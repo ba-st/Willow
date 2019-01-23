@@ -1,2 +1,1 @@
-# Better line ending handling for st files
-*.st filter=st_EOL
+*.st linguist-language=Smalltalk

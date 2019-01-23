@@ -3,13 +3,13 @@ sudo: false
 os:
 - linux
 smalltalk:
+- Pharo64-8.0
 - Pharo64-7.0
-- Pharo-7.0
-- Pharo-6.1
+- Pharo32-7.0
+- Pharo32-6.1
 matrix:
   allow_failures:
-  - smalltalk: Pharo64-7.0
-  - smalltalk: Pharo-7.0
+  - smalltalk: Pharo64-8.0
   fast_finish: true
 before_deploy:
   - cp "${SMALLTALK_CI_IMAGE}" "Willow.image"

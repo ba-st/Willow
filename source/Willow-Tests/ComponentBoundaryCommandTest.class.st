@@ -3,7 +3,7 @@ A ComponentBoundaryCommandTest is a test class for testing the behavior of Compo
 "
 Class {
 	#name : #ComponentBoundaryCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

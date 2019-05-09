@@ -1,6 +1,6 @@
 Class {
 	#name : #ComponentRequiredCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

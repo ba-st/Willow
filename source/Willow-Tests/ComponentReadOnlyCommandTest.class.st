@@ -3,7 +3,7 @@ A ComponentReadOnlyCommandTest is a test class for testing the behavior of Compo
 "
 Class {
 	#name : #ComponentReadOnlyCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

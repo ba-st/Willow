@@ -3,7 +3,7 @@ A ComponentTitleCommandTest is a test class for testing the behavior of Componen
 "
 Class {
 	#name : #ComponentTitleCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

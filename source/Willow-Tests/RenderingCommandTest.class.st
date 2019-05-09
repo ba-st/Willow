@@ -3,7 +3,7 @@ A RenderingCommandTest is a test class for testing the behavior of RenderingComm
 "
 Class {
 	#name : #RenderingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'identifiedView',
 		'command'

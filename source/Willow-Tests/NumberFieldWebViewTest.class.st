@@ -3,7 +3,7 @@ A NumberFieldWebViewTest is a test class for testing the behavior of NumberField
 "
 Class {
 	#name : #NumberFieldWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'notificationWasReceived'
 	],

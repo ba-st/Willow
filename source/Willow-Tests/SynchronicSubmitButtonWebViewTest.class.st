@@ -3,7 +3,7 @@ A SynchronicSubmitButtonWebViewTest is a test class for testing the behavior of 
 "
 Class {
 	#name : #SynchronicSubmitButtonWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebViews'
 }
 

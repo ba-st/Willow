@@ -3,7 +3,7 @@ A DateFieldWebViewTest is a test class for testing the behavior of DateFieldWebV
 "
 Class {
 	#name : #DateFieldWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'notificationWasReceived'
 	],

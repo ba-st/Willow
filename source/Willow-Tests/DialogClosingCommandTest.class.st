@@ -3,7 +3,7 @@ A DialogClosingCommandTest is a test class for testing the behavior of DialogClo
 "
 Class {
 	#name : #DialogClosingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

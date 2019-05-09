@@ -3,7 +3,7 @@ A ComponentFocusingCommandTest is a test class for testing the behavior of Compo
 "
 Class {
 	#name : #ComponentFocusingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

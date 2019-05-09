@@ -3,7 +3,7 @@ A DisableComponentTabCycleCommandTest is a test class for testing the behavior o
 "
 Class {
 	#name : #DisableComponentTabCycleCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

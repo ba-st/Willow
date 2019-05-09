@@ -3,7 +3,7 @@ A DialogOpeningCommandTest is a test class for testing the behavior of DialogOpe
 "
 Class {
 	#name : #DialogOpeningCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

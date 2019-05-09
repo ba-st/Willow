@@ -3,7 +3,7 @@ An AlertingCommandTest is a test class for testing the behavior of AlertingComma
 "
 Class {
 	#name : #AlertingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

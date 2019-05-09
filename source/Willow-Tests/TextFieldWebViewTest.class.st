@@ -3,7 +3,7 @@ A TextFieldWebViewTest is a test class for testing the behavior of TextFieldWebV
 "
 Class {
 	#name : #TextFieldWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'notificationWasReceived'
 	],

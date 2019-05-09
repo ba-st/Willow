@@ -3,7 +3,7 @@ A TemporarilyDisablingCommandTest is a test class for testing the behavior of Te
 "
 Class {
 	#name : #TemporarilyDisablingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebInteraction'
 }
 

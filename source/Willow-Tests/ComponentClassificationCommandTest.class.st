@@ -3,7 +3,7 @@ A ComponentClassificationCommandTest is a test class for testing the behavior of
 "
 Class {
 	#name : #ComponentClassificationCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

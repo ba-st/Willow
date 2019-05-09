@@ -1,6 +1,6 @@
 Class {
 	#name : #SetComponentSizeCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

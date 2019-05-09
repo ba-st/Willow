@@ -1,7 +1,7 @@
-Extension { #name : #WARenderingTest }
+Extension { #name : #BWRenderingTest }
 
 { #category : #'*Willow-SUnit' }
-WARenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponentProvider [
+BWRenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponentProvider [
 
 	^ self
 		apply: aWebInteractionObject
@@ -10,7 +10,7 @@ WARenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponent
 ]
 
 { #category : #'*Willow-SUnit' }
-WARenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponentProvider afterApplyingDo: aPostAction [
+BWRenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponentProvider afterApplyingDo: aPostAction [
 
 	^ self
 		renderUsing: [ :canvas |
@@ -22,7 +22,7 @@ WARenderingTest >> apply: aWebInteractionObject toComponentDefinedBy: aComponent
 ]
 
 { #category : #'*Willow-SUnit' }
-WARenderingTest >> createHandlers [
+BWRenderingTest >> createHandlers [
 
 	^ Array with: WARequestHandler new
 ]

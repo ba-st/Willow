@@ -3,7 +3,7 @@ An AsynchronicButtonWebViewTest is a test class for testing the behavior of Asyn
 "
 Class {
 	#name : #AsynchronicButtonWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebViews'
 }
 

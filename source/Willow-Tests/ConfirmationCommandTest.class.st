@@ -3,7 +3,7 @@ A ConfirmationCommandTest is a test class for testing the behavior of Confirmati
 "
 Class {
 	#name : #ConfirmationCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

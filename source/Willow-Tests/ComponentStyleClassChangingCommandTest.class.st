@@ -1,6 +1,6 @@
 Class {
 	#name : #ComponentStyleClassChangingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

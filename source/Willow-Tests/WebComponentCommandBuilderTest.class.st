@@ -3,7 +3,7 @@ A WebComponentCommandBuilderTest is a test class for testing the behavior of Web
 "
 Class {
 	#name : #WebComponentCommandBuilderTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

@@ -1,6 +1,6 @@
 Class {
 	#name : #SetComponentTabIndexCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

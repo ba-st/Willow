@@ -3,7 +3,7 @@ A WillowApplicationTest is a test class for testing the behavior of WillowApplic
 "
 Class {
 	#name : #WillowApplicationTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'applicationStarted'
 	],

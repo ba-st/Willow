@@ -3,7 +3,7 @@ A ComponentEnableStatusChangingCommandTest is a test class for testing the behav
 "
 Class {
 	#name : #ComponentEnableStatusChangingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

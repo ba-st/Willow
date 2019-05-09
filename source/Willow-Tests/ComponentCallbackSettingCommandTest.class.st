@@ -3,7 +3,7 @@ A ComponentCallbackSettingCommandTest is a test class for testing the behavior o
 "
 Class {
 	#name : #ComponentCallbackSettingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

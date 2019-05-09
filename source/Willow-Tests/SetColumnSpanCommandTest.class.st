@@ -1,6 +1,6 @@
 Class {
 	#name : #SetColumnSpanCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

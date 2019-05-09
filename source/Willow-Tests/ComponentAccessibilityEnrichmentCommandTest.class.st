@@ -3,7 +3,7 @@ A ComponentAccessibilityEnrichmentCommandTest is a test class for testing the be
 "
 Class {
 	#name : #ComponentAccessibilityEnrichmentCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

@@ -1,6 +1,6 @@
 Class {
 	#name : #DelayedCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebInteraction'
 }
 

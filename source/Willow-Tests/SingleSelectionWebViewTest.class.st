@@ -3,7 +3,7 @@ I'm an abstract test case for views implementing the single selection API
 "
 Class {
 	#name : #SingleSelectionWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'notificationWasReceived'
 	],

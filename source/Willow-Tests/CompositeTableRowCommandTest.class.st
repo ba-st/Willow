@@ -1,6 +1,6 @@
 Class {
 	#name : #CompositeTableRowCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

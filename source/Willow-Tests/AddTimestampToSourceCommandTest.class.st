@@ -1,6 +1,6 @@
 Class {
 	#name : #AddTimestampToSourceCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

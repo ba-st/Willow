@@ -3,7 +3,7 @@ A SerializationCommandTest is a test class for testing the behavior of Serializa
 "
 Class {
 	#name : #SerializationCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

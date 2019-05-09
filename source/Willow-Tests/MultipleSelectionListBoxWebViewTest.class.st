@@ -3,7 +3,7 @@ A MultipleSelectionListBoxWebViewTest is a test class for testing the behavior o
 "
 Class {
 	#name : #MultipleSelectionListBoxWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'notificationWasReceived'
 	],

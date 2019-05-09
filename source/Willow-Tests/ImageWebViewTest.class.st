@@ -3,7 +3,7 @@ An ImageWebViewTest is a test class for testing the behavior of ImageWebView
 "
 Class {
 	#name : #ImageWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebViews'
 }
 

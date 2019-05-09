@@ -3,7 +3,7 @@ A ConditionalComponentCommandTest is a test class for testing the behavior of Co
 "
 Class {
 	#name : #ConditionalComponentCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

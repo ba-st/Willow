@@ -3,7 +3,7 @@ A WillowConstantsTest is a test class for testing the constants provided by the 
 "
 Class {
 	#name : #WillowConstantsTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

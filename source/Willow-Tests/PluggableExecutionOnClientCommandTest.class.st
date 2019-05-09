@@ -1,6 +1,6 @@
 Class {
 	#name : #PluggableExecutionOnClientCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command',
 		'commandAction'

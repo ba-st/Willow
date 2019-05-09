@@ -1,6 +1,6 @@
 Class {
 	#name : #JQuery3DevelopmentMetadataLibraryTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Libraries'
 }
 
@@ -9,8 +9,8 @@ JQuery3DevelopmentMetadataLibraryTest >> testDeployFiles [
 
 	self
 		assertFileDeploymentOf: JQuery3DevelopmentMetadataLibrary default
-		createsAsFolders: #('jQuery-3.3.1')
-		andFileContentsMatching: {('jQuery-3.3.1/jquery-3.3.1.js' -> 'add2bdf3f066f8c3cbffa85f299648d37a501fdc')}
+		createsAsFolders: #('jQuery-3.4.1')
+		andFileContentsMatching: {('jQuery-3.4.1/jquery-3.4.1.js' -> '285d1b29de021238e2438460a1998d7a4bc65663')}
 ]
 
 { #category : #tests }
@@ -42,5 +42,5 @@ JQuery3DevelopmentMetadataLibraryTest >> testUpdateRoot [
 	self
 		assert: html
 		equals:
-			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.3.1/jquery-3.3.1.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.4.1/jquery-3.4.1.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]

@@ -3,7 +3,7 @@ A ComponentPlaceholderCommandTest is a test class for testing the behavior of Co
 "
 Class {
 	#name : #ComponentPlaceholderCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

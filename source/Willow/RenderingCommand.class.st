@@ -63,10 +63,13 @@ RenderingCommand >> modelLoadingActions [
 	^ Array
 		with: [ :aScript :aCanvas | 
 			shouldRender
-				ifTrue: [ identifiedViews
+				then: [ identifiedViews
 						do: [ :identifiedView | 
 							identifiedView identifyIn: aCanvas.
-							aScript << (aCanvas jQuery id: identifiedView identifier) html: identifiedView view ] ] ]
+							aScript << ( aCanvas jQuery id: identifiedView identifier ) html: identifiedView view
+							]
+					]
+			]
 ]
 
 { #category : #accessing }

@@ -3,7 +3,7 @@ An IdentifiedWebViewTest is a test class for testing the behavior of IdentifiedW
 "
 Class {
 	#name : #IdentifiedWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebViews'
 }
 

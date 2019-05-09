@@ -1,6 +1,6 @@
 Class {
 	#name : #WebInteractionInterpreterTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#pools : [
 		'Willow'
 	],

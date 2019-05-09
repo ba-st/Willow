@@ -1,6 +1,6 @@
 Class {
 	#name : #WebComponentInteractionTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebInteraction'
 }
 

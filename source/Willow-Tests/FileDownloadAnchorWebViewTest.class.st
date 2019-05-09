@@ -3,7 +3,7 @@ A FileDownloadAnchorWebViewTest is a test class for testing the behavior of File
 "
 Class {
 	#name : #FileDownloadAnchorWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebViews'
 }
 

@@ -26,9 +26,15 @@ WAHtmlCanvas >> scriptToExecute: aScriptBlock asAjaxScriptEvery: aNumber millsec
 	asynchronousCall := self jQuery ajax.
 	asynchronousCall
 		script: [ :script | 
-			aStoppingCondition value
-				ifFalse: [ script << (self scriptToExecute: aScriptBlock asAjaxScriptEvery: aNumber millsecondsUnless: aStoppingCondition) ].
-			script << (aScriptBlock value: self) ].
-	asynchronousCall addDecoration: (JSTimeout duration: aNumber).
+			[ script
+				<<
+					( self
+						scriptToExecute: aScriptBlock
+						asAjaxScriptEvery: aNumber
+						millsecondsUnless: aStoppingCondition )
+			] unless: aStoppingCondition value.
+			script << ( aScriptBlock value: self )
+			].
+	asynchronousCall addDecoration: ( JSTimeout duration: aNumber ).
 	^ asynchronousCall
 ]

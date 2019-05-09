@@ -28,5 +28,5 @@ JQuery3MetadataLibrary class >> libraryName [
 { #category : #versions }
 JQuery3MetadataLibrary class >> version [
 
-	^ '3.3.1'
+	^ '3.4.1'
 ]

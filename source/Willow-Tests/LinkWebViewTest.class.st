@@ -3,7 +3,7 @@ An AsynchronicLinkWebViewTest is a test class for testing the behavior of Asynch
 "
 Class {
 	#name : #LinkWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebViews'
 }
 

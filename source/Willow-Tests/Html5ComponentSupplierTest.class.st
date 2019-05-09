@@ -3,7 +3,7 @@ A Html5ComponentSupplierTest is a test class for testing the behavior of Html5Co
 "
 Class {
 	#name : #Html5ComponentSupplierTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

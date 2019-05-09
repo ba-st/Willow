@@ -3,7 +3,7 @@ A CombinedWebInteractionInterpreterTest is a test class for testing the behavior
 "
 Class {
 	#name : #CombinedWebInteractionInterpreterTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'okButton',
 		'cancelButton'

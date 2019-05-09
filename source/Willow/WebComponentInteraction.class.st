@@ -98,11 +98,7 @@ WebComponentInteraction >> applyTo: aComponent on: aCanvas [
 
 	self prepareActions.
 	self shouldApplyActions
-		ifTrue: 
-			[triggerPolicy
-				apply: (self commandToExecuteOn: aCanvas)
-				to: aComponent
-				on: aCanvas]
+		then: [ triggerPolicy apply: ( self commandToExecuteOn: aCanvas ) to: aComponent on: aCanvas ]
 ]
 
 { #category : #'private - accessing' }
@@ -119,15 +115,13 @@ WebComponentInteraction >> asynchronousCallToAffect: aCanvas [
 { #category : #'private - accessing' }
 WebComponentInteraction >> commandToExecuteOn: aCanvas [
 
-	^ serverIndependentActions isEmpty
-		ifTrue: [ self asynchronousCallToAffect: aCanvas ]
-		ifFalse: [ | script |
+	^ [ | script |
 
-			script := aCanvas javascript.
-			serverIndependentActions do: [ :action | action value: script value: aCanvas ].
-			self shouldApplyAsynchronousCall
-				ifTrue: [ script << (self asynchronousCallToAffect: aCanvas) ].
-			script ]
+	script := aCanvas javascript.
+	serverIndependentActions do: [ :action | action value: script value: aCanvas ].
+	self shouldApplyAsynchronousCall then: [ script << ( self asynchronousCallToAffect: aCanvas ) ].
+	script
+	] unless: serverIndependentActions isEmpty inWhichCase: [ self asynchronousCallToAffect: aCanvas ]
 ]
 
 { #category : #'private - accessing' }
@@ -172,9 +166,9 @@ WebComponentInteraction >> prepareActions [
 	commands
 		do: [ :aCommand | 
 			self registerActionsOf: aCommand.
-			serializationRequired := serializationRequired or: [ aCommand requiresSerialization ] ].
-	serializationRequired
-		ifTrue: [ self registerActionsOf: serializationCommand ]
+			serializationRequired := serializationRequired or: [ aCommand requiresSerialization ]
+			].
+	serializationRequired then: [ self registerActionsOf: serializationCommand ]
 ]
 
 { #category : #'private - processing' }

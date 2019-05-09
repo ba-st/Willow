@@ -1,6 +1,6 @@
 Class {
 	#name : #FieldSetWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebViews'
 }
 

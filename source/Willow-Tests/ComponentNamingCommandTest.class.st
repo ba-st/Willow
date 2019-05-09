@@ -3,7 +3,7 @@ A ComponentNamingCommandTest is a test class for testing the behavior of Compone
 "
 Class {
 	#name : #ComponentNamingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

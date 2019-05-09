@@ -3,7 +3,7 @@ I'm an abstract test case for views implementing the binary choice  API
 "
 Class {
 	#name : #BinaryChoiceWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'notificationWasReceived'
 	],

@@ -3,7 +3,7 @@ A ScrollIntoViewCommandTest is a test class for testing the behavior of ScrollIn
 "
 Class {
 	#name : #ScrollIntoViewCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

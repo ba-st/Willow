@@ -3,7 +3,7 @@ A TableWebViewTest is a test class for testing the behavior of TableWebView
 "
 Class {
 	#name : #TableWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'notificationWasReceived'
 	],

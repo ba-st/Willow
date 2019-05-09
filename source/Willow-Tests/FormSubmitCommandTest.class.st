@@ -3,7 +3,7 @@ A FormSubmitCommandTest is a test class for testing the behavior of FormSubmitCo
 "
 Class {
 	#name : #FormSubmitCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

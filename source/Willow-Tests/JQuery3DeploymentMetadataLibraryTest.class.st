@@ -1,6 +1,6 @@
 Class {
 	#name : #JQuery3DeploymentMetadataLibraryTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Libraries'
 }
 
@@ -9,10 +9,10 @@ JQuery3DeploymentMetadataLibraryTest >> testDeployFiles [
 
 	self
 		assertFileDeploymentOf: JQuery3DeploymentMetadataLibrary default
-		createsAsFolders: #('jQuery-3.3.1')
+		createsAsFolders: #('jQuery-3.4.1')
 		andFileContentsMatching:
-			{('jQuery-3.3.1/jquery-3.3.1.min.js' -> '0aa5299be816e714a9141f4c0cf72e99690bbc82').
-			('jQuery-3.3.1/jquery-3.3.1.min.map' -> '937130c6bd332333d7b2e6e63bbf90b4f4ec09c3')}
+			{('jQuery-3.4.1/jquery-3.4.1.min.js' -> 'fb0fe30ff8254f194eb6034b617484dd88cb0f06').
+			('jQuery-3.4.1/jquery-3.4.1.min.map' -> '459d03f31fac5bd9a6a4aaac2dcd35ca1ecc6995')}
 ]
 
 { #category : #tests }
@@ -44,5 +44,5 @@ JQuery3DeploymentMetadataLibraryTest >> testUpdateRoot [
 	self
 		assert: html
 		equals:
-			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.3.1/jquery-3.3.1.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.4.1/jquery-3.4.1.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]

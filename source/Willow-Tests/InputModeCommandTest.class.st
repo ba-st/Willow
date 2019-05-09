@@ -3,7 +3,7 @@ A DateInputModeCommandTest is a test class for testing the behavior of DateInput
 "
 Class {
 	#name : #InputModeCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

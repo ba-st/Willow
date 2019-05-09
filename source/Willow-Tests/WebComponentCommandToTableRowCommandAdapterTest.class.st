@@ -3,7 +3,7 @@ A WebComponentCommandToTableRowCommandAdapterTest is a test class for testing th
 "
 Class {
 	#name : #WebComponentCommandToTableRowCommandAdapterTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

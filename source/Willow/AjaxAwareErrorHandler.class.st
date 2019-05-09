@@ -18,21 +18,20 @@ AjaxAwareErrorHandler >> handleDefault: anException [
 
 	self valueReportingActionWhenHandling: anException.
 	self requestContext request isXmlHttpRequest
-		ifTrue: [ self respondToXmlHttpRequestWith: anException messageText ]
-		ifFalse: [ super handleDefault: anException ]
+		then: [ self respondToXmlHttpRequestWith: anException messageText ]
+		otherwise: [ super handleDefault: anException ]
 ]
 
 { #category : #actions }
 AjaxAwareErrorHandler >> handleException: anException [
 
-	self requestContext request isXmlHttpRequest
-		ifTrue: [
-			^ajaxExceptionHandlers keys
-				detect: [:key | key handles: anException]
-				ifFound: [:key | (ajaxExceptionHandlers at: key) cull: anException cull: self]
-				ifNone: [super handleException: anException]].
-
-	^super handleException: anException
+	^ self requestContext request isXmlHttpRequest
+		then: [ ajaxExceptionHandlers keys
+				detect: [ :key | key handles: anException ]
+				ifFound: [ :key | ( ajaxExceptionHandlers at: key ) cull: anException cull: self ]
+				ifNone: [ super handleException: anException ]
+			]
+		otherwise: [ super handleException: anException ]
 ]
 
 { #category : #initialization }

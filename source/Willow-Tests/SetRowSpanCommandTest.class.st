@@ -3,7 +3,7 @@ A SetRowSpanCommandTest is a test class for testing the behavior of SetRowSpanCo
 "
 Class {
 	#name : #SetRowSpanCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

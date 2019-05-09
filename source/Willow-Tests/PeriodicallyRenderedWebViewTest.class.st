@@ -3,7 +3,7 @@ A PeriodicallyRenderedWebViewTest is a test class for testing the behavior of Pe
 "
 Class {
 	#name : #PeriodicallyRenderedWebViewTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebViews'
 }
 

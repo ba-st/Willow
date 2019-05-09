@@ -3,7 +3,7 @@ A ComponentRemovingCommandTest is a test class for testing the behavior of Compo
 "
 Class {
 	#name : #ComponentRemovingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

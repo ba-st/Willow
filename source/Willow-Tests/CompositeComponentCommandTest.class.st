@@ -3,7 +3,7 @@ A CompositeComponentCommandTest is a test class for testing the behavior of Comp
 "
 Class {
 	#name : #CompositeComponentCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Frontend'
 }
 

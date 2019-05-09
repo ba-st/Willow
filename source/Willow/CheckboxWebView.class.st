@@ -85,9 +85,7 @@ CheckboxWebView >> renderContentOn: aCanvas [
 	commandToComponent applyTo: checkbox on: aCanvas.
 	checkbox
 		value: isChecked;
-		callback: [ :value | 
-			value = isChecked
-				ifFalse: [ self toggleCurrentSelection ] ].
+		callback: [ :value | [ self toggleCurrentSelection ] unless: value = isChecked ].
 	self renderOptionalLabelRelatedTo: checkbox on: aCanvas.
 	interactionInterpreter applyTo: checkbox on: aCanvas
 ]

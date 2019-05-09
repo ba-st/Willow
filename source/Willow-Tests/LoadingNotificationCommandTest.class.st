@@ -3,7 +3,7 @@ A LoadingNotificationCommandTest is a test class for testing the behavior of Loa
 "
 Class {
 	#name : #LoadingNotificationCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-WebInteraction'
 }
 

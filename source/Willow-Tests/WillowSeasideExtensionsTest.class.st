@@ -3,7 +3,7 @@ This test case verifies method extensions to Seaside classes
 "
 Class {
 	#name : #WillowSeasideExtensionsTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Tests-Applications'
 }
 

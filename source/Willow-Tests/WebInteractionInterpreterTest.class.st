@@ -811,12 +811,13 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter temporarilyDisableAndTransform: textInput into: 'Loading...'.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){disabledComponent=$("#15").html();$("#15").addClass("willow-disabled-component").attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){$(".willow-disabled-component").attr("disabled",false).removeClass("willow-disabled-component").html(disabledComponent)},"url":"/","data":"1"})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){var componentToDisable=$("#15");if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -833,12 +834,13 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfInto [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter temporarilyDisableAndTransformInto: 'Loading...'.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){disabledComponent=$(this).html();$(this).addClass("willow-disabled-component").attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){$(".willow-disabled-component").attr("disabled",false).removeClass("willow-disabled-component").html(disabledComponent)},"url":"/","data":"1"})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){var componentToDisable=$(this);if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});</script>'
 ]
 
 { #category : #'tests - Configuring - CSS' }

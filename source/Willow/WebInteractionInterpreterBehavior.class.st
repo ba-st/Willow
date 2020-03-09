@@ -59,6 +59,12 @@ WebInteractionInterpreterBehavior >> disable [
 ]
 
 { #category : #'Configuring - DOM' }
+WebInteractionInterpreterBehavior >> disable: aComponent [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - DOM' }
 WebInteractionInterpreterBehavior >> enable: aComponent [
 
 	self subclassResponsibility

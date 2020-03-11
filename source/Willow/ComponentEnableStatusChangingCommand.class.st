@@ -13,6 +13,16 @@ Class {
 }
 
 { #category : #'Instance Creation' }
+ComponentEnableStatusChangingCommand class >> disabling: anIdentifiedComponent [
+
+	^ self
+		obtainingComponentWith: [ :canvas | 
+			anIdentifiedComponent identifyIn: canvas.
+			canvas jQuery id: anIdentifiedComponent identifier ]
+		settingStatusTo: true
+]
+
+{ #category : #'Instance Creation' }
 ComponentEnableStatusChangingCommand class >> disablingCurrentComponent [
 
 	^self obtainingComponentWith: [:canvas | canvas jQuery this] settingStatusTo: true

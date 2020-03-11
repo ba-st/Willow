@@ -135,9 +135,15 @@ WebInteractionInterpreter >> disable [
 ]
 
 { #category : #'Configuring - DOM' }
+WebInteractionInterpreter >> disable: aComponent [
+
+	interaction onTriggerExecute: ( ComponentEnableStatusChangingCommand disabling: aComponent )
+]
+
+{ #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> enable: aComponent [
 
-	interaction onTriggerExecute: (ComponentEnableStatusChangingCommand enabling: aComponent)
+	interaction onTriggerExecute: ( ComponentEnableStatusChangingCommand enabling: aComponent )
 ]
 
 { #category : #Configuring }
@@ -150,15 +156,14 @@ WebInteractionInterpreter >> executeOnClient: aServerIndependentAction [
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> focus: anIdentifiedWebView [
 
-	interaction
-		onTriggerExecute: (ComponentFocusingCommand for: anIdentifiedWebView)
+	interaction onTriggerExecute: ( ComponentFocusingCommand for: anIdentifiedWebView )
 ]
 
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> focusUsing: aComponentProvider [
 
 	interaction
-		onTriggerExecute: (ComponentFocusingCommand findingComponentUsing: aComponentProvider)
+		onTriggerExecute: ( ComponentFocusingCommand findingComponentUsing: aComponentProvider )
 ]
 
 { #category : #Configuring }
@@ -199,7 +204,7 @@ WebInteractionInterpreter >> open: aView [
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> remove: anIdentifiedView [
 
-	interaction onTriggerExecute: (ComponentRemovingCommand for: anIdentifiedView)
+	interaction onTriggerExecute: ( ComponentRemovingCommand for: anIdentifiedView )
 ]
 
 { #category : #'Configuring - CSS' }
@@ -216,13 +221,13 @@ WebInteractionInterpreter >> removeCssClass: aCssStyle fromComponentsMatching: a
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> render: anIdentifiedView [
 
-	interaction onTriggerExecute: (RenderingCommand for: anIdentifiedView)
+	interaction onTriggerExecute: ( RenderingCommand for: anIdentifiedView )
 ]
 
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> renderAll: anIdentifiedViewCollection [
 
-	interaction onTriggerExecute: (RenderingCommand forAll: anIdentifiedViewCollection)
+	interaction onTriggerExecute: ( RenderingCommand forAll: anIdentifiedViewCollection )
 ]
 
 { #category : #Configuring }
@@ -266,9 +271,9 @@ WebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: anI
 
 	interaction
 		onTriggerExecute:
-			(ComponentValueSettingCommand
+			( ComponentValueSettingCommand
 				triggeringChangesObtainingIdentifierFrom: [ anIdentifiedView identifier ]
-				valueFrom: aValueProvider)
+				valueFrom: aValueProvider )
 ]
 
 { #category : #'Configuring - DOM' }
@@ -276,9 +281,7 @@ WebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggeringChangeO
 
 	interaction
 		onTriggerExecute:
-			(ComponentValueSettingCommand
-				obtainingIdentifierFrom: [ identifier ]
-				valueFrom: aValueProvider)
+			( ComponentValueSettingCommand obtainingIdentifierFrom: [ identifier ] valueFrom: aValueProvider )
 ]
 
 { #category : #Configuring }
@@ -315,13 +318,14 @@ WebInteractionInterpreter >> submitFormStyledAs: aCssStyle [
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> temporarilyDisableAndTransform: anIdentifiedView into: aView [
 
-	interaction onTriggerExecute: (TemporarilyDisablingCommand transforming: anIdentifiedView into: aView)
+	interaction
+		onTriggerExecute: ( TemporarilyDisablingCommand transforming: anIdentifiedView into: aView )
 ]
 
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> temporarilyDisableAndTransformInto: aView [
 
-	interaction onTriggerExecute: (TemporarilyDisablingCommand transformingCurrentViewInto: aView)
+	interaction onTriggerExecute: ( TemporarilyDisablingCommand transformingCurrentViewInto: aView )
 ]
 
 { #category : #'Configuring - CSS' }

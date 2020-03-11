@@ -64,16 +64,22 @@ CombinedWebInteractionInterpreter >> determineBehaviorByEvaluating: aCallbackBlo
 		interpreter determineBehaviorByEvaluating: aCallbackBlock with: aParameter]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> disable [
 
-	self interpretersDo: [:interpreter | interpreter disable]
+	self interpretersDo: [ :interpreter | interpreter disable ]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
+CombinedWebInteractionInterpreter >> disable: aComponent [
+
+	self interpretersDo: [ :interpreter | interpreter disable: aComponent ]
+]
+
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> enable: aComponent [
 
-	self interpretersDo: [:interpreter | interpreter enable: aComponent]
+	self interpretersDo: [ :interpreter | interpreter enable: aComponent ]
 ]
 
 { #category : #Configuring }
@@ -82,13 +88,13 @@ CombinedWebInteractionInterpreter >> executeOnClient: aServerIndependentAction [
 	self interpretersDo: [:interpreter | interpreter executeOnClient: aServerIndependentAction]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> focus: anIdentifiedWebView [
 
-	self interpretersDo: [:interpreter | interpreter focus: anIdentifiedWebView]
+	self interpretersDo: [ :interpreter | interpreter focus: anIdentifiedWebView ]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> focusUsing: aComponentProvider [
 
 	self interpretersDo: [ :interpreter | interpreter focusUsing: aComponentProvider ]
@@ -135,7 +141,7 @@ CombinedWebInteractionInterpreter >> open: aView [
 	self interpretersDo: [ :interpreter | interpreter open: aView ]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> remove: anIdentifiedView [
 
 	self interpretersDo: [ :interpreter | interpreter remove: anIdentifiedView ]
@@ -147,16 +153,16 @@ CombinedWebInteractionInterpreter >> removeCssClass: aCssStyle fromComponentsMat
 	self interpretersDo: [ :interpreter | interpreter removeCssClass: aCssStyle fromComponentsMatching: aComponentProvider ]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> render: anIdentifiedView [
 
-	self interpretersDo: [:interpreter | interpreter render: anIdentifiedView]
+	self interpretersDo: [ :interpreter | interpreter render: anIdentifiedView ]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> renderAll: anIdentifiedViewCollection [
 
-	self interpretersDo: [:interpreter | interpreter renderAll: anIdentifiedViewCollection]
+	self interpretersDo: [ :interpreter | interpreter renderAll: anIdentifiedViewCollection ]
 ]
 
 { #category : #Configuring }
@@ -195,24 +201,20 @@ CombinedWebInteractionInterpreter >> serializeWithHiddenInputs [
 	self interpretersDo: [:interpreter | interpreter serializeWithHiddenInputs]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView [
 
 	self
-		interpretersDo: [ :interpreter | 
-			interpreter
-				setValueTo: aValueProvider
-				thenTriggerChangeOf: anIdentifiedView ]
+		interpretersDo:
+			[ :interpreter | interpreter setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView ]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggeringChangeOnComponentWithId: identifier [
 
 	self
-		interpretersDo: [ :interpreter | 
-			interpreter
-				setValueTo: aValueProvider
-				withoutTriggeringChangeOnComponentWithId: identifier ]
+		interpretersDo:
+			[ :interpreter | interpreter setValueTo: aValueProvider withoutTriggeringChangeOnComponentWithId: identifier ]
 ]
 
 { #category : #Configuring }
@@ -233,16 +235,17 @@ CombinedWebInteractionInterpreter >> submitFormStyledAs: aCssStyle [
 	self interpretersDo: [:interpreter | interpreter submitFormStyledAs: aCssStyle]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> temporarilyDisableAndTransform: anIdentifiedView into: aView [
 
-	self interpretersDo: [ :interpreter | interpreter temporarilyDisableAndTransform: anIdentifiedView into: aView ]
+	self
+		interpretersDo: [ :interpreter | interpreter temporarilyDisableAndTransform: anIdentifiedView into: aView ]
 ]
 
-{ #category : #Configuring }
+{ #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> temporarilyDisableAndTransformInto: aView [
 
-	self interpretersDo: [:interpreter | interpreter temporarilyDisableAndTransformInto: aView]
+	self interpretersDo: [ :interpreter | interpreter temporarilyDisableAndTransformInto: aView ]
 ]
 
 { #category : #'Configuring - CSS' }

@@ -11,12 +11,12 @@ Class {
 JQuery3OnlineLibrary >> updateRoot: aRoot [
 
 	aRoot javascript
-		url: ('https://code.jquery.com/jquery-<1s>.min.js' expandMacrosWith: self version);
-		anonymousSubResourceIntegrity: 'sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU='
+		url: ( 'https://code.jquery.com/jquery-<1s>.min.js' expandMacrosWith: self version );
+		anonymousSubResourceIntegrity: 'sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ='
 ]
 
 { #category : #Accessing }
 JQuery3OnlineLibrary >> version [
 
-	^ '3.4.1'
+	^ '3.5.0'
 ]

@@ -136,10 +136,9 @@ TemporarilyDisablingCommand >> stepsAfterServerCallOn: aCanvas [
 	^ ( self componentToDisableVariableOn: aCanvas )
 		removeAttribute: self eventsDisabledAttributeName;
 		attributeAt: self disabledAttributeName put: false;
-		removeClass: Willow classification >> #disabledComponent;
+		removeClass: Classification >> #disabledComponent;
 		call: 'html'
-			with:
-			( ( self componentToDisableVariableOn: aCanvas ) attributeAt: self originalContentAttributeName )
+			with: ( ( self componentToDisableVariableOn: aCanvas ) attributeAt: self originalContentAttributeName )
 ]
 
 { #category : #private }
@@ -147,7 +146,7 @@ TemporarilyDisablingCommand >> stepsBeforeServelCallOn: aCanvas [
 
 	^ ( self componentToDisableVariableOn: aCanvas )
 		attributeAt: self eventsDisabledAttributeName put: 'disabled';
-		addClass: Willow classification >> #disabledComponent;
+		addClass: Classification >> #disabledComponent;
 		attributeAt: self originalContentAttributeName
 			put: ( self componentToDisableVariableOn: aCanvas ) html;
 		attributeAt: self disabledAttributeName put: true;

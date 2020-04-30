@@ -57,10 +57,10 @@ BaselineOfWillow >> setUpDependencies: spec [
 BaselineOfWillow >> setUpPackages: spec [
 
 	spec
-		package: 'Willow'
+		package: 'Willow-Core'
 			with: [ spec requires: #('Boardwalk-Deployment' 'Seaside3-JQuery' 'RenoirSt-Deployment') ];
-		group: 'Deployment' with: 'Willow';
-		package: 'Willow-SUnit' with: [ spec requires: #('Boardwalk-SUnit' 'Willow') ];
+		group: 'Deployment' with: 'Willow-Core';
+		package: 'Willow-SUnit' with: [ spec requires: #('Boardwalk-SUnit' 'Willow-Core') ];
 		group: 'Dependent-SUnit-Extensions' with: 'Willow-SUnit';
 		package: 'Willow-Tests' with: [ spec requires: 'Willow-SUnit' ];
 		group: 'Tests' with: 'Willow-Tests'

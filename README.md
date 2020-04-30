@@ -13,9 +13,12 @@
 </p>
 
 [![GitHub release](https://img.shields.io/github/release/ba-st/Willow.svg)](https://github.com/ba-st/Willow/releases/latest)
-[![Build Status](https://travis-ci.org/ba-st/Willow.svg?branch=release-candidate)](https://travis-ci.com/ba-st/Willow)
-[![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow/badge.svg?branch=release-candidate)](https://coveralls.io/github/ba-st/Willow?branch=release-candidate)
+[![Build Status](https://github.com/ba-st/Willow/workflows/Build/badge.svg?branch=release-candidate)](https://github.com/ba-st/Willow/actions?query=workflow%3ABuild)
+[![Coverage Status](https://codecov.io/github/ba-st/Willow/coverage.svg?branch=release-candidate)](https://codecov.io/gh/ba-st/Willow/branch/release-candidate)
 [![Javascript Dependency Status](https://david-dm.org/ba-st/Willow.svg)](https://david-dm.org/ba-st/Willow)
+[![Pharo 6.1](https://img.shields.io/badge/Pharo-6.1-informational)](https://pharo.org)
+[![Pharo 7.0](https://img.shields.io/badge/Pharo-7.0-informational)](https://pharo.org)
+[![Pharo 8.0](https://img.shields.io/badge/Pharo-8.0-informational)](https://pharo.org)
 
 [Willow](https://github.com/ba-st/Willow) is developed using [Smalltalk](http://stephane.ducasse.free.fr/FreeBooks.html), providing a simple interface for your web application, no matter the front-end framework you choose.
 

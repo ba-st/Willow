@@ -27,7 +27,21 @@ ComponentValueSettingCommand class >> obtainingIdentifierFrom: aValueProvider va
 { #category : #'instance creation' }
 ComponentValueSettingCommand class >> triggeringChangesObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider [
 
-	^ self obtainingIdentifierFrom: aValueProvider valueFrom: anIdentifierProvider triggeringAction: [ :jQueryInstance | jQueryInstance trigger: 'change' ]
+	^ self
+		obtainingIdentifierFrom: aValueProvider
+		valueFrom: anIdentifierProvider
+		triggeringAction: [ :jQueryInstance | jQueryInstance trigger: 'change' ]
+]
+
+{ #category : #'instance creation' }
+ComponentValueSettingCommand class >> triggeringChangesOn: anIdentifiableView withValueFrom: aValueProvider [
+
+	^ self
+		triggeringChangesObtainingIdentifierFrom: [ :canvas | 
+			anIdentifiableView identifyIn: canvas.
+			anIdentifiableView identifier
+			]
+		valueFrom: aValueProvider
 ]
 
 { #category : #accessing }
@@ -51,9 +65,10 @@ ComponentValueSettingCommand >> modelLoadingActions [
 		with: [ :aScript :aCanvas | 
 			| jQueryInstance |
 
-			jQueryInstance := aScript << (aCanvas jQuery id: identifierProvider value).
+			jQueryInstance := aScript << ( aCanvas jQuery id: ( identifierProvider cull: aCanvas ) ).
 			jQueryInstance value: valueProvider value.
-			triggeringAction cull: jQueryInstance ]
+			triggeringAction cull: jQueryInstance
+			]
 ]
 
 { #category : #accessing }

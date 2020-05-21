@@ -270,10 +270,7 @@ WebInteractionInterpreter >> serializeWithHiddenInputs [
 WebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView [
 
 	interaction
-		onTriggerExecute:
-			( ComponentValueSettingCommand
-				triggeringChangesObtainingIdentifierFrom: [ anIdentifiedView identifier ]
-				valueFrom: aValueProvider )
+		onTriggerExecute: ( ComponentValueSettingCommand triggeringChangesOn: anIdentifiedView withValueFrom: aValueProvider )
 ]
 
 { #category : #'Configuring - DOM' }

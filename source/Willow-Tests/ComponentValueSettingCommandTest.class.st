@@ -43,6 +43,29 @@ ComponentValueSettingCommandTest >> testModelLoadingActions [
 ]
 
 { #category : #'tests-accessing' }
+ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutSettingPreviouslyTheId [
+
+	| html |
+
+	html := self
+		renderUsing: [ :canvas | 
+			| script input |
+
+			script := canvas javascript.
+			input := canvas textInput.
+
+			( ComponentValueSettingCommand triggeringChangesOn: input withValueFrom: [ '15' ] )
+				modelLoadingActions do: [ :action | action value: script value: canvas ].
+			input script: ( canvas jQuery this onClick: script )
+			].
+
+	self
+		assert: html
+		equals:
+			'<input id="id1" type="text"/><script type="text/javascript">$("#id1").click(function(){$("#id1").val("15").trigger("change")});</script>'
+]
+
+{ #category : #'tests-accessing' }
 ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutTriggering [
 
 	| html |

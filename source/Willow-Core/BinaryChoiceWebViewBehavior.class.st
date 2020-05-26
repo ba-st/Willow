@@ -11,6 +11,12 @@ Class {
 	#category : #'Willow-Core-WebViews'
 }
 
+{ #category : #testing }
+BinaryChoiceWebViewBehavior class >> isAbstract [
+
+	^ self name = #BinaryChoiceWebViewBehavior
+]
+
 { #category : #'instance creation' }
 BinaryChoiceWebViewBehavior class >> onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff [
 
@@ -55,12 +61,6 @@ BinaryChoiceWebViewBehavior >> notifyInterested [
 BinaryChoiceWebViewBehavior >> onTrigger [
 
 	^ self subclassResponsibility
-]
-
-{ #category : #rendering }
-BinaryChoiceWebViewBehavior >> renderContentOn: aCanvas [
-
-	self subclassResponsibility 
 ]
 
 { #category : #'Binary Choice-API' }

@@ -66,12 +66,7 @@ WillowNamespaceFileMetadataLibrary >> jswillowJs [
 	^ WAFileLibraryResource
 		filepath: 'js/willow.js'
 		mimeType: WAMimeType applicationJavascript
-		cacheDuration:
-			( Duration
-				days: 0
-				hours: 0
-				minutes: 30
-				seconds: 0 )
+		cacheDuration: self class defaultCacheDuration
 		contents: ( GRDelayedSend receiver: self selector: #jswillowJsContent )
 ]
 

@@ -16,7 +16,7 @@ IntegerCodec >> canCreate: anObject [
 { #category : #converting }
 IntegerCodec >> decode: aString [
 
-	^ aString greaseInteger ifNil: [ 0 ]
+	^ aString greaseInteger ifNil: [ 0 ] ifNotNil: [ :integer | integer ]
 ]
 
 { #category : #converting }

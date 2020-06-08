@@ -12,7 +12,7 @@ JQuery3DeploymentMetadataLibrary >> jquery350minJs [
 
 	^ WAFileLibraryResource
 		filepath: 'jquery-3.5.0.min.js'
-		mimeType: ( WAMimeType main: 'application' sub: 'javascript' )
+		mimeType: WAMimeType applicationJavascript
 		cacheDuration: self class defaultCacheDuration
 		contents: ( GRDelayedSend receiver: self selector: #jquery350minJsContent )
 ]

@@ -16,7 +16,7 @@ NullCodec >> canCreate: anObject [
 { #category : #converting }
 NullCodec >> decode: aString [
 
-	^aString
+	^ aString
 ]
 
 { #category : #converting }

@@ -2,8 +2,7 @@ Class {
 	#name : #PluggableExecutionOnClientCommandTest,
 	#superclass : #BWRenderingTest,
 	#instVars : [
-		'command',
-		'commandAction'
+		'command'
 	],
 	#category : #'Willow-Tests-WebInteraction'
 }
@@ -12,8 +11,7 @@ Class {
 PluggableExecutionOnClientCommandTest >> setUp [
 
 	super setUp.
-	commandAction := [ :canvas | JSStream this ].
-	command := PluggableExecutionOnClientCommand executingOnly: commandAction
+	command := PluggableExecutionOnClientCommand executingOnly: [ :canvas | JSStream this ]
 ]
 
 { #category : #'tests-accessing' }

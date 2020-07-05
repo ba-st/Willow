@@ -16,6 +16,12 @@ WillowApplication class >> applicationTitle [
 	^self subclassResponsibility 
 ]
 
+{ #category : #configuring }
+WillowApplication class >> configureErrorHandlerInDeployedModeTo: aWAApplication [
+
+	aWAApplication filter configuration at: #exceptionHandler put: self errorHandlerFactory
+]
+
 { #category : #accessing }
 WillowApplication class >> errorHandlerFactory [
 
@@ -43,7 +49,7 @@ WillowApplication class >> registerAsApplicationUsing: deploymentModeClass [
 
 	application := WAAdmin register: self asApplicationAt: self handlerName.
 	application preferenceAt: #sessionClass put: self sessionClass.
-	application filter configuration at: #exceptionHandler put: self errorHandlerFactory.
+	deploymentModeClass new configureErrorHandlerTo: application using: self.
 	application configuration addParent: WillowSystemConfiguration instance.
 	application preferenceAt: WillowSystemConfiguration deploymentModeClassKey put: deploymentModeClass.
 	self installFileHandlerAccordingTo: deploymentModeClass new.

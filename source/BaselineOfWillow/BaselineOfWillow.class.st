@@ -64,6 +64,6 @@ BaselineOfWillow >> setUpPackages: spec [
 		package: 'Willow-SUnit' with: [ spec requires: #('Boardwalk-SUnit' 'Willow-Core') ];
 		group: 'Dependent-SUnit-Extensions' with: 'Willow-SUnit';
 		package: 'Willow-Tests' with: [ spec requires: 'Willow-SUnit' ];
-		group: 'Tests' with: 'Willow-Tests';
-		package: 'Willow-Core-Development-Support' with: [ spec requires: 'Seaside3-Development' ]
+		package: 'Willow-Core-Development-Support' with: [ spec requires: 'Seaside3-Development' ];
+		group: 'Tests' with: #('Willow-Tests' 'Willow-Core-Development-Support')
 ]

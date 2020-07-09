@@ -18,7 +18,7 @@ BaselineOfWillow >> baseline: spec [
 				setUpPackages: spec.
 			spec
 				group: 'CI' with: 'Tests';
-				group: 'Tools' with: #('Boardwalk-Tools' 'Seaside3-Development');
+				group: 'Tools' with: #('Boardwalk-Tools' 'Willow-Core-Development-Support');
 				group: 'Development' with: #('Tests' 'Tools')
 			]
 ]

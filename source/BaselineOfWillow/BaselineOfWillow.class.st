@@ -18,7 +18,7 @@ BaselineOfWillow >> baseline: spec [
 				setUpPackages: spec.
 			spec
 				group: 'CI' with: 'Tests';
-				group: 'Tools' with: 'Boardwalk-Tools';
+				group: 'Tools' with: #('Boardwalk-Tools' 'Willow-Core-Development-Support');
 				group: 'Development' with: #('Tests' 'Tools')
 			]
 ]
@@ -36,7 +36,8 @@ BaselineOfWillow >> setUpDependencies: spec [
 		baseline: 'Seaside3' with: [ spec repository: 'github://SeasideSt/Seaside:v3.4.x/repository' ];
 		project: 'Seaside3-JQuery'
 			copyFrom: 'Seaside3'
-			with: [ spec loads: #('Core' 'Javascript' 'JQuery') ].
+			with: [ spec loads: #('Core' 'Javascript' 'JQuery') ];
+		project: 'Seaside3-Development' copyFrom: 'Seaside3' with: [ spec loads: #('Development') ].
 
 	spec
 		baseline: 'RenoirSt' with: [ spec repository: 'github://ba-st/RenoirSt:v7/source' ];
@@ -63,5 +64,6 @@ BaselineOfWillow >> setUpPackages: spec [
 		package: 'Willow-SUnit' with: [ spec requires: #('Boardwalk-SUnit' 'Willow-Core') ];
 		group: 'Dependent-SUnit-Extensions' with: 'Willow-SUnit';
 		package: 'Willow-Tests' with: [ spec requires: 'Willow-SUnit' ];
-		group: 'Tests' with: 'Willow-Tests'
+		package: 'Willow-Core-Development-Support' with: [ spec requires: 'Seaside3-Development' ];
+		group: 'Tests' with: #('Willow-Tests' 'Willow-Core-Development-Support')
 ]

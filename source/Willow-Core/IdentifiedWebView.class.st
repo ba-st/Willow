@@ -8,7 +8,8 @@ Class {
 		'view',
 		'componentBuilder',
 		'commandToComponent',
-		'identifierAssigner'
+		'identifierAssigner',
+		'interactionInterpreter'
 	],
 	#category : #'Willow-Core-WebViews'
 }
@@ -121,13 +122,14 @@ IdentifiedWebView >> initializeForComponentBuiltUsing: aComponentBuilder as: anI
 	view := aView.
 	componentBuilder := aComponentBuilder.
 	commandToComponent := aComponentCommand.
-	identifierAssigner := IdentifierAssigner prefixedBy: anIdentificationPrefix
+	identifierAssigner := IdentifierAssigner prefixedBy: anIdentificationPrefix.
+	interactionInterpreter := WebInteractionInterpreter forClickOnComponent
 ]
 
 { #category : #configuring }
 IdentifiedWebView >> onTrigger [
 
-	^view onTrigger
+	^interactionInterpreter
 ]
 
 { #category : #rendering }
@@ -140,6 +142,7 @@ IdentifiedWebView >> renderContentOn: aCanvas [
 	"We need to set the id before applying the commands, because some command may require it"
 	containerComponent
 		id: identifier;
+		interactUsing: interactionInterpreter;
 		with: view applying: commandToComponent
 ]
 

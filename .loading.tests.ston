@@ -12,4 +12,5 @@ SmalltalkCISpec {
       #packages : [ 'Willow*' ],
       #format: #lcov
     }
+  }   
 }

@@ -69,7 +69,7 @@ ServerResponseCommand >> obtain: clientSideParameter from: anAsynchronousCall [
 ]
 
 { #category : #configuring }
-ServerResponseCommand >> onReturn [
+ServerResponseCommand >> onRespond [
 
 	^ interpreter
 ]

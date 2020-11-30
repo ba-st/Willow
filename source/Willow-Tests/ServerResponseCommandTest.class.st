@@ -57,7 +57,7 @@ ServerResponseCommandTest >> testModelLoadingActions [
 	| command html |
 
 	command := ServerResponseCommand
-		withBehaviorDeterminedBy: [ :request | request onReturn inform: request parameter ]
+		withBehaviorDeterminedBy: [ :request | request onRespond inform: request parameter ]
 		conditionedBy: Optional unused
 		requiring: ( Optional containing: 'test complete' ).
 	html := self
@@ -80,12 +80,12 @@ ServerResponseCommandTest >> testModelLoadingActions [
 ]
 
 { #category : #'tests-accessing' }
-ServerResponseCommandTest >> testOnReturn [
+ServerResponseCommandTest >> testOnRespond [
 
 	| command html |
 
 	command := ServerResponseCommand
-		withBehaviorDeterminedBy: [ :request | request onReturn inform: 'it has returned!' ]
+		withBehaviorDeterminedBy: [ :request | request onRespond inform: 'it has returned!' ]
 		conditionedBy: Optional unused
 		requiring: Optional unused.
 		

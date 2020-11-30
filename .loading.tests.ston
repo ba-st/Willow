@@ -3,7 +3,7 @@ SmalltalkCISpec {
     SCIMetacelloLoadSpec {
       #baseline : 'Willow',
       #directory : 'source',
-      #load : [ 'CI' ],
+      #load : [ 'Tests' ],
       #platforms : [  #pharo ]
     }
   ],
@@ -12,5 +12,4 @@ SmalltalkCISpec {
       #packages : [ 'Willow*' ],
       #format: #lcov
     }
-  }
 }

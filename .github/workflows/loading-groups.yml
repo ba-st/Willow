@@ -1,0 +1,23 @@
+name: Group loading check
+
+on: [push,pull_request]
+
+jobs:
+   build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        smalltalk: [ Pharo64-8.0, Pharo64-7.0 ]
+        load-spec: [ deployment, dependent-sunit-extensions, tests, tools, development]
+    name: ${{ matrix.smalltalk }} + ${{ matrix.load-spec }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hpi-swa/setup-smalltalkCI@v1
+        with:
+          smalltalk-version: ${{ matrix.smalltalk }}
+      - name: Load group in image
+        run: smalltalkci -s ${{ matrix.smalltalk }} .loading.${{ matrix.load-spec }}.ston
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        timeout-minutes: 15

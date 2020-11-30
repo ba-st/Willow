@@ -145,46 +145,6 @@ CombinedWebInteractionInterpreterTest >> testConfirmAsking [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"1"})}});$("#button-id4").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"3"})}});</script>'
 ]
 
-{ #category : #'tests-Configuring' }
-CombinedWebInteractionInterpreterTest >> testDetermineBehaviorByEvaluating [
-
-	| interpreter html |
-
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
-
-	interpreter determineBehaviorByEvaluating: [  ].
-
-	html := self
-		renderUsing: [ :canvas | 
-			canvas
-				render: okButton;
-				render: cancelButton ].
-	self
-		assert: html
-		equals:
-			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
-]
-
-{ #category : #'tests-Configuring' }
-CombinedWebInteractionInterpreterTest >> testDetermineBehaviorByEvaluatingWith [
-
-	| interpreter html |
-
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
-
-	interpreter determineBehaviorByEvaluating: [  ] with: 'theClientParameter'.
-
-	html := self
-		renderUsing: [ :canvas | 
-			canvas
-				render: okButton;
-				render: cancelButton ].
-	self
-		assert: html
-		equals:
-			'<button id="button-id3" type="button">Ok</button><button id="button-id6" type="button">Cancel</button><script type="text/javascript">$("#button-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify("theClientParameter"))].join("&")})});$("#button-id6").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["4","5="+encodeURIComponent(JSON.stringify("theClientParameter"))].join("&")})});</script>'
-]
-
 { #category : #'tests-Configuring-DOM' }
 CombinedWebInteractionInterpreterTest >> testDisable [
 
@@ -253,66 +213,6 @@ CombinedWebInteractionInterpreterTest >> testEnable [
 		assert: html
 		equals:
 			'<input id="15" type="text"/><button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$("#15").prop("disabled",false)});$("#button-id2").click(function(event){$("#15").prop("disabled",false)});</script>'
-]
-
-{ #category : #'tests-Configuring' }
-CombinedWebInteractionInterpreterTest >> testEvaluate [
-
-	| interpreter html |
-
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
-
-	interpreter evaluate: [  ].
-
-	html := self
-		renderUsing: [ :canvas | 
-			canvas
-				render: okButton;
-				render: cancelButton ].
-	self
-		assert: html
-		equals:
-			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
-]
-
-{ #category : #'tests-Configuring' }
-CombinedWebInteractionInterpreterTest >> testEvaluateWith [
-
-	| interpreter html |
-
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
-
-	interpreter evaluate: [ :arguments | arguments ] with: #(firstThing secondStuff).
-
-	html := self
-		renderUsing: [ :canvas | 
-			canvas
-				render: okButton;
-				render: cancelButton ].
-	self
-		assert: html
-		equals:
-			'<button id="button-id3" type="button">Ok</button><button id="button-id6" type="button">Cancel</button><script type="text/javascript">$("#button-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});$("#button-id6").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["4","5="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'
-]
-
-{ #category : #'tests-Configuring' }
-CombinedWebInteractionInterpreterTest >> testExecuteOnClient [
-
-	| interpreter html |
-
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
-
-	interpreter executeOnClient: [ (JSStream on: 'window') call: 'print' ].
-
-	html := self
-		renderUsing: [ :canvas | 
-			canvas
-				render: okButton;
-				render: cancelButton ].
-	self
-		assert: html
-		equals:
-			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){window.print()});$("#button-id2").click(function(event){window.print()});</script>'
 ]
 
 { #category : #'tests-Configuring-DOM' }
@@ -397,13 +297,13 @@ CombinedWebInteractionInterpreterTest >> testInformSelection [
 ]
 
 { #category : #'tests-Configuring' }
-CombinedWebInteractionInterpreterTest >> testOnlyWhenDetermineBehaviorByEvaluating [
+CombinedWebInteractionInterpreterTest >> testOnlyWhenServerDoWith [
 
 	| interpreter html |
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter onlyWhen: '<1s> != null' determineBehaviorByEvaluating: [  ] with: 'theClientParameter'.
+	interpreter onlyWhen: '<1s> != null' serverDo: [  ] with: 'theClientParameter'.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -676,6 +576,48 @@ CombinedWebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).next("input:hidden").addBack().serialize()].join("&")})});</script>'
 ]
 
+{ #category : #'tests-Configuring' }
+CombinedWebInteractionInterpreterTest >> testServerDo [
+
+	| interpreter html |
+
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+
+	interpreter serverDo: [  ].
+
+	html := self
+		renderUsing: [ :canvas | 
+			canvas
+				render: okButton;
+				render: cancelButton
+			].
+	self
+		assert: html
+		equals:
+			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
+]
+
+{ #category : #'tests-Configuring' }
+CombinedWebInteractionInterpreterTest >> testServerDoWith [
+
+	| interpreter html |
+
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+
+	interpreter serverDo: [  ] with: #(firstThing secondStuff).
+
+	html := self
+		renderUsing: [ :canvas | 
+			canvas
+				render: okButton;
+				render: cancelButton
+			].
+	self
+		assert: html
+		equals:
+			'<button id="button-id3" type="button">Ok</button><button id="button-id6" type="button">Cancel</button><script type="text/javascript">$("#button-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});$("#button-id6").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["4","5="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'
+]
+
 { #category : #'tests-Configuring-DOM' }
 CombinedWebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
@@ -934,4 +876,25 @@ CombinedWebInteractionInterpreterTest >> testTransformInto [
 		assert: html
 		equals:
 			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><div id="search-results-id1"></div><script type="text/javascript">$("#button-id2").click(function(event){$("#search-results-id1").html("Loading...")});$("#button-id3").click(function(event){$("#search-results-id1").html("Loading...")});</script>'
+]
+
+{ #category : #'tests-Configuring' }
+CombinedWebInteractionInterpreterTest >> testUserAgentDo [
+
+	| interpreter html |
+
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+
+	interpreter userAgentDo: [ ( JSStream on: 'window' ) call: 'print' ].
+
+	html := self
+		renderUsing: [ :canvas | 
+			canvas
+				render: okButton;
+				render: cancelButton
+			].
+	self
+		assert: html
+		equals:
+			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){window.print()});$("#button-id2").click(function(event){window.print()});</script>'
 ]

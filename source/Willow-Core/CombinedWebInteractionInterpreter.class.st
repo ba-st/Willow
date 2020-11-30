@@ -51,19 +51,6 @@ CombinedWebInteractionInterpreter >> confirmAsking: aQuestion [
 	self interpretersDo: [:interpreter | interpreter confirmAsking: aQuestion] 
 ]
 
-{ #category : #Configuring }
-CombinedWebInteractionInterpreter >> determineBehaviorByEvaluating: aCallbackBlock [
-
-	self interpretersDo: [:interpreter | interpreter determineBehaviorByEvaluating: aCallbackBlock]
-]
-
-{ #category : #Configuring }
-CombinedWebInteractionInterpreter >> determineBehaviorByEvaluating: aCallbackBlock with: aParameter [
-
-	self interpretersDo: [:interpreter |
-		interpreter determineBehaviorByEvaluating: aCallbackBlock with: aParameter]
-]
-
 { #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> disable [
 
@@ -80,12 +67,6 @@ CombinedWebInteractionInterpreter >> disable: aComponent [
 CombinedWebInteractionInterpreter >> enable: aComponent [
 
 	self interpretersDo: [ :interpreter | interpreter enable: aComponent ]
-]
-
-{ #category : #Configuring }
-CombinedWebInteractionInterpreter >> executeOnClient: aServerIndependentAction [
-
-	self interpretersDo: [:interpreter | interpreter executeOnClient: aServerIndependentAction]
 ]
 
 { #category : #'Configuring - DOM' }
@@ -125,13 +106,13 @@ CombinedWebInteractionInterpreter >> interpretersDo: aBlock [
 ]
 
 { #category : #Configuring }
-CombinedWebInteractionInterpreter >> onlyWhen: aStringCondition determineBehaviorByEvaluating: aCallbackBlock with: aParameter [
+CombinedWebInteractionInterpreter >> onlyWhen: aStringCondition serverDo: aCallbackBlock with: aParameter [
 
 	self
 		interpretersDo: [ :interpreter | 
 			interpreter
 				onlyWhen: aStringCondition
-				determineBehaviorByEvaluating: aCallbackBlock
+				serverDo: aCallbackBlock
 				with: aParameter ]
 ]
 
@@ -201,6 +182,18 @@ CombinedWebInteractionInterpreter >> serializeWithHiddenInputs [
 	self interpretersDo: [:interpreter | interpreter serializeWithHiddenInputs]
 ]
 
+{ #category : #Configuring }
+CombinedWebInteractionInterpreter >> serverDo: aCallbackBlock [
+
+	self interpretersDo: [:interpreter | interpreter serverDo: aCallbackBlock]
+]
+
+{ #category : #Configuring }
+CombinedWebInteractionInterpreter >> serverDo: aCallbackBlock with: aParameter [
+
+	self interpretersDo: [ :interpreter | interpreter serverDo: aCallbackBlock with: aParameter ]
+]
+
 { #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView [
 
@@ -252,4 +245,10 @@ CombinedWebInteractionInterpreter >> temporarilyDisableAndTransformInto: aView [
 CombinedWebInteractionInterpreter >> toggleCssClass: aCssStyle onComponentsMatching: aComponentProvider [
 
 	self interpretersDo: [ :interpreter | interpreter toggleCssClass: aCssStyle onComponentsMatching: aComponentProvider ]
+]
+
+{ #category : #Configuring }
+CombinedWebInteractionInterpreter >> userAgentDo: aServerIndependentAction [
+
+	self interpretersDo: [:interpreter | interpreter userAgentDo: aServerIndependentAction]
 ]

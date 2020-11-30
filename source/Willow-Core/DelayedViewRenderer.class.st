@@ -23,7 +23,7 @@ DelayedViewRenderer >> initializeInterpreterToEvaluate: aBlock thenRender: aView
 
 	interpreter := WebInteractionInterpreter forInstantEvaluation.
 	interpreter
-		determineBehaviorByEvaluating: [ :response | 
+		serverDo: [ :request | 
 			aBlock value.
 			self setCurrentViewTo: aView
 			];

@@ -40,18 +40,6 @@ WebInteractionInterpreterBehavior >> confirmAsking: aQuestion [
 	self subclassResponsibility
 ]
 
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> determineBehaviorByEvaluating: aCallbackBlock [
-
-	self subclassResponsibility
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> determineBehaviorByEvaluating: aCallbackBlock with: aParameter [
-
-	self subclassResponsibility
-]
-
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreterBehavior >> disable [
 
@@ -66,28 +54,6 @@ WebInteractionInterpreterBehavior >> disable: aComponent [
 
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreterBehavior >> enable: aComponent [
-
-	self subclassResponsibility
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> evaluate: aCallbackBlock [
-
-	"Call the server evaluating the callback block server-side"
-
-	self determineBehaviorByEvaluating: [ :response | aCallbackBlock value ]
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> evaluate: aCallbackBlock with: aParameter [
-
-	self
-		determineBehaviorByEvaluating: [ :response :clientParameter | aCallbackBlock value: clientParameter ]
-		with: aParameter
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> executeOnClient: aServerIndependentAction [
 
 	self subclassResponsibility
 ]
@@ -117,7 +83,7 @@ WebInteractionInterpreterBehavior >> informSelection [
 ]
 
 { #category : #Configuring }
-WebInteractionInterpreterBehavior >> onlyWhen: aStringCondition determineBehaviorByEvaluating: aCallbackBlock with: aParameter [
+WebInteractionInterpreterBehavior >> onlyWhen: aStringCondition serverDo: aCallbackBlock with: aParameter [
 
 	self subclassResponsibility
 ]
@@ -192,6 +158,18 @@ WebInteractionInterpreterBehavior >> serializeIt [
 
 { #category : #'Configuring - Serialization' }
 WebInteractionInterpreterBehavior >> serializeWithHiddenInputs [
+
+	self subclassResponsibility
+]
+
+{ #category : #Configuring }
+WebInteractionInterpreterBehavior >> serverDo: aCallbackBlock [
+
+	self subclassResponsibility
+]
+
+{ #category : #Configuring }
+WebInteractionInterpreterBehavior >> serverDo: aCallbackBlock with: aParameter [
 
 	self subclassResponsibility
 ]
@@ -277,7 +255,13 @@ WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRende
 	"This will replace anIdentifiedWebView content with aRenderable on the browser side"
 
 	self
-		executeOnClient: [ :canvas | 
+		userAgentDo: [ :canvas | 
 			anIdentifiedWebView identifyIn: canvas.
 			(canvas jQuery id: anIdentifiedWebView identifier) html: aRenderable ]
+]
+
+{ #category : #Configuring }
+WebInteractionInterpreterBehavior >> userAgentDo: aServerIndependentAction [
+
+	self subclassResponsibility
 ]

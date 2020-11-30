@@ -13,16 +13,16 @@ Class {
 { #category : #'instance creation' }
 ConfirmationCommand class >> asking: aQuestion [
 
-	^self new initializeAsking: aQuestion
+	^ self new initializeAsking: aQuestion
 ]
 
 { #category : #accessing }
 ConfirmationCommand >> clientIndependentActions [
 
-	^#()
+	^ #()
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 ConfirmationCommand >> initializeAsking: aQuestion [
 
 	question := aQuestion
@@ -31,24 +31,23 @@ ConfirmationCommand >> initializeAsking: aQuestion [
 { #category : #accessing }
 ConfirmationCommand >> modelLoadingActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #accessing }
 ConfirmationCommand >> priorityActions [
 
-	^Array
-		with: [:anAsynchronousCall :aCanvas | anAsynchronousCall confirm: question]
+	^ Array with: [ :anAsynchronousCall :aCanvas | anAsynchronousCall confirm: question ]
 ]
 
 { #category : #testing }
 ConfirmationCommand >> requiresSerialization [
 
-	^false
+	^ false
 ]
 
 { #category : #accessing }
 ConfirmationCommand >> serverIndependentActions [
 
-	^#()
+	^ #()
 ]

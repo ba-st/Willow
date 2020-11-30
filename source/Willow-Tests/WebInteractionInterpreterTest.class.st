@@ -101,34 +101,6 @@ WebInteractionInterpreterTest >> testConfirmAsking [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"1"})}});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
-WebInteractionInterpreterTest >> testDetermineBehaviorByEvaluating [
-
-	| interpreter html |
-
-	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter determineBehaviorByEvaluating: [ :response | response onReturn alert: 'Test is complete' ].
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
-]
-
-{ #category : #'tests - Configuring' }
-WebInteractionInterpreterTest >> testDetermineBehaviorByEvaluatingWith [
-
-	| interpreter html |
-
-	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter determineBehaviorByEvaluating: [ :response | response onReturn alert: 'Test is complete' ] with: 'theClientParameter'.
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify("theClientParameter"))].join("&")})});</script>'
-]
-
 { #category : #'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testDisable [
 
@@ -171,43 +143,6 @@ WebInteractionInterpreterTest >> testEnable [
 	self
 		assert: html
 		equals: '<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){$("#15").prop("disabled",false)});</script>'
-]
-
-{ #category : #'tests - Configuring' }
-WebInteractionInterpreterTest >> testEvaluate [
-
-	| interpreter html |
-
-	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter evaluate: [  ].
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals: '<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
-]
-
-{ #category : #'tests - Configuring' }
-WebInteractionInterpreterTest >> testEvaluateWith [
-
-	| interpreter html |
-
-	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter evaluate: [ :arguments | arguments ] with: #(firstThing secondStuff).
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals: '<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'
-]
-
-{ #category : #'tests - Configuring' }
-WebInteractionInterpreterTest >> testExecuteOnClient [
-
-	| interpreter html |
-
-	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter executeOnClient: [ :canvas | (JSStream on: 'window') call: 'print' ].
-	html := self configureTextInputWith: interpreter.
-	self assert: html equals: '<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){window.print()});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -255,7 +190,7 @@ WebInteractionInterpreterTest >> testForChangeInComponentValue [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forChangeInComponentValue.
-	interpreter evaluate: [  ].
+	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -269,7 +204,7 @@ WebInteractionInterpreterTest >> testForChangeInHiddenInputDependentComponentVal
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forChangeInHiddenInputDependentComponentValue.
-	interpreter evaluate: [  ].
+	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -283,7 +218,7 @@ WebInteractionInterpreterTest >> testForClickOnComponent [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter evaluate: [  ].
+	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -297,7 +232,7 @@ WebInteractionInterpreterTest >> testForClickOnHiddenInputDependentComponent [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnHiddenInputDependentComponent.
-	interpreter evaluate: [  ].
+	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -325,7 +260,7 @@ WebInteractionInterpreterTest >> testForDoubleClickOnComponent [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forDoubleClickOnComponent.
-	interpreter evaluate: [  ].
+	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -350,7 +285,7 @@ WebInteractionInterpreterTest >> testForInstantEvaluation [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forInstantEvaluation.
-	interpreter evaluate: [  ].
+	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -364,7 +299,7 @@ WebInteractionInterpreterTest >> testForReleaseOfKeyInComponent [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forReleaseOfKeyInComponent.
-	interpreter evaluate: [  ].
+	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -400,15 +335,12 @@ WebInteractionInterpreterTest >> testInformSelection [
 ]
 
 { #category : #'tests - Configuring' }
-WebInteractionInterpreterTest >> testOnlyWhenDetermineBehaviorByEvaluating [
+WebInteractionInterpreterTest >> testOnlyWhenServerDoWith [
 
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter
-		onlyWhen: '<1s> != null'
-		determineBehaviorByEvaluating: [ :response | response onReturn alert: 'Test is complete' ]
-		with: (JSStream on: 'theClientParameter').
+	interpreter onlyWhen: '<1s> != null' serverDo: [  ] with: ( JSStream on: 'theClientParameter' ).
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -665,6 +597,34 @@ WebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&")})});</script>'
 ]
 
+{ #category : #'tests - Configuring' }
+WebInteractionInterpreterTest >> testServerDo [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter serverDo: [  ].
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+]
+
+{ #category : #'tests - Configuring' }
+WebInteractionInterpreterTest >> testServerDoWith [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter serverDo: [  ] with: #(firstThing secondStuff).
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'
+]
+
 { #category : #'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
@@ -898,4 +858,18 @@ WebInteractionInterpreterTest >> testTransformInto [
 				render: container ].
 
 	self assert: html equals:  '<a id="a-id2">Search!</a><div id="search-results-id1"></div><script type="text/javascript">$("#a-id2").click(function(event){$("#search-results-id1").html("Searching...")});</script>'
+]
+
+{ #category : #'tests - Configuring' }
+WebInteractionInterpreterTest >> testUserAgentDo [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter userAgentDo: [ :canvas | ( JSStream on: 'window' ) call: 'print' ].
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){window.print()});</script>'
 ]

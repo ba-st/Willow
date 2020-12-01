@@ -129,8 +129,9 @@ WebComponentInteraction >> complete: anAsynchronousCall withResponseOn: aCanvas 
 
 	anAsynchronousCall
 		script: [ :subScript | 
-			clientIndependentActions do: [ :action | action value ].
-			modelLoadingActions do: [ :action | action value: subScript value: aCanvas ] ]
+			clientIndependentActions do: #value.
+			modelLoadingActions do: [ :action | action value: subScript value: aCanvas ]
+			]
 ]
 
 { #category : #initialization }
@@ -183,12 +184,12 @@ WebComponentInteraction >> registerActionsOf: aCommand [
 { #category : #'private - testing' }
 WebComponentInteraction >> shouldApplyActions [
 
-	^serverIndependentActions notEmpty or: [self shouldApplyAsynchronousCall]
+	^ serverIndependentActions notEmpty or: [ self shouldApplyAsynchronousCall ]
 ]
 
 { #category : #'private - testing' }
 WebComponentInteraction >> shouldApplyAsynchronousCall [
 
-	^clientIndependentActions notEmpty
-		or: [priorityActions notEmpty or: [modelLoadingActions notEmpty]]
+	^ clientIndependentActions notEmpty
+		or: [ priorityActions notEmpty or: [ modelLoadingActions notEmpty ] ]
 ]

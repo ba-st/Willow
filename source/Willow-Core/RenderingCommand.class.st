@@ -12,7 +12,7 @@ Class {
 	#category : #'Willow-Core-WebInteraction'
 }
 
-{ #category : #Preconditions }
+{ #category : #'private - preconditions' }
 RenderingCommand class >> assertInitializationOfAll: anIdentifiedViewCollection [
 	anIdentifiedViewCollection do: [ :anIdentifiedView | anIdentifiedView ifNil: [ self error: 'View initialization order is incorrect, please review' ] ]
 ]
@@ -20,7 +20,7 @@ RenderingCommand class >> assertInitializationOfAll: anIdentifiedViewCollection 
 { #category : #'instance creation' }
 RenderingCommand class >> evaluating: aCallback asConditionToRender: anIdentifiedView [
 
-	^self evaluating: aCallback asConditionToRenderAll: (Array with: anIdentifiedView)
+	^ self evaluating: aCallback asConditionToRenderAll: ( Array with: anIdentifiedView )
 ]
 
 { #category : #'instance creation' }
@@ -28,28 +28,28 @@ RenderingCommand class >> evaluating: aCallback asConditionToRenderAll: anIdenti
 
 	self assertInitializationOfAll: anIdentifiedViewCollection.
 
-	^self new initializeEvaluating: aCallback asConditionToRenderAll: anIdentifiedViewCollection
+	^ self new initializeEvaluating: aCallback asConditionToRenderAll: anIdentifiedViewCollection
 ]
 
 { #category : #'instance creation' }
 RenderingCommand class >> for: anIdentifiedView [
 
-	^self forAll: (Array with: anIdentifiedView)
+	^ self forAll: ( Array with: anIdentifiedView )
 ]
 
 { #category : #'instance creation' }
 RenderingCommand class >> forAll: anIdentifiedViewCollection [
 
-	^self evaluating: [true] asConditionToRenderAll: anIdentifiedViewCollection
+	^ self evaluating: [ true ] asConditionToRenderAll: anIdentifiedViewCollection
 ]
 
 { #category : #accessing }
 RenderingCommand >> clientIndependentActions [
 
-	^Array with: [shouldRender := renderingCondition value]
+	^ Array with: [ shouldRender := renderingCondition value ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 RenderingCommand >> initializeEvaluating: aCallback asConditionToRenderAll: anIdentifiedViewCollection [
 
 	shouldRender := true.
@@ -75,17 +75,17 @@ RenderingCommand >> modelLoadingActions [
 { #category : #accessing }
 RenderingCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
 RenderingCommand >> requiresSerialization [
 
-	^true
+	^ true
 ]
 
 { #category : #accessing }
 RenderingCommand >> serverIndependentActions [
 
-	^#()
+	^ #()
 ]

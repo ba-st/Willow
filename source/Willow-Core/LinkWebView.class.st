@@ -18,7 +18,7 @@ LinkWebView class >> asynchronicLabeled: aRenderable applying: aComponentCommand
 	| linkView |
 
 	linkView := self labeled: aRenderable applying: aComponentCommand.
-	linkView onTrigger executeOnClient: [ :canvas | canvas jQuery event preventDefault ].
+	linkView onTrigger userAgentDo: [ :canvas | canvas jQuery event preventDefault ].
 	^ linkView
 ]
 

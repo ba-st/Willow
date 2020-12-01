@@ -116,18 +116,6 @@ WebInteractionInterpreter >> confirmAsking: aQuestion [
 		onTriggerExecute: (ConfirmationCommand asking: aQuestion)
 ]
 
-{ #category : #Configuring }
-WebInteractionInterpreter >> determineBehaviorByEvaluating: aCallbackBlock [
-
-	interaction onTriggerExecute: (DelayedCommand withBehaviorDeterminedBy: aCallbackBlock)
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreter >> determineBehaviorByEvaluating: aCallbackBlock with: aParameter [
-
-	interaction onTriggerExecute: (DelayedCommand withBehaviorDeterminedBy: aCallbackBlock with: aParameter)
-]
-
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> disable [
 
@@ -144,13 +132,6 @@ WebInteractionInterpreter >> disable: aComponent [
 WebInteractionInterpreter >> enable: aComponent [
 
 	interaction onTriggerExecute: ( ComponentEnableStatusChangingCommand enabling: aComponent )
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreter >> executeOnClient: aServerIndependentAction [
-
-	interaction
-		onTriggerExecute: (PluggableExecutionOnClientCommand executingOnly: aServerIndependentAction)
 ]
 
 { #category : #'Configuring - DOM' }
@@ -185,14 +166,14 @@ WebInteractionInterpreter >> initializeWorkingWith: aWebComponentInteraction [
 ]
 
 { #category : #Configuring }
-WebInteractionInterpreter >> onlyWhen: aStringCondition determineBehaviorByEvaluating: aCallbackBlock with: aParameter [
+WebInteractionInterpreter >> onlyWhen: aStringCondition serverDo: aCallbackBlock with: aParameter [
 
 	interaction
 		onTriggerExecute:
-			(DelayedCommand
+			( ServerResponseCommand
 				withBehaviorDeterminedBy: aCallbackBlock
-				executedOnlyWhen: aStringCondition
-				with: aParameter)
+				conditionedBy: ( Optional containing: ( aStringCondition expandMacrosWith: aParameter asJavascript ) )
+				requiring: ( Optional containing: aParameter ) )
 ]
 
 { #category : #'Configuring - Dialogs' }
@@ -266,6 +247,28 @@ WebInteractionInterpreter >> serializeWithHiddenInputs [
 	interaction onTriggerExecute: SerializationCommand forCurrentObjectWithHiddenInputs
 ]
 
+{ #category : #Configuring }
+WebInteractionInterpreter >> serverDo: aCallbackBlock [
+
+	interaction
+		onTriggerExecute:
+			( ServerResponseCommand
+				withBehaviorDeterminedBy: aCallbackBlock
+				conditionedBy: Optional unused
+				requiring: Optional unused )
+]
+
+{ #category : #Configuring }
+WebInteractionInterpreter >> serverDo: aCallbackBlock with: aParameter [
+
+	interaction
+		onTriggerExecute:
+			( ServerResponseCommand
+				withBehaviorDeterminedBy: aCallbackBlock
+				conditionedBy: Optional unused
+				requiring: ( Optional containing: aParameter ) )
+]
+
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView [
 
@@ -334,4 +337,11 @@ WebInteractionInterpreter >> toggleCssClass: aCssStyle onComponentsMatching: aCo
 				on: aComponentProvider
 				altering: aCssStyle
 				sending: #toggleClass:)
+]
+
+{ #category : #Configuring }
+WebInteractionInterpreter >> userAgentDo: aServerIndependentAction [
+
+	interaction
+		onTriggerExecute: (PluggableUserAgentCommand executing: aServerIndependentAction)
 ]

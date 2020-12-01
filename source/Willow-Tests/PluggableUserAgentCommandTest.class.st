@@ -1,5 +1,5 @@
 Class {
-	#name : #PluggableExecutionOnClientCommandTest,
+	#name : #PluggableUserAgentCommandTest,
 	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
@@ -8,38 +8,38 @@ Class {
 }
 
 { #category : #initialization }
-PluggableExecutionOnClientCommandTest >> setUp [
+PluggableUserAgentCommandTest >> setUp [
 
 	super setUp.
-	command := PluggableExecutionOnClientCommand executingOnly: [ :canvas | JSStream this ]
+	command := PluggableUserAgentCommand executing: [ :canvas | JSStream this ]
 ]
 
 { #category : #'tests-accessing' }
-PluggableExecutionOnClientCommandTest >> testClientIndependentActions [
+PluggableUserAgentCommandTest >> testClientIndependentActions [
 
 	self assert: command clientIndependentActions isEmpty
 ]
 
 { #category : #'tests-accessing' }
-PluggableExecutionOnClientCommandTest >> testModelLoadingActions [
+PluggableUserAgentCommandTest >> testModelLoadingActions [
 
 	self assert: command modelLoadingActions isEmpty
 ]
 
 { #category : #'tests-accessing' }
-PluggableExecutionOnClientCommandTest >> testPriorityActions [
+PluggableUserAgentCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
 { #category : #'tests-testing' }
-PluggableExecutionOnClientCommandTest >> testRequiresSerialization [
+PluggableUserAgentCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization
 ]
 
 { #category : #'tests-accessing' }
-PluggableExecutionOnClientCommandTest >> testServerIndependentActions [
+PluggableUserAgentCommandTest >> testServerIndependentActions [
 
 	| actions |
 

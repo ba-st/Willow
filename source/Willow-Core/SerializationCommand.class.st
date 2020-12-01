@@ -10,10 +10,10 @@ Class {
 	#category : #'Willow-Core-WebInteraction'
 }
 
-{ #category : #'instance creation - private' }
+{ #category : #'private - instance creation' }
 SerializationCommand class >> executing: aPriorityAction [
 
-	^self new initializeExecuting: aPriorityAction
+	^ self new initializeExecuting: aPriorityAction
 ]
 
 { #category : #'instance creation' }
@@ -23,7 +23,8 @@ SerializationCommand class >> forChildForm [
 		executing: [ :anAsynchronousCall :aCanvas | 
 			anAsynchronousCall
 				bePost;
-				serialize: (aCanvas jQuery this children: 'form') ]
+				serialize: ( aCanvas jQuery this children: 'form' )
+			]
 ]
 
 { #category : #'instance creation' }
@@ -33,7 +34,8 @@ SerializationCommand class >> forCurrentObject [
 		executing: [ :anAsynchronousCall :aCanvas | 
 			anAsynchronousCall
 				bePost;
-				serializeThis ]
+				serializeThis
+			]
 ]
 
 { #category : #'instance creation' }
@@ -43,7 +45,8 @@ SerializationCommand class >> forCurrentObjectWithHiddenInputs [
 		executing: [ :anAsynchronousCall :aCanvas | 
 			anAsynchronousCall
 				bePost;
-				serializeThisWithHidden ]
+				serializeThisWithHidden
+			]
 ]
 
 { #category : #'instance creation' }
@@ -54,7 +57,8 @@ SerializationCommand class >> forForm: anIdentifiedForm [
 			anIdentifiedForm identifyIn: aCanvas.
 			anAsynchronousCall
 				bePost;
-				serialize: (aCanvas jQuery id: anIdentifiedForm identifier) ]
+				serialize: ( aCanvas jQuery id: anIdentifiedForm identifier )
+			]
 ]
 
 { #category : #'instance creation' }
@@ -64,16 +68,17 @@ SerializationCommand class >> forParentForm [
 		executing: [ :anAsynchronousCall :aCanvas | 
 			anAsynchronousCall
 				bePost;
-				serializeForm ]
+				serializeForm
+			]
 ]
 
 { #category : #accessing }
 SerializationCommand >> clientIndependentActions [
 
-	^#()
+	^ #()
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 SerializationCommand >> initializeExecuting: aPriorityAction [
 
 	priorityActions := Array with: aPriorityAction
@@ -82,23 +87,23 @@ SerializationCommand >> initializeExecuting: aPriorityAction [
 { #category : #accessing }
 SerializationCommand >> modelLoadingActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #accessing }
 SerializationCommand >> priorityActions [
 
-	^priorityActions
+	^ priorityActions
 ]
 
 { #category : #testing }
 SerializationCommand >> requiresSerialization [
 
-	^false
+	^ false
 ]
 
 { #category : #accessing }
 SerializationCommand >> serverIndependentActions [
 
-	^#()
+	^ #()
 ]

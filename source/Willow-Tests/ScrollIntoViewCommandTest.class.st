@@ -18,12 +18,6 @@ ScrollIntoViewCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ScrollIntoViewCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 ScrollIntoViewCommandTest >> testModelLoadingActions [
 
 	| html |
@@ -33,13 +27,15 @@ ScrollIntoViewCommandTest >> testModelLoadingActions [
 			| script |
 
 			script := canvas javascript.
-			command modelLoadingActions do: [ :action | action value: script value: canvas ].
+			command modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
 
-			canvas anchor script: (canvas jQuery this onClick: script) ].
+			canvas anchor script: ( canvas jQuery this onClick: script )
+			].
 
 	self
 		assert: html
-		equals: '<a id="id1"></a><script type="text/javascript">$("#id1").click(function(){$("#id8").each(function(){$(this).get(0).scrollIntoView()})});</script>'
+		equals:
+			'<a id="id1"></a><script type="text/javascript">$("#id1").click(function(){$("#id8").each(function(){$(this).get(0).scrollIntoView()})});</script>'
 ]
 
 { #category : #'tests-accessing' }

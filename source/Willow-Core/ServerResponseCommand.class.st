@@ -23,15 +23,6 @@ ServerResponseCommand class >> withBehaviorDeterminedBy: aBlock conditionedBy: a
 		requiring: aUserAgentParameterOptional
 ]
 
-{ #category : #accessing }
-ServerResponseCommand >> clientIndependentActions [
-
-	^ Array
-		with: [ self resetInterpreter.
-			commandToServer cull: self
-			]
-]
-
 { #category : #private }
 ServerResponseCommand >> considerAddingConditionTo: anAsynchronousCall [
 
@@ -55,7 +46,16 @@ ServerResponseCommand >> initializeWithBehaviorDeterminedBy: aBlock
 { #category : #accessing }
 ServerResponseCommand >> modelLoadingActions [
 
-	^ Array with: [ :aScript :aCanvas | interpreter applyTo: aScript on: aCanvas ]
+	^ Array
+		with: [ :aCanvas | 
+			| actions |
+
+			actions := OrderedCollection new.
+			self resetInterpreter.
+			commandToServer cull: self.
+			interpreter applyTo: actions on: aCanvas.
+			actions
+			]
 ]
 
 { #category : #private }

@@ -18,12 +18,6 @@ ComponentEnableStatusChangingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ComponentEnableStatusChangingCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 ComponentEnableStatusChangingCommandTest >> testModelLoadingActions [
 
 	self assert: command modelLoadingActions isEmpty
@@ -51,12 +45,14 @@ ComponentEnableStatusChangingCommandTest >> testServerIndependentActions [
 			| script div |
 
 			script := canvas javascript.
-			command serverIndependentActions do: [ :action | action value: script value: canvas ].
+			command serverIndependentActions do: [ :action | script << ( action cull: canvas ) ].
 			div := canvas div.
 			canvas ensureIdFor: div.
-			div script: (canvas jQuery this onClick: script) ].
+			div script: ( canvas jQuery this onClick: script )
+			].
 
 	self
 		assert: html
-		equals: '<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){$(this).prop("disabled",true)});</script>'
+		equals:
+			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){$(this).prop("disabled",true)});</script>'
 ]

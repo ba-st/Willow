@@ -25,12 +25,6 @@ ComponentFocusingCommand class >> for: anIdentifiedView [
 			aCanvas jQuery id: anIdentifiedView identifier ]
 ]
 
-{ #category : #accessing }
-ComponentFocusingCommand >> clientIndependentActions [
-
-	^#()
-]
-
 { #category : #'initialize-release' }
 ComponentFocusingCommand >> initializeFindingComponentUsing: aComponentProvider [
 
@@ -40,14 +34,13 @@ ComponentFocusingCommand >> initializeFindingComponentUsing: aComponentProvider 
 { #category : #accessing }
 ComponentFocusingCommand >> modelLoadingActions [
 
-	^Array
-		with: [:aScript :aCanvas | aScript << (componentProvider value: aCanvas) triggerFocus  ]
+	^ Array with: [ :aCanvas | ( componentProvider value: aCanvas ) triggerFocus ]
 ]
 
 { #category : #accessing }
 ComponentFocusingCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
@@ -59,5 +52,5 @@ ComponentFocusingCommand >> requiresSerialization [
 { #category : #accessing }
 ComponentFocusingCommand >> serverIndependentActions [
 
-	^#()
+	^ #()
 ]

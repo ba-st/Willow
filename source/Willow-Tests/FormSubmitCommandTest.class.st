@@ -21,12 +21,6 @@ FormSubmitCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-FormSubmitCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 FormSubmitCommandTest >> testModelLoadingActions [
 
 	| html |
@@ -39,10 +33,15 @@ FormSubmitCommandTest >> testModelLoadingActions [
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
 
-			(FormSubmitCommand forFormStyledAs: Classification >> #willow) modelLoadingActions do: [ :action | action value: script value: canvas ].
-			anchor script: (canvas jQuery this onClick: script) ].
+			( FormSubmitCommand forFormStyledAs: Classification >> #willow ) modelLoadingActions
+				do: [ :action | script << ( action cull: canvas ) ].
+			anchor script: ( canvas jQuery this onClick: script )
+			].
 
-	self assert: html equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("form.willow").submit()});</script>'
+	self
+		assert: html
+		equals:
+			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("form.willow").submit()});</script>'
 ]
 
 { #category : #'tests-accessing' }

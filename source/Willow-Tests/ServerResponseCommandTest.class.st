@@ -17,41 +17,6 @@ ServerResponseCommandTest >> callback: aBlock json: aString [
 ]
 
 { #category : #'tests-accessing' }
-ServerResponseCommandTest >> testClientIndependentActions [
-
-	| command blockWasExecuted |
-
-	blockWasExecuted := false.
-	command := ServerResponseCommand
-		withBehaviorDeterminedBy: [ :response | blockWasExecuted := true ]
-		conditionedBy: Optional unused
-		requiring: Optional unused.
-	command clientIndependentActions do: #value.
-	self assert: blockWasExecuted
-]
-
-{ #category : #'tests-accessing' }
-ServerResponseCommandTest >> testClientIndependentActionsDependOnPriorityActionsWhenUsingClientParameter [
-
-	| command |
-
-	command := ServerResponseCommand
-		withBehaviorDeterminedBy: [ :request | 'Test is <1s>' expandMacrosWith: request parameter ]
-		conditionedBy: Optional unused
-		requiring: ( Optional containing: 'complete' ).
-
-	self
-		should: [ command clientIndependentActions collect: #value ]
-		raise: AssertionFailed
-		withExceptionDo: [ :error | self assert: error messageText equals: 'Missing Server Side Parameter' ].
-
-	command priorityActions do: [ :action | action value: self value: 'canvas' ].
-	self
-		assertCollection: ( command clientIndependentActions collect: #value )
-		equals: #('Test is complete')
-]
-
-{ #category : #'tests-accessing' }
 ServerResponseCommandTest >> testModelLoadingActions [
 
 	| command html |
@@ -66,8 +31,7 @@ ServerResponseCommandTest >> testModelLoadingActions [
 
 			script := canvas javascript.
 			command priorityActions do: [ :action | action value: self value: 'canvas' ].
-			command clientIndependentActions do: #value.
-			command modelLoadingActions do: [ :action | action value: script value: canvas ].
+			command modelLoadingActions do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ].
 			div := canvas div.
 			canvas ensureIdFor: div.
 			div script: ( canvas jQuery this onClick: script )
@@ -80,6 +44,47 @@ ServerResponseCommandTest >> testModelLoadingActions [
 ]
 
 { #category : #'tests-accessing' }
+ServerResponseCommandTest >> testModelLoadingActionsWhenUsingClientParameter [
+
+	| command html |
+
+	command := ServerResponseCommand
+		withBehaviorDeterminedBy: [ :request | request onRespond inform: ( 'Test is <1s>' expandMacrosWith: request parameter ) ]
+		conditionedBy: Optional unused
+		requiring: ( Optional containing: 'complete' ).
+
+	self
+		should: [ self
+				renderUsing: [ :canvas | 
+					| script |
+
+					script := canvas javascript.
+					command modelLoadingActions
+						do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ]
+					]
+			]
+		raise: AssertionFailed
+		withMessageText: 'Missing Server Side Parameter'.
+
+	html := self
+		renderUsing: [ :canvas | 
+			| script div |
+
+			script := canvas javascript.
+			command priorityActions do: [ :action | action value: self value: 'canvas' ].
+			command modelLoadingActions
+				do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ].
+			div := canvas div.
+			canvas ensureIdFor: div.
+			div script: ( canvas jQuery this onClick: script )
+			].
+	self
+		assert: html
+		equals:
+			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){alert("Test is complete")});</script>'
+]
+
+{ #category : #'tests-accessing' }
 ServerResponseCommandTest >> testOnRespond [
 
 	| command html |
@@ -88,14 +93,14 @@ ServerResponseCommandTest >> testOnRespond [
 		withBehaviorDeterminedBy: [ :request | request onRespond inform: 'it has returned!' ]
 		conditionedBy: Optional unused
 		requiring: Optional unused.
-		
+
 	html := self
 		renderUsing: [ :canvas | 
 			| script div |
 
 			script := canvas javascript.
-			command clientIndependentActions do: #value.
-			command modelLoadingActions do: [ :action | action value: script value: canvas ].
+			command modelLoadingActions
+				do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ].
 			div := canvas div.
 			canvas ensureIdFor: div.
 			div script: ( canvas jQuery this onClick: script )
@@ -120,7 +125,7 @@ ServerResponseCommandTest >> testParameter [
 	html := self
 		renderUsing: [ :canvas | 
 			command priorityActions do: [ :action | action value: self value: 'canvas' ].
-			command clientIndependentActions do: #value
+			command modelLoadingActions do: [ :action | action cull: 'canvas' ]
 			].
 
 	self assert: parameterObtained equals: 'test complete'

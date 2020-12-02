@@ -20,38 +20,6 @@ RenderingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-RenderingCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions size equals: 1.
-	command clientIndependentActions do: [ :action | self assert: action value ]
-]
-
-{ #category : #'tests-accessing' }
-RenderingCommandTest >> testEvaluatingAsConditionToRender [
-
-	| html |
-
-	command := RenderingCommand evaluating: [ false ] asConditionToRender: identifiedView.
-
-	self assert: command clientIndependentActions size equals: 1.
-	command clientIndependentActions do: [ :action | self deny: action value ].
-
-
-	html := self
-		renderUsing: [ :canvas | 
-			| script |
-
-			script := canvas javascript.
-			identifiedView identifyIn: canvas.
-			command modelLoadingActions do: [ :action | action value: script value: canvas ].
-
-			canvas anchor script: (canvas jQuery this onClick: script) ].
-
-	"The function must be empty because the condition is false"
-	self assert: html equals: '<a id="id2"></a><script type="text/javascript">$("#id2").click(function(){});</script>'
-]
-
-{ #category : #'tests-accessing' }
 RenderingCommandTest >> testModelLoadingActions [
 
 	| html |
@@ -62,13 +30,15 @@ RenderingCommandTest >> testModelLoadingActions [
 
 			script := canvas javascript.
 			identifiedView identifyIn: canvas.
-			command modelLoadingActions do: [ :action | action value: script value: canvas ].
+			command modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
 
-			canvas anchor script: (canvas jQuery this onClick: script) ].
+			canvas anchor script: ( canvas jQuery this onClick: script )
+			].
 
 	self
 		assert: html
-		equals: '<a id="id2"></a><script type="text/javascript">$("#id2").click(function(){$("#test-id1").html("<span>Test</span>")});</script>'
+		equals:
+			'<a id="id2"></a><script type="text/javascript">$("#id2").click(function(){$("#test-id1").html("<span>Test</span>")});</script>'
 ]
 
 { #category : #'tests-accessing' }

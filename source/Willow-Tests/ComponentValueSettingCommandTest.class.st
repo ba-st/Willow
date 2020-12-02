@@ -18,12 +18,6 @@ ComponentValueSettingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ComponentValueSettingCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 ComponentValueSettingCommandTest >> testModelLoadingActions [
 
 	| html |
@@ -36,10 +30,16 @@ ComponentValueSettingCommandTest >> testModelLoadingActions [
 			input := canvas textInput.
 			canvas ensureIdFor: input.
 
-			(ComponentValueSettingCommand triggeringChangesObtainingIdentifierFrom: [ input identifier ] valueFrom: [ '15' ]) modelLoadingActions do: [ :action | action value: script value: canvas ].
-			input script: (canvas jQuery this onClick: script) ].
+			( ComponentValueSettingCommand
+				triggeringChangesObtainingIdentifierFrom: [ input identifier ]
+				valueFrom: [ '15' ] ) modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
+			input script: ( canvas jQuery this onClick: script )
+			].
 
-	self assert: html equals: '<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$("#input-id1").val("15").trigger("change")});</script>'
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$("#input-id1").val("15").trigger("change")});</script>'
 ]
 
 { #category : #'tests-accessing' }
@@ -55,7 +55,7 @@ ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutSettingPreviou
 			input := canvas textInput.
 
 			( ComponentValueSettingCommand triggeringChangesOn: input withValueFrom: [ '15' ] )
-				modelLoadingActions do: [ :action | action value: script value: canvas ].
+				modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
 			input script: ( canvas jQuery this onClick: script )
 			].
 
@@ -78,10 +78,16 @@ ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutTriggering [
 			input := canvas textInput.
 			canvas ensureIdFor: input.
 
-			(ComponentValueSettingCommand obtainingIdentifierFrom: [ input identifier ] valueFrom: [ '15' ]) modelLoadingActions do: [ :action | action value: script value: canvas ].
-			input script: (canvas jQuery this onClick: script) ].
+			( ComponentValueSettingCommand obtainingIdentifierFrom: [ input identifier ] valueFrom: [ '15' ] )
+				modelLoadingActions
+				do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ].
+			input script: ( canvas jQuery this onClick: script )
+			].
 
-	self assert: html equals: '<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$("#input-id1").val("15")});</script>'
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$("#input-id1").val("15")});</script>'
 ]
 
 { #category : #'tests-accessing' }

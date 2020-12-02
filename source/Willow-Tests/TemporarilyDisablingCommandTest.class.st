@@ -8,12 +8,6 @@ Class {
 }
 
 { #category : #'tests-accessing' }
-TemporarilyDisablingCommandTest >> testClientIndependentActions [
-
-	self assert: (TemporarilyDisablingCommand transformingCurrentViewInto: [ :canvas |  ]) clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 TemporarilyDisablingCommandTest >> testModelLoadingActions [
 
 	self assert: (TemporarilyDisablingCommand transformingCurrentViewInto: [ :canvas |  ]) modelLoadingActions isEmpty
@@ -61,7 +55,7 @@ TemporarilyDisablingCommandTest >> testServerIndependentActions [
 			| script anchor |
 
 			script := canvas javascript.
-			command serverIndependentActions do: [ :action | action value: script value: canvas ].
+			command serverIndependentActions do: [ :action | script << ( action cull: canvas ) ].
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
 			anchor script: ( canvas jQuery this onClick: script )

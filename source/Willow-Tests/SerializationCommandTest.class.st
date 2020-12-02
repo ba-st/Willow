@@ -18,12 +18,6 @@ SerializationCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-SerializationCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 SerializationCommandTest >> testForChildForm [
 
 	| html |

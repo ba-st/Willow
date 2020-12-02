@@ -7,12 +7,6 @@ Class {
 	#category : #'Willow-Core-Frontend'
 }
 
-{ #category : #Interaction }
-FrontendComponentSupplier >> addStatementsTo: aJSScript toCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
-
-	^ self subclassResponsibility
-]
-
 { #category : #Supplying }
 FrontendComponentSupplier >> asynchronicButtonLabeled: aRenderable applying: aComponentCommand [
 
@@ -101,6 +95,12 @@ FrontendComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 FrontendComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
 
 	self subclassResponsibility
+]
+
+{ #category : #Interaction }
+FrontendComponentSupplier >> statementToCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
+
+	^ self subclassResponsibility
 ]
 
 { #category : #Supplying }

@@ -17,12 +17,6 @@ DialogOpeningCommand class >> alwaysOpening: aDialogView [
 	^ self new initializeAlwaysOpening: aDialogView
 ]
 
-{ #category : #accessing }
-DialogOpeningCommand >> clientIndependentActions [
-
-	^#()
-]
-
 { #category : #'initialize-release' }
 DialogOpeningCommand >> initializeAlwaysOpening: aDialogView [
 
@@ -32,13 +26,13 @@ DialogOpeningCommand >> initializeAlwaysOpening: aDialogView [
 { #category : #accessing }
 DialogOpeningCommand >> modelLoadingActions [
 
-	^ Array with: [ :aScript :aCanvas | aScript << (DialogOpener new open: dialogView on: aCanvas) ]
+	^ Array with: [ :aCanvas | DialogOpener new open: dialogView on: aCanvas ]
 ]
 
 { #category : #accessing }
 DialogOpeningCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #accessing }
@@ -50,5 +44,5 @@ DialogOpeningCommand >> requiresSerialization [
 { #category : #accessing }
 DialogOpeningCommand >> serverIndependentActions [
 
-	^#()
+	^ #()
 ]

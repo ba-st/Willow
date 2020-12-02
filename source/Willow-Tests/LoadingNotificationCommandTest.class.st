@@ -18,8 +18,9 @@ LoadingNotificationCommandTest >> renderedContentUsingModelLoadingActionsOf: aCo
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
 
-			aCommand modelLoadingActions do: [ :action | action value: script value: canvas ].
-			anchor script: (canvas jQuery this onClick: script) ]
+			aCommand modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
+			anchor script: ( canvas jQuery this onClick: script )
+			]
 ]
 
 { #category : #'tests-accessing' }
@@ -30,30 +31,11 @@ LoadingNotificationCommandTest >> renderedContentUsingServerIndependentActionOf:
 			| script anchor |
 
 			script := canvas javascript.
-			aCommand serverIndependentActions do: [ :action | action value: script value: canvas ].
+			aCommand serverIndependentActions do: [ :action | script << ( action cull: canvas ) ].
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
-			anchor script: (canvas jQuery this onClick: script) ].
-]
-
-{ #category : #'tests-accessing' }
-LoadingNotificationCommandTest >> testClientIndependentActions [
-
-	| command |
-	
-	command := LoadingNotificationCommand onPageTopWithClasses: #(). 
-	
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
-LoadingNotificationCommandTest >> testClientIndependentActionsWithCustomView [
-
-	| command |
-	
-	command := LoadingNotificationCommand displaying: [ :canvas | canvas span with: 'Processing...' ] applying: [ :div | div addClass loading ].
-	
-	self assert: command clientIndependentActions isEmpty
+			anchor script: ( canvas jQuery this onClick: script )
+			]
 ]
 
 { #category : #'tests-accessing' }

@@ -47,12 +47,6 @@ TemporarilyDisablingCommand >> areEventsEnabledOn: aCanvas [
 		notIdenticalTo: 'disabled'
 ]
 
-{ #category : #accessing }
-TemporarilyDisablingCommand >> clientIndependentActions [
-
-	^ #()
-]
-
 { #category : #private }
 TemporarilyDisablingCommand >> componentToDisableOn: aCanvas [
 
@@ -124,10 +118,8 @@ TemporarilyDisablingCommand >> requiresSerialization [
 TemporarilyDisablingCommand >> serverIndependentActions [
 
 	^ Array
-		with: [ :script :canvas | 
-			script
-				<< ( ( self componentToDisableOn: canvas ) assignLocalTo: self componentToDisableVariableName )
-			]
+		with:
+			[ :canvas | ( self componentToDisableOn: canvas ) assignLocalTo: self componentToDisableVariableName ]
 ]
 
 { #category : #private }

@@ -72,12 +72,6 @@ SerializationCommand class >> forParentForm [
 			]
 ]
 
-{ #category : #accessing }
-SerializationCommand >> clientIndependentActions [
-
-	^ #()
-]
-
 { #category : #initialization }
 SerializationCommand >> initializeExecuting: aPriorityAction [
 

@@ -15,7 +15,10 @@ Class {
 { #category : #'instance creation' }
 ComponentValueSettingCommand class >> obtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider [
 
-	^ self obtainingIdentifierFrom: aValueProvider valueFrom: anIdentifierProvider triggeringAction: [  ]
+	^ self
+		obtainingIdentifierFrom: aValueProvider
+		valueFrom: anIdentifierProvider
+		triggeringAction: [ :jQueryInstance | jQueryInstance ]
 ]
 
 { #category : #private }
@@ -44,12 +47,6 @@ ComponentValueSettingCommand class >> triggeringChangesOn: anIdentifiableView wi
 		valueFrom: aValueProvider
 ]
 
-{ #category : #accessing }
-ComponentValueSettingCommand >> clientIndependentActions [
-
-	^#()
-]
-
 { #category : #'initialize-release' }
 ComponentValueSettingCommand >> initializeObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider triggeringAction: anAction [
 
@@ -62,10 +59,10 @@ ComponentValueSettingCommand >> initializeObtainingIdentifierFrom: anIdentifierP
 ComponentValueSettingCommand >> modelLoadingActions [
 
 	^ Array
-		with: [ :aScript :aCanvas | 
+		with: [ :aCanvas | 
 			| jQueryInstance |
 
-			jQueryInstance := aScript << ( aCanvas jQuery id: ( identifierProvider cull: aCanvas ) ).
+			jQueryInstance := aCanvas jQuery id: ( identifierProvider cull: aCanvas ).
 			jQueryInstance value: valueProvider value.
 			triggeringAction cull: jQueryInstance
 			]
@@ -74,7 +71,7 @@ ComponentValueSettingCommand >> modelLoadingActions [
 { #category : #accessing }
 ComponentValueSettingCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
@@ -86,5 +83,5 @@ ComponentValueSettingCommand >> requiresSerialization [
 { #category : #accessing }
 ComponentValueSettingCommand >> serverIndependentActions [
 
-	^#()
+	^ #()
 ]

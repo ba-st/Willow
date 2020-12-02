@@ -18,12 +18,6 @@ DialogOpeningCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-DialogOpeningCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 DialogOpeningCommandTest >> testModelLoadingActions [
 
 	| html |
@@ -35,8 +29,9 @@ DialogOpeningCommandTest >> testModelLoadingActions [
 			script := canvas javascript.
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
-			command modelLoadingActions do: [ :action | action value: script value: canvas ].
-			anchor script: (canvas jQuery this onClick: script) ].
+			command modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
+			anchor script: ( canvas jQuery this onClick: script )
+			].
 
 	self
 		assert: html

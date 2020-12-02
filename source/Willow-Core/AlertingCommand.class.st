@@ -29,12 +29,6 @@ AlertingCommand class >> stating: aText [
 	^ self obtainingMessageFrom: [ :aCanvas | aText ]
 ]
 
-{ #category : #accessing }
-AlertingCommand >> clientIndependentActions [
-
-	^ #()
-]
-
 { #category : #initialization }
 AlertingCommand >> initializeObtainingMessageFrom: aMessageProvider [
 
@@ -62,6 +56,5 @@ AlertingCommand >> requiresSerialization [
 { #category : #accessing }
 AlertingCommand >> serverIndependentActions [
 
-	^ Array
-		with: [ :aScript :aCanvas | aScript << aCanvas javascript alert: ( messageProvider value: aCanvas ) ]
+	^ Array with: [ :aCanvas | aCanvas javascript alert: ( messageProvider value: aCanvas ) ]
 ]

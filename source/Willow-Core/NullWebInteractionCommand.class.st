@@ -8,21 +8,15 @@ Class {
 }
 
 { #category : #accessing }
-NullWebInteractionCommand >> clientIndependentActions [
-
-	^#()
-]
-
-{ #category : #accessing }
 NullWebInteractionCommand >> modelLoadingActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #accessing }
 NullWebInteractionCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }

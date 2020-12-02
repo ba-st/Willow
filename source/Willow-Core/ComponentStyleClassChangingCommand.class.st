@@ -43,12 +43,6 @@ ComponentStyleClassChangingCommand >> applyStyleChangeToComponentOn: aCanvas [
 	^ self applyStyleChangeTo: (self componentOn: aCanvas)
 ]
 
-{ #category : #accessing }
-ComponentStyleClassChangingCommand >> clientIndependentActions [
-
-	^#()
-]
-
 { #category : #private }
 ComponentStyleClassChangingCommand >> componentOn: aCanvas [
 	^ componentProvider value: aCanvas
@@ -66,13 +60,13 @@ ComponentStyleClassChangingCommand >> initializeOn: aComponentProvider altering:
 { #category : #accessing }
 ComponentStyleClassChangingCommand >> modelLoadingActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #accessing }
 ComponentStyleClassChangingCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
@@ -83,5 +77,7 @@ ComponentStyleClassChangingCommand >> requiresSerialization [
 
 { #category : #accessing }
 ComponentStyleClassChangingCommand >> serverIndependentActions [
-	^ Array with: [ :aScript :aCanvas | aScript << (transformationProvider value:(self applyStyleChangeToComponentOn: aCanvas)) ]
+
+	^ Array
+		with: [ :aCanvas | transformationProvider value: ( self applyStyleChangeToComponentOn: aCanvas ) ]
 ]

@@ -14,12 +14,15 @@ DelayedModelLoader class >> new [
 ]
 
 { #category : #evaluating }
-DelayedModelLoader >> applyTo: aScript on: aCanvas [
+DelayedModelLoader >> applyTo: aCollection on: aCanvas [
 
-	self
-		commandsDo: [ :command | command serverIndependentActions do: [ :action | action value: aScript value: aCanvas ] ];
-		commandsDo: [ :command | command clientIndependentActions do: [ :action | action value ] ];
-		commandsDo: [ :command | command modelLoadingActions do: [ :action | action value: aScript value: aCanvas ] ]
+	commands
+		do: [ :command | 
+			OrderedCollection new
+				addAll: command serverIndependentActions;
+				addAll: command modelLoadingActions;
+				do: [ :action | aCollection add: ( action cull: aCanvas ) ]
+			]
 ]
 
 { #category : #private }

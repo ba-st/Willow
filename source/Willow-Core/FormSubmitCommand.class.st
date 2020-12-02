@@ -22,12 +22,6 @@ FormSubmitCommand class >> forFormStyledAs: aCssStyle [
 	^ self findingComponentUsing: [ :aCanvas | aCanvas jQuery cssSelector: (CssUniversalSelector implicit form class: aCssStyle) ]
 ]
 
-{ #category : #accessing }
-FormSubmitCommand >> clientIndependentActions [
-
-	^#()
-]
-
 { #category : #'initialize - release' }
 FormSubmitCommand >> initializeFindingComponentUsing: aComponentProvider [
 
@@ -37,13 +31,13 @@ FormSubmitCommand >> initializeFindingComponentUsing: aComponentProvider [
 { #category : #accessing }
 FormSubmitCommand >> modelLoadingActions [
 
-	^ Array with: [ :aScript :aCanvas | aScript << (componentProvider value: aCanvas) call: 'submit' ]
+	^ Array with: [ :aCanvas | ( componentProvider value: aCanvas ) call: 'submit' ]
 ]
 
 { #category : #accessing }
 FormSubmitCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
@@ -55,5 +49,5 @@ FormSubmitCommand >> requiresSerialization [
 { #category : #accessing }
 FormSubmitCommand >> serverIndependentActions [
 
-	^#()
+	^ #()
 ]

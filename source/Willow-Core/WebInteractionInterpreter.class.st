@@ -62,7 +62,7 @@ WebInteractionInterpreter class >> forReleaseOfKeyInComponent [
 	^self workingWith: WebComponentInteraction triggeredOnKeyUp
 ]
 
-{ #category : #'instance creation - private' }
+{ #category : #'private - instance creation' }
 WebInteractionInterpreter class >> workingWith: aWebComponentInteraction [
 
 	^self new initializeWorkingWith: aWebComponentInteraction
@@ -343,5 +343,5 @@ WebInteractionInterpreter >> toggleCssClass: aCssStyle onComponentsMatching: aCo
 WebInteractionInterpreter >> userAgentDo: aServerIndependentAction [
 
 	interaction
-		onTriggerExecute: (PluggableUserAgentCommand executing: aServerIndependentAction)
+		onTriggerExecute: (UserAgentCommand executing: aServerIndependentAction)
 ]

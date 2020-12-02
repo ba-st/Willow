@@ -8,12 +8,6 @@ Class {
 }
 
 { #category : #'tests-accessing' }
-NullWebInteractionCommandTest >> testClientIndependentActions [
-
-	self assert: NullWebInteractionCommand new clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 NullWebInteractionCommandTest >> testModelLoadingActions [
 
 	self assert: NullWebInteractionCommand new modelLoadingActions isEmpty

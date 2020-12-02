@@ -18,12 +18,6 @@ ConfirmationCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ConfirmationCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 ConfirmationCommandTest >> testModelLoadingActions [
 
 	self assert: command modelLoadingActions isEmpty

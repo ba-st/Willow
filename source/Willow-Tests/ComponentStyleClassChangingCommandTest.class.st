@@ -19,12 +19,6 @@ ComponentStyleClassChangingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ComponentStyleClassChangingCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 ComponentStyleClassChangingCommandTest >> testModelLoadingActions [
 
 	self assert: command modelLoadingActions isEmpty
@@ -52,10 +46,11 @@ ComponentStyleClassChangingCommandTest >> testServerIndependentActions [
 			| script div |
 
 			script := canvas javascript.
-			command serverIndependentActions do: [ :action | action value: script value: canvas ].
+			command serverIndependentActions do: [ :action | script << ( action cull: canvas ) ].
 			div := canvas div.
 			canvas ensureIdFor: div.
-			div script: (canvas jQuery this onClick: script) ].
+			div script: ( canvas jQuery this onClick: script )
+			].
 
 	self
 		assert: html

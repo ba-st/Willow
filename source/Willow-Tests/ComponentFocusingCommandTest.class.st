@@ -18,12 +18,6 @@ ComponentFocusingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ComponentFocusingCommandTest >> testClientIndependentActions [
-
-	self assert: command clientIndependentActions isEmpty
-]
-
-{ #category : #'tests-accessing' }
 ComponentFocusingCommandTest >> testModelLoadingActions [
 
 	| html |
@@ -35,10 +29,15 @@ ComponentFocusingCommandTest >> testModelLoadingActions [
 			script := canvas javascript.
 			div := canvas div.
 			canvas ensureIdFor: div.
-			(ComponentFocusingCommand for: div) modelLoadingActions do: [ :action | action value: script value: canvas ].
-			div script: (canvas jQuery this onClick: script) ].
+			( ComponentFocusingCommand for: div ) modelLoadingActions
+				do: [ :action | script << ( action cull: canvas ) ].
+			div script: ( canvas jQuery this onClick: script )
+			].
 
-	self assert: html equals: '<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){$("#div-id1").focus()});</script>'
+	self
+		assert: html
+		equals:
+			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){$("#div-id1").focus()});</script>'
 ]
 
 { #category : #'tests-accessing' }

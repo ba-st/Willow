@@ -16,12 +16,6 @@ ConfirmationCommand class >> asking: aQuestion [
 	^ self new initializeAsking: aQuestion
 ]
 
-{ #category : #accessing }
-ConfirmationCommand >> clientIndependentActions [
-
-	^ #()
-]
-
 { #category : #initialization }
 ConfirmationCommand >> initializeAsking: aQuestion [
 

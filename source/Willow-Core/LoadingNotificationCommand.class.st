@@ -16,23 +16,23 @@ LoadingNotificationCommand class >> displaying: aWebView applying: aComponentCom
 
 	^ self
 		executing:
-			(Array
-				with: [ :aScript :aCanvas | 
-					aScript << (aCanvas jQuery id: Constants >> #willow >> #notificationSectionName)
-						html: [ :aSubCanvas | 
-							aSubCanvas render:
-								(GenericContainerWebView wrapping: aWebView applying: aComponentCommand) ] ])
+			( Array
+				with: [ :aCanvas | 
+					( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName )
+						html:
+							[ :aSubCanvas | aSubCanvas render: ( GenericContainerWebView wrapping: aWebView applying: aComponentCommand ) ]
+					] )
 		then:
-			(Array
-				with: [ :aScript :aCanvas | 
-					aScript << (aCanvas jQuery id: Constants >> #willow >> #notificationSectionName)
-						html: [ :aSubCanvas |  ] ])
+			( Array
+				with:
+					[ :aCanvas | ( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName ) html: [ :aSubCanvas |  ] ] )
 ]
 
-{ #category : #'instance creation - private' }
+{ #category : #'private - instance creation' }
 LoadingNotificationCommand class >> executing: aServerIndependentActionCollection then: aModelLoadingActionCollection [
 
-	^self new initializeExecuting: aServerIndependentActionCollection
+	^ self new
+		initializeExecuting: aServerIndependentActionCollection
 		then: aModelLoadingActionCollection
 ]
 
@@ -41,16 +41,10 @@ LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 
 	^ self
 		displaying: 'Loading...'
-		applying: (ComponentClassificationCommand toStyleWithAll: aCssClassCollection)
+		applying: ( ComponentClassificationCommand toStyleWithAll: aCssClassCollection )
 ]
 
-{ #category : #accessing }
-LoadingNotificationCommand >> clientIndependentActions [
-
-	^#()
-]
-
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 LoadingNotificationCommand >> initializeExecuting: aServerIndependentActionCollection then: aModelLoadingActionCollection [
 
 	serverIndependentActions := aServerIndependentActionCollection.
@@ -60,23 +54,23 @@ LoadingNotificationCommand >> initializeExecuting: aServerIndependentActionColle
 { #category : #accessing }
 LoadingNotificationCommand >> modelLoadingActions [
 
-	^modelLoadingActions
+	^ modelLoadingActions
 ]
 
 { #category : #accessing }
 LoadingNotificationCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
 LoadingNotificationCommand >> requiresSerialization [
 
-	^false
+	^ false
 ]
 
 { #category : #accessing }
 LoadingNotificationCommand >> serverIndependentActions [
 
-	^serverIndependentActions
+	^ serverIndependentActions
 ]

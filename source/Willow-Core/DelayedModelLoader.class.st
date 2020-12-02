@@ -18,10 +18,9 @@ DelayedModelLoader >> applyTo: aCollection on: aCanvas [
 
 	commands
 		do: [ :command | 
-			OrderedCollection new
-				addAll: command serverIndependentActions;
-				addAll: command modelLoadingActions;
-				do: [ :action | aCollection add: ( action cull: aCanvas ) ]
+			aCollection
+				addAll: ( command serverIndependentInstructions statementsOn: aCanvas );
+				addAll: ( command modelLoadingInstructions statementsOn: aCanvas )
 			]
 ]
 
@@ -30,7 +29,7 @@ DelayedModelLoader >> commandsDo: aBlock [
 	commands do: aBlock
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 DelayedModelLoader >> initialize [
 
 	super initialize.

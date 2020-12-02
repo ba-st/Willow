@@ -79,9 +79,9 @@ SerializationCommand >> initializeExecuting: aPriorityAction [
 ]
 
 { #category : #accessing }
-SerializationCommand >> modelLoadingActions [
+SerializationCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
@@ -97,7 +97,7 @@ SerializationCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-SerializationCommand >> serverIndependentActions [
+SerializationCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

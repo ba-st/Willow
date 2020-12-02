@@ -11,13 +11,13 @@ Class {
 UserAgentCommandTest >> setUp [
 
 	super setUp.
-	command := UserAgentCommand executing: [ :canvas | JSStream this ]
+	command := UserAgentCommand executing: [ :canvas | JSStream this call: 'passTest' ]
 ]
 
 { #category : #'tests-accessing' }
-UserAgentCommandTest >> testModelLoadingActions [
+UserAgentCommandTest >> testModelLoadingInstructions [
 
-	self assert: command modelLoadingActions isEmpty
+	self assert: command modelLoadingInstructions isEmpty
 ]
 
 { #category : #'tests-accessing' }
@@ -33,11 +33,23 @@ UserAgentCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-UserAgentCommandTest >> testServerIndependentActions [
+UserAgentCommandTest >> testServerIndependentInstructions [
 
-	| actions |
+	| html |
 
-	actions := command serverIndependentActions.
-	self assert: actions size equals: 1.
-	actions do: [ :action | self render: [ :canvas | self assert: (action cull: canvas) greaseString equals: 'this' ] ]
+	html := self
+		renderUsing: [ :canvas | 
+			| script div |
+
+			script := canvas javascript.
+			command serverIndependentInstructions appendTo: script on: canvas.
+			div := canvas div.
+			canvas ensureIdFor: div.
+			div script: ( canvas jQuery this onClick: script )
+			].
+
+	self
+		assert: html
+		equals:
+			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){this.passTest()});</script>'
 ]

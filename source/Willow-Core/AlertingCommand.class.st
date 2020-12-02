@@ -36,9 +36,9 @@ AlertingCommand >> initializeObtainingMessageFrom: aMessageProvider [
 ]
 
 { #category : #accessing }
-AlertingCommand >> modelLoadingActions [
+AlertingCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
@@ -54,7 +54,8 @@ AlertingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-AlertingCommand >> serverIndependentActions [
+AlertingCommand >> serverIndependentInstructions [
 
-	^ Array with: [ :aCanvas | aCanvas javascript alert: ( messageProvider value: aCanvas ) ]
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | aCanvas javascript alert: ( messageProvider value: aCanvas ) ]
 ]

@@ -18,7 +18,7 @@ ComponentRemovingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ComponentRemovingCommandTest >> testModelLoadingActions [
+ComponentRemovingCommandTest >> testModelLoadingInstructions [
 
 	| html |
 
@@ -29,8 +29,7 @@ ComponentRemovingCommandTest >> testModelLoadingActions [
 			script := canvas javascript.
 			div := canvas div.
 			canvas ensureIdFor: div.
-			( ComponentRemovingCommand for: div ) modelLoadingActions
-				do: [ :action | script << ( action cull: canvas ) ].
+			( ComponentRemovingCommand for: div ) modelLoadingInstructions appendTo: script on: canvas.
 			div script: ( canvas jQuery this onClick: script )
 			].
 
@@ -53,7 +52,7 @@ ComponentRemovingCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-ComponentRemovingCommandTest >> testServerIndependentActions [
+ComponentRemovingCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

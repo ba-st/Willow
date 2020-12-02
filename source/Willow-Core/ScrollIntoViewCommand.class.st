@@ -30,12 +30,12 @@ ScrollIntoViewCommand >> initializeWithComponentIdentifierProvidedBy: anIdentifi
 ]
 
 { #category : #accessing }
-ScrollIntoViewCommand >> modelLoadingActions [
+ScrollIntoViewCommand >> modelLoadingInstructions [
 
 	"We iterate the result before sending the scrolling message in case no match is found."
 
-	^ Array
-		with: [ :aCanvas | 
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
 			( aCanvas jQuery id: self identifierToShow )
 				each: ( ( aCanvas jQuery this get: 0 ) call: 'scrollIntoView' )
 			]
@@ -54,7 +54,7 @@ ScrollIntoViewCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ScrollIntoViewCommand >> serverIndependentActions [
+ScrollIntoViewCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

@@ -17,33 +17,6 @@ ServerResponseCommandTest >> callback: aBlock json: aString [
 ]
 
 { #category : #'tests-accessing' }
-ServerResponseCommandTest >> testModelLoadingActions [
-
-	| command html |
-
-	command := ServerResponseCommand
-		withBehaviorDeterminedBy: [ :request | request onRespond inform: request parameter ]
-		conditionedBy: Optional unused
-		requiring: ( Optional containing: 'test complete' ).
-	html := self
-		renderUsing: [ :canvas | 
-			| script div |
-
-			script := canvas javascript.
-			command priorityActions do: [ :action | action value: self value: 'canvas' ].
-			command modelLoadingActions do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ].
-			div := canvas div.
-			canvas ensureIdFor: div.
-			div script: ( canvas jQuery this onClick: script )
-			].
-
-	self
-		assert: html
-		equals:
-			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){alert("test complete")});</script>'
-]
-
-{ #category : #'tests-accessing' }
 ServerResponseCommandTest >> testModelLoadingActionsWhenUsingClientParameter [
 
 	| command html |
@@ -59,8 +32,7 @@ ServerResponseCommandTest >> testModelLoadingActionsWhenUsingClientParameter [
 					| script |
 
 					script := canvas javascript.
-					command modelLoadingActions
-						do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ]
+					command modelLoadingInstructions appendTo: script on: canvas
 					]
 			]
 		raise: AssertionFailed
@@ -72,8 +44,7 @@ ServerResponseCommandTest >> testModelLoadingActionsWhenUsingClientParameter [
 
 			script := canvas javascript.
 			command priorityActions do: [ :action | action value: self value: 'canvas' ].
-			command modelLoadingActions
-				do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ].
+			command modelLoadingInstructions appendTo: script on: canvas.
 			div := canvas div.
 			canvas ensureIdFor: div.
 			div script: ( canvas jQuery this onClick: script )
@@ -82,6 +53,33 @@ ServerResponseCommandTest >> testModelLoadingActionsWhenUsingClientParameter [
 		assert: html
 		equals:
 			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){alert("Test is complete")});</script>'
+]
+
+{ #category : #'tests-accessing' }
+ServerResponseCommandTest >> testModelLoadingInstructions [
+
+	| command html |
+
+	command := ServerResponseCommand
+		withBehaviorDeterminedBy: [ :request | request onRespond inform: request parameter ]
+		conditionedBy: Optional unused
+		requiring: ( Optional containing: 'test complete' ).
+	html := self
+		renderUsing: [ :canvas | 
+			| script div |
+
+			script := canvas javascript.
+			command priorityActions do: [ :action | action value: self value: 'canvas' ].
+			command modelLoadingInstructions appendTo: script on: canvas.
+			div := canvas div.
+			canvas ensureIdFor: div.
+			div script: ( canvas jQuery this onClick: script )
+			].
+
+	self
+		assert: html
+		equals:
+			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){alert("test complete")});</script>'
 ]
 
 { #category : #'tests-accessing' }
@@ -99,8 +97,7 @@ ServerResponseCommandTest >> testOnRespond [
 			| script div |
 
 			script := canvas javascript.
-			command modelLoadingActions
-				do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ].
+			command modelLoadingInstructions appendTo: script on: canvas.
 			div := canvas div.
 			canvas ensureIdFor: div.
 			div script: ( canvas jQuery this onClick: script )
@@ -125,7 +122,7 @@ ServerResponseCommandTest >> testParameter [
 	html := self
 		renderUsing: [ :canvas | 
 			command priorityActions do: [ :action | action value: self value: 'canvas' ].
-			command modelLoadingActions do: [ :action | action cull: 'canvas' ]
+			command modelLoadingInstructions appendTo: 'script' on: canvas
 			].
 
 	self assert: parameterObtained equals: 'test complete'
@@ -184,12 +181,12 @@ ServerResponseCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-ServerResponseCommandTest >> testServerIndependentActions [
+ServerResponseCommandTest >> testServerIndependentInstructions [
 
 	self
 		assert:
 			( ServerResponseCommand
 				withBehaviorDeterminedBy: [ self fail ]
 				conditionedBy: Optional unused
-				requiring: Optional unused ) serverIndependentActions isEmpty
+				requiring: Optional unused ) serverIndependentInstructions isEmpty
 ]

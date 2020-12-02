@@ -29,9 +29,10 @@ FormSubmitCommand >> initializeFindingComponentUsing: aComponentProvider [
 ]
 
 { #category : #accessing }
-FormSubmitCommand >> modelLoadingActions [
+FormSubmitCommand >> modelLoadingInstructions [
 
-	^ Array with: [ :aCanvas | ( componentProvider value: aCanvas ) call: 'submit' ]
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | ( componentProvider value: aCanvas ) call: 'submit' ]
 ]
 
 { #category : #accessing }
@@ -47,7 +48,7 @@ FormSubmitCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-FormSubmitCommand >> serverIndependentActions [
+FormSubmitCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

@@ -18,7 +18,7 @@ LoadingNotificationCommandTest >> renderedContentUsingModelLoadingActionsOf: aCo
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
 
-			aCommand modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
+			aCommand modelLoadingInstructions appendTo: script on: canvas.
 			anchor script: ( canvas jQuery this onClick: script )
 			]
 ]
@@ -31,7 +31,7 @@ LoadingNotificationCommandTest >> renderedContentUsingServerIndependentActionOf:
 			| script anchor |
 
 			script := canvas javascript.
-			aCommand serverIndependentActions do: [ :action | script << ( action cull: canvas ) ].
+			aCommand serverIndependentInstructions appendTo: script on: canvas.
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
 			anchor script: ( canvas jQuery this onClick: script )
@@ -39,11 +39,11 @@ LoadingNotificationCommandTest >> renderedContentUsingServerIndependentActionOf:
 ]
 
 { #category : #'tests-accessing' }
-LoadingNotificationCommandTest >> testModelLoadingActions [
+LoadingNotificationCommandTest >> testModelLoadingActionsWithCustomView [
 
 	| html command |
 	
-	command := LoadingNotificationCommand onPageTopWithClasses: #().
+	command := LoadingNotificationCommand displaying: [ :canvas | canvas span with: 'Processing...' ] applying: [ :div | div addClass loading ].
 
 	html := self renderedContentUsingModelLoadingActionsOf: command.
 
@@ -53,11 +53,11 @@ LoadingNotificationCommandTest >> testModelLoadingActions [
 ]
 
 { #category : #'tests-accessing' }
-LoadingNotificationCommandTest >> testModelLoadingActionsWithCustomView [
+LoadingNotificationCommandTest >> testModelLoadingInstructions [
 
 	| html command |
 	
-	command := LoadingNotificationCommand displaying: [ :canvas | canvas span with: 'Processing...' ] applying: [ :div | div addClass loading ].
+	command := LoadingNotificationCommand onPageTopWithClasses: #().
 
 	html := self renderedContentUsingModelLoadingActionsOf: command.
 
@@ -107,21 +107,6 @@ LoadingNotificationCommandTest >> testRequiresSerializationWithCustomView [
 ]
 
 { #category : #'tests-accessing' }
-LoadingNotificationCommandTest >> testServerIndependentActions [
-
-	| html command |
-	
-	command := LoadingNotificationCommand onPageTopWithClasses: #('loading').
-
-	html := self renderedContentUsingServerIndependentActionOf: command.
-
-	self
-		assert: html
-		equals:
-			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"loading\">Loading...</div>")});</script>'
-]
-
-{ #category : #'tests-accessing' }
 LoadingNotificationCommandTest >> testServerIndependentActionsWithCustomVIew [
 
 	| html command |
@@ -134,4 +119,19 @@ LoadingNotificationCommandTest >> testServerIndependentActionsWithCustomVIew [
 		assert: html
 		equals:
 			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"willow-loading\"><span>Processing...</span></div>")});</script>'
+]
+
+{ #category : #'tests-accessing' }
+LoadingNotificationCommandTest >> testServerIndependentInstructions [
+
+	| html command |
+	
+	command := LoadingNotificationCommand onPageTopWithClasses: #('loading').
+
+	html := self renderedContentUsingServerIndependentActionOf: command.
+
+	self
+		assert: html
+		equals:
+			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"loading\">Loading...</div>")});</script>'
 ]

@@ -44,10 +44,10 @@ ServerResponseCommand >> initializeWithBehaviorDeterminedBy: aBlock
 ]
 
 { #category : #accessing }
-ServerResponseCommand >> modelLoadingActions [
+ServerResponseCommand >> modelLoadingInstructions [
 
-	^ Array
-		with: [ :aCanvas | 
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
 			| actions |
 
 			actions := OrderedCollection new.
@@ -106,7 +106,7 @@ ServerResponseCommand >> resetInterpreter [
 ]
 
 { #category : #accessing }
-ServerResponseCommand >> serverIndependentActions [
+ServerResponseCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

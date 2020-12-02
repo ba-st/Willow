@@ -5,8 +5,8 @@ Class {
 	#name : #LoadingNotificationCommand,
 	#superclass : #WebInteractionCommand,
 	#instVars : [
-		'serverIndependentActions',
-		'modelLoadingActions'
+		'serverIndependentInstructions',
+		'modelLoadingInstructions'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
@@ -15,25 +15,21 @@ Class {
 LoadingNotificationCommand class >> displaying: aWebView applying: aComponentCommand [
 
 	^ self
-		executing:
-			( Array
-				with: [ :aCanvas | 
-					( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName )
-						html:
-							[ :aSubCanvas | aSubCanvas render: ( GenericContainerWebView wrapping: aWebView applying: aComponentCommand ) ]
-					] )
+		executing: [ :aCanvas | 
+			( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName )
+				html:
+					[ :aSubCanvas | aSubCanvas render: ( GenericContainerWebView wrapping: aWebView applying: aComponentCommand ) ]
+			]
 		then:
-			( Array
-				with:
-					[ :aCanvas | ( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName ) html: [ :aSubCanvas |  ] ] )
+			[ :aCanvas | ( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName ) html: [ :aSubCanvas |  ] ]
 ]
 
 { #category : #'private - instance creation' }
-LoadingNotificationCommand class >> executing: aServerIndependentActionCollection then: aModelLoadingActionCollection [
+LoadingNotificationCommand class >> executing: aServerIndependentInstruction then: aModelLoadingInstruction [
 
 	^ self new
-		initializeExecuting: aServerIndependentActionCollection
-		then: aModelLoadingActionCollection
+		initializeExecuting: aServerIndependentInstruction
+		then: aModelLoadingInstruction
 ]
 
 { #category : #'instance creation' }
@@ -45,16 +41,17 @@ LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 ]
 
 { #category : #initialization }
-LoadingNotificationCommand >> initializeExecuting: aServerIndependentActionCollection then: aModelLoadingActionCollection [
+LoadingNotificationCommand >> initializeExecuting: aServerIndependentInstruction then: aModelLoadingInstruction [
 
-	serverIndependentActions := aServerIndependentActionCollection.
-	modelLoadingActions := aModelLoadingActionCollection
+	serverIndependentInstructions := WebInteractionInstructions
+		directingTo: aServerIndependentInstruction.
+	modelLoadingInstructions := WebInteractionInstructions directingTo: aModelLoadingInstruction
 ]
 
 { #category : #accessing }
-LoadingNotificationCommand >> modelLoadingActions [
+LoadingNotificationCommand >> modelLoadingInstructions [
 
-	^ modelLoadingActions
+	^ modelLoadingInstructions
 ]
 
 { #category : #accessing }
@@ -70,7 +67,7 @@ LoadingNotificationCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-LoadingNotificationCommand >> serverIndependentActions [
+LoadingNotificationCommand >> serverIndependentInstructions [
 
-	^ serverIndependentActions
+	^ serverIndependentInstructions
 ]

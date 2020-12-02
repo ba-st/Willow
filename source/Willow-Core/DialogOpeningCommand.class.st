@@ -24,9 +24,10 @@ DialogOpeningCommand >> initializeAlwaysOpening: aDialogView [
 ]
 
 { #category : #accessing }
-DialogOpeningCommand >> modelLoadingActions [
+DialogOpeningCommand >> modelLoadingInstructions [
 
-	^ Array with: [ :aCanvas | DialogOpener new open: dialogView on: aCanvas ]
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | DialogOpener new open: dialogView on: aCanvas ]
 ]
 
 { #category : #accessing }
@@ -42,7 +43,7 @@ DialogOpeningCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-DialogOpeningCommand >> serverIndependentActions [
+DialogOpeningCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

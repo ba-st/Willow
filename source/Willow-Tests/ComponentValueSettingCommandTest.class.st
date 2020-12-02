@@ -18,31 +18,6 @@ ComponentValueSettingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ComponentValueSettingCommandTest >> testModelLoadingActions [
-
-	| html |
-
-	html := self
-		renderUsing: [ :canvas | 
-			| script input |
-
-			script := canvas javascript.
-			input := canvas textInput.
-			canvas ensureIdFor: input.
-
-			( ComponentValueSettingCommand
-				triggeringChangesObtainingIdentifierFrom: [ input identifier ]
-				valueFrom: [ '15' ] ) modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
-			input script: ( canvas jQuery this onClick: script )
-			].
-
-	self
-		assert: html
-		equals:
-			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$("#input-id1").val("15").trigger("change")});</script>'
-]
-
-{ #category : #'tests-accessing' }
 ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutSettingPreviouslyTheId [
 
 	| html |
@@ -55,7 +30,7 @@ ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutSettingPreviou
 			input := canvas textInput.
 
 			( ComponentValueSettingCommand triggeringChangesOn: input withValueFrom: [ '15' ] )
-				modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
+				modelLoadingInstructions appendTo: script on: canvas.
 			input script: ( canvas jQuery this onClick: script )
 			].
 
@@ -79,8 +54,7 @@ ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutTriggering [
 			canvas ensureIdFor: input.
 
 			( ComponentValueSettingCommand obtainingIdentifierFrom: [ input identifier ] valueFrom: [ '15' ] )
-				modelLoadingActions
-				do: [ :action | ( Array with: ( action cull: canvas ) ) flattened do: [ :each | script << each ] ].
+				modelLoadingInstructions appendTo: script on: canvas.
 			input script: ( canvas jQuery this onClick: script )
 			].
 
@@ -88,6 +62,31 @@ ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutTriggering [
 		assert: html
 		equals:
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$("#input-id1").val("15")});</script>'
+]
+
+{ #category : #'tests-accessing' }
+ComponentValueSettingCommandTest >> testModelLoadingInstructions [
+
+	| html |
+
+	html := self
+		renderUsing: [ :canvas | 
+			| script input |
+
+			script := canvas javascript.
+			input := canvas textInput.
+			canvas ensureIdFor: input.
+
+			( ComponentValueSettingCommand
+				triggeringChangesObtainingIdentifierFrom: [ input identifier ]
+				valueFrom: [ '15' ] ) modelLoadingInstructions appendTo: script on: canvas.
+			input script: ( canvas jQuery this onClick: script )
+			].
+
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$("#input-id1").val("15").trigger("change")});</script>'
 ]
 
 { #category : #'tests-accessing' }
@@ -103,7 +102,7 @@ ComponentValueSettingCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-ComponentValueSettingCommandTest >> testServerIndependentActions [
+ComponentValueSettingCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

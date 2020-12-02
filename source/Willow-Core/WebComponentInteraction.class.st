@@ -4,10 +4,10 @@ Class {
 	#instVars : [
 		'triggerPolicy',
 		'commands',
-		'modelLoadingActions',
 		'priorityActions',
-		'serverIndependentActions',
-		'serializationCommand'
+		'serializationCommand',
+		'modelLoadingInstructions',
+		'serverIndependentInstructions'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
@@ -92,18 +92,6 @@ WebComponentInteraction class >> triggeredOnKeyUp [
 		serializingWith: SerializationCommand forCurrentObject
 ]
 
-{ #category : #'private - processing' }
-WebComponentInteraction >> appendModelLoadingActionsTo: aScript on: aCanvas [
-
-	modelLoadingActions
-		do: [ :action | 
-			| statements |
-
-			statements := ( Array with: ( action cull: aCanvas ) ) flattened.
-			statements do: [ :statement | aScript << statement ]
-			]
-]
-
 { #category : #evaluating }
 WebComponentInteraction >> applyTo: aComponent on: aCanvas [
 
@@ -129,24 +117,26 @@ WebComponentInteraction >> commandToExecuteOn: aCanvas [
 	^ [ | script |
 
 	script := aCanvas javascript.
-	serverIndependentActions do: [ :action | script << ( action cull: aCanvas ) ].
+	serverIndependentInstructions appendTo: script on: aCanvas.
 	self shouldApplyAsynchronousCall then: [ script << ( self asynchronousCallToAffect: aCanvas ) ].
 	script
-	] unless: serverIndependentActions isEmpty inWhichCase: [ self asynchronousCallToAffect: aCanvas ]
+	]
+		unless: serverIndependentInstructions isEmpty
+		inWhichCase: [ self asynchronousCallToAffect: aCanvas ]
 ]
 
 { #category : #'private - processing' }
 WebComponentInteraction >> complete: anAsynchronousCall withResponseOn: aCanvas [
 
-	anAsynchronousCall script: [ :subScript | self appendModelLoadingActionsTo: subScript on: aCanvas ]
+	anAsynchronousCall script: [ :subScript | modelLoadingInstructions appendTo: subScript on: aCanvas ]
 ]
 
 { #category : #initialization }
 WebComponentInteraction >> initializeActions [
 
 	priorityActions := OrderedCollection new.
-	serverIndependentActions := OrderedCollection new.
-	modelLoadingActions := OrderedCollection new
+	serverIndependentInstructions := WebInteractionInstructions empty.
+	modelLoadingInstructions := WebInteractionInstructions empty
 ]
 
 { #category : #initialization }
@@ -181,19 +171,22 @@ WebComponentInteraction >> prepareActions [
 { #category : #'private - processing' }
 WebComponentInteraction >> registerActionsOf: aCommand [
 
-	modelLoadingActions addAll: aCommand modelLoadingActions.
 	priorityActions addAll: aCommand priorityActions.
-	serverIndependentActions addAll: aCommand serverIndependentActions
+
+	modelLoadingInstructions := modelLoadingInstructions
+		combinedWith: aCommand modelLoadingInstructions.
+	serverIndependentInstructions := serverIndependentInstructions
+		combinedWith: aCommand serverIndependentInstructions
 ]
 
 { #category : #'private - testing' }
 WebComponentInteraction >> shouldApplyActions [
 
-	^ serverIndependentActions notEmpty or: [ self shouldApplyAsynchronousCall ]
+	^ serverIndependentInstructions notEmpty or: [ self shouldApplyAsynchronousCall ]
 ]
 
 { #category : #'private - testing' }
 WebComponentInteraction >> shouldApplyAsynchronousCall [
 
-	^ priorityActions notEmpty or: [ modelLoadingActions notEmpty ]
+	^ priorityActions notEmpty or: [ modelLoadingInstructions notEmpty ]
 ]

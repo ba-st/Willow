@@ -23,9 +23,9 @@ ConfirmationCommand >> initializeAsking: aQuestion [
 ]
 
 { #category : #accessing }
-ConfirmationCommand >> modelLoadingActions [
+ConfirmationCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
@@ -41,7 +41,7 @@ ConfirmationCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ConfirmationCommand >> serverIndependentActions [
+ConfirmationCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

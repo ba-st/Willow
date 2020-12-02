@@ -56,10 +56,10 @@ ComponentValueSettingCommand >> initializeObtainingIdentifierFrom: anIdentifierP
 ]
 
 { #category : #accessing }
-ComponentValueSettingCommand >> modelLoadingActions [
+ComponentValueSettingCommand >> modelLoadingInstructions [
 
-	^ Array
-		with: [ :aCanvas | 
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
 			| jQueryInstance |
 
 			jQueryInstance := aCanvas jQuery id: ( identifierProvider cull: aCanvas ).
@@ -81,7 +81,7 @@ ComponentValueSettingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ComponentValueSettingCommand >> serverIndependentActions [
+ComponentValueSettingCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

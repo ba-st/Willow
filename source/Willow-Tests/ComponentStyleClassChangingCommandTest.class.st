@@ -19,9 +19,9 @@ ComponentStyleClassChangingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ComponentStyleClassChangingCommandTest >> testModelLoadingActions [
+ComponentStyleClassChangingCommandTest >> testModelLoadingInstructions [
 
-	self assert: command modelLoadingActions isEmpty
+	self assert: command modelLoadingInstructions isEmpty
 ]
 
 { #category : #'tests-accessing' }
@@ -37,7 +37,7 @@ ComponentStyleClassChangingCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-ComponentStyleClassChangingCommandTest >> testServerIndependentActions [
+ComponentStyleClassChangingCommandTest >> testServerIndependentInstructions [
 
 	| html |
 
@@ -46,7 +46,7 @@ ComponentStyleClassChangingCommandTest >> testServerIndependentActions [
 			| script div |
 
 			script := canvas javascript.
-			command serverIndependentActions do: [ :action | script << ( action cull: canvas ) ].
+			command serverIndependentInstructions appendTo: script on: canvas.
 			div := canvas div.
 			canvas ensureIdFor: div.
 			div script: ( canvas jQuery this onClick: script )

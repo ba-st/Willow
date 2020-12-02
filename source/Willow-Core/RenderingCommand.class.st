@@ -40,14 +40,15 @@ RenderingCommand >> initializeRenderingAll: anIdentifiedViewCollection [
 ]
 
 { #category : #accessing }
-RenderingCommand >> modelLoadingActions [
+RenderingCommand >> modelLoadingInstructions [
 
-	^ identifiedViews
-		collect: [ :identifiedView | 
-			[ :aCanvas | 
-			identifiedView identifyIn: aCanvas.
-			( aCanvas jQuery id: identifiedView identifier ) html: identifiedView view
-			]
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
+			identifiedViews
+				collect: [ :identifiedView | 
+					identifiedView identifyIn: aCanvas.
+					( aCanvas jQuery id: identifiedView identifier ) html: identifiedView view
+					]
 			]
 ]
 
@@ -64,7 +65,7 @@ RenderingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-RenderingCommand >> serverIndependentActions [
+RenderingCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

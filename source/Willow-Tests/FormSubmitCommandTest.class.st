@@ -21,7 +21,7 @@ FormSubmitCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-FormSubmitCommandTest >> testModelLoadingActions [
+FormSubmitCommandTest >> testModelLoadingInstructions [
 
 	| html |
 
@@ -33,8 +33,9 @@ FormSubmitCommandTest >> testModelLoadingActions [
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
 
-			( FormSubmitCommand forFormStyledAs: Classification >> #willow ) modelLoadingActions
-				do: [ :action | script << ( action cull: canvas ) ].
+			( FormSubmitCommand forFormStyledAs: Classification >> #willow ) modelLoadingInstructions
+				appendTo: script
+				on: canvas.
 			anchor script: ( canvas jQuery this onClick: script )
 			].
 
@@ -57,7 +58,7 @@ FormSubmitCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-FormSubmitCommandTest >> testServerIndependentActions [
+FormSubmitCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

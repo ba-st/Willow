@@ -18,7 +18,7 @@ ScrollIntoViewCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ScrollIntoViewCommandTest >> testModelLoadingActions [
+ScrollIntoViewCommandTest >> testModelLoadingInstructions [
 
 	| html |
 
@@ -27,8 +27,7 @@ ScrollIntoViewCommandTest >> testModelLoadingActions [
 			| script |
 
 			script := canvas javascript.
-			command modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
-
+			command modelLoadingInstructions appendTo: script on: canvas.
 			canvas anchor script: ( canvas jQuery this onClick: script )
 			].
 
@@ -51,7 +50,7 @@ ScrollIntoViewCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-ScrollIntoViewCommandTest >> testServerIndependentActions [
+ScrollIntoViewCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

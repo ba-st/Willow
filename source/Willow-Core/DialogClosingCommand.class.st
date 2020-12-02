@@ -36,10 +36,10 @@ DialogClosingCommand >> initializeObtainingDialogsWith: aDialogSupplier [
 ]
 
 { #category : #accessing }
-DialogClosingCommand >> modelLoadingActions [
+DialogClosingCommand >> modelLoadingInstructions [
 
-	^ Array
-		with: [ :aCanvas | 
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
 			aCanvas session componentSupplier
 				statementToCloseDialogsIn: ( aCanvas jQuery id: Constants >> #willow >> #dialogSectionName )
 				matching: dialogSupplier
@@ -60,7 +60,7 @@ DialogClosingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-DialogClosingCommand >> serverIndependentActions [
+DialogClosingCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

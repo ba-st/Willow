@@ -23,10 +23,10 @@ ComponentRemovingCommand >> initializeFor: anIdentifiedView [
 ]
 
 { #category : #accessing }
-ComponentRemovingCommand >> modelLoadingActions [
+ComponentRemovingCommand >> modelLoadingInstructions [
 
-	^ Array
-		with: [ :aCanvas | 
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
 			identifiedView identifyIn: aCanvas.
 			( aCanvas jQuery id: identifiedView identifier ) remove
 			]
@@ -45,7 +45,7 @@ ComponentRemovingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ComponentRemovingCommand >> serverIndependentActions [
+ComponentRemovingCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

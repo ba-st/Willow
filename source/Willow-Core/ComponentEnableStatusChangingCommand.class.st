@@ -52,9 +52,9 @@ ComponentEnableStatusChangingCommand >> initializeObtainingComponentWith: aCompo
 ]
 
 { #category : #accessing }
-ComponentEnableStatusChangingCommand >> modelLoadingActions [
+ComponentEnableStatusChangingCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
@@ -70,10 +70,10 @@ ComponentEnableStatusChangingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ComponentEnableStatusChangingCommand >> serverIndependentActions [
+ComponentEnableStatusChangingCommand >> serverIndependentInstructions [
 
-	^ Array
-		with: [ :aCanvas | 
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
 			( componentProvider value: aCanvas )
 				propertyAt: Constants >> #willow >> #disabledAttributeName
 				put: desiredStatus

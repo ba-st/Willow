@@ -8,9 +8,9 @@ Class {
 }
 
 { #category : #accessing }
-NullWebInteractionCommand >> modelLoadingActions [
+NullWebInteractionCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
@@ -26,7 +26,7 @@ NullWebInteractionCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-NullWebInteractionCommand >> serverIndependentActions [
+NullWebInteractionCommand >> serverIndependentInstructions [
 
-	^#()
+	^ WebInteractionInstructions empty
 ]

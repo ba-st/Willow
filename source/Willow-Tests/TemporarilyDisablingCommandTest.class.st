@@ -8,9 +8,9 @@ Class {
 }
 
 { #category : #'tests-accessing' }
-TemporarilyDisablingCommandTest >> testModelLoadingActions [
+TemporarilyDisablingCommandTest >> testModelLoadingInstructions [
 
-	self assert: (TemporarilyDisablingCommand transformingCurrentViewInto: [ :canvas |  ]) modelLoadingActions isEmpty
+	self assert: (TemporarilyDisablingCommand transformingCurrentViewInto: [ :canvas |  ]) modelLoadingInstructions isEmpty
 ]
 
 { #category : #'tests-accessing' }
@@ -44,7 +44,7 @@ TemporarilyDisablingCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-TemporarilyDisablingCommandTest >> testServerIndependentActions [
+TemporarilyDisablingCommandTest >> testServerIndependentInstructions [
 
 	| command html |
 
@@ -55,7 +55,7 @@ TemporarilyDisablingCommandTest >> testServerIndependentActions [
 			| script anchor |
 
 			script := canvas javascript.
-			command serverIndependentActions do: [ :action | script << ( action cull: canvas ) ].
+			command serverIndependentInstructions appendTo: script on: canvas.
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
 			anchor script: ( canvas jQuery this onClick: script )

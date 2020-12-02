@@ -20,7 +20,7 @@ RenderingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-RenderingCommandTest >> testModelLoadingActions [
+RenderingCommandTest >> testModelLoadingInstructions [
 
 	| html |
 
@@ -30,8 +30,7 @@ RenderingCommandTest >> testModelLoadingActions [
 
 			script := canvas javascript.
 			identifiedView identifyIn: canvas.
-			command modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
-
+			command modelLoadingInstructions appendTo: script on: canvas.
 			canvas anchor script: ( canvas jQuery this onClick: script )
 			].
 
@@ -54,7 +53,7 @@ RenderingCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-RenderingCommandTest >> testServerIndependentActions [
+RenderingCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

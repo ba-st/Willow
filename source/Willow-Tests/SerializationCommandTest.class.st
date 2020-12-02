@@ -79,9 +79,9 @@ SerializationCommandTest >> testForParentForm [
 ]
 
 { #category : #'tests-accessing' }
-SerializationCommandTest >> testModelLoadingActions [
+SerializationCommandTest >> testModelLoadingInstructions [
 
-	self assert: command modelLoadingActions isEmpty
+	self assert: command modelLoadingInstructions isEmpty
 ]
 
 { #category : #'tests-accessing' }
@@ -112,7 +112,7 @@ SerializationCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-SerializationCommandTest >> testServerIndependentActions [
+SerializationCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

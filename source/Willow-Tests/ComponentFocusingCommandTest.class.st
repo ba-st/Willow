@@ -18,7 +18,7 @@ ComponentFocusingCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ComponentFocusingCommandTest >> testModelLoadingActions [
+ComponentFocusingCommandTest >> testModelLoadingInstructions [
 
 	| html |
 
@@ -29,8 +29,7 @@ ComponentFocusingCommandTest >> testModelLoadingActions [
 			script := canvas javascript.
 			div := canvas div.
 			canvas ensureIdFor: div.
-			( ComponentFocusingCommand for: div ) modelLoadingActions
-				do: [ :action | script << ( action cull: canvas ) ].
+			( ComponentFocusingCommand for: div ) modelLoadingInstructions appendTo: script on: canvas.
 			div script: ( canvas jQuery this onClick: script )
 			].
 
@@ -53,7 +52,7 @@ ComponentFocusingCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-ComponentFocusingCommandTest >> testServerIndependentActions [
+ComponentFocusingCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

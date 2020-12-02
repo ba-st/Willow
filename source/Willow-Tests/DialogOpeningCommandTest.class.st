@@ -18,7 +18,7 @@ DialogOpeningCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-DialogOpeningCommandTest >> testModelLoadingActions [
+DialogOpeningCommandTest >> testModelLoadingInstructions [
 
 	| html |
 
@@ -29,7 +29,7 @@ DialogOpeningCommandTest >> testModelLoadingActions [
 			script := canvas javascript.
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
-			command modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
+			command modelLoadingInstructions appendTo: script on: canvas.
 			anchor script: ( canvas jQuery this onClick: script )
 			].
 
@@ -52,7 +52,7 @@ DialogOpeningCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-DialogOpeningCommandTest >> testServerIndependentActions [
+DialogOpeningCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

@@ -32,9 +32,10 @@ ComponentFocusingCommand >> initializeFindingComponentUsing: aComponentProvider 
 ]
 
 { #category : #accessing }
-ComponentFocusingCommand >> modelLoadingActions [
+ComponentFocusingCommand >> modelLoadingInstructions [
 
-	^ Array with: [ :aCanvas | ( componentProvider value: aCanvas ) triggerFocus ]
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | ( componentProvider value: aCanvas ) triggerFocus ]
 ]
 
 { #category : #accessing }
@@ -50,7 +51,7 @@ ComponentFocusingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ComponentFocusingCommand >> serverIndependentActions [
+ComponentFocusingCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

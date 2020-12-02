@@ -58,9 +58,9 @@ ComponentStyleClassChangingCommand >> initializeOn: aComponentProvider altering:
 ]
 
 { #category : #accessing }
-ComponentStyleClassChangingCommand >> modelLoadingActions [
+ComponentStyleClassChangingCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
@@ -76,8 +76,8 @@ ComponentStyleClassChangingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ComponentStyleClassChangingCommand >> serverIndependentActions [
+ComponentStyleClassChangingCommand >> serverIndependentInstructions [
 
-	^ Array
-		with: [ :aCanvas | transformationProvider value: ( self applyStyleChangeToComponentOn: aCanvas ) ]
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | transformationProvider value: ( self applyStyleChangeToComponentOn: aCanvas ) ]
 ]

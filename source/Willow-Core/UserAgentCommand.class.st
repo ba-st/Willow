@@ -5,27 +5,28 @@ Class {
 	#name : #UserAgentCommand,
 	#superclass : #WebInteractionCommand,
 	#instVars : [
-		'serverIndependentAction'
+		'serverIndependentInstructions'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
 
 { #category : #'instance creation' }
-UserAgentCommand class >> executing: aServerIndependentAction [
+UserAgentCommand class >> executing: aServerIndependentInstruction [
 
-	^ self new initializeExecuting: aServerIndependentAction
+	^ self new initializeExecuting: aServerIndependentInstruction
 ]
 
 { #category : #initialization }
-UserAgentCommand >> initializeExecuting: aServerIndependentAction [
+UserAgentCommand >> initializeExecuting: aServerIndependentInstruction [
 
-	serverIndependentAction := aServerIndependentAction
+	serverIndependentInstructions := WebInteractionInstructions
+		directingTo: aServerIndependentInstruction
 ]
 
 { #category : #accessing }
-UserAgentCommand >> modelLoadingActions [
+UserAgentCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
@@ -41,7 +42,7 @@ UserAgentCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-UserAgentCommand >> serverIndependentActions [
+UserAgentCommand >> serverIndependentInstructions [
 
-	^ Array with: serverIndependentAction
+	^ serverIndependentInstructions
 ]

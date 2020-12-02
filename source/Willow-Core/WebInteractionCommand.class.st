@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #accessing }
-WebInteractionCommand >> modelLoadingActions [
+WebInteractionCommand >> modelLoadingInstructions [
 
 	^ self subclassResponsibility
 ]
@@ -26,7 +26,7 @@ WebInteractionCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-WebInteractionCommand >> serverIndependentActions [
+WebInteractionCommand >> serverIndependentInstructions [
 
 	^ self subclassResponsibility
 ]

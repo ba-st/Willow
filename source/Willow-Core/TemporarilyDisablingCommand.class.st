@@ -85,9 +85,9 @@ TemporarilyDisablingCommand >> initializeTransformingComponentMatching: aCompone
 ]
 
 { #category : #accessing }
-TemporarilyDisablingCommand >> modelLoadingActions [
+TemporarilyDisablingCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #private }
@@ -115,10 +115,10 @@ TemporarilyDisablingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-TemporarilyDisablingCommand >> serverIndependentActions [
+TemporarilyDisablingCommand >> serverIndependentInstructions [
 
-	^ Array
-		with:
+	^ WebInteractionInstructions
+		directingTo:
 			[ :canvas | ( self componentToDisableOn: canvas ) assignLocalTo: self componentToDisableVariableName ]
 ]
 

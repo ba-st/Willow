@@ -8,9 +8,9 @@ Class {
 }
 
 { #category : #'tests-accessing' }
-NullWebInteractionCommandTest >> testModelLoadingActions [
+NullWebInteractionCommandTest >> testModelLoadingInstructions [
 
-	self assert: NullWebInteractionCommand new modelLoadingActions isEmpty
+	self assert: NullWebInteractionCommand new modelLoadingInstructions isEmpty
 ]
 
 { #category : #'tests-accessing' }
@@ -26,7 +26,7 @@ NullWebInteractionCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-NullWebInteractionCommandTest >> testServerIndependentActions [
+NullWebInteractionCommandTest >> testServerIndependentInstructions [
 
-	self assert: NullWebInteractionCommand new serverIndependentActions isEmpty
+	self assert: NullWebInteractionCommand new serverIndependentInstructions isEmpty
 ]

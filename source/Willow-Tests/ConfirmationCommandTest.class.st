@@ -18,9 +18,9 @@ ConfirmationCommandTest >> setUp [
 ]
 
 { #category : #'tests-accessing' }
-ConfirmationCommandTest >> testModelLoadingActions [
+ConfirmationCommandTest >> testModelLoadingInstructions [
 
-	self assert: command modelLoadingActions isEmpty
+	self assert: command modelLoadingInstructions isEmpty
 ]
 
 { #category : #'tests-accessing' }
@@ -50,7 +50,7 @@ ConfirmationCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-ConfirmationCommandTest >> testServerIndependentActions [
+ConfirmationCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

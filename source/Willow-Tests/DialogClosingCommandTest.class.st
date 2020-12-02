@@ -47,8 +47,7 @@ DialogClosingCommandTest >> testModelLoadingActionsWhenOnlyRemovingLastDialog [
 			script := canvas javascript.
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
-			DialogClosingCommand onlyForLastDialog modelLoadingActions
-				do: [ :action | script << ( action cull: canvas ) ].
+			DialogClosingCommand onlyForLastDialog modelLoadingInstructions appendTo: script on: canvas.
 			anchor script: ( canvas jQuery this onClick: script )
 			].
 
@@ -70,7 +69,7 @@ DialogClosingCommandTest >> testModelLoadingActionsWhenRemovingAllDialogs [
 			script := canvas javascript.
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
-			command modelLoadingActions do: [ :action | script << ( action cull: canvas ) ].
+			command modelLoadingInstructions appendTo: script on: canvas.
 			anchor script: ( canvas jQuery this onClick: script )
 			].
 
@@ -93,7 +92,7 @@ DialogClosingCommandTest >> testRequiresSerialization [
 ]
 
 { #category : #'tests-accessing' }
-DialogClosingCommandTest >> testServerIndependentActions [
+DialogClosingCommandTest >> testServerIndependentInstructions [
 
-	self assert: command serverIndependentActions isEmpty
+	self assert: command serverIndependentInstructions isEmpty
 ]

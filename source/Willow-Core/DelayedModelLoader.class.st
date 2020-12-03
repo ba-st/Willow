@@ -24,11 +24,6 @@ DelayedModelLoader >> applyTo: aCollection on: aCanvas [
 			]
 ]
 
-{ #category : #private }
-DelayedModelLoader >> commandsDo: aBlock [
-	commands do: aBlock
-]
-
 { #category : #initialization }
 DelayedModelLoader >> initialize [
 

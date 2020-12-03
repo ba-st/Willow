@@ -34,6 +34,7 @@ WebInteractionInstructions class >> empty [
 { #category : #'class initialization' }
 WebInteractionInstructions class >> initialize [
 
+	<ignoreForCoverage>
 	Empty := self containingAll: #()
 ]
 

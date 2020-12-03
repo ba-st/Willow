@@ -8,21 +8,15 @@ Class {
 }
 
 { #category : #accessing }
-NullWebInteractionCommand >> clientIndependentActions [
+NullWebInteractionCommand >> modelLoadingInstructions [
 
-	^#()
-]
-
-{ #category : #accessing }
-NullWebInteractionCommand >> modelLoadingActions [
-
-	^#()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
 NullWebInteractionCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
@@ -32,7 +26,7 @@ NullWebInteractionCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-NullWebInteractionCommand >> serverIndependentActions [
+NullWebInteractionCommand >> serverIndependentInstructions [
 
-	^#()
+	^ WebInteractionInstructions empty
 ]

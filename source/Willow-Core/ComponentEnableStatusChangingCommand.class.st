@@ -44,12 +44,6 @@ ComponentEnableStatusChangingCommand class >> obtainingComponentWith: aComponent
 	^self new initializeObtainingComponentWith: aComponentProvider settingStatusTo: aBoolean
 ]
 
-{ #category : #accessing }
-ComponentEnableStatusChangingCommand >> clientIndependentActions [
-
-	^#()
-]
-
 { #category : #initialization }
 ComponentEnableStatusChangingCommand >> initializeObtainingComponentWith: aComponentProvider settingStatusTo: aBoolean [
 
@@ -58,15 +52,15 @@ ComponentEnableStatusChangingCommand >> initializeObtainingComponentWith: aCompo
 ]
 
 { #category : #accessing }
-ComponentEnableStatusChangingCommand >> modelLoadingActions [
+ComponentEnableStatusChangingCommand >> modelLoadingInstructions [
 
-	^#()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
 ComponentEnableStatusChangingCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
@@ -76,11 +70,12 @@ ComponentEnableStatusChangingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ComponentEnableStatusChangingCommand >> serverIndependentActions [
+ComponentEnableStatusChangingCommand >> serverIndependentInstructions [
 
-	^ Array
-		with: [ :aScript :aCanvas | 
-			aScript << (componentProvider value: aCanvas)
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
+			( componentProvider value: aCanvas )
 				propertyAt: Constants >> #willow >> #disabledAttributeName
-				put: desiredStatus ]
+				put: desiredStatus
+			]
 ]

@@ -29,12 +29,6 @@ AlertingCommand class >> stating: aText [
 	^ self obtainingMessageFrom: [ :aCanvas | aText ]
 ]
 
-{ #category : #accessing }
-AlertingCommand >> clientIndependentActions [
-
-	^ #()
-]
-
 { #category : #initialization }
 AlertingCommand >> initializeObtainingMessageFrom: aMessageProvider [
 
@@ -42,9 +36,9 @@ AlertingCommand >> initializeObtainingMessageFrom: aMessageProvider [
 ]
 
 { #category : #accessing }
-AlertingCommand >> modelLoadingActions [
+AlertingCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
@@ -60,8 +54,8 @@ AlertingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-AlertingCommand >> serverIndependentActions [
+AlertingCommand >> serverIndependentInstructions [
 
-	^ Array
-		with: [ :aScript :aCanvas | aScript << aCanvas javascript alert: ( messageProvider value: aCanvas ) ]
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | aCanvas javascript alert: ( messageProvider value: aCanvas ) ]
 ]

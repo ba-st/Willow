@@ -1,0 +1,50 @@
+"
+An ImageWebViewTest is a test class for testing the behavior of ImageWebView
+"
+Class {
+	#name : #ImageWebViewTest,
+	#superclass : #BWRenderingTest,
+	#category : #'Willow-Core-Tests-WebViews'
+}
+
+{ #category : #'tests-rendering' }
+ImageWebViewTest >> testOnTrigger [
+
+	| image html |
+
+	image := ImageWebView locatedAt: 'ok.png' applying: [ :theImage |  ].
+	image onTrigger disable.
+	html := self render: image.
+
+	self assert: html equals: '<img alt="" src="ok.png" id="img-id1"/><script type="text/javascript">$("#img-id1").click(function(event){$(this).prop("disabled",true)});</script>'
+]
+
+{ #category : #'tests-rendering' }
+ImageWebViewTest >> testRenderContentOn [
+
+	| image html |
+
+	image := ImageWebView locatedAt: 'ok.png' applying: (ComponentErrorCommand toActUsing: [ :canvas | (JSStream this access: 'src') assign: 'ok.jpg' ]).
+	html := self render: image.
+
+	self assert: html equals: '<img alt="" src="ok.png" onerror="this.src=&quot;ok.jpg&quot;"/>'
+]
+
+{ #category : #'tests-rendering' }
+ImageWebViewTest >> testofTypeBase64EncodedAsApplying [
+
+	| image html |
+
+	image := ImageWebView
+		ofType: WAMimeType imagePng
+		base64EncodedAs:
+			'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'
+		applying: [ :theImage |  ].
+
+	html := self render: image.
+
+	self
+		assert: html
+		equals:
+			'<img alt="" src="data:image/png;base64,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"/>'
+]

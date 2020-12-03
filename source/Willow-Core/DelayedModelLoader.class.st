@@ -14,20 +14,17 @@ DelayedModelLoader class >> new [
 ]
 
 { #category : #evaluating }
-DelayedModelLoader >> applyTo: aScript on: aCanvas [
+DelayedModelLoader >> applyTo: aCollection on: aCanvas [
 
-	self
-		commandsDo: [ :command | command serverIndependentActions do: [ :action | action value: aScript value: aCanvas ] ];
-		commandsDo: [ :command | command clientIndependentActions do: [ :action | action value ] ];
-		commandsDo: [ :command | command modelLoadingActions do: [ :action | action value: aScript value: aCanvas ] ]
+	commands
+		do: [ :command | 
+			aCollection
+				addAll: ( command serverIndependentInstructions statementsOn: aCanvas );
+				addAll: ( command modelLoadingInstructions statementsOn: aCanvas )
+			]
 ]
 
-{ #category : #private }
-DelayedModelLoader >> commandsDo: aBlock [
-	commands do: aBlock
-]
-
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 DelayedModelLoader >> initialize [
 
 	super initialize.

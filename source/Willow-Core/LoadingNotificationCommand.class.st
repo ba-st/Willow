@@ -5,8 +5,8 @@ Class {
 	#name : #LoadingNotificationCommand,
 	#superclass : #WebInteractionCommand,
 	#instVars : [
-		'serverIndependentActions',
-		'modelLoadingActions'
+		'serverIndependentInstructions',
+		'modelLoadingInstructions'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
@@ -15,25 +15,21 @@ Class {
 LoadingNotificationCommand class >> displaying: aWebView applying: aComponentCommand [
 
 	^ self
-		executing:
-			(Array
-				with: [ :aScript :aCanvas | 
-					aScript << (aCanvas jQuery id: Constants >> #willow >> #notificationSectionName)
-						html: [ :aSubCanvas | 
-							aSubCanvas render:
-								(GenericContainerWebView wrapping: aWebView applying: aComponentCommand) ] ])
+		executing: [ :aCanvas | 
+			( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName )
+				html:
+					[ :aSubCanvas | aSubCanvas render: ( GenericContainerWebView wrapping: aWebView applying: aComponentCommand ) ]
+			]
 		then:
-			(Array
-				with: [ :aScript :aCanvas | 
-					aScript << (aCanvas jQuery id: Constants >> #willow >> #notificationSectionName)
-						html: [ :aSubCanvas |  ] ])
+			[ :aCanvas | ( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName ) html: [ :aSubCanvas |  ] ]
 ]
 
-{ #category : #'instance creation - private' }
-LoadingNotificationCommand class >> executing: aServerIndependentActionCollection then: aModelLoadingActionCollection [
+{ #category : #'private - instance creation' }
+LoadingNotificationCommand class >> executing: aServerIndependentInstruction then: aModelLoadingInstruction [
 
-	^self new initializeExecuting: aServerIndependentActionCollection
-		then: aModelLoadingActionCollection
+	^ self new
+		initializeExecuting: aServerIndependentInstruction
+		then: aModelLoadingInstruction
 ]
 
 { #category : #'instance creation' }
@@ -41,42 +37,37 @@ LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 
 	^ self
 		displaying: 'Loading...'
-		applying: (ComponentClassificationCommand toStyleWithAll: aCssClassCollection)
+		applying: ( ComponentClassificationCommand toStyleWithAll: aCssClassCollection )
+]
+
+{ #category : #initialization }
+LoadingNotificationCommand >> initializeExecuting: aServerIndependentInstruction then: aModelLoadingInstruction [
+
+	serverIndependentInstructions := WebInteractionInstructions
+		directingTo: aServerIndependentInstruction.
+	modelLoadingInstructions := WebInteractionInstructions directingTo: aModelLoadingInstruction
 ]
 
 { #category : #accessing }
-LoadingNotificationCommand >> clientIndependentActions [
+LoadingNotificationCommand >> modelLoadingInstructions [
 
-	^#()
-]
-
-{ #category : #'initialize-release' }
-LoadingNotificationCommand >> initializeExecuting: aServerIndependentActionCollection then: aModelLoadingActionCollection [
-
-	serverIndependentActions := aServerIndependentActionCollection.
-	modelLoadingActions := aModelLoadingActionCollection
-]
-
-{ #category : #accessing }
-LoadingNotificationCommand >> modelLoadingActions [
-
-	^modelLoadingActions
+	^ modelLoadingInstructions
 ]
 
 { #category : #accessing }
 LoadingNotificationCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
 LoadingNotificationCommand >> requiresSerialization [
 
-	^false
+	^ false
 ]
 
 { #category : #accessing }
-LoadingNotificationCommand >> serverIndependentActions [
+LoadingNotificationCommand >> serverIndependentInstructions [
 
-	^serverIndependentActions
+	^ serverIndependentInstructions
 ]

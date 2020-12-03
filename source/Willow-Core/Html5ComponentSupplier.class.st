@@ -7,12 +7,6 @@ Class {
 	#category : #'Willow-Core-Frontend'
 }
 
-{ #category : #Interaction }
-Html5ComponentSupplier >> addStatementsTo: aJSScript toCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
-
-	aJSScript << (dialogSupplier value: (jQueryMatchingDialogContainer children: 'dialog')) removeAttribute: 'open'
-]
-
 { #category : #Supplying }
 Html5ComponentSupplier >> asynchronicButtonLabeled: aRenderable applying: aComponentCommand [
 
@@ -109,6 +103,13 @@ Html5ComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 Html5ComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
 
 	^ SingleSelectionListBoxWebView displayingAtOnce: aNumberOfElements applying: aComponentCommand
+]
+
+{ #category : #Interaction }
+Html5ComponentSupplier >> statementToCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
+
+	^ ( dialogSupplier value: ( jQueryMatchingDialogContainer children: 'dialog' ) )
+		removeAttribute: 'open'
 ]
 
 { #category : #Supplying }

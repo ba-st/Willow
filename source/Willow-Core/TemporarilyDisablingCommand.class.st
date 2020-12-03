@@ -47,12 +47,6 @@ TemporarilyDisablingCommand >> areEventsEnabledOn: aCanvas [
 		notIdenticalTo: 'disabled'
 ]
 
-{ #category : #accessing }
-TemporarilyDisablingCommand >> clientIndependentActions [
-
-	^ #()
-]
-
 { #category : #private }
 TemporarilyDisablingCommand >> componentToDisableOn: aCanvas [
 
@@ -91,9 +85,9 @@ TemporarilyDisablingCommand >> initializeTransformingComponentMatching: aCompone
 ]
 
 { #category : #accessing }
-TemporarilyDisablingCommand >> modelLoadingActions [
+TemporarilyDisablingCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #private }
@@ -121,13 +115,11 @@ TemporarilyDisablingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-TemporarilyDisablingCommand >> serverIndependentActions [
+TemporarilyDisablingCommand >> serverIndependentInstructions [
 
-	^ Array
-		with: [ :script :canvas | 
-			script
-				<< ( ( self componentToDisableOn: canvas ) assignLocalTo: self componentToDisableVariableName )
-			]
+	^ WebInteractionInstructions
+		directingTo:
+			[ :canvas | ( self componentToDisableOn: canvas ) assignLocalTo: self componentToDisableVariableName ]
 ]
 
 { #category : #private }

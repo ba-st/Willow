@@ -16,12 +16,6 @@ ComponentRemovingCommand class >> for: anIdentifiedView [
 	^ self new initializeFor: anIdentifiedView
 ]
 
-{ #category : #accessing }
-ComponentRemovingCommand >> clientIndependentActions [
-
-	^#()
-]
-
 { #category : #'initialize-release' }
 ComponentRemovingCommand >> initializeFor: anIdentifiedView [
 
@@ -29,18 +23,19 @@ ComponentRemovingCommand >> initializeFor: anIdentifiedView [
 ]
 
 { #category : #accessing }
-ComponentRemovingCommand >> modelLoadingActions [
+ComponentRemovingCommand >> modelLoadingInstructions [
 
-	^ Array
-		with: [ :aScript :aCanvas | 
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
 			identifiedView identifyIn: aCanvas.
-			aScript << (aCanvas jQuery id: identifiedView identifier) remove ]
+			( aCanvas jQuery id: identifiedView identifier ) remove
+			]
 ]
 
 { #category : #accessing }
 ComponentRemovingCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
@@ -50,7 +45,7 @@ ComponentRemovingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ComponentRemovingCommand >> serverIndependentActions [
+ComponentRemovingCommand >> serverIndependentInstructions [
 
-	^#()
+	^ WebInteractionInstructions empty
 ]

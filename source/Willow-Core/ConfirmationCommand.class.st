@@ -16,12 +16,6 @@ ConfirmationCommand class >> asking: aQuestion [
 	^ self new initializeAsking: aQuestion
 ]
 
-{ #category : #accessing }
-ConfirmationCommand >> clientIndependentActions [
-
-	^ #()
-]
-
 { #category : #initialization }
 ConfirmationCommand >> initializeAsking: aQuestion [
 
@@ -29,9 +23,9 @@ ConfirmationCommand >> initializeAsking: aQuestion [
 ]
 
 { #category : #accessing }
-ConfirmationCommand >> modelLoadingActions [
+ConfirmationCommand >> modelLoadingInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
@@ -47,7 +41,7 @@ ConfirmationCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-ConfirmationCommand >> serverIndependentActions [
+ConfirmationCommand >> serverIndependentInstructions [
 
-	^ #()
+	^ WebInteractionInstructions empty
 ]

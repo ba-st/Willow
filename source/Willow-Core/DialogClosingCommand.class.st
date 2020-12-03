@@ -29,12 +29,6 @@ DialogClosingCommand class >> onlyForLastDialog [
 	 ^self obtainingDialogsWith: [ :jQuery | jQuery last ]
 ]
 
-{ #category : #accessing }
-DialogClosingCommand >> clientIndependentActions [
-
-	^#()
-]
-
 { #category : #initialization }
 DialogClosingCommand >> initializeObtainingDialogsWith: aDialogSupplier [
 
@@ -42,21 +36,21 @@ DialogClosingCommand >> initializeObtainingDialogsWith: aDialogSupplier [
 ]
 
 { #category : #accessing }
-DialogClosingCommand >> modelLoadingActions [
+DialogClosingCommand >> modelLoadingInstructions [
 
-	^ Array
-		with: [ :aScript :aCanvas | 
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | 
 			aCanvas session componentSupplier
-				addStatementsTo: aScript
-				toCloseDialogsIn: (aCanvas jQuery id: Constants >> #willow >> #dialogSectionName)
+				statementToCloseDialogsIn: ( aCanvas jQuery id: Constants >> #willow >> #dialogSectionName )
 				matching: dialogSupplier
-				on: aCanvas ]
+				on: aCanvas
+			]
 ]
 
 { #category : #accessing }
 DialogClosingCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
@@ -66,7 +60,7 @@ DialogClosingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-DialogClosingCommand >> serverIndependentActions [
+DialogClosingCommand >> serverIndependentInstructions [
 
-	^#()
+	^ WebInteractionInstructions empty
 ]

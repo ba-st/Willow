@@ -18,5 +18,5 @@ JQuery3OnlineLibrary >> updateRoot: aRoot [
 { #category : #Accessing }
 JQuery3OnlineLibrary >> version [
 
-	^ '3.5.0'
+	^ '3.5.1'
 ]

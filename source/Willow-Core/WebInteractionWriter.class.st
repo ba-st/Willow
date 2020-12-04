@@ -5,7 +5,8 @@ Class {
 		'serializationCommand',
 		'priorityActions',
 		'serverIndependentInstructions',
-		'modelLoadingInstructions'
+		'modelLoadingInstructions',
+		'serializationCoverage'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
@@ -63,8 +64,22 @@ WebInteractionWriter >> initializeFor: aCommandCollection serializingWith: aSeri
 	priorityActions := OrderedCollection new.
 	serverIndependentInstructions := WebInteractionInstructions empty.
 	modelLoadingInstructions := WebInteractionInstructions empty.
+	serializationCoverage := Bag new.
 
-	self registerActionsOfAll: aCommandCollection
+	self registerActionsOfAll: aCommandCollection.
+	self preventSerializationCoverageConflict
+]
+
+{ #category : #'private - preconditions' }
+WebInteractionWriter >> preventSerializationCoverageConflict [
+
+	serializationCoverage
+		doWithOccurrences: [ :selector :count | 
+			count = 1
+				ifFalse: [ ConflictingObjectFound
+						signal: ( 'Found <1p> commands specifying serialization using <2s>' expandMacrosWith: count with: selector )
+					]
+			]
 ]
 
 { #category : #'private - processing' }
@@ -75,7 +90,9 @@ WebInteractionWriter >> registerActionsOf: aCommand [
 	modelLoadingInstructions := modelLoadingInstructions
 		combinedWith: aCommand modelLoadingInstructions.
 	serverIndependentInstructions := serverIndependentInstructions
-		combinedWith: aCommand serverIndependentInstructions
+		combinedWith: aCommand serverIndependentInstructions.
+
+	serializationCoverage addAll: aCommand serializationCoverage
 ]
 
 { #category : #'private - processing' }

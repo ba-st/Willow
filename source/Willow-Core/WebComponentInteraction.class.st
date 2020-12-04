@@ -4,10 +4,7 @@ Class {
 	#instVars : [
 		'triggerPolicy',
 		'commands',
-		'priorityActions',
-		'serializationCommand',
-		'modelLoadingInstructions',
-		'serverIndependentInstructions'
+		'serializationCommand'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }

@@ -8,19 +8,19 @@ Class {
 }
 
 { #category : #'uploaded metadata' }
-JQuery3DevelopmentMetadataLibrary >> jquery350Js [
+JQuery3DevelopmentMetadataLibrary >> jquery351Js [
 
 	^ WAFileLibraryResource
-		filepath: 'jquery-3.5.0.js'
+		filepath: 'jquery-3.5.1.js'
 		mimeType: WAMimeType applicationJavascript
 		cacheDuration: self class defaultCacheDuration
-		contents: ( GRDelayedSend receiver: self selector: #jquery350JsContent )
+		contents: ( GRDelayedSend receiver: self selector: #jquery351JsContent )
 ]
 
 { #category : #uploaded }
-JQuery3DevelopmentMetadataLibrary >> jquery350JsContent [
+JQuery3DevelopmentMetadataLibrary >> jquery351JsContent [
 	^ '/*!
- * jQuery JavaScript Library v3.5.0
+ * jQuery JavaScript Library v3.5.1
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -30,7 +30,7 @@ JQuery3DevelopmentMetadataLibrary >> jquery350JsContent [
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2020-04-10T15:07Z
+ * Date: 2020-05-04T22:49Z
  */
 ( function( global, factory ) {
 
@@ -168,7 +168,7 @@ function toType( obj ) {
 
 
 var
-	version = "3.5.0",
+	version = "3.5.1",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -4265,7 +4265,7 @@ Data.prototype = {
 
 		// If not, create one
 		if ( !value ) {
-			value = Object.create( null );
+			value = {};
 
 			// We can accept data for non-element nodes in modern browsers,
 			// but we should not, see #8335.
@@ -10898,5 +10898,5 @@ return jQuery;
 JQuery3DevelopmentMetadataLibrary >> selectorsToInclude [
 
 	<ignoreForCoverage>
-	^ #(jquery350Js)
+	^ #(jquery351Js)
 ]

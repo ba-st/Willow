@@ -9,18 +9,18 @@ JQuery3DeploymentMetadataLibraryTest >> testDeployFiles [
 
 	self
 		assertFileDeploymentOf: JQuery3DeploymentMetadataLibrary default
-		createsAsFolders: #('jQuery-3.5.0')
+		createsAsFolders: #('jQuery-3.5.1')
 		andFileContentsMatching:
-			{('jQuery-3.5.0/jquery-3.5.0.min.js' -> '6e259f22e7283c17662d63a112793fb1b9427d33').
-			('jQuery-3.5.0/jquery-3.5.0.min.map' -> '18a3972301d04dfd6a126b67e471bb3768482853')}
+			{( 'jQuery-3.5.1/jquery-3.5.1.min.js' -> 'c8e1c8b386dc5b7a9184c763c88d19a346eb3342' ).
+			( 'jQuery-3.5.1/jquery-3.5.1.min.map' -> '6207ad2639a863210f202384044a575c69a678ac' )}
 ]
 
 { #category : #tests }
 JQuery3DeploymentMetadataLibraryTest >> testHandlesFolder [
 
 	self
-		assert: (JQuery3DeploymentMetadataLibrary handlesFolder: JQuery3DeploymentMetadataLibrary folderName);
-		deny: (JQuery3DeploymentMetadataLibrary handlesFolder: #files)
+		assert: ( JQuery3DeploymentMetadataLibrary handlesFolder: JQuery3DeploymentMetadataLibrary folderName );
+		deny: ( JQuery3DeploymentMetadataLibrary handlesFolder: #files )
 ]
 
 { #category : #tests }
@@ -44,5 +44,5 @@ JQuery3DeploymentMetadataLibraryTest >> testUpdateRoot [
 	self
 		assert: html
 		equals:
-			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.5.0/jquery-3.5.0.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.5.1/jquery-3.5.1.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]

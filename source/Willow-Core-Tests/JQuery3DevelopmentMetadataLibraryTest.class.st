@@ -10,7 +10,7 @@ JQuery3DevelopmentMetadataLibraryTest >> testDeployFiles [
 	self
 		assertFileDeploymentOf: JQuery3DevelopmentMetadataLibrary default
 		createsAsFolders: #('jQuery-3.5.1')
-		andFileContentsMatching: {( 'jQuery-3.5.1/jquery-3.5.1.js' -> 'ad16c4a132ad2a03b4951185fed46d55397b5e88' )}
+		andFileContentsMatching: {( 'jQuery-3.5.1/jquery-3.5.1.js' -> 'f1636e31dd837c932edd5105262a797870e3fba0' )}
 ]
 
 { #category : #tests }

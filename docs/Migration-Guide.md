@@ -1,5 +1,17 @@
 # Migration Guide
 
+## Version 13 to 14
+
+`evaluate:` and `determineBehaviorByEvaluating:` have been merged into `serverDo:`. The block passed as collaborator can optionally contain an argument which represents the `:request`. In the previous version this argument was mandatory for `determineBehaviorByEvaluating:` and named `:response`.
+
+`evaluate:with:` and `determineBehaviorByEvaluating:with:` have been merged into `serverDo:with:`. The block passed as collaborator can optionally contain an argument which represents the `:request`. In the previous version this argument was mandatory for `determineBehaviorByEvaluating:with:` and named `:response`. The value of the parameter can be obtained by sending `request parameter`. In the previous version this was the single argument for the block in `evaluate:with:` and the second argument in `determineBehaviorByEvaluating:with:`.
+
+`onlyWhen:determineBehaviorByEvaluating:with:` have been renamed to `onlyWhen:serverDo:with:`. The block passed as collaborator can optionally contain an argument which represents the `:request`. In the previous version this argument was mandatory and named `:response`. The value of the parameter can be obtained by sending `request parameter`. In the previous version this was the second argument of the block, now removed.
+
+`onReturn` has been renamed to `onRespond`
+
+`executeOnClient:` has been renamed to `userAgentDo:`
+
 ## Version 10 to 11
 
 `executeOnClient:` no longer receives the script and now the block result it's automatically attached to it. So you have to:
@@ -8,7 +20,6 @@
 - If you have several statements of the form `script << expression. script << anotherExpression.` you have two options:
   - Change it to send several times `executeOnClient:`
   - Use the `, ` to concatenate the expressions.
-
 
 ## Version 9 to 10
 

@@ -4,8 +4,24 @@ I represent a null web interaction command, so no javascript is generated when a
 Class {
 	#name : #NullWebInteractionCommand,
 	#superclass : #WebInteractionCommand,
+	#classVars : [
+		'OnlyInstance'
+	],
 	#category : #'Willow-Core-WebInteraction'
 }
+
+{ #category : #'class initialization' }
+NullWebInteractionCommand class >> initialize [
+
+	<ignoreForCoverage>
+	OnlyInstance := super new
+]
+
+{ #category : #'instance creation' }
+NullWebInteractionCommand class >> new [
+
+	^ OnlyInstance
+]
 
 { #category : #accessing }
 NullWebInteractionCommand >> modelLoadingInstructions [

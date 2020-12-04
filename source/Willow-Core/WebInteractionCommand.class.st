@@ -26,6 +26,12 @@ WebInteractionCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
+WebInteractionCommand >> serializationCoverage [
+
+	^ #()
+]
+
+{ #category : #accessing }
 WebInteractionCommand >> serverIndependentInstructions [
 
 	^ self subclassResponsibility

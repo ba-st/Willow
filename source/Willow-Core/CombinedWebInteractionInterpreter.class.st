@@ -105,17 +105,6 @@ CombinedWebInteractionInterpreter >> interpretersDo: aBlock [
 	interpreters do: aBlock
 ]
 
-{ #category : #Configuring }
-CombinedWebInteractionInterpreter >> onlyWhen: aStringCondition serverDo: aCallbackBlock with: aParameter [
-
-	self
-		interpretersDo: [ :interpreter | 
-			interpreter
-				onlyWhen: aStringCondition
-				serverDo: aCallbackBlock
-				with: aParameter ]
-]
-
 { #category : #'Configuring - Dialogs' }
 CombinedWebInteractionInterpreter >> open: aView [
 
@@ -188,12 +177,6 @@ CombinedWebInteractionInterpreter >> serverDo: aCallbackBlock [
 	self interpretersDo: [:interpreter | interpreter serverDo: aCallbackBlock]
 ]
 
-{ #category : #Configuring }
-CombinedWebInteractionInterpreter >> serverDo: aCallbackBlock with: aParameter [
-
-	self interpretersDo: [ :interpreter | interpreter serverDo: aCallbackBlock with: aParameter ]
-]
-
 { #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView [
 
@@ -251,4 +234,18 @@ CombinedWebInteractionInterpreter >> toggleCssClass: aCssStyle onComponentsMatch
 CombinedWebInteractionInterpreter >> userAgentDo: aServerIndependentAction [
 
 	self interpretersDo: [:interpreter | interpreter userAgentDo: aServerIndependentAction]
+]
+
+{ #category : #Configuring }
+CombinedWebInteractionInterpreter >> with: aParameter onlyWhen: aStringCondition serverDo: aCallbackBlock [
+
+	self
+		interpretersDo:
+			[ :interpreter | interpreter with: aParameter onlyWhen: aStringCondition serverDo: aCallbackBlock ]
+]
+
+{ #category : #Configuring }
+CombinedWebInteractionInterpreter >> with: aParameter serverDo: aCallbackBlock [
+
+	self interpretersDo: [ :interpreter | interpreter with: aParameter serverDo: aCallbackBlock ]
 ]

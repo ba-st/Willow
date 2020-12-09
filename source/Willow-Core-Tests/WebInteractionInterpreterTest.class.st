@@ -334,20 +334,6 @@ WebInteractionInterpreterTest >> testInformSelection [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert($(this).children("option:selected").text())});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
-WebInteractionInterpreterTest >> testOnlyWhenServerDoWith [
-
-	| interpreter html |
-
-	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter onlyWhen: '<1s> != null' serverDo: [  ] with: ( JSStream on: 'theClientParameter' ).
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){if(theClientParameter != null){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(theClientParameter))].join("&")})}});</script>'
-]
-
 { #category : #'tests - Configuring - Dialogs' }
 WebInteractionInterpreterTest >> testOpen [
 
@@ -611,20 +597,6 @@ WebInteractionInterpreterTest >> testServerDo [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
-WebInteractionInterpreterTest >> testServerDoWith [
-
-	| interpreter html |
-
-	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter serverDo: [  ] with: #(firstThing secondStuff).
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'
-]
-
 { #category : #'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
@@ -872,4 +844,35 @@ WebInteractionInterpreterTest >> testUserAgentDo [
 		assert: html
 		equals:
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){window.print()});</script>'
+]
+
+{ #category : #'tests - Configuring' }
+WebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter
+		with: ( JSStream on: 'dataFromUserAgent' )
+		onlyWhen: [ :parameter | parameter greaterThan: 3 ]
+		serverDo: [  ].
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){if(dataFromUserAgent>3){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(dataFromUserAgent))].join("&")})}});</script>'
+]
+
+{ #category : #'tests - Configuring' }
+WebInteractionInterpreterTest >> testWithServerDo [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter with: #(firstThing secondStuff) serverDo: [  ].
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'
 ]

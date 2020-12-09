@@ -82,12 +82,6 @@ WebInteractionInterpreterBehavior >> informSelection [
 	self subclassResponsibility
 ]
 
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> onlyWhen: aStringCondition serverDo: aCallbackBlock with: aParameter [
-
-	self subclassResponsibility
-]
-
 { #category : #'Configuring - Dialogs' }
 WebInteractionInterpreterBehavior >> open: aView [
 
@@ -164,12 +158,6 @@ WebInteractionInterpreterBehavior >> serializeWithHiddenInputs [
 
 { #category : #Configuring }
 WebInteractionInterpreterBehavior >> serverDo: aCallbackBlock [
-
-	self subclassResponsibility
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> serverDo: aCallbackBlock with: aParameter [
 
 	self subclassResponsibility
 ]
@@ -262,6 +250,18 @@ WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRende
 
 { #category : #Configuring }
 WebInteractionInterpreterBehavior >> userAgentDo: aServerIndependentAction [
+
+	self subclassResponsibility
+]
+
+{ #category : #Configuring }
+WebInteractionInterpreterBehavior >> with: aParameter onlyWhen: aStringCondition serverDo: aCallbackBlock [
+
+	self subclassResponsibility
+]
+
+{ #category : #Configuring }
+WebInteractionInterpreterBehavior >> with: aParameter serverDo: aCallbackBlock [
 
 	self subclassResponsibility
 ]

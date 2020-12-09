@@ -165,17 +165,6 @@ WebInteractionInterpreter >> initializeWorkingWith: aWebComponentInteraction [
 	interaction := aWebComponentInteraction
 ]
 
-{ #category : #Configuring }
-WebInteractionInterpreter >> onlyWhen: aStringCondition serverDo: aCallbackBlock with: aParameter [
-
-	interaction
-		onTriggerExecute:
-			( ServerResponseCommand
-				withBehaviorDeterminedBy: aCallbackBlock
-				conditionedBy: ( Optional containing: ( aStringCondition expandMacrosWith: aParameter asJavascript ) )
-				requiring: ( Optional containing: aParameter ) )
-]
-
 { #category : #'Configuring - Dialogs' }
 WebInteractionInterpreter >> open: aView [
 
@@ -258,17 +247,6 @@ WebInteractionInterpreter >> serverDo: aCallbackBlock [
 				requiring: Optional unused )
 ]
 
-{ #category : #Configuring }
-WebInteractionInterpreter >> serverDo: aCallbackBlock with: aParameter [
-
-	interaction
-		onTriggerExecute:
-			( ServerResponseCommand
-				withBehaviorDeterminedBy: aCallbackBlock
-				conditionedBy: Optional unused
-				requiring: ( Optional containing: aParameter ) )
-]
-
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView [
 
@@ -344,4 +322,26 @@ WebInteractionInterpreter >> userAgentDo: aServerIndependentAction [
 
 	interaction
 		onTriggerExecute: (UserAgentCommand executing: aServerIndependentAction)
+]
+
+{ #category : #Configuring }
+WebInteractionInterpreter >> with: aJavascriptFromUserAgent onlyWhen: aJavascriptBooleanStatement serverDo: aCallbackBlock [
+
+	interaction
+		onTriggerExecute:
+			( ServerResponseCommand
+				withBehaviorDeterminedBy: aCallbackBlock
+				conditionedBy: ( Optional containing: aJavascriptBooleanStatement )
+				requiring: ( Optional containing: aJavascriptFromUserAgent ) )
+]
+
+{ #category : #Configuring }
+WebInteractionInterpreter >> with: aJavascriptFromUserAgent serverDo: aCallbackBlock [
+
+	interaction
+		onTriggerExecute:
+			( ServerResponseCommand
+				withBehaviorDeterminedBy: aCallbackBlock
+				conditionedBy: Optional unused
+				requiring: ( Optional containing: aJavascriptFromUserAgent ) )
 ]

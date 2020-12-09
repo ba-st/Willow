@@ -26,7 +26,7 @@ SerializationCommand class >> forChildForm [
 				bePost;
 				serialize: ( aCanvas jQuery this children: 'form' )
 			]
-		covering: #(forChildForm forForm:)
+		covering: #(forChildForm)
 ]
 
 { #category : #'instance creation' }
@@ -63,7 +63,7 @@ SerializationCommand class >> forForm: anIdentifiedForm [
 				bePost;
 				serialize: ( aCanvas jQuery id: anIdentifiedForm identifier )
 			]
-		covering: #(forForm:)
+		covering: #()
 ]
 
 { #category : #'instance creation' }
@@ -75,7 +75,7 @@ SerializationCommand class >> forParentForm [
 				bePost;
 				serializeForm
 			]
-		covering: #(forParentForm forForm: forCurrentObject forCurrentObjectWithHiddenInputs)
+		covering: #(forParentForm)
 ]
 
 { #category : #initialization }

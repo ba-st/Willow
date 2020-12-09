@@ -117,7 +117,7 @@ WebInteractionInterpreterTest >> testConflictingSerializationCommandsAreNotAllow
 			textInput id: id.
 			interpreter
 				serverDo: [  ];
-				serializeContainerForm.
+				serializeWithHiddenInputs.
 
 			self
 				should: [ interpreter applyTo: textInput on: canvas ]

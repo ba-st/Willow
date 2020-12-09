@@ -149,7 +149,7 @@ ServerResponseCommandTest >> testPriorityActionsIncludeConditionalExecution [
 
 	command := ServerResponseCommand
 		withBehaviorDeterminedBy: [ :response :parameter | 'We got <1s>' expandMacrosWith: parameter ]
-		conditionedBy: ( Optional containing: ( '<1s> > 0' expandMacrosWith: ( JSStream on: 'worldSize' ) asJavascript ) )
+		conditionedBy: ( Optional containing: [ :parameter | parameter greaterThan: 0 ] )
 		requiring: ( Optional containing: ( JSStream on: 'worldSize' ) ).
 
 	html := self
@@ -166,7 +166,7 @@ ServerResponseCommandTest >> testPriorityActionsIncludeConditionalExecution [
 	self
 		assert: html
 		equals:
-			'<div id="div-id3"></div><script type="text/javascript">$("#div-id3").click(function(){if(worldSize > 0){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(worldSize))].join("&")})}});</script>'
+			'<div id="div-id3"></div><script type="text/javascript">$("#div-id3").click(function(){if(worldSize>0){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(worldSize))].join("&")})}});</script>'
 ]
 
 { #category : #'tests-testing' }

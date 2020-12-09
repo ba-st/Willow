@@ -16,10 +16,10 @@ WebInteractionInterpreterBehavior >> determineBehaviorByEvaluating: aCallbackBlo
 
 	self
 		deprecated:
-			'Use #serverDo:with: instead, remembering to: (1) rename the first argument in the block to `:request`, (2) remove the second argument (the parameter), (3) access the parameter by sending `request parameter` instead of using the second argument in the block.'.
+			'Use #with:serverDo: instead, remembering to: (1) rename the first argument in the block to `:request`, (2) remove the second argument (the parameter), (3) access the parameter by sending `request parameter` instead of using the second argument in the block.'.
 	self
-		serverDo: [ :request | aCallbackBlock value: request value: request parameter ]
 		with: aParameter
+		serverDo: [ :request | aCallbackBlock value: request value: request parameter ]
 ]
 
 { #category : #'*Willow-Core-MigrationTo14' }
@@ -36,8 +36,8 @@ WebInteractionInterpreterBehavior >> evaluate: aCallbackBlock with: aParameter [
 
 	self
 		deprecated:
-			'Use #serverDo:with: instead, remembering to: (1) remove the argument in the block (the parameter), (2) add instead an argument named `:request`, (3) access the parameter by sending `request parameter` instead.'.
-	self serverDo: [ :request | aCallbackBlock value: request parameter ] with: aParameter
+			'Use #with:serverDo: instead, remembering to: (1) remove the argument in the block (the parameter), (2) add instead an argument named `:request`, (3) access the parameter by sending `request parameter` instead.'.
+	self with: aParameter serverDo: [ :request | aCallbackBlock value: request parameter ]
 ]
 
 { #category : #'*Willow-Core-MigrationTo14' }
@@ -56,9 +56,9 @@ WebInteractionInterpreterBehavior >> onlyWhen: aStringCondition determineBehavio
 
 	self
 		deprecated:
-			'Use #onlyWhen:serverDo:with: instead, remembering to: (1) rename the first argument in the block to `:request`, (2) remove the second argument (the parameter), (3) access the parameter by sending `request parameter` instead of using the second argument in the block.'.
+			'Use #with:onlyWhen:serverDo: instead, remembering to: (1) change the condition to a block optionally receiving the user agent javascript parameter as an argument, returning a javascript boolean condition, (2) rename the first argument in the block to `:request`, (3) remove the second argument (the parameter), (4) access the parameter by sending `request parameter` instead of using the second argument in the block.'.
 	self
-		onlyWhen: aStringCondition
-		serverDo: [ :request | aCallbackBlock value: request value: request parameter ]
 		with: aParameter
+		onlyWhen: [ :parameter | JSStream on: aStringCondition ]
+		serverDo: [ :request | aCallbackBlock value: request value: request parameter ]
 ]

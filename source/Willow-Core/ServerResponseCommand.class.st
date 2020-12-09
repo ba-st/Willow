@@ -24,10 +24,24 @@ ServerResponseCommand class >> withBehaviorDeterminedBy: aBlock conditionedBy: a
 ]
 
 { #category : #private }
+ServerResponseCommand >> conditionApplying: clientSideParameter to: clientCondition [
+
+	"We need to obtain the parameter and build a new object around it to prevent Seaside from manipulating the original object"
+
+	^ clientCondition cull: ( JSStream on: clientSideParameter asJavascript )
+]
+
+{ #category : #private }
 ServerResponseCommand >> considerAddingConditionTo: anAsynchronousCall [
 
 	userAgentConditionOptional
-		withContentDo: [ :clientCondition | anAsynchronousCall condition: ( JSStream on: clientCondition ) ]
+		withContentDo: [ :clientCondition | 
+			anAsynchronousCall
+				condition:
+					( userAgentParameterOptional
+						withContentDo: [ :clientSideParameter | self conditionApplying: clientSideParameter to: clientCondition ]
+						ifUnused: clientCondition )
+			]
 ]
 
 { #category : #initialization }

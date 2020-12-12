@@ -4,24 +4,6 @@ Class {
 	#category : #'Willow-Core-WebInteraction'
 }
 
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> addCssClass: aCssStyle [
-
-	self addCssClass: aCssStyle toComponentsMatching: [ :canvas | canvas jQuery this ]
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> addCssClass: aCssStyle toComponentsMatching: aComponentProvider [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> changeCssClass: anExistingStyle to: aNewStyle [
-
-	self subclassResponsibility
-]
-
 { #category : #'Configuring - Dialogs' }
 WebInteractionInterpreterBehavior >> closeAllDialogs [
 
@@ -92,20 +74,6 @@ WebInteractionInterpreterBehavior >> open: aView [
 WebInteractionInterpreterBehavior >> remove: anIdentifiedView [
 
 	self subclassResponsibility
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> removeCssClass: aCssStyle fromComponentsMatching: aComponentProvider [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> removeCssClass: aCssStyle fromComponentsWithClass: aComponentByStyleName [
-
-	self
-		removeCssClass: aCssStyle
-		fromComponentsMatching: [ :canvas | canvas jQuery class: aComponentByStyleName ]
 ]
 
 { #category : #'Configuring - DOM' }
@@ -215,28 +183,6 @@ WebInteractionInterpreterBehavior >> temporarilyDisableAndTransformInto: aView [
 	self subclassResponsibility
 ]
 
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle [
-
-	self toggleCssClass: aCssStyle onComponentsMatching: [ :canvas | canvas jQuery this ]
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle on: anIdentifiedWebView [
-
-	self
-		toggleCssClass: aCssStyle
-		onComponentsMatching: [ :javascript | 
-			anIdentifiedWebView identifyIn: javascript.
-			javascript jQuery id: anIdentifiedWebView identifier ]
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle onComponentsMatching: aComponentProvider [
-
-	self subclassResponsibility
-]
-
 { #category : #'Configuring - DOM' }
 WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRenderable [
 
@@ -246,6 +192,21 @@ WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRende
 		userAgentDo: [ :canvas | 
 			anIdentifiedWebView identifyIn: canvas.
 			(canvas jQuery id: anIdentifiedWebView identifier) html: aRenderable ]
+]
+
+{ #category : #'Configuring - CSS' }
+WebInteractionInterpreterBehavior >> updateCssClasses: aCssClassConfigurationBlock [
+
+	self
+		updateCssClasses: aCssClassConfigurationBlock
+		onElementsMatching: [ :canvas | canvas jQuery this ]
+]
+
+{ #category : #'Configuring - CSS' }
+WebInteractionInterpreterBehavior >> updateCssClasses: aCssClassConfigurationBlock
+	onElementsMatching: anElementMatchingBlock [
+
+	self subclassResponsibility
 ]
 
 { #category : #Configuring }

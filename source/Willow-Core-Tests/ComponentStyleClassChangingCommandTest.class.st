@@ -12,10 +12,12 @@ ComponentStyleClassChangingCommandTest >> setUp [
 
 	super setUp.
 	command := ComponentStyleClassChangingCommand
-				on: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ]
-				altering: 'anExistingStyle'
-				sending: #removeClass:
-				using: [ :component | component addClass: 'aNewStyle' ]
+		applying: [ :component | 
+			component
+				removeClass: 'anExistingStyle';
+				addClass: 'aNewStyle'
+			]
+		targeting: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ]
 ]
 
 { #category : #'tests-accessing' }

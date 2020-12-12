@@ -35,15 +35,17 @@ CombinedWebInteractionInterpreterTest >> testAddCssClass [
 	| interpreter html |
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
-	interpreter addCssClass: Classification >> #willow.
+	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
-		equals: '<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
+		equals:
+			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
 { #category : #'tests-Configuring - CSS' }
@@ -52,12 +54,15 @@ CombinedWebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 	| interpreter html |
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
-	interpreter addCssClass: Classification >> #willow toComponentsMatching: [ :canvas | canvas jQuery this ].
+	interpreter
+		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
+		onElementsMatching: [ :canvas | canvas jQuery this ].
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -71,13 +76,20 @@ CombinedWebInteractionInterpreterTest >> testChangeCssClassTo [
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter changeCssClass: Classification >> #loading to: Classification >> #willow.
+	interpreter
+		updateCssClasses: [ :classes | 
+			classes
+				removeClass: Classification >> #loading;
+				addClass: Classification >> #willow
+			]
+		onElementsMatching: [ :canvas | canvas jQuery class: Classification >> #loading ].
 
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -348,13 +360,16 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatchin
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter removeCssClass: Classification >> #loading fromComponentsMatching: [ :canvas | canvas jQuery this ].
+	interpreter
+		updateCssClasses: [ :classes | classes removeClass: Classification >> #loading ]
+		onElementsMatching: [ :canvas | canvas jQuery this ].
 
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -368,13 +383,16 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithCla
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter removeCssClass: Classification >> #loading fromComponentsWithClass: Classification >> #willow.
+	interpreter
+		updateCssClasses: [ :classes | classes removeClass: Classification >> #loading ]
+		onElementsMatching: [ :canvas | canvas jQuery class: Classification >> #willow ].
 
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -761,13 +779,16 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClass [
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter toggleCssClass: Classification >> #loading.
+	interpreter
+		updateCssClasses: [ :classes | classes toggleClass: Classification >> #loading ]
+		onElementsMatching: [ :canvas | canvas jQuery this ].
 
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -777,18 +798,27 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClass [
 { #category : #'tests-Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testToggleCssClassOn [
 
-	| interpreter html |
+	| interpreter element html |
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	element := IdentifiedWebView forDivNamed: 'example' containing: [  ].
 
-	interpreter toggleCssClass: Classification >> #willow on: (IdentifiedWebView forDivNamed: 'example' containing: [  ]).
+	interpreter
+		updateCssClasses: [ :classes | classes toggleClass: Classification >> #willow ]
+		onElementsMatching: [ :canvas | 
+			[ element identifier ]
+				on: AssertionFailed
+				do: [ :ex | ex return: ( element identifyIn: canvas ) ].
+			canvas jQuery id: element identifier
+			].
 
 
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -802,13 +832,16 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching 
 
 	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
 
-	interpreter toggleCssClass: Classification >> #loading onComponentsMatching: [ :canvas | canvas jQuery this ].
+	interpreter
+		updateCssClasses: [ :classes | classes toggleClass: Classification >> #loading ]
+		onElementsMatching: [ :canvas | canvas jQuery this ].
 
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -835,6 +868,27 @@ CombinedWebInteractionInterpreterTest >> testTransformInto [
 		assert: html
 		equals:
 			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><div id="search-results-id1"></div><script type="text/javascript">$("#button-id2").click(function(event){$("#search-results-id1").html("Loading...")});$("#button-id3").click(function(event){$("#search-results-id1").html("Loading...")});</script>'
+]
+
+{ #category : #'tests-Configuring - CSS' }
+CombinedWebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching [
+
+	| interpreter html |
+
+	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter
+		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
+		onElementsMatching: [ :canvas | canvas jQuery this ].
+	html := self
+		renderUsing: [ :canvas | 
+			canvas
+				render: okButton;
+				render: cancelButton
+			].
+	self
+		assert: html
+		equals:
+			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
 { #category : #'tests-Configuring' }

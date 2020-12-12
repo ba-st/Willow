@@ -20,19 +20,6 @@ CombinedWebInteractionInterpreter class >> combiningInterpretersOf: aWebViewColl
 		combining: (aWebViewCollection collect: [:aWebView | aWebView onTrigger])
 ]
 
-{ #category : #'Configuring - CSS' }
-CombinedWebInteractionInterpreter >> addCssClass: aCssStyle toComponentsMatching: aComponentProvider [
-
-	self interpretersDo: [:interpreter |
-		interpreter addCssClass: aCssStyle toComponentsMatching: aComponentProvider]
-]
-
-{ #category : #'Configuring - CSS' }
-CombinedWebInteractionInterpreter >> changeCssClass: anExistingStyle to: aNewStyle [
-
-	self interpretersDo: [:interpreter | interpreter changeCssClass: anExistingStyle to: aNewStyle]
-]
-
 { #category : #'Configuring - Dialogs' }
 CombinedWebInteractionInterpreter >> closeAllDialogs [
 
@@ -115,12 +102,6 @@ CombinedWebInteractionInterpreter >> open: aView [
 CombinedWebInteractionInterpreter >> remove: anIdentifiedView [
 
 	self interpretersDo: [ :interpreter | interpreter remove: anIdentifiedView ]
-]
-
-{ #category : #'Configuring - CSS' }
-CombinedWebInteractionInterpreter >> removeCssClass: aCssStyle fromComponentsMatching: aComponentProvider [
-
-	self interpretersDo: [ :interpreter | interpreter removeCssClass: aCssStyle fromComponentsMatching: aComponentProvider ]
 ]
 
 { #category : #'Configuring - DOM' }
@@ -225,9 +206,12 @@ CombinedWebInteractionInterpreter >> temporarilyDisableAndTransformInto: aView [
 ]
 
 { #category : #'Configuring - CSS' }
-CombinedWebInteractionInterpreter >> toggleCssClass: aCssStyle onComponentsMatching: aComponentProvider [
+CombinedWebInteractionInterpreter >> updateCssClasses: aCssClassConfigurationBlock
+	onElementsMatching: anElementMatchingBlock [
 
-	self interpretersDo: [ :interpreter | interpreter toggleCssClass: aCssStyle onComponentsMatching: aComponentProvider ]
+	self
+		interpretersDo:
+			[ :interpreter | interpreter updateCssClasses: aCssClassConfigurationBlock onElementsMatching: anElementMatchingBlock ]
 ]
 
 { #category : #Configuring }

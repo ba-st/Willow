@@ -68,33 +68,10 @@ WebInteractionInterpreter class >> workingWith: aWebComponentInteraction [
 	^self new initializeWorkingWith: aWebComponentInteraction
 ]
 
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreter >> addCssClass: aCssStyle toComponentsMatching: aComponentProvider [
-
-	interaction
-		onTriggerExecute:
-			(ComponentStyleClassChangingCommand
-				on: aComponentProvider
-				altering: aCssStyle
-				sending: #addClass:)
-]
-
 { #category : #evaluating }
 WebInteractionInterpreter >> applyTo: aComponent on: aCanvas [
 
 	interaction applyTo: aComponent on: aCanvas
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreter >> changeCssClass: anExistingStyle to: aNewStyle [
-
-	interaction
-		onTriggerExecute:
-			(ComponentStyleClassChangingCommand
-				on: [ :canvas | canvas jQuery class: anExistingStyle ]
-				altering: anExistingStyle
-				sending: #removeClass:
-				using: [ :component | component addClass: aNewStyle ])
 ]
 
 { #category : #'Configuring - Dialogs' }
@@ -175,17 +152,6 @@ WebInteractionInterpreter >> open: aView [
 WebInteractionInterpreter >> remove: anIdentifiedView [
 
 	interaction onTriggerExecute: ( ComponentRemovingCommand for: anIdentifiedView )
-]
-
-{ #category : #'Configuring - CSS' }
-WebInteractionInterpreter >> removeCssClass: aCssStyle fromComponentsMatching: aComponentProvider [
-
-	interaction
-		onTriggerExecute:
-			(ComponentStyleClassChangingCommand
-				on: aComponentProvider
-				altering: aCssStyle
-				sending: #removeClass:)
 ]
 
 { #category : #'Configuring - DOM' }
@@ -307,14 +273,14 @@ WebInteractionInterpreter >> temporarilyDisableAndTransformInto: aView [
 ]
 
 { #category : #'Configuring - CSS' }
-WebInteractionInterpreter >> toggleCssClass: aCssStyle onComponentsMatching: aComponentProvider [
+WebInteractionInterpreter >> updateCssClasses: aCssClassConfigurationBlock
+	onElementsMatching: anElementMatchingBlock [
 
 	interaction
 		onTriggerExecute:
-			(ComponentStyleClassChangingCommand
-				on: aComponentProvider
-				altering: aCssStyle
-				sending: #toggleClass:)
+			( ComponentStyleClassChangingCommand
+				applying: aCssClassConfigurationBlock
+				targeting: anElementMatchingBlock )
 ]
 
 { #category : #Configuring }

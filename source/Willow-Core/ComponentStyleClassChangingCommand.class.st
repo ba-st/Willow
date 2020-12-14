@@ -5,9 +5,6 @@ Class {
 	#name : #ComponentStyleClassChangingCommand,
 	#superclass : #WebInteractionCommand,
 	#instVars : [
-		'styleToChange',
-		'transformationMessage',
-		'transformationProvider',
 		'updatesProvider',
 		'elementsProvider'
 	],
@@ -20,16 +17,6 @@ ComponentStyleClassChangingCommand class >> applying: aCssClassConfigurationBloc
 	^ self new
 		initializeApplying: aCssClassConfigurationBlock
 		targeting: anElementMatchingBlock
-]
-
-{ #category : #'instance creation' }
-ComponentStyleClassChangingCommand class >> on: aComponentProvider altering: aCssClass sending: aTransformationMessage using: aTransformationAction [
-
-	^self new
-		initializeOn: aComponentProvider
-		altering: aCssClass
-		sending: aTransformationMessage
-		using: aTransformationAction
 ]
 
 { #category : #private }

@@ -664,19 +664,37 @@ WebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOnComponen
 ]
 
 { #category : #'tests - Configuring - DOM' }
+WebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingApplying [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+
+	interpreter
+		showLoadingNotificationDisplaying: 'Loading...'
+		applying: [ :view | view addClass willow ].
+	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ].
+
+	self
+		assert: html
+		equals:
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"url":"/","data":"1"})});</script>'
+]
+
+{ #category : #'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forChangeInComponentValue.
 
-	interpreter showLoadingNotificationStyledAsAll: #().
+	interpreter showLoadingNotificationStyledAsAll: ( Array with: Classification >> #willow ).
 	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ].
 
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }

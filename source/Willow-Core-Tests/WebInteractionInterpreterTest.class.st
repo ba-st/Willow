@@ -112,6 +112,31 @@ WebInteractionInterpreterTest >> testConfirmAsking [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"1"})}});</script>'
 ]
 
+{ #category : #'tests - Configuring - Serialization' }
+WebInteractionInterpreterTest >> testConflictingSerializationCommandsAreNotAllowed [
+
+	| interpreter id |
+
+	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	id := '15'.
+
+	self
+		renderUsing: [ :canvas | 
+			| textInput |
+
+			textInput := canvas textInput.
+			textInput id: id.
+			interpreter
+				serverDo: [  ];
+				serializeWithHiddenInputs.
+
+			self
+				should: [ interpreter applyTo: textInput on: canvas ]
+				raise: ConflictingObjectFound
+				withMessageText: 'Found 2 commands specifying serialization using forCurrentObject'
+			]
+]
+
 { #category : #'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testDisable [
 
@@ -576,6 +601,29 @@ WebInteractionInterpreterTest >> testSerializeIt [
 		assert: html
 		equals:
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
+]
+
+{ #category : #'tests - Configuring - Serialization' }
+WebInteractionInterpreterTest >> testSerializeItTwiceIsNotAllowed [
+
+	| interpreter |
+
+	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+
+	self
+		renderUsing: [ :canvas | 
+			| textInput |
+
+			textInput := canvas textInput.
+			interpreter
+				serializeIt;
+				serializeIt.
+
+			self
+				should: [ interpreter applyTo: textInput on: canvas ]
+				raise: ConflictingObjectFound
+				withMessageText: 'Found 2 commands specifying serialization using forCurrentObject'
+			]
 ]
 
 { #category : #'tests - Configuring - Serialization' }

@@ -4,10 +4,7 @@ Class {
 	#instVars : [
 		'triggerPolicy',
 		'commands',
-		'priorityActions',
-		'serializationCommand',
-		'modelLoadingInstructions',
-		'serverIndependentInstructions'
+		'serializationCommand'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
@@ -95,48 +92,10 @@ WebComponentInteraction class >> triggeredOnKeyUp [
 { #category : #evaluating }
 WebComponentInteraction >> applyTo: aComponent on: aCanvas [
 
-	self prepareActions.
-	self shouldApplyActions
-		then: [ triggerPolicy apply: ( self commandToExecuteOn: aCanvas ) to: aComponent on: aCanvas ]
-]
-
-{ #category : #'private - accessing' }
-WebComponentInteraction >> asynchronousCallToAffect: aCanvas [
-
-	| serverCall |
-
-	serverCall := aCanvas jQuery willow serverCall.
-	priorityActions do: [ :action | action value: serverCall value: aCanvas ].
-	self complete: serverCall withResponseOn: aCanvas.
-	^ serverCall
-]
-
-{ #category : #'private - accessing' }
-WebComponentInteraction >> commandToExecuteOn: aCanvas [
-
-	^ [ | script |
-
-	script := aCanvas javascript.
-	serverIndependentInstructions appendTo: script on: aCanvas.
-	self shouldApplyAsynchronousCall then: [ script << ( self asynchronousCallToAffect: aCanvas ) ].
-	script
-	]
-		unless: serverIndependentInstructions isEmpty
-		inWhichCase: [ self asynchronousCallToAffect: aCanvas ]
-]
-
-{ #category : #'private - processing' }
-WebComponentInteraction >> complete: anAsynchronousCall withResponseOn: aCanvas [
-
-	anAsynchronousCall script: [ :subScript | modelLoadingInstructions appendTo: subScript on: aCanvas ]
-]
-
-{ #category : #initialization }
-WebComponentInteraction >> initializeActions [
-
-	priorityActions := OrderedCollection new.
-	serverIndependentInstructions := WebInteractionInstructions empty.
-	modelLoadingInstructions := WebInteractionInstructions empty
+	( WebInteractionWriter triggering: commands serializingWith: serializationCommand )
+		applyTo: aComponent
+		accordingTo: triggerPolicy
+		on: aCanvas
 ]
 
 { #category : #initialization }
@@ -151,42 +110,4 @@ WebComponentInteraction >> initializeTriggeredAccordingTo: aTriggerPolicy serial
 WebComponentInteraction >> onTriggerExecute: aCommand [
 
 	commands add: aCommand
-]
-
-{ #category : #initialization }
-WebComponentInteraction >> prepareActions [
-
-	| serializationRequired |
-
-	serializationRequired := false.
-	self initializeActions.
-	commands
-		do: [ :aCommand | 
-			self registerActionsOf: aCommand.
-			serializationRequired := serializationRequired or: [ aCommand requiresSerialization ]
-			].
-	serializationRequired then: [ self registerActionsOf: serializationCommand ]
-]
-
-{ #category : #'private - processing' }
-WebComponentInteraction >> registerActionsOf: aCommand [
-
-	priorityActions addAll: aCommand priorityActions.
-
-	modelLoadingInstructions := modelLoadingInstructions
-		combinedWith: aCommand modelLoadingInstructions.
-	serverIndependentInstructions := serverIndependentInstructions
-		combinedWith: aCommand serverIndependentInstructions
-]
-
-{ #category : #'private - testing' }
-WebComponentInteraction >> shouldApplyActions [
-
-	^ serverIndependentInstructions notEmpty or: [ self shouldApplyAsynchronousCall ]
-]
-
-{ #category : #'private - testing' }
-WebComponentInteraction >> shouldApplyAsynchronousCall [
-
-	^ priorityActions notEmpty or: [ modelLoadingInstructions notEmpty ]
 ]

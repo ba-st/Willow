@@ -7,9 +7,6 @@ Class {
 	#classVars : [
 		'Empty'
 	],
-	#pools : [
-		'Willow'
-	],
 	#category : #'Willow-Core-WebInteraction'
 }
 

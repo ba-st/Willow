@@ -5,15 +5,16 @@ Class {
 	#name : #SerializationCommand,
 	#superclass : #WebInteractionCommand,
 	#instVars : [
-		'priorityActions'
+		'priorityActions',
+		'coverage'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
 
 { #category : #'private - instance creation' }
-SerializationCommand class >> executing: aPriorityAction [
+SerializationCommand class >> executing: aPriorityAction covering: aListOfSelectors [
 
-	^ self new initializeExecuting: aPriorityAction
+	^ self new initializeExecuting: aPriorityAction covering: aListOfSelectors
 ]
 
 { #category : #'instance creation' }
@@ -25,6 +26,7 @@ SerializationCommand class >> forChildForm [
 				bePost;
 				serialize: ( aCanvas jQuery this children: 'form' )
 			]
+		covering: #(forChildForm)
 ]
 
 { #category : #'instance creation' }
@@ -36,6 +38,7 @@ SerializationCommand class >> forCurrentObject [
 				bePost;
 				serializeThis
 			]
+		covering: #(forCurrentObject)
 ]
 
 { #category : #'instance creation' }
@@ -47,6 +50,7 @@ SerializationCommand class >> forCurrentObjectWithHiddenInputs [
 				bePost;
 				serializeThisWithHidden
 			]
+		covering: #(forCurrentObject forCurrentObjectWithHiddenInputs)
 ]
 
 { #category : #'instance creation' }
@@ -59,6 +63,7 @@ SerializationCommand class >> forForm: anIdentifiedForm [
 				bePost;
 				serialize: ( aCanvas jQuery id: anIdentifiedForm identifier )
 			]
+		covering: #()
 ]
 
 { #category : #'instance creation' }
@@ -70,12 +75,14 @@ SerializationCommand class >> forParentForm [
 				bePost;
 				serializeForm
 			]
+		covering: #(forParentForm)
 ]
 
 { #category : #initialization }
-SerializationCommand >> initializeExecuting: aPriorityAction [
+SerializationCommand >> initializeExecuting: aPriorityAction covering: aListOfSelectors [
 
-	priorityActions := Array with: aPriorityAction
+	priorityActions := Array with: aPriorityAction.
+	coverage := aListOfSelectors
 ]
 
 { #category : #accessing }
@@ -94,6 +101,12 @@ SerializationCommand >> priorityActions [
 SerializationCommand >> requiresSerialization [
 
 	^ false
+]
+
+{ #category : #accessing }
+SerializationCommand >> serializationCoverage [
+
+	^ coverage
 ]
 
 { #category : #accessing }

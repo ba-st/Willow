@@ -5,56 +5,38 @@ Class {
 	#name : #ComponentStyleClassChangingCommand,
 	#superclass : #WebInteractionCommand,
 	#instVars : [
-		'componentProvider',
-		'styleToChange',
-		'transformationMessage',
-		'transformationProvider'
+		'updatesProvider',
+		'elementsProvider'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
 
 { #category : #'instance creation' }
-ComponentStyleClassChangingCommand class >> on: aComponentProvider altering: aCssClass sending: aTransformationMessage [
+ComponentStyleClassChangingCommand class >> applying: aCssClassConfigurationBlock targeting: anElementMatchingBlock [
 
-	^ self
-		on: aComponentProvider
-		altering: aCssClass
-		sending: aTransformationMessage
-		using: [ :component | component ]
-]
-
-{ #category : #'instance creation' }
-ComponentStyleClassChangingCommand class >> on: aComponentProvider altering: aCssClass sending: aTransformationMessage using: aTransformationAction [
-
-	^self new
-		initializeOn: aComponentProvider
-		altering: aCssClass
-		sending: aTransformationMessage
-		using: aTransformationAction
+	^ self new
+		initializeApplying: aCssClassConfigurationBlock
+		targeting: anElementMatchingBlock
 ]
 
 { #category : #private }
 ComponentStyleClassChangingCommand >> applyStyleChangeTo: component [
-	^ component perform: transformationMessage with: styleToChange
-]
 
-{ #category : #private }
-ComponentStyleClassChangingCommand >> applyStyleChangeToComponentOn: aCanvas [
-	^ self applyStyleChangeTo: (self componentOn: aCanvas)
+	^ updatesProvider applyTo: component
 ]
 
 { #category : #private }
 ComponentStyleClassChangingCommand >> componentOn: aCanvas [
-	^ componentProvider value: aCanvas
+
+	^ elementsProvider value: aCanvas
 ]
 
-{ #category : #'initialize-release' }
-ComponentStyleClassChangingCommand >> initializeOn: aComponentProvider altering: aCssStyle sending: aTransformationMessage using: aTransformationProvider [
+{ #category : #initialization }
+ComponentStyleClassChangingCommand >> initializeApplying: aCssClassConfigurationBlock
+	targeting: anElementMatchingBlock [
 
-	componentProvider := aComponentProvider.
-	styleToChange := aCssStyle.
-	transformationMessage := aTransformationMessage.
-	transformationProvider := aTransformationProvider
+	updatesProvider := aCssClassConfigurationBlock cull: ComponentStyleClassUpdateBuilder new.
+	elementsProvider := anElementMatchingBlock
 ]
 
 { #category : #accessing }
@@ -72,12 +54,12 @@ ComponentStyleClassChangingCommand >> priorityActions [
 { #category : #testing }
 ComponentStyleClassChangingCommand >> requiresSerialization [
 
-	^false
+	^ false
 ]
 
 { #category : #accessing }
 ComponentStyleClassChangingCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions
-		directingTo: [ :aCanvas | transformationProvider value: ( self applyStyleChangeToComponentOn: aCanvas ) ]
+		directingTo: [ :aCanvas | self applyStyleChangeTo: ( self componentOn: aCanvas ) ]
 ]

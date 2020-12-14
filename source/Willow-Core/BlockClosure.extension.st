@@ -9,5 +9,6 @@ BlockClosure >> asTableRowCommand [
 { #category : #'*Willow-Core' }
 BlockClosure >> asWebComponentCommand [
 
-	^ (self cull: WebComponentCommandBuilder new cull: Willow constants) ifNil: [ CompositeComponentCommand empty ]
+	^ ( self cull: WebComponentCommandBuilder new cull: Willow constants )
+		ifNil: [ CompositeComponentCommand empty ]
 ]

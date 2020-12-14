@@ -28,7 +28,7 @@ ComponentClassificationCommand >> applyTo: aComponent on: aCanvas [
 	^ aComponent classes: cssStyles
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 ComponentClassificationCommand >> initializeToStyleWithAll: aCssStyleCollection [
 
 	cssStyles := aCssStyleCollection

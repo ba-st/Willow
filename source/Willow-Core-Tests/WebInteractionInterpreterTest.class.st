@@ -24,11 +24,12 @@ WebInteractionInterpreterTest >> testAddCssClass [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter addCssClass: Classification >> #willow.
+	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
-		equals: '<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).addClass("willow")});</script>'
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
 { #category : #'tests - Configuring - CSS' }
@@ -37,7 +38,9 @@ WebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter addCssClass: Classification >> #willow toComponentsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
+	interpreter
+		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
+		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -51,8 +54,16 @@ WebInteractionInterpreterTest >> testChangeCssClassTo [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter changeCssClass: Classification >> #loading to: Classification >> #willow.
-	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput apply: [ :input | input addClass loading ] ].
+	interpreter
+		updateCssClasses: [ :classes | 
+			classes
+				removeClass: Classification >> #loading;
+				addClass: Classification >> #willow
+			]
+		onElementsMatching: [ :canvas | canvas jQuery class: Classification >> #loading ].
+	html := self
+		apply: interpreter
+		toComponentDefinedBy: [ :canvas | canvas textInput apply: [ :input | input addClass loading ] ].
 	self
 		assert: html
 		equals:
@@ -377,7 +388,9 @@ WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatching [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter removeCssClass: Classification >> #willow fromComponentsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
+	interpreter
+		updateCssClasses: [ :classes | classes removeClass: Classification >> #willow ]
+		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -391,11 +404,16 @@ WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithClass [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter removeCssClass: Classification >> #loading fromComponentsWithClass: Classification >> #willow.
-	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput apply: [ :input | input addClass loading + input addClass willow ] ].
+	interpreter
+		updateCssClasses: [ :classes | classes removeClass: Classification >> #loading ]
+		onElementsMatching: [ :canvas | canvas jQuery class: Classification >> #willow ].
+	html := self
+		apply: interpreter
+		toComponentDefinedBy: [ :canvas | canvas textInput apply: [ :input | input addClass loading + input addClass willow ] ].
 	self
 		assert: html
-		equals: '<input class="willow-loading willow" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".willow").removeClass("willow-loading")});</script>'
+		equals:
+			'<input class="willow-loading willow" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".willow").removeClass("willow-loading")});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -646,19 +664,37 @@ WebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOnComponen
 ]
 
 { #category : #'tests - Configuring - DOM' }
+WebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingApplying [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+
+	interpreter
+		showLoadingNotificationDisplaying: 'Loading...'
+		applying: [ :view | view addClass willow ].
+	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ].
+
+	self
+		assert: html
+		equals:
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"url":"/","data":"1"})});</script>'
+]
+
+{ #category : #'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forChangeInComponentValue.
 
-	interpreter showLoadingNotificationStyledAsAll: #().
+	interpreter showLoadingNotificationStyledAsAll: ( Array with: Classification >> #willow ).
 	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ].
 
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -781,18 +817,34 @@ WebInteractionInterpreterTest >> testToggleCssClass [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter toggleCssClass: Classification >> #loading.
-	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput apply: [ :input | input addClass loading ] ].
-	self assert: html equals: '<input class="willow-loading" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).toggleClass("willow-loading")});</script>'
+	interpreter
+		updateCssClasses: [ :classes | classes toggleClass: Classification >> #loading ]
+		onElementsMatching: [ :canvas | canvas jQuery this ].
+	html := self
+		apply: interpreter
+		toComponentDefinedBy: [ :canvas | canvas textInput apply: [ :input | input addClass loading ] ].
+	self
+		assert: html
+		equals:
+			'<input class="willow-loading" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).toggleClass("willow-loading")});</script>'
 ]
 
 { #category : #'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testToggleCssClassOn [
 
-	| interpreter html |
+	| interpreter element html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter toggleCssClass: Classification >> #willow on: (IdentifiedWebView forDivNamed: 'example' containing: [  ]).
+	element := IdentifiedWebView forDivNamed: 'example' containing: [  ].
+
+	interpreter
+		updateCssClasses: [ :classes | classes toggleClass: Classification >> #willow ]
+		onElementsMatching: [ :canvas | 
+			[ element identifier ]
+				on: AssertionFailed
+				do: [ :ex | ex return: ( element identifyIn: canvas ) ].
+			canvas jQuery id: element identifier
+			].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -806,7 +858,9 @@ WebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching [
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter toggleCssClass: Classification >> #willow onComponentsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
+	interpreter
+		updateCssClasses: [ :classes | classes toggleClass: Classification >> #willow ]
+		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
@@ -830,6 +884,36 @@ WebInteractionInterpreterTest >> testTransformInto [
 				render: container ].
 
 	self assert: html equals:  '<a id="a-id2">Search!</a><div id="search-results-id1"></div><script type="text/javascript">$("#a-id2").click(function(event){$("#search-results-id1").html("Searching...")});</script>'
+]
+
+{ #category : #'tests - Configuring - CSS' }
+WebInteractionInterpreterTest >> testUpdateCssClasses [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).addClass("willow")});</script>'
+]
+
+{ #category : #'tests - Configuring - CSS' }
+WebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter
+		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
+		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".aComponentByStyleName").addClass("willow")});</script>'
 ]
 
 { #category : #'tests - Configuring' }

@@ -12,6 +12,11 @@
 
 `executeOnClient:` has been renamed to `userAgentDo:`
 
+`addCssClass:`, `addCssClass:toComponentsMatching:`, `changeCssClass: anExistingStyle to:`, `removeCssClass:fromComponentsMatching:`, `removeCssClass:fromComponentsWithClass:`, `toggleCssClass:`, `toggleCssClass:on:`, `toggleCssClass:onComponentsMatching:` have been replaced with the simplified methods `updateCssClasses:` and `updateCssClasses:onElementsMatching:`, where the first one is a shortcut to affecting only the component being triggered. To achieve the same effect, the new method receives a block which can build transformations. For example to add a CSS class on all elements already presenting another class
+```
+component updateCssClasses: [ :classes | classes addClass: aNewCSSClass ] onElementsMatching: [ :canvas | canvas jQuery class: anExistingCSSClass ];
+```
+
 ## Version 10 to 11
 
 `executeOnClient:` no longer receives the script and now the block result it's automatically attached to it. So you have to:

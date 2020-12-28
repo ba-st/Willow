@@ -14,11 +14,11 @@ Class {
 	#category : #'Willow-Core-Tests-WebInteraction'
 }
 
-{ #category : #initialization }
-CombinedWebInteractionInterpreterTest >> buttons [
+{ #category : #'private - accessing' }
+CombinedWebInteractionInterpreterTest >> combinedInterpreter [
 
-	^ {okButton.
-	cancelButton}
+	^ CombinedWebInteractionInterpreter
+		combining: ( Array with: okButton on trigger with: cancelButton on trigger )
 ]
 
 { #category : #initialization }
@@ -29,12 +29,12 @@ CombinedWebInteractionInterpreterTest >> setUp [
 	cancelButton := AsynchronicButtonWebView labeled: 'Cancel'
 ]
 
-{ #category : #'tests-Configuring - CSS' }
+{ #category : #'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testAddCssClass [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
 	html := self
 		renderUsing: [ :canvas | 
@@ -48,12 +48,12 @@ CombinedWebInteractionInterpreterTest >> testAddCssClass [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
-{ #category : #'tests-Configuring - CSS' }
+{ #category : #'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	interpreter
 		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery this ].
@@ -69,12 +69,12 @@ CombinedWebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
-{ #category : #'tests-Configuring - CSS' }
+{ #category : #'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testChangeCssClassTo [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter
 		updateCssClasses: [ :classes | 
@@ -96,12 +96,12 @@ CombinedWebInteractionInterpreterTest >> testChangeCssClassTo [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(".willow-loading").removeClass("willow-loading").addClass("willow")});$("#button-id2").click(function(event){$(".willow-loading").removeClass("willow-loading").addClass("willow")});</script>'
 ]
 
-{ #category : #'tests-Configuring - Dialogs' }
+{ #category : #'tests - Configuring - Dialogs' }
 CombinedWebInteractionInterpreterTest >> testCloseAllDialogs [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter closeAllDialogs.
 
@@ -118,12 +118,12 @@ CombinedWebInteractionInterpreterTest >> testCloseAllDialogs [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring - Dialogs' }
+{ #category : #'tests - Configuring - Dialogs' }
 CombinedWebInteractionInterpreterTest >> testCloseLastDialog [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter closeLastDialog.
 
@@ -140,12 +140,32 @@ CombinedWebInteractionInterpreterTest >> testCloseLastDialog [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring' }
+{ #category : #'tests - Instance Creation' }
+CombinedWebInteractionInterpreterTest >> testCombining [
+
+	| interpreter html |
+
+	interpreter := CombinedWebInteractionInterpreter
+		combining: ( Array with: okButton on trigger with: cancelButton on trigger ).
+	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
+	html := self
+		renderUsing: [ :canvas | 
+			canvas
+				render: okButton;
+				render: cancelButton
+			].
+	self
+		assert: html
+		equals:
+			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
+]
+
+{ #category : #'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testConfirmAsking [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter confirmAsking: 'Continue?'.
 	html := self
@@ -160,12 +180,12 @@ CombinedWebInteractionInterpreterTest >> testConfirmAsking [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"1"})}});$("#button-id4").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"3"})}});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testDisable [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -180,12 +200,12 @@ CombinedWebInteractionInterpreterTest >> testDisable [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).prop("disabled",true)});$("#button-id2").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testDisableSpecificComponent [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 
 	html := self
@@ -205,12 +225,12 @@ CombinedWebInteractionInterpreterTest >> testDisableSpecificComponent [
 			'<input id="15" type="text"/><button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$("#15").prop("disabled",true)});$("#button-id2").click(function(event){$("#15").prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testEnable [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 
 	html := self
@@ -230,12 +250,12 @@ CombinedWebInteractionInterpreterTest >> testEnable [
 			'<input id="15" type="text"/><button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$("#15").prop("disabled",false)});$("#button-id2").click(function(event){$("#15").prop("disabled",false)});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testFocus [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 
 	html := self
@@ -255,12 +275,12 @@ CombinedWebInteractionInterpreterTest >> testFocus [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testFocusUsing [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter focusUsing: [ :canvas | canvas jQuery this ].
 	html := self
@@ -275,12 +295,12 @@ CombinedWebInteractionInterpreterTest >> testFocusUsing [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring' }
+{ #category : #'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testInform [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter inform: 'A message'.
 	html := self
@@ -295,12 +315,12 @@ CombinedWebInteractionInterpreterTest >> testInform [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){alert("A message")});$("#button-id2").click(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests-Configuring' }
+{ #category : #'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testInformSelection [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter informSelection.
 	html := self
@@ -315,12 +335,12 @@ CombinedWebInteractionInterpreterTest >> testInformSelection [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){alert($(this).children("option:selected").text())});$("#button-id2").click(function(event){alert($(this).children("option:selected").text())});</script>'
 ]
 
-{ #category : #'tests-Configuring - Dialogs' }
+{ #category : #'tests - Configuring - Dialogs' }
 CombinedWebInteractionInterpreterTest >> testOpen [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter open: [ :canvas | canvas dialog attributeAt: 'open' put: true ].
 
@@ -337,12 +357,12 @@ CombinedWebInteractionInterpreterTest >> testOpen [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testRemove [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 
 	html := self
@@ -362,12 +382,12 @@ CombinedWebInteractionInterpreterTest >> testRemove [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring - CSS' }
+{ #category : #'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter
 		updateCssClasses: [ :classes | classes removeClass: Classification >> #loading ]
@@ -385,12 +405,12 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatchin
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).removeClass("willow-loading")});$("#button-id2").click(function(event){$(this).removeClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests-Configuring - CSS' }
+{ #category : #'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithClass [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter
 		updateCssClasses: [ :classes | classes removeClass: Classification >> #loading ]
@@ -408,12 +428,12 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithCla
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(".willow").removeClass("willow-loading")});$("#button-id2").click(function(event){$(".willow").removeClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testRender [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 
 	html := self
@@ -433,12 +453,12 @@ CombinedWebInteractionInterpreterTest >> testRender [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testRenderAll [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 
 	html := self
@@ -458,12 +478,12 @@ CombinedWebInteractionInterpreterTest >> testRenderAll [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testScrollingIntoView [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 	interpreter scrollingIntoView: id.
 	html := self
@@ -482,12 +502,12 @@ CombinedWebInteractionInterpreterTest >> testScrollingIntoView [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring - Serialization' }
+{ #category : #'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeChildForm [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter serializeChildForm.
 	html := self
@@ -502,15 +522,12 @@ CombinedWebInteractionInterpreterTest >> testSerializeChildForm [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).children("form").serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).children("form").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-Configuring - Serialization' }
+{ #category : #'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeContainerForm [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher
-		combiningInterpretersOfAll:
-			{okButton.
-			cancelButton}.
+	interpreter := self combinedInterpreter.
 
 	interpreter serializeContainerForm.
 	html := self
@@ -525,14 +542,12 @@ CombinedWebInteractionInterpreterTest >> testSerializeContainerForm [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).closest("form").find(":input").serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).closest("form").find(":input").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-Configuring - Serialization' }
+{ #category : #'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeForm [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
-
-
+	interpreter := self combinedInterpreter.
 	html := self
 		renderUsing: [ :canvas | 
 			| form |
@@ -551,12 +566,12 @@ CombinedWebInteractionInterpreterTest >> testSerializeForm [
 			'<form accept-charset="utf-8" method="post" action="/" id="id15"></form><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$("#id15").serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$("#id15").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-Configuring - Serialization' }
+{ #category : #'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeIt [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter serializeIt.
 	html := self
@@ -571,12 +586,12 @@ CombinedWebInteractionInterpreterTest >> testSerializeIt [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-Configuring - Serialization' }
+{ #category : #'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter serializeWithHiddenInputs.
 	html := self
@@ -591,12 +606,12 @@ CombinedWebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).next("input:hidden").addBack().serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-Configuring' }
+{ #category : #'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testServerDo [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter serverDo: [  ].
 
@@ -612,15 +627,13 @@ CombinedWebInteractionInterpreterTest >> testServerDo [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
-
-
 	html := self
 		renderUsing: [ :canvas | 
 			| textInput |
@@ -638,12 +651,12 @@ CombinedWebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOnComponentWithId [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 
 	interpreter setValueTo: [ 'Ok' ] withoutTriggeringChangeOnComponentWithId: id.
@@ -661,12 +674,12 @@ CombinedWebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOn
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter showLoadingNotificationStyledAsAll: #().
 	html := self
@@ -681,12 +694,12 @@ CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll 
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 
 	| html interpreter container |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
 
 	html := self
@@ -704,12 +717,12 @@ CombinedWebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 			'<button id="button-id3" type="button">Ok</button><button id="button-id5" type="button">Cancel</button><div id="search-results-id1"></div><script type="text/javascript">$("#button-id3").click(function(event){$("#search-results-id1").html("Loading...");Willow.callServer({"url":"/","data":"2"})});$("#button-id5").click(function(event){$("#search-results-id1").html("Loading...");Willow.callServer({"url":"/","data":"4"})});</script>'
 ]
 
-{ #category : #'tests-Configuring - Serialization' }
+{ #category : #'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSubmitForm [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 
 	html := self
@@ -730,12 +743,12 @@ CombinedWebInteractionInterpreterTest >> testSubmitForm [
 			'<form accept-charset="utf-8" method="post" action="/" id="15"></form><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testSubmitFormStyledAs [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter submitFormStyledAs: Classification >> #willow.
 	html := self
@@ -750,12 +763,12 @@ CombinedWebInteractionInterpreterTest >> testSubmitFormStyledAs [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto [
 
 	| interpreter html id |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	id := '15'.
 
 	html := self
@@ -775,12 +788,12 @@ CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto 
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){var componentToDisable=$("#15");if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});$("#button-id4").click(function(event){var componentToDisable=$("#15");if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"3"})}});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfInto [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -795,12 +808,12 @@ CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfI
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){var componentToDisable=$(this);if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});$("#button-id4").click(function(event){var componentToDisable=$(this);if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"3"})}});</script>'
 ]
 
-{ #category : #'tests-Configuring - CSS' }
+{ #category : #'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testToggleCssClass [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #loading ]
@@ -818,12 +831,12 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClass [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).toggleClass("willow-loading")});$("#button-id2").click(function(event){$(this).toggleClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests-Configuring - CSS' }
+{ #category : #'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testToggleCssClassOn [
 
 	| interpreter element html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	element := IdentifiedWebView forDivNamed: 'example' containing: [  ].
 
 	interpreter
@@ -848,12 +861,12 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOn [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#example-id1").toggleClass("willow")});$("#button-id3").click(function(event){$("#example-id1").toggleClass("willow")});</script>'
 ]
 
-{ #category : #'tests-Configuring - CSS' }
+{ #category : #'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #loading ]
@@ -871,12 +884,12 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching 
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).toggleClass("willow-loading")});$("#button-id2").click(function(event){$(this).toggleClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests-Configuring-DOM' }
+{ #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testTransformInto [
 
 	| html interpreter container |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
 
 	html := self
@@ -894,12 +907,12 @@ CombinedWebInteractionInterpreterTest >> testTransformInto [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><div id="search-results-id1"></div><script type="text/javascript">$("#button-id2").click(function(event){$("#search-results-id1").html("Loading...")});$("#button-id3").click(function(event){$("#search-results-id1").html("Loading...")});</script>'
 ]
 
-{ #category : #'tests-Configuring - CSS' }
+{ #category : #'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 	interpreter
 		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery this ].
@@ -915,12 +928,12 @@ CombinedWebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching 
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
-{ #category : #'tests-Configuring' }
+{ #category : #'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testUserAgentDo [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter userAgentDo: [ ( JSStream on: 'window' ) call: 'print' ].
 
@@ -936,12 +949,12 @@ CombinedWebInteractionInterpreterTest >> testUserAgentDo [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){window.print()});$("#button-id2").click(function(event){window.print()});</script>'
 ]
 
-{ #category : #'tests-Configuring' }
+{ #category : #'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter
 		with: ( JSStream on: 'dataFromUserAgent' )
@@ -960,12 +973,12 @@ CombinedWebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 			'<button id="button-id3" type="button">Ok</button><button id="button-id6" type="button">Cancel</button><script type="text/javascript">$("#button-id3").click(function(event){if(dataFromUserAgent>3){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(dataFromUserAgent))].join("&")})}});$("#button-id6").click(function(event){if(dataFromUserAgent>3){Willow.callServer({"type":"POST","url":"/","data":["4","5="+encodeURIComponent(JSON.stringify(dataFromUserAgent))].join("&")})}});</script>'
 ]
 
-{ #category : #'tests-Configuring' }
+{ #category : #'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testWithServerDo [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter with: #(firstThing secondStuff) serverDo: [  ].
 

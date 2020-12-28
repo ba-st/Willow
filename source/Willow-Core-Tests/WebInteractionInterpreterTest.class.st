@@ -8,6 +8,26 @@ Class {
 }
 
 { #category : #'test support' }
+WebInteractionInterpreterTest >> changeInterpreter [
+
+	^ WebInteractionInterpreter
+		workingWith:
+			( WebComponentInteraction
+				triggeredAccordingTo: ( InteractionScriptTrigger interactSending: #onChange: )
+				serializingWith: SerializationCommand forCurrentObject )
+]
+
+{ #category : #'test support' }
+WebInteractionInterpreterTest >> clickInterpreter [
+
+	^ WebInteractionInterpreter
+		workingWith:
+			( WebComponentInteraction
+				triggeredAccordingTo: ( InteractionScriptTrigger interactSending: #onClick: )
+				serializingWith: NullWebInteractionCommand new )
+]
+
+{ #category : #'test support' }
 WebInteractionInterpreterTest >> configureScriptWith: interpreter [
 	^ self apply: interpreter toComponentDefinedBy: [ :canvas | canvas javascript ] afterApplyingDo: [ :canvas :javascript | canvas div script: javascript ]
 ]
@@ -23,7 +43,7 @@ WebInteractionInterpreterTest >> testAddCssClass [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -37,7 +57,7 @@ WebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter
 		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
@@ -53,7 +73,7 @@ WebInteractionInterpreterTest >> testChangeCssClassTo [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter
 		updateCssClasses: [ :classes | 
 			classes
@@ -75,7 +95,7 @@ WebInteractionInterpreterTest >> testCloseAllDialogs [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter closeAllDialogs.
 	html := self configureTextInputWith: interpreter.
 	self
@@ -89,7 +109,7 @@ WebInteractionInterpreterTest >> testCloseLastDialog [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter closeLastDialog.
 	html := self configureTextInputWith: interpreter.
 	self
@@ -103,7 +123,7 @@ WebInteractionInterpreterTest >> testConfirmAsking [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter confirmAsking: 'Continue?'.
 	html := self configureTextInputWith: interpreter.
 	self
@@ -117,7 +137,7 @@ WebInteractionInterpreterTest >> testConflictingSerializationCommandsAreNotAllow
 
 	| interpreter id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	self
@@ -142,7 +162,7 @@ WebInteractionInterpreterTest >> testDisable [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -166,7 +186,7 @@ WebInteractionInterpreterTest >> testEnable [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -190,7 +210,7 @@ WebInteractionInterpreterTest >> testFocus [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -214,7 +234,7 @@ WebInteractionInterpreterTest >> testFocusUsing [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 
 	interpreter focusUsing: [ :canvas | canvas jQuery this ].
 	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ].
@@ -223,90 +243,6 @@ WebInteractionInterpreterTest >> testFocusUsing [
 		assert: html
 		equals:
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
-]
-
-{ #category : #'tests - Instance Creation' }
-WebInteractionInterpreterTest >> testForChangeInComponentValue [
-
-	| interpreter html |
-
-	interpreter := EventInterpreterDispatcher defaultingToChange.
-	interpreter serverDo: [  ].
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
-]
-
-{ #category : #'tests - Instance Creation' }
-WebInteractionInterpreterTest >> testForChangeInHiddenInputDependentComponentValue [
-
-	| interpreter html |
-
-	interpreter := WebInteractionInterpreter forChangeInHiddenInputDependentComponentValue.
-	interpreter serverDo: [  ].
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&")})});</script>'
-]
-
-{ #category : #'tests - Instance Creation' }
-WebInteractionInterpreterTest >> testForClickOnComponent [
-
-	| interpreter html |
-
-	interpreter := EventInterpreterDispatcher defaultingToClick.
-	interpreter serverDo: [  ].
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
-]
-
-{ #category : #'tests - Instance Creation' }
-WebInteractionInterpreterTest >> testForClickOnHiddenInputDependentComponent [
-
-	| interpreter html |
-
-	interpreter := EventInterpreterDispatcher defaultingToClickHidden.
-	interpreter serverDo: [  ].
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&")})});</script>'
-]
-
-{ #category : #'tests - Instance Creation' }
-WebInteractionInterpreterTest >> testForDelayedModelLoading [
-
-	| interpreter html |
-
-	"This interpreter should not be used directly. See references to the class."
-	interpreter := WebInteractionInterpreter forDelayedModelLoading.
-	interpreter submitFormStyledAs: 'the-specified-style'.
-	html := self configureScriptWith: interpreter.
-	self
-		assert: html
-		equals: '<div></div><script type="text/javascript">$("form.the-specified-style").submit();</script>'
-]
-
-{ #category : #'tests - Instance Creation' }
-WebInteractionInterpreterTest >> testForDoubleClickOnComponent [
-
-	| interpreter html |
-
-	interpreter := WebInteractionInterpreter forDoubleClickOnComponent.
-	interpreter serverDo: [  ].
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").dblclick(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
 { #category : #'tests - Instance Creation' }
@@ -334,26 +270,12 @@ WebInteractionInterpreterTest >> testForInstantEvaluation [
 			'<input type="text"/><script type="text/javascript">Willow.callServer({"url":"/","data":"1"});</script>'
 ]
 
-{ #category : #'tests - Instance Creation' }
-WebInteractionInterpreterTest >> testForReleaseOfKeyInComponent [
-
-	| interpreter html |
-
-	interpreter := EventInterpreterDispatcher defaultingToKeyUp.
-	interpreter serverDo: [  ].
-	html := self configureTextInputWith: interpreter.
-	self
-		assert: html
-		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").keyup(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
-]
-
 { #category : #'tests - Configuring' }
 WebInteractionInterpreterTest >> testInform [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter inform: 'A message'.
 	html := self configureTextInputWith: interpreter.
 	self
@@ -367,7 +289,7 @@ WebInteractionInterpreterTest >> testInformSelection [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter informSelection.
 	html := self configureTextInputWith: interpreter.
 	self
@@ -381,7 +303,7 @@ WebInteractionInterpreterTest >> testOpen [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter open: [ :canvas | canvas dialog attributeAt: 'open' put: true ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -395,7 +317,7 @@ WebInteractionInterpreterTest >> testRemove [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -419,7 +341,7 @@ WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter
 		updateCssClasses: [ :classes | classes removeClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
@@ -435,7 +357,7 @@ WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithClass [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter
 		updateCssClasses: [ :classes | classes removeClass: Classification >> #loading ]
 		onElementsMatching: [ :canvas | canvas jQuery class: Classification >> #willow ].
@@ -453,7 +375,7 @@ WebInteractionInterpreterTest >> testRender [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -477,7 +399,7 @@ WebInteractionInterpreterTest >> testRenderAll [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -501,7 +423,7 @@ WebInteractionInterpreterTest >> testScrollingIntoView [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 	interpreter scrollingIntoView: id.
 	html := self
@@ -524,7 +446,7 @@ WebInteractionInterpreterTest >> testSerializeChildForm [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -548,7 +470,7 @@ WebInteractionInterpreterTest >> testSerializeContainerForm [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -572,7 +494,7 @@ WebInteractionInterpreterTest >> testSerializeForm [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	id := '15'.
 
 	html := self
@@ -598,7 +520,7 @@ WebInteractionInterpreterTest >> testSerializeIt [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -622,7 +544,7 @@ WebInteractionInterpreterTest >> testSerializeItTwiceIsNotAllowed [
 
 	| interpreter |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 
 	self
 		renderUsing: [ :canvas | 
@@ -645,7 +567,7 @@ WebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -669,7 +591,7 @@ WebInteractionInterpreterTest >> testServerDo [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -683,7 +605,7 @@ WebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	id := '15'.
 
 
@@ -709,7 +631,7 @@ WebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOnComponen
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	id := '15'.
 
 	interpreter setValueTo: [ 'Ok' ] withoutTriggeringChangeOnComponentWithId: id.
@@ -733,7 +655,7 @@ WebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingApplying [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 
 	interpreter
 		showLoadingNotificationDisplaying: 'Loading...'
@@ -751,7 +673,7 @@ WebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 
 	interpreter showLoadingNotificationStyledAsAll: ( Array with: Classification >> #willow ).
 	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ].
@@ -789,7 +711,7 @@ WebInteractionInterpreterTest >> testSubmitForm [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	id := '15'.
 
 	html := self
@@ -815,7 +737,7 @@ WebInteractionInterpreterTest >> testSubmitFormStyledAs [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -839,7 +761,7 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 	html := self
 		renderUsing: [ :canvas | 
@@ -862,7 +784,7 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfInto [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 	html := self
 		renderUsing: [ :canvas | 
@@ -885,7 +807,7 @@ WebInteractionInterpreterTest >> testToggleCssClass [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #loading ]
 		onElementsMatching: [ :canvas | canvas jQuery this ].
@@ -903,7 +825,7 @@ WebInteractionInterpreterTest >> testToggleCssClassOn [
 
 	| interpreter element html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	element := IdentifiedWebView forDivNamed: 'example' containing: [  ].
 
 	interpreter
@@ -926,7 +848,7 @@ WebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
@@ -964,7 +886,7 @@ WebInteractionInterpreterTest >> testUpdateCssClasses [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -978,7 +900,7 @@ WebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter
 		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
@@ -994,7 +916,7 @@ WebInteractionInterpreterTest >> testUserAgentDo [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter userAgentDo: [ :canvas | ( JSStream on: 'window' ) call: 'print' ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -1008,7 +930,7 @@ WebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter
 		with: ( JSStream on: 'dataFromUserAgent' )
 		onlyWhen: [ :parameter | parameter greaterThan: 3 ]
@@ -1025,11 +947,29 @@ WebInteractionInterpreterTest >> testWithServerDo [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick.
+	interpreter := self clickInterpreter.
 	interpreter with: #(firstThing secondStuff) serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
 		equals:
 			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'
+]
+
+{ #category : #'tests - Instance Creation' }
+WebInteractionInterpreterTest >> testWorkingWith [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter
+		workingWith:
+			( WebComponentInteraction
+				triggeredAccordingTo: ( InteractionScriptTrigger interactSending: #onDoubleClick: )
+				serializingWith: NullWebInteractionCommand new ).
+	interpreter inform: 'A message'.
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").dblclick(function(event){alert("A message")});</script>'
 ]

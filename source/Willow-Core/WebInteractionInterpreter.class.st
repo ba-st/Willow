@@ -32,34 +32,22 @@ WebInteractionInterpreter class >> forClickOnHiddenInputDependentComponent [
 ]
 
 { #category : #'instance creation' }
-WebInteractionInterpreter class >> forDelayedModelLoading [
-
-	^ self workingWith: DelayedModelLoader new
-]
-
-{ #category : #'instance creation' }
-WebInteractionInterpreter class >> forDoubleClickOnComponent [
-
-	^self workingWith: WebComponentInteraction triggeredOnDoubleClick
-]
-
-{ #category : #'instance creation' }
 WebInteractionInterpreter class >> forEvaluationOf: aSelector withAll: aParameterArray [
 
-	^self workingWith:
-		(WebComponentInteraction triggeredOnEvaluationOf: aSelector withAll: aParameterArray)
+	^ self
+		workingWith: ( WebComponentInteraction triggeredOnEvaluationOf: aSelector withAll: aParameterArray )
 ]
 
 { #category : #'instance creation' }
 WebInteractionInterpreter class >> forInstantEvaluation [
 
-	^self workingWith: WebComponentInteraction triggeredOnDocumentLoad
+	^ self workingWith: WebComponentInteraction triggeredOnDocumentLoad
 ]
 
-{ #category : #'private - instance creation' }
+{ #category : #'instance creation' }
 WebInteractionInterpreter class >> workingWith: aWebComponentInteraction [
 
-	^self new initializeWorkingWith: aWebComponentInteraction
+	^ self new initializeWorkingWith: aWebComponentInteraction
 ]
 
 { #category : #evaluating }

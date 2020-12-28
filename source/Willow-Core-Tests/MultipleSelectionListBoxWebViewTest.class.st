@@ -192,7 +192,7 @@ MultipleSelectionListBoxWebViewTest >> testOnTrigger [
 	| listBox html |
 
 	listBox := self newListBox.
-	listBox onTrigger disable.
+	listBox on trigger disable.
 
 	html := self render: listBox.
 

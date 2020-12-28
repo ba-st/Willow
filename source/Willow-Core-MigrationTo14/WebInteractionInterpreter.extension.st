@@ -1,6 +1,17 @@
 Extension { #name : #WebInteractionInterpreter }
 
 { #category : #'*Willow-Core-MigrationTo14' }
+WebInteractionInterpreter class >> combiningInterpretersOf: aWebViewCollection [
+
+	self
+		deprecated: 'Use a CombinedEventInterpreterDispatcher instead'
+		transformWith:
+			' CombinedWebInteractionInterpreter combiningInterpretersOf: `@aWebViewCollection'
+				-> 'CombinedEventInterpreterDispatcher combiningInterpretersOfAll: `@aWebViewCollection'.
+	^ CombinedEventInterpreterDispatcher combiningInterpretersOfAll: aWebViewCollection
+]
+
+{ #category : #'*Willow-Core-MigrationTo14' }
 WebInteractionInterpreter class >> forChangeInComponentValue [
 
 	self
@@ -20,6 +31,16 @@ WebInteractionInterpreter class >> forClickOnComponent [
 		transformWith: 'WebInteractionInterpreter forClickOnComponent' -> 'EventInterpreterDispatcher defaultingToClick'.
 
 	^ EventInterpreterDispatcher defaultingToClick
+]
+
+{ #category : #'*Willow-Core-MigrationTo14' }
+WebInteractionInterpreter class >> forDelayedModelLoading [
+
+	self
+		deprecated: 'Should not be used outside ServerResponseCommand>>#resetInterpreter'
+		transformWith: '`@receiver forDelayedModelLoading' -> '`@receiver workingWith: DelayedModelLoader new'.
+
+	^ self workingWith: DelayedModelLoader new
 ]
 
 { #category : #'*Willow-Core-MigrationTo14' }

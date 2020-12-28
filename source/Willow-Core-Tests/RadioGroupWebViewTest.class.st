@@ -20,7 +20,7 @@ RadioGroupWebViewTest >> testOnTrigger [
 
 	radioGroup := self newSingleSelectionView.
 	radioGroup allowAnyOf: #('Buenos Aires' 'CABA').
-	radioGroup onTrigger disable.
+	radioGroup on trigger disable.
 	html := self render: radioGroup.
 
 	self

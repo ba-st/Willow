@@ -106,7 +106,7 @@ SingleSelectionWebViewBehavior >> notifyInterested [
 ]
 
 { #category : #configuring }
-SingleSelectionWebViewBehavior >> onTrigger [
+SingleSelectionWebViewBehavior >> on [
 
 	^ self subclassResponsibility
 ]

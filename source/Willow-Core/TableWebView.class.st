@@ -64,7 +64,7 @@ TableWebView >> initializeDefinedBy: aColumnRendererCollection applying: aTableC
 	header := aHeader.
 	footer := aFooter.
 	self notifyChangesTo: footer.
-	interactionInterpreter := WebInteractionInterpreter forClickOnComponent.
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClick.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'table'.
 	self changeContentsTo: #()
 ]
@@ -82,9 +82,9 @@ TableWebView >> notifyInterested [
 ]
 
 { #category : #configuring }
-TableWebView >> onTrigger [
+TableWebView >> on [
 
-	^interactionInterpreter
+	^ interactionInterpreter
 ]
 
 { #category : #rendering }

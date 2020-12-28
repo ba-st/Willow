@@ -34,7 +34,7 @@ CombinedWebInteractionInterpreterTest >> testAddCssClass [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
 	html := self
 		renderUsing: [ :canvas | 
@@ -53,7 +53,7 @@ CombinedWebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	interpreter
 		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery this ].
@@ -74,7 +74,7 @@ CombinedWebInteractionInterpreterTest >> testChangeCssClassTo [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter
 		updateCssClasses: [ :classes | 
@@ -101,7 +101,7 @@ CombinedWebInteractionInterpreterTest >> testCloseAllDialogs [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter closeAllDialogs.
 
@@ -109,7 +109,8 @@ CombinedWebInteractionInterpreterTest >> testCloseAllDialogs [
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 
 	self
 		assert: html
@@ -122,7 +123,7 @@ CombinedWebInteractionInterpreterTest >> testCloseLastDialog [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter closeLastDialog.
 
@@ -130,7 +131,8 @@ CombinedWebInteractionInterpreterTest >> testCloseLastDialog [
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 
 	self
 		assert: html
@@ -143,14 +145,15 @@ CombinedWebInteractionInterpreterTest >> testConfirmAsking [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter confirmAsking: 'Continue?'.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -162,7 +165,7 @@ CombinedWebInteractionInterpreterTest >> testDisable [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -182,7 +185,7 @@ CombinedWebInteractionInterpreterTest >> testDisableSpecificComponent [
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 	html := self
@@ -207,7 +210,7 @@ CombinedWebInteractionInterpreterTest >> testEnable [
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 	html := self
@@ -232,7 +235,7 @@ CombinedWebInteractionInterpreterTest >> testFocus [
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 	html := self
@@ -244,7 +247,8 @@ CombinedWebInteractionInterpreterTest >> testFocus [
 			interpreter focus: textInput.
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -256,14 +260,15 @@ CombinedWebInteractionInterpreterTest >> testFocusUsing [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter focusUsing: [ :canvas | canvas jQuery this ].
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -275,14 +280,15 @@ CombinedWebInteractionInterpreterTest >> testInform [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter inform: 'A message'.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -294,14 +300,15 @@ CombinedWebInteractionInterpreterTest >> testInformSelection [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter informSelection.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -313,7 +320,7 @@ CombinedWebInteractionInterpreterTest >> testOpen [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter open: [ :canvas | canvas dialog attributeAt: 'open' put: true ].
 
@@ -321,7 +328,8 @@ CombinedWebInteractionInterpreterTest >> testOpen [
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 
 	self
 		assert: html
@@ -334,7 +342,7 @@ CombinedWebInteractionInterpreterTest >> testRemove [
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 	html := self
@@ -346,7 +354,8 @@ CombinedWebInteractionInterpreterTest >> testRemove [
 			interpreter remove: textInput.
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -358,7 +367,7 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatchin
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter
 		updateCssClasses: [ :classes | classes removeClass: Classification >> #loading ]
@@ -381,7 +390,7 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithCla
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter
 		updateCssClasses: [ :classes | classes removeClass: Classification >> #loading ]
@@ -404,7 +413,7 @@ CombinedWebInteractionInterpreterTest >> testRender [
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 	html := self
@@ -416,7 +425,8 @@ CombinedWebInteractionInterpreterTest >> testRender [
 			interpreter render: textInput.
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -428,7 +438,7 @@ CombinedWebInteractionInterpreterTest >> testRenderAll [
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 	html := self
@@ -440,7 +450,8 @@ CombinedWebInteractionInterpreterTest >> testRenderAll [
 			interpreter renderAll: {textInput}.
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -452,7 +463,7 @@ CombinedWebInteractionInterpreterTest >> testScrollingIntoView [
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 	interpreter scrollingIntoView: id.
 	html := self
@@ -463,7 +474,8 @@ CombinedWebInteractionInterpreterTest >> testScrollingIntoView [
 			textInput id: id.
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -475,14 +487,15 @@ CombinedWebInteractionInterpreterTest >> testSerializeChildForm [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter serializeChildForm.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -494,8 +507,8 @@ CombinedWebInteractionInterpreterTest >> testSerializeContainerForm [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
+	interpreter := CombinedEventInterpreterDispatcher
+		combiningInterpretersOfAll:
 			{okButton.
 			cancelButton}.
 
@@ -504,7 +517,8 @@ CombinedWebInteractionInterpreterTest >> testSerializeContainerForm [
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -516,7 +530,7 @@ CombinedWebInteractionInterpreterTest >> testSerializeForm [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 
 	html := self
@@ -529,7 +543,8 @@ CombinedWebInteractionInterpreterTest >> testSerializeForm [
 			interpreter serializeForm: form.
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -541,14 +556,15 @@ CombinedWebInteractionInterpreterTest >> testSerializeIt [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter serializeIt.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -560,14 +576,15 @@ CombinedWebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter serializeWithHiddenInputs.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -579,7 +596,7 @@ CombinedWebInteractionInterpreterTest >> testServerDo [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter serverDo: [  ].
 
@@ -600,7 +617,7 @@ CombinedWebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 
@@ -613,7 +630,8 @@ CombinedWebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -625,7 +643,7 @@ CombinedWebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOn
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 	interpreter setValueTo: [ 'Ok' ] withoutTriggeringChangeOnComponentWithId: id.
@@ -635,7 +653,8 @@ CombinedWebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOn
 			canvas textInput id: id.
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -647,14 +666,15 @@ CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll 
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter showLoadingNotificationStyledAsAll: #().
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -666,7 +686,7 @@ CombinedWebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 
 	| html interpreter container |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
 
 	html := self
@@ -675,7 +695,8 @@ CombinedWebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 			canvas
 				render: okButton;
 				render: cancelButton;
-				render: container ].
+				render: container
+			].
 
 	self
 		assert: html
@@ -688,7 +709,7 @@ CombinedWebInteractionInterpreterTest >> testSubmitForm [
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 	html := self
@@ -700,7 +721,8 @@ CombinedWebInteractionInterpreterTest >> testSubmitForm [
 			interpreter submitForm: form.
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 
 	self
 		assert: html
@@ -713,14 +735,15 @@ CombinedWebInteractionInterpreterTest >> testSubmitFormStyledAs [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter submitFormStyledAs: Classification >> #willow.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:
@@ -732,7 +755,7 @@ CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto 
 
 	| interpreter html id |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	id := '15'.
 
 	html := self
@@ -757,7 +780,7 @@ CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfI
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -777,7 +800,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClass [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #loading ]
@@ -800,7 +823,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOn [
 
 	| interpreter element html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	element := IdentifiedWebView forDivNamed: 'example' containing: [  ].
 
 	interpreter
@@ -830,7 +853,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching 
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #loading ]
@@ -853,7 +876,7 @@ CombinedWebInteractionInterpreterTest >> testTransformInto [
 
 	| html interpreter container |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
 
 	html := self
@@ -862,7 +885,8 @@ CombinedWebInteractionInterpreterTest >> testTransformInto [
 			canvas
 				render: okButton;
 				render: cancelButton;
-				render: container ].
+				render: container
+			].
 
 	self
 		assert: html
@@ -875,7 +899,7 @@ CombinedWebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching 
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 	interpreter
 		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery this ].
@@ -896,7 +920,7 @@ CombinedWebInteractionInterpreterTest >> testUserAgentDo [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter userAgentDo: [ ( JSStream on: 'window' ) call: 'print' ].
 
@@ -917,7 +941,7 @@ CombinedWebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter
 		with: ( JSStream on: 'dataFromUserAgent' )
@@ -941,7 +965,7 @@ CombinedWebInteractionInterpreterTest >> testWithServerDo [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter with: #(firstThing secondStuff) serverDo: [  ].
 

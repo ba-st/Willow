@@ -13,10 +13,13 @@ ImageWebViewTest >> testOnTrigger [
 	| image html |
 
 	image := ImageWebView locatedAt: 'ok.png' applying: [ :theImage |  ].
-	image onTrigger disable.
+	image on trigger disable.
 	html := self render: image.
 
-	self assert: html equals: '<img alt="" src="ok.png" id="img-id1"/><script type="text/javascript">$("#img-id1").click(function(event){$(this).prop("disabled",true)});</script>'
+	self
+		assert: html
+		equals:
+			'<img alt="" src="ok.png" id="img-id1"/><script type="text/javascript">$("#img-id1").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests-rendering' }

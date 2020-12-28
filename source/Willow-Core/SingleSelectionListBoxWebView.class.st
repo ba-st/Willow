@@ -48,12 +48,12 @@ SingleSelectionListBoxWebView >> identifyIn: aCanvas [
 SingleSelectionListBoxWebView >> initializeApplying: aCommandToComponent [
 
 	commandToComponent := aCommandToComponent.
-	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'list-box'
 ]
 
 { #category : #configuring }
-SingleSelectionListBoxWebView >> onTrigger [
+SingleSelectionListBoxWebView >> on [
 
 	^ interactionInterpreter
 ]

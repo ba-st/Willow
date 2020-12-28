@@ -65,13 +65,13 @@ CheckboxWebView >> initializeLabeledAccordingTo: anOptionalLabel applying: aComm
 
 	labelOptional := anOptionalLabel.
 	commandToComponent := aCommandToComponent.
-	interactionInterpreter := WebInteractionInterpreter forClickOnHiddenInputDependentComponent.
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClickHidden.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'checkbox'.
 	isChecked := true
 ]
 
 { #category : #configuring }
-CheckboxWebView >> onTrigger [
+CheckboxWebView >> on [
 
 	^ interactionInterpreter
 ]

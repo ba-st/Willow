@@ -79,10 +79,13 @@ TextFieldWebViewTest >> testOnTrigger [
 	| textField html |
 
 	textField := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :field |  ].
-	textField onTrigger disable.
+	textField on trigger disable.
 	html := self render: textField.
 
-	self assert: html equals: '<input value="" name="1" id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$(this).prop("disabled",true)});</script>'
+	self
+		assert: html
+		equals:
+			'<input value="" name="1" id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests-configuring' }
@@ -91,12 +94,13 @@ TextFieldWebViewTest >> testOnTriggerMultiLine [
 	| textField html |
 
 	textField := TextFieldWebView multiLineTriggeringOnChangeApplying: [ :field |  ].
-	textField onTrigger disable.
+	textField on trigger disable.
 	html := self render: textField.
 
 	self
 		assert: html
-		equals: '<textarea rows="auto" cols="auto" name="1" id="textarea-id2"></textarea><script type="text/javascript">$("#textarea-id2").change(function(event){$(this).prop("disabled",true)});</script>'
+		equals:
+			'<textarea rows="auto" cols="auto" name="1" id="textarea-id2"></textarea><script type="text/javascript">$("#textarea-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests-rendering' }
@@ -156,10 +160,13 @@ TextFieldWebViewTest >> testTriggerOnKeyUp [
 	| textField html |
 
 	textField := TextFieldWebView singleLineTriggeringOnKeyUpApplying: [ :field |  ].
-	textField onTrigger disable.
+	textField on trigger disable.
 	html := self render: textField.
 
-	self assert: html equals: '<input value="" name="1" id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").keyup(function(event){$(this).prop("disabled",true)});</script>'
+	self
+		assert: html
+		equals:
+			'<input value="" name="1" id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").keyup(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests-configuring' }
@@ -168,10 +175,11 @@ TextFieldWebViewTest >> testTriggerOnKeyUpMultiLine [
 	| textField html |
 
 	textField := TextFieldWebView multiLineTriggeringOnKeyUpApplying: [ :field |  ].
-	textField onTrigger disable.
+	textField on trigger disable.
 	html := self render: textField.
 
 	self
 		assert: html
-		equals: '<textarea rows="auto" cols="auto" name="1" id="textarea-id2"></textarea><script type="text/javascript">$("#textarea-id2").keyup(function(event){$(this).prop("disabled",true)});</script>'
+		equals:
+			'<textarea rows="auto" cols="auto" name="1" id="textarea-id2"></textarea><script type="text/javascript">$("#textarea-id2").keyup(function(event){$(this).prop("disabled",true)});</script>'
 ]

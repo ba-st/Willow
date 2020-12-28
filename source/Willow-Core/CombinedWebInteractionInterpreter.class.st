@@ -13,13 +13,6 @@ CombinedWebInteractionInterpreter class >> combining: aWebInteractionInterpreter
 	^self new initializeCombining: aWebInteractionInterpreterCollection
 ]
 
-{ #category : #'instance creation' }
-CombinedWebInteractionInterpreter class >> combiningInterpretersOf: aWebViewCollection [
-
-	^self
-		combining: (aWebViewCollection collect: [:aWebView | aWebView onTrigger])
-]
-
 { #category : #'Configuring - Dialogs' }
 CombinedWebInteractionInterpreter >> closeAllDialogs [
 

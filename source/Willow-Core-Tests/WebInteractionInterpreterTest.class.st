@@ -23,7 +23,7 @@ WebInteractionInterpreterTest >> testAddCssClass [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -37,7 +37,7 @@ WebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter
 		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
@@ -53,7 +53,7 @@ WebInteractionInterpreterTest >> testChangeCssClassTo [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter
 		updateCssClasses: [ :classes | 
 			classes
@@ -75,7 +75,7 @@ WebInteractionInterpreterTest >> testCloseAllDialogs [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter closeAllDialogs.
 	html := self configureTextInputWith: interpreter.
 	self
@@ -89,7 +89,7 @@ WebInteractionInterpreterTest >> testCloseLastDialog [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter closeLastDialog.
 	html := self configureTextInputWith: interpreter.
 	self
@@ -103,7 +103,7 @@ WebInteractionInterpreterTest >> testConfirmAsking [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter confirmAsking: 'Continue?'.
 	html := self configureTextInputWith: interpreter.
 	self
@@ -117,7 +117,7 @@ WebInteractionInterpreterTest >> testConflictingSerializationCommandsAreNotAllow
 
 	| interpreter id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	self
@@ -142,7 +142,7 @@ WebInteractionInterpreterTest >> testDisable [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -152,11 +152,13 @@ WebInteractionInterpreterTest >> testDisable [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter disable.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
-		equals: '<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){$(this).prop("disabled",true)});</script>'
+		equals:
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -164,7 +166,7 @@ WebInteractionInterpreterTest >> testEnable [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -174,11 +176,13 @@ WebInteractionInterpreterTest >> testEnable [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter enable: textInput.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
-		equals: '<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){$("#15").prop("disabled",false)});</script>'
+		equals:
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){$("#15").prop("disabled",false)});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -186,7 +190,7 @@ WebInteractionInterpreterTest >> testFocus [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -196,7 +200,8 @@ WebInteractionInterpreterTest >> testFocus [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter focus: textInput.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -209,7 +214,7 @@ WebInteractionInterpreterTest >> testFocusUsing [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 
 	interpreter focusUsing: [ :canvas | canvas jQuery this ].
 	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ].
@@ -225,7 +230,7 @@ WebInteractionInterpreterTest >> testForChangeInComponentValue [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -253,7 +258,7 @@ WebInteractionInterpreterTest >> testForClickOnComponent [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -267,7 +272,7 @@ WebInteractionInterpreterTest >> testForClickOnHiddenInputDependentComponent [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnHiddenInputDependentComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClickHidden.
 	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -334,7 +339,7 @@ WebInteractionInterpreterTest >> testForReleaseOfKeyInComponent [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forReleaseOfKeyInComponent.
+	interpreter := EventInterpreterDispatcher defaultingToKeyUp.
 	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -348,12 +353,13 @@ WebInteractionInterpreterTest >> testInform [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter inform: 'A message'.
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
-		equals: '<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert("A message")});</script>'
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert("A message")});</script>'
 ]
 
 { #category : #'tests - Configuring' }
@@ -361,7 +367,7 @@ WebInteractionInterpreterTest >> testInformSelection [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter informSelection.
 	html := self configureTextInputWith: interpreter.
 	self
@@ -375,7 +381,7 @@ WebInteractionInterpreterTest >> testOpen [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter open: [ :canvas | canvas dialog attributeAt: 'open' put: true ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -389,7 +395,7 @@ WebInteractionInterpreterTest >> testRemove [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -399,7 +405,8 @@ WebInteractionInterpreterTest >> testRemove [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter remove: textInput.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -412,7 +419,7 @@ WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter
 		updateCssClasses: [ :classes | classes removeClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
@@ -428,7 +435,7 @@ WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithClass [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter
 		updateCssClasses: [ :classes | classes removeClass: Classification >> #loading ]
 		onElementsMatching: [ :canvas | canvas jQuery class: Classification >> #willow ].
@@ -446,7 +453,7 @@ WebInteractionInterpreterTest >> testRender [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -456,7 +463,8 @@ WebInteractionInterpreterTest >> testRender [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter render: textInput.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -469,7 +477,7 @@ WebInteractionInterpreterTest >> testRenderAll [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -479,7 +487,8 @@ WebInteractionInterpreterTest >> testRenderAll [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter renderAll: {textInput}.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -492,7 +501,7 @@ WebInteractionInterpreterTest >> testScrollingIntoView [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 	interpreter scrollingIntoView: id.
 	html := self
@@ -501,7 +510,8 @@ WebInteractionInterpreterTest >> testScrollingIntoView [
 
 			textInput := canvas textInput.
 			textInput id: id.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -514,7 +524,7 @@ WebInteractionInterpreterTest >> testSerializeChildForm [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -524,7 +534,8 @@ WebInteractionInterpreterTest >> testSerializeChildForm [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter serializeChildForm.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -537,7 +548,7 @@ WebInteractionInterpreterTest >> testSerializeContainerForm [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -547,7 +558,8 @@ WebInteractionInterpreterTest >> testSerializeContainerForm [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter serializeContainerForm.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -560,7 +572,7 @@ WebInteractionInterpreterTest >> testSerializeForm [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	id := '15'.
 
 	html := self
@@ -572,7 +584,8 @@ WebInteractionInterpreterTest >> testSerializeForm [
 			anchor := canvas anchor.
 			anchor id: '16'.
 			interpreter serializeForm: form.
-			interpreter applyTo: anchor on: canvas ].
+			interpreter applyTo: anchor on: canvas
+			].
 
 	self
 		assert: html
@@ -585,7 +598,7 @@ WebInteractionInterpreterTest >> testSerializeIt [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -595,7 +608,8 @@ WebInteractionInterpreterTest >> testSerializeIt [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter serializeIt.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -608,7 +622,7 @@ WebInteractionInterpreterTest >> testSerializeItTwiceIsNotAllowed [
 
 	| interpreter |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 
 	self
 		renderUsing: [ :canvas | 
@@ -631,7 +645,7 @@ WebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 
 	html := self
@@ -641,7 +655,8 @@ WebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter serializeWithHiddenInputs.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -654,7 +669,7 @@ WebInteractionInterpreterTest >> testServerDo [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -668,7 +683,7 @@ WebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	id := '15'.
 
 
@@ -680,7 +695,8 @@ WebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 				id: id;
 				yourself.
 			interpreter setValueTo: [ 'Ok' ] thenTriggerChangeOf: textInput.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html
@@ -693,7 +709,7 @@ WebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOnComponen
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	id := '15'.
 
 	interpreter setValueTo: [ 'Ok' ] withoutTriggeringChangeOnComponentWithId: id.
@@ -703,7 +719,8 @@ WebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOnComponen
 		toComponentDefinedBy: [ :canvas | 
 			canvas textInput
 				id: id;
-				yourself ].
+				yourself
+			].
 
 	self
 		assert: html
@@ -716,7 +733,7 @@ WebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingApplying [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 
 	interpreter
 		showLoadingNotificationDisplaying: 'Loading...'
@@ -734,7 +751,7 @@ WebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 
 	interpreter showLoadingNotificationStyledAsAll: ( Array with: Classification >> #willow ).
 	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ].
@@ -752,13 +769,14 @@ WebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 
 	link := LinkWebView synchronicLabeled: 'Search!' applying: [  ].
 	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
-	link onTrigger show: 'Searching...' whileCallingServerToRender: container.
+	link on trigger show: 'Searching...' whileCallingServerToRender: container.
 
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: link;
-				render: container ].
+				render: container
+			].
 
 	self
 		assert: html
@@ -771,7 +789,7 @@ WebInteractionInterpreterTest >> testSubmitForm [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	id := '15'.
 
 	html := self
@@ -783,7 +801,8 @@ WebInteractionInterpreterTest >> testSubmitForm [
 			anchor := canvas anchor.
 			anchor id: '16'.
 			interpreter submitForm: form.
-			interpreter applyTo: anchor on: canvas ].
+			interpreter applyTo: anchor on: canvas
+			].
 
 	self
 		assert: html
@@ -796,7 +815,7 @@ WebInteractionInterpreterTest >> testSubmitFormStyledAs [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -806,11 +825,13 @@ WebInteractionInterpreterTest >> testSubmitFormStyledAs [
 			anchor := canvas anchor.
 			anchor id: '16'.
 			interpreter submitFormStyledAs: Classification >> #willow.
-			anchor interactUsing: interpreter ].
+			anchor interactUsing: interpreter
+			].
 
 	self
 		assert: html
-		equals: '<form accept-charset="utf-8" method="post" action="/" class="willow"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+		equals:
+			'<form accept-charset="utf-8" method="post" action="/" class="willow"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -818,7 +839,7 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 	html := self
 		renderUsing: [ :canvas | 
@@ -841,7 +862,7 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfInto [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := EventInterpreterDispatcher defaultingToChange.
 	id := '15'.
 	html := self
 		renderUsing: [ :canvas | 
@@ -864,7 +885,7 @@ WebInteractionInterpreterTest >> testToggleCssClass [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #loading ]
 		onElementsMatching: [ :canvas | canvas jQuery this ].
@@ -882,7 +903,7 @@ WebInteractionInterpreterTest >> testToggleCssClassOn [
 
 	| interpreter element html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	element := IdentifiedWebView forDivNamed: 'example' containing: [  ].
 
 	interpreter
@@ -905,7 +926,7 @@ WebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
@@ -923,15 +944,19 @@ WebInteractionInterpreterTest >> testTransformInto [
 
 	link := LinkWebView synchronicLabeled: 'Search!' applying: [  ].
 	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
-	link onTrigger transform: container into: 'Searching...'.
+	link on trigger transform: container into: 'Searching...'.
 
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: link;
-				render: container ].
+				render: container
+			].
 
-	self assert: html equals:  '<a id="a-id2">Search!</a><div id="search-results-id1"></div><script type="text/javascript">$("#a-id2").click(function(event){$("#search-results-id1").html("Searching...")});</script>'
+	self
+		assert: html
+		equals:
+			'<a id="a-id2">Search!</a><div id="search-results-id1"></div><script type="text/javascript">$("#a-id2").click(function(event){$("#search-results-id1").html("Searching...")});</script>'
 ]
 
 { #category : #'tests - Configuring - CSS' }
@@ -939,7 +964,7 @@ WebInteractionInterpreterTest >> testUpdateCssClasses [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter updateCssClasses: [ :classes | classes addClass: Classification >> #willow ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -953,7 +978,7 @@ WebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter
 		updateCssClasses: [ :classes | classes addClass: Classification >> #willow ]
 		onElementsMatching: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ].
@@ -969,7 +994,7 @@ WebInteractionInterpreterTest >> testUserAgentDo [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter userAgentDo: [ :canvas | ( JSStream on: 'window' ) call: 'print' ].
 	html := self configureTextInputWith: interpreter.
 	self
@@ -983,7 +1008,7 @@ WebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter
 		with: ( JSStream on: 'dataFromUserAgent' )
 		onlyWhen: [ :parameter | parameter greaterThan: 3 ]
@@ -1000,7 +1025,7 @@ WebInteractionInterpreterTest >> testWithServerDo [
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter with: #(firstThing secondStuff) serverDo: [  ].
 	html := self configureTextInputWith: interpreter.
 	self

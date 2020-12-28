@@ -8,27 +8,27 @@ Class {
 }
 
 { #category : #'instance creation' }
-WebInteractionInterpreter class >> forChangeInComponentValue [
-
-	^self workingWith: WebComponentInteraction triggeredOnChange
-]
-
-{ #category : #'instance creation' }
 WebInteractionInterpreter class >> forChangeInHiddenInputDependentComponentValue [
 
-	^self workingWith: WebComponentInteraction triggeredOnChangeSerializingHiddenInputs
-]
+	self
+		deprecated: 'Use an EventInterpreterDispatcher'
+		transformWith:
+			'WebInteractionInterpreter forChangeInHiddenInputDependentComponentValue'
+				-> 'EventInterpreterDispatcher defaultingToChangeHidden'.
 
-{ #category : #'instance creation' }
-WebInteractionInterpreter class >> forClickOnComponent [
-
-	^self workingWith: WebComponentInteraction triggeredOnClick
+	^ EventInterpreterDispatcher defaultingToChangeHidden
 ]
 
 { #category : #'instance creation' }
 WebInteractionInterpreter class >> forClickOnHiddenInputDependentComponent [
 
-	^self workingWith: WebComponentInteraction triggeredOnClickSerializingHiddenInputs
+	self
+		deprecated: 'Use an EventInterpreterDispatcher'
+		transformWith:
+			'WebInteractionInterpreter forClickOnHiddenInputDependentComponent'
+				-> 'EventInterpreterDispatcher defaultingToClickHidden'.
+
+	^ EventInterpreterDispatcher defaultingToClickHidden
 ]
 
 { #category : #'instance creation' }
@@ -54,12 +54,6 @@ WebInteractionInterpreter class >> forEvaluationOf: aSelector withAll: aParamete
 WebInteractionInterpreter class >> forInstantEvaluation [
 
 	^self workingWith: WebComponentInteraction triggeredOnDocumentLoad
-]
-
-{ #category : #'instance creation' }
-WebInteractionInterpreter class >> forReleaseOfKeyInComponent [
-
-	^self workingWith: WebComponentInteraction triggeredOnKeyUp
 ]
 
 { #category : #'private - instance creation' }

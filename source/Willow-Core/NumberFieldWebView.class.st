@@ -13,10 +13,11 @@ Class {
 { #category : #'instance creation' }
 NumberFieldWebView class >> applying: aComponentCommand transformingWith: aTextCodec [
 
-	^ (self  
+	^ ( self
 		forComponentBuiltUsing: [ :canvas | canvas textInput ]
 		withInteractionDefinedBy: self changeInterpreter
-		applying: [ :field | field beNumberInput + aComponentCommand ] asWebComponentCommand) initializeTransformingWith: aTextCodec
+		applying: [ :field | field beNumberInput + aComponentCommand ] asWebComponentCommand )
+		initializeTransformingWith: aTextCodec
 ]
 
 { #category : #'number-container-API' }

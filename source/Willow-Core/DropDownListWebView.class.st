@@ -44,12 +44,12 @@ DropDownListWebView >> identifyIn: aCanvas [
 DropDownListWebView >> initializeApplying: aCommandToComponent [
 
 	commandToComponent := aCommandToComponent.
-	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'drop-down-list'
 ]
 
 { #category : #configuring }
-DropDownListWebView >> onTrigger [
+DropDownListWebView >> on [
 
 	^ interactionInterpreter
 ]

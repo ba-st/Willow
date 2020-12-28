@@ -91,8 +91,7 @@ MultipleSelectionListBoxWebView >> initializeApplying: aCommandToComponent [
 
 	interested := Set new.
 	commandToComponent := aCommandToComponent.
-	interactionInterpreter := WebInteractionInterpreter
-		forChangeInHiddenInputDependentComponentValue.
+	interactionInterpreter := EventInterpreterDispatcher defaultingToChangeHidden.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'list-box'.
 	self disallowAll
 ]
@@ -110,7 +109,7 @@ MultipleSelectionListBoxWebView >> notifyInterested [
 ]
 
 { #category : #configuring }
-MultipleSelectionListBoxWebView >> onTrigger [
+MultipleSelectionListBoxWebView >> on [
 
 	^ interactionInterpreter
 ]

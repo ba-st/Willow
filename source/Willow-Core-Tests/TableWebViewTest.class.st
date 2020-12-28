@@ -126,7 +126,7 @@ TableWebViewTest >> testOnTrigger [
 		addColumn: [ :column | column rendering: [ :number | number even ] ];
 		build.
 
-	table onTrigger disable.
+	table on trigger disable.
 
 	html := self render: table.
 

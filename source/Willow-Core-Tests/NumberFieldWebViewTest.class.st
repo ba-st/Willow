@@ -68,10 +68,13 @@ NumberFieldWebViewTest >> testOnTrigger [
 
 	numberField := NumberFieldWebView applying: [ :field |  ] transformingWith: IntegerCodec new.
 
-	numberField onTrigger disable.
+	numberField on trigger disable.
 	html := self render: numberField.
 
-	self assert: html equals: '<input value="" name="1" type="number" id="input-id2"/><script type="text/javascript">$("#input-id2").change(function(event){$(this).prop("disabled",true)});</script>'
+	self
+		assert: html
+		equals:
+			'<input value="" name="1" type="number" id="input-id2"/><script type="text/javascript">$("#input-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests-rendering' }

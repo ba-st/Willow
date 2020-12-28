@@ -19,7 +19,10 @@ DateFieldWebView class >> applying: aComponentCommand [
 { #category : #'instance creation' }
 DateFieldWebView class >> applying: aComponentCommand transformingWith: aTextCodec [
 
-	^ (self forComponentBuiltUsing: [ :canvas | canvas textInput ] withInteractionDefinedBy: self changeInterpreter applying: [ :field | field beDateInput + aComponentCommand ] asWebComponentCommand)
+	^ ( self
+		forComponentBuiltUsing: [ :canvas | canvas textInput ]
+		withInteractionDefinedBy: self changeInterpreter
+		applying: [ :field | field beDateInput + aComponentCommand ] asWebComponentCommand )
 		initializeTransformingWith: aTextCodec
 ]
 

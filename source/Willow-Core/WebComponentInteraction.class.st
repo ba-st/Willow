@@ -2,9 +2,9 @@ Class {
 	#name : #WebComponentInteraction,
 	#superclass : #Object,
 	#instVars : [
-		'triggerPolicy',
 		'commands',
-		'serializationCommand'
+		'serializationCommand',
+		'triggerPolicy'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }

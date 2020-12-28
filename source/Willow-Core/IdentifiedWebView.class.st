@@ -127,7 +127,7 @@ IdentifiedWebView >> initializeForComponentBuiltUsing: aComponentBuilder as: anI
 { #category : #configuring }
 IdentifiedWebView >> onTrigger [
 
-	^view onTrigger
+	^ view on trigger
 ]
 
 { #category : #rendering }

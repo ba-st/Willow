@@ -40,15 +40,15 @@ SynchronicSubmitButtonWebView >> initializeLabeled: aLabel applying: aCommandCol
 
 	label := aLabel.
 	commandToComponent := aCommandCollection.
-	interactionInterpreter := WebInteractionInterpreter forClickOnComponent.
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClick.
 	submitCallback := actionOnSubmit.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'submit-button'
 ]
 
 { #category : #configuring }
-SynchronicSubmitButtonWebView >> onTrigger [
+SynchronicSubmitButtonWebView >> on [
 
-	^interactionInterpreter
+	^ interactionInterpreter
 ]
 
 { #category : #rendering }

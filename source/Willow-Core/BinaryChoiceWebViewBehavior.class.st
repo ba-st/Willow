@@ -58,7 +58,7 @@ BinaryChoiceWebViewBehavior >> notifyInterested [
 ]
 
 { #category : #configuring }
-BinaryChoiceWebViewBehavior >> onTrigger [
+BinaryChoiceWebViewBehavior >> on [
 
 	^ self subclassResponsibility
 ]

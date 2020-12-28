@@ -37,13 +37,13 @@ PhrasingContainerWebView >> initializeObtainingContentFrom: aContentProvider app
 
 	phrasingContentProvider := aContentProvider.
 	commandToComponent := aComponentCommand.
-	interactionInterpreter := WebInteractionInterpreter forClickOnComponent
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
 ]
 
 { #category : #configuring }
-PhrasingContainerWebView >> onTrigger [
+PhrasingContainerWebView >> on [
 
-	^interactionInterpreter
+	^ interactionInterpreter
 ]
 
 { #category : #rendering }

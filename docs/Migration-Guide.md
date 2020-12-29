@@ -17,12 +17,23 @@
 component updateCssClasses: [ :classes | classes addClass: aNewCSSClass ] onElementsMatching: [ :canvas | canvas jQuery class: anExistingCSSClass ];
 ```
 
-`onTrigger` has changed so that specific events can be referenced. To get the previous behavior all senders of `onTrigger` should instead send `on trigger`. To access other events check the protocol offered by `EventInterpreterDispatcher`. For example to configure the behavior on mouse over, send `on mouseOver` then configure as usual. Uses of `CombinedWebInteractionInterpreter combiningInterpretersOf:` should be changed to `CombinedEventInterpreterDispatcher combiningInterpretersOfAll:`. In the rare case of external use of interpreters, some deprecations have been prepared. 
+`onTrigger` has changed so that specific events can be referenced. To get the previous behavior all senders of `onTrigger` should instead send `on trigger`. To access other events check the protocol offered by `EventInterpreterDispatcher`. For example to configure the behavior on mouse over, send `on mouseOver` then configure as usual.
+
+For custom events, use `on eventNamed:` followed by a symbol with the Javascript method to call. This custom interaction assumes by default that no serialization is required on the triggering component. To override this behavior, simply add the corresponding serialization command, for example:
+```	( selectionList on eventNamed: #blur )
+		serializeThis;
+		serverDo: [ ... ]
+```
+
+Uses of `CombinedWebInteractionInterpreter combiningInterpretersOf:` should be changed to `CombinedEventInterpreterDispatcher combiningInterpretersOfAll:`.
+
+In the rare case of external use of interpreters, some deprecations have been prepared. 
 `WebInteractionInterpreter forClickOnComponent` transform to `EventInterpreterDispatcher defaultingToClick`
 `WebInteractionInterpreter forChangeInComponentValue` transforms to `EventInterpreterDispatcher defaultingToChange`
 `WebInteractionInterpreter forClickOnHiddenInputDependentComponent` transforms to `EventInterpreterDispatcher defaultingToClickHidden`
 `WebInteractionInterpreter forChangeInHiddenInputDependentComponentValue` transforms to `EventInterpreterDispatcher defaultingToChangeHidden`
 `WebInteractionInterpreter forReleaseOfKeyInComponent` transforms to `EventInterpreterDispatcher defaultingToKeyUp`
+
 
 ## Version 10 to 11
 

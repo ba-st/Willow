@@ -10,26 +10,22 @@ Class {
 { #category : #'test support' }
 WebInteractionInterpreterTest >> changeInterpreter [
 
-	^ WebInteractionInterpreter
-		workingWith:
-			( WebComponentInteraction
-				triggeredAccordingTo: ( InteractionScriptTrigger interactSending: #onChange: )
-				serializingWith: SerializationCommand forCurrentObject )
+	^ WebInteractionInterpreter calling: #change serializingWith: SerializationCommand forCurrentObject
 ]
 
 { #category : #'test support' }
 WebInteractionInterpreterTest >> clickInterpreter [
 
-	^ WebInteractionInterpreter
-		workingWith:
-			( WebComponentInteraction
-				triggeredAccordingTo: ( InteractionScriptTrigger interactSending: #onClick: )
-				serializingWith: NullWebInteractionCommand new )
+	^ WebInteractionInterpreter calling: #click serializingWith: NullWebInteractionCommand new
 ]
 
 { #category : #'test support' }
 WebInteractionInterpreterTest >> configureScriptWith: interpreter [
-	^ self apply: interpreter toComponentDefinedBy: [ :canvas | canvas javascript ] afterApplyingDo: [ :canvas :javascript | canvas div script: javascript ]
+
+	^ self
+		apply: interpreter
+		toComponentDefinedBy: [ :canvas | canvas javascript ]
+		afterApplyingDo: [ :canvas :javascript | canvas div script: javascript ]
 ]
 
 { #category : #'test support' }
@@ -66,6 +62,39 @@ WebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 		assert: html
 		equals:
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".aComponentByStyleName").addClass("willow")});</script>'
+]
+
+{ #category : #'tests - evaluating' }
+WebInteractionInterpreterTest >> testApplyToOn [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter
+		calling: #dblclick
+		serializingWith: NullWebInteractionCommand new.
+	interpreter inform: 'A message'.
+
+	html := self renderUsing: [ :canvas | interpreter applyTo: canvas textInput on: canvas ].
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").dblclick(function(event){alert("A message")});</script>'
+]
+
+{ #category : #'tests - Instance Creation' }
+WebInteractionInterpreterTest >> testCallingSerializingWith [
+
+	| interpreter html |
+
+	interpreter := WebInteractionInterpreter
+		calling: #dblclick
+		serializingWith: NullWebInteractionCommand new.
+	interpreter inform: 'A message'.
+	html := self configureTextInputWith: interpreter.
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").dblclick(function(event){alert("A message")});</script>'
 ]
 
 { #category : #'tests - Configuring - CSS' }
@@ -964,7 +993,7 @@ WebInteractionInterpreterTest >> testWorkingWith [
 	interpreter := WebInteractionInterpreter
 		workingWith:
 			( WebComponentInteraction
-				triggeredAccordingTo: ( InteractionScriptTrigger interactSending: #onDoubleClick: )
+				triggeredAccordingTo: ( InteractionScriptTrigger interactCalling: #dblclick )
 				serializingWith: NullWebInteractionCommand new ).
 	interpreter inform: 'A message'.
 	html := self configureTextInputWith: interpreter.

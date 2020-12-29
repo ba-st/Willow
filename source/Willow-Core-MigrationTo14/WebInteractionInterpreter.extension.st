@@ -24,6 +24,18 @@ WebInteractionInterpreter class >> forChangeInComponentValue [
 ]
 
 { #category : #'*Willow-Core-MigrationTo14' }
+WebInteractionInterpreter class >> forChangeInHiddenInputDependentComponentValue [
+
+	self
+		deprecated: 'Use an EventInterpreterDispatcher'
+		transformWith:
+			'WebInteractionInterpreter forChangeInHiddenInputDependentComponentValue'
+				-> 'EventInterpreterDispatcher defaultingToChangeHidden'.
+
+	^ EventInterpreterDispatcher defaultingToChangeHidden
+]
+
+{ #category : #'*Willow-Core-MigrationTo14' }
 WebInteractionInterpreter class >> forClickOnComponent [
 
 	self
@@ -31,6 +43,18 @@ WebInteractionInterpreter class >> forClickOnComponent [
 		transformWith: 'WebInteractionInterpreter forClickOnComponent' -> 'EventInterpreterDispatcher defaultingToClick'.
 
 	^ EventInterpreterDispatcher defaultingToClick
+]
+
+{ #category : #'*Willow-Core-MigrationTo14' }
+WebInteractionInterpreter class >> forClickOnHiddenInputDependentComponent [
+
+	self
+		deprecated: 'Use an EventInterpreterDispatcher'
+		transformWith:
+			'WebInteractionInterpreter forClickOnHiddenInputDependentComponent'
+				-> 'EventInterpreterDispatcher defaultingToClickHidden'.
+
+	^ EventInterpreterDispatcher defaultingToClickHidden
 ]
 
 { #category : #'*Willow-Core-MigrationTo14' }

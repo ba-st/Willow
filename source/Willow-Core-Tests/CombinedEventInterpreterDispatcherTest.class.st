@@ -101,6 +101,27 @@ CombinedEventInterpreterDispatcherTest >> testCombiningInterpretersOfAll [
 ]
 
 { #category : #'tests - configuring' }
+CombinedEventInterpreterDispatcherTest >> testEventNamed [
+
+	| dispatcher html |
+
+	dispatcher := CombinedEventInterpreterDispatcher
+		combiningInterpretersOfAll: ( Array with: okButton with: textField ).
+	( dispatcher eventNamed: #dblclick ) inform: 'A message'.
+
+	html := self
+		renderUsing: [ :canvas | 
+			canvas
+				render: okButton;
+				render: textField
+			].
+	self
+		assert: html
+		equals:
+			'<button id="button-id1" type="button">Ok</button><input value="" name="2" id="input-id3" type="text"/><script type="text/javascript">$("#button-id1").dblclick(function(event){alert("A message")});$("#input-id3").dblclick(function(event){alert("A message")});</script>'
+]
+
+{ #category : #'tests - configuring' }
 CombinedEventInterpreterDispatcherTest >> testKeyUp [
 
 	| dispatcher html |

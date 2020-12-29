@@ -124,6 +124,20 @@ EventInterpreterDispatcherTest >> testDefaultingToKeyUp [
 ]
 
 { #category : #'tests - configuring' }
+EventInterpreterDispatcherTest >> testEventNamed [
+
+	| dispatcher html |
+
+	dispatcher := EventInterpreterDispatcher defaultingToChange.
+	( dispatcher eventNamed: #dblclick ) inform: 'A message'.
+	html := self configureTextInputWith: dispatcher.
+	self
+		assert: html
+		equals:
+			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").dblclick(function(event){alert("A message")});</script>'
+]
+
+{ #category : #'tests - configuring' }
 EventInterpreterDispatcherTest >> testKeyUp [
 
 	| dispatcher html |

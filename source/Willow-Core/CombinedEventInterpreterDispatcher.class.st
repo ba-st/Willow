@@ -31,6 +31,13 @@ CombinedEventInterpreterDispatcher >> click [
 	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #click )
 ]
 
+{ #category : #configuring }
+CombinedEventInterpreterDispatcher >> eventNamed: anEventName [
+
+	^ CombinedWebInteractionInterpreter
+		combining: ( eventInterpreterDispatchers collect: [ :dispatcher | dispatcher eventNamed: anEventName ] )
+]
+
 { #category : #initialization }
 CombinedEventInterpreterDispatcher >> initializeCombiningAll: anEventInterpreterDispatcherCollection [
 

@@ -17,6 +17,12 @@ EventInterpreterDispatcherBehavior >> click [
 ]
 
 { #category : #configuring }
+EventInterpreterDispatcherBehavior >> eventNamed: anEventName [
+
+	^ self subclassResponsibility
+]
+
+{ #category : #configuring }
 EventInterpreterDispatcherBehavior >> keyUp [
 
 	^ self subclassResponsibility

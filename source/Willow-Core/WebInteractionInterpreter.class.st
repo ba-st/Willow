@@ -8,27 +8,13 @@ Class {
 }
 
 { #category : #'instance creation' }
-WebInteractionInterpreter class >> forChangeInHiddenInputDependentComponentValue [
+WebInteractionInterpreter class >> calling: anEventName serializingWith: serializationCommand [
 
-	self
-		deprecated: 'Use an EventInterpreterDispatcher'
-		transformWith:
-			'WebInteractionInterpreter forChangeInHiddenInputDependentComponentValue'
-				-> 'EventInterpreterDispatcher defaultingToChangeHidden'.
-
-	^ EventInterpreterDispatcher defaultingToChangeHidden
-]
-
-{ #category : #'instance creation' }
-WebInteractionInterpreter class >> forClickOnHiddenInputDependentComponent [
-
-	self
-		deprecated: 'Use an EventInterpreterDispatcher'
-		transformWith:
-			'WebInteractionInterpreter forClickOnHiddenInputDependentComponent'
-				-> 'EventInterpreterDispatcher defaultingToClickHidden'.
-
-	^ EventInterpreterDispatcher defaultingToClickHidden
+	^ self
+		workingWith:
+			( WebComponentInteraction
+				triggeredAccordingTo: ( InteractionScriptTrigger interactCalling: anEventName )
+				serializingWith: serializationCommand )
 ]
 
 { #category : #'instance creation' }

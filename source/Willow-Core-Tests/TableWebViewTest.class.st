@@ -118,7 +118,7 @@ TableWebViewTest >> testHeadedDefinedByApplyingWithContents [
 ]
 
 { #category : #'tests-rendering' }
-TableWebViewTest >> testOnTrigger [
+TableWebViewTest >> testOn [
 
 	| table html |
 

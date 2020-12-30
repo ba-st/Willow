@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #'tests-rendering' }
-PhrasingContainerWebViewTest >> testOnTrigger [
+PhrasingContainerWebViewTest >> testOn [
 
 	| container html |
 

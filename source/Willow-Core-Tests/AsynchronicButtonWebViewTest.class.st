@@ -25,7 +25,7 @@ AsynchronicButtonWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #'tests-rendering' }
-AsynchronicButtonWebViewTest >> testOnTrigger [
+AsynchronicButtonWebViewTest >> testOn [
 
 	| button html |
 

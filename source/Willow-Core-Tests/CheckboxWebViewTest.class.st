@@ -30,7 +30,7 @@ CheckboxWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #'tests-configuring' }
-CheckboxWebViewTest >> testOnTrigger [
+CheckboxWebViewTest >> testOn [
 
 	| html binaryChoiceView |
 

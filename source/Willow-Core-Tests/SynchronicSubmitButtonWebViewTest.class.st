@@ -29,7 +29,7 @@ SynchronicSubmitButtonWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #'tests-rendering' }
-SynchronicSubmitButtonWebViewTest >> testOnTrigger [
+SynchronicSubmitButtonWebViewTest >> testOn [
 
 	| synchronicButton html |
 

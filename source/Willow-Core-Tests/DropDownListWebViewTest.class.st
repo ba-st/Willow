@@ -31,7 +31,7 @@ DropDownListWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #'tests-configuring' }
-DropDownListWebViewTest >> testOnTrigger [
+DropDownListWebViewTest >> testOn [
 
 	| dropDownList html |
 

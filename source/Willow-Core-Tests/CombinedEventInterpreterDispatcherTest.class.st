@@ -13,7 +13,7 @@ CombinedEventInterpreterDispatcherTest >> setUp [
 
 	super setUp.
 	okButton := AsynchronicButtonWebView labeled: 'Ok'.
-	textField := TextFieldWebView singleLineTriggeringOnChangeApplying: [  ]
+	textField := TextFieldWebView singleLineApplying: [  ]
 ]
 
 { #category : #'tests - configuring' }

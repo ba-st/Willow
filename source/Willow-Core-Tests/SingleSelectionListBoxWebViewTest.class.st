@@ -40,7 +40,7 @@ SingleSelectionListBoxWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #tests }
-SingleSelectionListBoxWebViewTest >> testOnTrigger [
+SingleSelectionListBoxWebViewTest >> testOn [
 
 	| listBox html |
 

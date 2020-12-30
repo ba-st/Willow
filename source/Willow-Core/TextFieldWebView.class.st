@@ -8,38 +8,20 @@ Class {
 }
 
 { #category : #'Instance Creation' }
-TextFieldWebView class >> multiLineTriggeringOnChangeApplying: aComponentCommand [
+TextFieldWebView class >> multiLineApplying: aComponentCommand [
 
 	^ self
 		forComponentBuiltUsing: [ :canvas | canvas textArea ]
-		withInteractionDefinedBy: EventInterpreterDispatcher defaultingToChange
-		applying: aComponentCommand
-]
-
-{ #category : #'Instance Creation' }
-TextFieldWebView class >> multiLineTriggeringOnKeyUpApplying: aComponentCommand [
-
-	^ self
-		forComponentBuiltUsing: [ :canvas | canvas textArea ]
-		withInteractionDefinedBy: EventInterpreterDispatcher defaultingToKeyUp
-		applying: aComponentCommand
-]
-
-{ #category : #'Instance Creation' }
-TextFieldWebView class >> singleLineTriggeringOnChangeApplying: aComponentCommand [
-
-	^ self
-		forComponentBuiltUsing: [ :canvas | canvas textInput ]
 		withInteractionDefinedBy: self changeInterpreter
 		applying: aComponentCommand
 ]
 
 { #category : #'Instance Creation' }
-TextFieldWebView class >> singleLineTriggeringOnKeyUpApplying: aComponentCommand [
+TextFieldWebView class >> singleLineApplying: aComponentCommand [
 
 	^ self
 		forComponentBuiltUsing: [ :canvas | canvas textInput ]
-		withInteractionDefinedBy: EventInterpreterDispatcher defaultingToKeyUp
+		withInteractionDefinedBy: self changeInterpreter
 		applying: aComponentCommand
 ]
 

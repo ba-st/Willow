@@ -14,7 +14,7 @@ RadioGroupWebViewTest >> newSingleSelectionView [
 ]
 
 { #category : #'tests-rendering' }
-RadioGroupWebViewTest >> testOnTrigger [
+RadioGroupWebViewTest >> testOn [
 
 	| radioGroup html |
 

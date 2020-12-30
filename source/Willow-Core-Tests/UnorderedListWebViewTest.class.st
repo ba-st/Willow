@@ -25,7 +25,7 @@ UnorderedListWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #'tests-rendering' }
-UnorderedListWebViewTest >> testOnTrigger [
+UnorderedListWebViewTest >> testOn [
 
 	| unorderedList html |
 

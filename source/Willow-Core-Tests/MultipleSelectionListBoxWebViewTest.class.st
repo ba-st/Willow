@@ -187,7 +187,7 @@ MultipleSelectionListBoxWebViewTest >> testNotifyChangesWhenSelectionDoesNotChan
 ]
 
 { #category : #'tests-rendering' }
-MultipleSelectionListBoxWebViewTest >> testOnTrigger [
+MultipleSelectionListBoxWebViewTest >> testOn [
 
 	| listBox html |
 

@@ -48,7 +48,7 @@ IdentifiedWebViewTest >> testForRowNamedContaining [
 ]
 
 { #category : #'tests-rendering' }
-IdentifiedWebViewTest >> testOnTrigger [
+IdentifiedWebViewTest >> testOn [
 
 	| identifiedView html |
 

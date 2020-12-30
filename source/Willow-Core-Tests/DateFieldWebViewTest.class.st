@@ -63,7 +63,7 @@ DateFieldWebViewTest >> testNotifyChangesTo [
 ]
 
 { #category : #tests }
-DateFieldWebViewTest >> testOnTrigger [
+DateFieldWebViewTest >> testOn [
 
 	| dateField html |
 

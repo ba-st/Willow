@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #'tests-rendering' }
-ImageWebViewTest >> testOnTrigger [
+ImageWebViewTest >> testOn [
 
 	| image html |
 

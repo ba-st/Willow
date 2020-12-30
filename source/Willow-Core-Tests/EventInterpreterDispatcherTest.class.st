@@ -109,20 +109,6 @@ EventInterpreterDispatcherTest >> testDefaultingToClickHidden [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - instance creation' }
-EventInterpreterDispatcherTest >> testDefaultingToKeyUp [
-
-	| dispatcher html |
-
-	dispatcher := EventInterpreterDispatcher defaultingToKeyUp.
-	dispatcher trigger inform: 'A message'.
-	html := self configureTextInputWith: dispatcher.
-	self
-		assert: html
-		equals:
-			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").keyup(function(event){alert("A message")});</script>'
-]
-
 { #category : #'tests - configuring' }
 EventInterpreterDispatcherTest >> testEventNamed [
 

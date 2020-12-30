@@ -24,7 +24,7 @@ LinkWebViewTest >> testAsynchronicLabeledApplying [
 ]
 
 { #category : #'tests-rendering' }
-LinkWebViewTest >> testOnTrigger [
+LinkWebViewTest >> testOn [
 
 	| html link |
 

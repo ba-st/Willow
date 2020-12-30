@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #tests }
-GenericContainerWebViewTest >> testOnTrigger [
+GenericContainerWebViewTest >> testOn [
 
 	| container html |
 

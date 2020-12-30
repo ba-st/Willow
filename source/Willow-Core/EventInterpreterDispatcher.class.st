@@ -43,12 +43,6 @@ EventInterpreterDispatcher class >> defaultingToClickHidden [
 				serializingWith: SerializationCommand forCurrentObjectWithHiddenInputs )
 ]
 
-{ #category : #'instance creation' }
-EventInterpreterDispatcher class >> defaultingToKeyUp [
-
-	^ self interpretingByDefault: #keyup configuring: ( self interpreterSending: #keyup )
-]
-
 { #category : #'private - accessing' }
 EventInterpreterDispatcher class >> interpreterSending: anEventName [
 

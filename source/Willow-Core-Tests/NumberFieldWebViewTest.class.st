@@ -62,7 +62,7 @@ NumberFieldWebViewTest >> testNumber [
 ]
 
 { #category : #'tests-configuring' }
-NumberFieldWebViewTest >> testOnTrigger [
+NumberFieldWebViewTest >> testOn [
 
 	| numberField html |
 

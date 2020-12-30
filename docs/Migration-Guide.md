@@ -34,6 +34,10 @@ In the rare case of external use of interpreters, some deprecations have been pr
 `WebInteractionInterpreter forChangeInHiddenInputDependentComponentValue` transforms to `EventInterpreterDispatcher defaultingToChangeHidden`
 `WebInteractionInterpreter forReleaseOfKeyInComponent` transforms to `EventInterpreterDispatcher defaultingToKeyUp`
 
+Instance creation protocol for TextFieldWebView has been changed so that the default is always on change, since the key up behavior can now be achieved by sending `on keyUp` to any instance.
+To reflect this,
+`multiLineTriggeringOnChangeApplying:` has been renamed to `multiLineApplying:`
+`singleLineTriggeringOnChangeApplying:` has been renamed to `singleLineApplying:`
 
 ## Version 10 to 11
 

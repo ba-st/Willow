@@ -30,12 +30,12 @@ CheckboxWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #'tests-configuring' }
-CheckboxWebViewTest >> testOnTrigger [
+CheckboxWebViewTest >> testOn [
 
 	| html binaryChoiceView |
 
 	binaryChoiceView := self newBinaryChoiceView.
-	binaryChoiceView onTrigger disable.
+	binaryChoiceView on trigger disable.
 	html := self render: binaryChoiceView.
 
 	self

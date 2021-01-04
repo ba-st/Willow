@@ -15,7 +15,7 @@ LabeledWebViewTest >> testRenderContentOnWithDynamicLabel [
 	label := 'Field'.
 	labeledView := LabeledWebView
 		obtainingContentFrom: [ label ]
-		boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: [ :textField |  ])
+		boundTo: (TextFieldWebView singleLineApplying: [ :textField |  ])
 		applying: [ :container |  ].
 
 	label := 'Text Field'.
@@ -34,7 +34,7 @@ LabeledWebViewTest >> testRenderContentOnWithFixedLabel [
 
 	labeledView := LabeledWebView
 		displaying: 'Field'
-		boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: [ :textField |  ])
+		boundTo: (TextFieldWebView singleLineApplying: [ :textField |  ])
 		applying: [ :label |  ].
 
 	html := self render: labeledView.
@@ -51,7 +51,7 @@ LabeledWebViewTest >> testRenderContentOnWithFixedLabelAndCommands [
 
 	labeledView := LabeledWebView
 		displaying: 'Field'
-		boundTo: (TextFieldWebView singleLineTriggeringOnChangeApplying: [ :textField |  ])
+		boundTo: (TextFieldWebView singleLineApplying: [ :textField |  ])
 		applying: [ :label | label setTitleTo: 'Some field' ].
 
 	html := self render: labeledView.

@@ -8,15 +8,20 @@ Class {
 }
 
 { #category : #'tests-rendering' }
-PhrasingContainerWebViewTest >> testOnTrigger [
+PhrasingContainerWebViewTest >> testOn [
 
 	| container html |
 
-	container := PhrasingContainerWebView obtainingContentFrom: [ 'Hi!' ] applying: [ :span | span addClass willow ].
-	container onTrigger disable.
+	container := PhrasingContainerWebView
+		obtainingContentFrom: [ 'Hi!' ]
+		applying: [ :span | span addClass willow ].
+	container on trigger disable.
 	html := self render: container.
 
-	self assert: html equals: '<span id="span-id1" class="willow">Hi!</span><script type="text/javascript">$("#span-id1").click(function(event){$(this).prop("disabled",true)});</script>'
+	self
+		assert: html
+		equals:
+			'<span id="span-id1" class="willow">Hi!</span><script type="text/javascript">$("#span-id1").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests-rendering' }

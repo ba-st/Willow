@@ -24,12 +24,12 @@ LinkWebViewTest >> testAsynchronicLabeledApplying [
 ]
 
 { #category : #'tests-rendering' }
-LinkWebViewTest >> testOnTrigger [
+LinkWebViewTest >> testOn [
 
 	| html link |
 
 	link := LinkWebView synchronicLabeled: 'Click me!' applying: [  ].
-	link onTrigger disable.
+	link on trigger disable.
 	html := self render: link.
 
 	self

@@ -29,7 +29,7 @@ SynchronicSubmitButtonWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #'tests-rendering' }
-SynchronicSubmitButtonWebViewTest >> testOnTrigger [
+SynchronicSubmitButtonWebViewTest >> testOn [
 
 	| synchronicButton html |
 
@@ -37,7 +37,7 @@ SynchronicSubmitButtonWebViewTest >> testOnTrigger [
 		labeled: 'Submit'
 		applying: [ :button |  ]
 		evaluating: [  ].
-	synchronicButton onTrigger disable.
+	synchronicButton on trigger disable.
 	html := self render: synchronicButton.
 
 	self

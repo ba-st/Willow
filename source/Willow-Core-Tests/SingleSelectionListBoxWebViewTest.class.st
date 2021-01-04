@@ -40,12 +40,12 @@ SingleSelectionListBoxWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #tests }
-SingleSelectionListBoxWebViewTest >> testOnTrigger [
+SingleSelectionListBoxWebViewTest >> testOn [
 
 	| listBox html |
 
 	listBox := self newSingleSelectionView.
-	listBox onTrigger disable.
+	listBox on trigger disable.
 
 	html := self render: listBox.
 

@@ -35,13 +35,13 @@ GenericContainerWebView >> initializeObtainingContentFrom: aContentProvider appl
 
 	contentProvider := aContentProvider.
 	commandToComponent := aComponentCommand.
-	interactionInterpreter := WebInteractionInterpreter forClickOnComponent 
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
 ]
 
 { #category : #configuring }
-GenericContainerWebView >> onTrigger [
+GenericContainerWebView >> on [
 
-	^interactionInterpreter 
+	^ interactionInterpreter
 ]
 
 { #category : #rendering }

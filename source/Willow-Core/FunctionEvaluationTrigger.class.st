@@ -17,7 +17,7 @@ FunctionEvaluationTrigger class >> sending: aFunctionSelector parameterizedBy: a
 { #category : #evaluating }
 FunctionEvaluationTrigger >> apply: anAsynchronousCall to: aComponent on: aCanvas [
 
-	aComponent perform: functionSelector with: (anAsynchronousCall asFunction: argumentNames)
+	aComponent perform: functionSelector with: ( anAsynchronousCall asFunction: argumentNames )
 ]
 
 { #category : #initialization }

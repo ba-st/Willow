@@ -116,7 +116,7 @@ ServerResponseCommand >> requiresSerialization [
 { #category : #initialization }
 ServerResponseCommand >> resetInterpreter [
 
-	interpreter := WebInteractionInterpreter forDelayedModelLoading
+	interpreter := WebInteractionInterpreter workingWith: DelayedModelLoader new
 ]
 
 { #category : #accessing }

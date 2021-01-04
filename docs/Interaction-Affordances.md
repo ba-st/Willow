@@ -1,10 +1,10 @@
 # Interaction Affordances
 
-Each interactive component in Willow supports the `#onTrigger` message, that provides access to the interaction affordances. It basically attaches an event handler function to the corresponding DOM element, whose code depends on what interaction affordances are used. So lets see first a simple example, that does not involve "server aware" code:
+Each interactive component in Willow supports the `#on` message, which afterwards must indicate an event (`#trigger` by default), to provide access to the interaction affordances. It basically attaches an event handler function to the corresponding DOM element, whose code depends on what interaction affordances are used. So lets see first a simple example, that does not involve "server aware" code:
 
 ```smalltalk
-button onTrigger
-  executeOnClient: [:canvas |
+button on trigger
+  userAgentDo: [:canvas |
     canvas javascript alert: 'Hello World!'
   ]
 ```
@@ -16,7 +16,7 @@ function(event) {
 }
 ```
 
-The event that gets bound depends on the type of component used:
+The event that gets bound by default (when using `#on trigger`) depends on the type of component used:
 - `click`
   - Button
   - Link
@@ -34,22 +34,26 @@ The event that gets bound depends on the type of component used:
   - Single Selection List Box
   - Drop Down List
   - Radio Button
-- `keyup`
-  - Single line Text Field
-  - Multi line Text Field
+
+  This can be overriden by specifying the event. So `#on click` can be sent to indicate that specific behavior for a text field, for example.
+```smalltalk
+textField on click
+  userAgentDo: [:canvas |
+    canvas javascript alert: 'Hello World!'
+  ]
+```
+Willow provides native support for `click`, `change` , `keyup` and `mouseover` but any eveny can be used by sending `#on eventNamed:`.
 
 ## Summary
 - General
-  - `executeOnClient:`
-  - `evaluate:`
-  - `evaluate:with:`
-  - `determineBehaviorByEvaluating:`
-  - `determineBehaviorByEvaluating:with:`
-  - `onlyWhen:determineBehaviorByEvaluating:with:`
+  - `userAgentDo:`
+  - `serverDo:`
+  - `with:serverDo:`
+  - `with:onlyWhen:serverDo:`
 - Serialization
-  - `serializeChildrenForm`
+  - `serializeChildForm`
   - `serializeContainerForm`
-  - `serializaForm:`
+  - `serializeForm:`
   - `serializeIt`
   - `serializeWithHiddenInputs`
   - `submitForm:`
@@ -57,6 +61,7 @@ The event that gets bound depends on the type of component used:
 - DOM Interaction
   - `enable:`
   - `disable`
+  - `disable:`
   - `focus:`
   - `focusUsing:`
   - `remove:`
@@ -71,14 +76,8 @@ The event that gets bound depends on the type of component used:
   - `scrollIntoView:`
   - `showLoadingNotificationStyledAsAll:`
 - CSS Manipulation
-  - `addCssClass:`
-  - `addCssClass:toComponentsMatching:`
-  - `changeCssClass:to:`
-  - `removeCssClass:fromComponentsMatching:`
-  - `removeCssClass:fromComponentsWithClass:`
-  - `toggleCssClass:`
-  - `toggleCssClass:on:`
-  - `toggleCssClass:onComponentsMatching:`
+  - `updateCssClasses:`
+  - `updateCssClasses:onElementsMatching:`
 - Dialogs
   - `open:`
   - `closeLastDialog`
@@ -89,9 +88,9 @@ The event that gets bound depends on the type of component used:
   - `informSelection`
 
 ## General Affordances
-### Client Execution
+### User Agent Execution
 
-This affordance allows you to configure some javascript code to be run in the browser without notifying with the server. We already saw an example.
+This affordance allows you to configure some javascript code to be run in the browser without notifying the server. We already saw an example.
 
 It uses the Seaside javascript generation support and it's usually used as a basic building block to do more complex behavior on top.
 
@@ -100,8 +99,8 @@ It uses the Seaside javascript generation support and it's usually used as a bas
 This affordance allows you to configure an AJAX call bound to a callback on the server. So, for example:
 
 ```smalltalk
-button onTrigger
-  evaluate: [
+button on trigger
+  serverDo: [
     'The button was clicked on the browser' inspect
   ]
 ```
@@ -120,27 +119,27 @@ where `Willow.callServer` is built on top of standard AJAX support, configuring 
 
 This AJAX function has a counterpart callback on the server that will evaluate the user provided block.
 
-Sometimes you want the return of the AJAX call to vary depending on what happens in the server. To do that you use `determineBehaviorByEvaluating:`. This affordance is similar to `evaluate:` but injects into the block a response object that you can configure to determine what happens when the AJAX call returned.
+Sometimes you want the return of the AJAX call to vary depending on what happens in the server. To do that you must reference an optional variable in the block, which represents the request received from the user agent and which response can be configured to determine what happens when the AJAX call returned.
 For example:
 ```smalltalk
-button onTrigger determineBehaviorByEvaluating: [:response |
+button on trigger serverDo: [:request |
     self someServerSideCondition
-      ifTrue: [ response onReturn inform: 'Condition is true' ]
+      ifTrue: [ request onRespond inform: 'Condition is true' ]
   ]
 ```
 will yield a handler function similar to evaluate, but if the condition is true when the block is evaluated in the server, the AJAX call response will include code to display an `alert` showing "Condition is true".
 
-You can apply any interaction affordance to `response onReturn`, just like you would do to `onTrigger`.
+You can apply any interaction affordance to `request onRespond`, just like you would do to `on trigger`.
 
 ### Server Evaluation with client parameters
 
-Sometimes you need to send additional information to the server (not necessarily user input). For that you have `evaluate:with:` and `determineBehaviorByEvaluating:with:`.
+Sometimes you need to send additional information to the server (not necessarily user input). For that you have `with:serverDo:`.
 
 Lets see an example:
 ```smalltalk
-button onTrigger
-  evaluate: [:theUserAgent | self saveIt: theUserAgent ]
-  with: (JSStream on: 'navigator') access: 'userAgent'
+button on trigger
+  with: ((JSStream on: 'navigator') access: 'userAgent')
+  serverDo: [:request | self saveIt: request parameter ]
 ```
 the handler function will look similar to:
 ```javascript
@@ -153,9 +152,9 @@ function(event) {
   })
 }
 ```
-When the callback is evaluated in the server, the value of `theUserAgent` will be an object (produced by using `WAJsonParser`) with the information sent in the call.
+When the callback is evaluated in the server, the value of `request parameter` will be an object (produced by using `WAJsonParser`) with the information sent in the call.
 
-There's also support for performing the AJAX call only when some condition is met. You can use `onlyWhen:determineBehaviorByEvaluating:with:` and indicate a string representing the Javascript condition you want to evaluate before the call is made (Future releases will improve on this to allow for a reified object instead of a string).
+There's also support for performing the AJAX call only when some condition is met. You can use `with:onlyWhen:serverDo:` and indicate a block that receives a JSObject representing the parameter from the first argument.
 
 ## Serialization
 
@@ -163,7 +162,7 @@ When using Willow, your application will not normally require a full page submis
 
 Lets see an example:
 ```smalltalk
-button onTrigger serializeContainerForm
+button on trigger serializeContainerForm
 ```
 the handler function will look like:
 ```javascript
@@ -179,14 +178,14 @@ function(event) {
 ```
 ![Form Serialization](images/FormSerialization.gif)
 
-In this case when a button is clicked all the input information inside the closest form to the button will be serialized and sent to the server. Combining this with `evaluate:` in the same interaction guarantess the server components will have the updated values before evaluating the callback.
+In this case when a button is clicked all the input information inside the closest form to the button will be serialized and sent to the server. Combining this with `serverDo:` in the same interaction guarantess the server components will have the updated values before evaluating the callback.
 
 The main difference between the serialization affordances is what get serialized. So:
-- `serializeContainerForm` will find the form closest to the component receiving the onTrigger message
-- `serializeChildrenForm` will find a form in the children of the component receiving the onTrigger message
+- `serializeContainerForm` will find the form closest to the component receiving the on trigger collaboration
+- `serializeChildrenForm` will find a form in the children of the component receiving the on trigger collaboration
 - `serializeForm:` will find a specific form via its #id
-- `serializeIt` will serialize the component receiving the onTrigger message (this would normally be used in tandem with some field component then triggering the change event)
-- `serializeWithHiddenInputs` will serialize the component receiving the onTrigger message and the next hidden input (required for some Seaside brushes where the resulting HTML includes a hidden input)
+- `serializeIt` will serialize the component receiving the on trigger collaboration (this would normally be used in tandem with some field component then triggering the change event)
+- `serializeWithHiddenInputs` will serialize the component receiving the  on trigger collaboration and the next hidden input (required for some Seaside brushes where the resulting HTML includes a hidden input)
 
 In case you need it, there's also support to submit a form: `submitForm:`. Also `submitFormStyledAs:` will call the `submit()` function on the corresponding form (found by id or by matching it's "class").
 
@@ -201,7 +200,7 @@ Let's see an example:
 currentTimeView := IdentifiedWebView
         forSpanNamed: 'current-time'
         containing: [ :canvas | canvas strong: Time now ].
-button onTrigger render: currentTimeView
+button on trigger render: currentTimeView
 ```
 This will configure the handler function bound to the button click event to perform an AJAX call. When the call is complete it will replace the DOM contents of the component with some updated rendering.
 
@@ -238,7 +237,7 @@ The browser will show "Searching..." in the container place while the AJAX call 
 You can disable a component in the DOM by using `disable`, so for example:
 
 ```smalltalk
-button onTrigger disable
+button on trigger disable
 ```
 will yield the following handler function:
 ```javascript
@@ -264,10 +263,10 @@ You can set an input value (without replacing the DOM element) by using `setValu
 
 ## Combining Interactions
 
-You can combine several affordances in the same `onTrigger` so they will end up in the same handler function. For example:
+You can combine several affordances in the same `on trigger` so they will end up in the same handler function. For example:
 
 ```smalltalk
-runSelectedTestsButton onTrigger
+runSelectedTestsButton on trigger
         transform: testResult into: SpinKitTripleBounce new;
         evaluate: [ self session runTests ];
         render: testResult.

@@ -6,7 +6,7 @@
 
 `evaluate:with:` and `determineBehaviorByEvaluating:with:` have been merged into `with:serverDo:`. The block passed as collaborator can optionally contain an argument which represents the `:request`. In the previous version this argument was mandatory for `determineBehaviorByEvaluating:with:` and named `:response`. The value of the parameter can be obtained by sending `request parameter`. In the previous version this was the single argument for the block in `evaluate:with:` and the second argument in `determineBehaviorByEvaluating:with:`.
 
-`onlyWhen:determineBehaviorByEvaluating:with:` have been renamed to `with:onlyWhen:serverDo:`. The block passed as collaborator can optionally contain an argument which represents the `:request`. In the previous version this argument was mandatory and named `:response`. The value of the parameter can be obtained by sending `request parameter`. In the previous version this was the second argument of the block, now removed. In the previous version the condition was a string that had to contain a macro to expand with the argument, this has been changed to a block that optionally receives the parameter as a javascript object and must return a javascript boolean condition.
+`onlyWhen:determineBehaviorByEvaluating:with:` has been renamed to `with:onlyWhen:serverDo:`. The block passed as collaborator can optionally contain an argument which represents the `:request`. In the previous version this argument was mandatory and named `:response`. The value of the parameter can be obtained by sending `request parameter`. In the previous version this was the second argument of the block, now removed. In the previous version the condition was a string that had to contain a macro to expand with the argument, this has been changed to a block that optionally receives the parameter as a javascript object and must return a javascript boolean condition.
 
 `onReturn` has been renamed to `onRespond`
 
@@ -16,6 +16,28 @@
 ```
 component updateCssClasses: [ :classes | classes addClass: aNewCSSClass ] onElementsMatching: [ :canvas | canvas jQuery class: anExistingCSSClass ];
 ```
+
+`onTrigger` has changed so that specific events can be referenced. To get the previous behavior all senders of `onTrigger` should instead send `on trigger`. To access other events check the protocol offered by `EventInterpreterDispatcher`. For example to configure the behavior on mouse over, send `on mouseOver` then configure as usual.
+
+For custom events, use `on eventNamed:` followed by a symbol with the Javascript method to call. This custom interaction assumes by default that no serialization is required on the triggering component. To override this behavior, simply add the corresponding serialization command, for example:
+```	( selectionList on eventNamed: #blur )
+		serializeThis;
+		serverDo: [ ... ]
+```
+
+Uses of `CombinedWebInteractionInterpreter combiningInterpretersOf:` should be changed to `CombinedEventInterpreterDispatcher combiningInterpretersOfAll:`.
+
+In the rare case of external use of interpreters, some deprecations have been prepared. 
+`WebInteractionInterpreter forClickOnComponent` transform to `EventInterpreterDispatcher defaultingToClick`
+`WebInteractionInterpreter forChangeInComponentValue` transforms to `EventInterpreterDispatcher defaultingToChange`
+`WebInteractionInterpreter forClickOnHiddenInputDependentComponent` transforms to `EventInterpreterDispatcher defaultingToClickHidden`
+`WebInteractionInterpreter forChangeInHiddenInputDependentComponentValue` transforms to `EventInterpreterDispatcher defaultingToChangeHidden`
+`WebInteractionInterpreter forReleaseOfKeyInComponent` transforms to `EventInterpreterDispatcher defaultingToKeyUp`
+
+Instance creation protocol for TextFieldWebView has been changed so that the default is always on change, since the key up behavior can now be achieved by sending `on keyUp` to any instance.
+To reflect this,
+`multiLineTriggeringOnChangeApplying:` has been renamed to `multiLineApplying:`
+`singleLineTriggeringOnChangeApplying:` has been renamed to `singleLineApplying:`
 
 ## Version 10 to 11
 

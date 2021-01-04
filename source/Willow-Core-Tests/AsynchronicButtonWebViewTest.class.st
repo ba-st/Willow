@@ -25,12 +25,12 @@ AsynchronicButtonWebViewTest >> testIdentifyIn [
 ]
 
 { #category : #'tests-rendering' }
-AsynchronicButtonWebViewTest >> testOnTrigger [
+AsynchronicButtonWebViewTest >> testOn [
 
 	| button html |
 
 	button := AsynchronicButtonWebView labeled: 'Click me!'.
-	button onTrigger disable.
+	button on trigger disable.
 	html := self render: button.
 	self
 		assert: html

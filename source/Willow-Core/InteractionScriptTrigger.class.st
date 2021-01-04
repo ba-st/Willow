@@ -2,39 +2,15 @@ Class {
 	#name : #InteractionScriptTrigger,
 	#superclass : #TriggeringPolicy,
 	#instVars : [
-		'interacionSelector'
+		'eventName'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
 
-{ #category : #'instance creation - private' }
-InteractionScriptTrigger class >> interactSending: anInteracionSelector [
-
-	^ self new initializeInteractSending: anInteracionSelector
-]
-
 { #category : #'instance creation' }
-InteractionScriptTrigger class >> triggeringOnChange [
+InteractionScriptTrigger class >> interactCalling: anEventName [
 
-	^ self interactSending: #onChange:
-]
-
-{ #category : #'instance creation' }
-InteractionScriptTrigger class >> triggeringOnClick [
-
-	^ self interactSending: #onClick:
-]
-
-{ #category : #'instance creation' }
-InteractionScriptTrigger class >> triggeringOnDoubleClick [
-
-	^ self interactSending: #onDoubleClick:
-]
-
-{ #category : #'instance creation' }
-InteractionScriptTrigger class >> triggeringOnKeyUp [
-
-	^ self interactSending: #onKeyUp:
+	^ self new initializeInteractCalling: anEventName
 ]
 
 { #category : #evaluating }
@@ -42,14 +18,11 @@ InteractionScriptTrigger >> apply: aJavascriptScript to: aComponent on: aCanvas 
 
 	aCanvas ensureIdFor: aComponent.
 	aComponent
-		script:
-			(aCanvas jQuery this
-				perform: interacionSelector
-				with: (aJavascriptScript asFunction: #(event)))
+		script: ( aCanvas jQuery this call: eventName with: ( aJavascriptScript asFunction: #(event) ) )
 ]
 
 { #category : #initialization }
-InteractionScriptTrigger >> initializeInteractSending: anInteracionSelector [
+InteractionScriptTrigger >> initializeInteractCalling: anEventName [
 
-	interacionSelector := anInteracionSelector
+	eventName := anEventName
 ]

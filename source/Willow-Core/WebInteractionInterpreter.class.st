@@ -8,64 +8,32 @@ Class {
 }
 
 { #category : #'instance creation' }
-WebInteractionInterpreter class >> forChangeInComponentValue [
+WebInteractionInterpreter class >> calling: anEventName serializingWith: serializationCommand [
 
-	^self workingWith: WebComponentInteraction triggeredOnChange
-]
-
-{ #category : #'instance creation' }
-WebInteractionInterpreter class >> forChangeInHiddenInputDependentComponentValue [
-
-	^self workingWith: WebComponentInteraction triggeredOnChangeSerializingHiddenInputs
-]
-
-{ #category : #'instance creation' }
-WebInteractionInterpreter class >> forClickOnComponent [
-
-	^self workingWith: WebComponentInteraction triggeredOnClick
-]
-
-{ #category : #'instance creation' }
-WebInteractionInterpreter class >> forClickOnHiddenInputDependentComponent [
-
-	^self workingWith: WebComponentInteraction triggeredOnClickSerializingHiddenInputs
-]
-
-{ #category : #'instance creation' }
-WebInteractionInterpreter class >> forDelayedModelLoading [
-
-	^ self workingWith: DelayedModelLoader new
-]
-
-{ #category : #'instance creation' }
-WebInteractionInterpreter class >> forDoubleClickOnComponent [
-
-	^self workingWith: WebComponentInteraction triggeredOnDoubleClick
+	^ self
+		workingWith:
+			( WebComponentInteraction
+				triggeredAccordingTo: ( InteractionScriptTrigger interactCalling: anEventName )
+				serializingWith: serializationCommand )
 ]
 
 { #category : #'instance creation' }
 WebInteractionInterpreter class >> forEvaluationOf: aSelector withAll: aParameterArray [
 
-	^self workingWith:
-		(WebComponentInteraction triggeredOnEvaluationOf: aSelector withAll: aParameterArray)
+	^ self
+		workingWith: ( WebComponentInteraction triggeredOnEvaluationOf: aSelector withAll: aParameterArray )
 ]
 
 { #category : #'instance creation' }
 WebInteractionInterpreter class >> forInstantEvaluation [
 
-	^self workingWith: WebComponentInteraction triggeredOnDocumentLoad
+	^ self workingWith: WebComponentInteraction triggeredOnDocumentLoad
 ]
 
 { #category : #'instance creation' }
-WebInteractionInterpreter class >> forReleaseOfKeyInComponent [
-
-	^self workingWith: WebComponentInteraction triggeredOnKeyUp
-]
-
-{ #category : #'private - instance creation' }
 WebInteractionInterpreter class >> workingWith: aWebComponentInteraction [
 
-	^self new initializeWorkingWith: aWebComponentInteraction
+	^ self new initializeWorkingWith: aWebComponentInteraction
 ]
 
 { #category : #evaluating }

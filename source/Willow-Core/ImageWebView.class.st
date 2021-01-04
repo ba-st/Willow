@@ -24,18 +24,18 @@ ImageWebView class >> ofType: aMimeType base64EncodedAs: imageInBase64 applying:
 	^ self locatedAt: ('data:<1s>;base64,<2s>' expandMacrosWith: aMimeType greaseString with: imageInBase64) applying: aComponentCommand
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 ImageWebView >> initializeLocatedAt: aLocation applying: aComponentCommand [
 
 	imageLocation := aLocation.
 	commandToComponent := aComponentCommand.
-	interactionInterpreter := WebInteractionInterpreter forClickOnComponent
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
 ]
 
 { #category : #configuring }
-ImageWebView >> onTrigger [
+ImageWebView >> on [
 
-	^interactionInterpreter
+	^ interactionInterpreter
 ]
 
 { #category : #rendering }

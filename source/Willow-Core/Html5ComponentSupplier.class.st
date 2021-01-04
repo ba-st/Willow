@@ -69,7 +69,7 @@ Html5ComponentSupplier >> fieldSetContaining: aWebView applying: fieldSetCommand
 { #category : #Supplying }
 Html5ComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 
-	^ TextFieldWebView multiLineTriggeringOnChangeApplying: aComponentCommand
+	^ TextFieldWebView multiLineApplying: aComponentCommand
 ]
 
 { #category : #Supplying }
@@ -96,7 +96,7 @@ Html5ComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLabel: a
 { #category : #Supplying }
 Html5ComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
-	^ TextFieldWebView singleLineTriggeringOnChangeApplying: aComponentCommand
+	^ TextFieldWebView singleLineApplying: aComponentCommand
 ]
 
 { #category : #Supplying }

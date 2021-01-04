@@ -2,9 +2,9 @@ Class {
 	#name : #WebComponentInteraction,
 	#superclass : #Object,
 	#instVars : [
-		'triggerPolicy',
 		'commands',
-		'serializationCommand'
+		'serializationCommand',
+		'triggerPolicy'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
@@ -26,66 +26,16 @@ WebComponentInteraction class >> triggeredAccordingTo: aTriggerPolicy serializin
 ]
 
 { #category : #'instance creation' }
-WebComponentInteraction class >> triggeredOnChange [
-
-	^ self
-		triggeredAccordingTo: InteractionScriptTrigger triggeringOnChange
-		serializingWith: SerializationCommand forCurrentObject
-]
-
-{ #category : #'instance creation' }
-WebComponentInteraction class >> triggeredOnChangeSerializingHiddenInputs [
-
-	^ self
-		triggeredAccordingTo: InteractionScriptTrigger triggeringOnChange
-		serializingWith: SerializationCommand forCurrentObjectWithHiddenInputs
-]
-
-{ #category : #'instance creation' }
-WebComponentInteraction class >> triggeredOnClick [
-
-	^ self
-		triggeredAccordingTo: InteractionScriptTrigger triggeringOnClick
-		serializingWith: NullWebInteractionCommand new
-]
-
-{ #category : #'instance creation' }
-WebComponentInteraction class >> triggeredOnClickSerializingHiddenInputs [
-
-	^ self
-		triggeredAccordingTo: InteractionScriptTrigger triggeringOnClick
-		serializingWith: SerializationCommand forCurrentObjectWithHiddenInputs
-]
-
-{ #category : #'instance creation' }
 WebComponentInteraction class >> triggeredOnDocumentLoad [
 
-	^self
-		triggeredAccordingTo: DocumentLoadTrigger new
-		serializingWith: NullWebInteractionCommand new
-]
-
-{ #category : #'instance creation' }
-WebComponentInteraction class >> triggeredOnDoubleClick [
-
-	^ self
-		triggeredAccordingTo: InteractionScriptTrigger triggeringOnDoubleClick
-		serializingWith: NullWebInteractionCommand new
+	^ self triggeredAccordingTo: DocumentLoadTrigger new serializingWith: NullWebInteractionCommand new
 ]
 
 { #category : #'instance creation' }
 WebComponentInteraction class >> triggeredOnEvaluationOf: aSelector withAll: aParameterArray [
 
 	^ self
-		triggeredAccordingTo: (FunctionEvaluationTrigger sending: aSelector parameterizedBy: aParameterArray)
-		serializingWith: SerializationCommand forCurrentObject
-]
-
-{ #category : #'instance creation' }
-WebComponentInteraction class >> triggeredOnKeyUp [
-
-	^ self
-		triggeredAccordingTo: InteractionScriptTrigger triggeringOnKeyUp
+		triggeredAccordingTo: ( FunctionEvaluationTrigger sending: aSelector parameterizedBy: aParameterArray )
 		serializingWith: SerializationCommand forCurrentObject
 ]
 

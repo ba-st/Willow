@@ -18,7 +18,7 @@ LinkWebView class >> asynchronicLabeled: aRenderable applying: aComponentCommand
 	| linkView |
 
 	linkView := self labeled: aRenderable applying: aComponentCommand.
-	linkView onTrigger userAgentDo: [ :canvas | canvas jQuery event preventDefault ].
+	linkView on trigger userAgentDo: [ :canvas | canvas jQuery event preventDefault ].
 	^ linkView
 ]
 
@@ -40,11 +40,11 @@ LinkWebView >> initializeLabeled: aLabel applying: aComponentCommand [
 
 	label := aLabel.
 	commandToComponent := aComponentCommand.
-	interactionInterpreter := WebInteractionInterpreter forClickOnComponent
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
 ]
 
 { #category : #configuring }
-LinkWebView >> onTrigger [
+LinkWebView >> on [
 
 	^ interactionInterpreter
 ]

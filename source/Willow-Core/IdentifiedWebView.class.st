@@ -115,7 +115,7 @@ IdentifiedWebView >> identifyIn: aCanvas [
 	^ identifierAssigner identifyIn: aCanvas
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 IdentifiedWebView >> initializeForComponentBuiltUsing: aComponentBuilder as: anIdentificationPrefix containing: aView applying: aComponentCommand [
 
 	view := aView.
@@ -125,9 +125,9 @@ IdentifiedWebView >> initializeForComponentBuiltUsing: aComponentBuilder as: anI
 ]
 
 { #category : #configuring }
-IdentifiedWebView >> onTrigger [
+IdentifiedWebView >> on [
 
-	^view onTrigger
+	^ view on
 ]
 
 { #category : #rendering }

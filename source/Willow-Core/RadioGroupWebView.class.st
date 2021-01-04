@@ -32,18 +32,16 @@ RadioGroupWebView class >> renderingWith: aRenderingBlock applyingToLabel: aLabe
 ]
 
 { #category : #initialization }
-RadioGroupWebView >> initializeRenderingWith: aRenderingBlock
-	applyingToLabel: aLabelCommand
-	applyingToInput: anInputCommand [
+RadioGroupWebView >> initializeRenderingWith: aRenderingBlock applyingToLabel: aLabelCommand applyingToInput: anInputCommand [
 
 	labelCommand := aLabelCommand.
 	inputCommand := anInputCommand.
-	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
 	renderingBlock := aRenderingBlock
 ]
 
 { #category : #configuring }
-RadioGroupWebView >> onTrigger [
+RadioGroupWebView >> on [
 
 	^ interactionInterpreter
 ]

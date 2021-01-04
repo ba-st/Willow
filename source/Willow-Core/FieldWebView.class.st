@@ -18,7 +18,7 @@ Class {
 { #category : #private }
 FieldWebView class >> changeInterpreter [
 
-	^ WebInteractionInterpreter forChangeInComponentValue
+	^ EventInterpreterDispatcher defaultingToChange
 ]
 
 { #category : #private }
@@ -97,7 +97,7 @@ FieldWebView >> notifyInterested [
 ]
 
 { #category : #configuring }
-FieldWebView >> onTrigger [
+FieldWebView >> on [
 
 	^ interactionInterpreter
 ]

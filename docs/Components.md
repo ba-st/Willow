@@ -7,7 +7,7 @@ aCanvas render: component.
 
 The creation of new components is abstracted away in a façade: the component supplier. When you declare a Willow Application, one of the essential subclass responsibilities you have to implement is providing a component supplier to be used in the app. The base Willow support includes an HTML5 supplier, but if you load other projects on the ecosystem you can get access to Bootstrap, Semantic UI & JQuery UI suppliers.
 
-The supplier provides access to the components in a well defined API to ease the transition between one front-end framework and another. All the interactive components created by the supplier support `#onTrigger`, to access the interaction affordances. You can access the installed component supplier by sending the message `componentSupplier` to an instance of any component (Willow or Seaside, subclass of `WAPainter`).
+The supplier provides access to the components in a well defined API to ease the transition between one front-end framework and another. All the interactive components created by the supplier support `#on`, to access the interaction affordances (`#on trigger` for the default interaction). You can access the installed component supplier by sending the message `componentSupplier` to an instance of any component (Willow or Seaside, subclass of `WAPainter`).
 
 ## Fields
 
@@ -26,9 +26,9 @@ MyComponent>>initialize
 
   super initialize.
   subjectField := self componentSupplier singleLineTextFieldApplying: [].
-  subjectField onTrigger serializeIt.
+  subjectField on trigger serializeIt.
   messageField := self componentSupplier multiLineTextFieldApplying: [].
-  messageField onTrigger serializeIt.
+  messageField on trigger serializeIt.
 
 MyComponent>>renderContentOn: html
 

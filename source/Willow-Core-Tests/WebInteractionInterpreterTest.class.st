@@ -20,15 +20,6 @@ WebInteractionInterpreterTest >> clickInterpreter [
 ]
 
 { #category : #'test support' }
-WebInteractionInterpreterTest >> configureScriptWith: interpreter [
-
-	^ self
-		apply: interpreter
-		toComponentDefinedBy: [ :canvas | canvas javascript ]
-		afterApplyingDo: [ :canvas :javascript | canvas div script: javascript ]
-]
-
-{ #category : #'test support' }
 WebInteractionInterpreterTest >> configureTextInputWith: interpreter [
 
 	^ self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ]

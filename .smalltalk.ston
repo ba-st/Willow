@@ -9,7 +9,8 @@ SmalltalkCISpec {
   ],
   #testing : {
     #coverage : {
-       #packages : [ 'Willow*' ]
+      #packages : [ 'Willow*' ],
+      #format: #lcov
     }
   }
 }

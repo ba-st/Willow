@@ -28,7 +28,8 @@ ISODateCodecTest >> testCantDecodeDate [
 		should: [ ISODateCodec new decode: '010-13-11' ] raise: InstanceCreationFailed;
 		should: [ ISODateCodec new decode: '2010-13-11' ] raise: InstanceCreationFailed;
 		should: [ ISODateCodec new decode: '2010-1-11' ] raise: InstanceCreationFailed;
-		should: [ ISODateCodec new decode: '2010-13-1' ] raise: InstanceCreationFailed
+		should: [ ISODateCodec new decode: '2010-13-1' ] raise: InstanceCreationFailed;
+		should: [ ISODateCodec new decode: '2020/12/11' ] raise: InstanceCreationFailed
 ]
 
 { #category : #tests }

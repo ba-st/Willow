@@ -36,3 +36,13 @@ InputModeCommandTest >> testApplyPasswordInputCommand [
 
 	self assert: html equals: '<input type="password"/>'
 ]
+
+{ #category : #'tests-processing' }
+InputModeCommandTest >> testApplyTimeInputCommand [
+
+	| html |
+
+	html := self apply: InputModeCommand asTime toComponentDefinedBy: [ :canvas | canvas textInput ].
+
+	self assert: html equals: '<input type="time"/>'
+]

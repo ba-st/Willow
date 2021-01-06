@@ -127,6 +127,12 @@ Html5ComponentSupplier >> tableBuilder [
 ]
 
 { #category : #Supplying }
+Html5ComponentSupplier >> timeFieldApplying: aComponentCommand [
+
+	^ TimeFieldWebView applying: aComponentCommand
+]
+
+{ #category : #Supplying }
 Html5ComponentSupplier >> unorderedListApplying: aCommandToList listing: aCollection applyingToEach: aCommandToItem [
 
 	^ UnorderedListWebView applying: aCommandToList listing: aCollection applyingToEach: aCommandToItem

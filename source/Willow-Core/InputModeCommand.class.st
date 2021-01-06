@@ -40,6 +40,12 @@ InputModeCommand class >> asText [
 	^ self settingTypeTo: 'text'
 ]
 
+{ #category : #'Instance Creation' }
+InputModeCommand class >> asTime [
+
+	^ self settingTypeTo: 'time'
+]
+
 { #category : #'private-Instance Creation' }
 InputModeCommand class >> settingTypeTo: aType [
 	

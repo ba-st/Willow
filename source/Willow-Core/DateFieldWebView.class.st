@@ -5,7 +5,6 @@ Class {
 	#name : #DateFieldWebView,
 	#superclass : #FieldWebView,
 	#instVars : [
-		'textField',
 		'textCodec'
 	],
 	#category : #'Willow-Core-WebViews'

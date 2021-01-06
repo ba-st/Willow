@@ -77,6 +77,12 @@ WebComponentCommandBuilder >> beTextInput [
 ]
 
 { #category : #Building }
+WebComponentCommandBuilder >> beTimeInput [
+
+	^ InputModeCommand asTime
+]
+
+{ #category : #Building }
 WebComponentCommandBuilder >> boundBetween: aLowerBound and: anUpperBound [
 
 	^ ComponentBoundaryCommand between: aLowerBound and: anUpperBound

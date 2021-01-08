@@ -51,10 +51,11 @@ PeriodicallyRenderedWebView >> initializeEvaluating: aRefreshCommand every: aNum
 PeriodicallyRenderedWebView >> refreshAndRenderContentOn: aCanvas [
 
 	refreshCommand value.
-	aCanvas render: identifiedViewToRefresh view.
+	aCanvas render: identifiedViewToRefresh renderableContent.
 
 	stopRenderingContent := true.
-	aCanvas document addLoadScript: (aCanvas jQuery ajax callback: [ stopRenderingContent := conditionBlock value ])
+	aCanvas document
+		addLoadScript: ( aCanvas jQuery ajax callback: [ stopRenderingContent := conditionBlock value ] )
 ]
 
 { #category : #'private-rendering' }
@@ -79,6 +80,6 @@ PeriodicallyRenderedWebView >> renderContentOn: aCanvas [
 { #category : #'private-rendering' }
 PeriodicallyRenderedWebView >> scriptToRefreshAndRenderContentOn: aCanvas [
 
-	^(aCanvas jQuery id: identifiedViewToRefresh identifier)
-		html: [:renderingCanvas | self refreshAndRenderContentOn: renderingCanvas]
+	^ ( aCanvas jQuery id: ( identifiedViewToRefresh identifierOn: aCanvas ) )
+		html: [ :renderingCanvas | self refreshAndRenderContentOn: renderingCanvas ]
 ]

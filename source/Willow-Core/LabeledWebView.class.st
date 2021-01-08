@@ -49,7 +49,7 @@ LabeledWebView >> renderContentOn: aCanvas [
 
 	| fieldIdentifier |
 
-	fieldIdentifier := fieldWebView identifyIn: aCanvas.
+	fieldIdentifier := fieldWebView identifierOn: aCanvas.
 	aCanvas label
 		for: fieldIdentifier;
 		with: self phrasingContent applying: commandToComponent.

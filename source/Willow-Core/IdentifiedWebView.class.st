@@ -97,6 +97,14 @@ IdentifiedWebView class >> forSpanNamed: aName containing: aView applying: aComp
 	^ self forComponentBuiltUsing: [ :canvas | canvas span ] named: aName containing: aView applying: aComponentCommand
 ]
 
+{ #category : #configuring }
+IdentifiedWebView >> beIdentifiable [
+
+	"This is always the case for identified web views"
+
+	
+]
+
 { #category : #private }
 IdentifiedWebView >> componentRenderedOn: aCanvas [
 
@@ -104,15 +112,9 @@ IdentifiedWebView >> componentRenderedOn: aCanvas [
 ]
 
 { #category : #accessing }
-IdentifiedWebView >> identifier [
+IdentifiedWebView >> identifierOn: aCanvas [
 
-	^identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-IdentifiedWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #initialization }
@@ -135,7 +137,7 @@ IdentifiedWebView >> renderContentOn: aCanvas [
 
 	| identifier containerComponent |
 
-	identifier := self identifyIn: aCanvas.
+	identifier := self identifierOn: aCanvas.
 	containerComponent := self componentRenderedOn: aCanvas.
 	"We need to set the id before applying the commands, because some command may require it"
 	containerComponent
@@ -144,7 +146,16 @@ IdentifiedWebView >> renderContentOn: aCanvas [
 ]
 
 { #category : #accessing }
+IdentifiedWebView >> renderableContent [
+
+	^ view
+]
+
+{ #category : #accessing }
 IdentifiedWebView >> view [
 
-	^view
+	self
+		deprecated: 'Use #renderableContent instead'
+		transformWith: '`@receiver view' -> '`@receiver renderableContent'.
+	^ self renderableContent
 ]

@@ -29,7 +29,7 @@ RenderingCommandTest >> testModelLoadingInstructions [
 			| script |
 
 			script := canvas javascript.
-			identifiedView identifyIn: canvas.
+			identifiedView identifierOn: canvas.
 			command modelLoadingInstructions appendTo: script on: canvas.
 			canvas anchor script: ( canvas jQuery this onClick: script )
 			].

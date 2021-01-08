@@ -20,9 +20,7 @@ ComponentFocusingCommand class >> findingComponentUsing: aComponentProvider [
 ComponentFocusingCommand class >> for: anIdentifiedView [
 
 	^ self
-		findingComponentUsing: [ :aCanvas | 
-			anIdentifiedView identifyIn: aCanvas.
-			aCanvas jQuery id: anIdentifiedView identifier ]
+		findingComponentUsing: [ :aCanvas | aCanvas jQuery id: ( anIdentifiedView identifierOn: aCanvas ) ]
 ]
 
 { #category : #'initialize-release' }

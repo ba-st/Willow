@@ -50,6 +50,15 @@ FrontendComponentSupplier >> delayedViewShowing: aThrobber whileEvaluating: aBlo
 ]
 
 { #category : #Supplying }
+FrontendComponentSupplier >> divisionContainerWrapping: aRenderable applying: aComponentCommand [
+
+	^ ContainerWebView
+		wrapping: aRenderable
+		intoElementBuiltUsing: [ :canvas | canvas div ]
+		applying: aComponentCommand
+]
+
+{ #category : #Supplying }
 FrontendComponentSupplier >> dropdownListApplying: aComponentCommand [
 
 	self subclassResponsibility 
@@ -59,6 +68,15 @@ FrontendComponentSupplier >> dropdownListApplying: aComponentCommand [
 FrontendComponentSupplier >> fieldSetContaining: aWebView applying: fieldSetCommand withLegend: aTitle applying: legendCommand [
 
 	self subclassResponsibility
+]
+
+{ #category : #Supplying }
+FrontendComponentSupplier >> inlineContainerWrapping: aRenderable applying: aComponentCommand [
+
+	^ ContainerWebView
+		wrapping: aRenderable
+		intoElementBuiltUsing: [ :canvas | canvas span ]
+		applying: aComponentCommand
 ]
 
 { #category : #Supplying }

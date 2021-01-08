@@ -29,15 +29,9 @@ DropDownListWebView >> configure: select unselectingAllOn: aCanvas [
 ]
 
 { #category : #accessing }
-DropDownListWebView >> identifier [
+DropDownListWebView >> identifierOn: aCanvas [
 
-	^ identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-DropDownListWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #initialization }
@@ -62,9 +56,11 @@ DropDownListWebView >> renderContentOn: aCanvas [
 	select := aCanvas select.
 	select list: availableElements.
 	select callback: [ :element | self choose: element ].
-	identifierAssigner withAssignedIdentifierDo: [ :id | select id: id ].
-	chosenElementOptional withContentDo: [ :chosenElement | select selected: chosenElement ] ifUnused: [ self configure: select unselectingAllOn: aCanvas ].
+	chosenElementOptional
+		withContentDo: [ :chosenElement | select selected: chosenElement ]
+		ifUnused: [ self configure: select unselectingAllOn: aCanvas ].
 	select
+		beIdentifiableUsing: identifierAssigner;
 		apply: commandToComponent;
 		interactUsing: interactionInterpreter
 ]

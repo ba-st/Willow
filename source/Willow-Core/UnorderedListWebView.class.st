@@ -24,15 +24,9 @@ UnorderedListWebView class >> applying: aComponentCommand listing: anElementColl
 ]
 
 { #category : #accessing }
-UnorderedListWebView >> identifier [
+UnorderedListWebView >> identifierOn: aCanvas [
 
-	^ identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-UnorderedListWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #initialization }
@@ -56,11 +50,13 @@ UnorderedListWebView >> renderContentOn: aCanvas [
 
 	| list |
 
-	list := aCanvas unorderedList.
-	"The order of the collaborations is relevant."
-	identifierAssigner withAssignedIdentifierDo: [ :id | list id: id ].
+	list := aCanvas unorderedList.	"The order of the collaborations is relevant."
 	list
+		beIdentifiableUsing: identifierAssigner;
 		apply: commandToList;
 		interactUsing: interactionInterpreter;
-		with: [ elements do: [ :anElement | aCanvas render: (ListItemWebView itemizing: anElement containedIn: list applying: commandToItem) ] ]
+		with: [ elements
+				do:
+					[ :anElement | aCanvas render: ( ListItemWebView itemizing: anElement containedIn: list applying: commandToItem ) ]
+			]
 ]

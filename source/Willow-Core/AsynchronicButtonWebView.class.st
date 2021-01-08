@@ -26,15 +26,9 @@ AsynchronicButtonWebView class >> labeled: aLabel applying: aComponentCommand [
 ]
 
 { #category : #accessing }
-AsynchronicButtonWebView >> identifier [
+AsynchronicButtonWebView >> identifierOn: aCanvas [
 
-	^ identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-AsynchronicButtonWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #initialization }
@@ -60,8 +54,8 @@ AsynchronicButtonWebView >> renderContentOn: aCanvas [
 	| pushButton |
 
 	pushButton := aCanvas button.
-	identifierAssigner withAssignedIdentifierDo: [ :id | pushButton id: id ].
 	pushButton
+		beIdentifiableUsing: identifierAssigner;
 		value: label;
 		bePush;
 		interactUsing: interactionInterpreter;

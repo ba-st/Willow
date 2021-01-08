@@ -400,18 +400,23 @@ WebInteractionInterpreterTest >> testRender [
 
 	html := self
 		renderUsing: [ :canvas | 
-			| textInput |
+			| textInput container |
 
 			textInput := canvas textInput.
 			textInput id: id.
-			interpreter render: textInput.
+			container := ContainerWebView
+				wrapping: [ :containerCanvas | textInput value ]
+				intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
+				applying: [  ].
+			interpreter render: container.
+			canvas render: container.
 			interpreter applyTo: textInput on: canvas
 			].
 
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><div id="container-id1"></div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).serialize()].join("&")})});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -424,18 +429,29 @@ WebInteractionInterpreterTest >> testRenderAll [
 
 	html := self
 		renderUsing: [ :canvas | 
-			| textInput |
+			| textInput container anotherContainer |
 
 			textInput := canvas textInput.
 			textInput id: id.
-			interpreter renderAll: {textInput}.
+			container := ContainerWebView
+				wrapping: [ :containerCanvas | textInput value ]
+				intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
+				applying: [  ].
+			anotherContainer := ContainerWebView
+				wrapping: [ :containerCanvas | textInput tag ]
+				intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
+				applying: [  ].
+			interpreter renderAll: ( Array with: container with: anotherContainer ).
+			canvas
+				render: container;
+				render: anotherContainer.
 			interpreter applyTo: textInput on: canvas
 			].
 
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><div id="container-id1"></div><div id="container-id2"></div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).serialize()].join("&")})});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -850,12 +866,7 @@ WebInteractionInterpreterTest >> testToggleCssClassOn [
 
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #willow ]
-		onElementsMatching: [ :canvas | 
-			[ element identifier ]
-				on: AssertionFailed
-				do: [ :ex | ex return: ( element identifyIn: canvas ) ].
-			canvas jQuery id: element identifier
-			].
+		onElementsMatching: [ :canvas | canvas jQuery id: ( element identifierOn: canvas ) ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html

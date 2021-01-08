@@ -75,15 +75,9 @@ MultipleSelectionListBoxWebView >> disallowAll [
 ]
 
 { #category : #accessing }
-MultipleSelectionListBoxWebView >> identifier [
+MultipleSelectionListBoxWebView >> identifierOn: aCanvas [
 
-	^identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-MultipleSelectionListBoxWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #initialization }
@@ -124,8 +118,8 @@ MultipleSelectionListBoxWebView >> renderContentOn: aCanvas [
 		list: availableElements;
 		callback: [ :elements | self chooseAllIn: elements ];
 		selected: chosenElements.
-	identifierAssigner withAssignedIdentifierDo: [ :id | select id: id ].
 	select
+		beIdentifiableUsing: identifierAssigner;
 		interactUsing: interactionInterpreter;
 		apply: commandToComponent
 ]

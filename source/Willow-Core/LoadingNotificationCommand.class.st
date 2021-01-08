@@ -17,8 +17,14 @@ LoadingNotificationCommand class >> displaying: aWebView applying: aComponentCom
 	^ self
 		executing: [ :aCanvas | 
 			( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName )
-				html:
-					[ :aSubCanvas | aSubCanvas render: ( GenericContainerWebView wrapping: aWebView applying: aComponentCommand ) ]
+				html: [ :aSubCanvas | 
+					aSubCanvas
+						render:
+							( ContainerWebView
+								wrapping: aWebView
+								intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
+								applying: aComponentCommand )
+					]
 			]
 		then:
 			[ :aCanvas | ( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName ) html: [ :aSubCanvas |  ] ]

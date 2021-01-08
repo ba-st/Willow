@@ -25,7 +25,7 @@ NumberFieldWebViewTest >> testIdentifyIn [
 
 	html := self
 		renderUsing: [ :canvas | 
-			numberField identifyIn: canvas.
+			numberField identifierOn: canvas.
 			canvas render: numberField ].
 
 	self assert: html equals: '<input value="" name="2" id="number-field-id1" type="number"/>'

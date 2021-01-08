@@ -127,14 +127,13 @@ MultipleSelectionListBoxWebViewTest >> testIdentifyIn [
 
 	html := self
 		renderUsing: [ :canvas | 
-			listBox identifyIn: canvas.
+			self assert: ( listBox identifierOn: canvas ) equals: 'list-box-id1'.
 			canvas render: listBox
 			].
 
 	self
 		assert: html
-			equals: '<select name="2" id="list-box-id1" multiple></select><input name="3" type="hidden"/>';
-		assert: listBox identifier equals: 'list-box-id1'
+		equals: '<select name="2" id="list-box-id1" multiple></select><input name="3" type="hidden"/>'
 ]
 
 { #category : #'tests-Multiple Selection-API' }

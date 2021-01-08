@@ -33,15 +33,9 @@ SingleSelectionListBoxWebView >> configure: select unselectingAllOn: aCanvas [
 ]
 
 { #category : #accessing }
-SingleSelectionListBoxWebView >> identifier [
+SingleSelectionListBoxWebView >> identifierOn: aCanvas [
 
-	^ identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-SingleSelectionListBoxWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas 
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #initialization }
@@ -66,9 +60,11 @@ SingleSelectionListBoxWebView >> renderContentOn: aCanvas [
 	select := aCanvas select.
 	select list: availableElements.
 	select callback: [ :element | self choose: element ].
-	identifierAssigner withAssignedIdentifierDo: [ :id | select id: id ].
-	chosenElementOptional withContentDo: [ :chosenElement | select selected: chosenElement ] ifUnused: [ self configure: select unselectingAllOn: aCanvas ].
+	chosenElementOptional
+		withContentDo: [ :chosenElement | select selected: chosenElement ]
+		ifUnused: [ self configure: select unselectingAllOn: aCanvas ].
 	select
+		beIdentifiableUsing: identifierAssigner;
 		interactUsing: interactionInterpreter;
 		apply: commandToComponent
 ]

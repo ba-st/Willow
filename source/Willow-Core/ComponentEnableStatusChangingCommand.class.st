@@ -16,9 +16,7 @@ Class {
 ComponentEnableStatusChangingCommand class >> disabling: anIdentifiedComponent [
 
 	^ self
-		obtainingComponentWith: [ :canvas | 
-			anIdentifiedComponent identifyIn: canvas.
-			canvas jQuery id: anIdentifiedComponent identifier ]
+		obtainingComponentWith: [ :canvas | canvas jQuery id: ( anIdentifiedComponent identifierOn: canvas ) ]
 		settingStatusTo: true
 ]
 
@@ -32,9 +30,7 @@ ComponentEnableStatusChangingCommand class >> disablingCurrentComponent [
 ComponentEnableStatusChangingCommand class >> enabling: anIdentifiedComponent [
 
 	^ self
-		obtainingComponentWith: [ :canvas | 
-			anIdentifiedComponent identifyIn: canvas.
-			canvas jQuery id: anIdentifiedComponent identifier ]
+		obtainingComponentWith: [ :canvas | canvas jQuery id: ( anIdentifiedComponent identifierOn: canvas ) ]
 		settingStatusTo: false
 ]
 

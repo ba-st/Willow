@@ -49,15 +49,9 @@ CheckboxWebView class >> onModel: anObjectToUseWhenOn offModel: anObjectToUseWhe
 ]
 
 { #category : #accessing }
-CheckboxWebView >> identifier [
+CheckboxWebView >> identifierOn: aCanvas [
 
-	^ identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-CheckboxWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #initialization }
@@ -97,12 +91,13 @@ CheckboxWebView >> renderOptionalLabelRelatedTo: checkbox on: aCanvas [
 		withContentDo: [ :label | 
 			| id |
 
-			id := self identifyIn: aCanvas.
+			id := self identifierOn: aCanvas.
 			checkbox id: id.
 			aCanvas label
 				for: id;
-				with: label ]
-		ifUnused: [ identifierAssigner withAssignedIdentifierDo: [ :id | checkbox id: id ] ]
+				with: label
+			]
+		ifUnused: [ checkbox beIdentifiableUsing: identifierAssigner ]
 ]
 
 { #category : #'Binary Choice-API' }

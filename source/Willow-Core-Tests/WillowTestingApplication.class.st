@@ -43,7 +43,9 @@ WillowTestingApplication >> componentSupplierForApplication [
 { #category : #accessing }
 WillowTestingApplication >> contentView [
 
-	^ PhrasingContainerWebView obtainingContentFrom: [ self componentSupplier dropdownListApplying: [  ] ]
+	^ self componentSupplier
+		inlineContainerWrapping: [ self componentSupplier dropdownListApplying: [  ] ]
+		applying: [  ]
 ]
 
 { #category : #initialization }

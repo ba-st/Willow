@@ -40,10 +40,7 @@ ComponentValueSettingCommand class >> triggeringChangesObtainingIdentifierFrom: 
 ComponentValueSettingCommand class >> triggeringChangesOn: anIdentifiableView withValueFrom: aValueProvider [
 
 	^ self
-		triggeringChangesObtainingIdentifierFrom: [ :canvas | 
-			anIdentifiableView identifyIn: canvas.
-			anIdentifiableView identifier
-			]
+		triggeringChangesObtainingIdentifierFrom: [ :canvas | anIdentifiableView identifierOn: canvas ]
 		valueFrom: aValueProvider
 ]
 

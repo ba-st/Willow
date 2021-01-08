@@ -215,10 +215,8 @@ WebInteractionInterpreter >> submitForm: anIdentifiedForm [
 
 	interaction
 		onTriggerExecute:
-			(FormSubmitCommand
-				findingComponentUsing: [ :aCanvas | 
-					anIdentifiedForm identifyIn: aCanvas.
-					aCanvas jQuery id: anIdentifiedForm identifier ])
+			( FormSubmitCommand
+				findingComponentUsing: [ :aCanvas | aCanvas jQuery id: ( anIdentifiedForm identifierOn: aCanvas ) ] )
 ]
 
 { #category : #'Configuring - Serialization' }

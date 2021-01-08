@@ -11,14 +11,6 @@ Class {
 	#category : #'Willow-Core-WebInteraction'
 }
 
-{ #category : #'private - preconditions' }
-RenderingCommand class >> assertInitializationOfAll: anIdentifiedViewCollection [
-
-	anIdentifiedViewCollection
-		do:
-			[ :anIdentifiedView | anIdentifiedView ifNil: [ self error: 'View initialization order is incorrect, please review' ] ]
-]
-
 { #category : #'instance creation' }
 RenderingCommand class >> for: anIdentifiedView [
 
@@ -28,14 +20,13 @@ RenderingCommand class >> for: anIdentifiedView [
 { #category : #'instance creation' }
 RenderingCommand class >> forAll: anIdentifiedViewCollection [
 
-	self assertInitializationOfAll: anIdentifiedViewCollection.
-
 	^ self new initializeRenderingAll: anIdentifiedViewCollection
 ]
 
 { #category : #initialization }
 RenderingCommand >> initializeRenderingAll: anIdentifiedViewCollection [
 
+	anIdentifiedViewCollection do: #beIdentifiable.
 	identifiedViews  := anIdentifiedViewCollection
 ]
 
@@ -45,10 +36,7 @@ RenderingCommand >> modelLoadingInstructions [
 	^ WebInteractionInstructions
 		directingTo: [ :aCanvas | 
 			identifiedViews
-				collect: [ :identifiedView | 
-					identifiedView identifyIn: aCanvas.
-					( aCanvas jQuery id: identifiedView identifier ) html: identifiedView view
-					]
+				collect: [ :identifiedView | ( aCanvas locate: identifiedView ) html: identifiedView renderableContent ]
 			]
 ]
 

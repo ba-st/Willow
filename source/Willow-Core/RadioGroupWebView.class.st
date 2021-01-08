@@ -75,7 +75,7 @@ RadioGroupWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGroup on: a
 
 	| radioButtonId |
 
-	radioButtonId := (IdentifierAssigner prefixedBy: 'radio-button') identifyIn: aCanvas.
+	radioButtonId := (IdentifierAssigner prefixedBy: 'radio-button') identifierOn: aCanvas.
 	self
 		renderLabelFor: radioButtonId
 		on: aCanvas

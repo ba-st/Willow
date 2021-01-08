@@ -24,15 +24,9 @@ SynchronicSubmitButtonWebView class >> labeled: aLabel applying: aComponentComma
 ]
 
 { #category : #accessing }
-SynchronicSubmitButtonWebView >> identifier [
+SynchronicSubmitButtonWebView >> identifierOn: aCanvas [
 
-	^ identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-SynchronicSubmitButtonWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #initialization }
@@ -57,11 +51,10 @@ SynchronicSubmitButtonWebView >> renderContentOn: aCanvas [
 	| submitButton |
 
 	submitButton := aCanvas button.
-
-	identifierAssigner withAssignedIdentifierDo: [ :id | submitButton id: id ].
 	submitButton
 		callback: submitCallback;
 		value: label;
+		beIdentifiableUsing: identifierAssigner;
 		interactUsing: interactionInterpreter;
 		apply: commandToComponent
 ]

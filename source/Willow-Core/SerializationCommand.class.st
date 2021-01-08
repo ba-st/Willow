@@ -58,10 +58,9 @@ SerializationCommand class >> forForm: anIdentifiedForm [
 
 	^ self
 		executing: [ :anAsynchronousCall :aCanvas | 
-			anIdentifiedForm identifyIn: aCanvas.
 			anAsynchronousCall
 				bePost;
-				serialize: ( aCanvas jQuery id: anIdentifiedForm identifier )
+				serialize: ( aCanvas jQuery id: ( anIdentifiedForm identifierOn: aCanvas ) )
 			]
 		covering: #()
 ]

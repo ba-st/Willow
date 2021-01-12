@@ -8,8 +8,8 @@ Class {
 		'stopRenderingContent',
 		'refreshCommand',
 		'refreshIntervalInMilliseconds',
-		'identifiedViewToRefresh',
-		'conditionBlock'
+		'conditionBlock',
+		'viewToRefresh'
 	],
 	#category : #'Willow-Core-WebViews'
 }
@@ -30,28 +30,35 @@ PeriodicallyRenderedWebView class >> evaluating: aRefreshCommand every: aNumber 
 	^ self new
 		initializeEvaluating: aRefreshCommand
 		every: aNumber
-		millisecondsThenRendering:
-			(IdentifiedWebView
-				forDivNamed: 'periodically-refreshed'
-				containing: aViewToRender)
+		millisecondsThenRendering: aViewToRender
 		until: aConditionBlock
 ]
 
 { #category : #initialization }
-PeriodicallyRenderedWebView >> initializeEvaluating: aRefreshCommand every: aNumber millisecondsThenRendering: anIdentifiedWebView until: aConditionBlock [
+PeriodicallyRenderedWebView >> initializeEvaluating: aRefreshCommand every: aNumber millisecondsThenRendering: aView until: aConditionBlock [
 
 	refreshCommand := aRefreshCommand.
 	refreshIntervalInMilliseconds := aNumber.
-	identifiedViewToRefresh := anIdentifiedWebView.
 	conditionBlock := aConditionBlock.
-	stopRenderingContent := false
+	stopRenderingContent := false.
+	self initializeViewToRefreshFrom: aView.
+]
+
+{ #category : #initialization }
+PeriodicallyRenderedWebView >> initializeViewToRefreshFrom: aView [
+
+	viewToRefresh := ContainerWebView
+		wrapping: aView
+		intoElementBuiltUsing: [ :canvas | canvas div ]
+		applying: [  ].
+	viewToRefresh beIdentifiable
 ]
 
 { #category : #'private-rendering' }
 PeriodicallyRenderedWebView >> refreshAndRenderContentOn: aCanvas [
 
 	refreshCommand value.
-	aCanvas render: identifiedViewToRefresh renderableContent.
+	aCanvas render: viewToRefresh renderableContent.
 
 	stopRenderingContent := true.
 	aCanvas document
@@ -62,7 +69,7 @@ PeriodicallyRenderedWebView >> refreshAndRenderContentOn: aCanvas [
 PeriodicallyRenderedWebView >> refreshAndRenderOn: aCanvas [
 
 	refreshCommand value.
-	aCanvas render: identifiedViewToRefresh
+	aCanvas render: viewToRefresh
 ]
 
 { #category : #rendering }
@@ -80,6 +87,6 @@ PeriodicallyRenderedWebView >> renderContentOn: aCanvas [
 { #category : #'private-rendering' }
 PeriodicallyRenderedWebView >> scriptToRefreshAndRenderContentOn: aCanvas [
 
-	^ ( aCanvas jQuery id: ( identifiedViewToRefresh identifierOn: aCanvas ) )
+	^ ( aCanvas locate: viewToRefresh )
 		html: [ :renderingCanvas | self refreshAndRenderContentOn: renderingCanvas ]
 ]

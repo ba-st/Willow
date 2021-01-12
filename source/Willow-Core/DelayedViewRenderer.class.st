@@ -34,9 +34,9 @@ DelayedViewRenderer >> initializeInterpreterToEvaluate: aBlock thenRender: aView
 DelayedViewRenderer >> initializeShowing: aThrobber whileEvaluating: aBlock thenRendering: aView [
 
 	self setCurrentViewTo: aThrobber.
-	identifiedDelayedView := IdentifiedWebView
-		forDivNamed: 'Delayed'
-		containing: [ :canvas | canvas render: currentView ].
+	identifiedDelayedView := self componentSupplier
+		divisionContainerWrapping: [ :canvas | canvas render: currentView ]
+		applying: [  ].
 	self initializeInterpreterToEvaluate: aBlock thenRender: aView
 ]
 

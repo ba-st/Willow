@@ -27,7 +27,7 @@ PeriodicallyRenderedWebViewTest >> testRenderContentOn [
 	self
 		assert: html
 		equals:
-			'<div id="periodically-refreshed-id1">Count:  1<br/></div><script type="text/javascript">setTimeout(function(){$.ajax({"dataType":"script","url":"/","data":"2"})},500)</script>'.
+			'<div id="container-id1">Count:  1<br/></div><script type="text/javascript">setTimeout(function(){$.ajax({"dataType":"script","url":"/","data":"2"})},500)</script>'.
 
 	"I have to simulate the AJAX call"
 	html := self renderUsing: [ :canvas | periodicallyRenderedView refreshAndRenderContentOn: canvas ].
@@ -57,7 +57,7 @@ PeriodicallyRenderedWebViewTest >> testRenderingStopsWhenStopConditionIsReached 
 	html := self render: periodicallyRenderedView.
 	self
 		assert: html
-		equals: '<div id="periodically-refreshed-id1">Count: 1<br/></div><script type="text/javascript">setTimeout(function(){$.ajax({"dataType":"script","url":"/","data":"2"})},500)</script>'.
+		equals: '<div id="container-id1">Count: 1<br/></div><script type="text/javascript">setTimeout(function(){$.ajax({"dataType":"script","url":"/","data":"2"})},500)</script>'.
 	self deny: blockWasEvaluated.
 	"I have to simulate the AJAX call"
 	html := self

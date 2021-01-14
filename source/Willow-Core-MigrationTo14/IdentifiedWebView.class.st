@@ -3,13 +3,7 @@ I'm a web view guaranteed to have an id and used usually to swap my child conten
 "
 Class {
 	#name : #IdentifiedWebView,
-	#superclass : #WAPainter,
-	#instVars : [
-		'view',
-		'componentBuilder',
-		'commandToComponent',
-		'identifierAssigner'
-	],
+	#superclass : #Object,
 	#category : #'Willow-Core-MigrationTo14'
 }
 
@@ -175,76 +169,4 @@ IdentifiedWebView class >> forSpanNamed: aName containing: aView applying: aComp
 			'`@receiver forSpanNamed: `@aName containing: `@aView applying: `@aComponentCommand'
 				-> 'ContainerWebView wrapping: `@aView intoElementBuiltUsing: [ :canvas | canvas span ] applying: `@aComponentCommand'.
 	^ ContainerWebView wrapping: aView intoElementBuiltUsing: [ :canvas | canvas span ] applying: aComponentCommand
-]
-
-{ #category : #configuring }
-IdentifiedWebView >> beIdentifiable [
-
-	"This is always the case for identified web views"
-
-	
-]
-
-{ #category : #private }
-IdentifiedWebView >> componentRenderedOn: aCanvas [
-
-	^ componentBuilder value: aCanvas
-]
-
-{ #category : #accessing }
-IdentifiedWebView >> identifierOn: aCanvas [
-
-	^ identifierAssigner identifierOn: aCanvas
-]
-
-{ #category : #initialization }
-IdentifiedWebView >> initializeForComponentBuiltUsing: aComponentBuilder as: anIdentificationPrefix containing: aView applying: aComponentCommand [
-
-	view := aView.
-	componentBuilder := aComponentBuilder.
-	commandToComponent := aComponentCommand.
-	identifierAssigner := IdentifierAssigner prefixedBy: anIdentificationPrefix
-]
-
-{ #category : #configuring }
-IdentifiedWebView >> on [
-
-	^ view on
-]
-
-{ #category : #configuring }
-IdentifiedWebView >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
-{ #category : #rendering }
-IdentifiedWebView >> renderContentOn: aCanvas [
-
-	| identifier containerComponent |
-
-	identifier := self identifierOn: aCanvas.
-	containerComponent := self componentRenderedOn: aCanvas.
-	"We need to set the id before applying the commands, because some command may require it"
-	containerComponent
-		id: identifier;
-		with: view applying: commandToComponent
-]
-
-{ #category : #accessing }
-IdentifiedWebView >> renderableContent [
-
-	^ view
-]
-
-{ #category : #accessing }
-IdentifiedWebView >> view [
-
-	self
-		deprecated: 'Use #renderableContent instead'
-		transformWith: '`@receiver view' -> '`@receiver renderableContent'.
-	^ self renderableContent
 ]

@@ -15,7 +15,10 @@ Class {
 RenderingCommandTest >> setUp [
 
 	super setUp.
-	identifiedView := IdentifiedWebView forDivNamed: 'test' containing: [ :canvas | canvas span: 'Test' ].
+	identifiedView := ContainerWebView
+		wrapping: [ :canvas | canvas span: 'Test' ]
+		intoElementBuiltUsing: [ :canvas | canvas div ]
+		applying: [  ].
 	command := RenderingCommand for: identifiedView
 ]
 
@@ -37,7 +40,7 @@ RenderingCommandTest >> testModelLoadingInstructions [
 	self
 		assert: html
 		equals:
-			'<a id="id2"></a><script type="text/javascript">$("#id2").click(function(){$("#test-id1").html("<span>Test</span>")});</script>'
+			'<a id="id2"></a><script type="text/javascript">$("#id2").click(function(){$("#container-id1").html("<span>Test</span>")});</script>'
 ]
 
 { #category : #'tests-accessing' }

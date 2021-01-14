@@ -726,7 +726,10 @@ WebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 	| html link container |
 
 	link := LinkWebView synchronicLabeled: 'Search!' applying: [  ].
-	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
+	container := ContainerWebView
+		wrapping: ''
+		intoElementBuiltUsing: [ :canvas | canvas div ]
+		applying: [  ].
 	link on trigger show: 'Searching...' whileCallingServerToRender: container.
 
 	html := self
@@ -739,7 +742,7 @@ WebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 	self
 		assert: html
 		equals:
-			'<a id="a-id3">Search!</a><div id="search-results-id1"></div><script type="text/javascript">$("#a-id3").click(function(event){$("#search-results-id1").html("Searching...");Willow.callServer({"url":"/","data":"2"})});</script>'
+			'<a id="a-id3">Search!</a><div id="container-id1"></div><script type="text/javascript">$("#a-id3").click(function(event){$("#container-id1").html("Searching...");Willow.callServer({"url":"/","data":"2"})});</script>'
 ]
 
 { #category : #'tests - Configuring - Serialization' }
@@ -862,16 +865,19 @@ WebInteractionInterpreterTest >> testToggleCssClassOn [
 	| interpreter element html |
 
 	interpreter := self clickInterpreter.
-	element := IdentifiedWebView forDivNamed: 'example' containing: [  ].
+	element := ContainerWebView
+		wrapping: [  ]
+		intoElementBuiltUsing: [ :canvas | canvas div ]
+		applying: [  ].
 
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #willow ]
-		onElementsMatching: [ :canvas | canvas jQuery id: ( element identifierOn: canvas ) ].
+		onElementsMatching: [ :canvas | canvas locate: element ].
 	html := self configureTextInputWith: interpreter.
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){$("#example-id1").toggleClass("willow")});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){$("#container-id1").toggleClass("willow")});</script>'
 ]
 
 { #category : #'tests - Configuring - CSS' }
@@ -896,7 +902,10 @@ WebInteractionInterpreterTest >> testTransformInto [
 	| html link container |
 
 	link := LinkWebView synchronicLabeled: 'Search!' applying: [  ].
-	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
+	container := ContainerWebView
+		wrapping: ''
+		intoElementBuiltUsing: [ :canvas | canvas div ]
+		applying: [  ].
 	link on trigger transform: container into: 'Searching...'.
 
 	html := self
@@ -909,7 +918,7 @@ WebInteractionInterpreterTest >> testTransformInto [
 	self
 		assert: html
 		equals:
-			'<a id="a-id2">Search!</a><div id="search-results-id1"></div><script type="text/javascript">$("#a-id2").click(function(event){$("#search-results-id1").html("Searching...")});</script>'
+			'<a id="a-id2">Search!</a><div id="container-id1"></div><script type="text/javascript">$("#a-id2").click(function(event){$("#container-id1").html("Searching...")});</script>'
 ]
 
 { #category : #'tests - Configuring - CSS' }

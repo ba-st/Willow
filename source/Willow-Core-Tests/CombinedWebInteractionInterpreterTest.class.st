@@ -710,7 +710,10 @@ CombinedWebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 	| html interpreter container |
 
 	interpreter := self combinedInterpreter.
-	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
+	container := ContainerWebView
+		wrapping: ''
+		intoElementBuiltUsing: [ :canvas | canvas div ]
+		applying: [  ].
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -724,7 +727,7 @@ CombinedWebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 	self
 		assert: html
 		equals:
-			'<button id="button-id3" type="button">Ok</button><button id="button-id5" type="button">Cancel</button><div id="search-results-id1"></div><script type="text/javascript">$("#button-id3").click(function(event){$("#search-results-id1").html("Loading...");Willow.callServer({"url":"/","data":"2"})});$("#button-id5").click(function(event){$("#search-results-id1").html("Loading...");Willow.callServer({"url":"/","data":"4"})});</script>'
+			'<button id="button-id3" type="button">Ok</button><button id="button-id5" type="button">Cancel</button><div id="container-id1"></div><script type="text/javascript">$("#button-id3").click(function(event){$("#container-id1").html("Loading...");Willow.callServer({"url":"/","data":"2"})});$("#button-id5").click(function(event){$("#container-id1").html("Loading...");Willow.callServer({"url":"/","data":"4"})});</script>'
 ]
 
 { #category : #'tests - Configuring - Serialization' }
@@ -847,7 +850,10 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOn [
 	| interpreter element html |
 
 	interpreter := self combinedInterpreter.
-	element := IdentifiedWebView forDivNamed: 'example' containing: [  ].
+	element := ContainerWebView
+		wrapping: [  ]
+		intoElementBuiltUsing: [ :canvas | canvas div ]
+		applying: [  ].
 
 	interpreter
 		updateCssClasses: [ :classes | classes toggleClass: Classification >> #willow ]
@@ -863,7 +869,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOn [
 	self
 		assert: html
 		equals:
-			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#example-id1").toggleClass("willow")});$("#button-id3").click(function(event){$("#example-id1").toggleClass("willow")});</script>'
+			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#container-id1").toggleClass("willow")});$("#button-id3").click(function(event){$("#container-id1").toggleClass("willow")});</script>'
 ]
 
 { #category : #'tests - Configuring - CSS' }
@@ -895,7 +901,10 @@ CombinedWebInteractionInterpreterTest >> testTransformInto [
 	| html interpreter container |
 
 	interpreter := self combinedInterpreter.
-	container := IdentifiedWebView forDivNamed: 'search-results' containing: ''.
+	container := ContainerWebView
+		wrapping: ''
+		intoElementBuiltUsing: [ :canvas | canvas div ]
+		applying: [  ].
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -909,7 +918,7 @@ CombinedWebInteractionInterpreterTest >> testTransformInto [
 	self
 		assert: html
 		equals:
-			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><div id="search-results-id1"></div><script type="text/javascript">$("#button-id2").click(function(event){$("#search-results-id1").html("Loading...")});$("#button-id3").click(function(event){$("#search-results-id1").html("Loading...")});</script>'
+			'<button id="button-id2" type="button">Ok</button><button id="button-id3" type="button">Cancel</button><div id="container-id1"></div><script type="text/javascript">$("#button-id2").click(function(event){$("#container-id1").html("Loading...")});$("#button-id3").click(function(event){$("#container-id1").html("Loading...")});</script>'
 ]
 
 { #category : #'tests - Configuring - CSS' }

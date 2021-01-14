@@ -6,8 +6,7 @@ Class {
 		'commandToComponent',
 		'identifierAssigner',
 		'renderableContent',
-		'containerBuilder',
-		'wasRendered'
+		'containerBuilder'
 	],
 	#category : #'Willow-Core-WebViews'
 }
@@ -24,9 +23,7 @@ ContainerWebView class >> wrapping: aRenderable intoElementBuiltUsing: anElement
 { #category : #configuring }
 ContainerWebView >> beIdentifiable [
 
-	wasRendered
-		then: [ identifierAssigner beRequiredAfterRendering ]
-		otherwise: [ identifierAssigner beRequiredBeforeRendering ]
+	identifierAssigner beRequired
 ]
 
 { #category : #accessing }
@@ -42,8 +39,7 @@ ContainerWebView >> initializeWrapping: aRenderable intoElementBuiltUsing: anEle
 	renderableContent := aRenderable.
 	commandToComponent := aComponentCommand.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'container'.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToClick.
-	wasRendered := false
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
 ]
 
 { #category : #configuring }
@@ -56,7 +52,6 @@ ContainerWebView >> on [
 { #category : #rendering }
 ContainerWebView >> renderContentOn: aCanvas [
 
-	wasRendered := true.
 	( containerBuilder cull: aCanvas )
 		beIdentifiableUsing: identifierAssigner;
 		interactUsing: interactionInterpreter;

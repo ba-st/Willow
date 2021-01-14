@@ -60,7 +60,7 @@ SerializationCommand class >> forForm: anIdentifiedForm [
 		executing: [ :anAsynchronousCall :aCanvas | 
 			anAsynchronousCall
 				bePost;
-				serialize: ( aCanvas jQuery id: ( anIdentifiedForm identifierOn: aCanvas ) )
+				serialize: ( aCanvas locate: anIdentifiedForm )
 			]
 		covering: #()
 ]

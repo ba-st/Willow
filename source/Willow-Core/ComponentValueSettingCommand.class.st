@@ -24,7 +24,10 @@ ComponentValueSettingCommand class >> obtainingIdentifierFrom: anIdentifierProvi
 { #category : #private }
 ComponentValueSettingCommand class >> obtainingIdentifierFrom: aValueProvider valueFrom: anIdentifierProvider triggeringAction: aTriggeringAction [
 
-	^ self new initializeObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider triggeringAction: aTriggeringAction
+	^ self new
+		initializeObtainingIdentifierFrom: anIdentifierProvider
+		valueFrom: aValueProvider
+		triggeringAction: aTriggeringAction
 ]
 
 { #category : #'instance creation' }

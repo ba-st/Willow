@@ -170,11 +170,10 @@ WebInteractionInterpreterBehavior >> toggleCssClass: aCssStyle on: anIdentifiedW
 				->
 					'`@receiver
 		updateCssClasses: [ :classes | classes toggleClass: `@aCssStyle ]
-		onElementsMatching: [ :canvas | canvas jQuery id: ( `@anIdentifiedWebView identifyIn: canvas ) 
-			]'.
+		onElementsMatching: [ :canvas | canvas locate: `@anIdentifiedWebView ]'.
 	self
 		updateCssClasses: [ :classes | classes toggleClass: aCssStyle ]
-		onElementsMatching: [ :canvas | canvas jQuery id: ( anIdentifiedWebView identifierOn: canvas ) ]
+		onElementsMatching: [ :canvas | canvas locate: anIdentifiedWebView ]
 ]
 
 { #category : #'*Willow-Core-MigrationTo14' }

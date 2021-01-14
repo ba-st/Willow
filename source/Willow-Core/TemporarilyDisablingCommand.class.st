@@ -21,7 +21,7 @@ TemporarilyDisablingCommand class >> componentToDisableVariableName [
 TemporarilyDisablingCommand class >> transforming: anIdentifieView into: aViewWhileDisabled [
 
 	^ self
-		transformingComponentMatching: [ :canvas | canvas jQuery id: ( anIdentifieView identifierOn: canvas ) ]
+		transformingComponentMatching: [ :canvas | canvas locate: anIdentifieView ]
 		into: aViewWhileDisabled
 ]
 

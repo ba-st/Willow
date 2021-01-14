@@ -44,7 +44,7 @@ WillowTestingApplication >> componentSupplierForApplication [
 WillowTestingApplication >> contentView [
 
 	^ self componentSupplier
-		inlineContainerWrapping: [ self componentSupplier dropdownListApplying: [  ] ]
+		inlineContainerWrapping: ( self componentSupplier dropdownListApplying: [  ] )
 		applying: [  ]
 ]
 

@@ -197,9 +197,9 @@ The `render:` affordance is one of the most useful ones. You can replace portion
 
 Let's see an example:
 ```smalltalk
-currentTimeView := IdentifiedWebView
-        forSpanNamed: 'current-time'
-        containing: [ :canvas | canvas strong: Time now ].
+currentTimeView := self componentSupplier
+        inlineContainerWrapping: [ :canvas | canvas strong: Time now ]
+	applying: [].
 button on trigger render: currentTimeView
 ```
 This will configure the handler function bound to the button click event to perform an AJAX call. When the call is complete it will replace the DOM contents of the component with some updated rendering.

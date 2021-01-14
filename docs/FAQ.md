@@ -1,18 +1,7 @@
 FAQ
 ===
 
-1. How to avoid the `AssertionFailed: The identifier was never assigned` error?
-
-  This error is raised when you're asking some component for its `identifier`, but it's not available (probably because the component hasn't been rendered yet). In case the rendering will happen later, and you have a canvas available, you should order the component to identify itself in that canvas.
-
-  For example
-  ```smalltalk
-  button onTrigger executeOnClient: [ :script :canvas |
-            identifiedView identifyIn: canvas.
-            script << (canvas jQuery id: identifiedView identifier) html: 'Loading...' ]
-  ```
-
-2. How to debug a Willow Application
+1. How to debug a Willow Application
 
   By default you will get standard HTTP errors when some unexpected thing happens. If you want to get a debugger when something fails, you need to configure the error handler:
 

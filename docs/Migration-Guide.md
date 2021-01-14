@@ -39,6 +39,8 @@ To reflect this,
 `multiLineTriggeringOnChangeApplying:` has been renamed to `multiLineApplying:`
 `singleLineTriggeringOnChangeApplying:` has been renamed to `singleLineApplying:`
 
+`PhrasingContainerWebView`, `GenericContainerWebView` and `IdentifiedWebView` have all been replaced by `ContainerWebView`. The deprecated classes are now located in the migration package `Willow-Core-MigrationTo14` and all their instance creation method now include a transformation rule. If the senders has access to a component supplier, "divs" can be created by sending `divisionContainerWrapping:applying:` and "spans" by sending `inlineContainerWrapping:applying:`. For all other scenarios, a `ContainerWebView` can specify the code to create the container element in the second argument of `wrapping:intoElementBuiltUsing:applying:`. The old requirement of using an `IdentifiedWebView` to allow re-rendering applies now to `ContainerWebView`, except this new class will only specify an id when its interaction is configured before it is rendered for the first time. Checks have been implemented to detect cases where the developer might need to send `beIdentifiable`in order to ensure an id is created for the container element.
+
 ## Version 10 to 11
 
 `executeOnClient:` no longer receives the script and now the block result it's automatically attached to it. So you have to:

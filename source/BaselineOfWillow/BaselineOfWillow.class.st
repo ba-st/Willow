@@ -46,7 +46,7 @@ BaselineOfWillow >> setUpDependencies: spec [
 			with: [ spec loads: 'Deployment-Seaside-Extensions' ].
 
 	spec
-		baseline: 'Boardwalk' with: [ spec repository: 'github://ba-st/Boardwalk:v5/source' ];
+		baseline: 'Boardwalk' with: [ spec repository: 'github://ba-st/Boardwalk:v6/source' ];
 		project: 'Boardwalk-Deployment' copyFrom: 'Boardwalk' with: [ spec loads: 'Deployment' ];
 		project: 'Boardwalk-SUnit'
 			copyFrom: 'Boardwalk'

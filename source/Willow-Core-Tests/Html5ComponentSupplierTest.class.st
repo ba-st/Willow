@@ -12,11 +12,29 @@ Html5ComponentSupplierTest >> assertRenderingOf: aComponentCreationBlock equals:
 
 	| component html |
 
-	component := aComponentCreationBlock value: Html5ComponentSupplier new.
+	component := aComponentCreationBlock value: self componentSupplier.
 
 	html := self render: component.
 
 	self assert: html equals: anExpectedHtml
+]
+
+{ #category : #accessing }
+Html5ComponentSupplierTest >> componentSupplier [
+
+	^ Html5ComponentSupplier new
+]
+
+{ #category : #accessing }
+Html5ComponentSupplierTest >> createHandlers [
+
+	^ Array with: self
+]
+
+{ #category : #accessing }
+Html5ComponentSupplierTest >> isSession [
+
+	^ true
 ]
 
 { #category : #'tests-Supplying' }
@@ -71,7 +89,7 @@ Html5ComponentSupplierTest >> testDelayedViewShowingWhileEvaluatingThenRendering
 
 	self
 		assertRenderingOf: [ :supplier | supplier delayedViewShowing: 'Loading...' whileEvaluating: [  ] thenRendering: 'Done!' ]
-		equals: '<div id="Delayed-id1">Loading...</div><script type="text/javascript">Willow.callServer({"url":"/","data":"2"});</script>'
+		equals: '<div id="container-id1">Loading...</div><script type="text/javascript">Willow.callServer({"url":"/","data":"2"});</script>'
 ]
 
 { #category : #'tests-Supplying' }

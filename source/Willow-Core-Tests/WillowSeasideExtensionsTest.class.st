@@ -34,8 +34,12 @@ WillowSeasideExtensionsTest >> testComponentSupplier [
 		renderUsing: [ :canvas | 
 			| webView |
 
-			webView := PhrasingContainerWebView wrapping: 'The Content' applying: [ :container |  ].
-			self assert: webView componentSupplier equals: self ]
+			webView := ContainerWebView
+				wrapping: 'The Content'
+				intoElementBuiltUsing: [ :theCanvas | theCanvas span ]
+				applying: [ :container |  ].
+			self assert: webView componentSupplier equals: self
+			]
 ]
 
 { #category : #tests }

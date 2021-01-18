@@ -22,12 +22,11 @@ DropDownListWebViewTest >> testIdentifyIn [
 
 	html := self
 		renderUsing: [ :canvas | 
-			dropDownList identifyIn: canvas.
-			canvas render: dropDownList ].
+			self assert: ( dropDownList identifierOn: canvas ) equals: 'drop-down-list-id1'.
+			canvas render: dropDownList
+			].
 
-	self
-		assert: html equals: '<select name="2" id="drop-down-list-id1"></select>';
-		assert: dropDownList identifier equals: 'drop-down-list-id1'
+	self assert: html equals: '<select name="2" id="drop-down-list-id1"></select>'
 ]
 
 { #category : #'tests-configuring' }

@@ -15,13 +15,19 @@ Class {
 { #category : #'Instance Creation' }
 LabeledWebView class >> displaying: thePhrasingContent boundTo: aFieldWebView applying: aComponentCommand [
 
-	^ self obtainingContentFrom: [ thePhrasingContent ] boundTo: aFieldWebView applying: aComponentCommand
+	^ self
+		obtainingContentFrom: [ thePhrasingContent ]
+		boundTo: aFieldWebView
+		applying: aComponentCommand
 ]
 
 { #category : #'Instance Creation' }
 LabeledWebView class >> obtainingContentFrom: aNyladicBlock boundTo: aFieldWebView applying: aComponentCommand [
 
-	^ self new initializeObtainingContentFrom: aNyladicBlock boundTo: aFieldWebView applying: aComponentCommand asWebComponentCommand 
+	^ self new
+		initializeObtainingContentFrom: aNyladicBlock
+		boundTo: aFieldWebView
+		applying: aComponentCommand asWebComponentCommand
 ]
 
 { #category : #accessing }
@@ -49,7 +55,7 @@ LabeledWebView >> renderContentOn: aCanvas [
 
 	| fieldIdentifier |
 
-	fieldIdentifier := fieldWebView identifyIn: aCanvas.
+	fieldIdentifier := fieldWebView identifierOn: aCanvas.
 	aCanvas label
 		for: fieldIdentifier;
 		with: self phrasingContent applying: commandToComponent.

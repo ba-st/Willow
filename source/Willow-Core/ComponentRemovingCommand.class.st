@@ -25,11 +25,7 @@ ComponentRemovingCommand >> initializeFor: anIdentifiedView [
 { #category : #accessing }
 ComponentRemovingCommand >> modelLoadingInstructions [
 
-	^ WebInteractionInstructions
-		directingTo: [ :aCanvas | 
-			identifiedView identifyIn: aCanvas.
-			( aCanvas jQuery id: identifiedView identifier ) remove
-			]
+	^ WebInteractionInstructions directingTo: [ :aCanvas | ( aCanvas locate: identifiedView ) remove ]
 ]
 
 { #category : #accessing }

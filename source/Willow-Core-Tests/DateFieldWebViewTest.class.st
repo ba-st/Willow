@@ -43,7 +43,7 @@ DateFieldWebViewTest >> testIdentifyIn [
 
 	html := self
 		renderUsing: [ :canvas | 
-			dateField identifyIn: canvas.
+			dateField identifierOn: canvas.
 			canvas render: dateField ].
 
 	self assert: html equals: '<input value="" name="2" id="date-field-id1" type="date"/>'

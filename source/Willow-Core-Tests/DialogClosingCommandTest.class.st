@@ -25,7 +25,7 @@ DialogClosingCommandTest >> createHandlers [
 { #category : #private }
 DialogClosingCommandTest >> isSession [
 
-^true
+	^ true
 ]
 
 { #category : #initialization }

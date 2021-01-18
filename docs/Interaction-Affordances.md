@@ -47,45 +47,48 @@ Willow provides native support for `click`, `change` , `keyup` and `mouseover` b
 ## Summary
 - General
   - `userAgentDo:`
-  - `serverDo:`
-  - `with:serverDo:`
-  - `with:onlyWhen:serverDo:`
+  - `serverDo:` :computer:
+  - `with:serverDo:` :computer:
+  - `with:onlyWhen:serverDo:` :computer:
 - Serialization
-  - `serializeChildForm`
-  - `serializeContainerForm`
-  - `serializeForm:`
-  - `serializeIt`
-  - `serializeWithHiddenInputs`
-  - `submitForm:`
-  - `submitFormStyledAs:`
+  - `serializeChildForm` :computer:
+  - `serializeContainerForm` :computer:
+  - `serializeForm:` :computer:
+  - `serializeIt` :computer:
+  - `serializeWithHiddenInputs` :computer:
+  - `submitForm:` :computer:
+  - `submitFormStyledAs:` :computer:
 - DOM Interaction
   - `enable:`
   - `disable`
   - `disable:`
-  - `focus:`
-  - `focusUsing:`
-  - `remove:`
-  - `render:`
-  - `renderAll:`
-  - `setValueTo:thenTriggerChangeOf:`
-  - `setValueTo:withoutTriggeringChangeOnComponentWithId:`
-  - `show:whileCallingServerToRender:`
-  - `temporarilyDisableAndTransform:into:`
-  - `temporarilyDisableAndTransformInto:`
+  - `focus:` :computer:
+  - `focusUsing:` :computer:
+  - `remove:` :computer:
+  - `render:` :computer:
+  - `renderAll:` :computer:
+  - `setValueTo:thenTriggerChangeOf:` :computer:
+  - `setValueTo:withoutTriggeringChangeOnComponentWithId:` :computer:
+  - `show:whileCallingServerToRender:` :computer:
+  - `temporarilyDisableAndTransform:into:` :computer:
+  - `temporarilyDisableAndTransformInto:` :computer:
   - `transform:into:`
-  - `scrollIntoView:`
-  - `showLoadingNotificationStyledAsAll:`
+  - `scrollIntoView:` :computer:
+  - `showLoadingNotificationDisplaying:applying:` :computer:
+  - `showLoadingNotificationStyledAsAll:` :computer:
 - CSS Manipulation
   - `updateCssClasses:`
   - `updateCssClasses:onElementsMatching:`
 - Dialogs
-  - `open:`
-  - `closeLastDialog`
-  - `closeAllDialogs`
+  - `open:` :computer:
+  - `closeLastDialog` :computer:
+  - `closeAllDialogs` :computer:
 - Debugging
-  - `confirmAsking:`
+  - `confirmAsking:` :computer:
   - `inform:`
   - `informSelection`
+
+  :computer: indicates the command generates a request to the server. This is not always because the server needs information related to the command from the user agent, but because Willow expects the Javascript associated with the command to be executed after the server completes all necessary processing.
 
 ## General Affordances
 ### User Agent Execution
@@ -188,6 +191,11 @@ The main difference between the serialization affordances is what get serialized
 - `serializeWithHiddenInputs` will serialize the component receiving the  on trigger collaboration and the next hidden input (required for some Seaside brushes where the resulting HTML includes a hidden input)
 
 In case you need it, there's also support to submit a form: `submitForm:`. Also `submitFormStyledAs:` will call the `submit()` function on the corresponding form (found by id or by matching it's "class").
+
+Serialization will occur automatically when triggering certain components.
+- Fields, single selections and radio buttons will serialize the component, thus ensuring an updated value in the server, every time they change.
+- Checkboxes will serialize the hidden element used by Seaside to determine its boolean value.
+- Multiple selections will serialize on change, including the hidden element used by Seaside.
 
 ## DOM Interaction
 

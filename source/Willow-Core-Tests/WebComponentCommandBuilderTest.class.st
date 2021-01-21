@@ -183,25 +183,41 @@ WebComponentCommandBuilderTest >> testInputModeCommands [
 
 	| html |
 
-	html := self apply: self commandBuilder beDateInput toComponentDefinedBy: [ :canvas | canvas textInput ].
+	html := self
+		apply: self commandBuilder beDateInput
+		toComponentDefinedBy: [ :canvas | canvas textInput ].
 
-	self assert: html equals: (self renderUsing: [ :canvas | canvas dateInput5 ]).
+	self assert: html equals: ( self renderUsing: [ :canvas | canvas dateInput5 ] ).
 
-	html := self apply: self commandBuilder beNumberInput toComponentDefinedBy: [ :canvas | canvas textInput ].
+	html := self
+		apply: self commandBuilder beNumberInput
+		toComponentDefinedBy: [ :canvas | canvas textInput ].
 
-	self assert: html equals: (self renderUsing: [ :canvas | canvas numberInput ]).
+	self assert: html equals: ( self renderUsing: [ :canvas | canvas numberInput ] ).
 
-	html := self apply: self commandBuilder bePasswordInput toComponentDefinedBy: [ :canvas | canvas textInput ].
+	html := self
+		apply: self commandBuilder bePasswordInput
+		toComponentDefinedBy: [ :canvas | canvas textInput ].
 
 	self assert: html equals: '<input type="password"/>'.
 
-	html := self apply: self commandBuilder beEmailInput toComponentDefinedBy: [ :canvas | canvas textInput ].
+	html := self
+		apply: self commandBuilder beEmailInput
+		toComponentDefinedBy: [ :canvas | canvas textInput ].
 
 	self assert: html equals: '<input type="email"/>'.
 
-	html := self apply: self commandBuilder beTextInput toComponentDefinedBy: [ :canvas | canvas textInput type: 'date' ].
+	html := self
+		apply: self commandBuilder beTextInput
+		toComponentDefinedBy: [ :canvas | canvas textInput type: 'date' ].
 
-	self assert: html equals: '<input type="text"/>'
+	self assert: html equals: '<input type="text"/>'.
+
+	html := self
+		apply: self commandBuilder beTimeInput
+		toComponentDefinedBy: [ :canvas | canvas textInput ].
+
+	self assert: html equals: '<input type="time"/>'
 ]
 
 { #category : #tests }

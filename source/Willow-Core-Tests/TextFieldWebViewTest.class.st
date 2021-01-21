@@ -31,7 +31,7 @@ TextFieldWebViewTest >> testContents [
 ]
 
 { #category : #'tests - configuring' }
-TextFieldWebViewTest >> testIdentifyIn [
+TextFieldWebViewTest >> testIdentifierOn [
 
 	| textField html |
 

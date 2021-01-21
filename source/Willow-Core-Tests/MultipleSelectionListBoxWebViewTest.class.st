@@ -119,7 +119,7 @@ MultipleSelectionListBoxWebViewTest >> testChooseAllMatching [
 ]
 
 { #category : #tests }
-MultipleSelectionListBoxWebViewTest >> testIdentifyIn [
+MultipleSelectionListBoxWebViewTest >> testIdentifierOn [
 
 	| listBox html |
 

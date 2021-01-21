@@ -279,6 +279,14 @@ Html5ComponentSupplierTest >> testTableBuilderWithSimpleColumns [
 ]
 
 { #category : #'tests-Supplying' }
+Html5ComponentSupplierTest >> testTimeFieldApplying [
+
+	self
+		assertRenderingOf: [ :supplier | supplier timeFieldApplying: [ :field |  ] ]
+		equals: '<input value="" name="1" type="time"/>'
+]
+
+{ #category : #'tests-Supplying' }
 Html5ComponentSupplierTest >> testUnorderedListApplyingListingApplyingToEach [
 
 	self

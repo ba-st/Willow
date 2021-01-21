@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #'tests-rendering' }
-AsynchronicButtonWebViewTest >> testIdentifyIn [
+AsynchronicButtonWebViewTest >> testIdentifierOn [
 
 	| button html |
 

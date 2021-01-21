@@ -12,20 +12,20 @@ Class {
 
 { #category : #'Instance Creation' }
 InputModeCommand class >> asDate [
-	
-	^self settingTypeTo: 'date'
+
+	^ self settingTypeTo: 'date'
 ]
 
 { #category : #'Instance Creation' }
 InputModeCommand class >> asEmail [
 
-	^self settingTypeTo: 'email'
+	^ self settingTypeTo: 'email'
 ]
 
 { #category : #'Instance Creation' }
 InputModeCommand class >> asNumber [
-	
-	^self settingTypeTo: 'number'
+
+	^ self settingTypeTo: 'number'
 ]
 
 { #category : #'Instance Creation' }
@@ -38,6 +38,12 @@ InputModeCommand class >> asPassword [
 InputModeCommand class >> asText [
 
 	^ self settingTypeTo: 'text'
+]
+
+{ #category : #'Instance Creation' }
+InputModeCommand class >> asTime [
+
+	^ self settingTypeTo: 'time'
 ]
 
 { #category : #'private-Instance Creation' }

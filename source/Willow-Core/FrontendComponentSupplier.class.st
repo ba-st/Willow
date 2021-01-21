@@ -134,6 +134,12 @@ FrontendComponentSupplier >> tableBuilder [
 ]
 
 { #category : #Supplying }
+FrontendComponentSupplier >> timeFieldApplying: aComponentCommand [
+
+	self subclassResponsibility
+]
+
+{ #category : #Supplying }
 FrontendComponentSupplier >> unorderedListApplying: aCommandToList listing: aCollection applyingToEach: aCommandToItem [
 
 	^ self subclassResponsibility 

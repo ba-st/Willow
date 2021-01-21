@@ -17,7 +17,7 @@ TimeFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [
 ]
 
 { #category : #support }
-TimeFieldWebViewTest >> testIdentifyIn [
+TimeFieldWebViewTest >> testIdentifierOn [
 
 	| timeField html |
 
@@ -25,7 +25,7 @@ TimeFieldWebViewTest >> testIdentifyIn [
 
 	html := self
 		renderUsing: [ :canvas | 
-			timeField identifyIn: canvas.
+			timeField identifierOn: canvas.
 			canvas render: timeField
 			].
 

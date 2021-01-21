@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #tests }
-SynchronicSubmitButtonWebViewTest >> testIdentifyIn [
+SynchronicSubmitButtonWebViewTest >> testIdentifierOn [
 
 	| synchronicButton html |
 

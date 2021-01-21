@@ -35,7 +35,7 @@ DateFieldWebViewTest >> testDate [
 ]
 
 { #category : #tests }
-DateFieldWebViewTest >> testIdentifyIn [
+DateFieldWebViewTest >> testIdentifierOn [
 
 	| dateField html |
 

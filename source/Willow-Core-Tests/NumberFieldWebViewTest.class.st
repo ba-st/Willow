@@ -17,7 +17,7 @@ NumberFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [
 ]
 
 { #category : #'tests-configuring' }
-NumberFieldWebViewTest >> testIdentifyIn [
+NumberFieldWebViewTest >> testIdentifierOn [
 
 	| numberField html |
 

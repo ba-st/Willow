@@ -14,7 +14,7 @@ DropDownListWebViewTest >> newSingleSelectionView [
 ]
 
 { #category : #'tests-configuring' }
-DropDownListWebViewTest >> testIdentifyIn [
+DropDownListWebViewTest >> testIdentifierOn [
 
 	| dropDownList html |
 

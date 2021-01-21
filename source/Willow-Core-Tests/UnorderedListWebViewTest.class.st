@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #'tests-rendering' }
-UnorderedListWebViewTest >> testIdentifyIn [
+UnorderedListWebViewTest >> testIdentifierOn [
 
 	| unorderedList html |
 

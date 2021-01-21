@@ -14,7 +14,7 @@ CheckboxWebViewTest >> newBinaryChoiceView [
 ]
 
 { #category : #'tests-rendering' }
-CheckboxWebViewTest >> testIdentifyIn [
+CheckboxWebViewTest >> testIdentifierOn [
 
 	| html checkbox |
 

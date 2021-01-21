@@ -43,15 +43,9 @@ TableWebView >> contents [
 ]
 
 { #category : #accessing }
-TableWebView >> identifier [
+TableWebView >> identifierOn: aCanvas [
 
-	^ identifierAssigner assignedIdentifier
-]
-
-{ #category : #configuring }
-TableWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #'initialize-release' }
@@ -91,7 +85,7 @@ TableWebView >> on [
 TableWebView >> renderContentOn: aCanvas [
 
 	aCanvas table
-		id: (self identifyIn: aCanvas);
+		id: (self identifierOn: aCanvas);
 		interactUsing: interactionInterpreter;
 		with: [ aCanvas render: header.
 			aCanvas tableBody: [ items doWithIndex: [ :item :index | self renderRowAt: index for: item on: aCanvas ] ].

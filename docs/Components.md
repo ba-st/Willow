@@ -124,9 +124,7 @@ These components are the ones supporting user actions. The base support includes
 Specific containers can be provided in specific component suppliers. Others are portable across all fronted frameworks, so they can be used directly. The base support includes:
 - `unorderedListApplying:listing:applyingToEach:` will return an unordered list
 - `tableBuilder` will provide a builder to create tables (See [Tabular Data](TabularData.md) for details)
-- `GenericContainerWebView` will provide a `div` with interaction affordances
-- `PhrasingContainerWebView` will provide a `span` with interaction affordances
-- `IdentifiedWebView` will provide a `div`, `span`, `form` , `row` or `fieldset` with interaction affordances. It also guarantees that it will include an `id`, to be used when the component needs to be identified (for example in a re-rendering).
+- `ContainerWebView` will provide a `div`, `span`, or custom element with interaction affordances. It will also include an `id`, to be used when the component needs to be identified (for example in a re-rendering), as long as it is configured to be interactive, or explicitly sent the message `beIdentifiable`.
 - `fieldSetContaining:applying:withLegend:applying:` will provide a `fieldset`
 - `HeadingWebView` will provide a `h1`, `h2`, etc
 

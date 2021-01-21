@@ -38,12 +38,11 @@ TextFieldWebViewTest >> testIdentifyIn [
 	textField := TextFieldWebView singleLineApplying: [ :field |  ].
 	html := self
 		renderUsing: [ :canvas | 
-			textField identifyIn: canvas.
-			canvas render: textField ].
+			self assert: ( textField identifierOn: canvas ) equals: 'text-id1'.
+			canvas render: textField
+			].
 
-	self
-		assert: html equals: '<input value="" name="2" id="text-id1" type="text"/>';
-		assert: textField identifier equals: 'text-id1'
+	self assert: html equals: '<input value="" name="2" id="text-id1" type="text"/>'
 ]
 
 { #category : #'tests - container-API' }

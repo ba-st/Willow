@@ -50,21 +50,15 @@ FieldWebView >> contents [
 ]
 
 { #category : #accessing }
-FieldWebView >> identifier [
+FieldWebView >> identifierOn: aCanvas [
 
-	^identifierAssigner assignedIdentifier
+	^ identifierAssigner identifierOn: aCanvas
 ]
 
 { #category : #'private - Accessing' }
 FieldWebView >> identifierPrefix [
 
 	^ self subclassResponsibility
-]
-
-{ #category : #configuring }
-FieldWebView >> identifyIn: aCanvas [
-
-	^ identifierAssigner identifyIn: aCanvas 
 ]
 
 { #category : #initialization }
@@ -111,9 +105,8 @@ FieldWebView >> renderContentOn: aCanvas [
 	component
 		value: self contents;
 		callback: [ :aString | self changeContentsTo: aString ].
-
-	identifierAssigner withAssignedIdentifierDo: [ :id | component id: id ].
 	component
+		beIdentifiableUsing: identifierAssigner;
 		apply: commandToComponent;
 		interactUsing: interactionInterpreter
 ]

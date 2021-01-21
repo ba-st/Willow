@@ -12,7 +12,7 @@ JQuery3OnlineLibrary >> updateRoot: aRoot [
 
 	aRoot javascript
 		url: ( 'https://code.jquery.com/jquery-<1s>.min.js' expandMacrosWith: self version );
-		anonymousSubResourceIntegrity: 'sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ='
+		anonymousSubResourceIntegrity: 'sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2'
 ]
 
 { #category : #Accessing }

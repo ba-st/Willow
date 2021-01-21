@@ -188,10 +188,7 @@ WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRende
 
 	"This will replace anIdentifiedWebView content with aRenderable on the browser side"
 
-	self
-		userAgentDo: [ :canvas | 
-			anIdentifiedWebView identifyIn: canvas.
-			(canvas jQuery id: anIdentifiedWebView identifier) html: aRenderable ]
+	self userAgentDo: [ :canvas | ( canvas locate: anIdentifiedWebView ) html: aRenderable ]
 ]
 
 { #category : #'Configuring - CSS' }

@@ -132,9 +132,8 @@ TableWebViewTest >> testOn [
 
 	self
 		assert: html
-			equals:
-			'<table id="table-id1"><tbody></tbody></table><script type="text/javascript">$("#table-id1").click(function(event){$(this).prop("disabled",true)});</script>';
-		assert: table identifier equals: 'table-id1'
+		equals:
+			'<table id="table-id1"><tbody></tbody></table><script type="text/javascript">$("#table-id1").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
 { #category : #'tests-rendering' }

@@ -16,12 +16,11 @@ AsynchronicButtonWebViewTest >> testIdentifyIn [
 
 	html := self
 		renderUsing: [ :canvas | 
-			button identifyIn: canvas.
-			canvas render: button ].
+			self assert: ( button identifierOn: canvas ) equals: 'button-id1'.
+			canvas render: button
+			].
 
-	self
-		assert: html equals: '<button id="button-id1" type="button">Click me!</button>';
-		assert: button identifier equals: 'button-id1'
+	self assert: html equals: '<button id="button-id1" type="button">Click me!</button>'
 ]
 
 { #category : #'tests-rendering' }

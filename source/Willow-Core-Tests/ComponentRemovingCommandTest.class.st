@@ -14,7 +14,12 @@ Class {
 ComponentRemovingCommandTest >> setUp [
 
 	super setUp.
-	command := ComponentRemovingCommand for: (IdentifiedWebView forDivNamed: 'example' containing: [ :canvas |  ])
+	command := ComponentRemovingCommand
+		for:
+			( ContainerWebView
+				wrapping: [ :canvas |  ]
+				intoElementBuiltUsing: [ :canvas | canvas div ]
+				applying: [  ] )
 ]
 
 { #category : #'tests-accessing' }

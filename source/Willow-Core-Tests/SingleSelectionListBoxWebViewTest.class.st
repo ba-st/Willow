@@ -10,16 +10,35 @@ Class {
 { #category : #'instance creation' }
 SingleSelectionListBoxWebViewTest >> newSingleSelectionView [
 
-	^ SingleSelectionListBoxWebView displayingAtOnce: 5
+	^ SingleSelectionWebView listBoxDisplayingAtOnce: 5
+]
+
+{ #category : #'tests-rendering' }
+SingleSelectionListBoxWebViewTest >> testCustomCommandForOptions [
+	| dropDownList html |
+
+	dropDownList := self newSingleSelectionView.
+	dropDownList
+		allowAnyOf: #(1 2 3);
+		applyToEachOption: [ :option :item | 
+			item even
+				ifTrue: [ option class: 'even' ]
+				ifFalse: [ option class: 'odd' ] ].
+
+	html := self render: dropDownList.
+	self
+		assert: html
+		equals:
+			'<select name="1" id="id2" size="5"><option value="1" class="odd">1</option><option value="2" class="even">2</option><option value="3" class="odd">3</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);</script>'
 ]
 
 { #category : #tests }
 SingleSelectionListBoxWebViewTest >> testDisplayingAtOnce [
 
 	self
-		should: [ SingleSelectionListBoxWebView displayingAtOnce: 1 ] raise: AssertionFailed;
-		should: [ SingleSelectionListBoxWebView displayingAtOnce: 0 ] raise: AssertionFailed;
-		should: [ SingleSelectionListBoxWebView displayingAtOnce: -51 ] raise: AssertionFailed
+		should: [ SingleSelectionWebView listBoxDisplayingAtOnce: 1 ] raise: AssertionFailed;
+		should: [ SingleSelectionWebView listBoxDisplayingAtOnce: 0 ] raise: AssertionFailed;
+		should: [ SingleSelectionWebView listBoxDisplayingAtOnce: -51 ] raise: AssertionFailed
 ]
 
 { #category : #tests }
@@ -71,7 +90,7 @@ SingleSelectionListBoxWebViewTest >> testRenderContentOnWithCommands [
 
 	| listBox html |
 
-	listBox := SingleSelectionListBoxWebView displayingAtOnce: 10 applying: [ :theListBox | theListBox addClass willow ].
+	listBox := SingleSelectionWebView listBoxDisplayingAtOnce: 10 applying: [ :theListBox | theListBox addClass willow ].
 	html := self render: listBox.
 
 	self assert: html equals: '<select name="1" size="10" class="willow"></select>'

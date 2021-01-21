@@ -10,7 +10,26 @@ Class {
 { #category : #support }
 DropDownListWebViewTest >> newSingleSelectionView [
 
-	^ DropDownListWebView applying: [  ]
+	^ SingleSelectionWebView dropDownListApplying: [  ]
+]
+
+{ #category : #'tests-rendering' }
+DropDownListWebViewTest >> testCustomCommandForOptions [
+	| dropDownList html |
+	
+	dropDownList := self newSingleSelectionView.
+	dropDownList
+		allowAnyOf: #(1 2 3);
+		applyToEachOption: [ :option :item | 
+			item even
+				ifTrue: [ option class: 'even' ]
+				ifFalse: [ option class: 'odd' ] ].
+			
+	html := self render: dropDownList.
+	self
+		assert: html
+		equals:
+			'<select name="1" id="id2"><option value="1" class="odd">1</option><option value="2" class="even">2</option><option value="3" class="odd">3</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);</script>'
 ]
 
 { #category : #'tests-configuring' }
@@ -62,7 +81,7 @@ DropDownListWebViewTest >> testRenderContentOnWithCommands [
 
 	| dropDownList html |
 
-	dropDownList := DropDownListWebView applying: [ :dropdown | dropdown addClass willow ].
+	dropDownList := SingleSelectionWebView dropDownListApplying: [ :dropdown | dropdown addClass willow ].
 	html := self render: dropDownList.
 
 	self assert: html equals: '<select name="1" class="willow"></select>'

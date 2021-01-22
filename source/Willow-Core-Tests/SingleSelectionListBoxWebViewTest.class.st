@@ -16,14 +16,15 @@ SingleSelectionListBoxWebViewTest >> newSingleSelectionView [
 { #category : #'tests-rendering' }
 SingleSelectionListBoxWebViewTest >> testCustomCommandForOptions [
 	| dropDownList html |
-
-	dropDownList := self newSingleSelectionView.
-	dropDownList
-		allowAnyOf: #(1 2 3);
-		applyToEachOption: [ :option :item | 
+	
+	dropDownList := SingleSelectionWebView
+		listBoxDisplayingAtOnce: 5
+		applying: [  ]
+		applyingToOptions: [ :option :item | 
 			item even
 				ifTrue: [ option class: 'even' ]
 				ifFalse: [ option class: 'odd' ] ].
+	dropDownList allowAnyOf: #(1 2 3).
 
 	html := self render: dropDownList.
 	self
@@ -50,11 +51,11 @@ SingleSelectionListBoxWebViewTest >> testIdentifierOn [
 
 	html := self
 		renderUsing: [ :canvas | 
-			self assert: ( listBox identifierOn: canvas ) equals: 'list-box-id1'.
+			self assert: ( listBox identifierOn: canvas ) equals: 'single-select-id1'.
 			canvas render: listBox
 			].
 
-	self assert: html equals: '<select name="2" id="list-box-id1" size="5"></select>'
+	self assert: html equals: '<select name="2" id="single-select-id1" size="5"></select>'
 ]
 
 { #category : #tests }
@@ -87,13 +88,17 @@ SingleSelectionListBoxWebViewTest >> testRenderContentOn [
 
 { #category : #'tests-rendering' }
 SingleSelectionListBoxWebViewTest >> testRenderContentOnWithCommands [
-
 	| listBox html |
 
-	listBox := SingleSelectionWebView listBoxDisplayingAtOnce: 10 applying: [ :theListBox | theListBox addClass willow ].
+	listBox := SingleSelectionWebView
+		listBoxDisplayingAtOnce: 10
+		applying: [ :theListBox | theListBox addClass willow ]
+		applyingToOptions: [  ].
+		
 	html := self render: listBox.
-
-	self assert: html equals: '<select name="1" size="10" class="willow"></select>'
+	self
+		assert: html
+		equals: '<select name="1" size="10" class="willow"></select>'
 ]
 
 { #category : #'tests-rendering' }

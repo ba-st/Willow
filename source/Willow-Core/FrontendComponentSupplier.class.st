@@ -61,6 +61,12 @@ FrontendComponentSupplier >> divisionContainerWrapping: aRenderable applying: aC
 { #category : #Supplying }
 FrontendComponentSupplier >> dropdownListApplying: aComponentCommand [
 
+	^ self dropdownListApplying: aComponentCommand applyingToOptions: [  ]
+]
+
+{ #category : #Supplying }
+FrontendComponentSupplier >> dropdownListApplying: aComponentCommand applyingToOptions: anOptionCommand [ 
+
 	self subclassResponsibility 
 ]
 
@@ -111,6 +117,15 @@ FrontendComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
 { #category : #Supplying }
 FrontendComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
+
+	^ self
+		singleSelectionListBoxDisplayingAtOnce: aNumberOfElements
+		applying: aComponentCommand
+		applyingToOptions: [  ]
+]
+
+{ #category : #Supplying }
+FrontendComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	self subclassResponsibility
 ]

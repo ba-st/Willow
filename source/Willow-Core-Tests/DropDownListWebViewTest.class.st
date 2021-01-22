@@ -9,22 +9,23 @@ Class {
 
 { #category : #support }
 DropDownListWebViewTest >> newSingleSelectionView [
-
-	^ SingleSelectionWebView dropDownListApplying: [  ]
+	^ SingleSelectionWebView
+		dropDownListApplying: [  ]
+		applyingToOptions: [  ]
 ]
 
 { #category : #'tests-rendering' }
 DropDownListWebViewTest >> testCustomCommandForOptions [
 	| dropDownList html |
-	
-	dropDownList := self newSingleSelectionView.
-	dropDownList
-		allowAnyOf: #(1 2 3);
-		applyToEachOption: [ :option :item | 
+
+	dropDownList := SingleSelectionWebView
+		dropDownListApplying: [  ]
+		applyingToOptions: [ :option :item | 
 			item even
 				ifTrue: [ option class: 'even' ]
 				ifFalse: [ option class: 'odd' ] ].
-			
+	dropDownList allowAnyOf: #(1 2 3).
+
 	html := self render: dropDownList.
 	self
 		assert: html
@@ -41,11 +42,11 @@ DropDownListWebViewTest >> testIdentifierOn [
 
 	html := self
 		renderUsing: [ :canvas | 
-			self assert: ( dropDownList identifierOn: canvas ) equals: 'drop-down-list-id1'.
+			self assert: ( dropDownList identifierOn: canvas ) equals: 'single-select-id1'.
 			canvas render: dropDownList
 			].
 
-	self assert: html equals: '<select name="2" id="drop-down-list-id1"></select>'
+	self assert: html equals: '<select name="2" id="single-select-id1"></select>'
 ]
 
 { #category : #'tests-configuring' }
@@ -78,12 +79,14 @@ DropDownListWebViewTest >> testRenderContentOn [
 
 { #category : #'tests-rendering' }
 DropDownListWebViewTest >> testRenderContentOnWithCommands [
-
+	
 	| dropDownList html |
-
-	dropDownList := SingleSelectionWebView dropDownListApplying: [ :dropdown | dropdown addClass willow ].
+	
+	dropDownList := SingleSelectionWebView
+		dropDownListApplying: [ :dropdown | dropdown addClass willow ]
+		applyingToOptions: [  ].
+	
 	html := self render: dropDownList.
-
 	self assert: html equals: '<select name="1" class="willow"></select>'
 ]
 

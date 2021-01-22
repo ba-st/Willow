@@ -2,13 +2,19 @@ Class {
 	#name : #SingleSelectionWebView,
 	#superclass : #SingleSelectionWebViewBehavior,
 	#instVars : [
-		'commandToComponent',
 		'interactionInterpreter',
 		'identifierAssigner',
-		'optionCommand'
+		'optionCommand',
+		'selectCommand'
 	],
 	#category : #'Willow-Core-WebViews'
 }
+
+{ #category : #'private - instance creation' }
+SingleSelectionWebView class >> applyingToSelect: aSelectCommand applyingToOptions: anOptionCommand [
+
+	^ self new initializeApplyingToSelect: aSelectCommand applyingToOptions: anOptionCommand
+]
 
 { #category : #'instance creation' }
 SingleSelectionWebView class >> dropDownListApplying: aComponentCommand [
@@ -17,11 +23,18 @@ SingleSelectionWebView class >> dropDownListApplying: aComponentCommand [
 ]
 
 { #category : #'instance creation' }
-SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements [
+SingleSelectionWebView class >> dropDownListApplying: aSelectCommand applyingToOptions: anOptionCommand [ 
 
+	^ self applyingToSelect: aSelectCommand applyingToOptions: anOptionCommand 
+]
+
+{ #category : #'instance creation' }
+SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements [
+	
 	^ self
 		listBoxDisplayingAtOnce: aNumberOfElements
 		applying: [ :listBox |  ]
+		applyingToOptions: [  ]
 ]
 
 { #category : #'instance creation' }
@@ -36,6 +49,18 @@ SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements apply
 		applying:
 			(SetComponentSizeCommand setting: aNumberOfElements)
 				+ aCommandComponent
+]
+
+{ #category : #'instance creation' }
+SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements applying: aSelectCommand applyingToOptions: anOptionCommand [
+	AssertionChecker
+		enforce: [ aNumberOfElements > 1 ]
+		because: 'A list box must display more than one element'.
+
+	^ self
+		applyingToSelect:
+			(SetComponentSizeCommand setting: aNumberOfElements) + aSelectCommand
+		applyingToOptions: anOptionCommand
 ]
 
 { #category : #'private - instance creation' }
@@ -62,6 +87,16 @@ SingleSelectionWebView >> configure: select unselectingAllOn: aCanvas [
 SingleSelectionWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
+]
+
+{ #category : #initialization }
+SingleSelectionWebView >> initializeApplyingToSelect: aSelectCommand applyingToOptions: anOptionCommand [
+	
+	selectCommand := aSelectCommand.
+	optionCommand := anOptionCommand.
+	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
+	identifierAssigner := IdentifierAssigner prefixedBy: 'single-select'.
+
 ]
 
 { #category : #initialization }
@@ -92,7 +127,7 @@ SingleSelectionWebView >> renderContentOn: aCanvas [
 	select
 		beIdentifiableUsing: identifierAssigner;
 		interactUsing: interactionInterpreter;
-		apply: commandToComponent. 
+		apply: selectCommand. 
 	
 	select with: [ self renderOptionsFor: select on: aCanvas ]
 ]
@@ -106,7 +141,7 @@ SingleSelectionWebView >> renderOptionsFor: aWASelectTag on: aCanvas [
 			option := aCanvas option.
 			aWASelectTag hasCallback
 				ifTrue: [ option value: (aWASelectTag valueFor: anObject) ].
-			optionCommand value: option value: anObject.
+			optionCommand cull: option cull: anObject.
 			option
 				selected: (aWASelectTag isSelected: anObject);
 				disabled: (aWASelectTag isEnabled: anObject) not;

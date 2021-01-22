@@ -43,12 +43,6 @@ SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements apply
 		applyingToOptions: anOptionCommand
 ]
 
-{ #category : #initialization }
-SingleSelectionWebView >> applyToEachOption: aCommand [
-
-	optionCommand := aCommand
-]
-
 { #category : #private }
 SingleSelectionWebView >> configure: select unselectingAllOn: aCanvas [
 

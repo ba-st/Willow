@@ -51,9 +51,11 @@ Html5ComponentSupplier >> decimalNumberFieldApplying: aComponentCommand [
 ]
 
 { #category : #Supplying }
-Html5ComponentSupplier >> dropdownListApplying: aComponentCommand [
+Html5ComponentSupplier >> dropdownListApplying: aComponentCommand applyingToOptions: anOptionCommand [
 
-	^ DropDownListWebView applying: aComponentCommand
+	^ SingleSelectionWebView
+		dropDownListApplying: aComponentCommand
+		applyingToOptions: anOptionCommand
 ]
 
 { #category : #Supplying }
@@ -100,9 +102,12 @@ Html5ComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 ]
 
 { #category : #Supplying }
-Html5ComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
-
-	^ SingleSelectionListBoxWebView displayingAtOnce: aNumberOfElements applying: aComponentCommand
+Html5ComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand applyingToOptions: anOptionCommand [
+	
+	^ SingleSelectionWebView
+		listBoxDisplayingAtOnce: aNumberOfElements
+		applying: aComponentCommand
+		applyingToOptions: anOptionCommand
 ]
 
 { #category : #Interaction }

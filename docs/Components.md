@@ -78,8 +78,8 @@ There's a variety of single selection components to choose. All of them support 
 - `notifyChangesTo:` can be used to subscribe for receiving a notification when the selection changes
 
 The component supplier supports several single selection components:
-- `dropdownListApplying:` will provide a dropdown list
-- `singleSelectionListBoxDisplayingAtOnce:applying:` will provide a list box
+- `dropdownListApplying:` and - `dropdownListApplying:applyingToOptions:` provide a dropdown list
+- `singleSelectionListBoxDisplayingAtOnce:applying:` and `singleSelectionListBoxDisplayingAtOnce:applying:applyingToOptions: provide a list box
 - `radioRenderingWith:applyingToLabel:applyingToInput:` will provide a group of radio boxes
 
 ### Multiple Selection

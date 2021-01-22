@@ -1,7 +1,7 @@
-Extension { #name : #DropDownListWebView }
+Extension { #name : #SingleSelectionWebView }
 
 { #category : #'*Willow-Core-MigrationTo14' }
-DropDownListWebView >> onTrigger [
+SingleSelectionWebView >> onTrigger [
 
 	self
 		deprecated: 'Use #on instead.'

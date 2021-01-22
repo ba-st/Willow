@@ -43,7 +43,7 @@ SingleSelectionWebViewAsListBoxTest >> testDisplayingAtOnce [
 ]
 
 { #category : #tests }
-SingleSelectionWebViewAsListBoxTest >> testIdentifyIn [
+SingleSelectionWebViewAsListBoxTest >> testIdentifierOn [
 
 	| listBox html |
 

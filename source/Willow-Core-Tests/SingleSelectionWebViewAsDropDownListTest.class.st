@@ -34,7 +34,7 @@ SingleSelectionWebViewAsDropDownListTest >> testCustomCommandForOptions [
 ]
 
 { #category : #'tests-configuring' }
-SingleSelectionWebViewAsDropDownListTest >> testIdentifyIn [
+SingleSelectionWebViewAsDropDownListTest >> testIdentifierOn [
 
 	| dropDownList html |
 

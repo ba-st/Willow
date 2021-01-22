@@ -17,12 +17,6 @@ SingleSelectionWebView class >> applyingToSelect: aSelectCommand applyingToOptio
 ]
 
 { #category : #'instance creation' }
-SingleSelectionWebView class >> dropDownListApplying: aComponentCommand [
-
-	^ self prefixedBy: 'drop-down-list' applying: aComponentCommand
-]
-
-{ #category : #'instance creation' }
 SingleSelectionWebView class >> dropDownListApplying: aSelectCommand applyingToOptions: anOptionCommand [ 
 
 	^ self applyingToSelect: aSelectCommand applyingToOptions: anOptionCommand 
@@ -38,20 +32,6 @@ SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements [
 ]
 
 { #category : #'instance creation' }
-SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements applying: aCommandComponent [
-
-	AssertionChecker
-		enforce: [ aNumberOfElements > 1 ]
-		because: 'A list box must display more than one element'.
-
-	^ self
-		prefixedBy: 'list-box'
-		applying:
-			(SetComponentSizeCommand setting: aNumberOfElements)
-				+ aCommandComponent
-]
-
-{ #category : #'instance creation' }
 SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements applying: aSelectCommand applyingToOptions: anOptionCommand [
 	AssertionChecker
 		enforce: [ aNumberOfElements > 1 ]
@@ -61,14 +41,6 @@ SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements apply
 		applyingToSelect:
 			(SetComponentSizeCommand setting: aNumberOfElements) + aSelectCommand
 		applyingToOptions: anOptionCommand
-]
-
-{ #category : #'private - instance creation' }
-SingleSelectionWebView class >> prefixedBy: aPrefix applying: aComponentCommand [
-
-	^ self new
-		initializePrefixedBy: aPrefix
-		applying: aComponentCommand
 ]
 
 { #category : #initialization }
@@ -97,15 +69,6 @@ SingleSelectionWebView >> initializeApplyingToSelect: aSelectCommand applyingToO
 	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'single-select'.
 
-]
-
-{ #category : #initialization }
-SingleSelectionWebView >> initializePrefixedBy: aPrefix applying: aCommandToComponent [
-	
-	commandToComponent := aCommandToComponent.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
-	identifierAssigner := IdentifierAssigner prefixedBy: aPrefix.
-	optionCommand := [:option :item | ]
 ]
 
 { #category : #configuring }

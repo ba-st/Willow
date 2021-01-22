@@ -2,19 +2,19 @@
 A SingleSelectionListBoxWebViewTest is a test class for testing the behavior of SingleSelectionListBoxWebView
 "
 Class {
-	#name : #SingleSelectionListBoxWebViewTest,
+	#name : #SingleSelectionWebViewAsListBoxTest,
 	#superclass : #SingleSelectionWebViewTest,
 	#category : #'Willow-Core-Tests-WebViews'
 }
 
 { #category : #'instance creation' }
-SingleSelectionListBoxWebViewTest >> newSingleSelectionView [
+SingleSelectionWebViewAsListBoxTest >> newSingleSelectionView [
 
 	^ SingleSelectionWebView listBoxDisplayingAtOnce: 5
 ]
 
 { #category : #'tests-rendering' }
-SingleSelectionListBoxWebViewTest >> testCustomCommandForOptions [
+SingleSelectionWebViewAsListBoxTest >> testCustomCommandForOptions [
 	| dropDownList html |
 	
 	dropDownList := SingleSelectionWebView
@@ -34,7 +34,7 @@ SingleSelectionListBoxWebViewTest >> testCustomCommandForOptions [
 ]
 
 { #category : #tests }
-SingleSelectionListBoxWebViewTest >> testDisplayingAtOnce [
+SingleSelectionWebViewAsListBoxTest >> testDisplayingAtOnce [
 
 	self
 		should: [ SingleSelectionWebView listBoxDisplayingAtOnce: 1 ] raise: AssertionFailed;
@@ -43,7 +43,7 @@ SingleSelectionListBoxWebViewTest >> testDisplayingAtOnce [
 ]
 
 { #category : #tests }
-SingleSelectionListBoxWebViewTest >> testIdentifierOn [
+SingleSelectionWebViewAsListBoxTest >> testIdentifyIn [
 
 	| listBox html |
 
@@ -59,7 +59,7 @@ SingleSelectionListBoxWebViewTest >> testIdentifierOn [
 ]
 
 { #category : #tests }
-SingleSelectionListBoxWebViewTest >> testOn [
+SingleSelectionWebViewAsListBoxTest >> testOn [
 
 	| listBox html |
 
@@ -75,7 +75,7 @@ SingleSelectionListBoxWebViewTest >> testOn [
 ]
 
 { #category : #'tests-rendering' }
-SingleSelectionListBoxWebViewTest >> testRenderContentOn [
+SingleSelectionWebViewAsListBoxTest >> testRenderContentOn [
 
 	| listBox html |
 
@@ -87,7 +87,7 @@ SingleSelectionListBoxWebViewTest >> testRenderContentOn [
 ]
 
 { #category : #'tests-rendering' }
-SingleSelectionListBoxWebViewTest >> testRenderContentOnWithCommands [
+SingleSelectionWebViewAsListBoxTest >> testRenderContentOnWithCommands [
 	| listBox html |
 
 	listBox := SingleSelectionWebView
@@ -102,7 +102,7 @@ SingleSelectionListBoxWebViewTest >> testRenderContentOnWithCommands [
 ]
 
 { #category : #'tests-rendering' }
-SingleSelectionListBoxWebViewTest >> testRenderContentOnWithElements [
+SingleSelectionWebViewAsListBoxTest >> testRenderContentOnWithElements [
 
 	| listBox html |
 
@@ -117,7 +117,7 @@ SingleSelectionListBoxWebViewTest >> testRenderContentOnWithElements [
 ]
 
 { #category : #'tests-rendering' }
-SingleSelectionListBoxWebViewTest >> testRenderContentOnWithElementsAndSomethingSelected [
+SingleSelectionWebViewAsListBoxTest >> testRenderContentOnWithElementsAndSomethingSelected [
 
 	| listBox html |
 

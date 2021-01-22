@@ -2,20 +2,20 @@
 A DropDownListWebViewTest is a test class for testing the behavior of DropDownListWebView
 "
 Class {
-	#name : #DropDownListWebViewTest,
+	#name : #SingleSelectionWebViewAsDropDownListTest,
 	#superclass : #SingleSelectionWebViewTest,
 	#category : #'Willow-Core-Tests-WebViews'
 }
 
 { #category : #support }
-DropDownListWebViewTest >> newSingleSelectionView [
+SingleSelectionWebViewAsDropDownListTest >> newSingleSelectionView [
 	^ SingleSelectionWebView
 		dropDownListApplying: [  ]
 		applyingToOptions: [  ]
 ]
 
 { #category : #'tests-rendering' }
-DropDownListWebViewTest >> testCustomCommandForOptions [
+SingleSelectionWebViewAsDropDownListTest >> testCustomCommandForOptions [
 	| dropDownList html |
 
 	dropDownList := SingleSelectionWebView
@@ -34,7 +34,7 @@ DropDownListWebViewTest >> testCustomCommandForOptions [
 ]
 
 { #category : #'tests-configuring' }
-DropDownListWebViewTest >> testIdentifierOn [
+SingleSelectionWebViewAsDropDownListTest >> testIdentifyIn [
 
 	| dropDownList html |
 
@@ -50,7 +50,7 @@ DropDownListWebViewTest >> testIdentifierOn [
 ]
 
 { #category : #'tests-configuring' }
-DropDownListWebViewTest >> testOn [
+SingleSelectionWebViewAsDropDownListTest >> testOn [
 
 	| dropDownList html |
 
@@ -66,7 +66,7 @@ DropDownListWebViewTest >> testOn [
 ]
 
 { #category : #'tests-rendering' }
-DropDownListWebViewTest >> testRenderContentOn [
+SingleSelectionWebViewAsDropDownListTest >> testRenderContentOn [
 
 	| dropDownList html |
 
@@ -78,7 +78,7 @@ DropDownListWebViewTest >> testRenderContentOn [
 ]
 
 { #category : #'tests-rendering' }
-DropDownListWebViewTest >> testRenderContentOnWithCommands [
+SingleSelectionWebViewAsDropDownListTest >> testRenderContentOnWithCommands [
 	
 	| dropDownList html |
 	
@@ -91,7 +91,7 @@ DropDownListWebViewTest >> testRenderContentOnWithCommands [
 ]
 
 { #category : #'tests-rendering' }
-DropDownListWebViewTest >> testRenderContentOnWithElements [
+SingleSelectionWebViewAsDropDownListTest >> testRenderContentOnWithElements [
 
 	| dropDownList html |
 
@@ -106,7 +106,7 @@ DropDownListWebViewTest >> testRenderContentOnWithElements [
 ]
 
 { #category : #'tests-rendering' }
-DropDownListWebViewTest >> testRenderContentOnWithElementsAndSomethingSelected [
+SingleSelectionWebViewAsDropDownListTest >> testRenderContentOnWithElementsAndSomethingSelected [
 
 	| dropDownList html |
 

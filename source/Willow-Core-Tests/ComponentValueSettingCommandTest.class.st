@@ -14,7 +14,9 @@ Class {
 ComponentValueSettingCommandTest >> setUp [
 
 	super setUp.
-	command := ComponentValueSettingCommand obtainingIdentifierFrom: [ 'id-12' ] valueFrom: [ '3' ]
+	command := ComponentValueSettingCommand
+		withoutTriggeringChangesObtainingIdentifierFrom: [ 'id-12' ]
+		valueFrom: [ '3' ]
 ]
 
 { #category : #'tests-accessing' }
@@ -29,8 +31,9 @@ ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutSettingPreviou
 			script := canvas javascript.
 			input := canvas textInput.
 
-			( ComponentValueSettingCommand triggeringChangesOn: input withValueFrom: [ '15' ] )
-				modelLoadingInstructions appendTo: script on: canvas.
+			( ComponentValueSettingCommand
+				triggeringChangesObtainingIdentifierFrom: [ :theCanvas | input identifierOn: theCanvas ]
+				valueFrom: [ '15' ] ) modelLoadingInstructions appendTo: script on: canvas.
 			input script: ( canvas jQuery this onClick: script )
 			].
 
@@ -53,7 +56,7 @@ ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutTriggering [
 			input := canvas textInput.
 			canvas ensureIdFor: input.
 			( ComponentValueSettingCommand
-				obtainingIdentifierFrom: [ input identifierOn: canvas ]
+				withoutTriggeringChangesObtainingIdentifierFrom: [ input identifierOn: canvas ]
 				valueFrom: [ '15' ] ) modelLoadingInstructions appendTo: script on: canvas.
 			input script: ( canvas jQuery this onClick: script )
 			].

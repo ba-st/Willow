@@ -7,6 +7,12 @@ WATagBrush >> apply: aBlockOrComponentCommand [
 ]
 
 { #category : #'*Willow-Core' }
+WATagBrush >> beIdentifiable [
+
+	self ensureId
+]
+
+{ #category : #'*Willow-Core' }
 WATagBrush >> interactUsing: anInteractionInterpreter [
 
 	anInteractionInterpreter applyTo: self on: canvas

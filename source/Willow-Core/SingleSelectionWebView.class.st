@@ -43,6 +43,12 @@ SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements apply
 		applyingToOptions: anOptionCommand
 ]
 
+{ #category : #configuring }
+SingleSelectionWebView >> beIdentifiable [
+
+	^ identifierAssigner beRequired
+]
+
 { #category : #private }
 SingleSelectionWebView >> configure: select unselectingAllOn: aCanvas [
 

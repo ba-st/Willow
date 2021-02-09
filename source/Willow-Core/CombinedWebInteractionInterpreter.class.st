@@ -160,11 +160,10 @@ CombinedWebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChang
 ]
 
 { #category : #'Configuring - DOM' }
-CombinedWebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggeringChangeOnComponentWithId: identifier [
+CombinedWebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggeringChangeOf: aView [
 
 	self
-		interpretersDo:
-			[ :interpreter | interpreter setValueTo: aValueProvider withoutTriggeringChangeOnComponentWithId: identifier ]
+		interpretersDo: [ :interpreter | interpreter setValueTo: aValueProvider withoutTriggeringChangeOf: aView ]
 ]
 
 { #category : #Configuring }

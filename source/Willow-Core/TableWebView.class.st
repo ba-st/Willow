@@ -29,6 +29,12 @@ TableWebView class >> definedBy: aColumnRendererCollection applying: aTableComma
 		footerRenderedBy: aFooter
 ]
 
+{ #category : #configuring }
+TableWebView >> beIdentifiable [
+
+	^ identifierAssigner beRequired
+]
+
 { #category : #'container-API' }
 TableWebView >> changeContentsTo: anElementCollection [
 
@@ -85,12 +91,14 @@ TableWebView >> on [
 TableWebView >> renderContentOn: aCanvas [
 
 	aCanvas table
-		id: (self identifierOn: aCanvas);
+		beIdentifiableUsing: identifierAssigner;
 		interactUsing: interactionInterpreter;
 		with: [ aCanvas render: header.
-			aCanvas tableBody: [ items doWithIndex: [ :item :index | self renderRowAt: index for: item on: aCanvas ] ].
-			aCanvas render: footer ]
-		applying: commandToTable
+			aCanvas
+				tableBody: [ items doWithIndex: [ :item :index | self renderRowAt: index for: item on: aCanvas ] ].
+			aCanvas render: footer
+			]
+			applying: commandToTable
 ]
 
 { #category : #private }

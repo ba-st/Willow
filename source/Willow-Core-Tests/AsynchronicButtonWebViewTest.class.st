@@ -8,6 +8,17 @@ Class {
 }
 
 { #category : #'tests-rendering' }
+AsynchronicButtonWebViewTest >> testBeIdentifiable [
+
+	| button html |
+
+	button := AsynchronicButtonWebView labeled: 'Click me!'.
+	button beIdentifiable.
+	html := self render: button.
+	self assert: html equals: '<button id="button-id1" type="button">Click me!</button>'
+]
+
+{ #category : #'tests-rendering' }
 AsynchronicButtonWebViewTest >> testIdentifierOn [
 
 	| button html |

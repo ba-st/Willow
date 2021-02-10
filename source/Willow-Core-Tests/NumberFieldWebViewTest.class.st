@@ -17,6 +17,19 @@ NumberFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [
 ]
 
 { #category : #'tests-configuring' }
+NumberFieldWebViewTest >> testBeIdentifiable [
+
+	| numberField html |
+
+	numberField := NumberFieldWebView applying: [ :field |  ] transformingWith: IntegerCodec new.
+
+	numberField beIdentifiable.
+	html := self render: numberField.
+
+	self assert: html equals: '<input value="" name="1" id="number-field-id2" type="number"/>'
+]
+
+{ #category : #'tests-configuring' }
 NumberFieldWebViewTest >> testIdentifierOn [
 
 	| numberField html |

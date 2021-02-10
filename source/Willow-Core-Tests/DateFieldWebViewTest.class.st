@@ -17,6 +17,19 @@ DateFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [
 ]
 
 { #category : #tests }
+DateFieldWebViewTest >> testBeIdentifiable [
+
+	| dateField html |
+
+	dateField := DateFieldWebView applying: [ :field |  ].
+
+	dateField beIdentifiable.
+	html := self render: dateField.
+
+	self assert: html equals: '<input value="" name="1" id="date-field-id2" type="date"/>'
+]
+
+{ #category : #tests }
 DateFieldWebViewTest >> testDate [
 
 	| dateField html currentDate |

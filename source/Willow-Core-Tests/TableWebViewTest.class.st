@@ -17,6 +17,20 @@ TableWebViewTest >> changeNotifiedBy: aTableWebView [
 ]
 
 { #category : #'tests-rendering' }
+TableWebViewTest >> testBeIdentifiable [
+
+	| table html |
+
+	table := TableWebViewBuilder new
+		addColumn: [ :column | column rendering: [ :number | number even ] ];
+		build.
+	table beIdentifiable.
+
+	html := self render: table.
+	self assert: html equals: '<table id="table-id1"><tbody></tbody></table>'
+]
+
+{ #category : #'tests-rendering' }
 TableWebViewTest >> testComplexTable [
 
 	| table html |

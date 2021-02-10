@@ -13,7 +13,7 @@ Class {
 }
 
 { #category : #private }
-ComponentValueSettingCommand class >> obtainingIdentifierFrom: aValueProvider valueFrom: anIdentifierProvider triggeringAction: aTriggeringAction [
+ComponentValueSettingCommand class >> obtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider triggeringAction: aTriggeringAction [
 
 	^ self new
 		initializeObtainingIdentifierFrom: anIdentifierProvider
@@ -25,8 +25,8 @@ ComponentValueSettingCommand class >> obtainingIdentifierFrom: aValueProvider va
 ComponentValueSettingCommand class >> triggeringChangesObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider [
 
 	^ self
-		obtainingIdentifierFrom: aValueProvider
-		valueFrom: anIdentifierProvider
+		obtainingIdentifierFrom: anIdentifierProvider
+		valueFrom: aValueProvider
 		triggeringAction: [ :jQueryInstance | jQueryInstance trigger: 'change' ]
 ]
 
@@ -34,8 +34,8 @@ ComponentValueSettingCommand class >> triggeringChangesObtainingIdentifierFrom: 
 ComponentValueSettingCommand class >> withoutTriggeringChangesObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider [
 
 	^ self
-		obtainingIdentifierFrom: aValueProvider
-		valueFrom: anIdentifierProvider
+		obtainingIdentifierFrom: anIdentifierProvider
+		valueFrom: aValueProvider
 		triggeringAction: [ :jQueryInstance | jQueryInstance ]
 ]
 

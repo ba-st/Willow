@@ -3,7 +3,7 @@ A SingleSelectionListBoxWebViewTest is a test class for testing the behavior of 
 "
 Class {
 	#name : #SingleSelectionWebViewAsListBoxTest,
-	#superclass : #SingleSelectionWebViewTest,
+	#superclass : #SingleSelectionWebViewBehaviorTest,
 	#category : #'Willow-Core-Tests-WebViews'
 }
 
@@ -11,6 +11,19 @@ Class {
 SingleSelectionWebViewAsListBoxTest >> newSingleSelectionView [
 
 	^ SingleSelectionWebView listBoxDisplayingAtOnce: 5
+]
+
+{ #category : #tests }
+SingleSelectionWebViewAsListBoxTest >> testBeIdentifiable [
+
+	| listBox html |
+
+	listBox := self newSingleSelectionView.
+	listBox beIdentifiable.
+
+	html := self render: listBox.
+
+	self assert: html equals: '<select name="1" id="single-select-id2" size="5"></select>'
 ]
 
 { #category : #'tests-rendering' }

@@ -7,7 +7,23 @@ Class {
 	#category : #'Willow-Core-Tests-WebViews'
 }
 
-{ #category : #'tests-rendering' }
+{ #category : #'tests-configuring' }
+UnorderedListWebViewTest >> testBeIdentifiable [
+
+	| unorderedList html |
+
+	unorderedList := UnorderedListWebView
+		applying: [ :list |  ]
+		listing: #('spoon' 'fork')
+		applyingToEach: [ :listItem |  ].
+	unorderedList beIdentifiable.
+
+	html := self render: unorderedList.
+
+	self assert: html equals: '<ul id="unordered-list-id1"><li>spoon</li><li>fork</li></ul>'
+]
+
+{ #category : #'tests-configuring' }
 UnorderedListWebViewTest >> testIdentifierOn [
 
 	| unorderedList html |
@@ -26,7 +42,7 @@ UnorderedListWebViewTest >> testIdentifierOn [
 	self assert: html equals: '<ul id="unordered-list-id1"><li>spoon</li><li>fork</li></ul>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : #'tests-configuring' }
 UnorderedListWebViewTest >> testOn [
 
 	| unorderedList html |

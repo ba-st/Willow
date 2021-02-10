@@ -16,7 +16,20 @@ TimeFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [
 	notificationWasReceived := true
 ]
 
-{ #category : #support }
+{ #category : #tests }
+TimeFieldWebViewTest >> testBeIdentifiable [
+
+	| timeField html |
+
+	timeField := TimeFieldWebView applying: [ :field |  ].
+
+	timeField beIdentifiable.
+	html := self render: timeField.
+
+	self assert: html equals: '<input value="" name="1" id="time-field-id2" type="time"/>'
+]
+
+{ #category : #tests }
 TimeFieldWebViewTest >> testIdentifierOn [
 
 	| timeField html |
@@ -32,7 +45,7 @@ TimeFieldWebViewTest >> testIdentifierOn [
 	self assert: html equals: '<input value="" name="2" id="time-field-id1" type="time"/>'
 ]
 
-{ #category : #support }
+{ #category : #tests }
 TimeFieldWebViewTest >> testNotifyChangesTo [
 
 	| timeField |
@@ -45,7 +58,7 @@ TimeFieldWebViewTest >> testNotifyChangesTo [
 	self assert: notificationWasReceived
 ]
 
-{ #category : #support }
+{ #category : #tests }
 TimeFieldWebViewTest >> testOn [
 
 	| timeField html |
@@ -61,7 +74,7 @@ TimeFieldWebViewTest >> testOn [
 			'<input value="" name="1" type="time" id="input-id2"/><script type="text/javascript">$("#input-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #support }
+{ #category : #tests }
 TimeFieldWebViewTest >> testRenderContentOn [
 
 	| timeField html |
@@ -73,7 +86,7 @@ TimeFieldWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<input value="" name="1" type="time"/>'
 ]
 
-{ #category : #support }
+{ #category : #tests }
 TimeFieldWebViewTest >> testTime [
 
 	| timeField html currentTime |

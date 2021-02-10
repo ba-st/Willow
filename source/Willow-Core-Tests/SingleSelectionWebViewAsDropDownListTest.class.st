@@ -3,7 +3,7 @@ A DropDownListWebViewTest is a test class for testing the behavior of DropDownLi
 "
 Class {
 	#name : #SingleSelectionWebViewAsDropDownListTest,
-	#superclass : #SingleSelectionWebViewTest,
+	#superclass : #SingleSelectionWebViewBehaviorTest,
 	#category : #'Willow-Core-Tests-WebViews'
 }
 
@@ -12,6 +12,19 @@ SingleSelectionWebViewAsDropDownListTest >> newSingleSelectionView [
 	^ SingleSelectionWebView
 		dropDownListApplying: [  ]
 		applyingToOptions: [  ]
+]
+
+{ #category : #'tests-configuring' }
+SingleSelectionWebViewAsDropDownListTest >> testBeIdentifiable [
+
+	| dropDownList html |
+
+	dropDownList := self newSingleSelectionView.
+	dropDownList beIdentifiable.
+
+	html := self render: dropDownList.
+
+	self assert: html equals: '<select name="1" id="single-select-id2"></select>'
 ]
 
 { #category : #'tests-rendering' }

@@ -17,6 +17,20 @@ TableWebViewTest >> changeNotifiedBy: aTableWebView [
 ]
 
 { #category : #'tests-rendering' }
+TableWebViewTest >> testBeIdentifiable [
+
+	| table html |
+
+	table := TableWebViewBuilder new
+		addColumn: [ :column | column rendering: [ :number | number even ] ];
+		build.
+	table beIdentifiable.
+
+	html := self render: table.
+	self assert: html equals: '<table id="table-id1"><tbody></tbody></table>'
+]
+
+{ #category : #'tests-rendering' }
 TableWebViewTest >> testComplexTable [
 
 	| table html |
@@ -26,12 +40,14 @@ TableWebViewTest >> testComplexTable [
 			column
 				rendering: [ :number :index | index ];
 				applyingToEachCell: [ :cell | cell addClass willow ];
-				summarizedWith: [ 'Total' ] ];
+				summarizedWith: [ 'Total' ]
+			];
 		addColumn: [ :column | 
 			column
 				titled: 'Squared';
 				rendering: [ :number | number squared ];
-				summarizedWith: [ :numbers | (numbers collect: #squared) sum ] ];
+				summarizedWith: [ :numbers | ( numbers collect: #squared ) sum ]
+			];
 		applyToEachRow: [ :row | row addClass willow ] asTableRowCommand;
 		build.
 
@@ -41,7 +57,7 @@ TableWebViewTest >> testComplexTable [
 	self
 		assert: html
 		equals:
-			'<table id="table-id1"><thead><th class="willow"></th><th>Squared</th></thead><tbody><tr class="willow"><td class="willow">1</td><td>1</td></tr><tr class="willow"><td class="willow">2</td><td>4</td></tr></tbody><tfoot><td class="willow">Total</td><td>5</td></tfoot></table>'
+			'<table><thead><th class="willow"></th><th>Squared</th></thead><tbody><tr class="willow"><td class="willow">1</td><td>1</td></tr><tr class="willow"><td class="willow">2</td><td>4</td></tr></tbody><tfoot><td class="willow">Total</td><td>5</td></tfoot></table>'
 ]
 
 { #category : #'tests-container-API' }
@@ -70,7 +86,7 @@ TableWebViewTest >> testDefinedByApplyingHeaderRenderedByApplyingToEachRow [
 
 	table := TableWebViewBuilder new
 		addColumn: [ :column | column rendering: [ :number | number even ] ];
-		applyToEachRow: (PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ]);
+		applyToEachRow: ( PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ] );
 		buildApplying: [ :theTable | theTable addClass willow ].
 
 	table changeContentsTo: #(1 2 3).
@@ -79,7 +95,7 @@ TableWebViewTest >> testDefinedByApplyingHeaderRenderedByApplyingToEachRow [
 	self
 		assert: html
 		equals:
-			'<table id="table-id1" class="willow"><tbody><tr id="id2"><td>false</td></tr><tr id="id3"><td>true</td></tr><tr id="id4"><td>false</td></tr></tbody></table>'
+			'<table class="willow"><tbody><tr id="id1"><td>false</td></tr><tr id="id2"><td>true</td></tr><tr id="id3"><td>false</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-rendering' }
@@ -91,12 +107,13 @@ TableWebViewTest >> testHeadedDefinedByApplying [
 		addColumn: [ :column | 
 			column
 				titled: 'Is Even?';
-				rendering: [ :number | number even ] ];
+				rendering: [ :number | number even ]
+			];
 		build.
 
 	html := self render: table.
 
-	self assert: html equals: '<table id="table-id1"><thead><th>Is Even?</th></thead><tbody></tbody></table>'
+	self assert: html equals: '<table><thead><th>Is Even?</th></thead><tbody></tbody></table>'
 ]
 
 { #category : #'tests-rendering' }
@@ -108,13 +125,17 @@ TableWebViewTest >> testHeadedDefinedByApplyingWithContents [
 		addColumn: [ :column | 
 			column
 				titled: 'Is Even?';
-				rendering: [ :number | number even ] ];
+				rendering: [ :number | number even ]
+			];
 		build.
 
 	table changeContentsTo: #(1 2 3).
 	html := self render: table.
 
-	self assert: html equals: '<table id="table-id1"><thead><th>Is Even?</th></thead><tbody><tr><td>false</td></tr><tr><td>true</td></tr><tr><td>false</td></tr></tbody></table>'
+	self
+		assert: html
+		equals:
+			'<table><thead><th>Is Even?</th></thead><tbody><tr><td>false</td></tr><tr><td>true</td></tr><tr><td>false</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-rendering' }
@@ -147,7 +168,7 @@ TableWebViewTest >> testRenderContentOn [
 
 	html := self render: table.
 
-	self assert: html equals: '<table id="table-id1"><tbody></tbody></table>'
+	self assert: html equals: '<table><tbody></tbody></table>'
 ]
 
 { #category : #'tests-rendering' }
@@ -165,7 +186,7 @@ TableWebViewTest >> testRenderContentOnWithContents [
 
 	self
 		assert: html
-		equals: '<table id="table-id1"><tbody><tr><td>false</td></tr><tr><td>true</td></tr><tr><td>false</td></tr></tbody></table>'
+		equals: '<table><tbody><tr><td>false</td></tr><tr><td>true</td></tr><tr><td>false</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-rendering' }
@@ -185,7 +206,7 @@ TableWebViewTest >> testRenderContentOnWithContentsAndSeveralColumns [
 	self
 		assert: html
 		equals:
-			'<table id="table-id1"><tbody><tr><td>false</td><td>true</td></tr><tr><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td></tr></tbody></table>'
+			'<table><tbody><tr><td>false</td><td>true</td></tr><tr><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-rendering' }
@@ -212,5 +233,5 @@ TableWebViewTest >> testTableWithFooterSupport [
 	self
 		assert: html
 		equals:
-			'<table id="table-id1" class="willow"><thead><th></th><th>Is Even?</th></thead><tbody><tr id="id2"><td>1</td><td>false</td></tr><tr id="id3"><td>2</td><td>true</td></tr><tr id="id4"><td>3</td><td>false</td></tr></tbody><tfoot><td>Even count</td><td>1</td></tfoot></table>'
+			'<table class="willow"><thead><th></th><th>Is Even?</th></thead><tbody><tr id="id1"><td>1</td><td>false</td></tr><tr id="id2"><td>2</td><td>true</td></tr><tr id="id3"><td>3</td><td>false</td></tr></tbody><tfoot><td>Even count</td><td>1</td></tfoot></table>'
 ]

@@ -12,17 +12,8 @@ Class {
 	#category : #'Willow-Core-WebInteraction'
 }
 
-{ #category : #'instance creation' }
-ComponentValueSettingCommand class >> obtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider [
-
-	^ self
-		obtainingIdentifierFrom: aValueProvider
-		valueFrom: anIdentifierProvider
-		triggeringAction: [ :jQueryInstance | jQueryInstance ]
-]
-
 { #category : #private }
-ComponentValueSettingCommand class >> obtainingIdentifierFrom: aValueProvider valueFrom: anIdentifierProvider triggeringAction: aTriggeringAction [
+ComponentValueSettingCommand class >> obtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider triggeringAction: aTriggeringAction [
 
 	^ self new
 		initializeObtainingIdentifierFrom: anIdentifierProvider
@@ -34,20 +25,21 @@ ComponentValueSettingCommand class >> obtainingIdentifierFrom: aValueProvider va
 ComponentValueSettingCommand class >> triggeringChangesObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider [
 
 	^ self
-		obtainingIdentifierFrom: aValueProvider
-		valueFrom: anIdentifierProvider
+		obtainingIdentifierFrom: anIdentifierProvider
+		valueFrom: aValueProvider
 		triggeringAction: [ :jQueryInstance | jQueryInstance trigger: 'change' ]
 ]
 
 { #category : #'instance creation' }
-ComponentValueSettingCommand class >> triggeringChangesOn: anIdentifiableView withValueFrom: aValueProvider [
+ComponentValueSettingCommand class >> withoutTriggeringChangesObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider [
 
 	^ self
-		triggeringChangesObtainingIdentifierFrom: [ :canvas | anIdentifiableView identifierOn: canvas ]
+		obtainingIdentifierFrom: anIdentifierProvider
 		valueFrom: aValueProvider
+		triggeringAction: [ :jQueryInstance | jQueryInstance ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 ComponentValueSettingCommand >> initializeObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider triggeringAction: anAction [
 
 	identifierProvider := anIdentifierProvider.

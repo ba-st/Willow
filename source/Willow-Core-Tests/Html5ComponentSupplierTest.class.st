@@ -196,7 +196,7 @@ Html5ComponentSupplierTest >> testTableBuilderForHeadlessTable [
 	self
 		assert: html
 		equals:
-			'<table id="table-id1" class="fixed"><tbody><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>3</td></tr><tr><td>3</td><td>4</td></tr></tbody></table>'
+			'<table class="fixed"><tbody><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>3</td></tr><tr><td>3</td><td>4</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -225,7 +225,7 @@ Html5ComponentSupplierTest >> testTableBuilderWithFooter [
 	self
 		assert: html
 		equals:
-			'<table id="table-id1"><thead><th>Number</th><th>Even?</th></thead><tbody><tr><td>1</td><td>false</td></tr><tr><td>2</td><td>true</td></tr><tr><td>3</td><td>false</td></tr></tbody><tfoot><td></td><td>Fixed Footer</td></tfoot></table>'
+			'<table><thead><th>Number</th><th>Even?</th></thead><tbody><tr><td>1</td><td>false</td></tr><tr><td>2</td><td>true</td></tr><tr><td>3</td><td>false</td></tr></tbody><tfoot><td></td><td>Fixed Footer</td></tfoot></table>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -237,7 +237,7 @@ Html5ComponentSupplierTest >> testTableBuilderWithRowCommand [
 
 	table := supplier tableBuilder
 		addColumn: [ :column | column rendering: [ :number | number ] ];
-		applyToEachRow: (PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ]);
+		applyToEachRow: ( PluggableTableRowCommand toExecute: [ :row :item :canvas | row id: canvas nextId ] );
 		build.
 
 	table changeContentsTo: #(1 2 3).
@@ -247,7 +247,7 @@ Html5ComponentSupplierTest >> testTableBuilderWithRowCommand [
 	self
 		assert: html
 		equals:
-			'<table id="table-id1"><tbody><tr id="id2"><td>1</td></tr><tr id="id3"><td>2</td></tr><tr id="id4"><td>3</td></tr></tbody></table>'
+			'<table><tbody><tr id="id1"><td>1</td></tr><tr id="id2"><td>2</td></tr><tr id="id3"><td>3</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -275,7 +275,7 @@ Html5ComponentSupplierTest >> testTableBuilderWithSimpleColumns [
 	self
 		assert: html
 		equals:
-			'<table id="table-id1"><thead><th>Number</th><th>Even?</th></thead><tbody><tr><td>1</td><td>false</td></tr><tr><td>2</td><td>true</td></tr><tr><td>3</td><td>false</td></tr></tbody></table>'
+			'<table><thead><th>Number</th><th>Even?</th></thead><tbody><tr><td>1</td><td>false</td></tr><tr><td>2</td><td>true</td></tr><tr><td>3</td><td>false</td></tr></tbody></table>'
 ]
 
 { #category : #'tests-Supplying' }

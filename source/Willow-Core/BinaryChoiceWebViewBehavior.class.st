@@ -26,13 +26,13 @@ BinaryChoiceWebViewBehavior class >> onModel: anObjectToUseWhenOn offModel: anOb
 { #category : #'Binary Choice-API' }
 BinaryChoiceWebViewBehavior >> allows: aModel [
 
-	^iterator includes: aModel 
+	^ iterator includes: aModel
 ]
 
 { #category : #'Binary Choice-API' }
 BinaryChoiceWebViewBehavior >> currentSelection [
 
-	^iterator current 
+	^ iterator current
 ]
 
 { #category : #initialization }

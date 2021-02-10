@@ -23,6 +23,12 @@ UnorderedListWebView class >> applying: aComponentCommand listing: anElementColl
 		applyingToEach: anElementCommand asWebComponentCommand
 ]
 
+{ #category : #configuring }
+UnorderedListWebView >> beIdentifiable [
+
+	^ identifierAssigner beRequired
+]
+
 { #category : #accessing }
 UnorderedListWebView >> identifierOn: aCanvas [
 

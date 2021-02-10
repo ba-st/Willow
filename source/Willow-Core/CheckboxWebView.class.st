@@ -48,6 +48,12 @@ CheckboxWebView class >> onModel: anObjectToUseWhenOn offModel: anObjectToUseWhe
 		applying: aCommandToComponent
 ]
 
+{ #category : #configuring }
+CheckboxWebView >> beIdentifiable [
+
+	^ identifierAssigner beRequired
+]
+
 { #category : #accessing }
 CheckboxWebView >> identifierOn: aCanvas [
 
@@ -84,7 +90,7 @@ CheckboxWebView >> renderContentOn: aCanvas [
 	interactionInterpreter applyTo: checkbox on: aCanvas
 ]
 
-{ #category : #'rendering - private' }
+{ #category : #'private - rendering' }
 CheckboxWebView >> renderOptionalLabelRelatedTo: checkbox on: aCanvas [
 
 	labelOptional

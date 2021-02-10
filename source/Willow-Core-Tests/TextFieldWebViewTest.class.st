@@ -16,6 +16,18 @@ TextFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [
 	notificationWasReceived := true
 ]
 
+{ #category : #'tests - configuring' }
+TextFieldWebViewTest >> testBeIdentifiable [
+
+	| textField html |
+
+	textField := TextFieldWebView singleLineApplying: [ :field |  ].
+	textField beIdentifiable.
+	html := self render: textField.
+
+	self assert: html equals: '<input value="" name="1" id="text-id2" type="text"/>'
+]
+
 { #category : #'tests - container-API' }
 TextFieldWebViewTest >> testContents [
 

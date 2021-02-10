@@ -42,6 +42,12 @@ MultipleSelectionListBoxWebView >> allowsAnySatisfying: aMatchBlock [
 	^availableElements anySatisfy: aMatchBlock
 ]
 
+{ #category : #configuring }
+MultipleSelectionListBoxWebView >> beIdentifiable [
+
+	^ identifierAssigner beRequired
+]
+
 { #category : #'Multiple Selection-API' }
 MultipleSelectionListBoxWebView >> chooseAll [
 

@@ -662,18 +662,19 @@ CombinedWebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 ]
 
 { #category : #'tests - Configuring - DOM' }
-CombinedWebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOnComponentWithId [
+CombinedWebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOf [
 
 	| interpreter html id |
 
 	interpreter := self combinedInterpreter.
 	id := '15'.
-
-	interpreter setValueTo: [ 'Ok' ] withoutTriggeringChangeOnComponentWithId: id.
-
 	html := self
 		renderUsing: [ :canvas | 
-			canvas textInput id: id.
+			| textInput |
+
+			textInput := canvas textInput id: id.
+			interpreter setValueTo: [ 'Ok' ] withoutTriggeringChangeOf: textInput.
+
 			canvas
 				render: okButton;
 				render: cancelButton

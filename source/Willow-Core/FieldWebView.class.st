@@ -30,6 +30,12 @@ FieldWebView class >> forComponentBuiltUsing: aComponentBuilder withInteractionD
 		applying: aComponentCommand asWebComponentCommand
 ]
 
+{ #category : #configuring }
+FieldWebView >> beIdentifiable [
+
+	^ identifierAssigner beRequired
+]
+
 { #category : #'Container-API' }
 FieldWebView >> changeContentsTo: aText [
 

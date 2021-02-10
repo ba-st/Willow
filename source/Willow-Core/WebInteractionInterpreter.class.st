@@ -182,18 +182,25 @@ WebInteractionInterpreter >> serverDo: aCallbackBlock [
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView [
+WebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: aView [
 
+	aView beIdentifiable.
 	interaction
-		onTriggerExecute: ( ComponentValueSettingCommand triggeringChangesOn: anIdentifiedView withValueFrom: aValueProvider )
+		onTriggerExecute:
+			( ComponentValueSettingCommand
+				triggeringChangesObtainingIdentifierFrom: [ :canvas | aView identifierOn: canvas ]
+				valueFrom: aValueProvider )
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggeringChangeOnComponentWithId: identifier [
+WebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggeringChangeOf: aView [
 
+	aView beIdentifiable.
 	interaction
 		onTriggerExecute:
-			( ComponentValueSettingCommand obtainingIdentifierFrom: [ identifier ] valueFrom: aValueProvider )
+			( ComponentValueSettingCommand
+				withoutTriggeringChangesObtainingIdentifierFrom: [ :canvas | aView identifierOn: canvas ]
+				valueFrom: aValueProvider )
 ]
 
 { #category : #Configuring }

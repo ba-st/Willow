@@ -25,6 +25,12 @@ AsynchronicButtonWebView class >> labeled: aLabel applying: aComponentCommand [
 	^ self new initializeLabeled: aLabel applying: aComponentCommand asWebComponentCommand
 ]
 
+{ #category : #configuring }
+AsynchronicButtonWebView >> beIdentifiable [
+
+	^ identifierAssigner beRequired
+]
+
 { #category : #accessing }
 AsynchronicButtonWebView >> identifierOn: aCanvas [
 

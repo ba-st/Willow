@@ -7,7 +7,22 @@ Class {
 	#category : #'Willow-Core-Tests-WebViews'
 }
 
-{ #category : #tests }
+{ #category : #'tests-configuring' }
+SynchronicSubmitButtonWebViewTest >> testBeIdentifiable [
+
+	| synchronicButton html |
+
+	synchronicButton := SynchronicSubmitButtonWebView
+		labeled: 'Submit'
+		applying: [ :button |  ]
+		evaluating: [  ].
+	synchronicButton beIdentifiable.
+	html := self render: synchronicButton.
+
+	self assert: html equals: '<button name="1" id="submit-button-id2" type="submit">Submit</button>'
+]
+
+{ #category : #'tests-configuring' }
 SynchronicSubmitButtonWebViewTest >> testIdentifierOn [
 
 	| synchronicButton html |
@@ -28,7 +43,7 @@ SynchronicSubmitButtonWebViewTest >> testIdentifierOn [
 		equals: '<button name="2" id="submit-button-id1" type="submit">Click me!</button>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : #'tests-configuring' }
 SynchronicSubmitButtonWebViewTest >> testOn [
 
 	| synchronicButton html |

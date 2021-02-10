@@ -131,13 +131,13 @@ WebInteractionInterpreterBehavior >> serverDo: aCallbackBlock [
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView [
+WebInteractionInterpreterBehavior >> setValueTo: aValueProvider thenTriggerChangeOf: aView [
 
 	self subclassResponsibility
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> setValueTo: aValueProviders withoutTriggeringChangeOnComponentWithId: identifier [ 
+WebInteractionInterpreterBehavior >> setValueTo: aValueProvider withoutTriggeringChangeOf: aView [
 
 	self subclassResponsibility
 ]

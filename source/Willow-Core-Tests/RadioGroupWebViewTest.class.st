@@ -3,7 +3,7 @@ A RadioGroupWebViewTest is a test class for testing the behavior of RadioGroupWe
 "
 Class {
 	#name : #RadioGroupWebViewTest,
-	#superclass : #SingleSelectionWebViewTest,
+	#superclass : #SingleSelectionWebViewBehaviorTest,
 	#category : #'Willow-Core-Tests-WebViews'
 }
 

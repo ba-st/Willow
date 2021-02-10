@@ -23,6 +23,12 @@ SynchronicSubmitButtonWebView class >> labeled: aLabel applying: aComponentComma
 		evaluating: actionOnSubmit
 ]
 
+{ #category : #configuring }
+SynchronicSubmitButtonWebView >> beIdentifiable [
+
+	^ identifierAssigner beRequired
+]
+
 { #category : #accessing }
 SynchronicSubmitButtonWebView >> identifierOn: aCanvas [
 

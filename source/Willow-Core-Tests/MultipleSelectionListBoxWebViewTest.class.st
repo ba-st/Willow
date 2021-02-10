@@ -38,6 +38,21 @@ MultipleSelectionListBoxWebViewTest >> testAllowsAnySatisfying [
 		deny: (listBox allowsAnySatisfying: [ :element | element isZero ])
 ]
 
+{ #category : #'tests-configuring' }
+MultipleSelectionListBoxWebViewTest >> testBeIdentifiable [
+
+	| listBox html |
+
+	listBox := self newListBox.
+	listBox beIdentifiable.
+
+	html := self render: listBox.
+
+	self
+		assert: html
+		equals: '<select name="1" id="list-box-id2" multiple></select><input name="3" type="hidden"/>'
+]
+
 { #category : #'tests-Multiple Selection-API' }
 MultipleSelectionListBoxWebViewTest >> testChooseAll [
 
@@ -118,7 +133,7 @@ MultipleSelectionListBoxWebViewTest >> testChooseAllMatching [
 	self assert: listBox currentSelection equals: #(2 4)
 ]
 
-{ #category : #tests }
+{ #category : #'tests-configuring' }
 MultipleSelectionListBoxWebViewTest >> testIdentifierOn [
 
 	| listBox html |
@@ -185,7 +200,7 @@ MultipleSelectionListBoxWebViewTest >> testNotifyChangesWhenSelectionDoesNotChan
 		assert: listBox currentSelection isEmpty
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : #'tests-configuring' }
 MultipleSelectionListBoxWebViewTest >> testOn [
 
 	| listBox html |

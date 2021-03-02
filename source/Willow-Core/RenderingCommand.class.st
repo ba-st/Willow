@@ -5,7 +5,6 @@ Class {
 	#name : #RenderingCommand,
 	#superclass : #WebInteractionCommand,
 	#instVars : [
-		'renderingCondition',
 		'identifiedViews'
 	],
 	#category : #'Willow-Core-WebInteraction'

@@ -55,6 +55,25 @@ WebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".aComponentByStyleName").addClass("willow")});</script>'
 ]
 
+{ #category : #'tests - Configuring' }
+WebInteractionInterpreterTest >> testAjaxCallsEvaluateTheBlock [
+
+	| interpreter evaluated |
+
+	interpreter := self clickInterpreter.
+	evaluated := false.
+	interpreter serverDo: [ evaluated := true ].
+	self
+		renderUsing: [ :canvas | 
+			| component |
+
+			component := canvas textInput.
+			interpreter applyTo: component on: canvas.
+			self executeAjaxCallbacksOn: canvas
+			].
+	self assert: evaluated
+]
+
 { #category : #'tests - evaluating' }
 WebInteractionInterpreterTest >> testApplyToOn [
 
@@ -405,7 +424,7 @@ WebInteractionInterpreterTest >> testRender [
 			textInput := canvas textInput.
 			textInput id: id.
 			container := ContainerWebView
-				wrapping: [ :containerCanvas | textInput value ]
+				wrapping: [ :containerCanvas | containerCanvas render: id ]
 				intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
 				applying: [  ].
 			interpreter render: container.
@@ -416,7 +435,7 @@ WebInteractionInterpreterTest >> testRender [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><div id="container-id1"></div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><div id="container-id1">15</div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).serialize()].join("&")})});</script>'
 ]
 
 { #category : #'tests - Configuring - DOM' }
@@ -434,7 +453,7 @@ WebInteractionInterpreterTest >> testRenderAll [
 			textInput := canvas textInput.
 			textInput id: id.
 			container := ContainerWebView
-				wrapping: [ :containerCanvas | textInput value ]
+				wrapping: [ :containerCanvas | containerCanvas render: id ]
 				intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
 				applying: [  ].
 			anotherContainer := ContainerWebView
@@ -451,7 +470,36 @@ WebInteractionInterpreterTest >> testRenderAll [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><div id="container-id1"></div><div id="container-id2"></div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><div id="container-id1">15</div><div id="container-id2"></div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).serialize()].join("&")})});</script>'
+]
+
+{ #category : #'tests - Configuring - DOM' }
+WebInteractionInterpreterTest >> testRenderIsAddedLast [
+
+	| interpreter id |
+
+	interpreter := self changeInterpreter.
+	id := '15'.
+
+	self
+		renderUsing: [ :canvas | 
+			| textInput container |
+
+			textInput := canvas textInput.
+			textInput id: id.
+			container := ContainerWebView
+				wrapping: [ :containerCanvas | containerCanvas render: id ]
+				intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
+				applying: [  ].
+			interpreter
+				render: container;
+				serverDo: [ id := 27 ].
+			canvas render: container.
+			interpreter applyTo: textInput on: canvas.
+			self executeAjaxCallbacksOn: canvas
+			].
+
+	self assert: self requestContext response contents equals: '$("#container-id1").html("27")'
 ]
 
 { #category : #'tests - Configuring - DOM' }

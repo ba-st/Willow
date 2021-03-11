@@ -68,7 +68,9 @@ LoadingNotificationCommand >> initializeExecuting: aServerIndependentInstruction
 
 	serverIndependentInstructions := WebInteractionInstructions
 		directingTo: aServerIndependentInstruction.
-	modelLoadingInstructions := WebInteractionInstructions directingTo: aModelLoadingInstruction
+	modelLoadingInstructions := WebInteractionInstructions
+		directingTo: aModelLoadingInstruction
+		orderedAt: 10
 ]
 
 { #category : #accessing }

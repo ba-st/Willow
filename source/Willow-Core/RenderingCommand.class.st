@@ -37,6 +37,7 @@ RenderingCommand >> modelLoadingInstructions [
 			identifiedViews
 				collect: [ :identifiedView | ( aCanvas locate: identifiedView ) html: identifiedView renderableContent ]
 			]
+		orderedAt: 10
 ]
 
 { #category : #accessing }

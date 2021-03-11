@@ -45,6 +45,7 @@ DialogClosingCommand >> modelLoadingInstructions [
 				matching: dialogSupplier
 				on: aCanvas
 			]
+		orderedAt: 10
 ]
 
 { #category : #accessing }

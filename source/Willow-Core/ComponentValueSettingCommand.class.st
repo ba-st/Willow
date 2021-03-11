@@ -58,6 +58,7 @@ ComponentValueSettingCommand >> modelLoadingInstructions [
 			jQueryInstance value: valueProvider value.
 			triggeringAction cull: jQueryInstance
 			]
+		orderedAt: 20
 ]
 
 { #category : #accessing }

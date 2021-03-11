@@ -25,7 +25,9 @@ ComponentRemovingCommand >> initializeFor: anIdentifiedView [
 { #category : #accessing }
 ComponentRemovingCommand >> modelLoadingInstructions [
 
-	^ WebInteractionInstructions directingTo: [ :aCanvas | ( aCanvas locate: identifiedView ) remove ]
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | ( aCanvas locate: identifiedView ) remove ]
+		orderedAt: 20
 ]
 
 { #category : #accessing }

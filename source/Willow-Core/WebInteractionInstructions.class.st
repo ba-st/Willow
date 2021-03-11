@@ -11,15 +11,21 @@ Class {
 }
 
 { #category : #'private - instance creation' }
-WebInteractionInstructions class >> containingAll: aCollection [
+WebInteractionInstructions class >> containingAll: anAssociationCollection [
 
-	^ self new initializeContainingAll: aCollection
+	^ self new initializeContainingAll: anAssociationCollection
 ]
 
 { #category : #'instance creation' }
 WebInteractionInstructions class >> directingTo: aBlock [
 
-	^ self containingAll: ( Array with: aBlock )
+	^ self directingTo: aBlock orderedAt: 1
+]
+
+{ #category : #'instance creation' }
+WebInteractionInstructions class >> directingTo: aBlock orderedAt: aPosition [
+
+	^ self containingAll: ( Array with: aPosition -> aBlock )
 ]
 
 { #category : #'instance creation' }
@@ -57,9 +63,9 @@ WebInteractionInstructions >> combinedWith: otherInstructions [
 ]
 
 { #category : #initialization }
-WebInteractionInstructions >> initializeContainingAll: aCollection [
+WebInteractionInstructions >> initializeContainingAll: anAssociationCollection [
 
-	instructions := aCollection
+	instructions := anAssociationCollection
 ]
 
 { #category : #'private - accessing' }
@@ -85,5 +91,6 @@ WebInteractionInstructions >> notEmpty [
 { #category : #accessing }
 WebInteractionInstructions >> statementsOn: aCanvas [
 
-	^ ( instructions collect: [ :instruction | Array with: ( instruction cull: aCanvas ) ] ) flattened
+	^ ( ( instructions sorted: [ :a :b | a key <= b key ] )
+		collect: [ :instruction | Array with: ( instruction value cull: aCanvas ) ] ) flattened
 ]

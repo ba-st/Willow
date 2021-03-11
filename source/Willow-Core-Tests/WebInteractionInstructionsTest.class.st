@@ -85,6 +85,21 @@ WebInteractionInstructionsTest >> testDirectingTo [
 ]
 
 { #category : #tests }
+WebInteractionInstructionsTest >> testDirectingToOrderedAt [
+
+	| instructions otherInstructions combinedInstructions |
+
+	instructions := WebInteractionInstructions directingTo: [ :canvas | canvas * 2 ] orderedAt: 30.
+	otherInstructions := WebInteractionInstructions directingTo: [ :canvas | canvas + 1 ] orderedAt: 10.
+	combinedInstructions := instructions combinedWith: otherInstructions.
+	self
+		deny: combinedInstructions isEmpty;
+		assert: combinedInstructions notEmpty.
+
+	self assertCollection: ( combinedInstructions statementsOn: 8 ) equals: ( Array with: 9 with: 16 )
+]
+
+{ #category : #tests }
 WebInteractionInstructionsTest >> testEmpty [
 |instructions|
 instructions  := WebInteractionInstructions empty.

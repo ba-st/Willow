@@ -3,7 +3,7 @@ A WebInteractionInstructionsTest is a test class for testing the behavior of Web
 "
 Class {
 	#name : #WebInteractionInstructionsTest,
-	#superclass : #TestCase,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-Core-Tests-WebInteraction'
 }
 
@@ -76,23 +76,52 @@ WebInteractionInstructionsTest >> testDirectingTo [
 
 	| instructions |
 
-	instructions := WebInteractionInstructions directingTo: [ :canvas | canvas asString ].
+	instructions := WebInteractionInstructions directingTo: [ :canvas | 'this will be returned' ].
 	self
 		deny: instructions isEmpty;
 		assert: instructions notEmpty.
 
-	self assertCollection: ( instructions statementsOn: 8 ) equals: ( Array with: '8' )
+	self
+		renderUsing: [ :canvas | 
+			self
+				assertCollection: ( instructions statementsOn: canvas )
+				equals: ( Array with: 'this will be returned' )
+			]
+]
+
+{ #category : #tests }
+WebInteractionInstructionsTest >> testDirectingToOrderedAt [
+
+	| instructions otherInstructions combinedInstructions |
+
+	instructions := WebInteractionInstructions directingTo: [ :canvas | 'then this one' ] orderedAt: 30.
+	otherInstructions := WebInteractionInstructions
+		directingTo: [ :canvas | 'first thins one' ]
+		orderedAt: 10.
+	combinedInstructions := instructions combinedWith: otherInstructions.
+	self
+		deny: combinedInstructions isEmpty;
+		assert: combinedInstructions notEmpty.
+
+	self
+		renderUsing: [ :canvas | 
+			self
+				assertCollection: ( combinedInstructions statementsOn: canvas )
+				equals: ( Array with: 'first thins one' with: 'then this one' )
+			]
 ]
 
 { #category : #tests }
 WebInteractionInstructionsTest >> testEmpty [
-|instructions|
-instructions  := WebInteractionInstructions empty.
-self assert: instructions isEmpty;
-deny: instructions notEmpty.
 
-self assert: (instructions statementsOn: self ) isEmpty
+	| instructions |
 
+	instructions := WebInteractionInstructions empty.
+	self
+		assert: instructions isEmpty;
+		deny: instructions notEmpty.
+
+	self renderUsing: [ :canvas | self assert: ( instructions statementsOn: canvas ) isEmpty ]
 ]
 
 { #category : #tests }
@@ -118,6 +147,11 @@ WebInteractionInstructionsTest >> testStatementsOn [
 
 	| instructions |
 
-	instructions := WebInteractionInstructions directingTo: [ :canvas | canvas asString ].
-	self assertCollection: ( instructions statementsOn: 8 ) equals: ( Array with: '8' )
+	instructions := WebInteractionInstructions directingTo: [ :canvas | 'this will be returned' ].
+	self
+		renderUsing: [ :canvas | 
+			self
+				assertCollection: ( instructions statementsOn: canvas )
+				equals: ( Array with: 'this will be returned' )
+			]
 ]

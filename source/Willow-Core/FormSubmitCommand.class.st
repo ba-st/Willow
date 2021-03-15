@@ -33,6 +33,7 @@ FormSubmitCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
 		directingTo: [ :aCanvas | ( componentProvider value: aCanvas ) call: 'submit' ]
+		orderedAt: 10
 ]
 
 { #category : #accessing }

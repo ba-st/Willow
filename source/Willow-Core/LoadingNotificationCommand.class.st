@@ -15,19 +15,8 @@ Class {
 LoadingNotificationCommand class >> displaying: aWebView applying: aComponentCommand [
 
 	^ self
-		executing: [ :aCanvas | 
-			( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName )
-				html: [ :aSubCanvas | 
-					aSubCanvas
-						render:
-							( ContainerWebView
-								wrapping: aWebView
-								intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
-								applying: aComponentCommand )
-					]
-			]
-		then:
-			[ :aCanvas | ( aCanvas jQuery id: Constants >> #willow >> #notificationSectionName ) html: [ :aSubCanvas |  ] ]
+		executing: ( self instructionToDisplay: aWebView applying: aComponentCommand )
+		then: self instructionToCleanNotificationSection
 ]
 
 { #category : #'private - instance creation' }
@@ -36,6 +25,34 @@ LoadingNotificationCommand class >> executing: aServerIndependentInstruction the
 	^ self new
 		initializeExecuting: aServerIndependentInstruction
 		then: aModelLoadingInstruction
+]
+
+{ #category : #'private - accessing' }
+LoadingNotificationCommand class >> instructionToCleanNotificationSection [
+
+	^ [ :aCanvas | ( self notificationSectionOn: aCanvas ) html: [ :aSubCanvas |  ] ]
+]
+
+{ #category : #'private - accessing' }
+LoadingNotificationCommand class >> instructionToDisplay: aWebView applying: aComponentCommand [
+
+	^ [ :aCanvas | 
+	( self notificationSectionOn: aCanvas )
+		html: [ :aSubCanvas | 
+			aSubCanvas
+				render:
+					( ContainerWebView
+						wrapping: aWebView
+						intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
+						applying: aComponentCommand )
+			]
+	]
+]
+
+{ #category : #'private - accessing' }
+LoadingNotificationCommand class >> notificationSectionOn: aCanvas [
+
+	^ aCanvas jQuery id: Constants >> #willow >> #notificationSectionName
 ]
 
 { #category : #'instance creation' }
@@ -51,7 +68,9 @@ LoadingNotificationCommand >> initializeExecuting: aServerIndependentInstruction
 
 	serverIndependentInstructions := WebInteractionInstructions
 		directingTo: aServerIndependentInstruction.
-	modelLoadingInstructions := WebInteractionInstructions directingTo: aModelLoadingInstruction
+	modelLoadingInstructions := WebInteractionInstructions
+		directingTo: aModelLoadingInstruction
+		orderedAt: 10
 ]
 
 { #category : #accessing }

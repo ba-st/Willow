@@ -28,6 +28,7 @@ DialogOpeningCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
 		directingTo: [ :aCanvas | DialogOpener new open: dialogView on: aCanvas ]
+		orderedAt: 10
 ]
 
 { #category : #accessing }

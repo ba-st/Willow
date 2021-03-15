@@ -39,6 +39,7 @@ ScrollIntoViewCommand >> modelLoadingInstructions [
 			( aCanvas jQuery id: self identifierToShow )
 				each: ( ( aCanvas jQuery this get: 0 ) call: 'scrollIntoView' )
 			]
+		orderedAt: 20
 ]
 
 { #category : #accessing }

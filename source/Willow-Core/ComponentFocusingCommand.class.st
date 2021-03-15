@@ -13,7 +13,7 @@ Class {
 { #category : #'instance creation' }
 ComponentFocusingCommand class >> findingComponentUsing: aComponentProvider [
 
-	^self new initializeFindingComponentUsing: aComponentProvider
+	^ self new initializeFindingComponentUsing: aComponentProvider
 ]
 
 { #category : #'instance creation' }
@@ -22,7 +22,7 @@ ComponentFocusingCommand class >> for: anIdentifiedView [
 	^ self findingComponentUsing: [ :aCanvas | aCanvas locate: anIdentifiedView ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 ComponentFocusingCommand >> initializeFindingComponentUsing: aComponentProvider [
 
 	componentProvider := aComponentProvider
@@ -33,6 +33,7 @@ ComponentFocusingCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
 		directingTo: [ :aCanvas | ( componentProvider value: aCanvas ) triggerFocus ]
+		orderedAt: 20
 ]
 
 { #category : #accessing }
@@ -44,7 +45,7 @@ ComponentFocusingCommand >> priorityActions [
 { #category : #testing }
 ComponentFocusingCommand >> requiresSerialization [
 
-	^false
+	^ false
 ]
 
 { #category : #accessing }

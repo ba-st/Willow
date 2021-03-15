@@ -213,8 +213,7 @@ WebInteractionInterpreter >> showLoadingNotificationDisplaying: aWebView applyin
 { #category : #Configuring }
 WebInteractionInterpreter >> showLoadingNotificationStyledAsAll: classes [
 
-	interaction
-		onTriggerExecute: (LoadingNotificationCommand onPageTopWithClasses: classes)
+	interaction onTriggerExecute: ( LoadingNotificationCommand onPageTopWithClasses: classes )
 ]
 
 { #category : #'Configuring - Serialization' }

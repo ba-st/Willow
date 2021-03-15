@@ -5,7 +5,6 @@ Class {
 	#name : #RenderingCommand,
 	#superclass : #WebInteractionCommand,
 	#instVars : [
-		'renderingCondition',
 		'identifiedViews'
 	],
 	#category : #'Willow-Core-WebInteraction'
@@ -38,6 +37,7 @@ RenderingCommand >> modelLoadingInstructions [
 			identifiedViews
 				collect: [ :identifiedView | ( aCanvas locate: identifiedView ) html: identifiedView renderableContent ]
 			]
+		orderedAt: 10
 ]
 
 { #category : #accessing }

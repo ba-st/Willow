@@ -458,10 +458,9 @@ CombinedWebInteractionInterpreterTest >> testRender [
 { #category : #'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testRenderAll [
 
-	| interpreter html id |
+	| interpreter html |
 
 	interpreter := self combinedInterpreter.
-	id := '15'.
 
 	html := self
 		renderUsing: [ :canvas | 

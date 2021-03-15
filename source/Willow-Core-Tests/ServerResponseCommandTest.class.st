@@ -112,14 +112,14 @@ ServerResponseCommandTest >> testOnRespond [
 { #category : #'tests-accessing' }
 ServerResponseCommandTest >> testParameter [
 
-	| parameterObtained command html |
+	| parameterObtained command |
 
 	command := ServerResponseCommand
 		withBehaviorDeterminedBy: [ :request | parameterObtained := request parameter ]
 		conditionedBy: Optional unused
 		requiring: ( Optional containing: 'test complete' ).
 
-	html := self
+	self
 		renderUsing: [ :canvas | 
 			command priorityActions do: [ :action | action value: self value: 'canvas' ].
 			command modelLoadingInstructions appendTo: 'script' on: canvas

@@ -148,15 +148,14 @@ CombinedWebInteractionInterpreter >> serializeWithHiddenInputs [
 { #category : #Configuring }
 CombinedWebInteractionInterpreter >> serverDo: aCallbackBlock [
 
-	self interpretersDo: [:interpreter | interpreter serverDo: aCallbackBlock]
+	self interpretersDo: [ :interpreter | interpreter serverDo: aCallbackBlock ]
 ]
 
 { #category : #'Configuring - DOM' }
 CombinedWebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView [
 
 	self
-		interpretersDo:
-			[ :interpreter | interpreter setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView ]
+		interpretersDo: [ :interpreter | interpreter setValueTo: aValueProvider thenTriggerChangeOf: anIdentifiedView ]
 ]
 
 { #category : #'Configuring - DOM' }
@@ -169,7 +168,7 @@ CombinedWebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggerin
 { #category : #Configuring }
 CombinedWebInteractionInterpreter >> showLoadingNotificationStyledAsAll: classes [
 
-	self interpretersDo: [:interpreter | interpreter showLoadingNotificationStyledAsAll: classes]
+	self interpretersDo: [ :interpreter | interpreter showLoadingNotificationStyledAsAll: classes ]
 ]
 
 { #category : #'Configuring - Serialization' }
@@ -181,7 +180,7 @@ CombinedWebInteractionInterpreter >> submitForm: anIdentifiedForm [
 { #category : #Configuring }
 CombinedWebInteractionInterpreter >> submitFormStyledAs: aCssStyle [
 
-	self interpretersDo: [:interpreter | interpreter submitFormStyledAs: aCssStyle]
+	self interpretersDo: [ :interpreter | interpreter submitFormStyledAs: aCssStyle ]
 ]
 
 { #category : #'Configuring - DOM' }
@@ -209,15 +208,14 @@ CombinedWebInteractionInterpreter >> updateCssClasses: aCssClassConfigurationBlo
 { #category : #Configuring }
 CombinedWebInteractionInterpreter >> userAgentDo: aServerIndependentAction [
 
-	self interpretersDo: [:interpreter | interpreter userAgentDo: aServerIndependentAction]
+	self interpretersDo: [ :interpreter | interpreter userAgentDo: aServerIndependentAction ]
 ]
 
 { #category : #Configuring }
 CombinedWebInteractionInterpreter >> with: aParameter onlyWhen: aStringCondition serverDo: aCallbackBlock [
 
 	self
-		interpretersDo:
-			[ :interpreter | interpreter with: aParameter onlyWhen: aStringCondition serverDo: aCallbackBlock ]
+		interpretersDo: [ :interpreter | interpreter with: aParameter onlyWhen: aStringCondition serverDo: aCallbackBlock ]
 ]
 
 { #category : #Configuring }

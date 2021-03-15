@@ -2,7 +2,6 @@ Class {
 	#name : #EventInterpreterDispatcher,
 	#superclass : #EventInterpreterDispatcherBehavior,
 	#instVars : [
-		'interactionsByEvent',
 		'interpretersByEvent',
 		'defaultInterpreter'
 	],

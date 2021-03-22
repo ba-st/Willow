@@ -54,8 +54,9 @@ Framework | Project | Status
 
 Extension | Project
 ---|---
-Mixpanel | [Willow Mixpanel](https://github.com/ba-st/Willow-Mixpanel)
+[Mixpanel](https://mixpanel.com/) | [Willow Mixpanel](https://github.com/ba-st/Willow-Mixpanel)
 Spinners | [Willow SpinKit](https://github.com/ba-st/Willow-SpinKit)
+[Auth0](https://auth0.com)| [Willow Auth0](https://github.com/ba-st/Willow-Auth0)
 
 ## Installation
 

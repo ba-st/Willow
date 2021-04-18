@@ -40,7 +40,7 @@ RenderingCommandTest >> testModelLoadingInstructions [
 	self
 		assert: html
 		equals:
-			'<a id="id2"></a><script type="text/javascript">$("#id2").click(function(){$("#container-id1").html("<span>Test</span>")});</script>'
+			'<a id="id3"></a><script type="text/javascript">$("#id3").click(function(){$("#container-id1").html("<span>Test</span>")});</script>'
 ]
 
 { #category : #'tests-accessing' }

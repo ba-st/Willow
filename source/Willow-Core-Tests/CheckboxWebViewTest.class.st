@@ -41,7 +41,7 @@ CheckboxWebViewTest >> testIdentifierOn [
 
 	self
 		assert: html
-		equals: '<input checked name="2" id="checkbox-id1" type="checkbox"/><input name="3" type="hidden"/>'
+		equals: '<input checked name="2" id="checkbox-id1" type="checkbox"/><input name="4" type="hidden"/>'
 ]
 
 { #category : #'tests-configuring' }

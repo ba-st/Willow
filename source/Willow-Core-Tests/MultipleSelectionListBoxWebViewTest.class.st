@@ -148,7 +148,7 @@ MultipleSelectionListBoxWebViewTest >> testIdentifierOn [
 
 	self
 		assert: html
-		equals: '<select name="2" id="list-box-id1" multiple></select><input name="3" type="hidden"/>'
+		equals: '<select name="2" id="list-box-id1" multiple></select><input name="4" type="hidden"/>'
 ]
 
 { #category : #'tests-Multiple Selection-API' }

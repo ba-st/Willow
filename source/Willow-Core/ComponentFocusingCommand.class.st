@@ -19,6 +19,7 @@ ComponentFocusingCommand class >> findingComponentUsing: aComponentProvider [
 { #category : #'instance creation' }
 ComponentFocusingCommand class >> for: anIdentifiedView [
 
+	anIdentifiedView beIdentifiable.
 	^ self findingComponentUsing: [ :aCanvas | aCanvas locate: anIdentifiedView ]
 ]
 

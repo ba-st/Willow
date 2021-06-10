@@ -32,19 +32,19 @@ TimeFieldWebView >> changeTimeTo: aTime [
 	self changeModelTo: aTime
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : #'private - accessing' }
 TimeFieldWebView >> identifierPrefix [
 
 	^ 'time-field'
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : #initialization }
 TimeFieldWebView >> initializeTransformingWith: aTextCodec [
 
 	textCodec := aTextCodec
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : #'private - accessing' }
 TimeFieldWebView >> textCodec [
 
 	^ textCodec

@@ -11,4 +11,5 @@ BlockClosure >> asWebComponentCommand [
 
 	^ ( self cull: WebComponentCommandBuilder new cull: Willow constants )
 		ifNil: [ CompositeComponentCommand empty ]
+		ifNotNil: [ :command | command ]
 ]

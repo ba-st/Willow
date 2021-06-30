@@ -16,13 +16,13 @@ WillowJavascriptNamespaceTest >> testCallServerFunction [
 { #category : #'tests-printing' }
 WillowJavascriptNamespaceTest >> testClassificationAccess [
 
-	self assert: Willow classification >> #loading = 'willow-loading'
+	self assert: Willow classification >> #loading equals: 'willow-loading' asJavascript
 ]
 
 { #category : #'tests-printing' }
 WillowJavascriptNamespaceTest >> testConstantsAccess [
 
-	self assert: WillowJavascriptNamespace new constants >> #css >> #auto = 'auto'
+	self assert: WillowJavascriptNamespace new constants >> #css >> #auto equals: 'auto' asJavascript
 ]
 
 { #category : #'tests-Accessing' }

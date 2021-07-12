@@ -2,7 +2,7 @@
 I'm an abstract class representing binary choice web views
 "
 Class {
-	#name : #BinaryChoiceWebViewBehavior,
+	#name : #BinaryChoiceWebView,
 	#superclass : #WAPainter,
 	#instVars : [
 		'interested',
@@ -12,31 +12,31 @@ Class {
 }
 
 { #category : #testing }
-BinaryChoiceWebViewBehavior class >> isAbstract [
+BinaryChoiceWebView class >> isAbstract [
 
-	^ self name = #BinaryChoiceWebViewBehavior
+	^ self name = #BinaryChoiceWebView
 ]
 
 { #category : #'instance creation' }
-BinaryChoiceWebViewBehavior class >> onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff [
+BinaryChoiceWebView class >> onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff [
 
 	^self new initializeOnModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff
 ]
 
 { #category : #'Binary Choice-API' }
-BinaryChoiceWebViewBehavior >> allows: aModel [
+BinaryChoiceWebView >> allows: aModel [
 
 	^ iterator includes: aModel
 ]
 
 { #category : #'Binary Choice-API' }
-BinaryChoiceWebViewBehavior >> currentSelection [
+BinaryChoiceWebView >> currentSelection [
 
 	^ iterator current
 ]
 
 { #category : #initialization }
-BinaryChoiceWebViewBehavior >> initializeOnModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff [
+BinaryChoiceWebView >> initializeOnModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff [
 
 	iterator := CircularIterator
 		cyclingOver:
@@ -46,25 +46,25 @@ BinaryChoiceWebViewBehavior >> initializeOnModel: anObjectToUseWhenOn offModel: 
 ]
 
 { #category : #'Binary Choice-API' }
-BinaryChoiceWebViewBehavior >> notifyChangesTo: aSupervisor [
+BinaryChoiceWebView >> notifyChangesTo: aSupervisor [
 
 	interested add: aSupervisor
 ]
 
 { #category : #private }
-BinaryChoiceWebViewBehavior >> notifyInterested [
+BinaryChoiceWebView >> notifyInterested [
 
 	interested do: [ :anInterested | anInterested changeNotifiedBy: self ]
 ]
 
 { #category : #configuring }
-BinaryChoiceWebViewBehavior >> on [
+BinaryChoiceWebView >> on [
 
 	^ self subclassResponsibility
 ]
 
 { #category : #'Binary Choice-API' }
-BinaryChoiceWebViewBehavior >> selectOffModel [
+BinaryChoiceWebView >> selectOffModel [
 
 	iterator reset.
 	self toggleCurrentSelection.
@@ -72,14 +72,14 @@ BinaryChoiceWebViewBehavior >> selectOffModel [
 ]
 
 { #category : #'Binary Choice-API' }
-BinaryChoiceWebViewBehavior >> selectOnModel [
+BinaryChoiceWebView >> selectOnModel [
 
 	iterator reset.
 	self notifyInterested 
 ]
 
 { #category : #'Binary Choice-API' }
-BinaryChoiceWebViewBehavior >> toggleCurrentSelection [
+BinaryChoiceWebView >> toggleCurrentSelection [
 
 	iterator next.
 	self notifyInterested  

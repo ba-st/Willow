@@ -41,7 +41,7 @@ UnorderedListWebView >> initializeApplying: aComponentCommand listing: anElement
 	elements := anElementCollection.
 	commandToItem := anElementCommand.
 	commandToList := aComponentCommand.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToClick.
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToClick.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'unordered-list'
 ]
 

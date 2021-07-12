@@ -15,7 +15,7 @@ EventInterpreterDispatcherTest >> testApplyToOn [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToClick.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToClick.
 	dispatcher trigger inform: 'A message'.
 	html := self apply: dispatcher toComponentDefinedBy: [ :canvas | canvas button ].
 	self
@@ -30,7 +30,7 @@ EventInterpreterDispatcherTest >> testChange [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToClick.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToClick.
 	dispatcher change inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self
@@ -44,7 +44,7 @@ EventInterpreterDispatcherTest >> testClick [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToChange.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToChange.
 	dispatcher click inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self
@@ -58,7 +58,7 @@ EventInterpreterDispatcherTest >> testDefaultingToChange [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToChange.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToChange.
 	dispatcher trigger inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self
@@ -72,7 +72,7 @@ EventInterpreterDispatcherTest >> testDefaultingToChangeHidden [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToChangeHidden.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToChangeHidden.
 	dispatcher trigger inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self
@@ -86,7 +86,7 @@ EventInterpreterDispatcherTest >> testDefaultingToClick [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToClick.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToClick.
 	dispatcher trigger inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self
@@ -100,7 +100,7 @@ EventInterpreterDispatcherTest >> testDefaultingToClickHidden [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToClickHidden.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToClickHidden.
 	dispatcher trigger inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self
@@ -114,7 +114,7 @@ EventInterpreterDispatcherTest >> testEventNamed [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToChange.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToChange.
 	( dispatcher eventNamed: #dblclick ) inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self
@@ -128,7 +128,7 @@ EventInterpreterDispatcherTest >> testKeyUp [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToChange.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToChange.
 	dispatcher keyUp inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self
@@ -142,7 +142,7 @@ EventInterpreterDispatcherTest >> testMouseOver [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToChange.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToChange.
 	dispatcher mouseOver inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self
@@ -156,7 +156,7 @@ EventInterpreterDispatcherTest >> testTrigger [
 
 	| dispatcher html |
 
-	dispatcher := EventInterpreterDispatcher defaultingToChange.
+	dispatcher := SingleEventInterpreterDispatcher defaultingToChange.
 	dispatcher trigger inform: 'A message'.
 	html := self configureTextInputWith: dispatcher.
 	self

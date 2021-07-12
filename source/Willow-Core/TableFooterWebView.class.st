@@ -3,7 +3,7 @@ I represent a table footer
 "
 Class {
 	#name : #TableFooterWebView,
-	#superclass : #TableFooterWebViewBehavior,
+	#superclass : #AbstractTableFooterWebView,
 	#instVars : [
 		'columnRenderers',
 		'tableContents'

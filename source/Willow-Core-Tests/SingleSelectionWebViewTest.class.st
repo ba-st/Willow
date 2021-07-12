@@ -2,7 +2,7 @@
 I'm an abstract test case for views implementing the single selection API
 "
 Class {
-	#name : #SingleSelectionWebViewBehaviorTest,
+	#name : #SingleSelectionWebViewTest,
 	#superclass : #BWRenderingTest,
 	#instVars : [
 		'notificationWasReceived'
@@ -11,25 +11,25 @@ Class {
 }
 
 { #category : #testing }
-SingleSelectionWebViewBehaviorTest class >> isAbstract [
+SingleSelectionWebViewTest class >> isAbstract [
 
-	^self name = #SingleSelectionWebViewBehaviorTest
+	^self name = #SingleSelectionWebViewTest
 ]
 
 { #category : #support }
-SingleSelectionWebViewBehaviorTest >> changeNotifiedBy: aDropDownListWebView [ 
+SingleSelectionWebViewTest >> changeNotifiedBy: aDropDownListWebView [ 
 	
 	notificationWasReceived := true
 ]
 
 { #category : #support }
-SingleSelectionWebViewBehaviorTest >> newSingleSelectionView [
+SingleSelectionWebViewTest >> newSingleSelectionView [
 
 	^self subclassResponsibility 
 ]
 
 { #category : #'tests-Single Selection-API' }
-SingleSelectionWebViewBehaviorTest >> testAllowsAnySatisfying [
+SingleSelectionWebViewTest >> testAllowsAnySatisfying [
 
 	| singleSelectionView |
 
@@ -45,7 +45,7 @@ SingleSelectionWebViewBehaviorTest >> testAllowsAnySatisfying [
 ]
 
 { #category : #'tests-Single Selection-API' }
-SingleSelectionWebViewBehaviorTest >> testChooseAny [
+SingleSelectionWebViewTest >> testChooseAny [
 
 	| singleSelectionView allowedElements |
 
@@ -65,7 +65,7 @@ SingleSelectionWebViewBehaviorTest >> testChooseAny [
 ]
 
 { #category : #'tests-Single Selection-API' }
-SingleSelectionWebViewBehaviorTest >> testChooseEqualTo [
+SingleSelectionWebViewTest >> testChooseEqualTo [
 
 	| singleSelectionView allowedElements |
 
@@ -89,7 +89,7 @@ SingleSelectionWebViewBehaviorTest >> testChooseEqualTo [
 ]
 
 { #category : #'tests-Single Selection-API' }
-SingleSelectionWebViewBehaviorTest >> testNotifyChangesTo [
+SingleSelectionWebViewTest >> testNotifyChangesTo [
 
 	| singleSelectionView |
 
@@ -103,7 +103,7 @@ SingleSelectionWebViewBehaviorTest >> testNotifyChangesTo [
 ]
 
 { #category : #'tests-Single Selection-API' }
-SingleSelectionWebViewBehaviorTest >> testNotifyChangesWhenAvailableElementsChangeButContainsTheSelectedOne [
+SingleSelectionWebViewTest >> testNotifyChangesWhenAvailableElementsChangeButContainsTheSelectedOne [
 
 	| singleSelectionView |
 
@@ -124,7 +124,7 @@ SingleSelectionWebViewBehaviorTest >> testNotifyChangesWhenAvailableElementsChan
 ]
 
 { #category : #'tests-Single Selection-API' }
-SingleSelectionWebViewBehaviorTest >> testNotifyChangesWhenAvailableElementsChangeButDoesNotContainTheSelectedOne [
+SingleSelectionWebViewTest >> testNotifyChangesWhenAvailableElementsChangeButDoesNotContainTheSelectedOne [
 
 	| singleSelectionView |
 
@@ -146,7 +146,7 @@ SingleSelectionWebViewBehaviorTest >> testNotifyChangesWhenAvailableElementsChan
 ]
 
 { #category : #'tests-Single Selection-API' }
-SingleSelectionWebViewBehaviorTest >> testNotifyChangesWhenSelectionChanged [
+SingleSelectionWebViewTest >> testNotifyChangesWhenSelectionChanged [
 
 	| singleSelectionView |
 
@@ -163,7 +163,7 @@ SingleSelectionWebViewBehaviorTest >> testNotifyChangesWhenSelectionChanged [
 ]
 
 { #category : #'tests-Single Selection-API' }
-SingleSelectionWebViewBehaviorTest >> testNotifyChangesWhenSelectionDoesNotChange [
+SingleSelectionWebViewTest >> testNotifyChangesWhenSelectionDoesNotChange [
 
 	| singleSelectionView |
 
@@ -181,7 +181,7 @@ SingleSelectionWebViewBehaviorTest >> testNotifyChangesWhenSelectionDoesNotChang
 ]
 
 { #category : #'tests-Single Selection-API' }
-SingleSelectionWebViewBehaviorTest >> testWithCurrentSelectionDo [
+SingleSelectionWebViewTest >> testWithCurrentSelectionDo [
 
 	| singleSelectionView allowedElements |
 

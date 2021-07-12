@@ -40,7 +40,7 @@ LinkWebView >> initializeLabeled: aLabel applying: aComponentCommand [
 
 	label := aLabel.
 	commandToComponent := aComponentCommand.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToClick
 ]
 
 { #category : #configuring }

@@ -28,14 +28,14 @@ WebComponentInteraction class >> triggeredAccordingTo: aTriggerPolicy serializin
 { #category : #'instance creation' }
 WebComponentInteraction class >> triggeredOnDocumentLoad [
 
-	^ self triggeredAccordingTo: DocumentLoadTrigger new serializingWith: NullWebInteractionCommand new
+	^ self triggeredAccordingTo: DocumentLoadTriggeringPolicy new serializingWith: NullWebInteractionCommand new
 ]
 
 { #category : #'instance creation' }
 WebComponentInteraction class >> triggeredOnEvaluationOf: aSelector withAll: aParameterArray [
 
 	^ self
-		triggeredAccordingTo: ( FunctionEvaluationTrigger sending: aSelector parameterizedBy: aParameterArray )
+		triggeredAccordingTo: ( FunctionEvaluationTriggeringPolicy sending: aSelector parameterizedBy: aParameterArray )
 		serializingWith: SerializationCommand forCurrentObject
 ]
 

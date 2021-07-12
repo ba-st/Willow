@@ -29,7 +29,7 @@ ImageWebView >> initializeLocatedAt: aLocation applying: aComponentCommand [
 
 	imageLocation := aLocation.
 	commandToComponent := aComponentCommand.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToClick
 ]
 
 { #category : #configuring }

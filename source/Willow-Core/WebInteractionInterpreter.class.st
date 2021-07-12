@@ -1,6 +1,6 @@
 Class {
 	#name : #WebInteractionInterpreter,
-	#superclass : #WebInteractionInterpreterBehavior,
+	#superclass : #AbstractWebInteractionInterpreter,
 	#instVars : [
 		'interaction'
 	],
@@ -13,7 +13,7 @@ WebInteractionInterpreter class >> calling: anEventName serializingWith: seriali
 	^ self
 		workingWith:
 			( WebComponentInteraction
-				triggeredAccordingTo: ( InteractionScriptTrigger interactCalling: anEventName )
+				triggeredAccordingTo: ( InteractionScriptTriggeringPolicy interactCalling: anEventName )
 				serializingWith: serializationCommand )
 ]
 

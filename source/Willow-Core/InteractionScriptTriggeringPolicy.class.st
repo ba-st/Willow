@@ -1,5 +1,5 @@
 Class {
-	#name : #InteractionScriptTrigger,
+	#name : #InteractionScriptTriggeringPolicy,
 	#superclass : #TriggeringPolicy,
 	#instVars : [
 		'eventName'
@@ -8,13 +8,13 @@ Class {
 }
 
 { #category : #'instance creation' }
-InteractionScriptTrigger class >> interactCalling: anEventName [
+InteractionScriptTriggeringPolicy class >> interactCalling: anEventName [
 
 	^ self new initializeInteractCalling: anEventName
 ]
 
 { #category : #evaluating }
-InteractionScriptTrigger >> apply: aJavascriptScript to: aComponent on: aCanvas [
+InteractionScriptTriggeringPolicy >> apply: aJavascriptScript to: aComponent on: aCanvas [
 
 	aCanvas ensureIdFor: aComponent.
 	aComponent
@@ -22,7 +22,7 @@ InteractionScriptTrigger >> apply: aJavascriptScript to: aComponent on: aCanvas 
 ]
 
 { #category : #initialization }
-InteractionScriptTrigger >> initializeInteractCalling: anEventName [
+InteractionScriptTriggeringPolicy >> initializeInteractCalling: anEventName [
 
 	eventName := anEventName
 ]

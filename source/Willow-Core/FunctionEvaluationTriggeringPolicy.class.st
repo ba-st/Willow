@@ -1,5 +1,5 @@
 Class {
-	#name : #FunctionEvaluationTrigger,
+	#name : #FunctionEvaluationTriggeringPolicy,
 	#superclass : #TriggeringPolicy,
 	#instVars : [
 		'functionSelector',
@@ -9,19 +9,19 @@ Class {
 }
 
 { #category : #'instance creation' }
-FunctionEvaluationTrigger class >> sending: aFunctionSelector parameterizedBy: anArgumentNameCollection [
+FunctionEvaluationTriggeringPolicy class >> sending: aFunctionSelector parameterizedBy: anArgumentNameCollection [
 
 	^ self new initializeSending: aFunctionSelector parameterizedBy: anArgumentNameCollection
 ]
 
 { #category : #evaluating }
-FunctionEvaluationTrigger >> apply: anAsynchronousCall to: aComponent on: aCanvas [
+FunctionEvaluationTriggeringPolicy >> apply: anAsynchronousCall to: aComponent on: aCanvas [
 
 	aComponent perform: functionSelector with: ( anAsynchronousCall asFunction: argumentNames )
 ]
 
 { #category : #initialization }
-FunctionEvaluationTrigger >> initializeSending: aFunctionSelector parameterizedBy: anArgumentNameCollection [
+FunctionEvaluationTriggeringPolicy >> initializeSending: aFunctionSelector parameterizedBy: anArgumentNameCollection [
 
 	functionSelector := aFunctionSelector.
 	argumentNames := anArgumentNameCollection

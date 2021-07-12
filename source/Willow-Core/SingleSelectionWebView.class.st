@@ -1,6 +1,6 @@
 Class {
 	#name : #SingleSelectionWebView,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#superclass : #AbstractSingleSelectionWebView,
 	#instVars : [
 		'interactionInterpreter',
 		'identifierAssigner',
@@ -66,7 +66,7 @@ SingleSelectionWebView >> initializeApplyingToSelect: aSelectCommand applyingToO
 	
 	selectCommand := aSelectCommand.
 	optionCommand := anOptionCommand.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToChange.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'single-select'.
 
 ]

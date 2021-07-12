@@ -2,25 +2,25 @@
 I'm an abstract class defining the required behavior for rendering columns in a table
 "
 Class {
-	#name : #WebTableColumnRendererBehavior,
+	#name : #AbstractWebTableColumnRenderer,
 	#superclass : #Object,
 	#category : #'Willow-Core-WebViews'
 }
 
 { #category : #rendering }
-WebTableColumnRendererBehavior >> renderCellAt: anIndex for: anItem on: aCanvas [
+AbstractWebTableColumnRenderer >> renderCellAt: anIndex for: anItem on: aCanvas [
 
 	self subclassResponsibility
 ]
 
 { #category : #rendering }
-WebTableColumnRendererBehavior >> renderFooterCellSummarizing: tableContents on: aCanvas [ 
+AbstractWebTableColumnRenderer >> renderFooterCellSummarizing: tableContents on: aCanvas [ 
 
 	self subclassResponsibility
 ]
 
 { #category : #rendering }
-WebTableColumnRendererBehavior >> renderHeadingOn: aCanvas [
+AbstractWebTableColumnRenderer >> renderHeadingOn: aCanvas [
 
 	self subclassResponsibility
 ]

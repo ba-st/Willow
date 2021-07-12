@@ -3,7 +3,7 @@ I'm a binary choice web view implemented as a checkbox
 "
 Class {
 	#name : #CheckboxWebView,
-	#superclass : #BinaryChoiceWebViewBehavior,
+	#superclass : #BinaryChoiceWebView,
 	#instVars : [
 		'commandToComponent',
 		'interactionInterpreter',
@@ -65,7 +65,7 @@ CheckboxWebView >> initializeLabeledAccordingTo: anOptionalLabel applying: aComm
 
 	labelOptional := anOptionalLabel.
 	commandToComponent := aCommandToComponent.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToClickHidden.
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToClickHidden.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'checkbox'.
 	isChecked := true
 ]

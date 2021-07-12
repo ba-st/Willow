@@ -91,7 +91,7 @@ MultipleSelectionListBoxWebView >> initializeApplying: aCommandToComponent [
 
 	interested := Set new.
 	commandToComponent := aCommandToComponent.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToChangeHidden.
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToChangeHidden.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'list-box'.
 	self disallowAll
 ]

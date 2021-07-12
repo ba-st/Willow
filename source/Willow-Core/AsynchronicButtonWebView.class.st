@@ -43,7 +43,7 @@ AsynchronicButtonWebView >> initializeLabeled: aLabel applying: aComponentComman
 	label := aLabel.
 	commandToComponent := aComponentCommand.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'button'.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToClick
 ]
 
 { #category : #configuring }

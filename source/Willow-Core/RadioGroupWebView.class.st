@@ -3,7 +3,7 @@ I'm a group of radio buttons allowing the user to select one of many options.
 "
 Class {
 	#name : #RadioGroupWebView,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#superclass : #AbstractSingleSelectionWebView,
 	#instVars : [
 		'interactionInterpreter',
 		'renderingBlock',
@@ -36,7 +36,7 @@ RadioGroupWebView >> initializeRenderingWith: aRenderingBlock applyingToLabel: a
 
 	labelCommand := aLabelCommand.
 	inputCommand := anInputCommand.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToChange.
 	renderingBlock := aRenderingBlock
 ]
 

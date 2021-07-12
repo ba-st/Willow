@@ -1,149 +1,155 @@
 Class {
-	#name : #WebInteractionInterpreterBehavior,
+	#name : #AbstractWebInteractionInterpreter,
 	#superclass : #WAObject,
 	#category : #'Willow-Core-WebInteraction'
 }
 
-{ #category : #'Configuring - Dialogs' }
-WebInteractionInterpreterBehavior >> closeAllDialogs [
+{ #category : #testing }
+AbstractWebInteractionInterpreter class >> isAbstract [
 
-	self subclassResponsibility
+	^ self = AbstractWebInteractionInterpreter
 ]
 
 { #category : #'Configuring - Dialogs' }
-WebInteractionInterpreterBehavior >> closeLastDialog [
-
-	self subclassResponsibility
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> confirmAsking: aQuestion [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> disable [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> disable: aComponent [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> enable: aComponent [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> focus: anIdentifiedWebView [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> focusUsing: aComponentProvider [
-
-	self subclassResponsibility
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> inform: aMessage [
-
-	self subclassResponsibility
-]
-
-{ #category : #Configuring }
-WebInteractionInterpreterBehavior >> informSelection [
+AbstractWebInteractionInterpreter >> closeAllDialogs [
 
 	self subclassResponsibility
 ]
 
 { #category : #'Configuring - Dialogs' }
-WebInteractionInterpreterBehavior >> open: aView [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> remove: anIdentifiedView [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> render: anIdentifiedView [
-
-	self subclassResponsibility
-]
-
-{ #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> renderAll: anIdentifiedViewCollection [
+AbstractWebInteractionInterpreter >> closeLastDialog [
 
 	self subclassResponsibility
 ]
 
 { #category : #Configuring }
-WebInteractionInterpreterBehavior >> scrollingIntoView: anIdentifier [
+AbstractWebInteractionInterpreter >> confirmAsking: aQuestion [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'Configuring - Serialization' }
-WebInteractionInterpreterBehavior >> serializeChildForm [
+{ #category : #'Configuring - DOM' }
+AbstractWebInteractionInterpreter >> disable [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'Configuring - Serialization' }
-WebInteractionInterpreterBehavior >> serializeContainerForm [
+{ #category : #'Configuring - DOM' }
+AbstractWebInteractionInterpreter >> disable: aComponent [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'Configuring - Serialization' }
-WebInteractionInterpreterBehavior >> serializeForm: anIdentifiedForm [
+{ #category : #'Configuring - DOM' }
+AbstractWebInteractionInterpreter >> enable: aComponent [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'Configuring - Serialization' }
-WebInteractionInterpreterBehavior >> serializeIt [
+{ #category : #'Configuring - DOM' }
+AbstractWebInteractionInterpreter >> focus: anIdentifiedWebView [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'Configuring - Serialization' }
-WebInteractionInterpreterBehavior >> serializeWithHiddenInputs [
+{ #category : #'Configuring - DOM' }
+AbstractWebInteractionInterpreter >> focusUsing: aComponentProvider [
 
 	self subclassResponsibility
 ]
 
 { #category : #Configuring }
-WebInteractionInterpreterBehavior >> serverDo: aCallbackBlock [
+AbstractWebInteractionInterpreter >> inform: aMessage [
+
+	self subclassResponsibility
+]
+
+{ #category : #Configuring }
+AbstractWebInteractionInterpreter >> informSelection [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - Dialogs' }
+AbstractWebInteractionInterpreter >> open: aView [
 
 	self subclassResponsibility
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> setValueTo: aValueProvider thenTriggerChangeOf: aView [
+AbstractWebInteractionInterpreter >> remove: anIdentifiedView [
 
 	self subclassResponsibility
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> setValueTo: aValueProvider withoutTriggeringChangeOf: aView [
+AbstractWebInteractionInterpreter >> render: anIdentifiedView [
 
 	self subclassResponsibility
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> show: aRenderable whileCallingServerToRender: anIdentifiedWebView [
+AbstractWebInteractionInterpreter >> renderAll: anIdentifiedViewCollection [
+
+	self subclassResponsibility
+]
+
+{ #category : #Configuring }
+AbstractWebInteractionInterpreter >> scrollingIntoView: anIdentifier [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - Serialization' }
+AbstractWebInteractionInterpreter >> serializeChildForm [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - Serialization' }
+AbstractWebInteractionInterpreter >> serializeContainerForm [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - Serialization' }
+AbstractWebInteractionInterpreter >> serializeForm: anIdentifiedForm [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - Serialization' }
+AbstractWebInteractionInterpreter >> serializeIt [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - Serialization' }
+AbstractWebInteractionInterpreter >> serializeWithHiddenInputs [
+
+	self subclassResponsibility
+]
+
+{ #category : #Configuring }
+AbstractWebInteractionInterpreter >> serverDo: aCallbackBlock [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - DOM' }
+AbstractWebInteractionInterpreter >> setValueTo: aValueProvider thenTriggerChangeOf: aView [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - DOM' }
+AbstractWebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggeringChangeOf: aView [
+
+	self subclassResponsibility
+]
+
+{ #category : #'Configuring - DOM' }
+AbstractWebInteractionInterpreter >> show: aRenderable whileCallingServerToRender: anIdentifiedWebView [
 
 	"This will replace anIdentifiedWebView contents with aRenderable in the DOM before doing the server call, 
 	and replace it again with the rendering obtained from the server call response."
@@ -154,37 +160,37 @@ WebInteractionInterpreterBehavior >> show: aRenderable whileCallingServerToRende
 ]
 
 { #category : #Configuring }
-WebInteractionInterpreterBehavior >> showLoadingNotificationStyledAsAll: classes [
+AbstractWebInteractionInterpreter >> showLoadingNotificationStyledAsAll: classes [
 
 	self subclassResponsibility
 ]
 
 { #category : #'Configuring - Serialization' }
-WebInteractionInterpreterBehavior >> submitForm: anIdentifiedForm [
+AbstractWebInteractionInterpreter >> submitForm: anIdentifiedForm [
 
 	self subclassResponsibility
 ]
 
 { #category : #Configuring }
-WebInteractionInterpreterBehavior >> submitFormStyledAs: aCssStyle [
+AbstractWebInteractionInterpreter >> submitFormStyledAs: aCssStyle [
 
 	self subclassResponsibility
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> temporarilyDisableAndTransform: anIdentifiedView into: aView [
+AbstractWebInteractionInterpreter >> temporarilyDisableAndTransform: anIdentifiedView into: aView [
 
 	self subclassResponsibility
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> temporarilyDisableAndTransformInto: aView [
+AbstractWebInteractionInterpreter >> temporarilyDisableAndTransformInto: aView [
 
 	self subclassResponsibility
 ]
 
 { #category : #'Configuring - DOM' }
-WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRenderable [
+AbstractWebInteractionInterpreter >> transform: anIdentifiedWebView into: aRenderable [
 
 	"This will replace anIdentifiedWebView content with aRenderable on the browser side"
 
@@ -192,7 +198,7 @@ WebInteractionInterpreterBehavior >> transform: anIdentifiedWebView into: aRende
 ]
 
 { #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> updateCssClasses: aCssClassConfigurationBlock [
+AbstractWebInteractionInterpreter >> updateCssClasses: aCssClassConfigurationBlock [
 
 	self
 		updateCssClasses: aCssClassConfigurationBlock
@@ -200,26 +206,26 @@ WebInteractionInterpreterBehavior >> updateCssClasses: aCssClassConfigurationBlo
 ]
 
 { #category : #'Configuring - CSS' }
-WebInteractionInterpreterBehavior >> updateCssClasses: aCssClassConfigurationBlock
+AbstractWebInteractionInterpreter >> updateCssClasses: aCssClassConfigurationBlock
 	onElementsMatching: anElementMatchingBlock [
 
 	self subclassResponsibility
 ]
 
 { #category : #Configuring }
-WebInteractionInterpreterBehavior >> userAgentDo: aServerIndependentAction [
+AbstractWebInteractionInterpreter >> userAgentDo: aServerIndependentAction [
 
 	self subclassResponsibility
 ]
 
 { #category : #Configuring }
-WebInteractionInterpreterBehavior >> with: aParameter onlyWhen: aStringCondition serverDo: aCallbackBlock [
+AbstractWebInteractionInterpreter >> with: aParameter onlyWhen: aStringCondition serverDo: aCallbackBlock [
 
 	self subclassResponsibility
 ]
 
 { #category : #Configuring }
-WebInteractionInterpreterBehavior >> with: aParameter serverDo: aCallbackBlock [
+AbstractWebInteractionInterpreter >> with: aParameter serverDo: aCallbackBlock [
 
 	self subclassResponsibility
 ]

@@ -1054,7 +1054,7 @@ WebInteractionInterpreterTest >> testWorkingWith [
 	interpreter := WebInteractionInterpreter
 		workingWith:
 			( WebComponentInteraction
-				triggeredAccordingTo: ( InteractionScriptTrigger interactCalling: #dblclick )
+				triggeredAccordingTo: ( InteractionScriptTriggeringPolicy interactCalling: #dblclick )
 				serializingWith: NullWebInteractionCommand new ).
 	interpreter inform: 'A message'.
 	html := self configureTextInputWith: interpreter.

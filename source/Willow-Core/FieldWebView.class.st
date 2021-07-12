@@ -18,7 +18,7 @@ Class {
 { #category : #private }
 FieldWebView class >> changeInterpreter [
 
-	^ EventInterpreterDispatcher defaultingToChange
+	^ SingleEventInterpreterDispatcher defaultingToChange
 ]
 
 { #category : #private }

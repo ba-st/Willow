@@ -5,8 +5,7 @@ Class {
 	#name : #LoadingNotificationCommand,
 	#superclass : #WebInteractionCommand,
 	#instVars : [
-		'serverIndependentInstructions',
-		'modelLoadingInstructions'
+		'asynchronousCallCustomization'
 	],
 	#category : #'Willow-Core-WebInteraction'
 }
@@ -20,11 +19,9 @@ LoadingNotificationCommand class >> displaying: aWebView applying: aComponentCom
 ]
 
 { #category : #'private - instance creation' }
-LoadingNotificationCommand class >> executing: aServerIndependentInstruction then: aModelLoadingInstruction [
+LoadingNotificationCommand class >> executing: aPreviousAction then: aFinalizationAction [
 
-	^ self new
-		initializeExecuting: aServerIndependentInstruction
-		then: aModelLoadingInstruction
+	^ self new initializeExecuting: aPreviousAction then: aFinalizationAction
 ]
 
 { #category : #'private - accessing' }
@@ -64,25 +61,24 @@ LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 ]
 
 { #category : #initialization }
-LoadingNotificationCommand >> initializeExecuting: aServerIndependentInstruction then: aModelLoadingInstruction [
+LoadingNotificationCommand >> initializeExecuting: aPreviousAction then: aFinalizationAction [
 
-	serverIndependentInstructions := WebInteractionInstructions
-		directingTo: aServerIndependentInstruction.
-	modelLoadingInstructions := WebInteractionInstructions
-		directingTo: aModelLoadingInstruction
-		orderedAt: 10
+	asynchronousCallCustomization := [ :ajax :canvas | 
+	ajax addDecoration: ( JSConcatenateBefore on: ( aPreviousAction value: canvas ) ).
+	ajax onComplete: ( aFinalizationAction value: canvas )
+	]
 ]
 
 { #category : #accessing }
 LoadingNotificationCommand >> modelLoadingInstructions [
 
-	^ modelLoadingInstructions
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #accessing }
 LoadingNotificationCommand >> priorityActions [
 
-	^ #()
+	^ Array with: asynchronousCallCustomization
 ]
 
 { #category : #testing }
@@ -94,5 +90,5 @@ LoadingNotificationCommand >> requiresSerialization [
 { #category : #accessing }
 LoadingNotificationCommand >> serverIndependentInstructions [
 
-	^ serverIndependentInstructions
+	^ WebInteractionInstructions empty
 ]

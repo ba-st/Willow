@@ -8,82 +8,67 @@ Class {
 }
 
 { #category : #'tests-accessing' }
-LoadingNotificationCommandTest >> renderedContentUsingModelLoadingActionsOf: aCommand [
+LoadingNotificationCommandTest >> renderedContentUsingPriorityActionsOf: aCommand [
 
 	^ self
 		renderUsing: [ :canvas | 
-			| script anchor |
+			| asynchronousCall anchor |
 
-			script := canvas javascript.
+			asynchronousCall := canvas jQuery ajax.
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
 
-			aCommand modelLoadingInstructions appendTo: script on: canvas.
-			anchor script: ( canvas jQuery this onClick: script )
-			]
-]
-
-{ #category : #'tests-accessing' }
-LoadingNotificationCommandTest >> renderedContentUsingServerIndependentActionOf: aCommand [
-
-	^ self
-		renderUsing: [ :canvas | 
-			| script anchor |
-
-			script := canvas javascript.
-			aCommand serverIndependentInstructions appendTo: script on: canvas.
-			anchor := canvas anchor.
-			canvas ensureIdFor: anchor.
-			anchor script: ( canvas jQuery this onClick: script )
+			aCommand priorityActions do: [  :action | action value: asynchronousCall value: canvas  ].
+			anchor script: ( canvas jQuery this onClick: asynchronousCall )
 			]
 ]
 
 { #category : #'tests-accessing' }
 LoadingNotificationCommandTest >> testModelLoadingActionsWithCustomView [
 
-	| html command |
+	| command |
 	
-	command := LoadingNotificationCommand displaying: [ :canvas | canvas span with: 'Processing...' ] applying: [ :div | div addClass loading ].
+	command := LoadingNotificationCommand displaying: [ :canvas | canvas span: 'Processing...' ] applying: [ :div | div addClass loading ].
 
-	html := self renderedContentUsingModelLoadingActionsOf: command.
-
-	self
-		assert: html
-		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("")});</script>'
+	self assert: command modelLoadingInstructions isEmpty
 ]
 
 { #category : #'tests-accessing' }
 LoadingNotificationCommandTest >> testModelLoadingInstructions [
 
-	| html command |
+	| command |
 	
 	command := LoadingNotificationCommand onPageTopWithClasses: #().
 
-	html := self renderedContentUsingModelLoadingActionsOf: command.
-
-	self
-		assert: html
-		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("")});</script>'
+	self assert: command modelLoadingInstructions isEmpty
 ]
 
 { #category : #'tests-accessing' }
 LoadingNotificationCommandTest >> testPriorityActions [
 
-	| command |
+	| command html |
 	
 	command := LoadingNotificationCommand onPageTopWithClasses: #(). 
 	
-	self assert: command priorityActions isEmpty
+	html := self renderedContentUsingPriorityActionsOf: command.
+
+	self
+		assert: html
+		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div>Loading...</div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
 ]
 
 { #category : #'tests-accessing' }
 LoadingNotificationCommandTest >> testPriorityActionsWithCustomView [
 
-	| command |
+	| command html |
 	
-	command := LoadingNotificationCommand displaying: [ :canvas | canvas span with: 'Processing...' ] applying: [ :div | div addClass loading ].
+	command := LoadingNotificationCommand displaying: [ :canvas | canvas span: 'Processing...' ] applying: [ :div | div addClass loading ].
 	
-	self assert: command priorityActions isEmpty
+	html := self renderedContentUsingPriorityActionsOf: command.
+
+	self
+		assert: html
+		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"willow-loading\"><span>Processing...</span></div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
 ]
 
 { #category : #'tests-testing' }
@@ -101,7 +86,7 @@ LoadingNotificationCommandTest >> testRequiresSerializationWithCustomView [
 
 	| command |
 	
-	command := LoadingNotificationCommand displaying: [ :canvas | canvas span with: 'Processing...' ] applying: [ :div | div addClass loading ].
+	command := LoadingNotificationCommand displaying: [ :canvas | canvas span: 'Processing...' ] applying: [ :div | div addClass loading ].
 	
 	self deny: command requiresSerialization
 ]
@@ -109,29 +94,19 @@ LoadingNotificationCommandTest >> testRequiresSerializationWithCustomView [
 { #category : #'tests-accessing' }
 LoadingNotificationCommandTest >> testServerIndependentActionsWithCustomVIew [
 
-	| html command |
+	| command |
 	
-	command := LoadingNotificationCommand displaying: [ :canvas | canvas span with: 'Processing...' ] applying: [ :div | div addClass loading ].
+	command := LoadingNotificationCommand displaying: [ :canvas | canvas span: 'Processing...' ] applying: [ :div | div addClass loading ].
 
-	html := self renderedContentUsingServerIndependentActionOf: command.
-
-	self
-		assert: html
-		equals:
-			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"willow-loading\"><span>Processing...</span></div>")});</script>'
+	self assert: command serverIndependentInstructions isEmpty
 ]
 
 { #category : #'tests-accessing' }
 LoadingNotificationCommandTest >> testServerIndependentInstructions [
 
-	| html command |
+	| command |
 	
 	command := LoadingNotificationCommand onPageTopWithClasses: #('loading').
 
-	html := self renderedContentUsingServerIndependentActionOf: command.
-
-	self
-		assert: html
-		equals:
-			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"loading\">Loading...</div>")});</script>'
+	self assert: command serverIndependentInstructions isEmpty
 ]

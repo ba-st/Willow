@@ -348,8 +348,8 @@ The commands can also be applied only when some condition is met by sending `whe
 
 ```smalltalk
 html div
-  apply: [:pane | 
-    pane 
+  apply: [:pane |
+    pane
       when: [ self isFirstTab ]
       apply: pane addClass bootstrap active ]
 ```

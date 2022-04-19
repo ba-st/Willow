@@ -183,7 +183,7 @@ using the proposed rewrite expressions:
   ->
 
   ```smalltalk
-  `@receiver addColumn: [ :column | 
+  `@receiver addColumn: [ :column |
     column
       titled: `@aTitle applying: `@aHeadingCommand;
       rendering: `@aRenderingCommand;

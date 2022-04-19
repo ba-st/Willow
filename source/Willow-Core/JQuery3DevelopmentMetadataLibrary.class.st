@@ -1,5 +1,5 @@
 "
-I'm a WALibary serving the files in source form, suitable for development
+I'm a WALibrary serving the files in source form, suitable for development
 "
 Class {
 	#name : #JQuery3DevelopmentMetadataLibrary,
@@ -6127,7 +6127,7 @@ function domManip( collection, args, callback, ignored ) {
 			if ( hasScripts ) {
 				doc = scripts[ scripts.length - 1 ].ownerDocument;
 
-				// Reenable scripts
+				// Re-enable scripts
 				jQuery.map( scripts, restoreScript );
 
 				// Evaluate executable scripts on first document insertion

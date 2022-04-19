@@ -1,5 +1,5 @@
 "
-I'm an asbtract WALibary serving the files in source form
+I'm an asbtract WALibrary serving the files in source form
 "
 Class {
 	#name : #JQuery3MetadataLibrary,

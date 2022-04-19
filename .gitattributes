@@ -1,2 +1,3 @@
 *.st linguist-language=Smalltalk
-text eol=lf
+*.st eol=lf
+*.st text diff

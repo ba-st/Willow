@@ -1,5 +1,5 @@
 "
-I'm a WALibary serving the files in source form, suitable for development
+I'm a WALibrary serving the files in source form, suitable for development
 "
 Class {
 	#name : #JQuery3DevelopmentMetadataLibrary,

@@ -1,5 +1,5 @@
 "
-I'm a triggering policy specifing that no triggering must happen. So if someone tries to use me I will fail.
+I'm a triggering policy specifying that no triggering must happen. So if someone tries to use me I will fail.
 "
 Class {
 	#name : #NullTriggeringPolicy,

@@ -1,5 +1,5 @@
 "
-I'm a WALibary serving the files from the official CDN.
+I'm a WALibrary serving the files from the official CDN.
 "
 Class {
 	#name : #JQuery3OnlineLibrary,

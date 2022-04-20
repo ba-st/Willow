@@ -1,21 +1,22 @@
-name: Build
+name: Unit Tests
 
-on: [push,pull_request]
+on: [push,pull_request,workflow_dispatch]
 
 jobs:
    build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        smalltalk: [ Pharo64-8.0, Pharo64-7.0, Pharo32-7.0 ]
+        smalltalk: [ Pharo64-10, Pharo64-9.0, Pharo64-8.0 ]
     name: ${{ matrix.smalltalk }}
     steps:
       - uses: actions/checkout@v2
-      - uses: hpi-swa/setup-smalltalkCI@v1
+      - name: Set up Smalltalk CI
+        uses: hpi-swa/setup-smalltalkCI@v1
         with:
-          smalltalk-version: ${{ matrix.smalltalk }}
+          smalltalk-image: ${{ matrix.smalltalk }}
       - name: Load Image and Run Tests
-        run: smalltalkci -s ${{ matrix.smalltalk }}
+        run: smalltalkci -s ${{ matrix.smalltalk }} .smalltalkci/unit-tests.ston
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         timeout-minutes: 15

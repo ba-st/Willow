@@ -11,7 +11,7 @@ JQuery3DeploymentMetadataLibraryTest >> testDeployFiles [
 		assertFileDeploymentOf: JQuery3DeploymentMetadataLibrary default
 		createsAsFolders: #('jQuery-3.6.0')
 		andFileContentsMatching:
-			{( 'jQuery-3.6.0/jquery-3.6.0.min.js' -> 'b82d238d4e31fdf618bae8ac11a6c812c03dd0d4' ).
+			{( 'jQuery-3.6.0/jquery-3.6.0.min.js' -> '6e36f06a81369c34c9c97a3b1bf6802811ec7561' ).
 			( 'jQuery-3.6.0/jquery-3.6.0.min.map' -> '9ac9b4c063db17cc5a888429b86a17dc23c89994' )}
 ]
 

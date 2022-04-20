@@ -9,10 +9,10 @@ JQuery3DeploymentMetadataLibraryTest >> testDeployFiles [
 
 	self
 		assertFileDeploymentOf: JQuery3DeploymentMetadataLibrary default
-		createsAsFolders: #('jQuery-3.5.1')
+		createsAsFolders: #('jQuery-3.6.0')
 		andFileContentsMatching:
-			{( 'jQuery-3.5.1/jquery-3.5.1.min.js' -> '60f5b391b8376ed2f8b0159939e66ba5997066e1' ).
-			( 'jQuery-3.5.1/jquery-3.5.1.min.map' -> '6207ad2639a863210f202384044a575c69a678ac' )}
+			{( 'jQuery-3.6.0/jquery-3.6.0.min.js' -> '6e36f06a81369c34c9c97a3b1bf6802811ec7561' ).
+			( 'jQuery-3.6.0/jquery-3.6.0.min.map' -> '9ac9b4c063db17cc5a888429b86a17dc23c89994' )}
 ]
 
 { #category : #tests }
@@ -44,5 +44,5 @@ JQuery3DeploymentMetadataLibraryTest >> testUpdateRoot [
 	self
 		assert: html
 		equals:
-			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.5.1/jquery-3.5.1.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.6.0/jquery-3.6.0.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]

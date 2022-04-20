@@ -52,7 +52,7 @@ A video of the presentation can be seen [here](https://youtu.be/JezITRHCBuc?list
   are available [here](https://www.slideshare.net/gcotelli/willow-101-82159948)
   and a video of the presentation can be seen [here](https://youtu.be/-QmvIBLDASM).
 
-- Another follow up presentation was mande in the ESUG 2018 and Smalltalks 2018
+- Another follow up presentation was made in the ESUG 2018 and Smalltalks 2018
   conferences. The slides are available [here](https://www.slideshare.net/FASTPresentations/willow-the-interaction-tour-by-maxi-tabacman)
   and a video of the presentation can be seen [here](https://youtu.be/U6-JoPRcXHc)
 

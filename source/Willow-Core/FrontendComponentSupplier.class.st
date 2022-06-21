@@ -143,6 +143,12 @@ FrontendComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aCom
 ]
 
 { #category : #Supplying }
+FrontendComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aComponentCommand [
+
+	self subclassResponsibility
+]
+
+{ #category : #Supplying }
 FrontendComponentSupplier >> tableBuilder [
 
 	^ self subclassResponsibility

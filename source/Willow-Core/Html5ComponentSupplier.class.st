@@ -127,6 +127,12 @@ Html5ComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aCompon
 ]
 
 { #category : #Supplying }
+Html5ComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aComponentCommand [
+
+	^ LinkWebView synchronicLabeled: aRenderable applying: aComponentCommand
+]
+
+{ #category : #Supplying }
 Html5ComponentSupplier >> tableBuilder [
 
 	^ TableWebViewBuilder new

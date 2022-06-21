@@ -177,6 +177,12 @@ Html5ComponentSupplierTest >> testSynchronicButtonLabeledApplyingEvaluating [
 ]
 
 { #category : #'tests-Supplying' }
+Html5ComponentSupplierTest >> testSynchronicLinkLabeledApplying [
+
+	self assertRenderingOf: [ :supplier | supplier synchronicLinkLabeled: 'Buy' applying: [ :link | link addClass willow ] ] equals: '<a class="willow">Buy</a>'
+]
+
+{ #category : #'tests-Supplying' }
 Html5ComponentSupplierTest >> testTableBuilderForHeadlessTable [
 
 	| supplier table html |

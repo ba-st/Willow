@@ -145,7 +145,7 @@ FrontendComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aCom
 { #category : #Supplying }
 FrontendComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aComponentCommand [
 
-	self subclassResponsibility
+	^ self subclassResponsibility
 ]
 
 { #category : #Supplying }

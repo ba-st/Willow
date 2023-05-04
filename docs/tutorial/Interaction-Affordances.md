@@ -367,7 +367,7 @@ up in the same handler function. For example:
 ```smalltalk
 runSelectedTestsButton on trigger
         transform: testResult into: SpinKitTripleBounce new;
-        evaluate: [ self session runTests ];
+        serverDo: [ self session runTests ];
         render: testResult.
 ```
 

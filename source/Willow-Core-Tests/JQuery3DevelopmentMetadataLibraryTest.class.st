@@ -9,8 +9,9 @@ JQuery3DevelopmentMetadataLibraryTest >> testDeployFiles [
 
 	self
 		assertFileDeploymentOf: JQuery3DevelopmentMetadataLibrary default
-		createsAsFolders: #('jQuery-3.6.0')
-		andFileContentsMatching: {( 'jQuery-3.6.0/jquery-3.6.0.js' -> '6376ef01b5ecb3fa8ca48f342778a551056a7216' )}
+		createsAsFolders: #( 'jQuery-3.7.0' )
+		andFileContentsMatching:
+		{ 'jQuery-3.7.0/jquery-3.7.0.js' -> 'd70fbf2f6aed2c76801d35fd793bf70a9cc060eb' }
 ]
 
 { #category : #tests }
@@ -42,5 +43,5 @@ JQuery3DevelopmentMetadataLibraryTest >> testUpdateRoot [
 	self
 		assert: html
 		equals:
-			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.6.0/jquery-3.6.0.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+			'<html><head><title></title><script type="text/javascript" src="/files/jQuery-3.7.0/jquery-3.7.0.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]

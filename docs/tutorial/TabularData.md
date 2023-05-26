@@ -194,9 +194,9 @@ will produce:
 
 ## Container-API
 
-The table component supports the Container API so you can:
+The table component supports the Container API, so you can:
 
-- Change it's contents by sending `changeContentsTo:`
+- Change its contents by sending `changeContentsTo:`
 - Get the table elements by sending `contents`
 - Subscribe to receive notifications when the contents change by sending `notifyChangesTo:`
 

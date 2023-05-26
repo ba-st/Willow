@@ -54,7 +54,7 @@ textField on click
   ]
 ```
 
-Willow provides native support for `click`, `change` , `keyup` and `mouseover`
+Willow provides native support for `click`, `change`, `keyup` and `mouseover`
 but any event can be used by sending `#on eventNamed:`.
 
 ## Summary
@@ -104,17 +104,17 @@ but any event can be used by sending `#on eventNamed:`.
 
 > :computer: indicates the command generates a request to the server. This is
 > not always because the server needs information related to the command from
-> the user agent, but because Willow expects the Javascript associated with the
+> the user agent, but because Willow expects the JavaScript associated with the
 > command to be executed after the server completes all necessary processing.
 
 ## General Affordances
 
 ### User Agent Execution
 
-This affordance allows you to configure some javascript code to be run in the
+This affordance allows you to configure some JavaScript code to be run in the
 browser without notifying the server. We already saw an example.
 
-It uses the Seaside javascript generation support and it's usually used as a
+It uses the Seaside JavaScript generation support, and it's usually used as a
 basic building block to do more complex behavior on top.
 
 ### Server Evaluation
@@ -174,7 +174,7 @@ would do to `on trigger`.
 Sometimes you need to send additional information to the server (not necessarily
 user input). For that you have `with:serverDo:`.
 
-Lets see an example:
+Let's see an example:
 
 ```smalltalk
 button on trigger
@@ -201,16 +201,16 @@ in the call.
 
 There's also support for performing the AJAX call only when some condition is
 met. You can use `with:onlyWhen:serverDo:` and indicate a block that receives a
-JSObject representing the parameter from the first argument.
+`JSObject` representing the parameter from the first argument.
 
 ## Serialization
 
 When using Willow, your application will not normally require a full page
 submission. When working with form elements the contents must be serialized in
-an AJAX call so the server components have the updated values. Depending on the
+an AJAX call, so the server components have the updated values. Depending on the
 interactivity level you want in your application you have several options.
 
-Lets see an example:
+Let's see an example:
 
 ```smalltalk
 button on trigger serializeContainerForm
@@ -248,13 +248,13 @@ So:
 - `serializeIt` will serialize the component receiving the on trigger
   collaboration (this would normally be used in tandem with some field component
   then triggering the change event)
-- `serializeWithHiddenInputs` will serialize the component receiving the  on
-  trigger collaboration and the next hidden input (required for some Seaside
+- `serializeWithHiddenInputs` will serialize the component receiving the `on trigger`
+  collaboration and the next hidden input (required for some Seaside
   brushes where the resulting HTML includes a hidden input)
 
-In case you need it, there's also support to submit a form: `submitForm:`. Also
+In case you need it, there's also support to submit a form: `submitForm:`. Also,
 `submitFormStyledAs:` will call the `submit()` function on the corresponding
-form (found by id or by matching it's "class").
+form (found by id or by matching its "class").
 
 Serialization will occur automatically when triggering certain components.
 
@@ -288,7 +288,7 @@ of the component with some updated rendering.
 
 ![Rendering](images/Rendering.gif)
 
-Inspecting the response payload of the AJAX call yo would see something like:
+Inspecting the response payload of the AJAX call you would see something like:
 
 ```javascript
 $("#current-time-id12").html("<strong>16:58:33</strong>")
@@ -317,7 +317,7 @@ function(event) {
 ```
 
 The browser will show "Searching..." in the container place while the AJAX call
-is performed. Once it returns it will be replaced with  the contents again, now
+is performed. Once it returns it will be replaced with the contents again, now
 with the updated rendering.
 
 ### Enable/disable

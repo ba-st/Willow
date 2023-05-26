@@ -15,7 +15,7 @@ used in the app. The base Willow support includes an HTML5 supplier, but if you
 load other projects on the ecosystem you can get access to Bootstrap, Semantic
 UI & JQuery UI suppliers.
 
-The supplier provides access to the components in a well defined API to ease
+The supplier provides access to the components in a well-defined API to ease
 the transition between one front-end framework and another. All the interactive
 components created by the supplier support `#on`, to access the interaction
 affordances (`#on trigger` for the default interaction). You can access the
@@ -78,7 +78,7 @@ There's also a date field component
 (`self componentSupplier dateFieldApplying: []`), which supports the messages
 `changeDateTo: aData` and `date` to set and retrieve the contained date respectively.
 
-Also there is protocol for numeric fields:
+Also, there is protocol for numeric fields:
 
 - `decimalNumberFieldApplying:` accepting decimal numbers
 - `naturalNumberFieldApplying:` accepting natural numbers
@@ -192,7 +192,7 @@ dialogs and panels/cards.
 
 ## Miscellaneous components
 
-- `ImageWebView` will provide an `img`  with interaction affordances
+- `ImageWebView` will provide an `img` with interaction affordances
 - `LabeledWebView` will help displaying a `label` bound to a field
 
 Other projects in the ecosystem provide additional components likes Tabs, Pills

@@ -1,6 +1,6 @@
 # How to debug a Willow Application
 
-By default you will get standard HTTP errors when some unexpected thing happens.
+By default, you will get standard HTTP errors when some unexpected thing happens.
 If you want to get a debugger when something fails, you need to configure the
 error handler:
 

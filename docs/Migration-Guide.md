@@ -22,7 +22,7 @@ The value of the parameter can be obtained by sending `request parameter`. In
 the previous version this was the second argument of the block, now removed. In
 the previous version the condition was a string that had to contain a macro to
 expand with the argument, this has been changed to a block that optionally
-receives the parameter as a javascript object and must return a javascript
+receives the parameter as a JavaScript object and must return a JavaScript
 boolean condition.
 
 `onReturn` has been renamed to `onRespond`
@@ -51,7 +51,7 @@ To access other events check the protocol offered by `EventInterpreterDispatcher
 For example to configure the behavior on mouse over, send `on mouseOver` then
 configure as usual.
 
-For custom events, use `on eventNamed:` followed by a symbol with the Javascript
+For custom events, use `on eventNamed:` followed by a symbol with the JavaScript
 method to call. This custom interaction assumes by default that no serialization
 is required on the triggering component. To override this behavior, simply add
 the corresponding serialization command, for example:
@@ -78,7 +78,7 @@ transforms to `EventInterpreterDispatcher defaultingToChangeHidden`
 `WebInteractionInterpreter forReleaseOfKeyInComponent` transforms to
 `EventInterpreterDispatcher defaultingToKeyUp`
 
-Instance creation protocol for TextFieldWebView has been changed so that the
+Instance creation protocol for `TextFieldWebView` has been changed so that the
 default is always on change, since the key up behavior can now be achieved by
 sending `on keyUp` to any instance.
 To reflect this,
@@ -88,7 +88,7 @@ To reflect this,
 `PhrasingContainerWebView`, `GenericContainerWebView` and `IdentifiedWebView`
 have all been replaced by `ContainerWebView`. The deprecated classes are now
 located in the migration package `Willow-Core-MigrationTo14` and all their
-instance creation method now include a transformation rule. If the senders has
+instance creation method now include a transformation rule. If the senders have
 access to a component supplier, "divs" can be created by sending
 `divisionContainerWrapping:applying:` and "spans" by sending
 `inlineContainerWrapping:applying:`. For all other scenarios, a `ContainerWebView`
@@ -103,9 +103,9 @@ an id is created for the container element.
 `DropDownListWebView` and `SingleSelectionListBoxWebView` have been replaced by
 `SingleSelectionWebView`. The deprecated classes are now located in the migration
 package `Willow-Core-MigrationTo14` and all their instance creation method now
-include a transformation rule. If the senders has access to a component supplier,
-drop downs can be created by sending `dropdownListApplying:` and list boxes by
-sending `listBoxDisplayingAtOnce:applying:`. Otherwise they can be created by
+include a transformation rule. If the senders have access to a component supplier,
+drop-downs can be created by sending `dropdownListApplying:` and list boxes by
+sending `listBoxDisplayingAtOnce:applying:`. Otherwise, they can be created by
 sending the corresponding instance creation method in `SingleSelectionWebView`.
 
 ## Version 10 to 11
@@ -123,7 +123,7 @@ automatically attached to it. So you have to:
 
 ## Version 9 to 10
 
-- If you we're directly referencing `WillowCssStyles` or `WillowConstants` now
+- If you were directly referencing `WillowCssStyles` or `WillowConstants` now
   you need to include the `Willow` shared pool and use `Classification` and
   `Constants`, and change the message sending so, for example:
 `WillowCssStyles willow` turns into `Classification >> #willow`.
@@ -134,7 +134,7 @@ automatically attached to it. So you have to:
 
 ## Version 8 to 9
 
-The following methods has been deprecated and can be automatically converted
+The following methods have been deprecated and can be automatically converted
 using the proposed rewrite expressions:
 
 - `TableWebViewBuilder >> addColumnTitled: aTitle rendering: aRenderingCommand`
@@ -143,7 +143,7 @@ using the proposed rewrite expressions:
     `@receiver addColumnTitled: `@aTitle rendering: `@aRenderingCommand
   ```
 
-  ->
+  →
 
   ```smalltalk
   `@receiver addColumn: [ :column | column titled: `@aTitle;
@@ -159,7 +159,7 @@ using the proposed rewrite expressions:
     applyingToCells: `@aCellCommand applyingToHeading:`@aHeadingCommand
   ```
 
-  ->
+  →
 
   ```smalltalk
   `@receiver addColumn: [ :column |
@@ -180,7 +180,7 @@ using the proposed rewrite expressions:
     summarizedWith: `@aFooterRenderingCommand applyingToFooter: `@aFooterCommand
   ```
 
-  ->
+  →
 
   ```smalltalk
   `@receiver addColumn: [ :column |
@@ -197,20 +197,20 @@ using the proposed rewrite expressions:
   `@receiver addUntitledColumnRendering: `@aRenderingCommand'
   ```
 
-  ->
+  →
 
   ```smalltalk
   `@receiver addColumn: [ :column | column rendering: `@aRenderingCommand ]
   ```
 
-The following method has been deprecated and the action is just remove the
+The following method has been deprecated, and the action is just to remove the
 senders, because now tables built using the builder will automatically detect if
 a header is needed or not.
 
 - `TableWebViewBuilder >> beHeadless`
 
-The following methods has been deprecated and the senders must be adapted to use
-the TableWebViewBuilder API:
+The following methods have been deprecated, and the senders must be adapted to use
+the `TableWebViewBuilder` API:
 
 - `TableWebView class >> definedBy: aColumnRendererCollection applying:
   aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand`

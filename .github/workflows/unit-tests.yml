@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        smalltalk: [ Pharo64-10, Pharo64-9.0, Pharo64-8.0 ]
+        smalltalk: [ Pharo64-11, Pharo64-10, Pharo64-9.0, Pharo64-8.0 ]
     name: ${{ matrix.smalltalk }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Smalltalk CI
         uses: hpi-swa/setup-smalltalkCI@v1
         with:
@@ -21,7 +21,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         timeout-minutes: 15
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v3
         with:
-          name: ${{matrix.os}}-${{matrix.smalltalk}}
+          name: Unit-Tests-${{matrix.smalltalk}}
           token: ${{ secrets.CODECOV_TOKEN }}

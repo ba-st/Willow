@@ -1,6 +1,6 @@
 # Willow Documentation
 
-Ready-to-use components for interactive web applications + framework agnostic integration.
+Ready-to-use components for interactive web applications + framework-agnostic integration.
 
 To learn about the project, [install it](how-to/how-to-load-in-pharo.md) and
 read the following documents:

@@ -30,10 +30,10 @@ You can unregister your app from the dispatcher at any time by sending:
 Willow supports two different registration modes: Deployment and Development.
 The main differences are:
 
-- Determining the type of self hosted libraries. In Development you will get
+- Determining the type of self-hosted libraries. In Development, you will get
   the non-minified files served and in Deployment you will get the minified versions.
   This is resolved in collaboration with the libraries.
-- The mode is also used to change the file handler behavior, so as to ignore
+- The mode is also used to change the file handler behavior, to ignore
   the libraries corresponding to non-matching modes
 - It can be extended and used for your own purposes, when there's code that
   needs to differ between Development and Deployment:
@@ -56,12 +56,12 @@ For the server-side configuration, you must re-implement
   dump a stack trace and log errors.
 - `updateRootWith:` and `renderNonAjaxErrorsWith:` can be used to customize what
   happens when rendering errors with code 5xx.
-- Sending `on:do:` you can setup error handlers specific for AJAX calls. In case
+- Sending `on:do:` you can set up error handlers specific for AJAX calls. In case
   no handler applies the standard handling mechanics take control.
 
-For the client-side some Javascript is required, because if the server is not
+For the client-side some JavaScript is required, because if the server is not
 responding some feedback should be provided to the user. You can write it by hand
-or just creates a library and use the Seaside rendering/javascript capabilities
+or just creates a library and use the Seaside rendering/JavaScript capabilities
 to produce it. You can see a working example in the [Willow Playground](https://github.com/ba-st/Willow-Playground),
 just browse `Smalltalks2017FileMetadataLibrary >> willowplaygrounderrorhandlerJsContent`.
 
@@ -115,7 +115,7 @@ good idea to have a unique point of interaction with your backend services, API
 or in-image model. To achieve that Willow applications provide a hook so you can
 have your own "Application Context" easily accessible from each component.
 
-You must subclass WillowSession, and hook up in the method `startUpApplicationContextFor:`
+You must subclass `WillowSession`, and hook up in the method `startUpApplicationContextFor:`
 creating or getting your application context and saving it on the session.
 (Don't forget to do `super startUpApplicationContextFor: aWillowApp`). Later,
 you can easily access your context by collaborating with the session by sending

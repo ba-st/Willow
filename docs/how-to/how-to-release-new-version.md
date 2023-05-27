@@ -7,7 +7,7 @@ using the GitHub releases support.
 - The following code changes should be made before the
   release:
   - Update version number in `package.json`
-  - If there was changes in WillowNamespaceFileMetadataLibrary file contents
+  - If there were changes in `WillowNamespaceFileMetadataLibrary` file contents
   (there's a test checking that using the hash)
   - Update version number in `WillowNamespaceFileMetadataLibrary class>>version`
   - Fix the test cases related to version numbers

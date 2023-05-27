@@ -2,7 +2,7 @@
 
 ![Logo](assets/logo.svg)
 
-Ready-to-use components for interactive web applications + framework agnostic integration
+Ready-to-use components for interactive web applications + framework-agnostic integration
 
 [![Unit Tests](https://github.com/ba-st/Willow/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/ba-st/Willow/actions/workflows/unit-tests.yml/badge.svg)
 [![Coverage Status](https://codecov.io/github/ba-st/Willow/coverage.svg?branch=release-candidate)](https://codecov.io/gh/ba-st/Willow/branch/release-candidate)
@@ -13,6 +13,7 @@ Ready-to-use components for interactive web applications + framework agnostic in
 [![Pharo 8.0](https://img.shields.io/badge/Pharo-8.0-informational)](https://pharo.org)
 [![Pharo 9.0](https://img.shields.io/badge/Pharo-9.0-informational)](https://pharo.org)
 [![Pharo 10](https://img.shields.io/badge/Pharo-10-informational)](https://pharo.org)
+[![Pharo 11](https://img.shields.io/badge/Pharo-11-informational)](https://pharo.org)
 
 [Willow](https://github.com/ba-st/Willow) is developed using [Smalltalk](http://stephane.ducasse.free.fr/FreeBooks.html),
  providing a simple interface for your web application, no matter the front-end
@@ -37,7 +38,7 @@ is also recommended.
 
 ## Installation
 
-To load the project in a Pharo image follow this [instructions](docs/how-to/how-to-load-in-pharo.md).
+To load the project in a Pharo image follow these [instructions](docs/how-to/how-to-load-in-pharo.md).
 
 ## Contributing
 
@@ -48,11 +49,11 @@ Check the [Contribution Guidelines](CONTRIBUTING.md)
 - Willow was first presented in the [Smalltalks 2013 Conference](http://fast.org.ar).
 A video of the presentation can be seen [here](https://youtu.be/JezITRHCBuc?list=PLCGAAdUizzH027lLWKXh_44cGuEsay7-R).
 
-- A follow up presentation was made in the Smalltalks 2017 Conference. The slides
+- A follow-up presentation was made in the Smalltalks 2017 Conference. The slides
   are available [here](https://www.slideshare.net/gcotelli/willow-101-82159948)
   and a video of the presentation can be seen [here](https://youtu.be/-QmvIBLDASM).
 
-- Another follow up presentation was made in the ESUG 2018 and Smalltalks 2018
+- Another follow-up presentation was made in the ESUG 2018 and Smalltalks 2018
   conferences. The slides are available [here](https://www.slideshare.net/FASTPresentations/willow-the-interaction-tour-by-maxi-tabacman)
   and a video of the presentation can be seen [here](https://youtu.be/U6-JoPRcXHc)
 

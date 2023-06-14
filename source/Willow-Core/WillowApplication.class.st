@@ -42,6 +42,12 @@ WillowApplication class >> installFileHandlerAccordingTo: theDeploymentMode [
 	WADeploymentAwareFileHandler installAsFileHandlerAccordingTo: theDeploymentMode
 ]
 
+{ #category : #testing }
+WillowApplication class >> isAbstract [
+
+	^ self = WillowApplication
+]
+
 { #category : #'private-utility' }
 WillowApplication class >> registerAsApplicationUsing: deploymentModeClass [
 

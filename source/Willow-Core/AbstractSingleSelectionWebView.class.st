@@ -2,7 +2,7 @@
 I'm an abstract class representing single selection web views
 "
 Class {
-	#name : #SingleSelectionWebViewBehavior,
+	#name : #AbstractSingleSelectionWebView,
 	#superclass : #WAPainter,
 	#instVars : [
 		'availableElements',
@@ -12,14 +12,20 @@ Class {
 	#category : #'Willow-Core-WebViews'
 }
 
+{ #category : #testing }
+AbstractSingleSelectionWebView class >> isAbstract [
+
+	^ self = AbstractSingleSelectionWebView
+]
+
 { #category : #'instance creation' }
-SingleSelectionWebViewBehavior class >> new [
+AbstractSingleSelectionWebView class >> new [
 
 	^ super new initialize
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> allowAnyOf: anElementCollection [
+AbstractSingleSelectionWebView >> allowAnyOf: anElementCollection [
 
 	availableElements := anElementCollection.
 	"Try to keep the current selection, if the new elements includes some object equal to the previous selection make it the chosen one."
@@ -27,32 +33,32 @@ SingleSelectionWebViewBehavior >> allowAnyOf: anElementCollection [
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> allowsAnySatisfying: aMatchBlock [
+AbstractSingleSelectionWebView >> allowsAnySatisfying: aMatchBlock [
 
 	^availableElements anySatisfy: aMatchBlock
 ]
 
 { #category : #private }
-SingleSelectionWebViewBehavior >> choose: anElement [
+AbstractSingleSelectionWebView >> choose: anElement [
 
 	chosenElementOptional := Optional containing: anElement.
 	self notifyInterested
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> chooseAny [
+AbstractSingleSelectionWebView >> chooseAny [
 
 	self chooseAnySatisfying: [ :element | true ] ifNone: [  ]
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> chooseAnySatisfying: aMatchBlock ifNone: aBlock [
+AbstractSingleSelectionWebView >> chooseAnySatisfying: aMatchBlock ifNone: aBlock [
 
 	availableElements detect: aMatchBlock ifFound: [ :found | self choose: found ] ifNone: aBlock
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> chooseEqualTo: anElement [
+AbstractSingleSelectionWebView >> chooseEqualTo: anElement [
 
 	self
 		chooseAnySatisfying: [ :element | element = anElement ]
@@ -60,26 +66,26 @@ SingleSelectionWebViewBehavior >> chooseEqualTo: anElement [
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> currentSelection [
+AbstractSingleSelectionWebView >> currentSelection [
 
 	^ self currentSelectionIfNone: [ SelectionIsInvalid signal: 'Nothing is selected' ]
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> currentSelectionIfNone: aBlock [
+AbstractSingleSelectionWebView >> currentSelectionIfNone: aBlock [
 
 	^ chosenElementOptional withContentDo: [ :element | element ] ifUnused: aBlock
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> disallowAll [
+AbstractSingleSelectionWebView >> disallowAll [
 
 	availableElements := #().
 	self invalidateSelection
 ]
 
 { #category : #initialization }
-SingleSelectionWebViewBehavior >> initialize [
+AbstractSingleSelectionWebView >> initialize [
 
 	super initialize.
 	interested := Set new.
@@ -87,32 +93,32 @@ SingleSelectionWebViewBehavior >> initialize [
 ]
 
 { #category : #private }
-SingleSelectionWebViewBehavior >> invalidateSelection [
+AbstractSingleSelectionWebView >> invalidateSelection [
 
 	chosenElementOptional := Optional unusedBecause: 'There''s no element selected'.
 	self notifyInterested
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> notifyChangesTo: aSupervisor [
+AbstractSingleSelectionWebView >> notifyChangesTo: aSupervisor [
 
 	interested add: aSupervisor
 ]
 
 { #category : #private }
-SingleSelectionWebViewBehavior >> notifyInterested [
+AbstractSingleSelectionWebView >> notifyInterested [
 
 	interested do: [ :anInterested | anInterested changeNotifiedBy: self ]
 ]
 
 { #category : #configuring }
-SingleSelectionWebViewBehavior >> on [
+AbstractSingleSelectionWebView >> on [
 
 	^ self subclassResponsibility
 ]
 
 { #category : #'Single Selection-API' }
-SingleSelectionWebViewBehavior >> withCurrentSelectionDo: aBlock [
+AbstractSingleSelectionWebView >> withCurrentSelectionDo: aBlock [
 
 	^ chosenElementOptional withContentDo: aBlock ifUnused: [  ]
 ]

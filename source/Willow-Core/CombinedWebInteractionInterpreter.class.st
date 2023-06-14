@@ -1,6 +1,6 @@
 Class {
 	#name : #CombinedWebInteractionInterpreter,
-	#superclass : #WebInteractionInterpreterBehavior,
+	#superclass : #AbstractWebInteractionInterpreter,
 	#instVars : [
 		'interpreters'
 	],

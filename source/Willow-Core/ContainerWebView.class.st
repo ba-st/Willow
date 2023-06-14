@@ -39,7 +39,7 @@ ContainerWebView >> initializeWrapping: aRenderable intoElementBuiltUsing: anEle
 	renderableContent := aRenderable.
 	commandToComponent := aComponentCommand.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'container'.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToClick
 ]
 
 { #category : #configuring }

@@ -1,11 +1,11 @@
 Class {
-	#name : #DocumentLoadTrigger,
+	#name : #DocumentLoadTriggeringPolicy,
 	#superclass : #TriggeringPolicy,
 	#category : #'Willow-Core-WebInteraction'
 }
 
 { #category : #evaluating }
-DocumentLoadTrigger >> apply: anAsynchronousCall to: aComponent on: aCanvas [
+DocumentLoadTriggeringPolicy >> apply: anAsynchronousCall to: aComponent on: aCanvas [
 
 	aCanvas document addLoadScript: anAsynchronousCall
 ]

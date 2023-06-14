@@ -1,6 +1,6 @@
 Class {
 	#name : #CombinedEventInterpreterDispatcher,
-	#superclass : #EventInterpreterDispatcherBehavior,
+	#superclass : #EventInterpreterDispatcher,
 	#instVars : [
 		'eventInterpreterDispatchers'
 	],

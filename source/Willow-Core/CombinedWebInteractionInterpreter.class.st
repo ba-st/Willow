@@ -166,6 +166,13 @@ CombinedWebInteractionInterpreter >> setValueTo: aValueProvider withoutTriggerin
 ]
 
 { #category : #Configuring }
+CombinedWebInteractionInterpreter >> showLoadingNotificationDisplaying: aWebView applying: aComponentCommand [
+
+	self interpretersDo: [ :interpreter |
+		interpreter showLoadingNotificationDisplaying: aWebView applying: aComponentCommand ]
+]
+
+{ #category : #Configuring }
 CombinedWebInteractionInterpreter >> showLoadingNotificationStyledAsAll: classes [
 
 	self interpretersDo: [ :interpreter | interpreter showLoadingNotificationStyledAsAll: classes ]

@@ -154,6 +154,12 @@ WebInteractionInterpreterBehavior >> show: aRenderable whileCallingServerToRende
 ]
 
 { #category : #Configuring }
+WebInteractionInterpreterBehavior >> showLoadingNotificationDisplaying: aWebView applying: aComponentCommand [
+
+	self subclassResponsibility
+]
+
+{ #category : #Configuring }
 WebInteractionInterpreterBehavior >> showLoadingNotificationStyledAsAll: classes [
 
 	self subclassResponsibility

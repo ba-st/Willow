@@ -2,18 +2,20 @@
 I'm a group of radio buttons allowing the user to select one of many options.
 "
 Class {
-	#name : #RadioGroupWebView,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#name : 'RadioGroupWebView',
+	#superclass : 'SingleSelectionWebViewBehavior',
 	#instVars : [
 		'interactionInterpreter',
 		'renderingBlock',
 		'labelCommand',
 		'inputCommand'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance creation' }
+{ #category : 'Instance creation' }
 RadioGroupWebView class >> new [
 
 	^self 
@@ -22,7 +24,7 @@ RadioGroupWebView class >> new [
 		applyingToInput: []
 ]
 
-{ #category : #'Instance creation' }
+{ #category : 'Instance creation' }
 RadioGroupWebView class >> renderingWith: aRenderingBlock applyingToLabel: aLabelCommand applyingToInput: anInputCommand [
 
 	^super new
@@ -31,7 +33,7 @@ RadioGroupWebView class >> renderingWith: aRenderingBlock applyingToLabel: aLabe
 		applyingToInput: anInputCommand asWebComponentCommand
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 RadioGroupWebView >> initializeRenderingWith: aRenderingBlock applyingToLabel: aLabelCommand applyingToInput: anInputCommand [
 
 	labelCommand := aLabelCommand.
@@ -40,13 +42,13 @@ RadioGroupWebView >> initializeRenderingWith: aRenderingBlock applyingToLabel: a
 	renderingBlock := aRenderingBlock
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 RadioGroupWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 RadioGroupWebView >> renderContentOn: aCanvas [
 
 	aCanvas radioGroup
@@ -56,13 +58,13 @@ RadioGroupWebView >> renderContentOn: aCanvas [
 			availableElements do: [ :element | self renderRadioButtonFor: element asPartOf: radioGroup on: aCanvas ] ]
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 RadioGroupWebView >> renderLabelContentFor: anElement on: aCanvas [
 
 	aCanvas render: (renderingBlock value: anElement)
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 RadioGroupWebView >> renderLabelFor: radioButtonId on: aCanvas with: aRenderable [
 
 	aCanvas label
@@ -70,7 +72,7 @@ RadioGroupWebView >> renderLabelFor: radioButtonId on: aCanvas with: aRenderable
 		with: aRenderable applying: labelCommand
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 RadioGroupWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGroup on: aCanvas [
 
 	| radioButtonId |

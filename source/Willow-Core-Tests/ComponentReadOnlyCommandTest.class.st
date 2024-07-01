@@ -2,12 +2,14 @@
 A ComponentReadOnlyCommandTest is a test class for testing the behavior of ComponentReadOnlyCommand
 "
 Class {
-	#name : #ComponentReadOnlyCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ComponentReadOnlyCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 ComponentReadOnlyCommandTest >> testApplyToOn [
 
 	| html |

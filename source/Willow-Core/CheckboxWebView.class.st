@@ -2,8 +2,8 @@
 I'm a binary choice web view implemented as a checkbox
 "
 Class {
-	#name : #CheckboxWebView,
-	#superclass : #BinaryChoiceWebViewBehavior,
+	#name : 'CheckboxWebView',
+	#superclass : 'BinaryChoiceWebViewBehavior',
 	#instVars : [
 		'commandToComponent',
 		'interactionInterpreter',
@@ -11,10 +11,12 @@ Class {
 		'isChecked',
 		'labelOptional'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CheckboxWebView class >> labeled: aRenderable onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent [
 
 	^ self
@@ -24,7 +26,7 @@ CheckboxWebView class >> labeled: aRenderable onModel: anObjectToUseWhenOn offMo
 		applying: aCommandToComponent
 ]
 
-{ #category : #'private-instance creation' }
+{ #category : 'private-instance creation' }
 CheckboxWebView class >> labeledAccordingTo: aLabelOptional onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent [
 
 	^ (super onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff)
@@ -32,13 +34,13 @@ CheckboxWebView class >> labeledAccordingTo: aLabelOptional onModel: anObjectToU
 		applying: aCommandToComponent asWebComponentCommand
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CheckboxWebView class >> onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff [
 
 	^ self onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: [ :checkbox |  ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CheckboxWebView class >> onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent [
 
 	^ self
@@ -48,19 +50,19 @@ CheckboxWebView class >> onModel: anObjectToUseWhenOn offModel: anObjectToUseWhe
 		applying: aCommandToComponent
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 CheckboxWebView >> beIdentifiable [
 
 	^ identifierAssigner beRequired
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 CheckboxWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 CheckboxWebView >> initializeLabeledAccordingTo: anOptionalLabel applying: aCommandToComponent [
 
 	labelOptional := anOptionalLabel.
@@ -70,13 +72,13 @@ CheckboxWebView >> initializeLabeledAccordingTo: anOptionalLabel applying: aComm
 	isChecked := true
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 CheckboxWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 CheckboxWebView >> renderContentOn: aCanvas [
 
 	| checkbox |
@@ -90,7 +92,7 @@ CheckboxWebView >> renderContentOn: aCanvas [
 	interactionInterpreter applyTo: checkbox on: aCanvas
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 CheckboxWebView >> renderOptionalLabelRelatedTo: checkbox on: aCanvas [
 
 	labelOptional
@@ -106,21 +108,21 @@ CheckboxWebView >> renderOptionalLabelRelatedTo: checkbox on: aCanvas [
 		ifUnused: [ checkbox beIdentifiableUsing: identifierAssigner ]
 ]
 
-{ #category : #'Binary Choice-API' }
+{ #category : 'Binary Choice-API' }
 CheckboxWebView >> selectOffModel [
 
 	super selectOffModel.
 	isChecked := false
 ]
 
-{ #category : #'Binary Choice-API' }
+{ #category : 'Binary Choice-API' }
 CheckboxWebView >> selectOnModel [
 
 	super selectOnModel.
 	isChecked := true
 ]
 
-{ #category : #'Binary Choice-API' }
+{ #category : 'Binary Choice-API' }
 CheckboxWebView >> toggleCurrentSelection [
 
 	isChecked := isChecked not.

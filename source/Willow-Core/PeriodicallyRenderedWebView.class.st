@@ -2,8 +2,8 @@
 I'm a periodically rendered web view, easing the burden of refreshing automatically some content.
 "
 Class {
-	#name : #PeriodicallyRenderedWebView,
-	#superclass : #WAPainter,
+	#name : 'PeriodicallyRenderedWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'stopRenderingContent',
 		'refreshCommand',
@@ -11,10 +11,12 @@ Class {
 		'conditionBlock',
 		'viewToRefresh'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 PeriodicallyRenderedWebView class >> evaluating: aRefreshCommand every: aNumber millisecondsThenRendering: aViewToRender [
 
 	^ self
@@ -24,7 +26,7 @@ PeriodicallyRenderedWebView class >> evaluating: aRefreshCommand every: aNumber 
 		until: [ false ]
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 PeriodicallyRenderedWebView class >> evaluating: aRefreshCommand every: aNumber millisecondsThenRendering: aViewToRender until: aConditionBlock [
 
 	^ self new
@@ -34,7 +36,7 @@ PeriodicallyRenderedWebView class >> evaluating: aRefreshCommand every: aNumber 
 		until: aConditionBlock
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 PeriodicallyRenderedWebView >> initializeEvaluating: aRefreshCommand every: aNumber millisecondsThenRendering: aView until: aConditionBlock [
 
 	refreshCommand := aRefreshCommand.
@@ -44,7 +46,7 @@ PeriodicallyRenderedWebView >> initializeEvaluating: aRefreshCommand every: aNum
 	self initializeViewToRefreshFrom: aView.
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 PeriodicallyRenderedWebView >> initializeViewToRefreshFrom: aView [
 
 	viewToRefresh := ContainerWebView
@@ -54,7 +56,7 @@ PeriodicallyRenderedWebView >> initializeViewToRefreshFrom: aView [
 	viewToRefresh beIdentifiable
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PeriodicallyRenderedWebView >> refreshAndRenderContentOn: aCanvas [
 
 	refreshCommand value.
@@ -65,14 +67,14 @@ PeriodicallyRenderedWebView >> refreshAndRenderContentOn: aCanvas [
 		addLoadScript: ( aCanvas jQuery ajax callback: [ stopRenderingContent := conditionBlock value ] )
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PeriodicallyRenderedWebView >> refreshAndRenderOn: aCanvas [
 
 	refreshCommand value.
 	aCanvas render: viewToRefresh
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 PeriodicallyRenderedWebView >> renderContentOn: aCanvas [
 
 	self refreshAndRenderOn: aCanvas.
@@ -84,7 +86,7 @@ PeriodicallyRenderedWebView >> renderContentOn: aCanvas [
 		until: [stopRenderingContent]
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PeriodicallyRenderedWebView >> scriptToRefreshAndRenderContentOn: aCanvas [
 
 	^ ( aCanvas locate: viewToRefresh )

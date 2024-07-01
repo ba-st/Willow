@@ -2,22 +2,24 @@
 I'm a WebInteractionCommand that specifies how to serialize the component state.
 "
 Class {
-	#name : #SerializationCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'SerializationCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'priorityActions',
 		'coverage'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'private - instance creation' }
+{ #category : 'private - instance creation' }
 SerializationCommand class >> executing: aPriorityAction covering: aListOfSelectors [
 
 	^ self new initializeExecuting: aPriorityAction covering: aListOfSelectors
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SerializationCommand class >> forChildForm [
 
 	^ self
@@ -29,7 +31,7 @@ SerializationCommand class >> forChildForm [
 		covering: #(forChildForm)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SerializationCommand class >> forCurrentObject [
 
 	^ self
@@ -41,7 +43,7 @@ SerializationCommand class >> forCurrentObject [
 		covering: #(forCurrentObject)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SerializationCommand class >> forCurrentObjectWithHiddenInputs [
 
 	^ self
@@ -53,7 +55,7 @@ SerializationCommand class >> forCurrentObjectWithHiddenInputs [
 		covering: #(forCurrentObject forCurrentObjectWithHiddenInputs)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SerializationCommand class >> forForm: anIdentifiedForm [
 
 	^ self
@@ -65,7 +67,7 @@ SerializationCommand class >> forForm: anIdentifiedForm [
 		covering: #()
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SerializationCommand class >> forParentForm [
 
 	^ self
@@ -77,38 +79,38 @@ SerializationCommand class >> forParentForm [
 		covering: #(forParentForm)
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SerializationCommand >> initializeExecuting: aPriorityAction covering: aListOfSelectors [
 
 	priorityActions := Array with: aPriorityAction.
 	coverage := aListOfSelectors
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SerializationCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SerializationCommand >> priorityActions [
 
 	^ priorityActions
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 SerializationCommand >> requiresSerialization [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SerializationCommand >> serializationCoverage [
 
 	^ coverage
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SerializationCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

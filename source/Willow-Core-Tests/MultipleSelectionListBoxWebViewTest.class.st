@@ -2,27 +2,29 @@
 A MultipleSelectionListBoxWebViewTest is a test class for testing the behavior of MultipleSelectionListBoxWebView
 "
 Class {
-	#name : #MultipleSelectionListBoxWebViewTest,
-	#superclass : #BWRenderingTest,
+	#name : 'MultipleSelectionListBoxWebViewTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : #'Willow-Core-Tests-WebViews'
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #support }
+{ #category : 'support' }
 MultipleSelectionListBoxWebViewTest >> changeNotifiedBy: aDropDownListWebView [ 
 	
 	notificationWasReceived := true
 ]
 
-{ #category : #support }
+{ #category : 'support' }
 MultipleSelectionListBoxWebViewTest >> newListBox [
 
 	^ MultipleSelectionListBoxWebView applying: [ :listBox |  ]
 ]
 
-{ #category : #'tests-Multiple Selection-API' }
+{ #category : 'tests-Multiple Selection-API' }
 MultipleSelectionListBoxWebViewTest >> testAllowsAnySatisfying [
 
 	| listBox |
@@ -38,7 +40,7 @@ MultipleSelectionListBoxWebViewTest >> testAllowsAnySatisfying [
 		deny: (listBox allowsAnySatisfying: [ :element | element isZero ])
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 MultipleSelectionListBoxWebViewTest >> testBeIdentifiable [
 
 	| listBox html |
@@ -53,7 +55,7 @@ MultipleSelectionListBoxWebViewTest >> testBeIdentifiable [
 		equals: '<select name="1" id="list-box-id2" multiple></select><input name="3" type="hidden"/>'
 ]
 
-{ #category : #'tests-Multiple Selection-API' }
+{ #category : 'tests-Multiple Selection-API' }
 MultipleSelectionListBoxWebViewTest >> testChooseAll [
 
 	| listBox |
@@ -79,7 +81,7 @@ MultipleSelectionListBoxWebViewTest >> testChooseAll [
 		assert: listBox currentSelection equals: #(2 4 3 1)
 ]
 
-{ #category : #'tests-Multiple Selection-API' }
+{ #category : 'tests-Multiple Selection-API' }
 MultipleSelectionListBoxWebViewTest >> testChooseAllIn [
 
 	| listBox |
@@ -100,7 +102,7 @@ MultipleSelectionListBoxWebViewTest >> testChooseAllIn [
 	self assert: listBox currentSelection equals: #(1)
 ]
 
-{ #category : #'tests-Multiple Selection-API' }
+{ #category : 'tests-Multiple Selection-API' }
 MultipleSelectionListBoxWebViewTest >> testChooseAllInWhenNotAvailable [
 
 	| listBox |
@@ -121,7 +123,7 @@ MultipleSelectionListBoxWebViewTest >> testChooseAllInWhenNotAvailable [
 	self assert: listBox currentSelection isEmpty
 ]
 
-{ #category : #'tests-Multiple Selection-API' }
+{ #category : 'tests-Multiple Selection-API' }
 MultipleSelectionListBoxWebViewTest >> testChooseAllMatching [
 
 	| listBox |
@@ -133,7 +135,7 @@ MultipleSelectionListBoxWebViewTest >> testChooseAllMatching [
 	self assert: listBox currentSelection equals: #(2 4)
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 MultipleSelectionListBoxWebViewTest >> testIdentifierOn [
 
 	| listBox html |
@@ -151,7 +153,7 @@ MultipleSelectionListBoxWebViewTest >> testIdentifierOn [
 		equals: '<select name="2" id="list-box-id1" multiple></select><input name="4" type="hidden"/>'
 ]
 
-{ #category : #'tests-Multiple Selection-API' }
+{ #category : 'tests-Multiple Selection-API' }
 MultipleSelectionListBoxWebViewTest >> testNotifyChangesTo [
 
 	| singleSelectionView |
@@ -165,7 +167,7 @@ MultipleSelectionListBoxWebViewTest >> testNotifyChangesTo [
 	self assert: notificationWasReceived
 ]
 
-{ #category : #'tests-Multiple Selection-API' }
+{ #category : 'tests-Multiple Selection-API' }
 MultipleSelectionListBoxWebViewTest >> testNotifyChangesWhenSelectionChanged [
 
 	| listBox |
@@ -182,7 +184,7 @@ MultipleSelectionListBoxWebViewTest >> testNotifyChangesWhenSelectionChanged [
 	self assert: notificationWasReceived
 ]
 
-{ #category : #'tests-Multiple Selection-API' }
+{ #category : 'tests-Multiple Selection-API' }
 MultipleSelectionListBoxWebViewTest >> testNotifyChangesWhenSelectionDoesNotChange [
 
 	| listBox |
@@ -200,7 +202,7 @@ MultipleSelectionListBoxWebViewTest >> testNotifyChangesWhenSelectionDoesNotChan
 		assert: listBox currentSelection isEmpty
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 MultipleSelectionListBoxWebViewTest >> testOn [
 
 	| listBox html |
@@ -216,7 +218,7 @@ MultipleSelectionListBoxWebViewTest >> testOn [
 			'<select name="1" id="select-id2" multiple></select><input name="3" type="hidden"/><script type="text/javascript">$("#select-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 MultipleSelectionListBoxWebViewTest >> testRenderContentOn [
 
 	| listBox html |
@@ -228,7 +230,7 @@ MultipleSelectionListBoxWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<select name="1" multiple></select><input name="2" type="hidden"/>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 MultipleSelectionListBoxWebViewTest >> testRenderContentOnWithCommands [
 
 	| listBox html |
@@ -239,7 +241,7 @@ MultipleSelectionListBoxWebViewTest >> testRenderContentOnWithCommands [
 	self assert: html equals: '<select name="1" class="willow" multiple></select><input name="2" type="hidden"/>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 MultipleSelectionListBoxWebViewTest >> testRenderContentOnWithElements [
 
 	| listBox html |
@@ -251,7 +253,7 @@ MultipleSelectionListBoxWebViewTest >> testRenderContentOnWithElements [
 	self assert: html equals: '<select name="1" multiple><option value="1">One</option><option value="2">Two</option><option value="3">Three</option></select><input name="2" type="hidden"/>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 MultipleSelectionListBoxWebViewTest >> testRenderContentOnWithElementsAndSomethingSelected [
 
 	| listBox html |

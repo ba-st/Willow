@@ -2,27 +2,29 @@
 I'm a basic Willow application providing some guidance to the developers.
 "
 Class {
-	#name : #WillowApplication,
-	#superclass : #WAComponent,
+	#name : 'WillowApplication',
+	#superclass : 'WAComponent',
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-Core-Applications'
+	#category : 'Willow-Core-Applications',
+	#package : 'Willow-Core',
+	#tag : 'Applications'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication class >> applicationTitle [
 	
 	^self subclassResponsibility 
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 WillowApplication class >> configureErrorHandlerInDeployedModeTo: aWAApplication [
 
 	aWAApplication filter configuration at: #exceptionHandler put: self errorHandlerFactory
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication class >> errorHandlerFactory [
 
 	"By default we don't do anything special with the AJAX errors, but my subclasses can specify some specific handling."
@@ -30,19 +32,19 @@ WillowApplication class >> errorHandlerFactory [
 	^ AjaxAwareErrorHandlerFactory new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication class >> handlerName [
 
 	^self subclassResponsibility 
 ]
 
-{ #category : #'private-utility' }
+{ #category : 'private-utility' }
 WillowApplication class >> installFileHandlerAccordingTo: theDeploymentMode [
 
 	WADeploymentAwareFileHandler installAsFileHandlerAccordingTo: theDeploymentMode
 ]
 
-{ #category : #'private-utility' }
+{ #category : 'private-utility' }
 WillowApplication class >> registerAsApplicationUsing: deploymentModeClass [
 
 	| application |
@@ -56,81 +58,81 @@ WillowApplication class >> registerAsApplicationUsing: deploymentModeClass [
 	^ application
 ]
 
-{ #category : #utility }
+{ #category : 'utility' }
 WillowApplication class >> registerAsDeployedApplication [
 
 	^ self registerAsApplicationUsing: WAApplicationDeployed
 ]
 
-{ #category : #utility }
+{ #category : 'utility' }
 WillowApplication class >> registerAsDevelopmentApplication [
 
 	^ self registerAsApplicationUsing: WAApplicationInDevelopment
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication class >> sessionClass [
 
 	^ WillowSession
 ]
 
-{ #category : #utility }
+{ #category : 'utility' }
 WillowApplication class >> unregisterFromApplications [
 
 	WAEnvironment registerDefaultRequestHandlers.
 	^ WAAdmin unregister: self handlerName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication >> applicationTitle [
 	
 	^self class applicationTitle  
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication >> componentSupplierForApplication [
 
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication >> contentView [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication >> deploymentMode [
 
 	^ (self session preferenceAt: WillowSystemConfiguration deploymentModeClassKey ifAbsent: [ WAApplicationInDevelopment ]) new
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 WillowApplication >> initialRequest: aRequest [
 
 	self session startUpApplicationContextFor: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication >> jQueryLibrary [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication >> language [
 
 	^ WALocale fromString: (self session preferenceAt: WillowSystemConfiguration languageKey ifAbsent: [ 'en' ])
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 WillowApplication >> renderContentOn: aCanvas [
 
 	aCanvas render: self contentView.
 	self renderDialogAndNotificationSectionsOn: aCanvas
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 WillowApplication >> renderDialogAndNotificationSectionsOn: aCanvas [
 
 	"Render dialog and notification sections. These are needed for the dialog and notification support."
@@ -141,7 +143,7 @@ WillowApplication >> renderDialogAndNotificationSectionsOn: aCanvas [
 	aCanvas div id: Constants >> #willow >> #notificationSectionName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplication >> requiredLibraries [
 
 	"This hook provides an easy way to include additional libraries to the ones declared by the component supplier"
@@ -149,7 +151,7 @@ WillowApplication >> requiredLibraries [
 	^ #()
 ]
 
-{ #category : #updating }
+{ #category : 'updating' }
 WillowApplication >> updateRoot: aRoot [
 
 	super updateRoot: aRoot.

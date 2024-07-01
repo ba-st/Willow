@@ -2,22 +2,24 @@
 A SerializationCommandTest is a test class for testing the behavior of SerializationCommand
 "
 Class {
-	#name : #SerializationCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'SerializationCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SerializationCommandTest >> setUp [
 
 	super setUp.
 	command := SerializationCommand forCurrentObject
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 SerializationCommandTest >> testForChildForm [
 
 	| html |
@@ -37,7 +39,7 @@ SerializationCommandTest >> testForChildForm [
 		equals: '<div id="div-id2"></div><script type="text/javascript">$("#div-id2").click(function(){$.ajax({"type":"POST","url":"/","data":["1",$(this).children("form").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 SerializationCommandTest >> testForCurrentObject [
 
 	| html |
@@ -60,7 +62,7 @@ SerializationCommandTest >> testForCurrentObject [
 			'<div id="div-id2"></div><script type="text/javascript">$("#div-id2").click(function(){$.ajax({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 SerializationCommandTest >> testForCurrentObjectWithHiddenInputs [
 
 	| html |
@@ -80,7 +82,7 @@ SerializationCommandTest >> testForCurrentObjectWithHiddenInputs [
 		equals: '<div id="div-id2"></div><script type="text/javascript">$("#div-id2").click(function(){$.ajax({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 SerializationCommandTest >> testForForm [
 
 	| html |
@@ -106,7 +108,7 @@ SerializationCommandTest >> testForForm [
 			'<form accept-charset="utf-8" method="post" action="/" id="id15"></form><input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(){$.ajax({"type":"POST","url":"/","data":["1",$("#id15").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 SerializationCommandTest >> testForParentForm [
 
 	| html |
@@ -127,13 +129,13 @@ SerializationCommandTest >> testForParentForm [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(){$.ajax({"type":"POST","url":"/","data":["1",$(this).closest("form").find(":input").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 SerializationCommandTest >> testModelLoadingInstructions [
 
 	self assert: command modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 SerializationCommandTest >> testPriorityActions [
 
 	| html |
@@ -154,13 +156,13 @@ SerializationCommandTest >> testPriorityActions [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(){$.ajax({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 SerializationCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization 
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 SerializationCommandTest >> testSerializationCoverage [
 
 	self assert: NullWebInteractionCommand new serializationCoverage isEmpty.
@@ -170,7 +172,7 @@ SerializationCommandTest >> testSerializationCoverage [
 		equals: #(forCurrentObject)
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 SerializationCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

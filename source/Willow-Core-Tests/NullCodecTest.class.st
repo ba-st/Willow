@@ -2,12 +2,14 @@
 An NullCodecTest is a test class for testing the behavior of NullCodec
 "
 Class {
-	#name : #NullCodecTest,
-	#superclass : #TestCase,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'NullCodecTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 NullCodecTest >> testCanCreate [
 
 	self
@@ -16,7 +18,7 @@ NullCodecTest >> testCanCreate [
 		deny: (NullCodec new canCreate: 0)
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 NullCodecTest >> testDecode [
 
 	self
@@ -24,7 +26,7 @@ NullCodecTest >> testDecode [
 		assert: (NullCodec new decode: 'hello') equals: 'hello'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 NullCodecTest >> testEncode [
 
 	self

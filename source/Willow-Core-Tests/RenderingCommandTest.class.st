@@ -2,16 +2,18 @@
 A RenderingCommandTest is a test class for testing the behavior of RenderingCommand
 "
 Class {
-	#name : #RenderingCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'RenderingCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'identifiedView',
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 RenderingCommandTest >> setUp [
 
 	super setUp.
@@ -22,7 +24,7 @@ RenderingCommandTest >> setUp [
 	command := RenderingCommand for: identifiedView
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 RenderingCommandTest >> testModelLoadingInstructions [
 
 	| html |
@@ -43,19 +45,19 @@ RenderingCommandTest >> testModelLoadingInstructions [
 			'<a id="id3"></a><script type="text/javascript">$("#id3").click(function(){$("#container-id1").html("<span>Test</span>")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 RenderingCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 RenderingCommandTest >> testRequiresSerialization [
 
 	self assert: command requiresSerialization 
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 RenderingCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

@@ -2,12 +2,14 @@
 This test case verifies method extensions to Seaside classes
 "
 Class {
-	#name : #WillowSeasideExtensionsTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Applications'
+	#name : 'WillowSeasideExtensionsTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Applications',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Applications'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowSeasideExtensionsTest >> componentSupplier [
 
 	"To support calls for the context componentSupplier"
@@ -15,19 +17,19 @@ WillowSeasideExtensionsTest >> componentSupplier [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowSeasideExtensionsTest >> createHandlers [
 
 	^ Array with: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowSeasideExtensionsTest >> isSession [
 
 	^ true
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowSeasideExtensionsTest >> testComponentSupplier [
 
 	self
@@ -42,7 +44,7 @@ WillowSeasideExtensionsTest >> testComponentSupplier [
 			]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowSeasideExtensionsTest >> testGRSmallOrderedSetAt [
 
 	| orderedSet |
@@ -61,7 +63,7 @@ WillowSeasideExtensionsTest >> testGRSmallOrderedSetAt [
 		assert: (orderedSet at: 3) equals: 'b'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowSeasideExtensionsTest >> testIcon [
 
 	| html |
@@ -71,13 +73,13 @@ WillowSeasideExtensionsTest >> testIcon [
 	self assert: html equals: '<i></i>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowSeasideExtensionsTest >> testJSObjectWillow [
 
 	self assert: JSStream this willow asJavascript equals: 'Willow'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowSeasideExtensionsTest >> testWAUrlSlash [
 
 	| url |

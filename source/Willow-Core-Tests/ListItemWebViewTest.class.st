@@ -2,12 +2,14 @@
 A ListItemWebViewTest is a test class for testing the behavior of ListItemWebView
 "
 Class {
-	#name : #ListItemWebViewTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'ListItemWebViewTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 ListItemWebViewTest >> testRenderContentOn [
 
 	| html |
@@ -22,7 +24,7 @@ ListItemWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<ul><li>Item</li></ul>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 ListItemWebViewTest >> testRenderContentOnWithCommands [
 
 	| html |

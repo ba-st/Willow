@@ -2,25 +2,27 @@
 A FormSubmitCommandTest is a test class for testing the behavior of FormSubmitCommand
 "
 Class {
-	#name : #FormSubmitCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'FormSubmitCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 FormSubmitCommandTest >> setUp [
 
 	super setUp.
 	command := FormSubmitCommand findingComponentUsing: [ :canvas | canvas jQuery this ]
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 FormSubmitCommandTest >> testModelLoadingInstructions [
 
 	| html |
@@ -45,19 +47,19 @@ FormSubmitCommandTest >> testModelLoadingInstructions [
 			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("form.willow").submit()});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 FormSubmitCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 FormSubmitCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization 
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 FormSubmitCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

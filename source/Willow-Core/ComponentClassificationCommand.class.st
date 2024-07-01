@@ -2,33 +2,35 @@
 Command to add css styles to a component (using class:/classes:).
 "
 Class {
-	#name : #ComponentClassificationCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ComponentClassificationCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'cssStyles'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentClassificationCommand class >> toStyleWith: aCssStyle [
 
 	^ self toStyleWithAll: (Array with: aCssStyle)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentClassificationCommand class >> toStyleWithAll: aCssStyleCollection [
 
 	^ self new initializeToStyleWithAll: aCssStyleCollection
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ComponentClassificationCommand >> applyTo: aComponent on: aCanvas [
 
 	^ aComponent classes: cssStyles
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentClassificationCommand >> initializeToStyleWithAll: aCssStyleCollection [
 
 	cssStyles := aCssStyleCollection

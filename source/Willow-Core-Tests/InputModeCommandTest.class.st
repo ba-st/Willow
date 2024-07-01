@@ -2,12 +2,14 @@
 A DateInputModeCommandTest is a test class for testing the behavior of DateInputModeCommand
 "
 Class {
-	#name : #InputModeCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'InputModeCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 InputModeCommandTest >> testApplyDateInputCommand [
 
 	| html |
@@ -17,7 +19,7 @@ InputModeCommandTest >> testApplyDateInputCommand [
 	self assert: html equals: (self renderUsing: [ :canvas | canvas dateInput5 ])
 ]
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 InputModeCommandTest >> testApplyNumberInputCommand [
 
 	| html |
@@ -27,7 +29,7 @@ InputModeCommandTest >> testApplyNumberInputCommand [
 	self assert: html equals: (self renderUsing: [ :canvas | canvas numberInput ])
 ]
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 InputModeCommandTest >> testApplyPasswordInputCommand [
 
 	| html |
@@ -37,7 +39,7 @@ InputModeCommandTest >> testApplyPasswordInputCommand [
 	self assert: html equals: '<input type="password"/>'
 ]
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 InputModeCommandTest >> testApplyTimeInputCommand [
 
 	| html |

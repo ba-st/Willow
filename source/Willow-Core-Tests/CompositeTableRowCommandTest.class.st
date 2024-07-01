@@ -1,10 +1,12 @@
 Class {
-	#name : #CompositeTableRowCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'CompositeTableRowCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 CompositeTableRowCommandTest >> testApplyToForOn [
 
 	| html command |
@@ -21,7 +23,7 @@ CompositeTableRowCommandTest >> testApplyToForOn [
 	self assert: html equals: '<tr id="33"></tr>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 CompositeTableRowCommandTest >> testEmpty [
 
 	| html command |
@@ -35,7 +37,7 @@ CompositeTableRowCommandTest >> testEmpty [
 	self assert: html equals: '<tr></tr>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 CompositeTableRowCommandTest >> testShortcutCreation [
 
 	| html command |
@@ -51,7 +53,7 @@ CompositeTableRowCommandTest >> testShortcutCreation [
 	self assert: html equals: '<tr id="33" class="secret"></tr>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 CompositeTableRowCommandTest >> testShortcutCreationWithEmptyCompositeCommand [
 
 	| html command |

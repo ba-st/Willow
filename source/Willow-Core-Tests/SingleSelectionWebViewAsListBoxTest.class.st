@@ -2,18 +2,20 @@
 A SingleSelectionListBoxWebViewTest is a test class for testing the behavior of SingleSelectionListBoxWebView
 "
 Class {
-	#name : #SingleSelectionWebViewAsListBoxTest,
-	#superclass : #SingleSelectionWebViewBehaviorTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'SingleSelectionWebViewAsListBoxTest',
+	#superclass : 'SingleSelectionWebViewBehaviorTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SingleSelectionWebViewAsListBoxTest >> newSingleSelectionView [
 
 	^ SingleSelectionWebView listBoxDisplayingAtOnce: 5
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SingleSelectionWebViewAsListBoxTest >> testBeIdentifiable [
 
 	| listBox html |
@@ -26,7 +28,7 @@ SingleSelectionWebViewAsListBoxTest >> testBeIdentifiable [
 	self assert: html equals: '<select name="1" id="single-select-id2" size="5"></select>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 SingleSelectionWebViewAsListBoxTest >> testCustomCommandForOptions [
 	| dropDownList html |
 	
@@ -46,7 +48,7 @@ SingleSelectionWebViewAsListBoxTest >> testCustomCommandForOptions [
 			'<select name="1" id="id2" size="5"><option value="1" class="odd">1</option><option value="2" class="even">2</option><option value="3" class="odd">3</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SingleSelectionWebViewAsListBoxTest >> testDisplayingAtOnce [
 
 	self
@@ -55,7 +57,7 @@ SingleSelectionWebViewAsListBoxTest >> testDisplayingAtOnce [
 		should: [ SingleSelectionWebView listBoxDisplayingAtOnce: -51 ] raise: AssertionFailed
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SingleSelectionWebViewAsListBoxTest >> testIdentifierOn [
 
 	| listBox html |
@@ -71,7 +73,7 @@ SingleSelectionWebViewAsListBoxTest >> testIdentifierOn [
 	self assert: html equals: '<select name="2" id="single-select-id1" size="5"></select>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SingleSelectionWebViewAsListBoxTest >> testOn [
 
 	| listBox html |
@@ -87,7 +89,7 @@ SingleSelectionWebViewAsListBoxTest >> testOn [
 			'<select name="1" id="select-id2" size="5"></select><script type="text/javascript">$("#select-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 SingleSelectionWebViewAsListBoxTest >> testRenderContentOn [
 
 	| listBox html |
@@ -99,7 +101,7 @@ SingleSelectionWebViewAsListBoxTest >> testRenderContentOn [
 	self assert: html equals: '<select name="1" size="5"></select>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 SingleSelectionWebViewAsListBoxTest >> testRenderContentOnWithCommands [
 	| listBox html |
 
@@ -114,7 +116,7 @@ SingleSelectionWebViewAsListBoxTest >> testRenderContentOnWithCommands [
 		equals: '<select name="1" size="10" class="willow"></select>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 SingleSelectionWebViewAsListBoxTest >> testRenderContentOnWithElements [
 
 	| listBox html |
@@ -129,7 +131,7 @@ SingleSelectionWebViewAsListBoxTest >> testRenderContentOnWithElements [
 			'<select name="1" id="id2" size="5"><option value="1">One</option><option value="2">Two</option><option value="3">Three</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 SingleSelectionWebViewAsListBoxTest >> testRenderContentOnWithElementsAndSomethingSelected [
 
 	| listBox html |

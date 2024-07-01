@@ -2,12 +2,14 @@
 A CompositeComponentCommandTest is a test class for testing the behavior of CompositeComponentCommand
 "
 Class {
-	#name : #CompositeComponentCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'CompositeComponentCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 CompositeComponentCommandTest >> testApplyToOn [
 
 	| html |
@@ -23,7 +25,7 @@ CompositeComponentCommandTest >> testApplyToOn [
 	self assert: html equals: '<div rows="2" columns="3"></div>'
 ]
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 CompositeComponentCommandTest >> testEmpty [
 
 	| html |
@@ -32,7 +34,7 @@ CompositeComponentCommandTest >> testEmpty [
 	self assert: html equals: '<div></div>'
 ]
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 CompositeComponentCommandTest >> testShortcutCreation [
 
 	| html |
@@ -43,7 +45,7 @@ CompositeComponentCommandTest >> testShortcutCreation [
 	self assert: html equals: '<div rows="2" columns="3"></div>'
 ]
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 CompositeComponentCommandTest >> testShortcutCreationWithEmptyCompositeCommand [
 
 	| command html |

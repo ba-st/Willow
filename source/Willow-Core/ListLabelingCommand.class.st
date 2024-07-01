@@ -2,27 +2,29 @@
 Command to configure how to render elements in a list
 "
 Class {
-	#name : #ListLabelingCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ListLabelingCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'renderingBlock'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 ListLabelingCommand class >> with: aRenderingBlock [
 
 	^ self new initializeWith: aRenderingBlock
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ListLabelingCommand >> applyTo: aListComponent on: aCanvas [
 
 	aListComponent labels: renderingBlock 
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ListLabelingCommand >> initializeWith: aRenderingBlock [
 	
 	renderingBlock := aRenderingBlock 

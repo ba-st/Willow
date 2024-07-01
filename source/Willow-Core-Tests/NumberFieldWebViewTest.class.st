@@ -2,21 +2,23 @@
 A NumberFieldWebViewTest is a test class for testing the behavior of NumberFieldWebView
 "
 Class {
-	#name : #NumberFieldWebViewTest,
-	#superclass : #BWRenderingTest,
+	#name : 'NumberFieldWebViewTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : #'Willow-Core-Tests-WebViews'
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #support }
+{ #category : 'support' }
 NumberFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [ 
 	
 	notificationWasReceived := true
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 NumberFieldWebViewTest >> testBeIdentifiable [
 
 	| numberField html |
@@ -29,7 +31,7 @@ NumberFieldWebViewTest >> testBeIdentifiable [
 	self assert: html equals: '<input value="" name="1" id="number-field-id2" type="number"/>'
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 NumberFieldWebViewTest >> testIdentifierOn [
 
 	| numberField html |
@@ -44,7 +46,7 @@ NumberFieldWebViewTest >> testIdentifierOn [
 	self assert: html equals: '<input value="" name="2" id="number-field-id1" type="number"/>'
 ]
 
-{ #category : #'tests-number-container-API' }
+{ #category : 'tests-number-container-API' }
 NumberFieldWebViewTest >> testNotifyChangesTo [
 
 	| numberField |
@@ -57,7 +59,7 @@ NumberFieldWebViewTest >> testNotifyChangesTo [
 	self assert: notificationWasReceived
 ]
 
-{ #category : #'tests-number-container-API' }
+{ #category : 'tests-number-container-API' }
 NumberFieldWebViewTest >> testNumber [
 
 	| numberField html |
@@ -74,7 +76,7 @@ NumberFieldWebViewTest >> testNumber [
 	self assert: html equals: '<input value="15" name="1" type="number"/>'
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 NumberFieldWebViewTest >> testOn [
 
 	| numberField html |
@@ -90,7 +92,7 @@ NumberFieldWebViewTest >> testOn [
 			'<input value="" name="1" type="number" id="input-id2"/><script type="text/javascript">$("#input-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 NumberFieldWebViewTest >> testRenderContentOn [
 
 	| numberField html |

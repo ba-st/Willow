@@ -2,30 +2,32 @@
 A NullWebInteractionCommandTest is a test class for testing the behavior of NullWebInteractionCommand
 "
 Class {
-	#name : #NullWebInteractionCommandTest,
-	#superclass : #TestCase,
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#name : 'NullWebInteractionCommandTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 NullWebInteractionCommandTest >> testModelLoadingInstructions [
 
 	self assert: NullWebInteractionCommand new modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 NullWebInteractionCommandTest >> testPriorityActions [
 
 	self assert: NullWebInteractionCommand new priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 NullWebInteractionCommandTest >> testRequiresSerialization [
 
 	self deny: NullWebInteractionCommand new requiresSerialization
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 NullWebInteractionCommandTest >> testServerIndependentInstructions [
 
 	self assert: NullWebInteractionCommand new serverIndependentInstructions isEmpty

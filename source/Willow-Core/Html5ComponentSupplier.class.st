@@ -2,24 +2,26 @@
 I provide plain HTML 5 components.
 "
 Class {
-	#name : #Html5ComponentSupplier,
-	#superclass : #FrontendComponentSupplier,
-	#category : #'Willow-Core-Frontend'
+	#name : 'Html5ComponentSupplier',
+	#superclass : 'FrontendComponentSupplier',
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> asynchronicButtonLabeled: aRenderable applying: aComponentCommand [
 
 	^ AsynchronicButtonWebView labeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> asynchronicLinkLabeled: aRenderable applying: aComponentCommand [
 
 	^ LinkWebView asynchronicLabeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> checkboxLabeled: aRenderable onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent [
 
 	^ CheckboxWebView
@@ -29,7 +31,7 @@ Html5ComponentSupplier >> checkboxLabeled: aRenderable onModel: anObjectToUseWhe
 		applying: aCommandToComponent
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> checkboxUnlabeledOnModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent [
 
 	^ CheckboxWebView
@@ -38,19 +40,19 @@ Html5ComponentSupplier >> checkboxUnlabeledOnModel: anObjectToUseWhenOn offModel
 		applying: aCommandToComponent
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> dateFieldApplying: aComponentCommand [
 
 	^ DateFieldWebView applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> decimalNumberFieldApplying: aComponentCommand [
 
 	^ NumberFieldWebView applying: aComponentCommand transformingWith: FloatCodec new
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> dropdownListApplying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	^ SingleSelectionWebView
@@ -58,7 +60,7 @@ Html5ComponentSupplier >> dropdownListApplying: aComponentCommand applyingToOpti
 		applyingToOptions: anOptionCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> fieldSetContaining: aWebView applying: fieldSetCommand withLegend: aTitle applying: legendCommand [
 
 	^ FieldSetWebView
@@ -68,25 +70,25 @@ Html5ComponentSupplier >> fieldSetContaining: aWebView applying: fieldSetCommand
 		applying: legendCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 
 	^ TextFieldWebView multiLineApplying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> multipleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
 
 	^ MultipleSelectionListBoxWebView displayingAtOnce: aNumberOfElements applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> naturalNumberFieldApplying: aComponentCommand [
 
 	^ NumberFieldWebView applying: [ :field | field boundNotNegative + aComponentCommand ] transformingWith: NaturalNumberCodec new
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLabel: aLabelCommand applyingToInput: anInputCommand [
 
 	^ RadioGroupWebView 
@@ -95,13 +97,13 @@ Html5ComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLabel: a
 		applyingToInput: anInputCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
 	^ TextFieldWebView singleLineApplying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand applyingToOptions: anOptionCommand [
 	
 	^ SingleSelectionWebView
@@ -110,14 +112,14 @@ Html5ComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfEleme
 		applyingToOptions: anOptionCommand
 ]
 
-{ #category : #Interaction }
+{ #category : 'Interaction' }
 Html5ComponentSupplier >> statementToCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
 
 	^ ( dialogSupplier value: ( jQueryMatchingDialogContainer children: 'dialog' ) )
 		removeAttribute: 'open'
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aComponentCommand evaluating: anActionBlock [
 
 	^ SynchronicSubmitButtonWebView
@@ -126,31 +128,31 @@ Html5ComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aCompon
 		evaluating: anActionBlock
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aComponentCommand [
 
 	^ LinkWebView synchronicLabeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> tableBuilder [
 
 	^ TableWebViewBuilder new
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> timeFieldApplying: aComponentCommand [
 
 	^ TimeFieldWebView applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 Html5ComponentSupplier >> unorderedListApplying: aCommandToList listing: aCollection applyingToEach: aCommandToItem [
 
 	^ UnorderedListWebView applying: aCommandToList listing: aCollection applyingToEach: aCommandToItem
 ]
 
-{ #category : #Processing }
+{ #category : 'Processing' }
 Html5ComponentSupplier >> updateRoot: aRoot [
 
 	aRoot beHtml5

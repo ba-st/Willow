@@ -2,18 +2,20 @@
 A CheckboxWebViewTest is a test class for testing the behavior of CheckboxWebView
 "
 Class {
-	#name : #CheckboxWebViewTest,
-	#superclass : #BinaryChoiceWebViewTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'CheckboxWebViewTest',
+	#superclass : 'BinaryChoiceWebViewTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CheckboxWebViewTest >> newBinaryChoiceView [
 
 	^ CheckboxWebView onModel: true offModel: false
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 CheckboxWebViewTest >> testBeIdentifiable [
 
 	| html binaryChoiceView |
@@ -27,7 +29,7 @@ CheckboxWebViewTest >> testBeIdentifiable [
 		equals: '<input checked name="1" id="checkbox-id2" type="checkbox"/><input name="3" type="hidden"/>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 CheckboxWebViewTest >> testIdentifierOn [
 
 	| html checkbox |
@@ -44,7 +46,7 @@ CheckboxWebViewTest >> testIdentifierOn [
 		equals: '<input checked name="2" id="checkbox-id1" type="checkbox"/><input name="4" type="hidden"/>'
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 CheckboxWebViewTest >> testOn [
 
 	| html binaryChoiceView |
@@ -59,7 +61,7 @@ CheckboxWebViewTest >> testOn [
 			'<input checked name="1" id="input-id2" type="checkbox"/><input name="3" type="hidden"/><script type="text/javascript">$("#input-id2").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 CheckboxWebViewTest >> testRenderingAfterUpdatingModel [
 
 	| html checkbox |
@@ -75,7 +77,7 @@ CheckboxWebViewTest >> testRenderingAfterUpdatingModel [
 	self assert: html equals: '<input class="willow" checked name="1" type="checkbox"/><input name="2" type="hidden"/>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 CheckboxWebViewTest >> testRenderingWithLabel [
 
 	| html checkbox |
@@ -91,7 +93,7 @@ CheckboxWebViewTest >> testRenderingWithLabel [
 	self assert: html equals: '<input class="willow" checked name="1" id="checkbox-id2" type="checkbox"/><input name="3" type="hidden"/><label for="checkbox-id2">Enable network</label>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 CheckboxWebViewTest >> testWithNonBooleanModels [
 
 	| html checkbox |

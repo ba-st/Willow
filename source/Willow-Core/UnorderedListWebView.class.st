@@ -2,8 +2,8 @@
 I represent an unordered list supporting command application.
 "
 Class {
-	#name : #UnorderedListWebView,
-	#superclass : #WAPainter,
+	#name : 'UnorderedListWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'elements',
 		'commandToItem',
@@ -11,10 +11,12 @@ Class {
 		'interactionInterpreter',
 		'identifierAssigner'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 UnorderedListWebView class >> applying: aComponentCommand listing: anElementCollection applyingToEach: anElementCommand [
 
 	^ self new
@@ -23,19 +25,19 @@ UnorderedListWebView class >> applying: aComponentCommand listing: anElementColl
 		applyingToEach: anElementCommand asWebComponentCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 UnorderedListWebView >> beIdentifiable [
 
 	^ identifierAssigner beRequired
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 UnorderedListWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 UnorderedListWebView >> initializeApplying: aComponentCommand listing: anElementCollection applyingToEach: anElementCommand [
 
 	elements := anElementCollection.
@@ -45,13 +47,13 @@ UnorderedListWebView >> initializeApplying: aComponentCommand listing: anElement
 	identifierAssigner := IdentifierAssigner prefixedBy: 'unordered-list'
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 UnorderedListWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 UnorderedListWebView >> renderContentOn: aCanvas [
 
 	| list |

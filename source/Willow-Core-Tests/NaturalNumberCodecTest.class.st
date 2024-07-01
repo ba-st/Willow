@@ -2,12 +2,14 @@
 A NaturalNumberCodecTest is a test class for testing the behavior of NaturalNumberCodec
 "
 Class {
-	#name : #NaturalNumberCodecTest,
-	#superclass : #TestCase,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'NaturalNumberCodecTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-converting' }
+{ #category : 'tests-converting' }
 NaturalNumberCodecTest >> testCanCreate [
 
 	self
@@ -18,7 +20,7 @@ NaturalNumberCodecTest >> testCanCreate [
 		deny: (NaturalNumberCodec new canCreate: 1 / 2)
 ]
 
-{ #category : #'tests-converting' }
+{ #category : 'tests-converting' }
 NaturalNumberCodecTest >> testDecode [
 
 	self
@@ -30,7 +32,7 @@ NaturalNumberCodecTest >> testDecode [
 		should: [ NaturalNumberCodec new decode: 'frula' ] raise: InstanceCreationFailed
 ]
 
-{ #category : #'tests-converting' }
+{ #category : 'tests-converting' }
 NaturalNumberCodecTest >> testEncode [
 
 	self

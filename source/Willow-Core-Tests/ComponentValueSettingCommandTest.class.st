@@ -2,15 +2,17 @@
 A ComponentValueSettingCommandTest is a test class for testing the behavior of ComponentValueSettingCommand
 "
 Class {
-	#name : #ComponentValueSettingCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'ComponentValueSettingCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentValueSettingCommandTest >> setUp [
 
 	super setUp.
@@ -19,7 +21,7 @@ ComponentValueSettingCommandTest >> setUp [
 		valueFrom: [ '3' ]
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutSettingPreviouslyTheId [
 
 	| html |
@@ -43,7 +45,7 @@ ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutSettingPreviou
 			'<input id="id1" type="text"/><script type="text/javascript">$("#id1").click(function(){$("#id1").val("15").trigger("change")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutTriggering [
 
 	| html |
@@ -67,7 +69,7 @@ ComponentValueSettingCommandTest >> testModelLoadingActionsWithoutTriggering [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$("#input-id1").val("15")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentValueSettingCommandTest >> testModelLoadingInstructions [
 
 	| html |
@@ -91,19 +93,19 @@ ComponentValueSettingCommandTest >> testModelLoadingInstructions [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(){$("#input-id1").val("15").trigger("change")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentValueSettingCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 ComponentValueSettingCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentValueSettingCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

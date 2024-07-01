@@ -1,6 +1,6 @@
-Extension { #name : #JQueryClass }
+Extension { #name : 'JQueryClass' }
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 JQueryClass >> cssSelector: aCssSelector [
 
 	^ self expression: aCssSelector greaseString

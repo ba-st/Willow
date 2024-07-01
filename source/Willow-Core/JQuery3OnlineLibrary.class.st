@@ -2,12 +2,14 @@
 I'm a WALibrary serving the files from the official CDN.
 "
 Class {
-	#name : #JQuery3OnlineLibrary,
-	#superclass : #WAOnlineLibrary,
-	#category : #'Willow-Core-Libraries'
+	#name : 'JQuery3OnlineLibrary',
+	#superclass : 'WAOnlineLibrary',
+	#category : 'Willow-Core-Libraries',
+	#package : 'Willow-Core',
+	#tag : 'Libraries'
 }
 
-{ #category : #Updating }
+{ #category : 'Updating' }
 JQuery3OnlineLibrary >> updateRoot: aRoot [
 
 	aRoot javascript
@@ -15,7 +17,7 @@ JQuery3OnlineLibrary >> updateRoot: aRoot [
 		anonymousSubResourceIntegrity: 'sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g='
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 JQuery3OnlineLibrary >> version [
 
 	^ '3.7.0'

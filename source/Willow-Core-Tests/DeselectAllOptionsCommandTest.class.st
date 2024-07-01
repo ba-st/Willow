@@ -2,12 +2,14 @@
 A DeselectAllOptionsCommandTest is a test class for testing the behavior of DeselectAllOptionsCommand
 "
 Class {
-	#name : #DeselectAllOptionsCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'DeselectAllOptionsCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 DeselectAllOptionsCommandTest >> testApplyToOn [
 
 	| html |

@@ -2,21 +2,23 @@
 A TextFieldWebViewTest is a test class for testing the behavior of TextFieldWebView
 "
 Class {
-	#name : #TextFieldWebViewTest,
-	#superclass : #BWRenderingTest,
+	#name : 'TextFieldWebViewTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : #'Willow-Core-Tests-WebViews'
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #'test support' }
+{ #category : 'test support' }
 TextFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [
 
 	notificationWasReceived := true
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 TextFieldWebViewTest >> testBeIdentifiable [
 
 	| textField html |
@@ -28,7 +30,7 @@ TextFieldWebViewTest >> testBeIdentifiable [
 	self assert: html equals: '<input value="" name="1" id="text-id2" type="text"/>'
 ]
 
-{ #category : #'tests - container-API' }
+{ #category : 'tests - container-API' }
 TextFieldWebViewTest >> testContents [
 
 	| textField |
@@ -42,7 +44,7 @@ TextFieldWebViewTest >> testContents [
 	self assert: textField contents equals: 'Hello World!'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 TextFieldWebViewTest >> testIdentifierOn [
 
 	| textField html |
@@ -57,7 +59,7 @@ TextFieldWebViewTest >> testIdentifierOn [
 	self assert: html equals: '<input value="" name="2" id="text-id1" type="text"/>'
 ]
 
-{ #category : #'tests - container-API' }
+{ #category : 'tests - container-API' }
 TextFieldWebViewTest >> testModel [
 
 	| textField |
@@ -71,7 +73,7 @@ TextFieldWebViewTest >> testModel [
 	self assert: textField model equals: 'Hello World!'
 ]
 
-{ #category : #'tests - container-API' }
+{ #category : 'tests - container-API' }
 TextFieldWebViewTest >> testNotifyChangesTo [
 
 	| textField |
@@ -84,7 +86,7 @@ TextFieldWebViewTest >> testNotifyChangesTo [
 	self assert: notificationWasReceived
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 TextFieldWebViewTest >> testOn [
 
 	| textField html |
@@ -99,7 +101,7 @@ TextFieldWebViewTest >> testOn [
 			'<input value="" name="1" id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 TextFieldWebViewTest >> testOnTriggerMultiLine [
 
 	| textField html |
@@ -114,7 +116,7 @@ TextFieldWebViewTest >> testOnTriggerMultiLine [
 			'<textarea rows="auto" cols="auto" name="1" id="textarea-id2"></textarea><script type="text/javascript">$("#textarea-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests - rendering' }
+{ #category : 'tests - rendering' }
 TextFieldWebViewTest >> testRenderContentOn [
 
 	| textField html |
@@ -126,7 +128,7 @@ TextFieldWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<input value="" name="1" type="text"/>'
 ]
 
-{ #category : #'tests - rendering' }
+{ #category : 'tests - rendering' }
 TextFieldWebViewTest >> testRenderContentOnApplyingCommands [
 
 	| textField html |
@@ -138,7 +140,7 @@ TextFieldWebViewTest >> testRenderContentOnApplyingCommands [
 	self assert: html equals: '<input value="" name="Neo" type="password"/>'
 ]
 
-{ #category : #'tests - rendering' }
+{ #category : 'tests - rendering' }
 TextFieldWebViewTest >> testRenderMultiLineContentWithContents [
 
 	| textField html |
@@ -153,7 +155,7 @@ TextFieldWebViewTest >> testRenderMultiLineContentWithContents [
 		equals: '<textarea rows="auto" cols="auto" name="1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>'
 ]
 
-{ #category : #'tests - rendering' }
+{ #category : 'tests - rendering' }
 TextFieldWebViewTest >> testRenderSingleLineContentWithContents [
 
 	| textField html |

@@ -2,12 +2,14 @@
 A ComponentScriptCommandTest is a test class for testing the behavior of ComponentScriptCommand
 "
 Class {
-	#name : #ComponentScriptCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ComponentScriptCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-applying' }
+{ #category : 'tests-applying' }
 ComponentScriptCommandTest >> testApplyToOn [
 
 	| html |

@@ -1,10 +1,12 @@
 Class {
-	#name : #HeadingWebViewTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'HeadingWebViewTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 HeadingWebViewTest >> testRenderContentOn [
 
 	| container html |
@@ -15,7 +17,7 @@ HeadingWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<h2>Header</h2>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 HeadingWebViewTest >> testRenderContentOnWithCommands [
 
 	| container html |

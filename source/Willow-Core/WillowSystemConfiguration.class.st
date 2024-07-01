@@ -2,24 +2,26 @@
 I provide configuration for a Willow Application. For the moment the deployment mode.
 "
 Class {
-	#name : #WillowSystemConfiguration,
-	#superclass : #WASystemConfiguration,
-	#category : #'Willow-Core-Applications'
+	#name : 'WillowSystemConfiguration',
+	#superclass : 'WASystemConfiguration',
+	#category : 'Willow-Core-Applications',
+	#package : 'Willow-Core',
+	#tag : 'Applications'
 }
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowSystemConfiguration class >> deploymentModeClassKey [
 
 	 ^#deploymentModeClass
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowSystemConfiguration class >> languageKey [
 
 	 ^#language
 ]
 
-{ #category : #description }
+{ #category : 'description' }
 WillowSystemConfiguration >> describeOn: config [
 
 	(config classBinding: self class deploymentModeClassKey)

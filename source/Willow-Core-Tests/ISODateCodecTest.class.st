@@ -2,18 +2,20 @@
 A ISODateCodecTest is a test class for testing the behavior of ISODateCodec
 "
 Class {
-	#name : #ISODateCodecTest,
-	#superclass : #TestCase,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ISODateCodecTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'private - asserting' }
+{ #category : 'private - asserting' }
 ISODateCodecTest >> should: aBlock failBecause: anExplanation [
 
 	self should: aBlock raise: InstanceCreationFailed withMessageText: anExplanation
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ISODateCodecTest >> testCanCreate [
 
 	self
@@ -22,7 +24,7 @@ ISODateCodecTest >> testCanCreate [
 		deny: ( ISODateCodec new canCreate: '01/01/2001' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ISODateCodecTest >> testCantDecodeDate [
 
 	self
@@ -38,7 +40,7 @@ ISODateCodecTest >> testCantDecodeDate [
 		should: [ ISODateCodec new decode: '2020/12/11' ] failBecause: ''
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ISODateCodecTest >> testDecode [
 
 	self
@@ -46,7 +48,7 @@ ISODateCodecTest >> testDecode [
 		equals: ( Date newDay: 11 month: 12 year: 2010 )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ISODateCodecTest >> testEncode [
 
 	self

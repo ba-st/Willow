@@ -2,27 +2,29 @@
 Command to set the callback of a component
 "
 Class {
-	#name : #ComponentCallbackSettingCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ComponentCallbackSettingCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'callback'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentCallbackSettingCommand class >> setting: aCallback [
 
 	^self new initializeSetting: aCallback
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ComponentCallbackSettingCommand >> applyTo: aComponent on: aCanvas [
 
 	aComponent callback: callback
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentCallbackSettingCommand >> initializeSetting: aCallback [
 
 	callback := aCallback

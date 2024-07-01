@@ -2,8 +2,8 @@
 A CombinedWebInteractionInterpreterTest is a test class for testing the behavior of CombinedWebInteractionInterpreter
 "
 Class {
-	#name : #CombinedWebInteractionInterpreterTest,
-	#superclass : #BWRenderingTest,
+	#name : 'CombinedWebInteractionInterpreterTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'okButton',
 		'cancelButton'
@@ -11,17 +11,19 @@ Class {
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 CombinedWebInteractionInterpreterTest >> combinedInterpreter [
 
 	^ CombinedWebInteractionInterpreter
 		combining: ( Array with: okButton on trigger with: cancelButton on trigger )
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 CombinedWebInteractionInterpreterTest >> setUp [
 
 	super setUp.
@@ -29,7 +31,7 @@ CombinedWebInteractionInterpreterTest >> setUp [
 	cancelButton := AsynchronicButtonWebView labeled: 'Cancel'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testAddCssClass [
 
 	| interpreter html |
@@ -48,7 +50,7 @@ CombinedWebInteractionInterpreterTest >> testAddCssClass [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 
 	| interpreter html |
@@ -69,7 +71,7 @@ CombinedWebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testChangeCssClassTo [
 
 	| interpreter html |
@@ -96,7 +98,7 @@ CombinedWebInteractionInterpreterTest >> testChangeCssClassTo [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(".willow-loading").removeClass("willow-loading").addClass("willow")});$("#button-id2").click(function(event){$(".willow-loading").removeClass("willow-loading").addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - Dialogs' }
+{ #category : 'tests - Configuring - Dialogs' }
 CombinedWebInteractionInterpreterTest >> testCloseAllDialogs [
 
 	| interpreter html |
@@ -118,7 +120,7 @@ CombinedWebInteractionInterpreterTest >> testCloseAllDialogs [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Dialogs' }
+{ #category : 'tests - Configuring - Dialogs' }
 CombinedWebInteractionInterpreterTest >> testCloseLastDialog [
 
 	| interpreter html |
@@ -140,7 +142,7 @@ CombinedWebInteractionInterpreterTest >> testCloseLastDialog [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Instance Creation' }
+{ #category : 'tests - Instance Creation' }
 CombinedWebInteractionInterpreterTest >> testCombining [
 
 	| interpreter html |
@@ -160,7 +162,7 @@ CombinedWebInteractionInterpreterTest >> testCombining [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testConfirmAsking [
 
 	| interpreter html |
@@ -180,7 +182,7 @@ CombinedWebInteractionInterpreterTest >> testConfirmAsking [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"1"})}});$("#button-id4").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"3"})}});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testDisable [
 
 	| interpreter html |
@@ -200,7 +202,7 @@ CombinedWebInteractionInterpreterTest >> testDisable [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).prop("disabled",true)});$("#button-id2").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testDisableSpecificComponent [
 
 	| interpreter html id |
@@ -225,7 +227,7 @@ CombinedWebInteractionInterpreterTest >> testDisableSpecificComponent [
 			'<input id="15" type="text"/><button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$("#15").prop("disabled",true)});$("#button-id2").click(function(event){$("#15").prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testEnable [
 
 	| interpreter html id |
@@ -250,7 +252,7 @@ CombinedWebInteractionInterpreterTest >> testEnable [
 			'<input id="15" type="text"/><button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$("#15").prop("disabled",false)});$("#button-id2").click(function(event){$("#15").prop("disabled",false)});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testFocus [
 
 	| interpreter html id |
@@ -275,7 +277,7 @@ CombinedWebInteractionInterpreterTest >> testFocus [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testFocusUsing [
 
 	| interpreter html |
@@ -295,7 +297,7 @@ CombinedWebInteractionInterpreterTest >> testFocusUsing [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testInform [
 
 	| interpreter html |
@@ -315,7 +317,7 @@ CombinedWebInteractionInterpreterTest >> testInform [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){alert("A message")});$("#button-id2").click(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testInformSelection [
 
 	| interpreter html |
@@ -335,7 +337,7 @@ CombinedWebInteractionInterpreterTest >> testInformSelection [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){alert($(this).children("option:selected").text())});$("#button-id2").click(function(event){alert($(this).children("option:selected").text())});</script>'
 ]
 
-{ #category : #'tests - Configuring - Dialogs' }
+{ #category : 'tests - Configuring - Dialogs' }
 CombinedWebInteractionInterpreterTest >> testOpen [
 
 	| interpreter html |
@@ -357,7 +359,7 @@ CombinedWebInteractionInterpreterTest >> testOpen [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testRemove [
 
 	| interpreter html id |
@@ -382,7 +384,7 @@ CombinedWebInteractionInterpreterTest >> testRemove [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatching [
 
 	| interpreter html |
@@ -405,7 +407,7 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatchin
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).removeClass("willow-loading")});$("#button-id2").click(function(event){$(this).removeClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithClass [
 
 	| interpreter html |
@@ -428,7 +430,7 @@ CombinedWebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithCla
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(".willow").removeClass("willow-loading")});$("#button-id2").click(function(event){$(".willow").removeClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testRender [
 
 	| interpreter html |
@@ -455,7 +457,7 @@ CombinedWebInteractionInterpreterTest >> testRender [
 			'<div id="container-id1"><input type="text"/></div><button id="button-id3" type="button">Ok</button><button id="button-id5" type="button">Cancel</button><script type="text/javascript">$("#button-id3").click(function(event){Willow.callServer({"url":"/","data":"2"})});$("#button-id5").click(function(event){Willow.callServer({"url":"/","data":"4"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testRenderAll [
 
 	| interpreter html |
@@ -487,7 +489,7 @@ CombinedWebInteractionInterpreterTest >> testRenderAll [
 			'<div id="container-id1"><input type="text"/></div><div id="container-id2"><input type="number"/></div><button id="button-id4" type="button">Ok</button><button id="button-id6" type="button">Cancel</button><script type="text/javascript">$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});$("#button-id6").click(function(event){Willow.callServer({"url":"/","data":"5"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testScrollingIntoView [
 
 	| interpreter html id |
@@ -511,7 +513,7 @@ CombinedWebInteractionInterpreterTest >> testScrollingIntoView [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeChildForm [
 
 	| interpreter html |
@@ -531,7 +533,7 @@ CombinedWebInteractionInterpreterTest >> testSerializeChildForm [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).children("form").serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).children("form").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeContainerForm [
 
 	| interpreter html |
@@ -551,7 +553,7 @@ CombinedWebInteractionInterpreterTest >> testSerializeContainerForm [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).closest("form").find(":input").serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).closest("form").find(":input").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeForm [
 
 	| interpreter html |
@@ -575,7 +577,7 @@ CombinedWebInteractionInterpreterTest >> testSerializeForm [
 			'<form accept-charset="utf-8" method="post" action="/" id="id15"></form><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$("#id15").serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$("#id15").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeIt [
 
 	| interpreter html |
@@ -595,7 +597,7 @@ CombinedWebInteractionInterpreterTest >> testSerializeIt [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 
 	| interpreter html |
@@ -615,7 +617,7 @@ CombinedWebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&")})});$("#button-id4").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).next("input:hidden").addBack().serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testServerDo [
 
 	| interpreter html |
@@ -636,7 +638,7 @@ CombinedWebInteractionInterpreterTest >> testServerDo [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
 	| interpreter html id |
@@ -660,7 +662,7 @@ CombinedWebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOf [
 
 	| interpreter html id |
@@ -684,7 +686,7 @@ CombinedWebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOf
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingApplying [
 
 	| interpreter html |
@@ -705,7 +707,7 @@ CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingAp
 		'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});$("#button-id4").click(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 
 	| interpreter html |
@@ -725,7 +727,7 @@ CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll 
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});$("#button-id4").click(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 
 	| html interpreter container |
@@ -751,7 +753,7 @@ CombinedWebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 			'<button id="button-id3" type="button">Ok</button><button id="button-id6" type="button">Cancel</button><div id="container-id1"></div><script type="text/javascript">$("#button-id3").click(function(event){$("#container-id1").html("Loading...");Willow.callServer({"url":"/","data":"2"})});$("#button-id6").click(function(event){$("#container-id1").html("Loading...");Willow.callServer({"url":"/","data":"5"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 CombinedWebInteractionInterpreterTest >> testSubmitForm [
 
 	| interpreter html id |
@@ -777,7 +779,7 @@ CombinedWebInteractionInterpreterTest >> testSubmitForm [
 			'<form accept-charset="utf-8" method="post" action="/" id="15"></form><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testSubmitFormStyledAs [
 
 	| interpreter html |
@@ -797,7 +799,7 @@ CombinedWebInteractionInterpreterTest >> testSubmitFormStyledAs [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});$("#button-id4").click(function(event){Willow.callServer({"url":"/","data":"3"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto [
 
 	| interpreter html id |
@@ -822,7 +824,7 @@ CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto 
 			'<input id="15" type="text"/><button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){var componentToDisable=$("#15");if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});$("#button-id4").click(function(event){var componentToDisable=$("#15");if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"3"})}});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfInto [
 
 	| interpreter html |
@@ -842,7 +844,7 @@ CombinedWebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfI
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){var componentToDisable=$(this);if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});$("#button-id4").click(function(event){var componentToDisable=$(this);if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"3"})}});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testToggleCssClass [
 
 	| interpreter html |
@@ -865,7 +867,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClass [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).toggleClass("willow-loading")});$("#button-id2").click(function(event){$(this).toggleClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testToggleCssClassOn [
 
 	| interpreter element html |
@@ -893,7 +895,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOn [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#container-id1").toggleClass("willow")});$("#button-id4").click(function(event){$("#container-id1").toggleClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching [
 
 	| interpreter html |
@@ -916,7 +918,7 @@ CombinedWebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching 
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).toggleClass("willow-loading")});$("#button-id2").click(function(event){$(this).toggleClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 CombinedWebInteractionInterpreterTest >> testTransformInto [
 
 	| html interpreter container |
@@ -942,7 +944,7 @@ CombinedWebInteractionInterpreterTest >> testTransformInto [
 			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><div id="container-id1"></div><script type="text/javascript">$("#button-id2").click(function(event){$("#container-id1").html("Loading...")});$("#button-id4").click(function(event){$("#container-id1").html("Loading...")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 CombinedWebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching [
 
 	| interpreter html |
@@ -963,7 +965,7 @@ CombinedWebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching 
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).addClass("willow")});$("#button-id2").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testUserAgentDo [
 
 	| interpreter html |
@@ -984,7 +986,7 @@ CombinedWebInteractionInterpreterTest >> testUserAgentDo [
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){window.print()});$("#button-id2").click(function(event){window.print()});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 
 	| interpreter html |
@@ -1008,7 +1010,7 @@ CombinedWebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 			'<button id="button-id3" type="button">Ok</button><button id="button-id6" type="button">Cancel</button><script type="text/javascript">$("#button-id3").click(function(event){if(dataFromUserAgent>3){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(dataFromUserAgent))].join("&")})}});$("#button-id6").click(function(event){if(dataFromUserAgent>3){Willow.callServer({"type":"POST","url":"/","data":["4","5="+encodeURIComponent(JSON.stringify(dataFromUserAgent))].join("&")})}});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 CombinedWebInteractionInterpreterTest >> testWithServerDo [
 
 	| interpreter html |

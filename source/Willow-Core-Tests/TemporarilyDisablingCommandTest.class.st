@@ -2,18 +2,20 @@
 A TemporarilyDisablingCommandTest is a test class for testing the behavior of TemporarilyDisablingCommand
 "
 Class {
-	#name : #TemporarilyDisablingCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#name : 'TemporarilyDisablingCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 TemporarilyDisablingCommandTest >> testModelLoadingInstructions [
 
 	self assert: (TemporarilyDisablingCommand transformingCurrentViewInto: [ :canvas |  ]) modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 TemporarilyDisablingCommandTest >> testPriorityActions [
 
 	| command html |
@@ -37,13 +39,13 @@ TemporarilyDisablingCommandTest >> testPriorityActions [
 			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("<span class=\"willow-loading\"></span>");$.ajax({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))}})}});</script>'
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 TemporarilyDisablingCommandTest >> testRequiresSerialization [
 
 	self deny: (TemporarilyDisablingCommand transformingCurrentViewInto: [ :canvas |  ]) requiresSerialization
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 TemporarilyDisablingCommandTest >> testServerIndependentInstructions [
 
 	| command html |

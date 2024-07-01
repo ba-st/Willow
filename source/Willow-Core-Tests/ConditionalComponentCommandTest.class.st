@@ -2,12 +2,14 @@
 A ConditionalComponentCommandTest is a test class for testing the behavior of ConditionalComponentCommand
 "
 Class {
-	#name : #ConditionalComponentCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ConditionalComponentCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 ConditionalComponentCommandTest >> testApplyToOnWhenConditionsDependsOnComponent [
 
 	| html |
@@ -19,7 +21,7 @@ ConditionalComponentCommandTest >> testApplyToOnWhenConditionsDependsOnComponent
 	self assert: html equals: '<div rows="2"></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ConditionalComponentCommandTest >> testApplyToOnWhenConditionsIsMet [
 
 	| html |
@@ -28,7 +30,7 @@ ConditionalComponentCommandTest >> testApplyToOnWhenConditionsIsMet [
 	self assert: html equals: '<div rows="2"></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ConditionalComponentCommandTest >> testApplyToOnWhenConditionsIsNotMet [
 
 	| html |

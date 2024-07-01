@@ -1,28 +1,30 @@
 Class {
-	#name : #SingleSelectionWebView,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#name : 'SingleSelectionWebView',
+	#superclass : 'SingleSelectionWebViewBehavior',
 	#instVars : [
 		'interactionInterpreter',
 		'identifierAssigner',
 		'optionCommand',
 		'selectCommand'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'private - instance creation' }
+{ #category : 'private - instance creation' }
 SingleSelectionWebView class >> applyingToSelect: aSelectCommand applyingToOptions: anOptionCommand [
 
 	^ self new initializeApplyingToSelect: aSelectCommand applyingToOptions: anOptionCommand
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SingleSelectionWebView class >> dropDownListApplying: aSelectCommand applyingToOptions: anOptionCommand [ 
 
 	^ self applyingToSelect: aSelectCommand applyingToOptions: anOptionCommand 
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements [
 	
 	^ self
@@ -31,7 +33,7 @@ SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements [
 		applyingToOptions: [  ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements applying: aSelectCommand applyingToOptions: anOptionCommand [
 	AssertionChecker
 		enforce: [ aNumberOfElements > 1 ]
@@ -43,25 +45,25 @@ SingleSelectionWebView class >> listBoxDisplayingAtOnce: aNumberOfElements apply
 		applyingToOptions: anOptionCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SingleSelectionWebView >> beIdentifiable [
 
 	^ identifierAssigner beRequired
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SingleSelectionWebView >> configure: select unselectingAllOn: aCanvas [
 
 	^ availableElements ifNotEmpty: [ select apply: DeselectAllOptionsCommand new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SingleSelectionWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SingleSelectionWebView >> initializeApplyingToSelect: aSelectCommand applyingToOptions: anOptionCommand [
 	
 	selectCommand := aSelectCommand.
@@ -71,13 +73,13 @@ SingleSelectionWebView >> initializeApplyingToSelect: aSelectCommand applyingToO
 
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SingleSelectionWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SingleSelectionWebView >> renderContentOn: aCanvas [
 
 	| select |
@@ -95,7 +97,7 @@ SingleSelectionWebView >> renderContentOn: aCanvas [
 	select with: [ self renderOptionsFor: select on: aCanvas ]
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SingleSelectionWebView >> renderOptionsFor: aWASelectTag on: aCanvas [
 
 	availableElements

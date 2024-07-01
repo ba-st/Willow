@@ -2,12 +2,14 @@
 A ComponentBoundaryCommandTest is a test class for testing the behavior of ComponentBoundaryCommand
 "
 Class {
-	#name : #ComponentBoundaryCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ComponentBoundaryCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 ComponentBoundaryCommandTest >> testApplyToOn [
 
 	| html |
@@ -16,7 +18,7 @@ ComponentBoundaryCommandTest >> testApplyToOn [
 	self assert: html equals: '<input min="15" max="20" type="number"/>'
 ]
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 ComponentBoundaryCommandTest >> testNonNegative [
 
 	| html |

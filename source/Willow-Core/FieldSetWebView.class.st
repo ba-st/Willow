@@ -2,18 +2,20 @@
 A Web View that renders a fieldSet with custom styles.
 "
 Class {
-	#name : #FieldSetWebView,
-	#superclass : #WAPainter,
+	#name : 'FieldSetWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'title',
 		'contentView',
 		'fieldSetCommand',
 		'legendCommand'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 FieldSetWebView class >> containing: aWebView applying: fieldSetCommand withLegend: aTitle applying: legendCommand [
 
 	^ self new
@@ -23,7 +25,7 @@ FieldSetWebView class >> containing: aWebView applying: fieldSetCommand withLege
 		applying: legendCommand asWebComponentCommand
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 FieldSetWebView >> initializeContaining: aWebView applying: aFieldSetCommand withLegend: aTitle applying: aLegendCommand [
 
 	title := aTitle.
@@ -32,7 +34,7 @@ FieldSetWebView >> initializeContaining: aWebView applying: aFieldSetCommand wit
 	legendCommand := aLegendCommand
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 FieldSetWebView >> renderContentOn: aCanvas [
 
 	aCanvas fieldSet

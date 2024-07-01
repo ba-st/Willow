@@ -1,6 +1,6 @@
 Class {
-	#name : #WebInteractionWriter,
-	#superclass : #Object,
+	#name : 'WebInteractionWriter',
+	#superclass : 'Object',
 	#instVars : [
 		'serializationCommand',
 		'priorityActions',
@@ -8,23 +8,25 @@ Class {
 		'modelLoadingInstructions',
 		'serializationCoverage'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 WebInteractionWriter class >> triggering: aCommandCollection serializingWith: aSerializationCommand [
 
 	^ self new initializeFor: aCommandCollection serializingWith: aSerializationCommand
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 WebInteractionWriter >> applyTo: aComponent accordingTo: aTriggerPolicy on: aCanvas [
 
 	self shouldApplyActions
 		then: [ aTriggerPolicy apply: ( self commandToExecuteOn: aCanvas ) to: aComponent on: aCanvas ]
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 WebInteractionWriter >> asynchronousCallToAffect: aCanvas [
 
 	| serverCall |
@@ -35,7 +37,7 @@ WebInteractionWriter >> asynchronousCallToAffect: aCanvas [
 	^ serverCall
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 WebInteractionWriter >> commandToExecuteOn: aCanvas [
 
 	^ [ | script |
@@ -49,14 +51,14 @@ WebInteractionWriter >> commandToExecuteOn: aCanvas [
 		inWhichCase: [ self asynchronousCallToAffect: aCanvas ]
 ]
 
-{ #category : #'private - processing' }
+{ #category : 'private - processing' }
 WebInteractionWriter >> complete: anAsynchronousCall withResponseOn: aCanvas [
 
 	anAsynchronousCall
 		script: [ :subScript | modelLoadingInstructions appendTo: subScript on: aCanvas ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WebInteractionWriter >> initializeFor: aCommandCollection serializingWith: aSerializationCommand [
 
 	serializationCommand := aSerializationCommand.
@@ -70,7 +72,7 @@ WebInteractionWriter >> initializeFor: aCommandCollection serializingWith: aSeri
 	self preventSerializationCoverageConflict
 ]
 
-{ #category : #'private - preconditions' }
+{ #category : 'private - preconditions' }
 WebInteractionWriter >> preventSerializationCoverageConflict [
 
 	serializationCoverage
@@ -82,7 +84,7 @@ WebInteractionWriter >> preventSerializationCoverageConflict [
 			]
 ]
 
-{ #category : #'private - processing' }
+{ #category : 'private - processing' }
 WebInteractionWriter >> registerActionsOf: aCommand [
 
 	priorityActions addAll: aCommand priorityActions.
@@ -95,7 +97,7 @@ WebInteractionWriter >> registerActionsOf: aCommand [
 	serializationCoverage addAll: aCommand serializationCoverage
 ]
 
-{ #category : #'private - processing' }
+{ #category : 'private - processing' }
 WebInteractionWriter >> registerActionsOfAll: aCommandCollection [
 
 	| serializationRequired |
@@ -109,13 +111,13 @@ WebInteractionWriter >> registerActionsOfAll: aCommandCollection [
 	serializationRequired then: [ self registerActionsOf: serializationCommand ]
 ]
 
-{ #category : #'private - testing' }
+{ #category : 'private - testing' }
 WebInteractionWriter >> shouldApplyActions [
 
 	^ serverIndependentInstructions notEmpty or: [ self shouldApplyAsynchronousCall ]
 ]
 
-{ #category : #'private - testing' }
+{ #category : 'private - testing' }
 WebInteractionWriter >> shouldApplyAsynchronousCall [
 
 	^ priorityActions notEmpty or: [ modelLoadingInstructions notEmpty ]

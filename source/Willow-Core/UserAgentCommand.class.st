@@ -2,46 +2,48 @@
 I'm a WebInteractionCommand that allows for arbitrary code execution in the client
 "
 Class {
-	#name : #UserAgentCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'UserAgentCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'serverIndependentInstructions'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 UserAgentCommand class >> executing: aServerIndependentInstruction [
 
 	^ self new initializeExecuting: aServerIndependentInstruction
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 UserAgentCommand >> initializeExecuting: aServerIndependentInstruction [
 
 	serverIndependentInstructions := WebInteractionInstructions
 		directingTo: aServerIndependentInstruction
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 UserAgentCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 UserAgentCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 UserAgentCommand >> requiresSerialization [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 UserAgentCommand >> serverIndependentInstructions [
 
 	^ serverIndependentInstructions

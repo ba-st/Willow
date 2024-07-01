@@ -2,46 +2,48 @@
 I represent a null web interaction command, so no javascript is generated when applied.
 "
 Class {
-	#name : #NullWebInteractionCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'NullWebInteractionCommand',
+	#superclass : 'WebInteractionCommand',
 	#classVars : [
 		'OnlyInstance'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 NullWebInteractionCommand class >> initialize [
 
 	<ignoreForCoverage>
 	OnlyInstance := super new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 NullWebInteractionCommand class >> new [
 
 	^ OnlyInstance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NullWebInteractionCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NullWebInteractionCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 NullWebInteractionCommand >> requiresSerialization [
 
 	^false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NullWebInteractionCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

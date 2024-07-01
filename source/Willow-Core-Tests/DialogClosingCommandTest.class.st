@@ -2,40 +2,42 @@
 A DialogClosingCommandTest is a test class for testing the behavior of DialogClosingCommand
 "
 Class {
-	#name : #DialogClosingCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'DialogClosingCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 DialogClosingCommandTest >> componentSupplier [
 	
 	^Html5ComponentSupplier new
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 DialogClosingCommandTest >> createHandlers [
 
 	^ Array with: self
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 DialogClosingCommandTest >> isSession [
 
 	^ true
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 DialogClosingCommandTest >> setUp [
 
 	super setUp.
 	command := DialogClosingCommand forAllDialogs
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 DialogClosingCommandTest >> testModelLoadingActionsWhenOnlyRemovingLastDialog [
 
 	| html |
@@ -57,7 +59,7 @@ DialogClosingCommandTest >> testModelLoadingActionsWhenOnlyRemovingLastDialog [
 			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-dialog-section").children("dialog").last().removeAttr("open")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 DialogClosingCommandTest >> testModelLoadingActionsWhenRemovingAllDialogs [
 
 	| html |
@@ -79,19 +81,19 @@ DialogClosingCommandTest >> testModelLoadingActionsWhenRemovingAllDialogs [
 			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-dialog-section").children("dialog").removeAttr("open")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 DialogClosingCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 DialogClosingCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization  
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 DialogClosingCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

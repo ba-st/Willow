@@ -2,12 +2,14 @@
 A ComponentAccessibilityEnrichmentCommandTest is a test class for testing the behavior of ComponentAccessibilityEnrichmentCommand
 "
 Class {
-	#name : #ComponentAccessibilityEnrichmentCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ComponentAccessibilityEnrichmentCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 ComponentAccessibilityEnrichmentCommandTest >> testApplyToOn [
 
 	| html |

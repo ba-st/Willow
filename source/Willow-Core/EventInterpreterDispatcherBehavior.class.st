@@ -1,40 +1,42 @@
 Class {
-	#name : #EventInterpreterDispatcherBehavior,
-	#superclass : #Object,
-	#category : #'Willow-Core-WebInteraction'
+	#name : 'EventInterpreterDispatcherBehavior',
+	#superclass : 'Object',
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> change [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> click [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> eventNamed: anEventName [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> keyUp [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> mouseOver [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> trigger [
 
 	^ self subclassResponsibility

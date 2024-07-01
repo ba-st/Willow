@@ -2,18 +2,20 @@
 An ISOTimeCodecTest is a test class for testing the behavior of ISOTimeCodec
 "
 Class {
-	#name : #ISOTimeCodecTest,
-	#superclass : #TestCase,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ISOTimeCodecTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'private - asserting' }
+{ #category : 'private - asserting' }
 ISOTimeCodecTest >> should: aBlock failBecause: anExplanation [
 
 	self should: aBlock raise: InstanceCreationFailed withMessageText: anExplanation
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ISOTimeCodecTest >> testCanCreate [
 
 	self
@@ -21,7 +23,7 @@ ISOTimeCodecTest >> testCanCreate [
 		deny: ( ISOTimeCodec new canCreate: '11.03.55' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ISOTimeCodecTest >> testCantDecodeTime [
 
 	self
@@ -45,7 +47,7 @@ ISOTimeCodecTest >> testCantDecodeTime [
 		should: [ ISOTimeCodec new decode: '11:03:55 PM' ] failBecause: 'Invalid time format'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ISOTimeCodecTest >> testDecode [
 
 	self
@@ -53,7 +55,7 @@ ISOTimeCodecTest >> testDecode [
 		equals: ( Time hour: 11 minute: 03 second: 55 )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ISOTimeCodecTest >> testEncode [
 
 	self

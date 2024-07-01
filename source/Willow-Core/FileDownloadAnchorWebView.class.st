@@ -2,17 +2,19 @@
 I'm an anchor with a callback to download a document
 "
 Class {
-	#name : #FileDownloadAnchorWebView,
-	#superclass : #WAPainter,
+	#name : 'FileDownloadAnchorWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'label',
 		'documentProvider',
 		'commandToComponent'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 FileDownloadAnchorWebView class >> labeled: aLabel applying: aComponentCommand obtainingFileUsing: aFileProvider [
 
 	^ self new
@@ -21,7 +23,7 @@ FileDownloadAnchorWebView class >> labeled: aLabel applying: aComponentCommand o
 		obtainingFileUsing: aFileProvider
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 FileDownloadAnchorWebView >> initializeLabeled: aLabel applying: aComponentCommand obtainingFileUsing: aFileProvider [
 
 	label := aLabel.
@@ -29,7 +31,7 @@ FileDownloadAnchorWebView >> initializeLabeled: aLabel applying: aComponentComma
 	commandToComponent := aComponentCommand
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 FileDownloadAnchorWebView >> renderContentOn: aCanvas [
 
 	aCanvas anchor

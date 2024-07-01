@@ -2,12 +2,14 @@
 An exception signalled when some InvalidSelection received a message.
 "
 Class {
-	#name : #SelectionIsInvalid,
-	#superclass : #Error,
-	#category : #'Willow-Core-WebInteraction'
+	#name : 'SelectionIsInvalid',
+	#superclass : 'Error',
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #signaling }
+{ #category : 'signaling' }
 SelectionIsInvalid class >> signal: aFailureExplanation [
 
 	^ self signalAll: {aFailureExplanation}

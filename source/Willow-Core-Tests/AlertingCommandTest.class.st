@@ -2,40 +2,42 @@
 An AlertingCommandTest is a test class for testing the behavior of AlertingCommand
 "
 Class {
-	#name : #AlertingCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'AlertingCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AlertingCommandTest >> setUp [
 
 	super setUp.
 	command := AlertingCommand stating: 'Great!'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 AlertingCommandTest >> testModelLoadingInstructions [
 
 	self assert: command modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 AlertingCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 AlertingCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 AlertingCommandTest >> testServerIndependentInstructions [
 
 	| html |

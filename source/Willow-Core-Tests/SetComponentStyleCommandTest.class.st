@@ -2,12 +2,14 @@
 A SetComponentStyleCommandTest is a test class for testing the behavior of SetComponentStyleCommand
 "
 Class {
-	#name : #SetComponentStyleCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'SetComponentStyleCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-initialization' }
+{ #category : 'tests-initialization' }
 SetComponentStyleCommandTest >> testApplyToOn [
 	| html |
 	html := self

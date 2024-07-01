@@ -1,6 +1,6 @@
-Extension { #name : #WADeploymentMode }
+Extension { #name : 'WADeploymentMode' }
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WADeploymentMode >> configureErrorHandlerTo: aWAApplication using: aWillowApplication [
 
 	self subclassResponsibility

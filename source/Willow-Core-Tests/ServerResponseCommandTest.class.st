@@ -1,22 +1,24 @@
 Class {
-	#name : #ServerResponseCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#name : 'ServerResponseCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'test support' }
+{ #category : 'test support' }
 ServerResponseCommandTest >> bePost [
 
 	"Nothing to do"
 ]
 
-{ #category : #'test support' }
+{ #category : 'test support' }
 ServerResponseCommandTest >> callback: aBlock json: aString [
 
 	^ aBlock value: aString
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ServerResponseCommandTest >> testModelLoadingActionsWhenUsingClientParameter [
 
 	| command html |
@@ -55,7 +57,7 @@ ServerResponseCommandTest >> testModelLoadingActionsWhenUsingClientParameter [
 			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){alert("Test is complete")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ServerResponseCommandTest >> testModelLoadingInstructions [
 
 	| command html |
@@ -82,7 +84,7 @@ ServerResponseCommandTest >> testModelLoadingInstructions [
 			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){alert("test complete")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ServerResponseCommandTest >> testOnRespond [
 
 	| command html |
@@ -109,7 +111,7 @@ ServerResponseCommandTest >> testOnRespond [
 			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){alert("it has returned!")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ServerResponseCommandTest >> testParameter [
 
 	| parameterObtained command |
@@ -128,7 +130,7 @@ ServerResponseCommandTest >> testParameter [
 	self assert: parameterObtained equals: 'test complete'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ServerResponseCommandTest >> testPriorityActions [
 
 	"Priority actions are only created when a client parameter is provided.
@@ -142,7 +144,7 @@ ServerResponseCommandTest >> testPriorityActions [
 				requiring: Optional unused ) priorityActions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ServerResponseCommandTest >> testPriorityActionsIncludeConditionalExecution [
 
 	| command html |
@@ -169,7 +171,7 @@ ServerResponseCommandTest >> testPriorityActionsIncludeConditionalExecution [
 			'<div id="div-id3"></div><script type="text/javascript">$("#div-id3").click(function(){if(worldSize>0){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(worldSize))].join("&")})}});</script>'
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 ServerResponseCommandTest >> testRequiresSerialization [
 
 	self
@@ -180,7 +182,7 @@ ServerResponseCommandTest >> testRequiresSerialization [
 				requiring: Optional unused ) requiresSerialization
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ServerResponseCommandTest >> testServerIndependentInstructions [
 
 	self

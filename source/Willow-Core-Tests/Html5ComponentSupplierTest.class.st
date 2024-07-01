@@ -2,12 +2,14 @@
 A Html5ComponentSupplierTest is a test class for testing the behavior of Html5ComponentSupplier
 "
 Class {
-	#name : #Html5ComponentSupplierTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'Html5ComponentSupplierTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 Html5ComponentSupplierTest >> assertRenderingOf: aComponentCreationBlock equals: anExpectedHtml [
 
 	| component html |
@@ -19,37 +21,37 @@ Html5ComponentSupplierTest >> assertRenderingOf: aComponentCreationBlock equals:
 	self assert: html equals: anExpectedHtml
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Html5ComponentSupplierTest >> componentSupplier [
 
 	^ Html5ComponentSupplier new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Html5ComponentSupplierTest >> createHandlers [
 
 	^ Array with: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Html5ComponentSupplierTest >> isSession [
 
 	^ true
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testAsynchronicButtonLabeledApplying [
 
 	self assertRenderingOf: [ :supplier | supplier asynchronicButtonLabeled: 'Buy' applying: [ :button | button addClass willow ] ] equals: '<button class="willow" type="button">Buy</button>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testAsynchronicLinkLabeledApplying [
 
 	self assertRenderingOf: [ :supplier | supplier asynchronicLinkLabeled: 'Buy' applying: [ :link | link addClass willow ] ] equals: '<a id="a-id1" class="willow">Buy</a><script type="text/javascript">$("#a-id1").click(function(event){arguments[0].preventDefault()});</script>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testCheckboxLabeledOnModelOffModelApplying [
 
 	self
@@ -64,7 +66,7 @@ Html5ComponentSupplierTest >> testCheckboxLabeledOnModelOffModelApplying [
 			'<input class="willow" checked name="1" id="checkbox-id2" type="checkbox"/><input name="3" type="hidden"/><label for="checkbox-id2">Labelization</label>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testCheckboxUnlabeledOnModelOffModelApplying [
 
 	self
@@ -72,19 +74,19 @@ Html5ComponentSupplierTest >> testCheckboxUnlabeledOnModelOffModelApplying [
 		equals: '<input class="willow" checked name="1" type="checkbox"/><input name="2" type="hidden"/>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testDateFieldApplying [
 
 	self assertRenderingOf: [ :supplier | supplier dateFieldApplying: [ :field | field addClass willow ] ] equals: '<input value="" name="1" type="date" class="willow"/>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testDecimalNumberFieldApplying [
 
 	self assertRenderingOf: [ :supplier | supplier decimalNumberFieldApplying: [ :field | field addClass willow ] ] equals: '<input value="" name="1" type="number" class="willow"/>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testDelayedViewShowingWhileEvaluatingThenRendering [
 
 	self
@@ -92,13 +94,13 @@ Html5ComponentSupplierTest >> testDelayedViewShowingWhileEvaluatingThenRendering
 		equals: '<div id="container-id1">Loading...</div><script type="text/javascript">Willow.callServer({"url":"/","data":"2"});</script>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testDropdownListApplying [
 
 	self assertRenderingOf: [ :supplier | supplier dropdownListApplying: [ :dropdownList | dropdownList addClass willow ] ] equals: '<select name="1" class="willow"></select>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testFieldSetContainingApplyingWithLegendApplying [
 
 	self
@@ -111,13 +113,13 @@ Html5ComponentSupplierTest >> testFieldSetContainingApplyingWithLegendApplying [
 		equals: '<fieldset disabled><legend autofocus>Its Title</legend>The View</fieldset>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testMultiLineTextFieldApplying [
 
 	self assertRenderingOf: [ :supplier | supplier multiLineTextFieldApplying: [ :textField | textField addClass willow ] ] equals: '<textarea rows="auto" cols="auto" name="1" class="willow"></textarea>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testMultipleSelectionListBoxDisplayingAtOnceApplying [
 
 	self
@@ -129,13 +131,13 @@ Html5ComponentSupplierTest >> testMultipleSelectionListBoxDisplayingAtOnceApplyi
 		equals: '<select name="1" size="15" class="willow" multiple></select><input name="2" type="hidden"/>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testNaturalNumberFieldApplying [
 
 	self assertRenderingOf: [ :supplier | supplier naturalNumberFieldApplying: [ :field | field addClass willow ] ] equals: '<input value="" name="1" type="number" min="0" class="willow"/>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testRadioRenderingWithApplyingToLabelApplyingToInput [
 
 	self
@@ -152,19 +154,19 @@ Html5ComponentSupplierTest >> testRadioRenderingWithApplyingToLabelApplyingToInp
 			'<label for="radio-button-id2" class="willow"><input name="1" id="radio-button-id2" class="willow" value="1" type="radio"/>F</label><label for="radio-button-id3" class="willow"><input name="1" id="radio-button-id3" class="willow" value="2" type="radio"/>H</label>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testSingleLineTextFieldApplying [
 
 	self assertRenderingOf: [ :supplier | supplier singleLineTextFieldApplying: [ :textField | textField addClass willow ] ] equals: '<input value="" name="1" class="willow" type="text"/>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testSingleSelectionListBoxDisplayingAtOnceApplying [
 
 	self assertRenderingOf: [ :supplier | supplier singleSelectionListBoxDisplayingAtOnce: 15 applying: [ :listBox | listBox addClass willow ] ] equals: '<select name="1" size="15" class="willow"></select>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testSynchronicButtonLabeledApplyingEvaluating [
 
 	self
@@ -176,13 +178,13 @@ Html5ComponentSupplierTest >> testSynchronicButtonLabeledApplyingEvaluating [
 		equals: '<button name="1" class="willow" type="submit">Search</button>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testSynchronicLinkLabeledApplying [
 
 	self assertRenderingOf: [ :supplier | supplier synchronicLinkLabeled: 'Buy' applying: [ :link | link addClass willow ] ] equals: '<a class="willow">Buy</a>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testTableBuilderForHeadlessTable [
 
 	| supplier table html |
@@ -205,7 +207,7 @@ Html5ComponentSupplierTest >> testTableBuilderForHeadlessTable [
 			'<table class="fixed"><tbody><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>3</td></tr><tr><td>3</td><td>4</td></tr></tbody></table>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testTableBuilderWithFooter [
 
 	| supplier table html |
@@ -234,7 +236,7 @@ Html5ComponentSupplierTest >> testTableBuilderWithFooter [
 			'<table><thead><th>Number</th><th>Even?</th></thead><tbody><tr><td>1</td><td>false</td></tr><tr><td>2</td><td>true</td></tr><tr><td>3</td><td>false</td></tr></tbody><tfoot><td></td><td>Fixed Footer</td></tfoot></table>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testTableBuilderWithRowCommand [
 
 	| supplier table html |
@@ -256,7 +258,7 @@ Html5ComponentSupplierTest >> testTableBuilderWithRowCommand [
 			'<table><tbody><tr id="id1"><td>1</td></tr><tr id="id2"><td>2</td></tr><tr id="id3"><td>3</td></tr></tbody></table>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testTableBuilderWithSimpleColumns [
 
 	| supplier table html |
@@ -284,7 +286,7 @@ Html5ComponentSupplierTest >> testTableBuilderWithSimpleColumns [
 			'<table><thead><th>Number</th><th>Even?</th></thead><tbody><tr><td>1</td><td>false</td></tr><tr><td>2</td><td>true</td></tr><tr><td>3</td><td>false</td></tr></tbody></table>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testTimeFieldApplying [
 
 	self
@@ -292,7 +294,7 @@ Html5ComponentSupplierTest >> testTimeFieldApplying [
 		equals: '<input value="" name="1" type="time"/>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 Html5ComponentSupplierTest >> testUnorderedListApplyingListingApplyingToEach [
 
 	self
@@ -300,7 +302,7 @@ Html5ComponentSupplierTest >> testUnorderedListApplyingListingApplyingToEach [
 		equals: '<ul><li class="willow">N.1</li><li class="willow">N.2</li><li class="willow">N.3</li></ul>'
 ]
 
-{ #category : #'tests-Processing' }
+{ #category : 'tests-Processing' }
 Html5ComponentSupplierTest >> testUpdateRoot [
 
 	| html |

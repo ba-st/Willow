@@ -2,21 +2,23 @@
 A command to deselect all the options in a select
 "
 Class {
-	#name : #DeselectAllOptionsCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'DeselectAllOptionsCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'scriptCommand'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #processing }
+{ #category : 'processing' }
 DeselectAllOptionsCommand >> applyTo: aSelect on: aCanvas [
 
 	scriptCommand applyTo: aSelect on: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 DeselectAllOptionsCommand >> initialize [
 
 	super initialize.

@@ -2,42 +2,44 @@
 I'm a push button used to trigger actions using AJAX
 "
 Class {
-	#name : #AsynchronicButtonWebView,
-	#superclass : #WAPainter,
+	#name : 'AsynchronicButtonWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'identifierAssigner',
 		'commandToComponent',
 		'interactionInterpreter',
 		'label'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 AsynchronicButtonWebView class >> labeled: aLabel [
 
 	^ self labeled: aLabel applying: [ :button |  ]
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 AsynchronicButtonWebView class >> labeled: aLabel applying: aComponentCommand [
 
 	^ self new initializeLabeled: aLabel applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 AsynchronicButtonWebView >> beIdentifiable [
 
 	^ identifierAssigner beRequired
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AsynchronicButtonWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AsynchronicButtonWebView >> initializeLabeled: aLabel applying: aComponentCommand [
 
 	label := aLabel.
@@ -46,13 +48,13 @@ AsynchronicButtonWebView >> initializeLabeled: aLabel applying: aComponentComman
 	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 AsynchronicButtonWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 AsynchronicButtonWebView >> renderContentOn: aCanvas [
 
 	"We send bePush to the button because, by default, Seaside made it with type = submit"

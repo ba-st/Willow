@@ -2,18 +2,20 @@
 I'm an encoder/decoder of Dates
 "
 Class {
-	#name : #ISODateCodec,
-	#superclass : #Codec,
-	#category : #'Willow-Core-Frontend'
+	#name : 'ISODateCodec',
+	#superclass : 'Codec',
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 ISODateCodec >> canCreate: anObject [
 
 	^anObject isA: Date
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ISODateCodec >> decode: aString [
 
 	^ [ Date readFrom: aString pattern: 'yyyy-mm-dd' ]
@@ -21,7 +23,7 @@ ISODateCodec >> decode: aString [
 		do: [ :error | InstanceCreationFailed signal: error messageText ]
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ISODateCodec >> encode: aDate [
 
 	^ GRPrinter isoDate print: aDate

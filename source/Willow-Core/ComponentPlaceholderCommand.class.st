@@ -2,27 +2,29 @@
 A command to assign a hint for a component, using the placeholder attribute.
 "
 Class {
-	#name : #ComponentPlaceholderCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ComponentPlaceholderCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'suggestion'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 ComponentPlaceholderCommand class >> suggestedBy: aSuggestion [
 
 	^self new initializeSuggestedBy: aSuggestion
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ComponentPlaceholderCommand >> applyTo: aComponent on: aCanvas [
 
 	aComponent placeholder: suggestion
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentPlaceholderCommand >> initializeSuggestedBy: aSuggestion [
 
 	suggestion := aSuggestion

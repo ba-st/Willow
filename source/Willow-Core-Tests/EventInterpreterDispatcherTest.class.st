@@ -1,16 +1,18 @@
 Class {
-	#name : #EventInterpreterDispatcherTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#name : 'EventInterpreterDispatcherTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'test support' }
+{ #category : 'test support' }
 EventInterpreterDispatcherTest >> configureTextInputWith: aDispatcher [
 
 	^ self apply: aDispatcher toComponentDefinedBy: [ :canvas | canvas textInput ]
 ]
 
-{ #category : #'tests - evaluating' }
+{ #category : 'tests - evaluating' }
 EventInterpreterDispatcherTest >> testApplyToOn [
 
 	| dispatcher html |
@@ -25,7 +27,7 @@ EventInterpreterDispatcherTest >> testApplyToOn [
 			
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 EventInterpreterDispatcherTest >> testChange [
 
 	| dispatcher html |
@@ -39,7 +41,7 @@ EventInterpreterDispatcherTest >> testChange [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").change(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 EventInterpreterDispatcherTest >> testClick [
 
 	| dispatcher html |
@@ -53,7 +55,7 @@ EventInterpreterDispatcherTest >> testClick [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - instance creation' }
+{ #category : 'tests - instance creation' }
 EventInterpreterDispatcherTest >> testDefaultingToChange [
 
 	| dispatcher html |
@@ -67,7 +69,7 @@ EventInterpreterDispatcherTest >> testDefaultingToChange [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").change(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - instance creation' }
+{ #category : 'tests - instance creation' }
 EventInterpreterDispatcherTest >> testDefaultingToChangeHidden [
 
 	| dispatcher html |
@@ -81,7 +83,7 @@ EventInterpreterDispatcherTest >> testDefaultingToChangeHidden [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").change(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - instance creation' }
+{ #category : 'tests - instance creation' }
 EventInterpreterDispatcherTest >> testDefaultingToClick [
 
 	| dispatcher html |
@@ -95,7 +97,7 @@ EventInterpreterDispatcherTest >> testDefaultingToClick [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - instance creation' }
+{ #category : 'tests - instance creation' }
 EventInterpreterDispatcherTest >> testDefaultingToClickHidden [
 
 	| dispatcher html |
@@ -109,7 +111,7 @@ EventInterpreterDispatcherTest >> testDefaultingToClickHidden [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 EventInterpreterDispatcherTest >> testEventNamed [
 
 	| dispatcher html |
@@ -123,7 +125,7 @@ EventInterpreterDispatcherTest >> testEventNamed [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").dblclick(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 EventInterpreterDispatcherTest >> testKeyUp [
 
 	| dispatcher html |
@@ -137,7 +139,7 @@ EventInterpreterDispatcherTest >> testKeyUp [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").keyup(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 EventInterpreterDispatcherTest >> testMouseOver [
 
 	| dispatcher html |
@@ -151,7 +153,7 @@ EventInterpreterDispatcherTest >> testMouseOver [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").mouseover(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 EventInterpreterDispatcherTest >> testTrigger [
 
 	| dispatcher html |

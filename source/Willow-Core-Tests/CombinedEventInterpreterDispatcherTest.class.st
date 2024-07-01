@@ -1,14 +1,16 @@
 Class {
-	#name : #CombinedEventInterpreterDispatcherTest,
-	#superclass : #BWRenderingTest,
+	#name : 'CombinedEventInterpreterDispatcherTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'okButton',
 		'textField'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 CombinedEventInterpreterDispatcherTest >> setUp [
 
 	super setUp.
@@ -16,7 +18,7 @@ CombinedEventInterpreterDispatcherTest >> setUp [
 	textField := TextFieldWebView singleLineApplying: [  ]
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 CombinedEventInterpreterDispatcherTest >> testChange [
 
 	| dispatcher html |
@@ -37,7 +39,7 @@ CombinedEventInterpreterDispatcherTest >> testChange [
 			'<button id="button-id1" type="button">Ok</button><input value="" name="2" id="input-id3" type="text"/><script type="text/javascript">$("#button-id1").change(function(event){alert("A message")});$("#input-id3").change(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 CombinedEventInterpreterDispatcherTest >> testClick [
 
 	| dispatcher html |
@@ -58,7 +60,7 @@ CombinedEventInterpreterDispatcherTest >> testClick [
 			'<button id="button-id1" type="button">Ok</button><input value="" name="2" id="input-id3" type="text"/><script type="text/javascript">$("#button-id1").click(function(event){alert("A message")});$("#input-id3").click(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - instance creation' }
+{ #category : 'tests - instance creation' }
 CombinedEventInterpreterDispatcherTest >> testCombiningAll [
 
 	| dispatcher html |
@@ -79,7 +81,7 @@ CombinedEventInterpreterDispatcherTest >> testCombiningAll [
 			'<button id="button-id1" type="button">Ok</button><input value="" name="2" id="input-id3" type="text"/><script type="text/javascript">$("#button-id1").click(function(event){alert("A message")});$("#input-id3").change(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - instance creation' }
+{ #category : 'tests - instance creation' }
 CombinedEventInterpreterDispatcherTest >> testCombiningInterpretersOfAll [
 
 	| dispatcher html |
@@ -100,7 +102,7 @@ CombinedEventInterpreterDispatcherTest >> testCombiningInterpretersOfAll [
 			'<button id="button-id1" type="button">Ok</button><input value="" name="2" id="input-id3" type="text"/><script type="text/javascript">$("#button-id1").click(function(event){alert("A message")});$("#input-id3").change(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 CombinedEventInterpreterDispatcherTest >> testEventNamed [
 
 	| dispatcher html |
@@ -121,7 +123,7 @@ CombinedEventInterpreterDispatcherTest >> testEventNamed [
 			'<button id="button-id1" type="button">Ok</button><input value="" name="2" id="input-id3" type="text"/><script type="text/javascript">$("#button-id1").dblclick(function(event){alert("A message")});$("#input-id3").dblclick(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 CombinedEventInterpreterDispatcherTest >> testKeyUp [
 
 	| dispatcher html |
@@ -142,7 +144,7 @@ CombinedEventInterpreterDispatcherTest >> testKeyUp [
 			'<button id="button-id1" type="button">Ok</button><input value="" name="2" id="input-id3" type="text"/><script type="text/javascript">$("#button-id1").keyup(function(event){alert("A message")});$("#input-id3").keyup(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 CombinedEventInterpreterDispatcherTest >> testMouseOver [
 
 	| dispatcher html |
@@ -163,7 +165,7 @@ CombinedEventInterpreterDispatcherTest >> testMouseOver [
 			'<button id="button-id1" type="button">Ok</button><input value="" name="2" id="input-id3" type="text"/><script type="text/javascript">$("#button-id1").mouseover(function(event){alert("A message")});$("#input-id3").mouseover(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - configuring' }
+{ #category : 'tests - configuring' }
 CombinedEventInterpreterDispatcherTest >> testTrigger [
 
 	| dispatcher html |

@@ -2,16 +2,18 @@
 I'm a WebInteractionCommand allowing to change the css class of a component, which can be done using a specific transformation.
 "
 Class {
-	#name : #ComponentStyleClassChangingCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'ComponentStyleClassChangingCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'updatesProvider',
 		'elementsProvider'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentStyleClassChangingCommand class >> applying: aCssClassConfigurationBlock targeting: anElementMatchingBlock [
 
 	^ self new
@@ -19,19 +21,19 @@ ComponentStyleClassChangingCommand class >> applying: aCssClassConfigurationBloc
 		targeting: anElementMatchingBlock
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ComponentStyleClassChangingCommand >> applyStyleChangeTo: component [
 
 	^ updatesProvider applyTo: component
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ComponentStyleClassChangingCommand >> componentOn: aCanvas [
 
 	^ elementsProvider value: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentStyleClassChangingCommand >> initializeApplying: aCssClassConfigurationBlock
 	targeting: anElementMatchingBlock [
 
@@ -39,25 +41,25 @@ ComponentStyleClassChangingCommand >> initializeApplying: aCssClassConfiguration
 	elementsProvider := anElementMatchingBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentStyleClassChangingCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentStyleClassChangingCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ComponentStyleClassChangingCommand >> requiresSerialization [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentStyleClassChangingCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions

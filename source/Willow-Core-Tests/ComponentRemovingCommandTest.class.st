@@ -2,15 +2,17 @@
 A ComponentRemovingCommandTest is a test class for testing the behavior of ComponentRemovingCommand
 "
 Class {
-	#name : #ComponentRemovingCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'ComponentRemovingCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentRemovingCommandTest >> setUp [
 
 	super setUp.
@@ -22,7 +24,7 @@ ComponentRemovingCommandTest >> setUp [
 				applying: [  ] )
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentRemovingCommandTest >> testModelLoadingInstructions [
 
 	| html |
@@ -44,19 +46,19 @@ ComponentRemovingCommandTest >> testModelLoadingInstructions [
 			'<div id="div-id1"></div><script type="text/javascript">$("#div-id1").click(function(){$("#div-id1").remove()});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentRemovingCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 ComponentRemovingCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization  
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentRemovingCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

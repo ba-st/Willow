@@ -2,8 +2,8 @@
 I'm a submit button
 "
 Class {
-	#name : #SynchronicSubmitButtonWebView,
-	#superclass : #WAPainter,
+	#name : 'SynchronicSubmitButtonWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'label',
 		'commandToComponent',
@@ -11,10 +11,12 @@ Class {
 		'identifierAssigner',
 		'submitCallback'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 SynchronicSubmitButtonWebView class >> labeled: aLabel applying: aComponentCommand evaluating: actionOnSubmit [
 
 	^ self new
@@ -23,19 +25,19 @@ SynchronicSubmitButtonWebView class >> labeled: aLabel applying: aComponentComma
 		evaluating: actionOnSubmit
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SynchronicSubmitButtonWebView >> beIdentifiable [
 
 	^ identifierAssigner beRequired
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SynchronicSubmitButtonWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SynchronicSubmitButtonWebView >> initializeLabeled: aLabel applying: aCommandCollection evaluating: actionOnSubmit [
 
 	label := aLabel.
@@ -45,13 +47,13 @@ SynchronicSubmitButtonWebView >> initializeLabeled: aLabel applying: aCommandCol
 	identifierAssigner := IdentifierAssigner prefixedBy: 'submit-button'
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SynchronicSubmitButtonWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SynchronicSubmitButtonWebView >> renderContentOn: aCanvas [
 
 	| submitButton |

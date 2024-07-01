@@ -2,27 +2,29 @@
 A command to set the size of a component, in combo boxes this implies the number of visible options.
 "
 Class {
-	#name : #SetComponentSizeCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'SetComponentSizeCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'size'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SetComponentSizeCommand class >> setting: aSize [
 
 	^self new initializeSetting: aSize
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 SetComponentSizeCommand >> applyTo: aComponent on: aCanvas [
 
 	aComponent size: size
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 SetComponentSizeCommand >> initializeSetting: aSize [
 
 	size := aSize

@@ -2,27 +2,29 @@
 I'm a WebInteractionCommand allowing to remove a component
 "
 Class {
-	#name : #ComponentRemovingCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'ComponentRemovingCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'identifiedView'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentRemovingCommand class >> for: anIdentifiedView [
 
 	^ self new initializeFor: anIdentifiedView
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 ComponentRemovingCommand >> initializeFor: anIdentifiedView [
 
 	identifiedView := anIdentifiedView
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentRemovingCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
@@ -30,19 +32,19 @@ ComponentRemovingCommand >> modelLoadingInstructions [
 		orderedAt: 20
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentRemovingCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ComponentRemovingCommand >> requiresSerialization [
 
 	^false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentRemovingCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

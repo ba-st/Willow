@@ -2,12 +2,14 @@
 A WebInteractionInstructionsTest is a test class for testing the behavior of WebInteractionInstructions
 "
 Class {
-	#name : #WebInteractionInstructionsTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#name : 'WebInteractionInstructionsTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testAppendToOn [
 
 	| stream instructions |
@@ -19,7 +21,7 @@ WebInteractionInstructionsTest >> testAppendToOn [
 	self assert: stream contents equals: 'Number is 3'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testCombinedWith [
 
 	| stream instructions otherInstructions |
@@ -33,7 +35,7 @@ WebInteractionInstructionsTest >> testCombinedWith [
 	self assert: stream contents equals: 'Values are 35'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testCombinedWithWhenBothAreEmpty [
 
 	| stream instructions otherInstructions |
@@ -45,7 +47,7 @@ WebInteractionInstructionsTest >> testCombinedWithWhenBothAreEmpty [
 	self assert: stream contents equals: 'Values not here'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testCombinedWithWhenFirstIsEmpty [
 
 	| stream instructions otherInstructions |
@@ -58,7 +60,7 @@ WebInteractionInstructionsTest >> testCombinedWithWhenFirstIsEmpty [
 	self assert: stream contents equals: 'Values are 5'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testCombinedWithWhenSecondIsEmpty [
 
 	| stream instructions otherInstructions |
@@ -71,7 +73,7 @@ WebInteractionInstructionsTest >> testCombinedWithWhenSecondIsEmpty [
 	self assert: stream contents equals: 'Values are 3'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testDirectingTo [
 
 	| instructions |
@@ -89,7 +91,7 @@ WebInteractionInstructionsTest >> testDirectingTo [
 			]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testDirectingToOrderedAt [
 
 	| instructions otherInstructions combinedInstructions |
@@ -111,7 +113,7 @@ WebInteractionInstructionsTest >> testDirectingToOrderedAt [
 			]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testEmpty [
 
 	| instructions |
@@ -124,7 +126,7 @@ WebInteractionInstructionsTest >> testEmpty [
 	self renderUsing: [ :canvas | self assert: ( instructions statementsOn: canvas ) isEmpty ]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testIsEmpty [
 
 	| instructions |
@@ -133,7 +135,7 @@ WebInteractionInstructionsTest >> testIsEmpty [
 	self deny: instructions isEmpty
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testNotEmpty [
 
 	| instructions |
@@ -142,7 +144,7 @@ WebInteractionInstructionsTest >> testNotEmpty [
 	self assert: instructions notEmpty
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebInteractionInstructionsTest >> testStatementsOn [
 
 	| instructions |

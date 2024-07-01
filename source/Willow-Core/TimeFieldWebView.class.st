@@ -2,21 +2,23 @@
 I represent a TextField containing times.
 "
 Class {
-	#name : #TimeFieldWebView,
-	#superclass : #FieldWebView,
+	#name : 'TimeFieldWebView',
+	#superclass : 'FieldWebView',
 	#instVars : [
 		'textCodec'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 TimeFieldWebView class >> applying: aComponentCommand [
 
 	^ self applying: aComponentCommand transformingWith: ISOTimeCodec new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 TimeFieldWebView class >> applying: aComponentCommand transformingWith: aTextCodec [
 
 	^ ( self
@@ -26,31 +28,31 @@ TimeFieldWebView class >> applying: aComponentCommand transformingWith: aTextCod
 		initializeTransformingWith: aTextCodec
 ]
 
-{ #category : #'Time-Container-API' }
+{ #category : 'Time-Container-API' }
 TimeFieldWebView >> changeTimeTo: aTime [
 
 	self changeModelTo: aTime
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 TimeFieldWebView >> identifierPrefix [
 
 	^ 'time-field'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TimeFieldWebView >> initializeTransformingWith: aTextCodec [
 
 	textCodec := aTextCodec
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 TimeFieldWebView >> textCodec [
 
 	^ textCodec
 ]
 
-{ #category : #'Time-Container-API' }
+{ #category : 'Time-Container-API' }
 TimeFieldWebView >> time [
 
 	^ self model

@@ -2,21 +2,23 @@
 I represent a basic Session for Willow. 
 "
 Class {
-	#name : #WillowSession,
-	#superclass : #WASession,
+	#name : 'WillowSession',
+	#superclass : 'WASession',
 	#instVars : [
 		'componentSupplier'
 	],
-	#category : #'Willow-Core-Applications'
+	#category : 'Willow-Core-Applications',
+	#package : 'Willow-Core',
+	#tag : 'Applications'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowSession >> componentSupplier [
 
 	^ componentSupplier
 ]
 
-{ #category : #Controlling }
+{ #category : 'Controlling' }
 WillowSession >> startUpApplicationContextFor: aWillowApplication [
 
 	"This hook provides the capability to set-up an application specific context"

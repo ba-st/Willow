@@ -2,27 +2,29 @@
 Command to configure maximum length of an input field
 "
 Class {
-	#name : #InputFieldMaxLengthCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'InputFieldMaxLengthCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'maxLength'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 InputFieldMaxLengthCommand class >> allowingUpTo: anAmount [
 
 	^self new initializeAllowingUpTo: anAmount
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 InputFieldMaxLengthCommand >> applyTo: aComponent on: aCanvas [
 
 	aComponent maxLength: maxLength
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 InputFieldMaxLengthCommand >> initializeAllowingUpTo: anAmount [
 
 	maxLength := anAmount

@@ -2,12 +2,14 @@
 A GenericContainerWebViewTest is a test class for testing the behavior of GenericContainerWebView
 "
 Class {
-	#name : #ContainerWebViewTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'ContainerWebViewTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 ContainerWebViewTest >> testBeIdentifiable [
 
 	| container html |
@@ -22,7 +24,7 @@ ContainerWebViewTest >> testBeIdentifiable [
 	self assert: html equals: '<div id="container-id1">Hello world</div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ContainerWebViewTest >> testIdentifierOn [
 
 	| container |
@@ -35,7 +37,7 @@ ContainerWebViewTest >> testIdentifierOn [
 		renderUsing: [ :canvas | self assert: ( container identifierOn: canvas ) equals: 'container-id1' ]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ContainerWebViewTest >> testOn [
 
 	| container html |
@@ -53,7 +55,7 @@ ContainerWebViewTest >> testOn [
 			'<div id="container-id1">Hello world</div><script type="text/javascript">$("#container-id1").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ContainerWebViewTest >> testRenderContentOn [
 
 	| container html |
@@ -67,7 +69,7 @@ ContainerWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<div>Hi!</div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ContainerWebViewTest >> testRenderContentOnWithScriptingCommand [
 
 	| container html |
@@ -83,7 +85,7 @@ ContainerWebViewTest >> testRenderContentOnWithScriptingCommand [
 		equals: '<div id="id1">Hi!</div><script type="text/javascript">$("#id1");</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ContainerWebViewTest >> testRenderableContent [
 
 	| content container |
@@ -97,7 +99,7 @@ ContainerWebViewTest >> testRenderableContent [
 	self assert: container renderableContent equals: content
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 ContainerWebViewTest >> testWrappingIntoElementBuiltUsingApplying [
 
 	| container html |

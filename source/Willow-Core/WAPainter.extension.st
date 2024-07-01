@@ -1,6 +1,6 @@
-Extension { #name : #WAPainter }
+Extension { #name : 'WAPainter' }
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WAPainter >> componentSupplier [
 
 	^ self session componentSupplier

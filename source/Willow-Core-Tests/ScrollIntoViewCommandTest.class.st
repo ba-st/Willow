@@ -2,22 +2,24 @@
 A ScrollIntoViewCommandTest is a test class for testing the behavior of ScrollIntoViewCommand
 "
 Class {
-	#name : #ScrollIntoViewCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'ScrollIntoViewCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ScrollIntoViewCommandTest >> setUp [
 
 	super setUp.
 	command := ScrollIntoViewCommand withComponentIdentifierProvidedBy: [ 'id8' ]
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ScrollIntoViewCommandTest >> testModelLoadingInstructions [
 
 	| html |
@@ -37,19 +39,19 @@ ScrollIntoViewCommandTest >> testModelLoadingInstructions [
 			'<a id="id1"></a><script type="text/javascript">$("#id1").click(function(){$("#id8").each(function(){$(this).get(0).scrollIntoView()})});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ScrollIntoViewCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 ScrollIntoViewCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ScrollIntoViewCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

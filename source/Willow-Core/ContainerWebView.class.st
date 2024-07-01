@@ -1,6 +1,6 @@
 Class {
-	#name : #ContainerWebView,
-	#superclass : #WAPainter,
+	#name : 'ContainerWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'interactionInterpreter',
 		'commandToComponent',
@@ -8,10 +8,12 @@ Class {
 		'renderableContent',
 		'containerBuilder'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 ContainerWebView class >> wrapping: aRenderable intoElementBuiltUsing: anElementBuilder applying: aComponentCommand [
 
 	^ self new
@@ -20,19 +22,19 @@ ContainerWebView class >> wrapping: aRenderable intoElementBuiltUsing: anElement
 		applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 ContainerWebView >> beIdentifiable [
 
 	identifierAssigner beRequired
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ContainerWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ContainerWebView >> initializeWrapping: aRenderable intoElementBuiltUsing: anElementBuilder applying: aComponentCommand [
 
 	containerBuilder := anElementBuilder.
@@ -42,14 +44,14 @@ ContainerWebView >> initializeWrapping: aRenderable intoElementBuiltUsing: anEle
 	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 ContainerWebView >> on [
 
 	self beIdentifiable.
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 ContainerWebView >> renderContentOn: aCanvas [
 
 	( containerBuilder cull: aCanvas )
@@ -58,7 +60,7 @@ ContainerWebView >> renderContentOn: aCanvas [
 		with: renderableContent applying: commandToComponent
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ContainerWebView >> renderableContent [
 
 	^ renderableContent

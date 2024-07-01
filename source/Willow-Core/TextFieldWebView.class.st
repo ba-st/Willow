@@ -2,12 +2,14 @@
 I enable the user to input text information. I support single-line text box when only one line of input is required, and a multi-line text box only if more than one line of input may be required.
 "
 Class {
-	#name : #TextFieldWebView,
-	#superclass : #FieldWebView,
-	#category : #'Willow-Core-WebViews'
+	#name : 'TextFieldWebView',
+	#superclass : 'FieldWebView',
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 TextFieldWebView class >> multiLineApplying: aComponentCommand [
 
 	^ self
@@ -16,7 +18,7 @@ TextFieldWebView class >> multiLineApplying: aComponentCommand [
 		applying: aComponentCommand
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 TextFieldWebView class >> singleLineApplying: aComponentCommand [
 
 	^ self
@@ -25,13 +27,13 @@ TextFieldWebView class >> singleLineApplying: aComponentCommand [
 		applying: aComponentCommand
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : 'private - Accessing' }
 TextFieldWebView >> identifierPrefix [
 
 	^ 'text'
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : 'private - Accessing' }
 TextFieldWebView >> textCodec [
 
 	^ NullCodec new

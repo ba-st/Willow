@@ -2,45 +2,47 @@
 A WillowApplicationTest is a test class for testing the behavior of WillowApplication
 "
 Class {
-	#name : #WillowApplicationTest,
-	#superclass : #BWRenderingTest,
+	#name : 'WillowApplicationTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'applicationStarted'
 	],
-	#category : #'Willow-Core-Tests-Applications'
+	#category : 'Willow-Core-Tests-Applications',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Applications'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplicationTest >> componentSupplier [
 
 	^ Html5ComponentSupplier new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplicationTest >> createHandlers [
 
 	^ Array with: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplicationTest >> isSession [
 
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplicationTest >> preferenceAt: aSymbol ifAbsent: aBlock [
 
 	^ aBlock value
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowApplicationTest >> startUpApplicationContextFor: aWillowApplication [
 
 	applicationStarted := true
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowApplicationTest >> testComponentSupplierForApplication [
 
 	| supplier application |
@@ -51,7 +53,7 @@ WillowApplicationTest >> testComponentSupplierForApplication [
 	self assert: application equals: supplier
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowApplicationTest >> testDeploymentMode [
 
 	self
@@ -59,7 +61,7 @@ WillowApplicationTest >> testDeploymentMode [
 			[ :canvas | self assert: (WillowApplication new deploymentMode isA: WAApplicationInDevelopment) ]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowApplicationTest >> testIinitialRequest [
 
 	applicationStarted := false.
@@ -69,7 +71,7 @@ WillowApplicationTest >> testIinitialRequest [
 			self assert: applicationStarted ]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowApplicationTest >> testRegisterAsDeployedApplication [
 
 	| handlers |
@@ -82,7 +84,7 @@ WillowApplicationTest >> testRegisterAsDeployedApplication [
 	self deny: ( handlers includesKey: WillowTestingApplication handlerName )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowApplicationTest >> testRegisterAsDevelopmentApplication [
 
 	| handlers |
@@ -95,7 +97,7 @@ WillowApplicationTest >> testRegisterAsDevelopmentApplication [
 	self deny: ( handlers includesKey: WillowTestingApplication handlerName )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowApplicationTest >> testRenderContentOn [
 
 	| html application |

@@ -2,46 +2,66 @@
 I represent an image that can optionally be interactive.
 "
 Class {
-	#name : #ImageWebView,
-	#superclass : #WAPainter,
+	#name : 'ImageWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'interactionInterpreter',
 		'commandToComponent',
-		'imageLocation'
+		'imageLocation',
+		'identifierAssigner'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ImageWebView class >> locatedAt: aLocation applying: aComponentCommand [
 
-	^ self new initializeLocatedAt: aLocation applying: aComponentCommand asWebComponentCommand 
+	^ self new initializeLocatedAt: aLocation applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ImageWebView class >> ofType: aMimeType base64EncodedAs: imageInBase64 applying: aComponentCommand [
 
-	^ self locatedAt: ('data:<1s>;base64,<2s>' expandMacrosWith: aMimeType greaseString with: imageInBase64) applying: aComponentCommand
+	^ self
+		  locatedAt:
+		  ( 'data:<1s>;base64,<2s>' expandMacrosWith: aMimeType greaseString with: imageInBase64 )
+		  applying: aComponentCommand
 ]
 
-{ #category : #initialization }
+{ #category : 'configuring' }
+ImageWebView >> beIdentifiable [
+
+	^ identifierAssigner beRequired
+]
+
+{ #category : 'accessing' }
+ImageWebView >> identifierOn: aCanvas [
+
+	^ identifierAssigner identifierOn: aCanvas
+]
+
+{ #category : 'initialization' }
 ImageWebView >> initializeLocatedAt: aLocation applying: aComponentCommand [
 
 	imageLocation := aLocation.
 	commandToComponent := aComponentCommand.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClick.
+	identifierAssigner := IdentifierAssigner prefixedBy: 'image'
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 ImageWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 ImageWebView >> renderContentOn: aCanvas [
 
 	aCanvas image
+		beIdentifiableUsing: identifierAssigner;
 		url: imageLocation;
 		apply: commandToComponent;
 		interactUsing: interactionInterpreter

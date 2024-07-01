@@ -1,19 +1,21 @@
 Class {
-	#name : #InteractionScriptTrigger,
-	#superclass : #TriggeringPolicy,
+	#name : 'InteractionScriptTrigger',
+	#superclass : 'TriggeringPolicy',
 	#instVars : [
 		'eventName'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 InteractionScriptTrigger class >> interactCalling: anEventName [
 
 	^ self new initializeInteractCalling: anEventName
 ]
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 InteractionScriptTrigger >> apply: aJavascriptScript to: aComponent on: aCanvas [
 
 	aCanvas ensureIdFor: aComponent.
@@ -21,7 +23,7 @@ InteractionScriptTrigger >> apply: aJavascriptScript to: aComponent on: aCanvas 
 		script: ( aCanvas jQuery this call: eventName with: ( aJavascriptScript asFunction: #(event) ) )
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 InteractionScriptTrigger >> initializeInteractCalling: anEventName [
 
 	eventName := anEventName

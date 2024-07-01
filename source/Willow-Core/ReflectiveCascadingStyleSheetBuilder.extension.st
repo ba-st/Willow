@@ -1,6 +1,6 @@
-Extension { #name : #ReflectiveCascadingStyleSheetBuilder }
+Extension { #name : 'ReflectiveCascadingStyleSheetBuilder' }
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 ReflectiveCascadingStyleSheetBuilder >> classification [
 
 	^ Willow classification

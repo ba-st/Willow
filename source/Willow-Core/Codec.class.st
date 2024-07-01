@@ -2,24 +2,26 @@
 I'm an abstract class representing a text coder/encoder.
 "
 Class {
-	#name : #Codec,
-	#superclass : #Object,
-	#category : #'Willow-Core-Frontend'
+	#name : 'Codec',
+	#superclass : 'Object',
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 Codec >> canCreate: anObject [
 
 	^self subclassResponsibility
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 Codec >> decode: aString [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 Codec >> encode: anObject [
 
 	^ self subclassResponsibility

@@ -1,19 +1,21 @@
 Class {
-	#name : #ComponentStyleClassUpdateBuilder,
-	#superclass : #Object,
+	#name : 'ComponentStyleClassUpdateBuilder',
+	#superclass : 'Object',
 	#instVars : [
 		'transformations'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 ComponentStyleClassUpdateBuilder >> addClass: aCssClass [
 
 	transformations add: [ :element | element addClass: aCssClass ]
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ComponentStyleClassUpdateBuilder >> applyTo: aJQueryInstance [
 
 	^ transformations
@@ -21,20 +23,20 @@ ComponentStyleClassUpdateBuilder >> applyTo: aJQueryInstance [
 		into: [ :result :transformation | transformation value: result ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentStyleClassUpdateBuilder >> initialize [
 
 	super initialize.
 	transformations := OrderedCollection new
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 ComponentStyleClassUpdateBuilder >> removeClass: aCssClass [
 
 	transformations add: [ :element | element removeClass: aCssClass ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 ComponentStyleClassUpdateBuilder >> toggleClass: aCssClass [
 
 	transformations add: [ :element | element toggleClass: aCssClass ]

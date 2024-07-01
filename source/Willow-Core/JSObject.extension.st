@@ -1,13 +1,13 @@
-Extension { #name : #JSObject }
+Extension { #name : 'JSObject' }
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 JSObject >> constants [
 	
 	"This method is intended to be private."
 	^ Willow constants
 ]
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 JSObject >> willow [
 
 	^ (WillowJavascriptNamespace context: self renderContext)

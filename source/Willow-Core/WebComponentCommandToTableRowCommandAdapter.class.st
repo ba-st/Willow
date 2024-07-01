@@ -2,27 +2,29 @@
 I'm an adapter for web component commands allowing to use it as table row commnands
 "
 Class {
-	#name : #WebComponentCommandToTableRowCommandAdapter,
-	#superclass : #TableRowCommand,
+	#name : 'WebComponentCommandToTableRowCommandAdapter',
+	#superclass : 'TableRowCommand',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 WebComponentCommandToTableRowCommandAdapter class >> adapting: aWebComponentCommand [
 
 	^self new initializeAdapting: aWebComponentCommand
 ]
 
-{ #category : #Applying }
+{ #category : 'Applying' }
 WebComponentCommandToTableRowCommandAdapter >> applyTo: aTableRow for: aRelatedObject on: aCanvas [
 
 	command applyTo: aTableRow on: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WebComponentCommandToTableRowCommandAdapter >> initializeAdapting: aWebComponentCommand [
 
 	command := aWebComponentCommand

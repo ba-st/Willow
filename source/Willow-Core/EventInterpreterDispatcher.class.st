@@ -1,20 +1,22 @@
 Class {
-	#name : #EventInterpreterDispatcher,
-	#superclass : #EventInterpreterDispatcherBehavior,
+	#name : 'EventInterpreterDispatcher',
+	#superclass : 'EventInterpreterDispatcherBehavior',
 	#instVars : [
 		'interpretersByEvent',
 		'defaultInterpreter'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 EventInterpreterDispatcher class >> defaultingToChange [
 
 	^ self interpretingByDefault: #change configuring: ( self interpreterSending: #change )
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 EventInterpreterDispatcher class >> defaultingToChangeHidden [
 
 	^ self
@@ -25,13 +27,13 @@ EventInterpreterDispatcher class >> defaultingToChangeHidden [
 				serializingWith: SerializationCommand forCurrentObjectWithHiddenInputs )
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 EventInterpreterDispatcher class >> defaultingToClick [
 
 	^ self interpretingByDefault: #click configuring: ( self interpreterSending: #click )
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 EventInterpreterDispatcher class >> defaultingToClickHidden [
 
 	^ self
@@ -42,7 +44,7 @@ EventInterpreterDispatcher class >> defaultingToClickHidden [
 				serializingWith: SerializationCommand forCurrentObjectWithHiddenInputs )
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 EventInterpreterDispatcher class >> interpreterSending: anEventName [
 
 	| serializationCommand |
@@ -55,38 +57,38 @@ EventInterpreterDispatcher class >> interpreterSending: anEventName [
 	^ WebInteractionInterpreter calling: anEventName serializingWith: serializationCommand
 ]
 
-{ #category : #'private - instance creation' }
+{ #category : 'private - instance creation' }
 EventInterpreterDispatcher class >> interpretingByDefault: anEventName configuring: aWebInteractionInterpreter [
 
 	^ self new initializeInterpretingByDefault: anEventName configuring: aWebInteractionInterpreter
 ]
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 EventInterpreterDispatcher >> applyTo: aComponent on: aCanvas [
 
 	interpretersByEvent
 		keysAndValuesDo: [ :event :interpreter | interpreter applyTo: aComponent on: aCanvas ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcher >> change [
 
 	^ self eventNamed: #change
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcher >> click [
 
 	^ self eventNamed: #click
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcher >> eventNamed: anEventName [
 
 	^ interpretersByEvent at: anEventName ifAbsentPut: [ self class interpreterSending: anEventName ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 EventInterpreterDispatcher >> initializeInterpretingByDefault: anEventName configuring: aWebInteractionInterpreter [
 
 	defaultInterpreter := aWebInteractionInterpreter.
@@ -94,19 +96,19 @@ EventInterpreterDispatcher >> initializeInterpretingByDefault: anEventName confi
 	interpretersByEvent at: anEventName put: aWebInteractionInterpreter
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcher >> keyUp [
 
 	^ self eventNamed: #keyup
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcher >> mouseOver [
 
 	^ self eventNamed: #mouseover
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 EventInterpreterDispatcher >> trigger [
 
 	^ defaultInterpreter

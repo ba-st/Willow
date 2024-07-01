@@ -2,18 +2,20 @@
 A WillowConstantsTest is a test class for testing the constants provided by the library
 "
 Class {
-	#name : #WillowConstantsTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'WillowConstantsTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'private - asserting' }
+{ #category : 'private - asserting' }
 WillowConstantsTest >> assertARIAConstant: aSymbol equals: anExpectedValue [
 
 	self assert: Willow constants >> #aria >> aSymbol equals: anExpectedValue
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowConstantsTest >> testBlockExtension [
 
 	| html |
@@ -25,7 +27,7 @@ WillowConstantsTest >> testBlockExtension [
 	self assert: html equals: '<a id="id1"></a><script type="text/javascript">$("#id1").click(function(){$("#willow-dialog-section").clone()});</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowConstantsTest >> testCssConstants [
 
 	[ :command :constants | 
@@ -34,7 +36,7 @@ WillowConstantsTest >> testCssConstants [
 		assert: constants >> #css >> #allPetiteCaps equals: 'all-petite-caps' ] asWebComponentCommand
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowConstantsTest >> testDocumentStructureRoles [
 
 	self
@@ -65,7 +67,7 @@ WillowConstantsTest >> testDocumentStructureRoles [
 		assertARIAConstant: #tooltip equals: 'tooltip'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowConstantsTest >> testExtraRoles [
 
 	self
@@ -86,7 +88,7 @@ WillowConstantsTest >> testExtraRoles [
 		assertARIAConstant: #timer equals: 'timer'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowConstantsTest >> testWidgetRoles [
 
 	self

@@ -2,18 +2,20 @@
 I'm an error handler supporting a different handling for AJAX requests
 "
 Class {
-	#name : #AjaxAwareErrorHandler,
-	#superclass : #WAHtmlErrorHandler,
+	#name : 'AjaxAwareErrorHandler',
+	#superclass : 'WAHtmlErrorHandler',
 	#instVars : [
 		'reportingAction',
 		'ajaxExceptionHandlers',
 		'rootCommand',
 		'nonAjaxRenderBlock'
 	],
-	#category : #'Willow-Core-Applications'
+	#category : 'Willow-Core-Applications',
+	#package : 'Willow-Core',
+	#tag : 'Applications'
 }
 
-{ #category : #actions }
+{ #category : 'actions' }
 AjaxAwareErrorHandler >> handleDefault: anException [
 
 	self valueReportingActionWhenHandling: anException.
@@ -22,7 +24,7 @@ AjaxAwareErrorHandler >> handleDefault: anException [
 		otherwise: [ super handleDefault: anException ]
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 AjaxAwareErrorHandler >> handleException: anException [
 
 	^ self requestContext request isXmlHttpRequest
@@ -34,7 +36,7 @@ AjaxAwareErrorHandler >> handleException: anException [
 		otherwise: [ super handleException: anException ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AjaxAwareErrorHandler >> initializeDefaults [
 
 	ajaxExceptionHandlers := GRSmallDictionary new.
@@ -44,38 +46,38 @@ AjaxAwareErrorHandler >> initializeDefaults [
 		renderNonAjaxErrorsWith: [ :canvas :exception | super renderContentForException: exception on: canvas ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AjaxAwareErrorHandler >> initializeWithContext: aRequestContext [
 
 	super initializeWithContext: aRequestContext.
 	self initializeDefaults
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 AjaxAwareErrorHandler >> on: anExceptionSelector do: aBlock [
 
 	ajaxExceptionHandlers at: anExceptionSelector put: aBlock
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 AjaxAwareErrorHandler >> renderContentForException: anException on: html [
 
 	nonAjaxRenderBlock value: html value: anException 
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 AjaxAwareErrorHandler >> renderNonAjaxErrorsWith: aDyadicBlock [
 
 	nonAjaxRenderBlock := aDyadicBlock
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 AjaxAwareErrorHandler >> reportingAction: aDyadicBlock [
 
 	reportingAction := aDyadicBlock
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 AjaxAwareErrorHandler >> respondToXmlHttpRequestWith: aMessageText [
 
 	self requestContext
@@ -89,20 +91,20 @@ AjaxAwareErrorHandler >> respondToXmlHttpRequestWith: aMessageText [
 				nextPutAll: aMessageText ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 AjaxAwareErrorHandler >> updateHtmlRoot: root forException: anException [
 
 	super updateHtmlRoot: root forException: anException.
 	rootCommand value: root.
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 AjaxAwareErrorHandler >> updateRootWith: aBlock [
 
 	rootCommand := aBlock
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 AjaxAwareErrorHandler >> valueReportingActionWhenHandling: anException [
 
 	reportingAction cull: self cull: anException

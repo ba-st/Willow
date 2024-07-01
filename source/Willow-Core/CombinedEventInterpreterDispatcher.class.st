@@ -1,62 +1,64 @@
 Class {
-	#name : #CombinedEventInterpreterDispatcher,
-	#superclass : #EventInterpreterDispatcherBehavior,
+	#name : 'CombinedEventInterpreterDispatcher',
+	#superclass : 'EventInterpreterDispatcherBehavior',
 	#instVars : [
 		'eventInterpreterDispatchers'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CombinedEventInterpreterDispatcher class >> combiningAll: anEventInterpreterDispatcherCollection [
 
 	^ self new initializeCombiningAll: anEventInterpreterDispatcherCollection
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CombinedEventInterpreterDispatcher class >> combiningInterpretersOfAll: aWebViewCollection [
 
 	^ self combiningAll: ( aWebViewCollection collect: #on )
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 CombinedEventInterpreterDispatcher >> change [
 
 	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #change )
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 CombinedEventInterpreterDispatcher >> click [
 
 	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #click )
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 CombinedEventInterpreterDispatcher >> eventNamed: anEventName [
 
 	^ CombinedWebInteractionInterpreter
 		combining: ( eventInterpreterDispatchers collect: [ :dispatcher | dispatcher eventNamed: anEventName ] )
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 CombinedEventInterpreterDispatcher >> initializeCombiningAll: anEventInterpreterDispatcherCollection [
 
 	eventInterpreterDispatchers := anEventInterpreterDispatcherCollection
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 CombinedEventInterpreterDispatcher >> keyUp [
 
 	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #keyUp )
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 CombinedEventInterpreterDispatcher >> mouseOver [
 
 	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #mouseOver )
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 CombinedEventInterpreterDispatcher >> trigger [
 
 	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #trigger )

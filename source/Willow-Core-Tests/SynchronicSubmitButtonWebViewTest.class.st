@@ -2,12 +2,14 @@
 A SynchronicSubmitButtonWebViewTest is a test class for testing the behavior of SynchronicSubmitButtonWebView
 "
 Class {
-	#name : #SynchronicSubmitButtonWebViewTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'SynchronicSubmitButtonWebViewTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 SynchronicSubmitButtonWebViewTest >> testBeIdentifiable [
 
 	| synchronicButton html |
@@ -22,7 +24,7 @@ SynchronicSubmitButtonWebViewTest >> testBeIdentifiable [
 	self assert: html equals: '<button name="1" id="submit-button-id2" type="submit">Submit</button>'
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 SynchronicSubmitButtonWebViewTest >> testIdentifierOn [
 
 	| synchronicButton html |
@@ -43,7 +45,7 @@ SynchronicSubmitButtonWebViewTest >> testIdentifierOn [
 		equals: '<button name="2" id="submit-button-id1" type="submit">Click me!</button>'
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 SynchronicSubmitButtonWebViewTest >> testOn [
 
 	| synchronicButton html |
@@ -61,7 +63,7 @@ SynchronicSubmitButtonWebViewTest >> testOn [
 			'<button name="1" id="button-id2" type="submit">Submit</button><script type="text/javascript">$("#button-id2").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 SynchronicSubmitButtonWebViewTest >> testRenderContentOn [
 
 	| synchronicButton html |

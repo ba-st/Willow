@@ -1,10 +1,12 @@
 Class {
-	#name : #JQuery3DeploymentMetadataLibraryTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Libraries'
+	#name : 'JQuery3DeploymentMetadataLibraryTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Libraries',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Libraries'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQuery3DeploymentMetadataLibraryTest >> testDeployFiles [
 
 	self
@@ -15,7 +17,7 @@ JQuery3DeploymentMetadataLibraryTest >> testDeployFiles [
 				'jQuery-3.7.0/jquery-3.7.0.min.map' -> 'f0a09c945cbc5407aff55492303806a1f8fda6d0' }
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQuery3DeploymentMetadataLibraryTest >> testHandlesFolder [
 
 	self
@@ -23,7 +25,7 @@ JQuery3DeploymentMetadataLibraryTest >> testHandlesFolder [
 		deny: ( JQuery3DeploymentMetadataLibrary handlesFolder: #files )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQuery3DeploymentMetadataLibraryTest >> testIsForDeployment [
 
 	self
@@ -31,7 +33,7 @@ JQuery3DeploymentMetadataLibraryTest >> testIsForDeployment [
 		deny: JQuery3DeploymentMetadataLibrary isForDevelopment
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQuery3DeploymentMetadataLibraryTest >> testUpdateRoot [
 
 	| html |

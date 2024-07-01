@@ -1,6 +1,6 @@
-Extension { #name : #JQAjaxSetup }
+Extension { #name : 'JQAjaxSetup' }
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 JQAjaxSetup >> bePost [
 
 	self type: 'POST'

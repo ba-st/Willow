@@ -2,21 +2,23 @@
 A DateFieldWebViewTest is a test class for testing the behavior of DateFieldWebView
 "
 Class {
-	#name : #DateFieldWebViewTest,
-	#superclass : #BWRenderingTest,
+	#name : 'DateFieldWebViewTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : #'Willow-Core-Tests-WebViews'
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #support }
+{ #category : 'support' }
 DateFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [ 
 	
 	notificationWasReceived := true
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 DateFieldWebViewTest >> testBeIdentifiable [
 
 	| dateField html |
@@ -29,7 +31,7 @@ DateFieldWebViewTest >> testBeIdentifiable [
 	self assert: html equals: '<input value="" name="1" id="date-field-id2" type="date"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 DateFieldWebViewTest >> testDate [
 
 	| dateField html currentDate |
@@ -47,7 +49,7 @@ DateFieldWebViewTest >> testDate [
 	self assert: html equals: '<input value="2001-01-01" name="1" type="date"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 DateFieldWebViewTest >> testIdentifierOn [
 
 	| dateField html |
@@ -62,7 +64,7 @@ DateFieldWebViewTest >> testIdentifierOn [
 	self assert: html equals: '<input value="" name="2" id="date-field-id1" type="date"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 DateFieldWebViewTest >> testNotifyChangesTo [
 
 	| dateField |
@@ -75,7 +77,7 @@ DateFieldWebViewTest >> testNotifyChangesTo [
 	self assert: notificationWasReceived
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 DateFieldWebViewTest >> testOn [
 
 	| dateField html |
@@ -91,7 +93,7 @@ DateFieldWebViewTest >> testOn [
 			'<input value="" name="1" type="date" id="input-id2"/><script type="text/javascript">$("#input-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 DateFieldWebViewTest >> testRenderContentOn [
 
 	| dateField html |

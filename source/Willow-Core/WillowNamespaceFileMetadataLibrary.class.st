@@ -2,40 +2,42 @@
 I'm a library providing some basic object used to define and access some utility functions.
 "
 Class {
-	#name : #WillowNamespaceFileMetadataLibrary,
-	#superclass : #WADeploymentAwareFileMetadataLibrary,
+	#name : 'WillowNamespaceFileMetadataLibrary',
+	#superclass : 'WADeploymentAwareFileMetadataLibrary',
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-Core-Libraries'
+	#category : 'Willow-Core-Libraries',
+	#package : 'Willow-Core',
+	#tag : 'Libraries'
 }
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowNamespaceFileMetadataLibrary class >> forDeployment [
 
 	^ self 
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowNamespaceFileMetadataLibrary class >> forDevelopment [
 
 	^ self 
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowNamespaceFileMetadataLibrary class >> libraryName [
 
 	^ 'willow'
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowNamespaceFileMetadataLibrary class >> version [
 
 	^ '8.0.1'
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WillowNamespaceFileMetadataLibrary >> callServerFunction [
 
 	| function |
@@ -48,19 +50,19 @@ WillowNamespaceFileMetadataLibrary >> callServerFunction [
 	^ function
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WillowNamespaceFileMetadataLibrary >> defaultHandleAjaxErrorCallFunction [
 
 	^ JSFunction new arguments: #(xmlHttpRequest textStatus errorThrown)
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WillowNamespaceFileMetadataLibrary >> globalWillowNamespaceDeclaration [
 
 	^ JSDeclareGlobalNamespace named: self willowNamespace
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowNamespaceFileMetadataLibrary >> jswillowJs [
 
 	^ WAFileLibraryResource
@@ -70,7 +72,7 @@ WillowNamespaceFileMetadataLibrary >> jswillowJs [
 		contents: ( GRDelayedSend receiver: self selector: #jswillowJsContent )
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowNamespaceFileMetadataLibrary >> jswillowJsContent [
 
 	^ '/*!
@@ -89,7 +91,7 @@ WillowNamespaceFileMetadataLibrary >> jswillowJsContent [
 					script << (script javascript if: (self willowNamespace identicalTo: JSStream undefined) then: (self willowNamespace assign: self willowDefaults)) ])
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowNamespaceFileMetadataLibrary >> nonFileSelectors [
 
 	^ OrderedCollection new
@@ -98,25 +100,25 @@ WillowNamespaceFileMetadataLibrary >> nonFileSelectors [
 		yourself
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowNamespaceFileMetadataLibrary >> selectorsToInclude [
 
 	^ #(jswillowJs)
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WillowNamespaceFileMetadataLibrary >> sessionInformation [
 
 	^ JSStream on: 'sessionInformation'
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WillowNamespaceFileMetadataLibrary >> version [
 
 	^self class version
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WillowNamespaceFileMetadataLibrary >> willowDefaults [
 
 	^ GRSmallDictionary new
@@ -127,7 +129,7 @@ WillowNamespaceFileMetadataLibrary >> willowDefaults [
 		yourself
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WillowNamespaceFileMetadataLibrary >> willowNamespace [
 
 	^ WillowJavascriptNamespace new

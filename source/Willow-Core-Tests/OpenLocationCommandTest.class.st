@@ -1,10 +1,12 @@
 Class {
-	#name : #OpenLocationCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'OpenLocationCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 OpenLocationCommandTest >> testForNewBrowsingContextNavigatingTo [
 
 	| html |
@@ -18,7 +20,7 @@ OpenLocationCommandTest >> testForNewBrowsingContextNavigatingTo [
 		equals: '<a target="_blank" rel="noopener noreferrer" href="http://www.google.com/"></a>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OpenLocationCommandTest >> testForSameBrowsingContextNavigatingTo [
 
 	| html |

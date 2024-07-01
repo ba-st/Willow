@@ -2,18 +2,20 @@
 A WebComponentCommandBuilderTest is a test class for testing the behavior of WebComponentCommandBuilder
 "
 Class {
-	#name : #WebComponentCommandBuilderTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'WebComponentCommandBuilderTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 WebComponentCommandBuilderTest >> commandBuilder [
 
 	^ WebComponentCommandBuilder new
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testARIARoleCommand [
 
 	| html |
@@ -23,7 +25,7 @@ WebComponentCommandBuilderTest >> testARIARoleCommand [
 	self assert: html equals: '<div role="presentation"></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testAccessibilityEnrichmentCommands [
 
 	| html |
@@ -33,7 +35,7 @@ WebComponentCommandBuilderTest >> testAccessibilityEnrichmentCommands [
 	self assert: html equals: '<input aria-describedBy="helpBlock" type="text"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testAttributeCommands [
 
 	| html |
@@ -43,7 +45,7 @@ WebComponentCommandBuilderTest >> testAttributeCommands [
 	self assert: html equals: '<div rows="5"></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testAutofocusCommand [
 
 	| html |
@@ -55,7 +57,7 @@ WebComponentCommandBuilderTest >> testAutofocusCommand [
 	self assert: html equals: '<div autofocus></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testBlockExtension [
 
 	| html |
@@ -67,7 +69,7 @@ WebComponentCommandBuilderTest >> testBlockExtension [
 	self assert: html equals: '<input id="id1" type="password"/><script type="text/javascript">$("#id1").clone();</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testBoundaryCommands [
 
 	| html |
@@ -83,7 +85,7 @@ WebComponentCommandBuilderTest >> testBoundaryCommands [
 	self assert: html equals: '<input min="15" max="20" type="number"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testCallbackSettingCommand [
 
 	| html |
@@ -95,7 +97,7 @@ WebComponentCommandBuilderTest >> testCallbackSettingCommand [
 	self assert: html equals: '<a href="/?1"></a>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testClassificationCommands [
 
 	| html |
@@ -116,7 +118,7 @@ WebComponentCommandBuilderTest >> testClassificationCommands [
 	self assert: html equals: '<div class="willow-fading-notification"></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testCompositeCommand [
 
 	| html |
@@ -128,7 +130,7 @@ WebComponentCommandBuilderTest >> testCompositeCommand [
 	self assert: html equals: '<input id="id1" type="password"/><script type="text/javascript">$("#id1").clone();</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testConditionalCommand [
 
 	| html |
@@ -146,7 +148,7 @@ WebComponentCommandBuilderTest >> testConditionalCommand [
 	self assert: html equals: '<input type="text"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testDeselectAllOptionsCommands [
 
 	| html |
@@ -158,7 +160,7 @@ WebComponentCommandBuilderTest >> testDeselectAllOptionsCommands [
 		equals: '<select id="id1"></select><script type="text/javascript">$("#id1").prop("selectedIndex",-1);</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testDisableCommand [
 
 	| html |
@@ -168,7 +170,7 @@ WebComponentCommandBuilderTest >> testDisableCommand [
 	self assert: html equals: '<div disabled></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testDisableTabCycleCommand [
 
 	| html |
@@ -178,7 +180,7 @@ WebComponentCommandBuilderTest >> testDisableTabCycleCommand [
 	self assert: html equals: '<div tabindex="-1"></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testInputModeCommands [
 
 	| html |
@@ -220,7 +222,7 @@ WebComponentCommandBuilderTest >> testInputModeCommands [
 	self assert: html equals: '<input type="time"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testListLabelingCommand [
 
 	| html |
@@ -232,7 +234,7 @@ WebComponentCommandBuilderTest >> testListLabelingCommand [
 	self assert: html equals: '<select><option>ONE</option><option>TWO</option></select>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testMaxLengthCommand [
 
 	| html |
@@ -242,7 +244,7 @@ WebComponentCommandBuilderTest >> testMaxLengthCommand [
 	self assert: html equals: '<input maxlength="25" type="text"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testMetadataCommands [
 
 	| html |
@@ -252,7 +254,7 @@ WebComponentCommandBuilderTest >> testMetadataCommands [
 	self assert: html equals: '<div data-content="15"></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testNamingCommand [
 
 	| html |
@@ -262,7 +264,7 @@ WebComponentCommandBuilderTest >> testNamingCommand [
 	self assert: html equals: '<a name="name"></a>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testPlaceholderCommands [
 
 	| html |
@@ -272,7 +274,7 @@ WebComponentCommandBuilderTest >> testPlaceholderCommands [
 	self assert: html equals: '<input placeholder="user" type="text"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testReadOnlyCommand [
 
 	| html |
@@ -282,7 +284,7 @@ WebComponentCommandBuilderTest >> testReadOnlyCommand [
 	self assert: html equals: '<input readonly type="text"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testRequiredCommand [
 
 	| html |
@@ -292,7 +294,7 @@ WebComponentCommandBuilderTest >> testRequiredCommand [
 	self assert: html equals: '<input required type="text"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testScriptCommands [
 
 	| html |
@@ -304,7 +306,7 @@ WebComponentCommandBuilderTest >> testScriptCommands [
 	self assert: html equals: '<input id="id1" type="text"/><script type="text/javascript">$("#id1").clone();</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testSetComponentStyleCommands [
 
 	| html |
@@ -314,7 +316,7 @@ WebComponentCommandBuilderTest >> testSetComponentStyleCommands [
 	self assert: html equals: '<div style="background: blue;"></div>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testTabIndexCommand [
 
 	| html |
@@ -324,7 +326,7 @@ WebComponentCommandBuilderTest >> testTabIndexCommand [
 	self assert: html equals: '<select tabindex="3"></select>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentCommandBuilderTest >> testTitleCommand [
 
 	| html |

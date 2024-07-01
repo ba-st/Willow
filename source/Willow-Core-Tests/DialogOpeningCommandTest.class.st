@@ -2,22 +2,24 @@
 A DialogOpeningCommandTest is a test class for testing the behavior of DialogOpeningCommand
 "
 Class {
-	#name : #DialogOpeningCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'DialogOpeningCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 DialogOpeningCommandTest >> setUp [
 
 	super setUp.
 	command := DialogOpeningCommand alwaysOpening: [ :canvas | canvas dialog attributeAt: 'open' put: true ]
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 DialogOpeningCommandTest >> testModelLoadingInstructions [
 
 	| html |
@@ -39,19 +41,19 @@ DialogOpeningCommandTest >> testModelLoadingInstructions [
 			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-dialog-section").append("<dialog open></dialog>")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 DialogOpeningCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 DialogOpeningCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization  
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 DialogOpeningCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

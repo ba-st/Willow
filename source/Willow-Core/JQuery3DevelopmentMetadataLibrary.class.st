@@ -2,12 +2,14 @@
 I'm a WALibrary serving the files in source form, suitable for development
 "
 Class {
-	#name : #JQuery3DevelopmentMetadataLibrary,
-	#superclass : #JQuery3MetadataLibrary,
-	#category : #'Willow-Core-Libraries'
+	#name : 'JQuery3DevelopmentMetadataLibrary',
+	#superclass : 'JQuery3MetadataLibrary',
+	#category : 'Willow-Core-Libraries',
+	#package : 'Willow-Core',
+	#tag : 'Libraries'
 }
 
-{ #category : #'uploaded metadata' }
+{ #category : 'uploaded metadata' }
 JQuery3DevelopmentMetadataLibrary >> jquery370Js [
 
 	^ WAFileLibraryResource
@@ -17,7 +19,7 @@ JQuery3DevelopmentMetadataLibrary >> jquery370Js [
 		contents: (GRDelayedSend receiver: self selector: #jquery370JsContent)
 ]
 
-{ #category : #uploaded }
+{ #category : 'uploaded' }
 JQuery3DevelopmentMetadataLibrary >> jquery370JsContent [
 	^ '/*!
  * jQuery JavaScript Library v3.7.0
@@ -10726,7 +10728,7 @@ return jQuery;
 '
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQuery3DevelopmentMetadataLibrary >> selectorsToInclude [
 
 	<ignoreForCoverage>

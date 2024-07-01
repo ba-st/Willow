@@ -2,28 +2,30 @@
 Command to set an attribute for a component
 "
 Class {
-	#name : #ComponentAttributeCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ComponentAttributeCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'name',
 		'value'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 ComponentAttributeCommand class >> named: aName with: aValue [
 
 	^self new initializeNamed: aName with: aValue
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ComponentAttributeCommand >> applyTo: aComponent on: aCanvas [
 
 	aComponent attributeAt: name put: value
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentAttributeCommand >> initializeNamed: aName with: aValue [
 
 	name := aName.

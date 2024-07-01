@@ -697,14 +697,14 @@ CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingAp
 		showLoadingNotificationDisplaying: 'Loading...'
 		applying: [ :view | view addClass willow ].
 	html := self renderUsing: [ :canvas |
-		        canvas
-			        render: okButton;
-			        render: cancelButton
+			        canvas
+				        render: okButton;
+				        render: cancelButton
 		        ].
 	self
 		assert: html
 		equals:
-		'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});$("#button-id4").click(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"3"})});</script>'
+		'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...<\/div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});$("#button-id4").click(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...<\/div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"3"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -714,17 +714,16 @@ CombinedWebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll 
 
 	interpreter := self combinedInterpreter.
 
-	interpreter showLoadingNotificationStyledAsAll: #().
-	html := self
-		renderUsing: [ :canvas | 
-			canvas
-				render: okButton;
-				render: cancelButton
-			].
+	interpreter showLoadingNotificationStyledAsAll: #(  ).
+	html := self renderUsing: [ :canvas |
+			        canvas
+				        render: okButton;
+				        render: cancelButton
+		        ].
 	self
 		assert: html
 		equals:
-			'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});$("#button-id4").click(function(event){$("#willow-notification-section").html("<div>Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"3"})});</script>'
+		'<button id="button-id2" type="button">Ok</button><button id="button-id4" type="button">Cancel</button><script type="text/javascript">$("#button-id2").click(function(event){$("#willow-notification-section").html("<div>Loading...<\/div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});$("#button-id4").click(function(event){$("#willow-notification-section").html("<div>Loading...<\/div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"3"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }

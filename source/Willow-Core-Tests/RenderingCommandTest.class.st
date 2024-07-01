@@ -29,20 +29,19 @@ RenderingCommandTest >> testModelLoadingInstructions [
 
 	| html |
 
-	html := self
-		renderUsing: [ :canvas | 
-			| script |
+	html := self renderUsing: [ :canvas |
+			        | script |
 
-			script := canvas javascript.
-			identifiedView identifierOn: canvas.
-			command modelLoadingInstructions appendTo: script on: canvas.
-			canvas anchor script: ( canvas jQuery this onClick: script )
-			].
+			        script := canvas javascript.
+			        identifiedView identifierOn: canvas.
+			        command modelLoadingInstructions appendTo: script on: canvas.
+			        canvas anchor script: ( canvas jQuery this onClick: script )
+		        ].
 
 	self
 		assert: html
 		equals:
-			'<a id="id3"></a><script type="text/javascript">$("#id3").click(function(){$("#container-id1").html("<span>Test</span>")});</script>'
+		'<a id="id3"></a><script type="text/javascript">$("#id3").click(function(){$("#container-id1").html("<span>Test<\/span>")});</script>'
 ]
 
 { #category : 'tests-accessing' }

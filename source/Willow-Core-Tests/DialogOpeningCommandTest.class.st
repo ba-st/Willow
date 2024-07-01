@@ -24,21 +24,20 @@ DialogOpeningCommandTest >> testModelLoadingInstructions [
 
 	| html |
 
-	html := self
-		renderUsing: [ :canvas | 
-			| script anchor |
+	html := self renderUsing: [ :canvas |
+			        | script anchor |
 
-			script := canvas javascript.
-			anchor := canvas anchor.
-			canvas ensureIdFor: anchor.
-			command modelLoadingInstructions appendTo: script on: canvas.
-			anchor script: ( canvas jQuery this onClick: script )
-			].
+			        script := canvas javascript.
+			        anchor := canvas anchor.
+			        canvas ensureIdFor: anchor.
+			        command modelLoadingInstructions appendTo: script on: canvas.
+			        anchor script: ( canvas jQuery this onClick: script )
+		        ].
 
 	self
 		assert: html
 		equals:
-			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-dialog-section").append("<dialog open></dialog>")});</script>'
+		'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-dialog-section").append("<dialog open><\/dialog>")});</script>'
 ]
 
 { #category : 'tests-accessing' }

@@ -2,28 +2,30 @@
 A ConfirmationCommandTest is a test class for testing the behavior of ConfirmationCommand
 "
 Class {
-	#name : #ConfirmationCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'ConfirmationCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ConfirmationCommandTest >> setUp [
 
 	super setUp.
 	command := ConfirmationCommand asking: 'Do you want to proceed?'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ConfirmationCommandTest >> testModelLoadingInstructions [
 
 	self assert: command modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ConfirmationCommandTest >> testPriorityActions [
 
 	| html |
@@ -43,13 +45,13 @@ ConfirmationCommandTest >> testPriorityActions [
 		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){if(confirm("Do you want to proceed?")){$.ajax()}});</script>'
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 ConfirmationCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization 
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ConfirmationCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

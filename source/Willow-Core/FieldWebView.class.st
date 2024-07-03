@@ -2,8 +2,8 @@
 I 'm an abstract class representing non textual HTML5 inputs.
 "
 Class {
-	#name : #FieldWebView,
-	#superclass : #WAPainter,
+	#name : 'FieldWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'interactionInterpreter',
 		'commandToComponent',
@@ -12,16 +12,18 @@ Class {
 		'contents',
 		'identifierAssigner'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 FieldWebView class >> changeInterpreter [
 
 	^ EventInterpreterDispatcher defaultingToChange
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 FieldWebView class >> forComponentBuiltUsing: aComponentBuilder withInteractionDefinedBy: anInteractionInterpreter applying: aComponentCommand [
 
 	^ self new
@@ -30,44 +32,44 @@ FieldWebView class >> forComponentBuiltUsing: aComponentBuilder withInteractionD
 		applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 FieldWebView >> beIdentifiable [
 
 	^ identifierAssigner beRequired
 ]
 
-{ #category : #'Container-API' }
+{ #category : 'Container-API' }
 FieldWebView >> changeContentsTo: aText [
 
 	contents := aText.
 	self notifyInterested
 ]
 
-{ #category : #'Container-API' }
+{ #category : 'Container-API' }
 FieldWebView >> changeModelTo: aModel [
 
 	^ self changeContentsTo: (self textCodec encode: aModel)
 ]
 
-{ #category : #'Container-API' }
+{ #category : 'Container-API' }
 FieldWebView >> contents [
 
 	^contents 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FieldWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : 'private - Accessing' }
 FieldWebView >> identifierPrefix [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 FieldWebView >> initializeForComponentBuiltUsing: aComponentBuilder withInteractionDefinedBy: anInteractionInterpreter applying: aComponentCommand [
 
 	componentBuilder := aComponentBuilder.
@@ -78,31 +80,31 @@ FieldWebView >> initializeForComponentBuiltUsing: aComponentBuilder withInteract
 	self changeContentsTo: ''
 ]
 
-{ #category : #'Container-API' }
+{ #category : 'Container-API' }
 FieldWebView >> model [
 
 	^ self textCodec decode: self contents
 ]
 
-{ #category : #'Container-API' }
+{ #category : 'Container-API' }
 FieldWebView >> notifyChangesTo: aSupervisor [
 
 	interested add: aSupervisor
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 FieldWebView >> notifyInterested [
 
 	interested do: [:anInterested | anInterested changeNotifiedBy: self]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 FieldWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 FieldWebView >> renderContentOn: aCanvas [
 
 	| component |
@@ -117,7 +119,7 @@ FieldWebView >> renderContentOn: aCanvas [
 		interactUsing: interactionInterpreter
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : 'private - Accessing' }
 FieldWebView >> textCodec [
 
 	^ self subclassResponsibility

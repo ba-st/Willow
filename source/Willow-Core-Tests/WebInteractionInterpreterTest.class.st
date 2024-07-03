@@ -1,31 +1,33 @@
 Class {
-	#name : #WebInteractionInterpreterTest,
-	#superclass : #BWRenderingTest,
+	#name : 'WebInteractionInterpreterTest',
+	#superclass : 'BWRenderingTest',
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'test support' }
+{ #category : 'test support' }
 WebInteractionInterpreterTest >> changeInterpreter [
 
 	^ WebInteractionInterpreter calling: #change serializingWith: SerializationCommand forCurrentObject
 ]
 
-{ #category : #'test support' }
+{ #category : 'test support' }
 WebInteractionInterpreterTest >> clickInterpreter [
 
 	^ WebInteractionInterpreter calling: #click serializingWith: NullWebInteractionCommand new
 ]
 
-{ #category : #'test support' }
+{ #category : 'test support' }
 WebInteractionInterpreterTest >> configureTextInputWith: interpreter [
 
 	^ self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput ]
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testAddCssClass [
 
 	| interpreter html |
@@ -39,7 +41,7 @@ WebInteractionInterpreterTest >> testAddCssClass [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 
 	| interpreter html |
@@ -55,7 +57,7 @@ WebInteractionInterpreterTest >> testAddCssClassToComponentsMatching [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".aComponentByStyleName").addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 WebInteractionInterpreterTest >> testAjaxCallsEvaluateTheBlock [
 
 	| interpreter evaluated |
@@ -74,7 +76,7 @@ WebInteractionInterpreterTest >> testAjaxCallsEvaluateTheBlock [
 	self assert: evaluated
 ]
 
-{ #category : #'tests - evaluating' }
+{ #category : 'tests - evaluating' }
 WebInteractionInterpreterTest >> testApplyToOn [
 
 	| interpreter html |
@@ -91,7 +93,7 @@ WebInteractionInterpreterTest >> testApplyToOn [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").dblclick(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - Instance Creation' }
+{ #category : 'tests - Instance Creation' }
 WebInteractionInterpreterTest >> testCallingSerializingWith [
 
 	| interpreter html |
@@ -107,7 +109,7 @@ WebInteractionInterpreterTest >> testCallingSerializingWith [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").dblclick(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testChangeCssClassTo [
 
 	| interpreter html |
@@ -129,7 +131,7 @@ WebInteractionInterpreterTest >> testChangeCssClassTo [
 			'<input class="willow-loading" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".willow-loading").removeClass("willow-loading").addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - Dialogs' }
+{ #category : 'tests - Configuring - Dialogs' }
 WebInteractionInterpreterTest >> testCloseAllDialogs [
 
 	| interpreter html |
@@ -143,7 +145,7 @@ WebInteractionInterpreterTest >> testCloseAllDialogs [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Dialogs' }
+{ #category : 'tests - Configuring - Dialogs' }
 WebInteractionInterpreterTest >> testCloseLastDialog [
 
 	| interpreter html |
@@ -157,7 +159,7 @@ WebInteractionInterpreterTest >> testCloseLastDialog [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testConfirmAsking [
 
 	| interpreter html |
@@ -171,7 +173,7 @@ WebInteractionInterpreterTest >> testConfirmAsking [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"1"})}});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testConflictingSerializationCommandsAreNotAllowed [
 
 	| interpreter id |
@@ -196,7 +198,7 @@ WebInteractionInterpreterTest >> testConflictingSerializationCommandsAreNotAllow
 			]
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testDisable [
 
 	| interpreter html id |
@@ -220,7 +222,7 @@ WebInteractionInterpreterTest >> testDisable [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testEnable [
 
 	| interpreter html id |
@@ -244,7 +246,7 @@ WebInteractionInterpreterTest >> testEnable [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){$("#15").prop("disabled",false)});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testFocus [
 
 	| interpreter html id |
@@ -268,7 +270,7 @@ WebInteractionInterpreterTest >> testFocus [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testFocusUsing [
 
 	| interpreter html |
@@ -284,7 +286,7 @@ WebInteractionInterpreterTest >> testFocusUsing [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Instance Creation' }
+{ #category : 'tests - Instance Creation' }
 WebInteractionInterpreterTest >> testForEvaluationOfWithAll [
 
 	| interpreter html |
@@ -295,7 +297,7 @@ WebInteractionInterpreterTest >> testForEvaluationOfWithAll [
 	self assert: html equals: '<input onblur="function(firstThis,thenThat){alert(&quot;The message is the medium&quot;)}" type="text"/>'
 ]
 
-{ #category : #'tests - Instance Creation' }
+{ #category : 'tests - Instance Creation' }
 WebInteractionInterpreterTest >> testForInstantEvaluation [
 
 	| interpreter html |
@@ -309,7 +311,7 @@ WebInteractionInterpreterTest >> testForInstantEvaluation [
 			'<input type="text"/><script type="text/javascript">Willow.callServer({"url":"/","data":"1"});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 WebInteractionInterpreterTest >> testInform [
 
 	| interpreter html |
@@ -323,7 +325,7 @@ WebInteractionInterpreterTest >> testInform [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert("A message")});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 WebInteractionInterpreterTest >> testInformSelection [
 
 	| interpreter html |
@@ -337,7 +339,7 @@ WebInteractionInterpreterTest >> testInformSelection [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){alert($(this).children("option:selected").text())});</script>'
 ]
 
-{ #category : #'tests - Configuring - Dialogs' }
+{ #category : 'tests - Configuring - Dialogs' }
 WebInteractionInterpreterTest >> testOpen [
 
 	| interpreter html |
@@ -351,7 +353,7 @@ WebInteractionInterpreterTest >> testOpen [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testRemove [
 
 	| interpreter html id |
@@ -375,7 +377,7 @@ WebInteractionInterpreterTest >> testRemove [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatching [
 
 	| interpreter html |
@@ -391,7 +393,7 @@ WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsMatching [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".aComponentByStyleName").removeClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithClass [
 
 	| interpreter html |
@@ -409,7 +411,7 @@ WebInteractionInterpreterTest >> testRemoveCssClassFromComponentsWithClass [
 			'<input class="willow-loading willow" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".willow").removeClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testRender [
 
 	| interpreter html id |
@@ -438,7 +440,7 @@ WebInteractionInterpreterTest >> testRender [
 			'<input id="15" type="text"/><div id="container-id1">15</div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testRenderAll [
 
 	| interpreter html id |
@@ -473,7 +475,7 @@ WebInteractionInterpreterTest >> testRenderAll [
 			'<input id="15" type="text"/><div id="container-id1">15</div><div id="container-id2"></div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testRenderIsAddedLast [
 
 	| interpreter id |
@@ -502,7 +504,7 @@ WebInteractionInterpreterTest >> testRenderIsAddedLast [
 	self assert: self requestContext response contents equals: '$("#container-id1").html("27")'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testScrollingIntoView [
 
 	| interpreter html id |
@@ -525,7 +527,7 @@ WebInteractionInterpreterTest >> testScrollingIntoView [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testSerializeChildForm [
 
 	| interpreter html id |
@@ -549,7 +551,7 @@ WebInteractionInterpreterTest >> testSerializeChildForm [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).children("form").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testSerializeContainerForm [
 
 	| interpreter html id |
@@ -573,7 +575,7 @@ WebInteractionInterpreterTest >> testSerializeContainerForm [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).closest("form").find(":input").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testSerializeForm [
 
 	| interpreter html id |
@@ -599,7 +601,7 @@ WebInteractionInterpreterTest >> testSerializeForm [
 			'<form accept-charset="utf-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$("#15").serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testSerializeIt [
 
 	| interpreter html id |
@@ -623,7 +625,7 @@ WebInteractionInterpreterTest >> testSerializeIt [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testSerializeItTwiceIsNotAllowed [
 
 	| interpreter |
@@ -646,7 +648,7 @@ WebInteractionInterpreterTest >> testSerializeItTwiceIsNotAllowed [
 			]
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 
 	| interpreter html id |
@@ -670,7 +672,7 @@ WebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 WebInteractionInterpreterTest >> testServerDo [
 
 	| interpreter html |
@@ -684,7 +686,7 @@ WebInteractionInterpreterTest >> testServerDo [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 
 	| interpreter html id |
@@ -710,7 +712,7 @@ WebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOf [
 
 	| interpreter html id |
@@ -736,7 +738,7 @@ WebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOf [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingApplying [
 
 	| interpreter html |
@@ -751,10 +753,10 @@ WebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingApplying [
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});</script>'
+		'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...<\/div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 
 	| interpreter html |
@@ -767,10 +769,10 @@ WebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});</script>'
+		'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...<\/div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 
 	| html link container |
@@ -795,7 +797,7 @@ WebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 			'<a id="a-id3">Search!</a><div id="container-id1"></div><script type="text/javascript">$("#a-id3").click(function(event){$("#container-id1").html("Searching...");Willow.callServer({"url":"/","data":"2"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testSubmitForm [
 
 	| interpreter html id |
@@ -821,7 +823,7 @@ WebInteractionInterpreterTest >> testSubmitForm [
 			'<form accept-charset="utf-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - Serialization' }
+{ #category : 'tests - Configuring - Serialization' }
 WebInteractionInterpreterTest >> testSubmitFormStyledAs [
 
 	| interpreter html |
@@ -845,7 +847,7 @@ WebInteractionInterpreterTest >> testSubmitFormStyledAs [
 			'<form accept-charset="utf-8" method="post" action="/" class="willow"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto [
 
 	| interpreter html id |
@@ -868,7 +870,7 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){var componentToDisable=$("#15");if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfInto [
 
 	| interpreter html id |
@@ -891,7 +893,7 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfInto [
 			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){var componentToDisable=$(this);if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testToggleCssClass [
 
 	| interpreter html |
@@ -909,7 +911,7 @@ WebInteractionInterpreterTest >> testToggleCssClass [
 			'<input class="willow-loading" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).toggleClass("willow-loading")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testToggleCssClassOn [
 
 	| interpreter element html |
@@ -930,7 +932,7 @@ WebInteractionInterpreterTest >> testToggleCssClassOn [
 			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){$("#container-id1").toggleClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching [
 
 	| interpreter html |
@@ -946,7 +948,7 @@ WebInteractionInterpreterTest >> testToggleCssClassOnComponentsMatching [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".aComponentByStyleName").toggleClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - DOM' }
+{ #category : 'tests - Configuring - DOM' }
 WebInteractionInterpreterTest >> testTransformInto [
 
 	| html link container |
@@ -971,7 +973,7 @@ WebInteractionInterpreterTest >> testTransformInto [
 			'<a id="a-id2">Search!</a><div id="container-id1"></div><script type="text/javascript">$("#a-id2").click(function(event){$("#container-id1").html("Searching...")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testUpdateCssClasses [
 
 	| interpreter html |
@@ -985,7 +987,7 @@ WebInteractionInterpreterTest >> testUpdateCssClasses [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring - CSS' }
+{ #category : 'tests - Configuring - CSS' }
 WebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching [
 
 	| interpreter html |
@@ -1001,7 +1003,7 @@ WebInteractionInterpreterTest >> testUpdateCssClassesOnElementsMatching [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(".aComponentByStyleName").addClass("willow")});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 WebInteractionInterpreterTest >> testUserAgentDo [
 
 	| interpreter html |
@@ -1015,7 +1017,7 @@ WebInteractionInterpreterTest >> testUserAgentDo [
 			'<input id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){window.print()});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 WebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 
 	| interpreter html |
@@ -1032,7 +1034,7 @@ WebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){if(dataFromUserAgent>3){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(dataFromUserAgent))].join("&")})}});</script>'
 ]
 
-{ #category : #'tests - Configuring' }
+{ #category : 'tests - Configuring' }
 WebInteractionInterpreterTest >> testWithServerDo [
 
 	| interpreter html |
@@ -1046,7 +1048,7 @@ WebInteractionInterpreterTest >> testWithServerDo [
 			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'
 ]
 
-{ #category : #'tests - Instance Creation' }
+{ #category : 'tests - Instance Creation' }
 WebInteractionInterpreterTest >> testWorkingWith [
 
 	| interpreter html |

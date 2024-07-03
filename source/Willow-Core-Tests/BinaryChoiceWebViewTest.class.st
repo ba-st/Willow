@@ -2,33 +2,35 @@
 I'm an abstract test case for views implementing the binary choice  API
 "
 Class {
-	#name : #BinaryChoiceWebViewTest,
-	#superclass : #BWRenderingTest,
+	#name : 'BinaryChoiceWebViewTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : #'Willow-Core-Tests-WebViews'
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BinaryChoiceWebViewTest class >> isAbstract [
 
 	^self name = #BinaryChoiceWebViewTest 
 ]
 
-{ #category : #support }
+{ #category : 'support' }
 BinaryChoiceWebViewTest >> changeNotifiedBy: aCheckboxWebView [ 
 	
 	notificationWasReceived := true
 ]
 
-{ #category : #support }
+{ #category : 'support' }
 BinaryChoiceWebViewTest >> newBinaryChoiceView [
 
 	^self subclassResponsibility 
 ]
 
-{ #category : #'tests-Binary Choice-API' }
+{ #category : 'tests-Binary Choice-API' }
 BinaryChoiceWebViewTest >> testAllows [
 
 	| binaryChoiceView |
@@ -41,7 +43,7 @@ BinaryChoiceWebViewTest >> testAllows [
 		deny: (binaryChoiceView allows: 1)
 ]
 
-{ #category : #'tests-Binary Choice-API' }
+{ #category : 'tests-Binary Choice-API' }
 BinaryChoiceWebViewTest >> testControlSelection [
 
 	| binaryChoiceView |
@@ -58,7 +60,7 @@ BinaryChoiceWebViewTest >> testControlSelection [
 	self deny: binaryChoiceView currentSelection
 ]
 
-{ #category : #'tests-Binary Choice-API' }
+{ #category : 'tests-Binary Choice-API' }
 BinaryChoiceWebViewTest >> testCurrentSelection [
 
 	| binaryChoiceView |
@@ -74,7 +76,7 @@ BinaryChoiceWebViewTest >> testCurrentSelection [
 	self assert: binaryChoiceView currentSelection
 ]
 
-{ #category : #'tests-Binary Choice-API' }
+{ #category : 'tests-Binary Choice-API' }
 BinaryChoiceWebViewTest >> testNotifyChangesWhenSelectionChanged [
 
 	| binaryChoiceView |

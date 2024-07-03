@@ -1,6 +1,6 @@
-Extension { #name : #JSStream }
+Extension { #name : 'JSStream' }
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 JSStream >> << aJavascriptElement [
 
 	self javascript: aJavascriptElement.

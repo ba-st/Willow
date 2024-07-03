@@ -2,28 +2,30 @@
 A command applying another command only if the condition is satisfied.
 "
 Class {
-	#name : #ConditionalComponentCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ConditionalComponentCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'command',
 		'conditionBlock'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 ConditionalComponentCommand class >> applying: aComponentCommand when: aConditionBlock [
 
 	^ self new initializeApplying: aComponentCommand when: aConditionBlock
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ConditionalComponentCommand >> applyTo: aComponent on: aCanvas [
 
 	( conditionBlock cull: aComponent ) then: [ command applyTo: aComponent on: aCanvas ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ConditionalComponentCommand >> initializeApplying: aComponentCommand when: aConditionBlock [
 
 	command := aComponentCommand.

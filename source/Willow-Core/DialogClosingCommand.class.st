@@ -3,39 +3,41 @@ I'm a WebInteractionCommand used to close a Dialog. I will not destroy the dialo
 
 "
 Class {
-	#name : #DialogClosingCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'DialogClosingCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'dialogSupplier'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 DialogClosingCommand class >> forAllDialogs [
 
 	^ self obtainingDialogsWith: [ :jQuery | jQuery ]
 ]
 
-{ #category : #'private-instance creation' }
+{ #category : 'private-instance creation' }
 DialogClosingCommand class >> obtainingDialogsWith: aDialogSupplier [
 
 	^ self new initializeObtainingDialogsWith: aDialogSupplier
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 DialogClosingCommand class >> onlyForLastDialog [
 
 	 ^self obtainingDialogsWith: [ :jQuery | jQuery last ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 DialogClosingCommand >> initializeObtainingDialogsWith: aDialogSupplier [
 
 	dialogSupplier := aDialogSupplier
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DialogClosingCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
@@ -48,19 +50,19 @@ DialogClosingCommand >> modelLoadingInstructions [
 		orderedAt: 10
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DialogClosingCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 DialogClosingCommand >> requiresSerialization [
 
 	^false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DialogClosingCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

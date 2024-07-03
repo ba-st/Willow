@@ -2,35 +2,37 @@
 I represent a table footer
 "
 Class {
-	#name : #TableFooterWebView,
-	#superclass : #TableFooterWebViewBehavior,
+	#name : 'TableFooterWebView',
+	#superclass : 'TableFooterWebViewBehavior',
 	#instVars : [
 		'columnRenderers',
 		'tableContents'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 TableFooterWebView class >> definedBy: aColumnRendererCollection [
 
 	^ self new initializeDefinedBy: aColumnRendererCollection
 ]
 
-{ #category : #support }
+{ #category : 'support' }
 TableFooterWebView >> changeNotifiedBy: aTableWebView [
 
 	tableContents := aTableWebView contents
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TableFooterWebView >> initializeDefinedBy: aColumnRendererCollection [
 
 	columnRenderers := aColumnRendererCollection.
 	tableContents := #()
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 TableFooterWebView >> renderContentOn: aCanvas [
 
 	aCanvas tableFoot: [ columnRenderers do: [ :renderer | renderer renderFooterCellSummarizing: tableContents on: aCanvas ] ]

@@ -2,23 +2,25 @@
 I represent a list item including command support. 
 "
 Class {
-	#name : #ListItemWebView,
-	#superclass : #WAPainter,
+	#name : 'ListItemWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'commandToComponent',
 		'list',
 		'item'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ListItemWebView class >> itemizing: anObject containedIn: aList applying: aComponentCommand [
 
 	^ self new initializeItemizing: anObject containedIn: aList applying: aComponentCommand asWebComponentCommand 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 ListItemWebView >> initializeItemizing: anObject containedIn: aList applying: aComponentCommand [
 
 	item := anObject.
@@ -26,7 +28,7 @@ ListItemWebView >> initializeItemizing: anObject containedIn: aList applying: aC
 	commandToComponent := aComponentCommand
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 ListItemWebView >> renderContentOn: aCanvas [
 
 	aCanvas listItem with: (list labelForOption: item) applying: commandToComponent

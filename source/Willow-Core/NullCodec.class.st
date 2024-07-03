@@ -2,24 +2,26 @@
 I'm a null encoder/decoder
 "
 Class {
-	#name : #NullCodec,
-	#superclass : #Codec,
-	#category : #'Willow-Core-Frontend'
+	#name : 'NullCodec',
+	#superclass : 'Codec',
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 NullCodec >> canCreate: anObject [
 
 	^anObject isString
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 NullCodec >> decode: aString [
 
 	^ aString
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 NullCodec >> encode: aString [
 
 	^aString

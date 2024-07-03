@@ -1,10 +1,12 @@
 Class {
-	#name : #WebComponentInteractionTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#name : 'WebComponentInteractionTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 WebComponentInteractionTest >> testNeverTriggered [
 
 	| interaction html |

@@ -2,16 +2,18 @@
 A RenderingCommandTest is a test class for testing the behavior of RenderingCommand
 "
 Class {
-	#name : #RenderingCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'RenderingCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'identifiedView',
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 RenderingCommandTest >> setUp [
 
 	super setUp.
@@ -22,40 +24,39 @@ RenderingCommandTest >> setUp [
 	command := RenderingCommand for: identifiedView
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 RenderingCommandTest >> testModelLoadingInstructions [
 
 	| html |
 
-	html := self
-		renderUsing: [ :canvas | 
-			| script |
+	html := self renderUsing: [ :canvas |
+			        | script |
 
-			script := canvas javascript.
-			identifiedView identifierOn: canvas.
-			command modelLoadingInstructions appendTo: script on: canvas.
-			canvas anchor script: ( canvas jQuery this onClick: script )
-			].
+			        script := canvas javascript.
+			        identifiedView identifierOn: canvas.
+			        command modelLoadingInstructions appendTo: script on: canvas.
+			        canvas anchor script: ( canvas jQuery this onClick: script )
+		        ].
 
 	self
 		assert: html
 		equals:
-			'<a id="id3"></a><script type="text/javascript">$("#id3").click(function(){$("#container-id1").html("<span>Test</span>")});</script>'
+		'<a id="id3"></a><script type="text/javascript">$("#id3").click(function(){$("#container-id1").html("<span>Test<\/span>")});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 RenderingCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 RenderingCommandTest >> testRequiresSerialization [
 
 	self assert: command requiresSerialization 
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 RenderingCommandTest >> testServerIndependentInstructions [
 
 	self assert: command serverIndependentInstructions isEmpty

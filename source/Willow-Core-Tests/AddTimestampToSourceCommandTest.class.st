@@ -1,10 +1,12 @@
 Class {
-	#name : #AddTimestampToSourceCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'AddTimestampToSourceCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 AddTimestampToSourceCommandTest >> testApplyToOn [
 
 	| html upToTime afterTime |

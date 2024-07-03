@@ -2,18 +2,20 @@
 A RadioGroupWebViewTest is a test class for testing the behavior of RadioGroupWebView
 "
 Class {
-	#name : #RadioGroupWebViewTest,
-	#superclass : #SingleSelectionWebViewBehaviorTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'RadioGroupWebViewTest',
+	#superclass : 'SingleSelectionWebViewBehaviorTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #support }
+{ #category : 'support' }
 RadioGroupWebViewTest >> newSingleSelectionView [
 
 	^ RadioGroupWebView new
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 RadioGroupWebViewTest >> testOn [
 
 	| radioGroup html |
@@ -29,7 +31,7 @@ RadioGroupWebViewTest >> testOn [
 			'<label for="radio-button-id2"><input name="1" id="radio-button-id2" value="1" type="radio"/>Buenos Aires</label><label for="radio-button-id3"><input name="1" id="radio-button-id3" value="2" type="radio"/>CABA</label><script type="text/javascript">$("#radio-button-id2").change(function(event){$(this).prop("disabled",true)});$("#radio-button-id3").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 RadioGroupWebViewTest >> testRenderContentOnWithElements [
 
 	| radioGroup html |
@@ -44,7 +46,7 @@ RadioGroupWebViewTest >> testRenderContentOnWithElements [
 			'<label for="radio-button-id2"><input name="1" id="radio-button-id2" value="1" type="radio"/>Buenos Aires</label><label for="radio-button-id3"><input name="1" id="radio-button-id3" value="2" type="radio"/>CABA</label>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 RadioGroupWebViewTest >> testRenderContentOnWithElementsAndSomethingSelected [
 
 	| radioGroup html |
@@ -74,7 +76,7 @@ RadioGroupWebViewTest >> testRenderContentOnWithElementsAndSomethingSelected [
 			'<label for="radio-button-id2"><input name="1" id="radio-button-id2" value="1" type="radio"/>Buenos Aires</label><label for="radio-button-id3"><input name="1" id="radio-button-id3" checked value="2" type="radio"/>CABA</label>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 RadioGroupWebViewTest >> testRenderingWhenEmptyDoesNotProduceHTMLContent [
 
 	| radioGroup html |
@@ -85,7 +87,7 @@ RadioGroupWebViewTest >> testRenderingWhenEmptyDoesNotProduceHTMLContent [
 	self assert: html isEmpty
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 RadioGroupWebViewTest >> testRenderingWithApplying [
 
 	| radioGroup html |

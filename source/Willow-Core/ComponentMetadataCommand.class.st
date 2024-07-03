@@ -3,22 +3,24 @@ A command to add attributes with custom information:
 data-* = ""value""
 "
 Class {
-	#name : #ComponentMetadataCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ComponentMetadataCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'name',
 		'content'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentMetadataCommand class >> toDeclare: aName with: aContent [
 
 	^ self new initializeToDeclare: aName with: aContent
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ComponentMetadataCommand >> applyTo: aComponent on: aCanvas [
 
 	(ComponentAttributeCommand named: self dataAttribute with: content)
@@ -26,12 +28,12 @@ ComponentMetadataCommand >> applyTo: aComponent on: aCanvas [
 		on: aCanvas
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ComponentMetadataCommand >> dataAttribute [
 	^ 'data-<1s>' expandMacrosWith: name
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 ComponentMetadataCommand >> initializeToDeclare: aName with: aContent [
 
 	name := aName.

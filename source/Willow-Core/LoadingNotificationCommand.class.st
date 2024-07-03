@@ -2,15 +2,17 @@
 I'm a WebInteractionCommand that displays a Loading... notification while an AJAX call is beign executed.
 "
 Class {
-	#name : #LoadingNotificationCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'LoadingNotificationCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'asynchronousCallCustomization'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 LoadingNotificationCommand class >> displaying: aWebView applying: aComponentCommand [
 
 	^ self
@@ -18,19 +20,19 @@ LoadingNotificationCommand class >> displaying: aWebView applying: aComponentCom
 		then: self instructionToCleanNotificationSection
 ]
 
-{ #category : #'private - instance creation' }
+{ #category : 'private - instance creation' }
 LoadingNotificationCommand class >> executing: aPreviousAction then: aFinalizationAction [
 
 	^ self new initializeExecuting: aPreviousAction then: aFinalizationAction
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 LoadingNotificationCommand class >> instructionToCleanNotificationSection [
 
 	^ [ :aCanvas | ( self notificationSectionOn: aCanvas ) html: [ :aSubCanvas |  ] ]
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 LoadingNotificationCommand class >> instructionToDisplay: aWebView applying: aComponentCommand [
 
 	^ [ :aCanvas | 
@@ -46,13 +48,13 @@ LoadingNotificationCommand class >> instructionToDisplay: aWebView applying: aCo
 	]
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 LoadingNotificationCommand class >> notificationSectionOn: aCanvas [
 
 	^ aCanvas jQuery id: Constants >> #willow >> #notificationSectionName
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 
 	^ self
@@ -60,7 +62,7 @@ LoadingNotificationCommand class >> onPageTopWithClasses: aCssClassCollection [
 		applying: ( ComponentClassificationCommand toStyleWithAll: aCssClassCollection )
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 LoadingNotificationCommand >> initializeExecuting: aPreviousAction then: aFinalizationAction [
 
 	asynchronousCallCustomization := [ :ajax :canvas | 
@@ -69,25 +71,25 @@ LoadingNotificationCommand >> initializeExecuting: aPreviousAction then: aFinali
 	]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LoadingNotificationCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LoadingNotificationCommand >> priorityActions [
 
 	^ Array with: asynchronousCallCustomization
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 LoadingNotificationCommand >> requiresSerialization [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LoadingNotificationCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

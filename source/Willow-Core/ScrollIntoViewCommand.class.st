@@ -2,34 +2,36 @@
 I'm a WebInteractionCommand that scrolls the web page so that a specific component is visible.
 "
 Class {
-	#name : #ScrollIntoViewCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'ScrollIntoViewCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'identifierProvider'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ScrollIntoViewCommand class >> withComponentIdentifierProvidedBy: anIdentifierProvider [
 
 	^self new
 		initializeWithComponentIdentifierProvidedBy: anIdentifierProvider
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 ScrollIntoViewCommand >> identifierToShow [
 
 	^identifierProvider value
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ScrollIntoViewCommand >> initializeWithComponentIdentifierProvidedBy: anIdentifierProvider [
 
 	identifierProvider := anIdentifierProvider
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ScrollIntoViewCommand >> modelLoadingInstructions [
 
 	"We iterate the result before sending the scrolling message in case no match is found."
@@ -42,19 +44,19 @@ ScrollIntoViewCommand >> modelLoadingInstructions [
 		orderedAt: 20
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ScrollIntoViewCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ScrollIntoViewCommand >> requiresSerialization [
 
 	^false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ScrollIntoViewCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

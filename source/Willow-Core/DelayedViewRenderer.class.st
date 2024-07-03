@@ -2,23 +2,25 @@
 I'm a web view showing a throbber while evaluating an action block and then rendering another view
 "
 Class {
-	#name : #DelayedViewRenderer,
-	#superclass : #WAPainter,
+	#name : 'DelayedViewRenderer',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'identifiedDelayedView',
 		'currentView',
 		'interpreter'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 DelayedViewRenderer class >> showing: aThrobber whileEvaluating: aBlock thenRendering: aView [
 
 	^ self new initializeShowing: aThrobber whileEvaluating: aBlock thenRendering: aView
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 DelayedViewRenderer >> initializeInterpreterToEvaluate: aBlock thenRender: aView [
 
 	interpreter := WebInteractionInterpreter forInstantEvaluation.
@@ -30,7 +32,7 @@ DelayedViewRenderer >> initializeInterpreterToEvaluate: aBlock thenRender: aView
 		render: identifiedDelayedView
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 DelayedViewRenderer >> initializeShowing: aThrobber whileEvaluating: aBlock thenRendering: aView [
 
 	self setCurrentViewTo: aThrobber.
@@ -40,14 +42,14 @@ DelayedViewRenderer >> initializeShowing: aThrobber whileEvaluating: aBlock then
 	self initializeInterpreterToEvaluate: aBlock thenRender: aView
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 DelayedViewRenderer >> renderContentOn: aCanvas [
 
 	aCanvas render: identifiedDelayedView.
 	interpreter applyTo: self on: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 DelayedViewRenderer >> setCurrentViewTo: aView [
 
 	currentView := aView

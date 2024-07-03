@@ -2,12 +2,14 @@
 An UnorderedListWebViewTest is a test class for testing the behavior of UnorderedListWebView
 "
 Class {
-	#name : #UnorderedListWebViewTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'UnorderedListWebViewTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 UnorderedListWebViewTest >> testBeIdentifiable [
 
 	| unorderedList html |
@@ -23,7 +25,7 @@ UnorderedListWebViewTest >> testBeIdentifiable [
 	self assert: html equals: '<ul id="unordered-list-id1"><li>spoon</li><li>fork</li></ul>'
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 UnorderedListWebViewTest >> testIdentifierOn [
 
 	| unorderedList html |
@@ -42,7 +44,7 @@ UnorderedListWebViewTest >> testIdentifierOn [
 	self assert: html equals: '<ul id="unordered-list-id1"><li>spoon</li><li>fork</li></ul>'
 ]
 
-{ #category : #'tests-configuring' }
+{ #category : 'tests-configuring' }
 UnorderedListWebViewTest >> testOn [
 
 	| unorderedList html |
@@ -61,7 +63,7 @@ UnorderedListWebViewTest >> testOn [
 			'<ul id="ul-id1"><li>spoon</li><li>fork</li></ul><script type="text/javascript">$("#ul-id1").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 UnorderedListWebViewTest >> testRenderContentOn [
 
 	| unorderedList html |
@@ -73,7 +75,7 @@ UnorderedListWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<ul><li>spoon</li><li>fork</li></ul>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 UnorderedListWebViewTest >> testRenderContentOnWithCommands [
 
 	| unorderedList html |

@@ -3,22 +3,24 @@ A command to add attributes with custom information:
 aria-* = ""value""
 "
 Class {
-	#name : #ComponentAccessibilityEnrichmentCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ComponentAccessibilityEnrichmentCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'name',
 		'content'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentAccessibilityEnrichmentCommand class >> toDeclare: aName with: aContent [
 
 	^ self new initializeToDeclare: aName with: aContent
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ComponentAccessibilityEnrichmentCommand >> applyTo: aComponent on: aCanvas [
 
 	(ComponentAttributeCommand named: self ariaAttribute with: content)
@@ -26,13 +28,13 @@ ComponentAccessibilityEnrichmentCommand >> applyTo: aComponent on: aCanvas [
 		on: aCanvas
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ComponentAccessibilityEnrichmentCommand >> ariaAttribute [
 
 	^ 'aria-<1s>' expandMacrosWith: name
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentAccessibilityEnrichmentCommand >> initializeToDeclare: aName with: aContent [
 
 	name := aName.

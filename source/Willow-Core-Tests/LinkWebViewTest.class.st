@@ -2,12 +2,14 @@
 An AsynchronicLinkWebViewTest is a test class for testing the behavior of AsynchronicLinkWebView
 "
 Class {
-	#name : #LinkWebViewTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'LinkWebViewTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 LinkWebViewTest >> testAsynchronicLabeledApplying [
 
 	| html link |
@@ -23,7 +25,7 @@ LinkWebViewTest >> testAsynchronicLabeledApplying [
 			'<a id="a-id1" class="willow">Click me!</a><script type="text/javascript">$("#a-id1").click(function(event){arguments[0].preventDefault()});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 LinkWebViewTest >> testOn [
 
 	| html link |
@@ -38,7 +40,7 @@ LinkWebViewTest >> testOn [
 			'<a id="a-id1">Click me!</a><script type="text/javascript">$("#a-id1").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 LinkWebViewTest >> testRenderContentOn [
 
 	| html link |
@@ -49,7 +51,7 @@ LinkWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<a>Click me!</a>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 LinkWebViewTest >> testSynchronicLabeledApplying [
 
 	| html link |

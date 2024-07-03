@@ -1,10 +1,12 @@
 Class {
-	#name : #JSConcatenateBefore,
-	#superclass : #JSStatement,
-	#category : #'Willow-Core-WebInteraction'
+	#name : 'JSConcatenateBefore',
+	#superclass : 'JSStatement',
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #printing }
+{ #category : 'printing' }
 JSConcatenateBefore >> javascriptContentOn: aStream [
 
 	aStream

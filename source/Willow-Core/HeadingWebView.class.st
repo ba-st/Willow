@@ -2,29 +2,31 @@
 I represent a document heading
 "
 Class {
-	#name : #HeadingWebView,
-	#superclass : #WAPainter,
+	#name : 'HeadingWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'text',
 		'level',
 		'commandToComponent'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 HeadingWebView class >> displaying: aHeadingText withLevel: aLevel [
 
 	^ self displaying: aHeadingText withLevel: aLevel applying: [ :container |  ]
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 HeadingWebView class >> displaying: aHeadingText withLevel: aLevel applying: aCommand [
 
 	^self new initializeDisplaying: aHeadingText withLevel: aLevel applying: aCommand asWebComponentCommand 
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 HeadingWebView >> initializeDisplaying: aHeadingText withLevel: aLevel applying: aCommand [
 
 	text := aHeadingText.
@@ -32,7 +34,7 @@ HeadingWebView >> initializeDisplaying: aHeadingText withLevel: aLevel applying:
 	commandToComponent := aCommand
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 HeadingWebView >> renderContentOn: aCanvas [
 
 	aCanvas heading

@@ -2,24 +2,26 @@
 I'm an encoder/decoder of integers
 "
 Class {
-	#name : #IntegerCodec,
-	#superclass : #Codec,
-	#category : #'Willow-Core-Frontend'
+	#name : 'IntegerCodec',
+	#superclass : 'Codec',
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 IntegerCodec >> canCreate: anObject [
 
 	^anObject isInteger
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 IntegerCodec >> decode: aString [
 
 	^ aString greaseInteger ifNil: [ 0 ] ifNotNil: [ :integer | integer ]
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 IntegerCodec >> encode: anInteger [
 
 	^ anInteger greaseString

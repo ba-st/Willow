@@ -1,19 +1,21 @@
 Class {
-	#name : #DelayedModelLoader,
-	#superclass : #Object,
+	#name : 'DelayedModelLoader',
+	#superclass : 'Object',
 	#instVars : [
 		'commands'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 DelayedModelLoader class >> new [
 
 	^ super new initialize
 ]
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 DelayedModelLoader >> applyTo: aCollection on: aCanvas [
 
 	commands
@@ -24,14 +26,14 @@ DelayedModelLoader >> applyTo: aCollection on: aCanvas [
 			]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 DelayedModelLoader >> initialize [
 
 	super initialize.
 	commands := OrderedCollection new
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 DelayedModelLoader >> onTriggerExecute: anInteractionCommand [
 
 	commands add: anInteractionCommand

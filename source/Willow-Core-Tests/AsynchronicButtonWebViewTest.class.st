@@ -2,12 +2,14 @@
 An AsynchronicButtonWebViewTest is a test class for testing the behavior of AsynchronicButtonWebView
 "
 Class {
-	#name : #AsynchronicButtonWebViewTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'AsynchronicButtonWebViewTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 AsynchronicButtonWebViewTest >> testBeIdentifiable [
 
 	| button html |
@@ -18,7 +20,7 @@ AsynchronicButtonWebViewTest >> testBeIdentifiable [
 	self assert: html equals: '<button id="button-id1" type="button">Click me!</button>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 AsynchronicButtonWebViewTest >> testIdentifierOn [
 
 	| button html |
@@ -34,7 +36,7 @@ AsynchronicButtonWebViewTest >> testIdentifierOn [
 	self assert: html equals: '<button id="button-id1" type="button">Click me!</button>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 AsynchronicButtonWebViewTest >> testOn [
 
 	| button html |
@@ -48,7 +50,7 @@ AsynchronicButtonWebViewTest >> testOn [
 			'<button id="button-id1" type="button">Click me!</button><script type="text/javascript">$("#button-id1").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 AsynchronicButtonWebViewTest >> testRenderContentOn [
 
 	| button html |

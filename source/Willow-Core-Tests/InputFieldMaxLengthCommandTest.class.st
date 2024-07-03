@@ -2,12 +2,14 @@
 An InputFieldMaxLengthCommandTest is a test class for testing the behavior of InputFieldMaxLengthCommand
 "
 Class {
-	#name : #InputFieldMaxLengthCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'InputFieldMaxLengthCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 InputFieldMaxLengthCommandTest >> testApplyToOn [
 
 	| html |

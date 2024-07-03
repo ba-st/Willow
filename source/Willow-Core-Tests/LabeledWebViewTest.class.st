@@ -2,12 +2,14 @@
 A LabeledWebViewTest is a test class for testing the behavior of LabeledWebView
 "
 Class {
-	#name : #LabeledWebViewTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebViews'
+	#name : 'LabeledWebViewTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 LabeledWebViewTest >> testRenderContentOnWithDynamicLabel [
 
 	| labeledView html label |
@@ -27,7 +29,7 @@ LabeledWebViewTest >> testRenderContentOnWithDynamicLabel [
 			'<label for="text-id1">Text Field</label><input value="" name="2" id="text-id1" type="text"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LabeledWebViewTest >> testRenderContentOnWithFixedLabel [
 
 	| labeledView html |
@@ -44,7 +46,7 @@ LabeledWebViewTest >> testRenderContentOnWithFixedLabel [
 		equals: '<label for="text-id1">Field</label><input value="" name="2" id="text-id1" type="text"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LabeledWebViewTest >> testRenderContentOnWithFixedLabelAndCommands [
 
 	| labeledView html |

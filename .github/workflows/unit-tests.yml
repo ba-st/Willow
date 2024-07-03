@@ -1,17 +1,22 @@
-name: Unit Tests
-
-on: [push,pull_request,workflow_dispatch]
-
+name: Pharo Unit Tests
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
 jobs:
-   build:
+   unit-tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        smalltalk: [ Pharo64-11, Pharo64-10, Pharo64-9.0, Pharo64-8.0 ]
+        smalltalk:
+          - Pharo64-11
+          - Pharo64-10
+          - Pharo64-9.0
+          - Pharo64-8.0
       fail-fast: false
     name: ${{ matrix.smalltalk }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Smalltalk CI
         uses: hpi-swa/setup-smalltalkCI@v1
         with:
@@ -22,7 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         timeout-minutes: 15
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           name: Unit-Tests-${{matrix.smalltalk}}
           token: ${{ secrets.CODECOV_TOKEN }}

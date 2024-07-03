@@ -3,27 +3,29 @@ I'm a WebInteractionCommand used to create and open a Dialog.
 The created Dialog will be appended to a section in the DOM.
 "
 Class {
-	#name : #DialogOpeningCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'DialogOpeningCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'dialogView'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 DialogOpeningCommand class >> alwaysOpening: aDialogView [
 
 	^ self new initializeAlwaysOpening: aDialogView
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 DialogOpeningCommand >> initializeAlwaysOpening: aDialogView [
 
 	dialogView := aDialogView
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DialogOpeningCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
@@ -31,19 +33,19 @@ DialogOpeningCommand >> modelLoadingInstructions [
 		orderedAt: 10
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DialogOpeningCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DialogOpeningCommand >> requiresSerialization [
 
 	^false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DialogOpeningCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

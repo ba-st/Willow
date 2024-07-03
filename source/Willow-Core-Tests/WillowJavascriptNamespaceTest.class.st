@@ -2,30 +2,32 @@
 A WillowJavascriptNamespaceTest is a test class for testing the behavior of WillowJavascriptNamespace
 "
 Class {
-	#name : #WillowJavascriptNamespaceTest,
-	#superclass : #JSObjectTest,
-	#category : #'Willow-Core-Tests-Applications'
+	#name : 'WillowJavascriptNamespaceTest',
+	#superclass : 'JSObjectTest',
+	#category : 'Willow-Core-Tests-Applications',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Applications'
 }
 
-{ #category : #'tests-Accessing' }
+{ #category : 'tests-Accessing' }
 WillowJavascriptNamespaceTest >> testCallServerFunction [
 
 	self assert: WillowJavascriptNamespace new callServerFunction equals: 'Willow.callServer'
 ]
 
-{ #category : #'tests-printing' }
+{ #category : 'tests-printing' }
 WillowJavascriptNamespaceTest >> testClassificationAccess [
 
 	self assert: Willow classification >> #loading equals: 'willow-loading' asJavascript
 ]
 
-{ #category : #'tests-printing' }
+{ #category : 'tests-printing' }
 WillowJavascriptNamespaceTest >> testConstantsAccess [
 
 	self assert: WillowJavascriptNamespace new constants >> #css >> #auto equals: 'auto' asJavascript
 ]
 
-{ #category : #'tests-Accessing' }
+{ #category : 'tests-Accessing' }
 WillowJavascriptNamespaceTest >> testHandleAjaxErrorCallFunction [
 
 	self
@@ -33,13 +35,13 @@ WillowJavascriptNamespaceTest >> testHandleAjaxErrorCallFunction [
 		equals: 'Willow.handleAjaxErrorCall'
 ]
 
-{ #category : #'tests-printing' }
+{ #category : 'tests-printing' }
 WillowJavascriptNamespaceTest >> testJavascriptContentOn [
 
 	self assert: WillowJavascriptNamespace new equals: 'Willow'
 ]
 
-{ #category : #'tests-Configuring' }
+{ #category : 'tests-Configuring' }
 WillowJavascriptNamespaceTest >> testSetCallServerFunctionTo [
 
 	self
@@ -49,7 +51,7 @@ WillowJavascriptNamespaceTest >> testSetCallServerFunctionTo [
 		equals: 'Willow.callServer=function(arguments){}'
 ]
 
-{ #category : #'tests-Configuring' }
+{ #category : 'tests-Configuring' }
 WillowJavascriptNamespaceTest >> testSetHandleAjaxErrorCallFunctionTo [
 
 	self

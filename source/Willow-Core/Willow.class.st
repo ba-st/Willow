@@ -2,8 +2,8 @@
 I'm a shared pool providing access to constants and classes defined by the lilbrary
 "
 Class {
-	#name : #Willow,
-	#superclass : #SharedPool,
+	#name : 'Willow',
+	#superclass : 'SharedPool',
 	#classVars : [
 		'Classification',
 		'Constants'
@@ -11,22 +11,24 @@ Class {
 	#pools : [
 		'RenoirSt'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Willow class >> classification [
 
 	^ Classification
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Willow class >> constants [
 
 	^ Constants
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 Willow class >> initialize [
 
 	<ignoreForCoverage>
@@ -34,7 +36,7 @@ Willow class >> initialize [
 	self initializeClasses
 ]
 
-{ #category : #'private - initialization' }
+{ #category : 'private - initialization' }
 Willow class >> initializeARIAConstants [
 
 	"Checkout https://www.w3.org/TR/wai-aria/#roles_categorization"
@@ -49,7 +51,7 @@ Willow class >> initializeARIAConstants [
 		initializeWindowRoles
 ]
 
-{ #category : #'private - initialization' }
+{ #category : 'private - initialization' }
 Willow class >> initializeClasses [
 
 	<ignoreForCoverage>
@@ -62,7 +64,7 @@ Willow class >> initializeClasses [
 		bind: #disabledComponent to: 'willow-disabled-component'
 ]
 
-{ #category : #'private - initialization' }
+{ #category : 'private - initialization' }
 Willow class >> initializeConstants [
 
 	<ignoreForCoverage>
@@ -78,7 +80,7 @@ Willow class >> initializeConstants [
 	self initializeARIAConstants
 ]
 
-{ #category : #'private - initialization' }
+{ #category : 'private - initialization' }
 Willow class >> initializeDocumentStructureRoles [
 
 	<ignoreForCoverage>
@@ -110,7 +112,7 @@ Willow class >> initializeDocumentStructureRoles [
 		bind: #tooltip to: 'tooltip'
 ]
 
-{ #category : #'private - initialization' }
+{ #category : 'private - initialization' }
 Willow class >> initializeLandmarkRoles [
 
 	<ignoreForCoverage>
@@ -125,7 +127,7 @@ Willow class >> initializeLandmarkRoles [
 		bind: #search to: 'search'
 ]
 
-{ #category : #'private - initialization' }
+{ #category : 'private - initialization' }
 Willow class >> initializeLiveRegionRoles [
 
 	<ignoreForCoverage>
@@ -137,7 +139,7 @@ Willow class >> initializeLiveRegionRoles [
 		bind: #timer to: 'timer'
 ]
 
-{ #category : #'private - initialization' }
+{ #category : 'private - initialization' }
 Willow class >> initializeWidgetRoles [
 
 	<ignoreForCoverage>
@@ -173,7 +175,7 @@ Willow class >> initializeWidgetRoles [
 		bind: #treegrid to: 'treegrid'
 ]
 
-{ #category : #'private - initialization' }
+{ #category : 'private - initialization' }
 Willow class >> initializeWindowRoles [
 
 	<ignoreForCoverage>

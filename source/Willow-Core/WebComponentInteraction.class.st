@@ -1,15 +1,17 @@
 Class {
-	#name : #WebComponentInteraction,
-	#superclass : #Object,
+	#name : 'WebComponentInteraction',
+	#superclass : 'Object',
 	#instVars : [
 		'commands',
 		'serializationCommand',
 		'triggerPolicy'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 WebComponentInteraction class >> neverTriggered [
 
 	^self
@@ -17,7 +19,7 @@ WebComponentInteraction class >> neverTriggered [
 		serializingWith: NullWebInteractionCommand new
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WebComponentInteraction class >> triggeredAccordingTo: aTriggerPolicy serializingWith: aSerializationCommand [
 
 	^ self new
@@ -25,13 +27,13 @@ WebComponentInteraction class >> triggeredAccordingTo: aTriggerPolicy serializin
 		serializingWith: aSerializationCommand
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 WebComponentInteraction class >> triggeredOnDocumentLoad [
 
 	^ self triggeredAccordingTo: DocumentLoadTrigger new serializingWith: NullWebInteractionCommand new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 WebComponentInteraction class >> triggeredOnEvaluationOf: aSelector withAll: aParameterArray [
 
 	^ self
@@ -39,7 +41,7 @@ WebComponentInteraction class >> triggeredOnEvaluationOf: aSelector withAll: aPa
 		serializingWith: SerializationCommand forCurrentObject
 ]
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 WebComponentInteraction >> applyTo: aComponent on: aCanvas [
 
 	( WebInteractionWriter triggering: commands serializingWith: serializationCommand )
@@ -48,7 +50,7 @@ WebComponentInteraction >> applyTo: aComponent on: aCanvas [
 		on: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WebComponentInteraction >> initializeTriggeredAccordingTo: aTriggerPolicy serializingWith: aSerializationCommand [
 
 	triggerPolicy := aTriggerPolicy.
@@ -56,7 +58,7 @@ WebComponentInteraction >> initializeTriggeredAccordingTo: aTriggerPolicy serial
 	serializationCommand := aSerializationCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 WebComponentInteraction >> onTriggerExecute: aCommand [
 
 	commands add: aCommand

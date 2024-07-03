@@ -1,34 +1,36 @@
 Class {
-	#name : #JQuery3FileMetadataLibraryTest,
-	#superclass : #TestCase,
-	#category : #'Willow-Core-Tests-Libraries'
+	#name : 'JQuery3FileMetadataLibraryTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-Core-Tests-Libraries',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Libraries'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQuery3FileMetadataLibraryTest >> testForDeployment [
 
 	self assert: JQuery3MetadataLibrary forDeployment equals: JQuery3DeploymentMetadataLibrary
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQuery3FileMetadataLibraryTest >> testForDevelopment [
 
 	self assert: JQuery3MetadataLibrary forDevelopment equals: JQuery3DevelopmentMetadataLibrary
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQuery3FileMetadataLibraryTest >> testLibraryName [
 
 	self assert: JQuery3MetadataLibrary libraryName equals: 'jQuery'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQuery3FileMetadataLibraryTest >> testVersion [
 
 	self assert: JQuery3MetadataLibrary version equals: '3.7.0'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQuery3FileMetadataLibraryTest >> testVersionCompatibility [
 
 	self

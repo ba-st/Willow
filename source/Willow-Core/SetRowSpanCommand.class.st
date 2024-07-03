@@ -2,27 +2,29 @@
 A command to set the rowSpan of a table cell.
 "
 Class {
-	#name : #SetRowSpanCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'SetRowSpanCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'rowSpan'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SetRowSpanCommand class >> setting: aRowSpan [
 
 	^ self new initializeSetting: aRowSpan
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 SetRowSpanCommand >> applyTo: aComponent on: aCanvas [
 
 	aComponent rowSpan: rowSpan
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SetRowSpanCommand >> initializeSetting: aRowSpan [
 
 	rowSpan := aRowSpan

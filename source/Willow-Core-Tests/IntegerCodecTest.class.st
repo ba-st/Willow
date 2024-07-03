@@ -2,12 +2,14 @@
 An IntegerCodecTest is a test class for testing the behavior of IntegerCodec
 "
 Class {
-	#name : #IntegerCodecTest,
-	#superclass : #TestCase,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'IntegerCodecTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 IntegerCodecTest >> testCanCreate [
 
 	self
@@ -18,7 +20,7 @@ IntegerCodecTest >> testCanCreate [
 		deny: (IntegerCodec new canCreate: 1 / 2)
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 IntegerCodecTest >> testDecode [
 
 	self
@@ -28,7 +30,7 @@ IntegerCodecTest >> testDecode [
 		assert: (IntegerCodec new decode: 'frula') equals: 0
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 IntegerCodecTest >> testEncode [
 
 	self

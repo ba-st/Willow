@@ -2,21 +2,23 @@
 A TimeFieldWebViewTest is a test class for testing the behavior of TimeFieldWebView
 "
 Class {
-	#name : #TimeFieldWebViewTest,
-	#superclass : #BWRenderingTest,
+	#name : 'TimeFieldWebViewTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : #'Willow-Core-Tests-WebViews'
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #support }
+{ #category : 'support' }
 TimeFieldWebViewTest >> changeNotifiedBy: aTextFieldWebView [ 
 	
 	notificationWasReceived := true
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 TimeFieldWebViewTest >> testBeIdentifiable [
 
 	| timeField html |
@@ -29,7 +31,7 @@ TimeFieldWebViewTest >> testBeIdentifiable [
 	self assert: html equals: '<input value="" name="1" id="time-field-id2" type="time"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 TimeFieldWebViewTest >> testIdentifierOn [
 
 	| timeField html |
@@ -45,7 +47,7 @@ TimeFieldWebViewTest >> testIdentifierOn [
 	self assert: html equals: '<input value="" name="2" id="time-field-id1" type="time"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 TimeFieldWebViewTest >> testNotifyChangesTo [
 
 	| timeField |
@@ -58,7 +60,7 @@ TimeFieldWebViewTest >> testNotifyChangesTo [
 	self assert: notificationWasReceived
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 TimeFieldWebViewTest >> testOn [
 
 	| timeField html |
@@ -74,7 +76,7 @@ TimeFieldWebViewTest >> testOn [
 			'<input value="" name="1" type="time" id="input-id2"/><script type="text/javascript">$("#input-id2").change(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 TimeFieldWebViewTest >> testRenderContentOn [
 
 	| timeField html |
@@ -86,7 +88,7 @@ TimeFieldWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<input value="" name="1" type="time"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 TimeFieldWebViewTest >> testTime [
 
 	| timeField html currentTime |

@@ -1,24 +1,24 @@
-Extension { #name : #WAHtmlCanvas }
+Extension { #name : 'WAHtmlCanvas' }
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WAHtmlCanvas >> dialog [
 
 	^ self tag: 'dialog'
 ]
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WAHtmlCanvas >> every: aNumber millisecondsEvaluateAsAjaxScript: aScriptBlock until: aStoppingCondition [
 
 	self script: (self scriptToExecute: aScriptBlock asAjaxScriptEvery: aNumber millsecondsUnless: aStoppingCondition)
 ]
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WAHtmlCanvas >> icon [
 
 	^ self tag: 'i'
 ]
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WAHtmlCanvas >> scriptToExecute: aScriptBlock asAjaxScriptEvery: aNumber millsecondsUnless: aStoppingCondition [
 
 	| asynchronousCall |

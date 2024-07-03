@@ -2,18 +2,20 @@
 I'm an encoder/decoder of natural numbers
 "
 Class {
-	#name : #NaturalNumberCodec,
-	#superclass : #Codec,
-	#category : #'Willow-Core-Frontend'
+	#name : 'NaturalNumberCodec',
+	#superclass : 'Codec',
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 NaturalNumberCodec >> canCreate: anObject [
 
 	^anObject isInteger and: [anObject positive]
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 NaturalNumberCodec >> decode: aString [
 
 	| number |
@@ -28,7 +30,7 @@ NaturalNumberCodec >> decode: aString [
 	^ number
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 NaturalNumberCodec >> encode: aNaturalNumber [
 
 	^aNaturalNumber greaseString

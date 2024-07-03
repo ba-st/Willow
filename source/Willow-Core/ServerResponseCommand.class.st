@@ -2,8 +2,8 @@
 I'm a WebInteractionCommand with a response that can be configured during the execution on the server.
 "
 Class {
-	#name : #ServerResponseCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'ServerResponseCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'interpreter',
 		'serverSideParameterBinding',
@@ -11,10 +11,12 @@ Class {
 		'userAgentConditionOptional',
 		'userAgentParameterOptional'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ServerResponseCommand class >> withBehaviorDeterminedBy: aBlock conditionedBy: aUserAgentConditionOptional requiring: aUserAgentParameterOptional [
 
 	^ self new
@@ -23,7 +25,7 @@ ServerResponseCommand class >> withBehaviorDeterminedBy: aBlock conditionedBy: a
 		requiring: aUserAgentParameterOptional
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ServerResponseCommand >> conditionApplying: clientSideParameter to: clientCondition [
 
 	"We need to obtain the parameter and build a new object around it to prevent Seaside from manipulating the original object"
@@ -31,7 +33,7 @@ ServerResponseCommand >> conditionApplying: clientSideParameter to: clientCondit
 	^ clientCondition cull: ( JSStream on: clientSideParameter asJavascript )
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ServerResponseCommand >> considerAddingConditionTo: anAsynchronousCall [
 
 	userAgentConditionOptional
@@ -44,7 +46,7 @@ ServerResponseCommand >> considerAddingConditionTo: anAsynchronousCall [
 			]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ServerResponseCommand >> initializeWithBehaviorDeterminedBy: aBlock
 	conditionedBy: aUserAgentConditionOptional
 	requiring: aUserAgentParameterOptional [
@@ -57,7 +59,7 @@ ServerResponseCommand >> initializeWithBehaviorDeterminedBy: aBlock
 	self resetInterpreter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ServerResponseCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
@@ -72,7 +74,7 @@ ServerResponseCommand >> modelLoadingInstructions [
 			]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ServerResponseCommand >> obtain: clientSideParameter from: anAsynchronousCall [
 
 	self considerAddingConditionTo: anAsynchronousCall.
@@ -82,19 +84,19 @@ ServerResponseCommand >> obtain: clientSideParameter from: anAsynchronousCall [
 			json: clientSideParameter
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 ServerResponseCommand >> onRespond [
 
 	^ interpreter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ServerResponseCommand >> parameter [
 
 	^ serverSideParameterBinding content
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ServerResponseCommand >> priorityActions [
 
 	"If there's some parameter, we got it from the json and keep it to be used during callback execution"
@@ -107,19 +109,19 @@ ServerResponseCommand >> priorityActions [
 		ifUnused: [ #() ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ServerResponseCommand >> requiresSerialization [
 
 	^ true
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ServerResponseCommand >> resetInterpreter [
 
 	interpreter := WebInteractionInterpreter workingWith: DelayedModelLoader new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ServerResponseCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

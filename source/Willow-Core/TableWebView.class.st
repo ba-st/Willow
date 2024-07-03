@@ -2,8 +2,8 @@
 A view to represent an html table
 "
 Class {
-	#name : #TableWebView,
-	#superclass : #WAPainter,
+	#name : 'TableWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'columnRenderers',
 		'items',
@@ -15,10 +15,12 @@ Class {
 		'identifierAssigner',
 		'footer'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 TableWebView class >> definedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand footerRenderedBy: aFooter [
 
 	^ self new
@@ -29,32 +31,32 @@ TableWebView class >> definedBy: aColumnRendererCollection applying: aTableComma
 		footerRenderedBy: aFooter
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 TableWebView >> beIdentifiable [
 
 	^ identifierAssigner beRequired
 ]
 
-{ #category : #'container-API' }
+{ #category : 'container-API' }
 TableWebView >> changeContentsTo: anElementCollection [
 
 	items := anElementCollection.
 	self notifyInterested
 ]
 
-{ #category : #'container-API' }
+{ #category : 'container-API' }
 TableWebView >> contents [
 
 	^items
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TableWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 TableWebView >> initializeDefinedBy: aColumnRendererCollection applying: aTableCommand headerRenderedBy: aHeader applyingToEachRow: aRowCommand footerRenderedBy: aFooter [
 
 	interested := Set new.
@@ -69,25 +71,25 @@ TableWebView >> initializeDefinedBy: aColumnRendererCollection applying: aTableC
 	self changeContentsTo: #()
 ]
 
-{ #category : #'container-API' }
+{ #category : 'container-API' }
 TableWebView >> notifyChangesTo: aSupervisor [
 
 	interested add: aSupervisor
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 TableWebView >> notifyInterested [
 
 	interested do: [:anInterested | anInterested changeNotifiedBy: self]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 TableWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 TableWebView >> renderContentOn: aCanvas [
 
 	aCanvas table
@@ -101,7 +103,7 @@ TableWebView >> renderContentOn: aCanvas [
 			applying: commandToTable
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 TableWebView >> renderRowAt: anIndex for: anItem on: aCanvas [
 
 	| row |

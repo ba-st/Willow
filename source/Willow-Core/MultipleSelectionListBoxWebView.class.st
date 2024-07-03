@@ -2,8 +2,8 @@
 I'm a list box, that allows the user to select one or more items from a list contained within a static, multiple line text box. The user clicks inside the box on an item to select it.
 "
 Class {
-	#name : #MultipleSelectionListBoxWebView,
-	#superclass : #WAPainter,
+	#name : 'MultipleSelectionListBoxWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'availableElements',
 		'chosenElements',
@@ -12,16 +12,18 @@ Class {
 		'commandToComponent',
 		'identifierAssigner'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 MultipleSelectionListBoxWebView class >> applying: aCommandToComponent [
 
 	^self new initializeApplying: aCommandToComponent asWebComponentCommand 
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 MultipleSelectionListBoxWebView class >> displayingAtOnce: aNumberOfElements applying: aCommandComponent [
 
 	AssertionChecker enforce: [ aNumberOfElements > 1 ] because: 'A list box must display more than one element'.
@@ -29,64 +31,64 @@ MultipleSelectionListBoxWebView class >> displayingAtOnce: aNumberOfElements app
 	^ self applying: (SetComponentSizeCommand setting: aNumberOfElements) + aCommandComponent
 ]
 
-{ #category : #'Multiple Selection-API' }
+{ #category : 'Multiple Selection-API' }
 MultipleSelectionListBoxWebView >> allowAnyOf: anElementCollection [
 
 	availableElements := anElementCollection.
 	self chooseAllIn: chosenElements
 ]
 
-{ #category : #'Multiple Selection-API' }
+{ #category : 'Multiple Selection-API' }
 MultipleSelectionListBoxWebView >> allowsAnySatisfying: aMatchBlock [
 
 	^availableElements anySatisfy: aMatchBlock
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 MultipleSelectionListBoxWebView >> beIdentifiable [
 
 	^ identifierAssigner beRequired
 ]
 
-{ #category : #'Multiple Selection-API' }
+{ #category : 'Multiple Selection-API' }
 MultipleSelectionListBoxWebView >> chooseAll [
 
 	chosenElements := availableElements.
 	self notifyInterested
 ]
 
-{ #category : #'Multiple Selection-API' }
+{ #category : 'Multiple Selection-API' }
 MultipleSelectionListBoxWebView >> chooseAllIn: anElementCollection [
 
 	self chooseAllMatching: [ :available | anElementCollection includes: available ]
 ]
 
-{ #category : #'Multiple Selection-API' }
+{ #category : 'Multiple Selection-API' }
 MultipleSelectionListBoxWebView >> chooseAllMatching: aMonadycBlock [
 
 	chosenElements := availableElements select: aMonadycBlock.
 	self notifyInterested
 ]
 
-{ #category : #'Multiple Selection-API' }
+{ #category : 'Multiple Selection-API' }
 MultipleSelectionListBoxWebView >> currentSelection [
 
 	^chosenElements 
 ]
 
-{ #category : #'Multiple Selection-API' }
+{ #category : 'Multiple Selection-API' }
 MultipleSelectionListBoxWebView >> disallowAll [
 
 	self allowAnyOf: #()
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MultipleSelectionListBoxWebView >> identifierOn: aCanvas [
 
 	^ identifierAssigner identifierOn: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 MultipleSelectionListBoxWebView >> initializeApplying: aCommandToComponent [
 
 	interested := Set new.
@@ -96,25 +98,25 @@ MultipleSelectionListBoxWebView >> initializeApplying: aCommandToComponent [
 	self disallowAll
 ]
 
-{ #category : #'Multiple Selection-API' }
+{ #category : 'Multiple Selection-API' }
 MultipleSelectionListBoxWebView >> notifyChangesTo: aSupervisor [
 
 	interested add: aSupervisor
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 MultipleSelectionListBoxWebView >> notifyInterested [
 
 	interested do: [ :anInterested | anInterested changeNotifiedBy: self ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 MultipleSelectionListBoxWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 MultipleSelectionListBoxWebView >> renderContentOn: aCanvas [
 
 	| select |

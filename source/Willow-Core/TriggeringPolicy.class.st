@@ -1,10 +1,12 @@
 Class {
-	#name : #TriggeringPolicy,
-	#superclass : #Object,
-	#category : #'Willow-Core-WebInteraction'
+	#name : 'TriggeringPolicy',
+	#superclass : 'Object',
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 TriggeringPolicy >> apply: anAsynchronousCall to: aComponent on: aCanvas [
 
 	self subclassResponsibility

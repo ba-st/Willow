@@ -2,12 +2,14 @@
 A LoadingNotificationCommandTest is a test class for testing the behavior of LoadingNotificationCommand
 "
 Class {
-	#name : #LoadingNotificationCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#name : 'LoadingNotificationCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 LoadingNotificationCommandTest >> renderedContentUsingPriorityActionsOf: aCommand [
 
 	^ self
@@ -23,7 +25,7 @@ LoadingNotificationCommandTest >> renderedContentUsingPriorityActionsOf: aComman
 			]
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 LoadingNotificationCommandTest >> testModelLoadingActionsWithCustomView [
 
 	| command |
@@ -33,7 +35,7 @@ LoadingNotificationCommandTest >> testModelLoadingActionsWithCustomView [
 	self assert: command modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 LoadingNotificationCommandTest >> testModelLoadingInstructions [
 
 	| command |
@@ -43,35 +45,39 @@ LoadingNotificationCommandTest >> testModelLoadingInstructions [
 	self assert: command modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 LoadingNotificationCommandTest >> testPriorityActions [
 
 	| command html |
-	
-	command := LoadingNotificationCommand onPageTopWithClasses: #(). 
-	
+
+	command := LoadingNotificationCommand onPageTopWithClasses: #(  ).
+
 	html := self renderedContentUsingPriorityActionsOf: command.
 
 	self
 		assert: html
-		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div>Loading...</div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
+		equals:
+		'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div>Loading...<\/div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 LoadingNotificationCommandTest >> testPriorityActionsWithCustomView [
 
 	| command html |
-	
-	command := LoadingNotificationCommand displaying: [ :canvas | canvas span: 'Processing...' ] applying: [ :div | div addClass loading ].
-	
+
+	command := LoadingNotificationCommand
+		           displaying: [ :canvas | canvas span: 'Processing...' ]
+		           applying: [ :div | div addClass loading ].
+
 	html := self renderedContentUsingPriorityActionsOf: command.
 
 	self
 		assert: html
-		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"willow-loading\"><span>Processing...</span></div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
+		equals:
+		'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"willow-loading\"><span>Processing...<\/span><\/div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 LoadingNotificationCommandTest >> testRequiresSerialization [
 
 	| command |
@@ -81,7 +87,7 @@ LoadingNotificationCommandTest >> testRequiresSerialization [
 	self deny: command requiresSerialization
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 LoadingNotificationCommandTest >> testRequiresSerializationWithCustomView [
 
 	| command |
@@ -91,7 +97,7 @@ LoadingNotificationCommandTest >> testRequiresSerializationWithCustomView [
 	self deny: command requiresSerialization
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 LoadingNotificationCommandTest >> testServerIndependentActionsWithCustomVIew [
 
 	| command |
@@ -101,7 +107,7 @@ LoadingNotificationCommandTest >> testServerIndependentActionsWithCustomVIew [
 	self assert: command serverIndependentInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 LoadingNotificationCommandTest >> testServerIndependentInstructions [
 
 	| command |

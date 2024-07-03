@@ -2,12 +2,14 @@
 An AjaxAwareErrorHandlerTest is a test class for testing the behavior of AjaxAwareErrorHandler
 "
 Class {
-	#name : #AjaxAwareErrorHandlerTest,
-	#superclass : #WAErrorHandlerTest,
-	#category : #'Willow-Core-Tests-Applications'
+	#name : 'AjaxAwareErrorHandlerTest',
+	#superclass : 'WAErrorHandlerTest',
+	#category : 'Willow-Core-Tests-Applications',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Applications'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AjaxAwareErrorHandlerTest >> createHttpXmlRequestContext [
 
 	| request |
@@ -21,7 +23,7 @@ AjaxAwareErrorHandlerTest >> createHttpXmlRequestContext [
 	^ WARequestContext request: request response: WABufferedResponse new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AjaxAwareErrorHandlerTest >> handlerClass [
 
 	^ AjaxAwareErrorHandlerFactory new
@@ -30,7 +32,7 @@ AjaxAwareErrorHandlerTest >> handlerClass [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AjaxAwareErrorHandlerTest >> testAssertionFailed [
 
 	| context reportingActionWasEvaluated updateRootBlockWasEvaluated renderingBlockWasEvaluated |
@@ -60,7 +62,7 @@ AjaxAwareErrorHandlerTest >> testAssertionFailed [
 	self fail
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AjaxAwareErrorHandlerTest >> testHandleErrorInAjaxCall [
 
 	| context |
@@ -76,7 +78,7 @@ AjaxAwareErrorHandlerTest >> testHandleErrorInAjaxCall [
 	self fail
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AjaxAwareErrorHandlerTest >> testHandlerErrorInAjaxCallReferencingHandler [
 
 	| context ajaxHandlerWasEvaluated |
@@ -93,7 +95,7 @@ AjaxAwareErrorHandlerTest >> testHandlerErrorInAjaxCallReferencingHandler [
 	self assert: ajaxHandlerWasEvaluated
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AjaxAwareErrorHandlerTest >> testReportingActionArgumentsAreOptional [
 
 	| context reportingActionWasEvaluated |
@@ -117,7 +119,7 @@ AjaxAwareErrorHandlerTest >> testReportingActionArgumentsAreOptional [
 	self fail
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AjaxAwareErrorHandlerTest >> testXmlHttpRequest [
 
 	| context |
@@ -131,7 +133,7 @@ AjaxAwareErrorHandlerTest >> testXmlHttpRequest [
 		do: [ :n | self fail ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AjaxAwareErrorHandlerTest >> testXmlHttpRequestWithResumable [
 
 	| context handlerWasEvaluated |

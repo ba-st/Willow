@@ -2,27 +2,29 @@
 I'm a configurable table row command
 "
 Class {
-	#name : #PluggableTableRowCommand,
-	#superclass : #TableRowCommand,
+	#name : 'PluggableTableRowCommand',
+	#superclass : 'TableRowCommand',
 	#instVars : [
 		'block'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation - private' }
+{ #category : 'instance creation - private' }
 PluggableTableRowCommand class >> toExecute: aTryadicBlock [
 
 	^self new initializeToExecute: aTryadicBlock
 ]
 
-{ #category : #Applying }
+{ #category : 'Applying' }
 PluggableTableRowCommand >> applyTo: aTableRow for: aRelatedObject on: aCanvas [
 
 	block value: aTableRow value: aRelatedObject value: aCanvas
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 PluggableTableRowCommand >> initializeToExecute: aTryadicBlock [
 
 	block := aTryadicBlock

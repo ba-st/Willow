@@ -2,12 +2,14 @@
 A ComponentCallbackSettingCommandTest is a test class for testing the behavior of ComponentCallbackSettingCommand
 "
 Class {
-	#name : #ComponentCallbackSettingCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ComponentCallbackSettingCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 ComponentCallbackSettingCommandTest >> testApplyToOn [
 
 	| html |

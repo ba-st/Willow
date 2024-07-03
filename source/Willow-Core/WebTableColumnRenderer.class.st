@@ -2,8 +2,8 @@
 I'm responsible of rendering a column and header in a table.
 "
 Class {
-	#name : #WebTableColumnRenderer,
-	#superclass : #WebTableColumnRendererBehavior,
+	#name : 'WebTableColumnRenderer',
+	#superclass : 'WebTableColumnRendererBehavior',
 	#instVars : [
 		'title',
 		'renderingCommand',
@@ -12,10 +12,12 @@ Class {
 		'footerRenderingCommand',
 		'commandToFooterCell'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading summarizedWith: aFooterRenderingCommand applyingToFooter: aCommantToFooterCell [
 
 	^ self new
@@ -27,7 +29,7 @@ WebTableColumnRenderer class >> titled: aName applyingToEachCell: aCommandToCell
 		applyingToFooter: aCommantToFooterCell asWebComponentCommand
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WebTableColumnRenderer >> initializeTitled: aTitle applyingToEachCell: aCommandToCell renderingWith: aRenderingCommand applyingToHeading: aCommandToHeading summarizedWith: aFooterRenderingCommand applyingToFooter: aCommandToFooterCell [
 
 	title := aTitle.
@@ -38,19 +40,19 @@ WebTableColumnRenderer >> initializeTitled: aTitle applyingToEachCell: aCommandT
 	commandToFooterCell := aCommandToFooterCell
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 WebTableColumnRenderer >> renderCellAt: anIndex for: anItem on: aCanvas [
 
 	aCanvas tableData with: (renderingCommand cull: anItem cull: anIndex) applying: commandToCell
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 WebTableColumnRenderer >> renderFooterCellSummarizing: tableContents on: aCanvas [
 
 	aCanvas tableData with: (footerRenderingCommand cull: tableContents) applying: commandToCell + commandToFooterCell
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 WebTableColumnRenderer >> renderHeadingOn: aCanvas [
 
 	aCanvas tableHeading with: title applying: commandToCell + commandToHeading

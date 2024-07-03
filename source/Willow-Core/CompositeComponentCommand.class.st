@@ -2,27 +2,29 @@
 A command collecting several sub commands to a component.
 "
 Class {
-	#name : #CompositeComponentCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'CompositeComponentCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'commands'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CompositeComponentCommand class >> applyingAll: aCommandCollection [
 
 	^ self new initializeApplyingAll: aCommandCollection
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CompositeComponentCommand class >> empty [
 
 	^ self applyingAll: #()
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 CompositeComponentCommand >> + aComponentCommand [
 
 	^ self class
@@ -33,13 +35,13 @@ CompositeComponentCommand >> + aComponentCommand [
 				yourself)
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 CompositeComponentCommand >> applyTo: aComponent on: aCanvas [
 
 	commands do: [ :command | command applyTo: aComponent on: aCanvas ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 CompositeComponentCommand >> initializeApplyingAll: aCommandCollection [
 
 	commands := OrderedCollection withAll: aCommandCollection

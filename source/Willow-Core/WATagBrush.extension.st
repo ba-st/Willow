@@ -1,24 +1,24 @@
-Extension { #name : #WATagBrush }
+Extension { #name : 'WATagBrush' }
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WATagBrush >> apply: aBlockOrComponentCommand [
 
 	aBlockOrComponentCommand asWebComponentCommand applyTo: self on: canvas
 ]
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WATagBrush >> beIdentifiable [
 
 	self ensureId
 ]
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WATagBrush >> interactUsing: anInteractionInterpreter [
 
 	anInteractionInterpreter applyTo: self on: canvas
 ]
 
-{ #category : #'*Willow-Core' }
+{ #category : '*Willow-Core' }
 WATagBrush >> with: aRenderable applying: aBlockOrWebComponentCommand [
 
 	self

@@ -2,12 +2,14 @@
 A WebComponentCommandToTableRowCommandAdapterTest is a test class for testing the behavior of WebComponentCommandToTableRowCommandAdapter
 "
 Class {
-	#name : #WebComponentCommandToTableRowCommandAdapterTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'WebComponentCommandToTableRowCommandAdapterTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-Applying' }
+{ #category : 'tests-Applying' }
 WebComponentCommandToTableRowCommandAdapterTest >> testApplyToForOn [
 
 	| html command |

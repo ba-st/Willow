@@ -2,12 +2,14 @@
 A FloatCodecTest is a test class for testing the behavior of FloatCodec
 "
 Class {
-	#name : #FloatCodecTest,
-	#superclass : #TestCase,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'FloatCodecTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 FloatCodecTest >> testDecode [
 
 	self
@@ -18,7 +20,7 @@ FloatCodecTest >> testDecode [
 		should: [FloatCodec new decode: 'xxx0.01'] raise: InstanceCreationFailed
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 FloatCodecTest >> testEncode [
 
 	self
@@ -29,7 +31,7 @@ FloatCodecTest >> testEncode [
 		assert: (FloatCodec new encode: -1.365) equals: '-1.365'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 FloatCodecTest >> testEncodingDecoding [
 
 	| codec |

@@ -2,12 +2,14 @@
 A WillowSystemConfigurationTest is a test class for testing the behavior of WillowSystemConfiguration
 "
 Class {
-	#name : #WillowSystemConfigurationTest,
-	#superclass : #TestCase,
-	#category : #'Willow-Core-Tests-Applications'
+	#name : 'WillowSystemConfigurationTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-Core-Tests-Applications',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Applications'
 }
 
-{ #category : #'tests-description' }
+{ #category : 'tests-description' }
 WillowSystemConfigurationTest >> testDescribeOn [
 
 	| config description attribute |

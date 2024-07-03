@@ -2,55 +2,57 @@
 I'm a builder of component classification commands
 "
 Class {
-	#name : #ComponentClassificationCommandBuilder,
-	#superclass : #GRObject,
+	#name : 'ComponentClassificationCommandBuilder',
+	#superclass : 'GRObject',
 	#instVars : [
 		'classificationNamespace'
 	],
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 ComponentClassificationCommandBuilder >> commandStyledWith: aSymbol [
 
 	^ ComponentClassificationCommand toStyleWith: classificationNamespace >> aSymbol
 ]
 
-{ #category : #Building }
+{ #category : 'Building' }
 ComponentClassificationCommandBuilder >> dialogContainer [
 
 	^ self commandStyledWith: #dialogContainer
 ]
 
-{ #category : #Building }
+{ #category : 'Building' }
 ComponentClassificationCommandBuilder >> disabledComponent [
 
 	^ self commandStyledWith: #disabledComponent
 ]
 
-{ #category : #Building }
+{ #category : 'Building' }
 ComponentClassificationCommandBuilder >> fadingNotification [
 
 	^ self commandStyledWith: #fadingNotification
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentClassificationCommandBuilder >> initialize [
 
 	super initialize.
 	classificationNamespace := Classification
 ]
 
-{ #category : #Building }
+{ #category : 'Building' }
 ComponentClassificationCommandBuilder >> loading [
 
 	^ self commandStyledWith: #loading
 ]
 
-{ #category : #Building }
+{ #category : 'Building' }
 ComponentClassificationCommandBuilder >> willow [
 
 	^ self commandStyledWith: #willow

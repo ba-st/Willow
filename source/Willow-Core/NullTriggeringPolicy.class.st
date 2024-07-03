@@ -2,12 +2,14 @@
 I'm a triggering policy specifying that no triggering must happen. So if someone tries to use me I will fail.
 "
 Class {
-	#name : #NullTriggeringPolicy,
-	#superclass : #TriggeringPolicy,
-	#category : #'Willow-Core-WebInteraction'
+	#name : 'NullTriggeringPolicy',
+	#superclass : 'TriggeringPolicy',
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 NullTriggeringPolicy >> apply: anAsynchronousCall to: aComponent on: aCanvas [
 
 	Error signal: 'Trying to generate interactive script for component declared as non-interactive'

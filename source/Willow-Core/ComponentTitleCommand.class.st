@@ -2,33 +2,35 @@
 Command to set the title attribute of a component (using title:).
 "
 Class {
-	#name : #ComponentTitleCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ComponentTitleCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'titleProvider'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentTitleCommand class >> toSet: aTitle [
 
 	^ self toSetUsing: [ aTitle ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentTitleCommand class >> toSetUsing: aTitleProvider [
 
 	^ self new initializeToSetUsing: aTitleProvider
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ComponentTitleCommand >> applyTo: aComponent on: aCanvas [
 
 	^ aComponent title: titleProvider value
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 ComponentTitleCommand >> initializeToSetUsing: aTitleProvider [
 
 	titleProvider := aTitleProvider

@@ -1,1 +1,1 @@
-Package { #name : #'Willow-Core' }
+Package { #name : 'Willow-Core' }

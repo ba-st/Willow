@@ -2,17 +2,19 @@
 I'm an anchor acting as a push button, capable of triggering actions by AJAX
 "
 Class {
-	#name : #LinkWebView,
-	#superclass : #WAPainter,
+	#name : 'LinkWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'commandToComponent',
 		'interactionInterpreter',
 		'label'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 LinkWebView class >> asynchronicLabeled: aRenderable applying: aComponentCommand [
 
 	| linkView |
@@ -22,20 +24,20 @@ LinkWebView class >> asynchronicLabeled: aRenderable applying: aComponentCommand
 	^ linkView
 ]
 
-{ #category : #'private - instance creation' }
+{ #category : 'private - instance creation' }
 LinkWebView class >> labeled: aLabel applying: aComponentCommand [
 
 	^ self new initializeLabeled: aLabel applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 LinkWebView class >> synchronicLabeled: aRenderable applying: aComponentCommand [
 
 	"We send the private message to ensure that all instances are declared as either synchronic or asynchronic"
 	^ self labeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 LinkWebView >> initializeLabeled: aLabel applying: aComponentCommand [
 
 	label := aLabel.
@@ -43,13 +45,13 @@ LinkWebView >> initializeLabeled: aLabel applying: aComponentCommand [
 	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 LinkWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 LinkWebView >> renderContentOn: aCanvas [
 
 	aCanvas anchor

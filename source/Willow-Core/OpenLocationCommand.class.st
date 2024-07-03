@@ -2,34 +2,36 @@
 Command to configure an anchor to open a destination into a blank page
 "
 Class {
-	#name : #OpenLocationCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'OpenLocationCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'destination',
 		'targetOptional'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 OpenLocationCommand class >> forNewBrowsingContextNavigatingTo: aLocation [
 
 	^ self navigatingTo: aLocation targetingAccordingTo: (Optional containing: '_blank')
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 OpenLocationCommand class >> forSameBrowsingContextNavigatingTo: aLocation [
 
 	^ self navigatingTo: aLocation targetingAccordingTo: Optional unused
 ]
 
-{ #category : #'private - instance creation' }
+{ #category : 'private - instance creation' }
 OpenLocationCommand class >> navigatingTo: aLocation targetingAccordingTo: aTargetOptional [
 
 	^ self new initializeNavigatingTo: aLocation targetingAccordingTo: aTargetOptional
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 OpenLocationCommand >> applyTo: anAnchorComponent on: aCanvas [
 
 	anAnchorComponent url: destination.
@@ -40,7 +42,7 @@ OpenLocationCommand >> applyTo: anAnchorComponent on: aCanvas [
 				relationship: 'noopener noreferrer' ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 OpenLocationCommand >> initializeNavigatingTo: aLocation targetingAccordingTo: aTargetOptional [
 
 	destination := aLocation.

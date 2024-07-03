@@ -2,45 +2,47 @@
 I'm a WebInteractionCommand used to ask the user for confirmation before proceeding.
 "
 Class {
-	#name : #ConfirmationCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'ConfirmationCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'question'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ConfirmationCommand class >> asking: aQuestion [
 
 	^ self new initializeAsking: aQuestion
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ConfirmationCommand >> initializeAsking: aQuestion [
 
 	question := aQuestion
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ConfirmationCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ConfirmationCommand >> priorityActions [
 
 	^ Array with: [ :anAsynchronousCall :aCanvas | anAsynchronousCall confirm: question ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ConfirmationCommand >> requiresSerialization [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ConfirmationCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

@@ -1,13 +1,15 @@
 Class {
-	#name : #ComponentStyleClassChangingCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'ComponentStyleClassChangingCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentStyleClassChangingCommandTest >> setUp [
 
 	super setUp.
@@ -20,25 +22,25 @@ ComponentStyleClassChangingCommandTest >> setUp [
 		targeting: [ :canvas | canvas jQuery class: 'aComponentByStyleName' ]
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentStyleClassChangingCommandTest >> testModelLoadingInstructions [
 
 	self assert: command modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentStyleClassChangingCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 ComponentStyleClassChangingCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization  
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentStyleClassChangingCommandTest >> testServerIndependentInstructions [
 
 	| html |

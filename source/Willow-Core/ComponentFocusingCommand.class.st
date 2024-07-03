@@ -2,34 +2,36 @@
 I'm a WebInteractionCommand allowing to put the focus in a component
 "
 Class {
-	#name : #ComponentFocusingCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'ComponentFocusingCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'componentProvider'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentFocusingCommand class >> findingComponentUsing: aComponentProvider [
 
 	^ self new initializeFindingComponentUsing: aComponentProvider
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentFocusingCommand class >> for: anIdentifiedView [
 
 	anIdentifiedView beIdentifiable.
 	^ self findingComponentUsing: [ :aCanvas | aCanvas locate: anIdentifiedView ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentFocusingCommand >> initializeFindingComponentUsing: aComponentProvider [
 
 	componentProvider := aComponentProvider
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentFocusingCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
@@ -37,19 +39,19 @@ ComponentFocusingCommand >> modelLoadingInstructions [
 		orderedAt: 20
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentFocusingCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ComponentFocusingCommand >> requiresSerialization [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentFocusingCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

@@ -2,12 +2,14 @@
 A ComponentNamingCommandTest is a test class for testing the behavior of ComponentNamingCommand
 "
 Class {
-	#name : #ComponentNamingCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ComponentNamingCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 ComponentNamingCommandTest >> testApplyToOn [
 	| html |
 	html := self apply: (ComponentNamingCommand assigning: 'name') toComponentDefinedBy: [ :canvas | canvas anchor ].

@@ -2,8 +2,8 @@
 I'm a builder of TableWebVIews
 "
 Class {
-	#name : #TableWebViewBuilder,
-	#superclass : #WillowComponentBuilder,
+	#name : 'TableWebViewBuilder',
+	#superclass : 'WillowComponentBuilder',
 	#instVars : [
 		'columnRenderers',
 		'rowCommand',
@@ -11,10 +11,12 @@ Class {
 		'headerProvider',
 		'footerProvider'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 TableWebViewBuilder >> addColumn: aMonadycBlock [
 
 	| builder |
@@ -24,19 +26,19 @@ TableWebViewBuilder >> addColumn: aMonadycBlock [
 	columnRenderers add: builder build
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 TableWebViewBuilder >> apply: aTableCommand [
 
 	tableCommand := tableCommand + aTableCommand
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 TableWebViewBuilder >> applyToEachRow: aRowCommand [
 
 	rowCommand := aRowCommand
 ]
 
-{ #category : #Building }
+{ #category : 'Building' }
 TableWebViewBuilder >> buildApplying: aComponentCommand [
 
 	^ TableWebView
@@ -47,19 +49,19 @@ TableWebViewBuilder >> buildApplying: aComponentCommand [
 		footerRenderedBy: (footerProvider value: columnRenderers)
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 TableWebViewBuilder >> doNotRenderFooter [
 
 	footerProvider := [ :columns | NullTableFooterWebView new ]
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 TableWebViewBuilder >> doNotRenderHeader [
 
 	headerProvider := [ :columns | [ :canvas |  ] ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TableWebViewBuilder >> initialize [
 
 	super initialize.
@@ -71,19 +73,19 @@ TableWebViewBuilder >> initialize [
 		doNotRenderFooter
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 TableWebViewBuilder >> renderFooter [
 
 	footerProvider := [ :columns | TableFooterWebView definedBy: columns ]
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 TableWebViewBuilder >> renderHeader [
 
 	headerProvider := [ :columns | TableHeaderWebView definedBy: columns ]
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 TableWebViewBuilder >> styledWith: aCssClass [
 
 	self apply: (ComponentClassificationCommand toStyleWith: aCssClass)

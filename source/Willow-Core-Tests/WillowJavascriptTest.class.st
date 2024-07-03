@@ -1,10 +1,12 @@
 Class {
-	#name : #WillowJavascriptTest,
-	#superclass : #JSObjectTest,
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#name : 'WillowJavascriptTest',
+	#superclass : 'JSObjectTest',
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowJavascriptTest >> testJSConcatenateBefore [
 
 	| jsObject |

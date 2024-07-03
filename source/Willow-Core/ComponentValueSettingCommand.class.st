@@ -2,17 +2,19 @@
 I'm a WebInteractionCommand used to change the value of some input field. I can be configured to trigger a change event.
 "
 Class {
-	#name : #ComponentValueSettingCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'ComponentValueSettingCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'valueProvider',
 		'identifierProvider',
 		'triggeringAction'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 ComponentValueSettingCommand class >> obtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider triggeringAction: aTriggeringAction [
 
 	^ self new
@@ -21,7 +23,7 @@ ComponentValueSettingCommand class >> obtainingIdentifierFrom: anIdentifierProvi
 		triggeringAction: aTriggeringAction
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentValueSettingCommand class >> triggeringChangesObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider [
 
 	^ self
@@ -30,7 +32,7 @@ ComponentValueSettingCommand class >> triggeringChangesObtainingIdentifierFrom: 
 		triggeringAction: [ :jQueryInstance | jQueryInstance trigger: 'change' ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ComponentValueSettingCommand class >> withoutTriggeringChangesObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider [
 
 	^ self
@@ -39,7 +41,7 @@ ComponentValueSettingCommand class >> withoutTriggeringChangesObtainingIdentifie
 		triggeringAction: [ :jQueryInstance | jQueryInstance ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentValueSettingCommand >> initializeObtainingIdentifierFrom: anIdentifierProvider valueFrom: aValueProvider triggeringAction: anAction [
 
 	identifierProvider := anIdentifierProvider.
@@ -47,7 +49,7 @@ ComponentValueSettingCommand >> initializeObtainingIdentifierFrom: anIdentifierP
 	triggeringAction := anAction
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentValueSettingCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
@@ -61,19 +63,19 @@ ComponentValueSettingCommand >> modelLoadingInstructions [
 		orderedAt: 20
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentValueSettingCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ComponentValueSettingCommand >> requiresSerialization [
 
 	^false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentValueSettingCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

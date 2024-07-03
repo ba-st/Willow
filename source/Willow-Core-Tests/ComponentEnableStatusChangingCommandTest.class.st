@@ -2,40 +2,42 @@
 A ComponentEnableStatusChangingCommandTest is a test class for testing the behavior of ComponentEnableStatusChangingCommand
 "
 Class {
-	#name : #ComponentEnableStatusChangingCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'ComponentEnableStatusChangingCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentEnableStatusChangingCommandTest >> setUp [
 
 	super setUp .
 	command := ComponentEnableStatusChangingCommand disablingCurrentComponent.
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentEnableStatusChangingCommandTest >> testModelLoadingInstructions [
 
 	self assert: command modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentEnableStatusChangingCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 ComponentEnableStatusChangingCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 ComponentEnableStatusChangingCommandTest >> testServerIndependentInstructions [
 
 	| html |

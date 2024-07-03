@@ -2,12 +2,14 @@
 A ComponentClassificationCommandTest is a test class for testing the behavior of ComponentClassificationCommand
 "
 Class {
-	#name : #ComponentClassificationCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Frontend'
+	#name : 'ComponentClassificationCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Frontend',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #'tests-processing' }
+{ #category : 'tests-processing' }
 ComponentClassificationCommandTest >> testApplyToOn [
 
 	| html |

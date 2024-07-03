@@ -2,15 +2,17 @@
 I represent a TextField containing numbers.
 "
 Class {
-	#name : #NumberFieldWebView,
-	#superclass : #FieldWebView,
+	#name : 'NumberFieldWebView',
+	#superclass : 'FieldWebView',
 	#instVars : [
 		'textCodec'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 NumberFieldWebView class >> applying: aComponentCommand transformingWith: aTextCodec [
 
 	^ ( self
@@ -20,31 +22,31 @@ NumberFieldWebView class >> applying: aComponentCommand transformingWith: aTextC
 		initializeTransformingWith: aTextCodec
 ]
 
-{ #category : #'number-container-API' }
+{ #category : 'number-container-API' }
 NumberFieldWebView >> changeNumberTo: aNumber [
 
 	self changeModelTo: aNumber
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : 'private - Accessing' }
 NumberFieldWebView >> identifierPrefix [
 
 	^ 'number-field'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 NumberFieldWebView >> initializeTransformingWith: aTextCodec [
 
 	textCodec := aTextCodec
 ]
 
-{ #category : #'number-container-API' }
+{ #category : 'number-container-API' }
 NumberFieldWebView >> number [
 
 	^ self model
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : 'private - Accessing' }
 NumberFieldWebView >> textCodec [
 
 	^ textCodec

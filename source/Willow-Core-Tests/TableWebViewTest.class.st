@@ -2,21 +2,23 @@
 A TableWebViewTest is a test class for testing the behavior of TableWebView
 "
 Class {
-	#name : #TableWebViewTest,
-	#superclass : #BWRenderingTest,
+	#name : 'TableWebViewTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'notificationWasReceived'
 	],
-	#category : #'Willow-Core-Tests-WebViews'
+	#category : 'Willow-Core-Tests-WebViews',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 TableWebViewTest >> changeNotifiedBy: aTableWebView [ 
 	
 	notificationWasReceived := true
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testBeIdentifiable [
 
 	| table html |
@@ -30,7 +32,7 @@ TableWebViewTest >> testBeIdentifiable [
 	self assert: html equals: '<table id="table-id1"><tbody></tbody></table>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testComplexTable [
 
 	| table html |
@@ -60,7 +62,7 @@ TableWebViewTest >> testComplexTable [
 			'<table><thead><th class="willow"></th><th>Squared</th></thead><tbody><tr class="willow"><td class="willow">1</td><td>1</td></tr><tr class="willow"><td class="willow">2</td><td>4</td></tr></tbody><tfoot><td class="willow">Total</td><td>5</td></tfoot></table>'
 ]
 
-{ #category : #'tests-container-API' }
+{ #category : 'tests-container-API' }
 TableWebViewTest >> testContents [
 
 	| table |
@@ -79,7 +81,7 @@ TableWebViewTest >> testContents [
 		assert: notificationWasReceived
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testDefinedByApplyingHeaderRenderedByApplyingToEachRow [
 
 	| table html |
@@ -98,7 +100,7 @@ TableWebViewTest >> testDefinedByApplyingHeaderRenderedByApplyingToEachRow [
 			'<table class="willow"><tbody><tr id="id1"><td>false</td></tr><tr id="id2"><td>true</td></tr><tr id="id3"><td>false</td></tr></tbody></table>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testHeadedDefinedByApplying [
 
 	| table html |
@@ -116,7 +118,7 @@ TableWebViewTest >> testHeadedDefinedByApplying [
 	self assert: html equals: '<table><thead><th>Is Even?</th></thead><tbody></tbody></table>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testHeadedDefinedByApplyingWithContents [
 
 	| table html |
@@ -138,7 +140,7 @@ TableWebViewTest >> testHeadedDefinedByApplyingWithContents [
 			'<table><thead><th>Is Even?</th></thead><tbody><tr><td>false</td></tr><tr><td>true</td></tr><tr><td>false</td></tr></tbody></table>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testOn [
 
 	| table html |
@@ -157,7 +159,7 @@ TableWebViewTest >> testOn [
 			'<table id="table-id1"><tbody></tbody></table><script type="text/javascript">$("#table-id1").click(function(event){$(this).prop("disabled",true)});</script>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testRenderContentOn [
 
 	| table html |
@@ -171,7 +173,7 @@ TableWebViewTest >> testRenderContentOn [
 	self assert: html equals: '<table><tbody></tbody></table>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testRenderContentOnWithContents [
 
 	| table html |
@@ -189,7 +191,7 @@ TableWebViewTest >> testRenderContentOnWithContents [
 		equals: '<table><tbody><tr><td>false</td></tr><tr><td>true</td></tr><tr><td>false</td></tr></tbody></table>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testRenderContentOnWithContentsAndSeveralColumns [
 
 	| table html |
@@ -209,7 +211,7 @@ TableWebViewTest >> testRenderContentOnWithContentsAndSeveralColumns [
 			'<table><tbody><tr><td>false</td><td>true</td></tr><tr><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td></tr></tbody></table>'
 ]
 
-{ #category : #'tests-rendering' }
+{ #category : 'tests-rendering' }
 TableWebViewTest >> testTableWithFooterSupport [
 
 	| table html |

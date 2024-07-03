@@ -3,16 +3,18 @@ I'm a WebInteractionCommand allowing to enable or disable a component.
 I just generate javascript code for the client, no server communication or processing is involved.
 "
 Class {
-	#name : #ComponentEnableStatusChangingCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'ComponentEnableStatusChangingCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'componentProvider',
 		'desiredStatus'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 ComponentEnableStatusChangingCommand class >> disabling: anIdentifiedComponent [
 
 	^ self
@@ -20,13 +22,13 @@ ComponentEnableStatusChangingCommand class >> disabling: anIdentifiedComponent [
 		settingStatusTo: true
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 ComponentEnableStatusChangingCommand class >> disablingCurrentComponent [
 
 	^self obtainingComponentWith: [:canvas | canvas jQuery this] settingStatusTo: true
 ]
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 ComponentEnableStatusChangingCommand class >> enabling: anIdentifiedComponent [
 
 	^ self
@@ -34,38 +36,38 @@ ComponentEnableStatusChangingCommand class >> enabling: anIdentifiedComponent [
 		settingStatusTo: false
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ComponentEnableStatusChangingCommand class >> obtainingComponentWith: aComponentProvider settingStatusTo: aBoolean [
 
 	^self new initializeObtainingComponentWith: aComponentProvider settingStatusTo: aBoolean
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentEnableStatusChangingCommand >> initializeObtainingComponentWith: aComponentProvider settingStatusTo: aBoolean [
 
 	componentProvider := aComponentProvider.
 	desiredStatus := aBoolean
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentEnableStatusChangingCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentEnableStatusChangingCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ComponentEnableStatusChangingCommand >> requiresSerialization [
 
 	^false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentEnableStatusChangingCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions

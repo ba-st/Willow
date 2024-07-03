@@ -2,45 +2,47 @@
 I'm a test support class
 "
 Class {
-	#name : #WillowTestingApplication,
-	#superclass : #WillowApplication,
+	#name : 'WillowTestingApplication',
+	#superclass : 'WillowApplication',
 	#instVars : [
 		'componentSupplier'
 	],
-	#category : #'Willow-Core-Tests-Applications'
+	#category : 'Willow-Core-Tests-Applications',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Applications'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowTestingApplication class >> applicationTitle [
 
 	^ 'The official testing app'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowTestingApplication class >> handlerName [
 
 	^ 'testing-app'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 WillowTestingApplication class >> new [
 
 	^ self using: Html5ComponentSupplier new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 WillowTestingApplication class >> using: aComponentSupplier [
 
 	^ super new initializeUsing: aComponentSupplier 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowTestingApplication >> componentSupplierForApplication [
 
 	^ componentSupplier 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowTestingApplication >> contentView [
 
 	^ self componentSupplier
@@ -48,19 +50,19 @@ WillowTestingApplication >> contentView [
 		applying: [  ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WillowTestingApplication >> initializeUsing: aComponentSupplier [
 
 	componentSupplier := aComponentSupplier
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowTestingApplication >> jQueryLibrary [
 
 	^ JQuery3OnlineLibrary default
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowTestingApplication >> language [
 
 	^ [ super language ]

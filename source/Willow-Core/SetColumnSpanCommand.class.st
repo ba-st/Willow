@@ -2,27 +2,29 @@
 A command to set the colSpan of a table column.
 "
 Class {
-	#name : #SetColumnSpanCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'SetColumnSpanCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'colSpan'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SetColumnSpanCommand class >> setting: aColSpan [
 
 	^ self new initializeSetting: aColSpan
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 SetColumnSpanCommand >> applyTo: aComponent on: aCanvas [
 
 	aComponent colSpan: colSpan
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 SetColumnSpanCommand >> initializeSetting: aColSpan [
 
 	colSpan := aColSpan

@@ -2,8 +2,8 @@
 I'm a builder of table column renderers
 "
 Class {
-	#name : #WebTableColumnRendererBuilder,
-	#superclass : #GRObject,
+	#name : 'WebTableColumnRendererBuilder',
+	#superclass : 'GRObject',
 	#instVars : [
 		'title',
 		'renderingCommandBinding',
@@ -13,22 +13,24 @@ Class {
 		'footerCommand',
 		'tableBuilder'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 WebTableColumnRendererBuilder class >> on: aTableWebViewBuilder [
 
 	^ self new initializeOn: aTableWebViewBuilder
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 WebTableColumnRendererBuilder >> applyingToEachCell: aCellCommand [
 
 	cellCommand := aCellCommand
 ]
 
-{ #category : #building }
+{ #category : 'building' }
 WebTableColumnRendererBuilder >> build [
 
 	^ WebTableColumnRenderer
@@ -40,7 +42,7 @@ WebTableColumnRendererBuilder >> build [
 		applyingToFooter: footerCommand
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WebTableColumnRendererBuilder >> initializeOn: aTableWebViewBuilder [
 
 	tableBuilder := aTableWebViewBuilder.
@@ -52,19 +54,19 @@ WebTableColumnRendererBuilder >> initializeOn: aTableWebViewBuilder [
 	footerCommand := [  ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 WebTableColumnRendererBuilder >> rendering: aRenderingCommand [
 
 	renderingCommandBinding := Binding to: aRenderingCommand 
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 WebTableColumnRendererBuilder >> summarizedWith: aFooterRenderingCommand [
 
 	self summarizedWith: aFooterRenderingCommand applying: [  ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 WebTableColumnRendererBuilder >> summarizedWith: aFooterRenderingCommand applying: aCommandToFooter [
 
 	footerRenderingCommand := aFooterRenderingCommand.
@@ -72,13 +74,13 @@ WebTableColumnRendererBuilder >> summarizedWith: aFooterRenderingCommand applyin
 	tableBuilder renderFooter
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 WebTableColumnRendererBuilder >> titled: aRenderable [
 
 	self titled: aRenderable applying: [  ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 WebTableColumnRendererBuilder >> titled: aRenderable applying: aHeadingCommand [
 
 	title := aRenderable .

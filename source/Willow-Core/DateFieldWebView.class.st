@@ -2,21 +2,23 @@
 I represent a TextField containing dates.
 "
 Class {
-	#name : #DateFieldWebView,
-	#superclass : #FieldWebView,
+	#name : 'DateFieldWebView',
+	#superclass : 'FieldWebView',
 	#instVars : [
 		'textCodec'
 	],
-	#category : #'Willow-Core-WebViews'
+	#category : 'Willow-Core-WebViews',
+	#package : 'Willow-Core',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 DateFieldWebView class >> applying: aComponentCommand [
 
 	^ self applying: aComponentCommand transformingWith: ISODateCodec new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 DateFieldWebView class >> applying: aComponentCommand transformingWith: aTextCodec [
 
 	^ ( self
@@ -26,31 +28,31 @@ DateFieldWebView class >> applying: aComponentCommand transformingWith: aTextCod
 		initializeTransformingWith: aTextCodec
 ]
 
-{ #category : #'Date-Container-API' }
+{ #category : 'Date-Container-API' }
 DateFieldWebView >> changeDateTo: aDate [
 
 	self changeModelTo: aDate
 ]
 
-{ #category : #'Date-Container-API' }
+{ #category : 'Date-Container-API' }
 DateFieldWebView >> date [
 
 	^ self model
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : 'private - Accessing' }
 DateFieldWebView >> identifierPrefix [
 
 	^ 'date-field'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 DateFieldWebView >> initializeTransformingWith: aTextCodec [
 
 	textCodec := aTextCodec
 ]
 
-{ #category : #'private - Accessing' }
+{ #category : 'private - Accessing' }
 DateFieldWebView >> textCodec [
 
 	^ textCodec

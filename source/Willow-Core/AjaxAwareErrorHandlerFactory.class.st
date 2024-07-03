@@ -2,18 +2,20 @@
 I'm a builder of AjaxAwareErrorHandlers, just because you cannot control the creation of them.
 "
 Class {
-	#name : #AjaxAwareErrorHandlerFactory,
-	#superclass : #GRObject,
+	#name : 'AjaxAwareErrorHandlerFactory',
+	#superclass : 'GRObject',
 	#instVars : [
 		'reportingActionOptional',
 		'rootCommandOptional',
 		'nonAjaxRenderBlockOptional',
 		'ajaxErrorHandlers'
 	],
-	#category : #'Willow-Core-Applications'
+	#category : 'Willow-Core-Applications',
+	#package : 'Willow-Core',
+	#tag : 'Applications'
 }
 
-{ #category : #'Error Handler - API' }
+{ #category : 'Error Handler - API' }
 AjaxAwareErrorHandlerFactory >> , anException [
 
 	^ ajaxErrorHandlers keys
@@ -21,7 +23,7 @@ AjaxAwareErrorHandlerFactory >> , anException [
 		into: [ :exceptionSet :currentExceptionSelector | exceptionSet , currentExceptionSelector ]
 ]
 
-{ #category : #'Error Handler - API' }
+{ #category : 'Error Handler - API' }
 AjaxAwareErrorHandlerFactory >> context: aRequestContext [
 
 	| handler |
@@ -38,20 +40,20 @@ AjaxAwareErrorHandlerFactory >> context: aRequestContext [
 	^ handler
 ]
 
-{ #category : #'Error Handler - API' }
+{ #category : 'Error Handler - API' }
 AjaxAwareErrorHandlerFactory >> handleExceptionsDuring: aBlock context: aRequestContext [
 
 	^ (self context: aRequestContext) handleExceptionsDuring: aBlock
 ]
 
-{ #category : #'Error Handler - API' }
+{ #category : 'Error Handler - API' }
 AjaxAwareErrorHandlerFactory >> handles: anException [
 
 	^ (AjaxAwareErrorHandler handles: anException)
 		or: [ ajaxErrorHandlers keys anySatisfy: [ :handler | handler handles: anException ] ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AjaxAwareErrorHandlerFactory >> initialize [
 
 	super initialize.
@@ -61,31 +63,31 @@ AjaxAwareErrorHandlerFactory >> initialize [
 	rootCommandOptional := Optional unused
 ]
 
-{ #category : #'Error Handler - API' }
+{ #category : 'Error Handler - API' }
 AjaxAwareErrorHandlerFactory >> internalError: anError context: aRequestContext [
 
 	^ (self context: aRequestContext) internalError: anError
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 AjaxAwareErrorHandlerFactory >> on: anExceptionSelector do: aBlock [
 
 	ajaxErrorHandlers at: anExceptionSelector put: aBlock
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 AjaxAwareErrorHandlerFactory >> renderNonAjaxErrorsWith: aDyadicBlock [
 
 	nonAjaxRenderBlockOptional := Optional containing: aDyadicBlock
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 AjaxAwareErrorHandlerFactory >> reportingAction: aMonadycBlock [
 
 	reportingActionOptional := Optional containing: aMonadycBlock
 ]
 
-{ #category : #Configuring }
+{ #category : 'Configuring' }
 AjaxAwareErrorHandlerFactory >> updateRootWith: aBlock [
 
 	rootCommandOptional := Optional containing: aBlock

@@ -2,27 +2,29 @@
 A row command collecting several sub commands to a component.
 "
 Class {
-	#name : #CompositeTableRowCommand,
-	#superclass : #TableRowCommand,
+	#name : 'CompositeTableRowCommand',
+	#superclass : 'TableRowCommand',
 	#instVars : [
 		'commands'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CompositeTableRowCommand class >> applyingAll: aCommandCollection [
 
 	^self new initializeApplyingAll: aCommandCollection
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 CompositeTableRowCommand class >> empty [
 
 	^self applyingAll: #()
 ]
 
-{ #category : #Combining }
+{ #category : 'Combining' }
 CompositeTableRowCommand >> + aTableRowCommand [
 
 	^self class applyingAll: (
@@ -32,13 +34,13 @@ CompositeTableRowCommand >> + aTableRowCommand [
 			yourself)
 ]
 
-{ #category : #Applying }
+{ #category : 'Applying' }
 CompositeTableRowCommand >> applyTo: aTableRow for: aRelatedObject on: aCanvas [
 
  	commands do: [ :command | command applyTo: aTableRow for: aRelatedObject on: aCanvas ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 CompositeTableRowCommand >> initializeApplyingAll: aCommandCollection [
 
 	commands := OrderedCollection withAll: aCommandCollection

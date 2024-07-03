@@ -2,12 +2,14 @@
 I represent an AJAX call in Willow
 "
 Class {
-	#name : #WillowServerCall,
-	#superclass : #JQAjax,
-	#category : #'Willow-Core-WebInteraction'
+	#name : 'WillowServerCall',
+	#superclass : 'JQAjax',
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowServerCall >> arguments [
 
 	self options
@@ -16,7 +18,7 @@ WillowServerCall >> arguments [
 	^ super arguments
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowServerCall >> method [
 
 	^ self constants >> #willow >> #callServerFunctionName

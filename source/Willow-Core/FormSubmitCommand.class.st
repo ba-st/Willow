@@ -2,33 +2,35 @@
 I'm a WebInteractionCommand that helps submiting forms
 "
 Class {
-	#name : #FormSubmitCommand,
-	#superclass : #WebInteractionCommand,
+	#name : 'FormSubmitCommand',
+	#superclass : 'WebInteractionCommand',
 	#instVars : [
 		'componentProvider'
 	],
-	#category : #'Willow-Core-WebInteraction'
+	#category : 'Willow-Core-WebInteraction',
+	#package : 'Willow-Core',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 FormSubmitCommand class >> findingComponentUsing: aComponentProvider [
 
 	^self new initializeFindingComponentUsing: aComponentProvider
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 FormSubmitCommand class >> forFormStyledAs: aCssStyle [
 
 	^ self findingComponentUsing: [ :aCanvas | aCanvas jQuery cssSelector: (CssUniversalSelector implicit form class: aCssStyle) ]
 ]
 
-{ #category : #'initialize - release' }
+{ #category : 'initialize - release' }
 FormSubmitCommand >> initializeFindingComponentUsing: aComponentProvider [
 
 	componentProvider := aComponentProvider
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FormSubmitCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions
@@ -36,19 +38,19 @@ FormSubmitCommand >> modelLoadingInstructions [
 		orderedAt: 10
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FormSubmitCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FormSubmitCommand >> requiresSerialization [
 
 	^false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FormSubmitCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions empty

@@ -2,12 +2,14 @@
 A WillowNamespaceFileMetadataLibraryTest is a test class for testing the behavior of WillowNamespaceFileMetadataLibrary
 "
 Class {
-	#name : #WillowNamespaceFileMetadataLibraryTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-Core-Tests-Libraries'
+	#name : 'WillowNamespaceFileMetadataLibraryTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-Core-Tests-Libraries',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Libraries'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowNamespaceFileMetadataLibraryTest >> testDeployFiles [
 
 	self
@@ -20,7 +22,7 @@ WillowNamespaceFileMetadataLibraryTest >> testDeployFiles [
 				-> 'd01dced3b8eed675fe45b1f8a3cb3470c730150b' )}
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowNamespaceFileMetadataLibraryTest >> testInstanceCreation [
 
 	self
@@ -28,7 +30,7 @@ WillowNamespaceFileMetadataLibraryTest >> testInstanceCreation [
 		assert: WillowNamespaceFileMetadataLibrary forDevelopment equals: WillowNamespaceFileMetadataLibrary
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowNamespaceFileMetadataLibraryTest >> testJavascriptCode [
 
 	self
@@ -45,7 +47,7 @@ var Willow;if(Willow===undefined){Willow={"version":"8.0.1","handleAjaxErrorCall
 
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowNamespaceFileMetadataLibraryTest >> testTesting [
 
 	self

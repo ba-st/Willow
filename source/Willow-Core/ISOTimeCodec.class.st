@@ -2,12 +2,14 @@
 I'm an encoder/decoder of Times
 "
 Class {
-	#name : #ISOTimeCodec,
-	#superclass : #Codec,
-	#category : #'Willow-Core-Frontend'
+	#name : 'ISOTimeCodec',
+	#superclass : 'Codec',
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'private - preconditions' }
+{ #category : 'private - preconditions' }
 ISOTimeCodec >> assertIsValidHour: aPotentialHour [
 
 	AssertionChecker
@@ -16,7 +18,7 @@ ISOTimeCodec >> assertIsValidHour: aPotentialHour [
 		raising: InstanceCreationFailed
 ]
 
-{ #category : #'private - preconditions' }
+{ #category : 'private - preconditions' }
 ISOTimeCodec >> assertIsValidMinute: aPotentialMinute [
 
 	AssertionChecker
@@ -25,7 +27,7 @@ ISOTimeCodec >> assertIsValidMinute: aPotentialMinute [
 		raising: InstanceCreationFailed
 ]
 
-{ #category : #'private - preconditions' }
+{ #category : 'private - preconditions' }
 ISOTimeCodec >> assertIsValidSecond: aPotentialSecond [
 
 	AssertionChecker
@@ -34,13 +36,13 @@ ISOTimeCodec >> assertIsValidSecond: aPotentialSecond [
 		raising: InstanceCreationFailed
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ISOTimeCodec >> canCreate: anObject [
 
 	^ anObject isA: Time
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ISOTimeCodec >> decode: aString [
 
 	| hour minute second |
@@ -71,13 +73,13 @@ ISOTimeCodec >> decode: aString [
 	^ Time hour: hour minute: minute second: second
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ISOTimeCodec >> encode: aTime [
 
 	^ GRPrinter isoTime print: aTime
 ]
 
-{ #category : #'private - parsing' }
+{ #category : 'private - parsing' }
 ISOTimeCodec >> readIntegerFrom: aString [
 
 	^ Integer

@@ -2,27 +2,29 @@
 A command to set the name of a component.
 "
 Class {
-	#name : #ComponentNamingCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'ComponentNamingCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'name'
 	],
-	#category : #'Willow-Core-Frontend'
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #'Instance Creation' }
+{ #category : 'Instance Creation' }
 ComponentNamingCommand class >> assigning: aName [
 
 	^self new initializeAssigning: aName
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 ComponentNamingCommand >> applyTo: aComponent on: aCanvas [
 
 	aComponent name: name
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentNamingCommand >> initializeAssigning: aName [
 
 	name := aName

@@ -2,28 +2,30 @@
 A WillowSessionTest is a test class for testing the behavior of WillowSession
 "
 Class {
-	#name : #WillowSessionTest,
-	#superclass : #TestCase,
+	#name : 'WillowSessionTest',
+	#superclass : 'TestCase',
 	#instVars : [
 		'componentSupplier'
 	],
-	#category : #'Willow-Core-Tests-Applications'
+	#category : 'Willow-Core-Tests-Applications',
+	#package : 'Willow-Core-Tests',
+	#tag : 'Applications'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowSessionTest >> componentSupplierForApplication [
 
 	^ componentSupplier
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WillowSessionTest >> setUp [
 
 	super setUp.
 	componentSupplier := Html5ComponentSupplier new
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowSessionTest >> testStartUpApplicationContextFor [
 
 	| session |

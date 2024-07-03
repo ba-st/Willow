@@ -2,18 +2,20 @@
 I'm an encoder/decoder of floats
 "
 Class {
-	#name : #FloatCodec,
-	#superclass : #Codec,
-	#category : #'Willow-Core-Frontend'
+	#name : 'FloatCodec',
+	#superclass : 'Codec',
+	#category : 'Willow-Core-Frontend',
+	#package : 'Willow-Core',
+	#tag : 'Frontend'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 FloatCodec >> canCreate: anObject [
 
 	^anObject isNumber
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 FloatCodec >> decode: aString [
 
 	| number |
@@ -24,7 +26,7 @@ FloatCodec >> decode: aString [
 	^ number
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 FloatCodec >> encode: aNumber [
 
 	^ aNumber asFloat greaseString

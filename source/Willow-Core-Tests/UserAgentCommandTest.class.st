@@ -1,38 +1,40 @@
 Class {
-	#name : #UserAgentCommandTest,
-	#superclass : #BWRenderingTest,
+	#name : 'UserAgentCommandTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'command'
 	],
-	#category : #'Willow-Core-Tests-WebInteraction'
+	#category : 'Willow-Core-Tests-WebInteraction',
+	#package : 'Willow-Core-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 UserAgentCommandTest >> setUp [
 
 	super setUp.
 	command := UserAgentCommand executing: [ :canvas | JSStream this call: 'passTest' ]
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 UserAgentCommandTest >> testModelLoadingInstructions [
 
 	self assert: command modelLoadingInstructions isEmpty
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 UserAgentCommandTest >> testPriorityActions [
 
 	self assert: command priorityActions isEmpty
 ]
 
-{ #category : #'tests-testing' }
+{ #category : 'tests-testing' }
 UserAgentCommandTest >> testRequiresSerialization [
 
 	self deny: command requiresSerialization
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 UserAgentCommandTest >> testServerIndependentInstructions [
 
 	| html |

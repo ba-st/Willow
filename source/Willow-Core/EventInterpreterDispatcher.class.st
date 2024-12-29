@@ -71,18 +71,6 @@ EventInterpreterDispatcher >> applyTo: aComponent on: aCanvas [
 ]
 
 { #category : 'configuring' }
-EventInterpreterDispatcher >> change [
-
-	^ self eventNamed: #change
-]
-
-{ #category : 'configuring' }
-EventInterpreterDispatcher >> click [
-
-	^ self eventNamed: #click
-]
-
-{ #category : 'configuring' }
 EventInterpreterDispatcher >> eventNamed: anEventName [
 
 	^ interpretersByEvent at: anEventName ifAbsentPut: [ self class interpreterSending: anEventName ]
@@ -94,18 +82,6 @@ EventInterpreterDispatcher >> initializeInterpretingByDefault: anEventName confi
 	defaultInterpreter := aWebInteractionInterpreter.
 	interpretersByEvent := Dictionary new.
 	interpretersByEvent at: anEventName put: aWebInteractionInterpreter
-]
-
-{ #category : 'configuring' }
-EventInterpreterDispatcher >> keyUp [
-
-	^ self eventNamed: #keyup
-]
-
-{ #category : 'configuring' }
-EventInterpreterDispatcher >> mouseOver [
-
-	^ self eventNamed: #mouseover
 ]
 
 { #category : 'configuring' }

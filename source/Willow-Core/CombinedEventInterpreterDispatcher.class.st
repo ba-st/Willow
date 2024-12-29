@@ -22,18 +22,6 @@ CombinedEventInterpreterDispatcher class >> combiningInterpretersOfAll: aWebView
 ]
 
 { #category : 'configuring' }
-CombinedEventInterpreterDispatcher >> change [
-
-	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #change )
-]
-
-{ #category : 'configuring' }
-CombinedEventInterpreterDispatcher >> click [
-
-	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #click )
-]
-
-{ #category : 'configuring' }
 CombinedEventInterpreterDispatcher >> eventNamed: anEventName [
 
 	^ CombinedWebInteractionInterpreter
@@ -44,18 +32,6 @@ CombinedEventInterpreterDispatcher >> eventNamed: anEventName [
 CombinedEventInterpreterDispatcher >> initializeCombiningAll: anEventInterpreterDispatcherCollection [
 
 	eventInterpreterDispatchers := anEventInterpreterDispatcherCollection
-]
-
-{ #category : 'configuring' }
-CombinedEventInterpreterDispatcher >> keyUp [
-
-	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #keyUp )
-]
-
-{ #category : 'configuring' }
-CombinedEventInterpreterDispatcher >> mouseOver [
-
-	^ CombinedWebInteractionInterpreter combining: ( eventInterpreterDispatchers collect: #mouseOver )
 ]
 
 { #category : 'configuring' }

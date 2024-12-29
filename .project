@@ -1,3 +1,4 @@
 {
-	'srcDirectory' : 'source'
+	'srcDirectory' : 'source',
+	'tags': [ 'Buenos Aires Smalltalk' ]
 }

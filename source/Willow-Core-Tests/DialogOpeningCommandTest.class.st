@@ -37,7 +37,7 @@ DialogOpeningCommandTest >> testModelLoadingInstructions [
 	self
 		assert: html
 		equals:
-		'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-dialog-section").append("<dialog open><\/dialog>")});</script>'
+		'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-dialog-section").append("<dialog open></dialog>")});</script>'
 ]
 
 { #category : 'tests-accessing' }

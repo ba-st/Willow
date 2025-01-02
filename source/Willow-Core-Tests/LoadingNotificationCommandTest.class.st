@@ -57,7 +57,7 @@ LoadingNotificationCommandTest >> testPriorityActions [
 	self
 		assert: html
 		equals:
-		'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div>Loading...<\/div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
+		'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div>Loading...</div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
 ]
 
 { #category : 'tests-accessing' }
@@ -74,7 +74,7 @@ LoadingNotificationCommandTest >> testPriorityActionsWithCustomView [
 	self
 		assert: html
 		equals:
-		'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"willow-loading\"><span>Processing...<\/span><\/div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
+		'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-notification-section").html("<div class=\"willow-loading\"><span>Processing...</span></div>");$.ajax({"complete":function(){$("#willow-notification-section").html("")}})});</script>'
 ]
 
 { #category : 'tests-testing' }

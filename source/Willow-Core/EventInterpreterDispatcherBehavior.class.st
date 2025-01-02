@@ -9,13 +9,13 @@ Class {
 { #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> change [
 
-	^ self subclassResponsibility
+	^ self eventNamed: #change
 ]
 
 { #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> click [
 
-	^ self subclassResponsibility
+	^ self eventNamed: #click
 ]
 
 { #category : 'configuring' }
@@ -27,13 +27,13 @@ EventInterpreterDispatcherBehavior >> eventNamed: anEventName [
 { #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> keyUp [
 
-	^ self subclassResponsibility
+	^ self eventNamed: #keyup
 ]
 
 { #category : 'configuring' }
 EventInterpreterDispatcherBehavior >> mouseOver [
 
-	^ self subclassResponsibility
+	^ self eventNamed: #mouseover
 ]
 
 { #category : 'configuring' }

@@ -7,10 +7,9 @@ Class {
 }
 
 { #category : 'printing' }
-JSConcatenateBefore >> javascriptContentOn: aStream [
+JSConcatenateBefore >> javascriptContentOn: aRenderer [
 
-	aStream
-		javascript: self statement;
-		nextPut: $;.
-	super javascriptContentOn: aStream
+	aRenderer render: self statement.
+	aRenderer document separator.
+	super javascriptContentOn: aRenderer
 ]

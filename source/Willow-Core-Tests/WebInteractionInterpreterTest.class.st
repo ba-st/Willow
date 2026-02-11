@@ -142,7 +142,7 @@ WebInteractionInterpreterTest >> testCloseAllDialogs [
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - Dialogs' }
@@ -156,7 +156,7 @@ WebInteractionInterpreterTest >> testCloseLastDialog [
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -170,7 +170,7 @@ WebInteractionInterpreterTest >> testConfirmAsking [
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){if(confirm("Continue?")){Willow.callServer({"url":"/","data":"1"})}});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){if(confirm("Continue?")){Willow.callServer({"dataType":"script","url":"/","data":"1"})}});</script>'
 ]
 
 { #category : 'tests - Configuring - Serialization' }
@@ -267,7 +267,7 @@ WebInteractionInterpreterTest >> testFocus [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -283,7 +283,7 @@ WebInteractionInterpreterTest >> testFocusUsing [
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Instance Creation' }
@@ -308,7 +308,7 @@ WebInteractionInterpreterTest >> testForInstantEvaluation [
 	self
 		assert: html
 		equals:
-			'<input type="text"/><script type="text/javascript">Willow.callServer({"url":"/","data":"1"});</script>'
+			'<input type="text"/><script type="text/javascript">Willow.callServer({"dataType":"script","url":"/","data":"1"});</script>'
 ]
 
 { #category : 'tests - Configuring' }
@@ -350,7 +350,7 @@ WebInteractionInterpreterTest >> testOpen [
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -374,7 +374,7 @@ WebInteractionInterpreterTest >> testRemove [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - CSS' }
@@ -437,7 +437,7 @@ WebInteractionInterpreterTest >> testRender [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><div id="container-id1">15</div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><div id="container-id1">15</div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).serialize()].join("&"),"dataType":"script"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -472,7 +472,7 @@ WebInteractionInterpreterTest >> testRenderAll [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><div id="container-id1">15</div><div id="container-id2"></div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><div id="container-id1">15</div><div id="container-id2"></div><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["3",$(this).serialize()].join("&"),"dataType":"script"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -524,7 +524,7 @@ WebInteractionInterpreterTest >> testScrollingIntoView [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - Serialization' }
@@ -548,7 +548,7 @@ WebInteractionInterpreterTest >> testSerializeChildForm [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).children("form").serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).children("form").serialize()].join("&"),"dataType":"script"})});</script>'
 ]
 
 { #category : 'tests - Configuring - Serialization' }
@@ -572,7 +572,7 @@ WebInteractionInterpreterTest >> testSerializeContainerForm [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).closest("form").find(":input").serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).closest("form").find(":input").serialize()].join("&"),"dataType":"script"})});</script>'
 ]
 
 { #category : 'tests - Configuring - Serialization' }
@@ -598,7 +598,7 @@ WebInteractionInterpreterTest >> testSerializeForm [
 	self
 		assert: html
 		equals:
-			'<form accept-charset="utf-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$("#15").serialize()].join("&")})});</script>'
+			'<form accept-charset="utf-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$("#15").serialize()].join("&"),"dataType":"script"})});</script>'
 ]
 
 { #category : 'tests - Configuring - Serialization' }
@@ -622,7 +622,7 @@ WebInteractionInterpreterTest >> testSerializeIt [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).serialize()].join("&"),"dataType":"script"})});</script>'
 ]
 
 { #category : 'tests - Configuring - Serialization' }
@@ -669,7 +669,7 @@ WebInteractionInterpreterTest >> testSerializeWithHiddenInputs [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&")})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){Willow.callServer({"type":"POST","url":"/","data":["1",$(this).next("input:hidden").addBack().serialize()].join("&"),"dataType":"script"})});</script>'
 ]
 
 { #category : 'tests - Configuring' }
@@ -683,7 +683,7 @@ WebInteractionInterpreterTest >> testServerDo [
 	self
 		assert: html
 		equals:
-			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").click(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -709,7 +709,7 @@ WebInteractionInterpreterTest >> testSetValueToThenTriggerChangeOf [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").click(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -735,7 +735,7 @@ WebInteractionInterpreterTest >> testSetValueToWithoutTriggeringChangeOf [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").click(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -753,7 +753,7 @@ WebInteractionInterpreterTest >> testShowLoadingNotificationDisplayingApplying [
 	self
 		assert: html
 		equals:
-		'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});</script>'
+		'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -769,7 +769,7 @@ WebInteractionInterpreterTest >> testShowLoadingNotificationStyledAsAll [
 	self
 		assert: html
 		equals:
-		'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"url":"/","data":"1"})});</script>'
+		'<input id="input-id2" type="text"/><script type="text/javascript">$("#input-id2").change(function(event){$("#willow-notification-section").html("<div class=\"willow\">Loading...</div>");Willow.callServer({"complete":function(){$("#willow-notification-section").html("")},"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -794,7 +794,7 @@ WebInteractionInterpreterTest >> testShowWhileCallingServerToRender [
 	self
 		assert: html
 		equals:
-			'<a id="a-id3">Search!</a><div id="container-id1"></div><script type="text/javascript">$("#a-id3").click(function(event){$("#container-id1").html("Searching...");Willow.callServer({"url":"/","data":"2"})});</script>'
+			'<a id="a-id3">Search!</a><div id="container-id1"></div><script type="text/javascript">$("#a-id3").click(function(event){$("#container-id1").html("Searching...");Willow.callServer({"dataType":"script","url":"/","data":"2"})});</script>'
 ]
 
 { #category : 'tests - Configuring - Serialization' }
@@ -820,7 +820,7 @@ WebInteractionInterpreterTest >> testSubmitForm [
 	self
 		assert: html
 		equals:
-			'<form accept-charset="utf-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+			'<form accept-charset="utf-8" method="post" action="/" id="15"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - Serialization' }
@@ -830,21 +830,19 @@ WebInteractionInterpreterTest >> testSubmitFormStyledAs [
 
 	interpreter := self clickInterpreter.
 
-	html := self
-		renderUsing: [ :canvas | 
-			| anchor |
+	html := self renderUsing: [ :canvas |
+			        | anchor |
 
-			canvas form apply: [ :form | form addClass willow ].
-			anchor := canvas anchor.
-			anchor id: '16'.
-			interpreter submitFormStyledAs: Classification >> #willow.
-			anchor interactUsing: interpreter
-			].
+			        canvas form apply: [ :form | form addClass willow ].
+			        anchor := canvas anchor.
+			        anchor id: '16'.
+			        interpreter submitFormStyledAs: Classification >> #willow.
+			        anchor interactUsing: interpreter
+		        ].
 
 	self
 		assert: html
-		equals:
-			'<form accept-charset="utf-8" method="post" action="/" class="willow"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"url":"/","data":"1"})});</script>'
+		equals: '<form accept-charset="utf-8" method="post" action="/" class="willow"></form><a id="16"></a><script type="text/javascript">$("#16").click(function(event){Willow.callServer({"dataType":"script","url":"/","data":"1"})});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -867,7 +865,7 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformInto [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){var componentToDisable=$("#15");if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){var componentToDisable=$("#15");if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"dataType":"script","url":"/","data":"1"})}});</script>'
 ]
 
 { #category : 'tests - Configuring - DOM' }
@@ -890,7 +888,7 @@ WebInteractionInterpreterTest >> testTemporarilyDisableAndTransformSelfInto [
 	self
 		assert: html
 		equals:
-			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){var componentToDisable=$(this);if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"url":"/","data":"1"})}});</script>'
+			'<input id="15" type="text"/><script type="text/javascript">$("#15").change(function(event){var componentToDisable=$(this);if(componentToDisable.attr("data-willow-events-disabled")!=="disabled"){componentToDisable.attr("data-willow-events-disabled","disabled").addClass("willow-disabled-component").attr("data-original-html",componentToDisable.html()).attr("disabled",true).html("Loading...");Willow.callServer({"complete":function(){componentToDisable.removeAttr("data-willow-events-disabled").attr("disabled",false).removeClass("willow-disabled-component").html(componentToDisable.attr("data-original-html"))},"dataType":"script","url":"/","data":"1"})}});</script>'
 ]
 
 { #category : 'tests - Configuring - CSS' }
@@ -1031,7 +1029,7 @@ WebInteractionInterpreterTest >> testWithOnlyWhenServerDo [
 	self
 		assert: html
 		equals:
-			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){if(dataFromUserAgent>3){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(dataFromUserAgent))].join("&")})}});</script>'
+			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){if(dataFromUserAgent>3){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(dataFromUserAgent))].join("&"),"dataType":"script"})}});</script>'
 ]
 
 { #category : 'tests - Configuring' }
@@ -1045,7 +1043,7 @@ WebInteractionInterpreterTest >> testWithServerDo [
 	self
 		assert: html
 		equals:
-			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&")})});</script>'
+			'<input id="input-id3" type="text"/><script type="text/javascript">$("#input-id3").click(function(event){Willow.callServer({"type":"POST","url":"/","data":["1","2="+encodeURIComponent(JSON.stringify(["firstThing","secondStuff"]))].join("&"),"dataType":"script"})});</script>'
 ]
 
 { #category : 'tests - Instance Creation' }

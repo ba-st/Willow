@@ -91,7 +91,7 @@ Html5ComponentSupplierTest >> testDelayedViewShowingWhileEvaluatingThenRendering
 
 	self
 		assertRenderingOf: [ :supplier | supplier delayedViewShowing: 'Loading...' whileEvaluating: [  ] thenRendering: 'Done!' ]
-		equals: '<div id="container-id1">Loading...</div><script type="text/javascript">Willow.callServer({"url":"/","data":"2"});</script>'
+		equals: '<div id="container-id1">Loading...</div><script type="text/javascript">Willow.callServer({"dataType":"script","url":"/","data":"2"});</script>'
 ]
 
 { #category : 'tests-Supplying' }

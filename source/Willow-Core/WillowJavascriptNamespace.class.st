@@ -22,9 +22,9 @@ WillowJavascriptNamespace >> handleAjaxErrorCallFunction [
 ]
 
 { #category : 'printing' }
-WillowJavascriptNamespace >> javascriptContentOn: aStream [
+WillowJavascriptNamespace >> javascriptContentOn: aRenderer [
 
-	aStream nextPutAll: 'Willow'
+	aRenderer document identifier: 'Willow'
 ]
 
 { #category : 'Accessing' }

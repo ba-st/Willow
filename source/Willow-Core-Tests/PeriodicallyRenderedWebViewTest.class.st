@@ -96,5 +96,5 @@ PeriodicallyRenderedWebViewTest >> testScriptToRefreshAndRenderContentOn [
 	self
 		assert: html
 		equals:
-		'<div id="id3"></div><script type="text/javascript">$("#id3").html("Count:  2<br/>\x3Cscript type=\"text/javascript\">$.ajax({\"url\":\"/\",\"data\":\"2\"});\x3C/script>");</script>'
+		'<div id="id2"></div><script type="text/javascript">$("#id2").html("Count:  2<br/>\x3Cscript type=\"text/javascript\">$.ajax({\"url\":\"/\",\"data\":\"3\"});\x3C/script>");</script>'
 ]
